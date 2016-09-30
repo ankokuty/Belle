@@ -62,7 +62,7 @@ public class Injection {
 						+ ") || javax.swing.DefaultListCellRenderer.class.isAssignableFrom($0.getClass())) {} else {");
 
 				for (Translate t : translates) {
-					command.append(String.format("$%d=$%d.replaceAll(\"^"
+					command.append(String.format("$%d=$%d.replaceAll(\"(?m)^"
 						+ t.en.replace("\"", "\\\"").replace("%","%%")+ "$\",\""
 						+ t.ja.replace("\"", "\\\"").replace("%","%%") + "\");", n, n));
 				}
