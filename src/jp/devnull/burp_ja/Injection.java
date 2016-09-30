@@ -66,7 +66,6 @@ public class Injection {
 						+ t.en.replace("\"", "\\\"").replace("%","%%")+ "$\",\""
 						+ t.ja.replace("\"", "\\\"").replace("%","%%") + "\");", n, n));
 				}
-
 				/*
 				// 翻訳されていない文を標準エラーに出す。
 				command.append(String.format(
@@ -76,7 +75,7 @@ public class Injection {
 					+ " && !$%d.matches(\"[0-9,]+\")"           // 数値を無視
 					+ " && !$%d.matches(\"burp\\..*\")"         // burp.から始まるもの(クラス名？)を無視
 					+ " && $%d.length()>1"                      // １文字を無視
-					+ " && !$%d.matches(\"[A-Z]+s?\")"          // １単語のみを無視
+					+ " && !$%d.matches(\"[A-Z]+s?\")"          // 大文字のみの単語を無視
 					+ "){System.err.println($%d);}", n,n,n,n,n,n,n,n));
 				*/
 				command.append("}}}");
