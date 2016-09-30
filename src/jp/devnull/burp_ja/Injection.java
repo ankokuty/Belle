@@ -110,6 +110,11 @@ public class Injection {
 						CtMethod ctMethod = ctClass.getDeclaredMethod("insertString");
 						ctMethod.insertBefore(makeCommand(2));
 						return ctClass.toBytecode();
+					} else if (className.equals("javax/swing/JComponent")) {
+						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
+						CtMethod ctMethod = ctClass.getDeclaredMethod("setToolTipText");
+						ctMethod.insertBefore(makeCommand(1));
+						return ctClass.toBytecode();
 					} else {
 						return null;
 					}
