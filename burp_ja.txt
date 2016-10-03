@@ -15,6 +15,8 @@
 ([0-9]+) letter words	$1文字単語
 ([0-9]+) payload positions?	$1個のペイロードポジション
 ([0-9]+) results?	$1件の結果
+([0-9]+) tokens were padded with (.*) at the end.	$1トークンは末尾を$2でパディングされました。
+([0-9]+) tokens were padded with (.*) at the start.	$1トークンは先頭を$2でパディングされました。
 ([1-9][0-9]?) match(es)?	$1件ヒット
 ([A-Z]+) request to (.*)	$2 への $1 リクエスト
 \\(Leave blank to run once only\\)	(一度のみ実行する場合は空白のまま)
@@ -30,6 +32,7 @@
 5xx  \\[server error\\]	5xx  [サーバエラー]
 8 \\(MSB\\)	8(最上位ビット)
 A macro is a sequence of one or more requests. You can use macros within session handling rules to perform tasks such as logging in to the application, obtaining anti-CSRF tokens, etc.	マクロは、１つまたは複数のリクエストのシーケンスです。セッションハンドリングルール内でマクロを使用すると、アプリケーションへのログインや、CSRF対策トークンの取得などのタスクを実行できます。
+A new version of Burp is available.	Burpの新しいバージョンが利用可能です。
 About Burp Scanner	Burp Scannerについて
 About	Burp Suiteについて
 Action URL and method	送信先URLとメソッド
@@ -59,6 +62,7 @@ Add a new listener	リスナーを追加
 Add a new match/replace rule	新規マッチ/リプレースルールを追加
 Add a new parameter	新規パラメータを追加
 Add a new payload processing rule	新規ペイロード処理ルールを追加
+Add a new proxy listener	プロキシリスナーを追加
 Add a new task	新規タスクを追加
 Add a new upstream proxy rule	新規上位プロキシルールを追加
 Add comment	コメントを追加
@@ -83,7 +87,7 @@ All bits failed the test. 	全ビットテスト不合格
 All bits passed the test. 	全ビットテスト合格
 All bits passed the test. Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long. However, an overly short longest run of bits also indicates that the sample is not random. Therefore some bits may record a significance level that is below the FIPS pass level even though they do not strictly fail the FIPS test.	全ビットがテスト合格。このテストのFIPS仕様では、ビットの最長連が長すぎる場合に失敗のみを記録することに注意してください。しかし、短すぎるビットの最長連もサンプルがランダムでないことを示します。したがって一部のビットでは、厳密なFIPSテストに不合格でないにもかかわらず、FIPS合格レベルを下回る有意水準を記録する場合があります。
 All interfaces	全てのインタフェース
-All tests were successful.	全てのテストが成功しました。
+All tests were successful. 	全てのテストが成功しました。
 All tools:	全ツール:
 Allow renderer to make HTTP requests \\(for images, etc.\\)	レンダラーがHTTPリクエストするのを許可する(画像など)
 Allow requests to web interface using fully-qualified DNS hostnames	Webインタフェースで完全修飾DNSホスト名を許可する
@@ -111,6 +115,7 @@ Are you sure you want to cancel the download\\?	ダウンロードをキャン�
 Are you sure you want to cancel this rule\\?	このルールをキャンセルしてよろしいですか?
 Are you sure you want to cancel\\?	キャンセルしてよろしいですか？
 Are you sure you want to clear all events\\?	全てのイベントをクリアしてよろしいですか？
+Are you sure you want to clear the entire request template\\?	リクエストテンプレート全体をクリアしてよろしいですか?
 Are you sure you want to clear the list\\?	リストをクリアしてよろしいですか?
 Are you sure you want to close the tracer\\?	トレーサーを閉じてよろしいですか？
 Are you sure you want to close this window\\?	このウィンドウを閉じてよろしいですか？
@@ -121,6 +126,71 @@ Are you sure you want to regenerate Burp's CA certificate\\?	BurpのCA証明書�
 Are you sure you want to remove ("[^"]+")\\?	$1を削除してよろしいですか？
 Are you sure you want to remove this action\\?	このアクションを削除してよろしいですか?
 Are you sure you want to remove this certificate\\?	この証明書を削除してよろしいですか？
+Are you sure you want to restore default active scanning areas options\\?	アクティブスキャン対象オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default active scanning engineoptions\\?	アクティブスキャンエンジンオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default active scanning optimizationoptions\\?	アクティブスキャン最適化オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default application login options\\?	アプリケーションログインオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default attack insertion points　options\\?	攻撃挿入ポイントオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default attack results options\\?	攻撃結果オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default Burp Collaborator server options\\?	Burp Collaboratorサーバオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default Burp Extender options\\?	Burp Extenderオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default character set options\\?	文字セットオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default client SSL certificates options\\?	クライアントSSL証明書オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default cookie jar options\\?	cookie jar オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default crawler options\\?	クローラオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default extract grep options\\?	抽出grepオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default form submission options\\?	フォーム送信オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default hostname resolution options\\?	ホスト名解決オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default hotkey options\\?	ホットキーオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default HTML rendering options\\?	HTMLレンダリングオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default HTTP message display options\\?	HTTPメッセージ表示オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default intercept client requests options\\?	クライアントリクエストのインターセプトオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default intercept server responses options\\?	サーバレスポンスのインターセプトオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default intercept WebSockets messages options\\?	WebSocketメッセージのインターセプトオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default Java environment options\\?	Java環境オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default live active scanning　options\\?	ライブアクティブスキャンオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default live capture options\\?	ライブキャプチャオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default live passive scanning　options\\?	ライブパッシブスキャンオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default logging options\\?	ロギングオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default macros options\\?	マクロオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default match and replace options\\?	検索と置換オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default match grep options\\?	マッチgrep　オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default miscellaneous proxy　options\\?	その他プロキシオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default miscellaneous proxy settings options\\?	その他プロキシ設定オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default out-of-scope requests options\\?	スコープ外リクエストオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default out-of-scope requests options\\?	スコープ外リクエストオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default passive scanning areas options\\?	パッシブスキャン対象オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default passive spidering options\\?	パッシブスパイダリングオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default payloads grep options\\?	ペイロードgrepオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default performance feedback options\\?	パフォーマンスフィードバックオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default platform authentication options\\?	プラットフォーム認証オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default proxy listeners options\\?	プロキシリスナーオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default Python environment options\\?	Python環境オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default redirections options\\?	リダイレクトオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default request engine options\\?	リクエストエンジンオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default request headers options\\?	リクエストヘッダオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default request headers options\\?	リクエストヘッダオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default response modification options\\?	レスポンス操作オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default Ruby environment options\\?	Ruby環境オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default scheduled tasks　options\\?	スケジュールタスクオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default server SSL certificates options\\?	サーバSSL証明書オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default session handling rules options\\?	セッションハンドリングルールオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default SOCKS proxy options\\?	SOCKSプロキシオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default spider engine options\\?	Spiderエンジンオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default spider scope options\\?	Spiderスコープオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default SSL negotiation options\\?	SSLネゴシエーションオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default SSL negotiation workarounds options\\?	SSL ネゴシエーション回避策オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default SSL passthrough options\\?	SSLパススルーオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default static code analysis options\\?	静的コード解析オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default status 100 responses options\\?	ステータス100レスポンスオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default streaming responses options\\?	ストリーミングレスポンスオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default target scope options\\?	ターゲットスコープオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default temporary files location options\\?	一時ファイル場所オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default timeouts options\\?	タイムアウトオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default token analysis options\\?	トークン解析オプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default token handling options\\?	トークンハンドリングオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default upstream proxy servers options\\?	上位プロキシサーバオプションをデフォルトに戻してよろしいですか?
+Are you sure you want to restore default user interface options\\?	ユーザインタフェースオプションをデフォルトに戻してよろしいですか?
 Are you sure you want to stop\\?	停止してよろしいですか?
 Are you sure you want to unload ("[^"]+")\\?	$1をアンロードしてよろしいですか？
 Are you sure you wanto to shut down Burp and launch the downloaded file\\?	Burpをシャットダウンし、ダウンロードしたファイルを起動してよろしいですか？
@@ -162,14 +232,14 @@ Base64-encode	Base64エンコード
 Bind to address:	バインドするアドレス:
 Bind to port:	バインドするポート:
 Binding	バインド
-bit ([0-9]+) is negatively correlated with bit ([0-9]+) \\(matches: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1はビット$2と負の相関がある (一致: $3, ランダムサンプル中の確率: $4%)
-bit ([0-9]+) is negatively correlated with bit ([0-9]+) \\(matches: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1はビット$2と負の相関がある (一致: $3, ランダムサンプル中の確率: 0.0001%未満)
-bit ([0-9]+) is positively correlated with bit ([0-9]+) \\(matches: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1はビット$2と正の相関がある (一致: $3, ランダムサンプル中の確率: $4%)
-bit ([0-9]+) is positively correlated with bit ([0-9]+) \\(matches: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1はビット$2と正の相関がある (一致: $3, ランダムサンプル中の確率: 0.0001%未満)
-bit ([0-9]+): ([0-9]+)-D test with ([0-9]+)-bit numbers, point (\\([0-9,]+\\)) is too dense \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1: $3ビット数の$2次元テスト, 点$4は密すぎる　(数: $5, ランダムサンプル中の確率: $6%)
-bit ([0-9]+): ([0-9]+)-D test with ([0-9]+)-bit numbers, point (\\([0-9,]+\\)) is too dense \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1: $3ビット数の$2次元テスト, 点$4は密すぎる　(数: $5, ランダムサンプル中の確率: 0.0001%未満)
-bit ([0-9]+): ([0-9]+)-D test with ([0-9]+)-bit numbers, point (\\([0-9,]+\\)) is too sparse \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1: $3ビット数の$2次元テスト, 点$4は疎すぎる　(数: $5, ランダムサンプル中の確率: $6%)
-bit ([0-9]+): ([0-9]+)-D test with ([0-9]+)-bit numbers, point (\\([0-9,]+\\)) is too sparse \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1: $3ビット数の$2次元テスト, 点$4は疎すぎる　(数: $5, ランダムサンプル中の確率: 0.0001%未満)
+bit ([0-9]+) is negatively correlated with bit ([0-9]+) \\(matches: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1はビット$2と負の相関があります (一致: $3, ランダムサンプル中の確率: $4%)
+bit ([0-9]+) is negatively correlated with bit ([0-9]+) \\(matches: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1はビット$2と負の相関があります (一致: $3, ランダムサンプル中の確率: 0.0001%未満)
+bit ([0-9]+) is positively correlated with bit ([0-9]+) \\(matches: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1はビット$2と正の相関があります (一致: $3, ランダムサンプル中の確率: $4%)
+bit ([0-9]+) is positively correlated with bit ([0-9]+) \\(matches: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1はビット$2と正の相関があります (一致: $3, ランダムサンプル中の確率: 0.0001%未満)
+bit ([0-9]+): ([0-9]+)-D test with ([0-9]+)-bit numbers, point (\\([0-9,]+\\)) is too dense \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1: $3ビット数の$2次元テスト, 点$4は密すぎます (回数: $5, ランダムサンプル中の確率: $6%)
+bit ([0-9]+): ([0-9]+)-D test with ([0-9]+)-bit numbers, point (\\([0-9,]+\\)) is too dense \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1: $3ビット数の$2次元テスト, 点$4は密すぎます (数: $5, ランダムサンプル中の確率: 0.0001%未満)
+bit ([0-9]+): ([0-9]+)-D test with ([0-9]+)-bit numbers, point (\\([0-9,]+\\)) is too sparse \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1: $3ビット数の$2次元テスト, 点$4は疎すぎます (回数: $5, ランダムサンプル中の確率: $6%)
+bit ([0-9]+): ([0-9]+)-D test with ([0-9]+)-bit numbers, point (\\([0-9,]+\\)) is too sparse \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1: $3ビット数の$2次元テスト, 点$4は疎すぎます (回数: $5, ランダムサンプル中の確率: 0.0001%未満)
 bit ([0-9]+): compressed to ([0-9.]+)% of original size	ビット$1: 元サイズの$2%に圧縮されました
 Bit Compression Analysis - Compression Ratios	ビット圧縮解析 - 圧縮率
 Bit Compression Analysis - Significance Levels	ビット圧縮解析 - 有意水準
@@ -230,11 +300,15 @@ Check for updates	更新チェック
 Check robots.txt	robots.txtをチェックする
 Check session is valid	セッションの有効性をチェックする
 Checking for updates	更新を確認中
+chi-square value is too high at bit 0 \\(chi-square: 3,4.63, probability in a random sample: ([0-9.]+)%\\)	ビット$1のカイ二乗値が高すぎます (カイ二乗: $2, ランダムサンプル中の確率: $3%)
+chi-square value is too high at bit 0 \\(chi-square: 3,4.63, probability in a random sample: less than 0.0001%\\)	ビット$1のカイ二乗値が高すぎます (カイ二乗: $2, ランダムサンプル中の確率: 0.0001%未満)
 chi-square value is too low at bit ([0-9]+) \\(chi-square: ([0-9.]+), probability in a random sample: ([0-9.]+)%\\)	bit $1 のカイ二乗値が低すぎます (カイ二乗: $2, ランダムサンプルの確率: $3%)
+chi-square value is too low at bit ([0-9]+) \\(chi-square: ([0-9.]+), probability in a random sample: less than 0.0001%\\)	bit $1 のカイ二乗値が低すぎます (カイ二乗: $2, ランダムサンプルの確率: 0.0001%未満)
 Choose a file to export the CA certificate.	CA証明書をエクスポートするファイルを選択してください。
 Choose a file to export the certificate and private key, and a password to use for the keystore. 		証明書と秘密鍵をエクスポートするファイルを選択し、キーストアに設定するパスワードを入力してください。 $1
 Choose a file to export the private key. 	秘密鍵をエクスポートするファイルを選択してください。 
 Choose a log file	ログファイルを選択してください
+Choose a PKCS#12 file	PKCS#12ファイルを選択してください
 Choose file...	ファイル選択...
 Choose folder ...	フォルダ選択 ...
 Choose the folder where temporary files will be saved	一時ファイルが保存されるフォルダを選択
@@ -243,6 +317,8 @@ Choose which tools you want to restore the configuration of.	設定をリスト�
 Choose which tools you want to restore the state of.	ステートをリストアするツールを選択してください。
 Choose which tools you want to save the configuration of.	設定を保存するツールを選択してください。
 Choose which tools you want to save the state of. Note that it is not necessary to save the Spider state. The Spider request queues will be automatically rebuilt based on a restored target site map and scope configuration.	ステートに保存するツールを選択してください。Spiderのステートを保存する必要がない点に注意してください。Spiderのリクエストキューは、リストアしたターゲットのサイトマップやスコープ設定から自動的に再構築されます。
+Choosing this option means that your instance of Burp will not receive details of any ongoing Burp Collaborator interactions that were associated with the project. Any new scanning that you perform will use a different unique identifier, to avoid any interference with other instances of Burp.	このオプションを選択すると、プロジェクトに関連づけられている進行中のBurp Collaboratorとの通信の詳細を、このBurpインスタンスが受信しないことになります。実行する新たなスキャンでは異なる一意な識別子を使用し、他のBurpインスタンスとの干渉を避けます。
+Choosing this option means that your instance of Burp will receive details of any ongoing Burp Collaborator interactions that are associated with the project. If any other instance of Burp is also receiving interaction details for the same project, then some Collaborator-based issues may be missed or incorrectly reported.	このオプションを選択すると、プロジェクトに関連づけられている進行中のBurp Collaboratorとの通信の詳細を、このBurpインスタンスが受信することになります。他のBurpインスタンスも同じプロジェクトの通信詳細を受信していると、Collaboratorベースの問題を見逃す、または誤って報告されるかもしれません。
 Cipher	暗号
 Clean Burp from computer	コンピュータからBurpを削除
 Clear §	§クリア
@@ -273,7 +349,7 @@ Confidence	信頼度
 Configure predefined payload lists	定義済みペイロードリストを編集
 Configure target details	対象の詳細を設定
 Configure the details of the target for the attack.	攻撃対象の詳細を設定してください。
-Configure the location of the items that Burp Intruder should use for its predefined payload lists.
+Configure the location of the items that Burp Intruder should use for its predefined payload lists.	Burp Intruderが使用する定義済みペイロードリストの場所を設定してください
 Configure the positions where payloads will be inserted into the base request. The attack type determines the way in which payloads are assigned to payload positions - see help for full details.	ペイロードがベースリクエストに挿入される位置を設定します。攻撃タイプは、ペイロードがペイロードポジションに割り当てされる方法を指定します。- 詳細はヘルプを参照してください。
 Configure the settings for the custom token location	トークン位置のカスタム設定
 Configure the sources Burp should use for generating filenames to test.	ファイル名のテストを生成する元を設定します。
@@ -301,6 +377,7 @@ Cookies	cookie
 Copy ...	コピー ...
 Copy as curl command	curlコマンドをコピー
 Copy attack config	攻撃設定をコピー
+Copy Burp's built-in payload lists to the selected directory	Burpの組み込みペイロードリストを選択したディレクトリにコピー
 Copy configuration from first tab	最初のタブから設定をコピー
 Copy configuration from last tab	最後のタブから設定をコピー
 Copy from position:	コピー元ポジション:
@@ -337,8 +414,10 @@ Debug ID:	デバッグID:
 Default to this option in future	次回以降このオプションをデフォルトにする
 Define behavior dependent on session validity:	セッション有効性に依存する動作の定義:
 Define custom token location	トークン位置のカスタム定義
+Define extract grep item	抽出grepアイテムの定義
 Define start and end	開始と終了を定義
 Define the in-scope targets for your current work. This configuration affects the behavior of tools throughout the suite. All fields take regex strings. The easiest way to configure scope is to browse to your target and use the context menus in the site map to include or exclude URL paths.	現在の作業用に、スコープ内のターゲットを定義します。この設定はツール全体での動作に影響を与えます。すべてのフィールドは正規表現で指定します。ターゲットをブラウザで参照し、サイトマップのコンテキストメニューでURLパスを含めるまたは除外すると、スコープ設定が簡単です。
+Define the location of the item to be extracted. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	抽出するアイテムの場所を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
 Define the location of the token within the response. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	レスポンス内のトークンの場所を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
 Define the start directory for the content discovery session, and whether files or directories should be targeted.	コンテンツ探索セッションを開始するディレクトリと、対象となるファイルやディレクトリを定義します。
 Delete branch	ブランチを削除
@@ -376,6 +455,7 @@ Do illegal UTF-8	不正なUTF-8
 Do intercept	インターセプト有効
 Do not include Burp Collaborator identifier in the state file	Burp Collaboratorの識別子をステートファイルに含めない
 Do not save	保存しない
+Do not take full ownership of the project	プロジェクトの完全な所有権を取得しない
 Do platform authentication	プラットフォーム認証を行う
 Doing bit compression test	ビット圧縮テスト実行中
 Doing bit correlation test	ビット相関テスト実行中
@@ -471,6 +551,7 @@ Expression	正規表現
 Extension action handler:	アクションハンドラ拡張:
 Extension Details	拡張の詳細
 Extension file \\(\\.(jar|py|rb)\\):	拡張ファイル(.$1):
+Extension file:	拡張ファイル:
 Extension generated issue	拡張で作成された問題
 Extension loaded	拡張読み込み済み
 Extension type:	拡張タイプ:
@@ -484,8 +565,10 @@ Failed domain name resolution:	名前解決失敗時の再試行:
 Failed to load certificate: keystore password was incorrect	証明書を読み込めません: キーストアパスワードが間違っています
 Failed to open file	ファイルを開けません
 Failed to open folder	フォルダを開けません
+Failed to retrieve response	レスポンスを取得できませんでした
 False positive	誤検知
 Feedback only contains technical information about Burp's internal functioning, and does not identify you in any way. If you do report a bug via email, you can help us diagnose any problems that your instance of Burp has encountered by including your debug ID.	フィードバックにはBurpの内部機能に関する技術情報のみが含まれ、あなたの識別はできません。バグを電子メールで報告する場合、あなたのデバッグIDを含めると、発生した問題の診断の助けになります。
+Fetch response	レスポンス取得
 Field name	フィールド名
 Field value	フィールド値
 File \\(PKCS#12\\)	ファイル(PKCS#12)
@@ -505,7 +588,7 @@ Filter by file extension	拡張子でフィルタ
 Filter by listener	リスナーでフィルタ
 Filter by MIME type	MIMEタイプでフィルタ
 Filter by request type	リクエストタイプでフィルタ
-Filter by search term [Pro only]	検索語でフィルタ [プロのみ]
+Filter by search term \\[Pro only\\]	検索語でフィルタ [プロのみ]
 Filter by search term	検索語でフィルタ
 Filter by status code	ステータスコードでフィルタ
 Filter:	フィルタ:
@@ -560,6 +643,7 @@ Handle as ordinary forms	通常のフォームとして処理
 Hardware token or smart card \\(PKCS#11\\)	ハードウェアトークンやスマートカード(PKCS#11)
 Header manipulation	ヘッダ操作
 Headers	ヘッダ
+Help improve Burp by submitting anonymous feedback about its performance	Burp改善のためパフォーマンスに関するフィードバックを匿名で送信する
 Help	ヘルプ
 Hex formatting	16進数フォーマット
 Hide all	全て非表示
@@ -601,6 +685,8 @@ HTTP Message Display	HTTPメッセージ表示
 HTTP PUT method is enabled	HTTP PUTメソッドが有効
 HTTP response header injection	HTTPレスポンスヘッダインジェクション
 HTTP TRACE method is enabled( \\[[0-9]+\\])?	TRACEメソッドが有効$1
+I Accept	同意する
+I Decline	拒否する
 If not already present, add as:	存在しない場合、次の値として追加:
 If session is invalid, perform the action below:	セッションが無効な場合、以下のアクションを実行する:
 If session is valid, don't process any further rules or actions for this request	セッションが有効な場合、このリクエストにさらにルールやアクションを処理しない
@@ -669,6 +755,7 @@ Issue current request	現在のリクエストを発行
 Issue the request to obtain the response	レスポンスを取得するためにリクエストを送信
 Issue the request	リクエストを送信
 Issue type	問題タイプ
+Issuer	発行者
 Issues help	問題ビューのヘルプ
 Issues	問題
 Item	アイテム
@@ -681,8 +768,10 @@ JavaScript-driven	JavaScript駆動
 LDAP injection	LDAPインジェクション
 Leave	残す
 Left/right split	左右に分割
+Length range: ([0-9]+-[0-9]+).	長さ範囲: $1
 Length	長さ
 Length: ([0-9]+)	長さ: $1
+Licence Agreement	使用許諾契約書
 License	ライセンス
 Link depth to associate with Proxy requests:	Proxyリクエストに関連づけるリンクの深さ:
 Links	リンク
@@ -701,14 +790,79 @@ Live capture	ライブキャプチャ
 Live Passive Scanning	ライブパッシブスキャン
 Live scanning	ライブスキャン
 Load ...	読み込み
+Load active scanning areas options	アクティブスキャン対象オプションを読み込む
+Load active scanning engineoptions	アクティブスキャンエンジンオプションを読み込む
+Load active scanning optimizationoptions	アクティブスキャン最適化オプションを読み込む
+Load application login options	アプリケーションログインオプションを読み込む
 Load attack config	攻撃設定を読み込み
+Load attack insertion points　options	攻撃挿入ポイントオプションを読み込む
+Load attack results options	攻撃結果オプションを読み込む
+Load Burp Collaborator server options	Burp Collaboratorサーバオプションを読み込む
+Load Burp Extender options	Burp Extenderオプションを読み込む
 Load Burp Extension	Burp拡張を読み込む
+Load character set options	文字セットオプションを読み込む
+Load client SSL certificates options	クライアントSSL証明書オプションを読み込む
+Load cookie jar options	cookie jar オプションを読み込む
+Load crawler options	クローラオプションを読み込む
 Load custom lists from directory:	ディレクトリからカスタムリストを読み込む:
 Load data from file	ファイルからデータを読み込む
+Load extract grep options	抽出grepオプションを読み込む
+Load form submission options	フォーム送信オプションを読み込む
 Load from configuration file	ファイルから設定を読み込む
+Load hostname resolution options	ホスト名解決オプションを読み込む
+Load hotkey options	ホットキーオプションを読み込む
+Load HTML rendering options	HTMLレンダリングオプションを読み込む
+Load HTTP message display options	HTTPメッセージ表示オプションを読み込む
+Load intercept client requests options	クライアントリクエストのインターセプトオプションを読み込む
+Load intercept server responses options	サーバレスポンスのインターセプトオプションを読み込む
+Load intercept WebSockets messages options	WebSocketメッセージのインターセプトオプションを読み込む
 Load items from file	ファイルからアイテムを読み込む
+Load Java environment options	Java環境オプションを読み込む
+Load live active scanning　options	ライブアクティブスキャンオプションを読み込む
+Load live capture options	ライブキャプチャオプションを読み込む
+Load live passive scanning　options	ライブパッシブスキャンオプションを読み込む
+Load logging options	ロギングオプションを読み込む
+Load macros options	マクロオプションを読み込む
+Load match and replace options	検索と置換オプションを読み込む
+Load match grep options	マッチgrep　オプションを読み込む
+Load miscellaneous proxy　options	その他プロキシオプションを読み込む
+Load miscellaneous proxy settings options	その他プロキシ設定オプションを読み込む
 Load options	オプション読み込み
+Load out-of-scope requests options	スコープ外リクエストオプションを読み込む
+Load out-of-scope requests options	スコープ外リクエストオプションを読み込む
+Load passive scanning areas options	パッシブスキャン対象オプションを読み込む
+Load passive spidering options	パッシブスパイダリングオプションを読み込む
+Load payloads grep options	ペイロードgrepオプションを読み込む
+Load performance feedback options	パフォーマンスフィードバックオプションを読み込む
+Load platform authentication options	プラットフォーム認証オプションを読み込む
 Load project options	プロジェクトオプション保存
+Load proxy listeners options	プロキシリスナーオプションを読み込む
+Load Python environment options	Python環境オプションを読み込む
+Load redirections options	リダイレクトオプションを読み込む
+Load request engine options	リクエストエンジンオプションを読み込む
+Load request headers options	リクエストヘッダオプションを読み込む
+Load request headers options	リクエストヘッダオプションを読み込む
+Load response modification options	レスポンス操作オプションを読み込む
+Load Ruby environment options	Ruby環境オプションを読み込む
+Load scheduled tasks　options	スケジュールタスクオプションを読み込む
+Load server SSL certificates options	サーバSSL証明書オプションを読み込む
+Load session handling rules options	セッションハンドリングルールオプションを読み込む
+Load SOCKS proxy options	SOCKSプロキシオプションを読み込む
+Load spider engine options	Spiderエンジンオプションを読み込む
+Load spider scope options	Spiderスコープオプションを読み込む
+Load SSL negotiation options	SSLネゴシエーションオプションを読み込む
+Load SSL negotiation workarounds options	SSL ネゴシエーション回避策オプションを読み込む
+Load SSL passthrough options	SSLパススルーオプションを読み込む
+Load static code analysis options	静的コード解析オプションを読み込む
+Load status 100 responses options	ステータス100レスポンスオプションを読み込む
+Load streaming responses options	ストリーミングレスポンスオプションを読み込む
+Load target scope options	ターゲットスコープオプションを読み込む
+Load temporary files location options	一時ファイル場所オプションを読み込む
+Load timeouts options	タイムアウトオプションを読み込む
+Load token analysis options	トークン解析オプションを読み込む
+Load token handling options	トークンハンドリングオプションを読み込む
+Load upstream proxy servers options	上位プロキシサーバオプションを読み込む
+Load user interface options	ユーザインタフェースオプションを読み込むSave active scanning areas options	アクティブスキャン対象オプションを保存する
 Load user options	ユーザオプション読み込み
 Load	読み込み
 Loaded	読み込み済み
@@ -718,10 +872,14 @@ Location of Jython standalone JAR file:	JythonのスタンドアロンJARファ�
 Location\\(s\\):	場所:
 Locations	場所
 Logging	ロギング
+longest run is too long at bit ([0-9]+) \\(length: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1の最長連が長すぎます (長さ: $2, ランダムサンプル中の確率: $3%)
+longest run is too long at bit ([0-9]+) \\(length: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1の最長連が長すぎます (長さ: $2, ランダムサンプル中の確率: 0.0001%未満)
+longest run is too short at bit ([0-9]+) \\(length: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1の最長連が短すぎます (長さ: $2, ランダムサンプル中の確率: $3%)
+longest run is too short at bit ([0-9]+) \\(length: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1の最長連が短すぎます (長さ: $2, ランダムサンプル中の確率: 0.0001%未満)
 Longest:	最長
 Look and feel:	ルックアンドフィール:
 Look for expression:	検索表現:
-Loopbak only	ループバックのみ
+Loopback only	ループバックのみ
 Mac OS installer	Mac OSインストーラ
 Macro description:	マクロ詳細:
 Macro Editor	マクロエディタ
@@ -814,6 +972,10 @@ Note: these settings can be overridden for individual projects within project op
 Note: you should not delete these files if another instance of Burp is currently running.	注: Burpの他のインスタンスが現在起動している場合はこれらのファイルを消さないでください。
 Note: you should not disclose the private key for your CA certificate to any untrusted party. 	注: 信頼できない相手にCA証明書の秘密鍵を開示すべきではありません。 
 Number format	数値フォーマット
+number of ([0-9]+)-bit runs is too large at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$2に$1ビット連の数が大きすぎます (回数: $3, ランダムサンプル中の確率: $4%)
+number of ([0-9]+)-bit runs is too large at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$2に$1ビット連の数が大きすぎます (回数: $3, ランダムサンプル中の確率: 0.0001%未満)
+number of ([0-9]+)-bit runs is too small at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$2に$1ビット連の数が小さすぎます (回数: $3, ランダムサンプル中の確率: $4%)
+number of ([0-9]+)-bit runs is too small at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$2に$1ビット連の数が小さすぎます (回数: $3, ランダムサンプル中の確率: 0.0001%未満)
 Number of retries on network failure:	ネットワークエラー時のリトライ回数:
 Number of threads:	スレッド数:
 Number range	数値範囲
@@ -827,6 +989,7 @@ Open existing project	既存のプロジェクトを開く
 Open redirection \\(DOM-based\\)( \\[[0-9]+\\])?	オープンリダイレクト(DOMベース)$1
 Open redirection	オープンリダイレクト
 Open saved attack	保存した攻撃を開く
+Open sessions tracer	セッショントレーサーを開く
 Open-ended responses:	開始からレスポンスが終了するまで:
 Operate on:	処理対象:
 Operator	動作
@@ -837,7 +1000,7 @@ Original response	元レスポンス
 OS command injection	OSコマンドインジェクション
 Other binary	その他バイナリ
 Other text	その他テキスト
-Out-of-Scope Requests	スコープ外のリクエスト
+Out-of-Scope Requests	スコープ外リクエスト
 Output to system console	システムコンソールに出力
 Output	出力
 Overall result	全体の結果
@@ -900,7 +1063,7 @@ Payload Options \\[Simple list\\]	ペイロードオプション[単純リスト
 Payload Options \\[Username generator\\]	ペイロードオプション[ユーザ名生成]
 Payload Options	ペイロードオプション
 Payload Positions	ペイロードポジション
-Payload Processing	ペイロード処理中
+Payload Processing	ペイロード処理
 Payload type:	ペイロードタイプ:
 Payloads	ペイロード
 payloads	個ペイロード生成する
@@ -918,6 +1081,7 @@ Please enter the details of the extension, and how you would like to handle stan
 Please enter the URL you would like to scan from. Note that this task will perform active scanning on the specified URL and on all items beneath it in its branch of the site map.	スキャンを開始するURLを入力してください。ここで指定したURLの、全てのサイトマップ上のブランチに対してアクティブスキャンが実行されることに注意してください。
 Please enter the URL you would like to spider from.	自動巡回を開始するURLを入力してください。
 Please enter your new license key.	新規ライセンスキーを入力してください。
+Please read the following licence agreement carefully, and indicate whether you accept its terms.	次の使用許諾契約書を読み、条項に同意するかどうかを指定してください。
 Please select a directory	ディレクトリを選択してください
 Please select a file	ファイルを選択してください
 Please select a project file	プロジェクトファイルを選択してください
@@ -931,6 +1095,7 @@ Please select the Jython standalone JAR file	JythonのスタンドアロンJAR�
 Please supply a prefix	プレフィックスを指定してください
 Please supply a regex	正規表現を指定してください
 Please supply a suffix	サフィックスを指定してください
+Please visit https://portswigger.net/burp/freedownload/ to download the latest version.	https://portswigger.net/burp/freedownload/ にアクセスして、最新バージョンをダウンロードしてください。
 Please wait ...	しばらくお待ちください ...
 Poll over unencrypted HTTP	暗号化されていないHTTPでポーリングする
 Polling location \\(optional\\):	ポーリング場所(オプション):
@@ -938,6 +1103,8 @@ Port(:?)	ポート$1
 Position:	位置:
 Positions	ポジション
 Predefined Payload Lists	定義済みペイロードリスト
+Prefix:	プレフィックス:
+Preset Payload Lists	定義済みペイロードリスト
 Preset schemes:	定義済み形式:
 Private key in DER format	DER形式の秘密鍵
 Process cookies in redirections	リダイレクト中にcookieを処理する
@@ -962,6 +1129,7 @@ Queued Tasks	キューされたタスク
 Random	ランダム
 Rating(:?)	レーティング$1
 Ready	準備完了
+Reattach (.*)	$1を再結合
 Recognize automatically based on message headers	メッセージヘッダーから自動的に認識
 Re-colorize the display based on the current payload markers	現在のペイロードマーカで表示を再色分け
 Record a new macro	新規マクロを記録
@@ -1043,7 +1211,7 @@ Requires Burp Suite Professional	Burp Suiteプロフェッショナルが必要�
 Response body	レスポンスボディ
 Response from (.*)	レスポンス $1
 Response headers	レスポンスヘッダ
-Response Modification	レスポンス修正
+Response Modification	レスポンス操作
 Response to this request	このリクエストのレスポンス
 Responses queued for analysis:	解析用にキューされたレスポンス:
 Responses?	レスポンス
@@ -1070,22 +1238,86 @@ Run macro:	マクロを実行:
 Running	起動中
 Sample size: ([0-9]+).	サンプルサイズ: $1 
 Sample	サンプル
+Save active scanning engineoptions	アクティブスキャンエンジンオプションを保存する
+Save active scanning optimizationoptions	アクティブスキャン最適化オプションを保存する
+Save application login options	アプリケーションログインオプションを保存する
 Save attack config	攻撃設定を保存
+Save attack insertion points　options	攻撃挿入ポイントオプションを保存する
+Save attack results options	攻撃結果オプションを保存する
+Save Burp Collaborator server options	Burp Collaboratorサーバオプションを保存する
+Save Burp Extender options	Burp Extenderオプションを保存する
+Save character set options	文字セットオプションを保存する
+Save client SSL certificates options	クライアントSSL証明書オプションを保存する
 Save completed	保存完了
+Save cookie jar options	cookie jar オプションを保存する
+Save crawler options	クローラオプションを保存する
 Save encrypted using master password(:?)	マスターパスワードで暗号化して保存$1
 Save entire history	エントリー履歴を保存
+Save extract grep options	抽出grepオプションを保存する
+Save form submission options	フォーム送信オプションを保存する
+Save hostname resolution options	ホスト名解決オプションを保存する
+Save hotkey options	ホットキーオプションを保存する
+Save HTML rendering options	HTMLレンダリングオプションを保存する
+Save HTTP message display options	HTTPメッセージ表示オプションを保存する
 Save in clear text	平文で保存
 Save in-scope items only	スコープ内のアイテムのみ保存
+Save intercept client requests options	クライアントリクエストのインターセプトオプションを保存する
+Save intercept server responses options	サーバレスポンスのインターセプトオプションを保存する
+Save intercept WebSockets messages options	WebSocketメッセージのインターセプトオプションを保存する
 Save interface files	インタフェースファイルを保存
 Save items?	アイテムを保存
+Save Java environment options	Java環境オプションを保存する
 Save Javadoc files	Javadocファイルを保存
+Save live active scanning　options	ライブアクティブスキャンオプションを保存する
+Save live capture options	ライブキャプチャオプションを保存する
+Save live passive scanning　options	ライブパッシブスキャンオプションを保存する
+Save logging options	ロギングオプションを保存する
+Save macros options	マクロオプションを保存する
+Save match and replace options	検索と置換オプションを保存する
+Save match grep options	マッチgrep　オプションを保存する
+Save miscellaneous proxy　options	その他プロキシオプションを保存する
+Save miscellaneous proxy settings options	その他プロキシ設定オプションを保存する
 Save options	オプション保存
+Save out-of-scope requests options	スコープ外リクエストオプションを保存する
+Save out-of-scope requests options	スコープ外リクエストオプションを保存する
+Save passive scanning areas options	パッシブスキャン対象オプションを保存する
+Save passive spidering options	パッシブスパイダリングオプションを保存する
+Save paySaves grep options	ペイロードgrepオプションを保存する
+Save performance feedback options	パフォーマンスフィードバックオプションを保存する
+Save platform authentication options	プラットフォーム認証オプションを保存する
 Save project options	プロジェクトオプション保存
+Save proxy listeners options	プロキシリスナーオプションを保存する
+Save Python environment options	Python環境オプションを保存する
+Save redirections options	リダイレクトオプションを保存する
+Save request engine options	リクエストエンジンオプションを保存する
+Save request headers options	リクエストヘッダオプションを保存する
+Save request headers options	リクエストヘッダオプションを保存する
+Save response modification options	レスポンス操作オプションを保存する
+Save Ruby environment options	Ruby環境オプションを保存する
+Save scheduled tasks　options	スケジュールタスクオプションを保存する
 Save selected items	選択したアイテムを保存
+Save server SSL certificates options	サーバSSL証明書オプションを保存する
+Save session handling rules options	セッションハンドリングルールオプションを保存する
+Save SOCKS proxy options	SOCKSプロキシオプションを保存する
+Save spider engine options	Spiderエンジンオプションを保存する
+Save spider scope options	Spiderスコープオプションを保存する
+Save SSL negotiation options	SSLネゴシエーションオプションを保存する
+Save SSL negotiation workarounds options	SSL ネゴシエーション回避策オプションを保存する
+Save SSL passthrough options	SSLパススルーオプションを保存する
 Save state wizard	ステート保存ウィザード
 Save state	ステート保存
+Save static code analysis options	静的コード解析オプションを保存する
+Save status 100 responses options	ステータス100レスポンスオプションを保存する
+Save streaming responses options	ストリーミングレスポンスオプションを保存する
+Save target scope options	ターゲットスコープオプションを保存する
+Save temporary files location options	一時ファイル場所オプションを保存する
+Save timeouts options	タイムアウトオプションを保存する
 Save to file(:?)	ファイルに保存$1
+Save token analysis options	トークン解析オプションを保存する
+Save token handling options	トークンハンドリングオプションを保存する
 Save tokens	トークンを保存
+Save upstream proxy servers options	上位プロキシサーバオプションを保存する
+Save user interface options	ユーザインタフェースオプションを保存する
 Save user options	ユーザオプション保存
 Saving: ([0-9]+)% complete	保存中: $1%完了
 Scan accuracy:	スキャン精度:
@@ -1103,6 +1335,7 @@ Search options	検索オプション
 Search responses for payload strings	ペイロード文字列のレスポンスを探す
 Search	検索
 Searching:(.*)	検索中:$1
+Select a directory containing custom payload lists	カスタムペイロードリストのあるディレクトリを選択してください
 Select all	全て選択
 Select bits to flip:	反転するビットを選択:
 Select directory ...	ディレクトリ選択 ...
@@ -1117,6 +1350,7 @@ Select macro:	マクロを選択:
 Select none	選択を解除
 Select processor:	拡張選択:
 Select the "extract grep" item from which to derive payloads:	ペイロードを取得する"抽出grep"アイテムをを選択してください:
+Select the certificate file	証明書ファイルを選択
 Select the configuration that you would like to load for this project.	このプロジェクトに読み込む設定を選択してください。
 Select the file containing the CA certificate to import.	インポートするCA証明書を含むファイルを選択してください。
 Select the file containing the keystore to import, and the password for the keystore.	インポートするキーストアを含むファイルを選択し、キーストアのパスワードを入力してください。
@@ -1193,6 +1427,7 @@ Site map	サイトマップ
 Size	サイズ
 Skip all tests for these parameters:	これらのパラメータのテストを全てスキップする:
 Skip server-side injection tests for these parameters:	これらのパラメータに対するサーバ側インジェクションテストをスキップする:
+Smart decode	自動デコード
 SOCKS proxy host:	SOCKSプロキシホスト:
 SOCKS proxy port:	SOCKSプロキシポート:
 SOCKS Proxy	SOCKSプロキシ
@@ -1243,7 +1478,7 @@ Start time:	開始時間
 Start	先頭
 Starting project, please wait ...	プロジェクトを開始しています、しばらくお待ちください ...
 Static Code Analysis	静的コード解析
-Status 100 Responses	Status 100レスポンス
+Status 100 Responses	ステータス100レスポンス
 Status	ステータス
 step	増分
 Step:	増分:
@@ -1264,12 +1499,14 @@ Strip Proxy-\\* headers in incoming requests	受信リクエストから Proxy-*
 Submit anonymous feedback about Burp's performance	Burpのパフォーマンスを匿名で送信する
 Submit rating	レーティング送信
 Success	成功
+Suffix:	サフィックス:
 Suite options	Suiteオプション
 Summary	サマリ
 Support Center	サポートセンター
-Support invisible proxying (enable only if needed)	透過プロキシをサポートする(必要な場合のみ有効にしてください)
+Support invisible proxying \\(enable only if needed\\)	透過プロキシをサポートする(必要な場合のみ有効にしてください)
 Suppress Burp error messages in browser	ブラウザへのBurpエラーメッセージを抑制する
 Tabs	タブ
+Take full ownership of the project	プロジェクトの完全な所有権を取得する
 Target Scope	ターゲットスコープ
 Target: (http.*)	対象: $1
 Target: Not specified	対象: 指定されていません
@@ -1284,6 +1521,7 @@ The analysis is based on a sample of ([0-9]+) tokens?. Based on the sample size,
 The analysis is based on a sample of ([0-9]+) tokens?. Based on the sample size, the reliability of the results is: reasonable.	解析は$1トークンのサンプルに基づきます。サンプルサイズに基づくと、信頼性は次の通りです: 適正。
 The analysis is based on a sample of ([0-9]+) tokens?. Based on the sample size, the reliability of the results is: very poor.	解析は$1トークンのサンプルに基づきます。サンプルサイズに基づくと、信頼性は次の通りです: 非常に貧弱。
 The BApp Store contains Burp extensions that have been written by users of Burp Suite, to extend Burp's capabilities.	BAppストアには、Burp Suiteユーザによって書かれた拡張があり、Burpの機能を拡張できます。
+The capture server hostname ([-_.0-9a-z]*) could not be resolved to an IP address. Ensure that an appropriate DNS entry exists for the server. No connections to the polling server at ([-_.0-9a-z]*) could be opened. The collaborator will not work in this configuration. 	キャプチャサーバのホスト名 $1 をIPアドレスに名前解決できません。サーバの適切なDNSエントリが存在しているか確認してください。ポーリングサーバ $2 への接続ができません。Collaboratorはこの設定では動作しません。
 The certificate was loaded successfully.	証明書を正常に読み込みました。
 The certificate was successfully exported.	証明書を正常にエクスポートしました。
 The chart indicates the degree of confidence in the randomness of the sample at each bit position. The significance level at each position is the probability of the observed bit-level results occurring, assuming that the sample is randomly generated.	グラフは、各ビット位置におけるサンプルの乱数性の信頼度を示します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合の、観察されたビットレベルの発生確率です。
@@ -1300,6 +1538,7 @@ The overall quality of randomness within the sample is estimated to be: excellen
 The overall quality of randomness within the sample is estimated to be: extremely poor.	サンプル内の乱数の質の推測は次の通りです: 非常に貧弱。
 The overall quality of randomness within the sample is estimated to be: poor.	サンプル内の乱数の質の推測は次の通りです: 貧弱。
 The project file was successfully repaired. You can now open the repaired project.	プロジェクトファイルは正常に修復されました。修復したプロジェクトを開けます。
+The request has not yet been issued - click "Fetch response" to issue it	リクエストはまだ発行されていません - "レスポンス取得"をクリックして発行してください
 The response from the current request, issued prior to the macro	マクロの前に発行された、現在のリクエストのレスポンス
 The rule is not in-scope for any URLs.	このルールは全てのURLでスコープ外です。
 The selected project file appears to be corrupt and cannot be opened.	選択したプロジェクトは破損していて開けません。
@@ -1385,7 +1624,7 @@ This payload type lets you configure a list of strings and apply various case mo
 This payload type lets you configure a list of strings and apply various character substitutions to each item.	文字列のリストを設定し、各アイテムに様々な文字置換を適用します。
 This payload type lets you configure a simple list of strings that are used as payloads.	ペイロードに使用する文字列の単純なリストを設定します。
 This payload type lets you configure multiple lists of items, and generate payloads using all permutations of items in the lists.	複数のアイテムリストを設定し、リスト内の項目全ての組み合わせのペイロードを生成します。
-This payload type lets you extract each payload from the response to the previous request in the attack. It is useful in some situations where you need to work recursively to extract useful data or deliver an exploit. Extract grep items can be defined in the Options tab.	前の攻撃リクエストに対するレスポンスから、ペイロードを抽出します。有用なデータの抽出や攻撃データの送信を再帰的に行いたい場合に有用です。抽出grep項目は、"オプション"タブで定義できます。
+This payload type lets you extract each payload from the response to the previous request in the attack. It is useful in some situations where you need to work recursively to extract useful data or deliver an exploit. Extract grep items can be defined in the Options tab.	前の攻撃リクエストに対するレスポンスから、ペイロードを抽出します。有用なデータの抽出や攻撃データの送信を再帰的に行いたい場合に有用です。抽出grepアイテムは、"オプション"タブで定義できます。
 This payload type operates on a string input and modifies the value of each character position in turn. It is useful to quickly test which parts of a long string have an effect on the application's processing.	入力文字列を操作し、各位置の文字を順番に変更します。長い文字列のどの部分がアプリケーションの処理に影響を与えるをすばやくテストするために便利です。
 This payload type operates on an input and modifies the value of each bit position in turn. It can sometimes be used to meaningfully modify the decrypted values of CBC-encrypted data, and potentially interfere with application logic.	入力文字列を操作し、各位置のビットを順番に変更します。CBC暗号化されたデータに意味のある変更を行う場合や、アプリケーションロジックの潜在的な妨害に使用できる場合があります。
 This project file was created by a different installation of Burp. You need to decide whether to take full ownership of the project.	このプロジェクトファイルは他のBurpで作成されました。プロジェクトの完全な所有権を選択するか決定する必要があります。
@@ -1433,6 +1672,10 @@ Token length: ([0-9]+).	トークン長: $1
 Token Location Within Response	レスポンス中のトークンの場所
 Tokens loaded:	読み込んだトークン
 Tolerate URL mismatch when matching parameters \\(use for URL-agnostic CRSF tokens\\)	パラメータマッチ時にURLの不一致を許容する(URLに依存しないCSRFトークンに使用)
+too few ones at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1に1が少なすぎます (回数: $2, ランダムサンプル中の確率: $3%)
+too few ones at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1に1が少なすぎます (回数: $2, ランダムサンプル中の確率: 0.0001%未満)
+too many ones at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1に1が多すぎます (回数: $2, ランダムサンプル中の確率: $3%)
+too many ones at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1に1が多すぎます (回数: $2, ランダムサンプル中の確率: 0.0001%未満)
 Tool	ツール
 Tools	ツール
 Top/bottom split	上下分割
@@ -1481,7 +1724,7 @@ URL-encode as you type	入力をURLエンコード
 URL-encode key characters	特殊文字をURLエンコード
 URL-encode these characters:	これらの文字をURLエンコードする:
 Usable Bits of Entropy	使用可能なエントロピービット
-Use a custom certificate (PKCS#12):	カスタム証明書を使用する(PKCS#12):
+Use a custom certificate \\(PKCS#12\\):	カスタム証明書を使用する(PKCS#12):
 Use a private Collaborator server:	プライベートCollaboratorサーバを使用する:
 Use a self-signed certificate	自己署名の証明書を使用する
 Use a specific character set:	指定した文字セットを使用する:
