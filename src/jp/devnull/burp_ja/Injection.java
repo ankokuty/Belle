@@ -63,9 +63,10 @@ public class Injection {
 
 				for (Translate t : translates) {
 					command.append(String.format("$%d=$%d.replaceAll(\"(?m)^"
-						+ t.en.replace("\"", "\\\"").replace("%","%%")+ "$\",\""
-						+ t.ja.replace("\"", "\\\"").replace("%","%%") + "\");", n, n));
+							+ t.en.replace("\"", "\\\"").replace("%","%%")+ "$\",\""
+							+ t.ja.replace("\"", "\\\"").replace("%","%%") + "\");", n, n));
 				}
+				command.append(String.format("$%d=$%d.replace(\"\\[Pro version only\\]\",\"[プロ版のみ]\");", n, n));
 				/*
 				// 翻訳されていない文を標準エラーに出す。
 				command.append(String.format(
