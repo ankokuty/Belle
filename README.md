@@ -29,24 +29,28 @@ BurpSuiteFree.vmoptions か BurpSuitePro.vmoptions ファイルをエディタ�
 
 burp_ja.jar と burp_ja.txt　の２つのファイルをダウンロードし、Burpのjarファイル(`burpsuite_free_v1.7.06.jar`等)と同じフォルダにコピーします。
 
-Burpのjarファイルのあるフォルダに移動し、(-jar オプションより前に) -javaagenコマンドラインオプションを指定して起動します。
+Burpのjarファイルがあるフォルダに移動し、(-jar オプションより前に) -javaagenコマンドラインオプションを指定して起動します。
 
 ```
 java -javaagent:burp_ja.jar -Xmx1024m -jar burpsuite_free_v1.7.06.jar
 ```
 
+### その他
+
+本ツールは、カレントディレクトリの burp\_ja.txt を読み込みます。Windowsのショートカットなどから起動する場合は burp\_ja.txtがあるフォルダを作業フォルダーに指定、シェルスクリプトやバッチファイルなどから起動する場合はカレントディレクトリを変更した上でjavaコマンドを実行してください。
+
 ## 注意事項
 
-このツールは、私個人が勝手に開発したもので、PortSwigger社は一切関係ありません。日本語訳の間違いはもちろんのこと、不具合等についてPortSwiggerに問い合わせないようお願いします。
+このツールは、私個人が勝手に開発したもので、PortSwigger社は一切関係ありません。日本語訳の間違いはもちろんのこと、本ツールを使用したことによる不具合等についてPortSwiggerに問い合わせないようお願いします。
 
-このツールは内部でJava実行環境のバイトコードを変更します。Oracle社のJava実行環境で使用した場合[バイナリ・コードライセンス](http://www.oracle.com/technetwork/java/javase/terms/license/index.html)に違反する可能性があります。ライセンスを確認の上、[OpenJDK](http://openjdk.java.net/)等その他のJava実行環境での実行を推奨します。
+このツールは内部でJava実行環境のバイトコードを変更します。Oracle社のJava実行環境で使用した場合、[バイナリ・コードライセンス](http://www.oracle.com/technetwork/java/javase/terms/license/index.html)に違反する可能性があります。ライセンスを確認の上、[OpenJDK](http://openjdk.java.net/)等その他のJava実行環境での実行を推奨します。
 
-このツールは単純に、辞書ファイルで指定した文字列にマッチする文字列を、対応する日本語訳に変換しています。
+このツールは単純に、辞書ファイルで指定した文字列にマッチする文字列を見つけると、対応する日本語訳に変換しています。
 影響範囲をGUI表示部分に限定しているつもりですが、送受信したHTTPメッセージも意図せず変換してしまっている可能性があります。
 Webアプリケーションテストへの影響を確認の上、自己責任で使用してください。
 
 PortSwigger社から英語メッセージ一覧をもらったわけではなく、使用中に英語表記であることを目視した箇所を適宜翻訳しているため、おそらく網羅されていません。
-未翻訳の箇所を見つけた場合は、ご連絡ください。
+未翻訳の箇所や間違いを見つけた場合は、ご連絡ください。
 
 ## References
 
@@ -56,4 +60,4 @@ PortSwigger社から英語メッセージ一覧をもらったわけではなく
 
 ## Author
 
-[@_bun_](https://twitter.com/_bun_)
+[@\_bun\_](https://twitter.com/_bun_)
