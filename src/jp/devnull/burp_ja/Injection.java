@@ -59,7 +59,8 @@ public class Injection {
 						"if (("
 						+ "javax.swing.table.DefaultTableCellRenderer.class.isAssignableFrom($0.getClass())"
 						+ "  && !sun.swing.table.DefaultTableCellHeaderRenderer.class.isAssignableFrom($0.getClass())"
-						+ ") || javax.swing.DefaultListCellRenderer.class.isAssignableFrom($0.getClass())) {} else {");
+						+ ") || javax.swing.DefaultListCellRenderer.class.isAssignableFrom($0.getClass())"
+						+ "  || $0.getClass().getName().equals(\"javax.swing.plaf.synth.SynthComboBoxUI$SynthComboBoxRenderer\")) {} else {");
 
 				for (Translate t : translates) {
 					command.append(String.format("$%d=$%d.replaceAll(\"(?m)^"
