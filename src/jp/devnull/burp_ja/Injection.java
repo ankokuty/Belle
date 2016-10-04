@@ -33,7 +33,7 @@ public class Injection {
 		}
 	}
 
-	public static void premain(String agentArgs, Instrumentation instrumentation) throws Exception{
+	public static void premain(String agentArgs, Instrumentation instrumentation) throws Exception {
 		// ファイルから翻訳辞書を読み込む
 		translates = new ArrayList<Translate>();
 		BufferedReader reader = new BufferedReader(
@@ -49,39 +49,47 @@ public class Injection {
 		reader.close();
 
 		classPool = ClassPool.getDefault();
+
 		instrumentation.addTransformer(new ClassFileTransformer() {
 			String makeCommand(int n) {
 				StringBuilder command = new StringBuilder();
 				command.append("{");
-				command.append(String.format("if($%d!=null && $%d.length()>0){", n, n));
 				// テーブルの中身など一部は翻訳しない
-				command.append(
-						"if (("
+				command.append("if (("
 						+ "javax.swing.table.DefaultTableCellRenderer.class.isAssignableFrom($0.getClass())"
 						+ "  && !sun.swing.table.DefaultTableCellHeaderRenderer.class.isAssignableFrom($0.getClass())"
 						+ ") || javax.swing.DefaultListCellRenderer.class.isAssignableFrom($0.getClass())"
 						+ "  || $0.getClass().getName().equals(\"javax.swing.plaf.synth.SynthComboBoxUI$SynthComboBoxRenderer\")) {} else {");
+				command.append(String.format("$%d=java.awt.Component.burpTranslate($%d);", n, n));
+				command.append("}}");
+				return command.toString();
+			}
 
+			String makeTranslateMethod() {
+				StringBuilder command = new StringBuilder();
+				command.append("public static String burpTranslate(String str){");
+				command.append("if(str!=null && str.length()>0){");
 				for (Translate t : translates) {
-					command.append(String.format("$%d=$%d.replaceAll(\"(?m)^"
-							+ t.en.replace("\"", "\\\"").replace("%","%%")+ "$\",\""
-							+ t.ja.replace("\"", "\\\"").replace("%","%%") + "\");", n, n));
+					command.append(
+							"str=str.replaceAll(\"(?m)^" + t.en.replace("\"", "\\\"")
+									+ "$\",\"" + t.ja.replace("\"", "\\\"") + "\");");
 				}
-				command.append(String.format("$%d=$%d.replace(\"\\[Pro version only\\]\",\"[プロ版のみ]\");", n, n));
+				command.append("str=str.replace(\"\\[Pro version only\\]\",\"[プロ版のみ]\");");
 				// 翻訳されていない文を標準エラーに出す。
-				if(agentArgs!=null && agentArgs.equals("debug")){
-					command.append(String.format(
-						"if("
-						+ "($%d.getBytes().length) == $%d.length()" // 翻訳されていないもののみ
-						+ " && !$%d.matches(\"https?://.+\")"       // URLを無視
-						+ " && !$%d.matches(\"\\\\$?[0-9,.]+\")"    // 数値を無視
-						+ " && !$%d.matches(\"([0-9]+h )?([0-9]+m )?[0-9]+s\")"    // 時間を無視
-						+ " && !$%d.matches(\"burp\\..*\")"         // burp.から始まるもの(クラス名？)を無視
-						+ " && $%d.length()>1"                      // １文字を無視
-						+ " && !$%d.matches(\"[A-Z]+s?\")"          // 大文字のみの単語を無視
-						+ "){System.err.println($%d);}", n,n,n,n,n,n,n,n,n));
+				if (agentArgs != null && agentArgs.equals("debug")) {
+					command.append("if(" + "(str.getBytes().length) == str.length()" // 翻訳されていないもののみ
+							+ " && !str.matches(\"https?://.+\")"                    // URLを無視
+							+ " && !str.matches(\"\\\\$?[0-9,.]+\")"                 // 数値を無視
+							+ " && !str.matches(\"([0-9]+h )?([0-9]+m )?[0-9]+s\")"  // 時間を無視
+							+ " && !str.matches(\"burp\\..*\")"                      // burp.から始まるもの(クラス名？)を無視
+							+ " && !str.matches(\"lbl.*\")"                          // lblから始まるもの(ラベル名？)を無視
+							+ " && str.length()>1"                                   // １文字を無視
+							+ " && !str.matches(\"[A-Z]+s?\")"                       // 大文字のみの単語を無視
+							+ "){System.err.println(str);}");
 				}
-				command.append("}}}");
+				command.append("}");// if(str!=null && str.length()>0){
+				command.append("return str;");
+				command.append("}");
 				return command.toString();
 			}
 
@@ -89,7 +97,13 @@ public class Injection {
 					ProtectionDomain protectionDomain, byte[] classfileBuffer)
 					throws IllegalClassFormatException {
 				try {
-					if (className.equals("java/awt/Frame") || className.equals("java/awt/Dialog")) {
+					// java.awt.Componentに訳語変換メソッドを追加
+					if (className.equals("java/awt/Component")) {
+						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
+						CtMethod method = CtMethod.make(makeTranslateMethod(), ctClass);
+						ctClass.addMethod(method);
+						return ctClass.toBytecode();
+					} else if (className.equals("java/awt/Frame") || className.equals("java/awt/Dialog")) {
 						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
 						CtMethod ctMethod = ctClass.getDeclaredMethod("setTitle");
 						ctMethod.insertBefore(makeCommand(1));
