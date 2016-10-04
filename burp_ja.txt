@@ -57,11 +57,12 @@ Actively scan defined insertion points	定義した挿入ポイントをアク�
 Actively scan selected items	選択したアイテムをアクティブスキャン
 Actively scan this branch	このブランチをアクティブスキャン
 Actively scan this host	このホストをアクティブスキャン
+Add "skip parameter" rule	"スキップパラメータ"ルールを追加
 Add % prefix before each byte	各バイトの前に % を追加
 Add §	§追加
 Add a new client certificate	新規クライアント証明書を追加
 Add a new extract item	新規抽出アイテムを追加
-Add a new form field completion rule	新規フィールド挿入ルールを追加
+Add a new form field completion rule	新規フォームフィールド補完ルールを追加
 Add a new header	新規ヘッダを追加
 Add a new interception rule	新規インターセプションルールを追加
 Add a new item by pasting a URL	URLを貼り付けして新規アイテムを追加
@@ -76,10 +77,15 @@ Add a new upstream proxy rule	新規上位プロキシルールを追加
 Add comment	コメントを追加
 Add discovered content to suite site map	発見したコンテンツをサイトマップに追加
 Add entries here to override your computer's DNS resolution.	コンピュータのDNS名前解決を上書きするにはここに追加してください。
+Add form field completion rule	フォームフィールド補完ルールを追加
 Add from list ...	リストから追加 ...
+Add match/replace rule	検索/置換ルールを追加
 Add payload processing rule	ペイロード処理ルールを追加
 Add platform authentication credentials	プラットフォーム認証のクレデンシャルを追加
 Add random variations to throttle	ランダムなウェイトを追加する
+Add request header	リクエストヘッダ追加
+Add request interception rule	リクエストインターセプトルールを追加
+Add response interception rule	レスポンスインターセプトルールを追加
 Add SSL passthrough target	SSLパススルーする対象を追加
 Add the specified item	指定したアイテムを追加
 Add to scope	スコープに追加
@@ -560,8 +566,14 @@ Duplicate	複製
 Dynamic update	動的に更新
 Each Burp project has a unique identifier that is used to track any Burp Collaborator interactions that are associated with the project. You need to decide whether to save this identifier in your state file.	プロジェクトに紐付くBurp Collaboratorとの通信を識別するための一意な識別子を、各Burpプロジェクトは持っています。この識別子をステートファイルに保存するか決定する必要があります。
 Each installation of Burp generates its own CA certificate that Proxy listeners can use when negotiating SSL connections. You can import or export this certificate for use in other tools or another installation of Burp.	Burpのインストールごとに、プロキシリスナーがSSL接続を確立する際に使用する独自のCA証明書を生成します。他のツールや他のBurp用に、この証明書のインポートやエクスポートができます。
+Edit "skip parameter" rule	"スキップパラメータ"ルールを編集
+Edit form field completion rule	フォームフィールド補完ルールを編集
 Edit hotkeys	ホットキー編集
 Edit list	リスト編集
+Edit match/replace rule	検索/置換ルールを編集
+Edit request header	リクエストヘッダ編集
+Edit request interception rule	リクエストインターセプトルールを編集
+Edit response interception rule	レスポンスインターセプトルールを編集
 Edit target	対象を編集
 Edit the selected header	選択したヘッダを編集
 Edit the selected item	選択したアイテムを編集
@@ -591,9 +603,11 @@ Enter a new item	新規アイテムを入力
 Enter license key	ライセンスキーを入力してください
 Enter regex or leave blank	正規表現で入力するか、空白のまま
 Enter regex, IP range or leave blank	正規表現かIPレンジを入力するか、空白のまま
+Enter the details of the parameter.	パラメータの詳細を入力してください。
 Enter the details of the payload processing rule.	ペイロード処理ルールの詳細を入力してください。]
 Enter the details of the upstream proxy rule. You can use wildcards to specify destination hosts \\(\\* matches zero or more characters, \\? matches any character except a dot\\). Leave the proxy host blank to connect directly for the specified destination host.	上位プロキシの詳細を入力してください。宛先ホストの指定にワイルドカード(*は０文字以上の文字、?はドット以外の任意の文字にマッチ)を使用できます。指定したホストに直接接続させるには、プロキシホストを空白のままにしてください。
 Enter the details of when the task should run. The task can be scheduled to run once at a specific time, or to repeat at a defined interval.	タスクスケジュールを実行する詳細時間を入力してください。タスクは、指定した時間に１度だけ実行するか、指定した間隔で繰り返し実行できます。
+Enter the full string to be submitted as the custom request header.	カスタムリクエストヘッダとして送信する全ての文字列を入力してください。
 Enter the hostname and IP address. Burp will use this setting instead of the DNS resolution provided by your computer.	ホスト名とIPアドレスを入力してください。Burpは、コンピュータによるDNS名前解決の代わりにこの設定を使います。
 Enter the master password to encrypt stored passwords. A strong password is recommended.	パスワードストアを暗号化するマスターパスワードを入力してください。強固なパスワードを推奨します。
 Enter the platform credentials for the specified destination host.	宛先ホストのプラットフォームクレデンシャルを入力してください。
@@ -641,10 +655,11 @@ Failed to verify BApp file	BAppファイルの検証に失敗しました
 False positive	誤検知
 Feedback only contains technical information about Burp's internal functioning, and does not identify you in any way. If you do report a bug via email, you can help us diagnose any problems that your instance of Burp has encountered by including your debug ID.	フィードバックにはBurpの内部機能に関する技術情報のみが含まれ、あなたの識別はできません。バグを電子メールで報告する場合、あなたのデバッグIDを含めると、発生した問題の診断の助けになります。
 Fetch response	レスポンス取得
-Field name	フィールド名
-Field value	フィールド値
-File \\(PKCS#12\\)	ファイル(PKCS#12)
+Field name cannot be blank	フィールド名は空白にできません
+Field name(:?)	フィールド名$1
+Field value(:?)	フィールド値$1
 File [Ee]xtensions?	ファイル拡張子
+File \\(PKCS#12\\)	ファイル(PKCS#12)
 File path manipulation( \\[[0-9]+\\])?	ファイルパスマニピュレーション$1
 File path traversal / manipulation	ファイルパストラバーサル/操作
 File path traversal( \\[[0-9]+\\])?	ファイルパストラバーサル$1
@@ -715,7 +730,9 @@ Go back	戻る
 Go	送信
 Handle as ordinary forms	通常のフォームとして処理
 Hardware token or smart card \\(PKCS#11\\)	ハードウェアトークンやスマートカード(PKCS#11)
+Header cannot be blank	ヘッダは空白にできません
 Header manipulation	ヘッダ操作
+Header:	ヘッダ:
 Headers	ヘッダ
 Help improve Burp by submitting anonymous feedback about its performance	Burp改善のためパフォーマンスに関するフィードバックを匿名で送信する
 Help	ヘルプ
@@ -866,7 +883,9 @@ Links	リンク
 Linux installer	Linuxインストーラ
 List items for position ([0-9]+)( \\([0-9]+\\))?	ポジション$1のリストアイテム$2
 Listener port	リスナーポート
+Literal string or regex field name	リテラル文字列または正規表現のフィールド名
 Literal string to replace - leave blank to remove a matched header	置換する文字列 - 一致したヘッダを削除する場合は空白のまま
+Literal string to use as field value	リテラル文字列または正規表現のフィールド値
 Literal string	リテラル文字列
 Literal value	表記通り
 Live Active Scanning	ライブアクティブスキャン
@@ -989,7 +1008,9 @@ Match against pre-URL-encoded payloads	URLエンコード前のペイロード�
 Match and Replace	検索と置換
 Match character:	検索文字:
 Match condition:	検索条件:
+Match expression:	検索正規表現
 Match indicates:	一致時の判断:
+Match item:	検索アイテム
 Match regex:	検索正規表現:
 Match relationship:	検索状態:
 Match type	対象
@@ -1040,6 +1061,7 @@ Move to the previous match	前の一致箇所に移動
 MSSQL-specific checks	MSSQL固有チェック
 Multiple content types specified( \\[[0-9]+\\])?	複数のコンテントタイプ指定$1
 MySQL-specific checks	MySQL固有チェック
+Name or value:	名前または値:
 Name(:?)	名前$1
 Names observed in use on target site	対象サイトで使用されている名前
 Negative match	一致しないものを検索
@@ -1491,6 +1513,7 @@ Select the location in the response where the token appears.	レスポンスの�
 Select the output file to which Burp's state will be saved.	Burpのステートファイルを保存する出力ファイルを選択してください。
 Select the tools that this rule will be applied to.	ルールを適用するツールを選択してください。
 Select the type of task you want to run.	実行したいタスクのタイプを選択してください。
+Select to use regular expression matching. Deselect to make matches literal.	選択すると正規表現として検索。選択解除すると文字列として検索。
 Selected file is a Burp state file	選択されたファイルはBurpのステートファイルです
 Selected generator:	選択されたジェネレータ:
 Send requests here from other tools to configure a live capture. Select the request to use, configure the other options below, then click "Start live capture".	他のツールからライブキャプチャの設定にリクエストを送ります。使用するリクエストを選択し、その他のオプションを設定し、"ライブキャプチャの開始"をクリックしてください。
@@ -1567,6 +1590,7 @@ Source	ソース
 Specific address:	指定したアドレス:
 Specific string:	指定文字列:
 Specify a regular expression to match each URL component, or leave blank to match any item. An IP range can be specified instead of a hostname.	各URLに一致する正規表現を指定するか、任意の項目に一致するよう空白のままにしてください。ホスト名の代わりにIPレンジを指定できます。
+Specify the details of the form field completion rule.	フォームフィールド補完ルールの詳細を指定してください。
 Specify the details of the interception rule.	インターセプトルールの詳細を指定してください。
 Specify the details of the match/replace rule.	検索と置換ルールの詳細を指定してください。
 Specify the details of the server to which the request will be sent.	リクエストを送信するサーバの詳細を指定してください。
