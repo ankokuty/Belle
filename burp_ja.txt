@@ -1,3 +1,4 @@
+ ... and ([,0-9]+) more.	 ... その他$1件
  Added 	 追加 
  Deleted 	 削除 
  Modified 	 変更 
@@ -7,10 +8,11 @@
 (.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?image and general binary content(.*)	$1$2$3$4$5画像, 一般的なバイナリコンテンツ非表示$2
 (.*)[Hh]iding empty folders(.*)	$1空のフォルダ非表示$2
 (.*)[Hh]iding not found items(.*)	$1存在しないアイテム非表示$2
-([,0-9]) highlights	$1件ハイライト
+([,0-9]) highlights?	$1件ハイライト
 ([,0-9]+) bytes \\| ([0-9]+) millis	$1バイト | $2ミリ秒
 ([,0-9]+) issues selected	$1問題点を選択
 ([,0-9]+) items selected	$1アイテムを選択
+([,0-9]+) submissions?	$1件送信
 ([0-9]+) \\(approx\\)	約$1
 ([0-9]+) anomalies were identified in this test:	このテストで$1個の異常が見つかりました: 
 ([0-9]+) bits failed the test. The following ([0-9]+) bits passed the test: ([0-9]+)(, [0-9]+)*. 	$1ビットが不合格。次の$2ビットは合格: $3$4
@@ -23,6 +25,9 @@
 ([0-9]+) results?	$1件の結果
 ([0-9]+) tokens were padded with (.*) at the end.	$1トークンは末尾を$2でパディングされました。
 ([0-9]+) tokens were padded with (.*) at the start.	$1トークンは先頭を$2でパディングされました。
+([0-9]+)h ([0-9]+)m ([0-9]+)s	$1時間 $2分 $3秒
+([0-9]+)m ([0-9]+)s	$1分 $2秒
+([0-9]+)s	$1秒
 ([1-9][0-9]?) match(es)?	$1件ヒット
 ([A-Z]+) request to (.*)	$2 への $1 リクエスト
 [Bb]ytes	バイト
@@ -122,6 +127,7 @@ Always	常に実行
 AMF string parameters \\(use with caution\\)	AMF文字列パラメータ(使用注意)
 AMF version 	AMF バージョン 
 AMF version	AMFバージョン
+An error occurred when starting a project with the selected options.	選択したオプションでプロジェクトを開始する際にエラーが発生しました。
 An error occurred while attempting to verify your license key. Please check that you are using the latest Java Runtime Environment from Oracle, or try re-entering your license key.	ライセンスキーの検証中にエラーが発生しました。Oracleから最新の Java実行環境を使用しているか確認するか、ライセンスキーを再入力してください。
 An update is available. Please select the build that you want to download.	アップデートが利用可能です。ダウンロードするビルドを選択してください。
 Analysis [Oo]ptions	解析オプション
@@ -136,88 +142,89 @@ APIs	API
 Append to base parameter value	元パラメータ値に追加
 Application Login	アプリケーションログイン
 Are you sure you want to cancel the download\\?	ダウンロードをキャンセルしてよろしいですか？
-Are you sure you want to cancel this rule\\?	このルールをキャンセルしてよろしいですか?
+Are you sure you want to cancel this rule\\?	このルールをキャンセルしてよろしいですか？
 Are you sure you want to cancel\\?	キャンセルしてよろしいですか？
 Are you sure you want to clear all events\\?	全てのイベントをクリアしてよろしいですか？
-Are you sure you want to clear the entire request template\\?	リクエストテンプレート全体をクリアしてよろしいですか?
-Are you sure you want to clear the list\\?	リストをクリアしてよろしいですか?
+Are you sure you want to clear the entire request template\\?	リクエストテンプレート全体をクリアしてよろしいですか？
+Are you sure you want to clear the list\\?	リストをクリアしてよろしいですか？
 Are you sure you want to close the tracer\\?	トレーサーを閉じてよろしいですか？
 Are you sure you want to close this window\\?	このウィンドウを閉じてよろしいですか？
 Are you sure you want to exit the wizard\\?	ウィザードを終了してよろしいですか？
-Are you sure you want to exit this content discovery session\\?	このコンテンツ探索セッションを終了してもよろしいですか?
+Are you sure you want to exit this content discovery session\\?	このコンテンツ探索セッションを終了してもよろしいですか？
 Are you sure you want to exit\\?	終了してよろしいですか？
-Are you sure you want to proceed\\?	続行してよろしいですか?
-Are you sure you want to regenerate Burp's CA certificate\\?	BurpのCA証明書を再生成しますか？
+Are you sure you want to listen on all interfaces\\?	全てのインタフェースで待ち受けてよろしいですか？
+Are you sure you want to proceed\\?	続行してよろしいですか？
+Are you sure you want to regenerate Burp's CA certificate\\?	BurpのCA証明書を再生成しますか?
 Are you sure you want to remove ("[^"]+")\\?	$1を削除してよろしいですか？
-Are you sure you want to remove this action\\?	このアクションを削除してよろしいですか?
+Are you sure you want to remove this action\\?	このアクションを削除してよろしいですか？
 Are you sure you want to remove this certificate\\?	この証明書を削除してよろしいですか？
-Are you sure you want to remove this listener\\?	このリスナーを削除してよろしいですか?
-Are you sure you want to restore default active scanning areas options\\?	アクティブスキャン対象オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default active scanning engine options\\?	アクティブスキャンエンジンオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default active scanning optimization options\\?	アクティブスキャン最適化オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default application login options\\?	アプリケーションログインオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default attack insertion points　options\\?	攻撃挿入ポイントオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default attack results options\\?	攻撃結果オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default Burp Collaborator server options\\?	Burp Collaboratorサーバオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default Burp Extender options\\?	Burp Extenderオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default character set options\\?	文字セットオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default client SSL certificates options\\?	クライアントSSL証明書オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default cookie jar options\\?	cookie jar オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default crawler options\\?	クローラオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default extract grep options\\?	抽出grepオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default form submission options\\?	フォーム送信オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default hostname resolution options\\?	ホスト名解決オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default hotkey options\\?	ホットキーオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default HTML rendering options\\?	HTMLレンダリングオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default HTTP message display options\\?	HTTPメッセージ表示オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default intercept client requests options\\?	クライアントリクエストのインターセプトオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default intercept server responses options\\?	サーバレスポンスのインターセプトオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default intercept WebSockets messages options\\?	WebSocketメッセージのインターセプトオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default Java environment options\\?	Java環境オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default live active scanning　options\\?	ライブアクティブスキャンオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default live capture options\\?	ライブキャプチャオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default live passive scanning　options\\?	ライブパッシブスキャンオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default logging options\\?	ロギングオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default macros options\\?	マクロオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default match and replace options\\?	検索と置換オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default match grep options\\?	マッチgrep　オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default miscellaneous proxy　options\\?	その他プロキシオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default miscellaneous proxy settings options\\?	その他プロキシ設定オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default out-of-scope requests options\\?	スコープ外リクエストオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default out-of-scope requests options\\?	スコープ外リクエストオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default passive scanning areas options\\?	パッシブスキャン対象オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default passive spidering options\\?	パッシブスパイダリングオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default payloads grep options\\?	ペイロードgrepオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default performance feedback options\\?	パフォーマンスフィードバックオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default platform authentication options\\?	プラットフォーム認証オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default proxy listeners options\\?	プロキシリスナーオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default Python environment options\\?	Python環境オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default redirections options\\?	リダイレクトオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default request engine options\\?	リクエストエンジンオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default request headers options\\?	リクエストヘッダオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default request headers options\\?	リクエストヘッダオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default response modification options\\?	レスポンス操作オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default Ruby environment options\\?	Ruby環境オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default scheduled tasks　options\\?	スケジュールタスクオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default server SSL certificates options\\?	サーバSSL証明書オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default session handling rules options\\?	セッションハンドリングルールオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default SOCKS proxy options\\?	SOCKSプロキシオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default spider engine options\\?	Spiderエンジンオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default spider scope options\\?	Spiderスコープオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default SSL negotiation options\\?	SSLネゴシエーションオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default SSL negotiation workarounds options\\?	SSL ネゴシエーション回避策オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default SSL passthrough options\\?	SSLパススルーオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default static code analysis options\\?	静的コード解析オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default status 100 responses options\\?	ステータス100レスポンスオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default streaming responses options\\?	ストリーミングレスポンスオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default target scope options\\?	ターゲットスコープオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default temporary files location options\\?	一時ファイル場所オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default timeouts options\\?	タイムアウトオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default token analysis options\\?	トークン解析オプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default token handling options\\?	トークンハンドリングオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default upstream proxy servers options\\?	上位プロキシサーバオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to restore default user interface options\\?	ユーザインタフェースオプションをデフォルトに戻してよろしいですか?
-Are you sure you want to stop\\?	停止してよろしいですか?
+Are you sure you want to remove this listener\\?	このリスナーを削除してよろしいですか？
+Are you sure you want to restore default active scanning areas options\\?	アクティブスキャン対象オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default active scanning engine options\\?	アクティブスキャンエンジンオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default active scanning optimization options\\?	アクティブスキャン最適化オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default application login options\\?	アプリケーションログインオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default attack insertion points　options\\?	攻撃挿入ポイントオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default attack results options\\?	攻撃結果オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default Burp Collaborator server options\\?	Burp Collaboratorサーバオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default Burp Extender options\\?	Burp Extenderオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default character set options\\?	文字セットオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default client SSL certificates options\\?	クライアントSSL証明書オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default cookie jar options\\?	cookie jar オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default crawler options\\?	クローラオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default extract grep options\\?	抽出grepオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default form submission options\\?	フォーム送信オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default hostname resolution options\\?	ホスト名解決オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default hotkey options\\?	ホットキーオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default HTML rendering options\\?	HTMLレンダリングオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default HTTP message display options\\?	HTTPメッセージ表示オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default intercept client requests options\\?	クライアントリクエストのインターセプトオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default intercept server responses options\\?	サーバレスポンスのインターセプトオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default intercept WebSockets messages options\\?	WebSocketメッセージのインターセプトオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default Java environment options\\?	Java環境オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default live active scanning　options\\?	ライブアクティブスキャンオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default live capture options\\?	ライブキャプチャオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default live passive scanning　options\\?	ライブパッシブスキャンオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default logging options\\?	ロギングオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default macros options\\?	マクロオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default match and replace options\\?	検索と置換オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default match grep options\\?	マッチgrep　オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default miscellaneous proxy　options\\?	その他プロキシオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default miscellaneous proxy settings options\\?	その他プロキシ設定オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default out-of-scope requests options\\?	スコープ外リクエストオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default out-of-scope requests options\\?	スコープ外リクエストオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default passive scanning areas options\\?	パッシブスキャン対象オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default passive spidering options\\?	パッシブスパイダリングオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default payloads grep options\\?	ペイロードgrepオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default performance feedback options\\?	パフォーマンスフィードバックオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default platform authentication options\\?	プラットフォーム認証オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default proxy listeners options\\?	プロキシリスナーオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default Python environment options\\?	Python環境オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default redirections options\\?	リダイレクトオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default request engine options\\?	リクエストエンジンオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default request headers options\\?	リクエストヘッダオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default request headers options\\?	リクエストヘッダオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default response modification options\\?	レスポンス操作オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default Ruby environment options\\?	Ruby環境オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default scheduled tasks　options\\?	スケジュールタスクオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default server SSL certificates options\\?	サーバSSL証明書オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default session handling rules options\\?	セッションハンドリングルールオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default SOCKS proxy options\\?	SOCKSプロキシオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default spider engine options\\?	Spiderエンジンオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default spider scope options\\?	Spiderスコープオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default SSL negotiation options\\?	SSLネゴシエーションオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default SSL negotiation workarounds options\\?	SSL ネゴシエーション回避策オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default SSL passthrough options\\?	SSLパススルーオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default static code analysis options\\?	静的コード解析オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default status 100 responses options\\?	ステータス100レスポンスオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default streaming responses options\\?	ストリーミングレスポンスオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default target scope options\\?	ターゲットスコープオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default temporary files location options\\?	一時ファイル場所オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default timeouts options\\?	タイムアウトオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default token analysis options\\?	トークン解析オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default token handling options\\?	トークンハンドリングオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default upstream proxy servers options\\?	上位プロキシサーバオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default user interface options\\?	ユーザインタフェースオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to stop\\?	停止してよろしいですか？
 Are you sure you want to unload ("[^"]+")\\?	$1をアンロードしてよろしいですか？
 Are you sure you wanto to shut down Burp and launch the downloaded file\\?	Burpをシャットダウンし、ダウンロードしたファイルを起動してよろしいですか？
 ASP.NET debugging enabled( \\[[0-9]+\\])?	ASP.NETデバッグが有効$1
@@ -249,8 +256,11 @@ Automatically submit these credentials:	このクレデンシャルを自動送�
 Automatically submit using the following rules to assign text field values:	次のルールに従ってテキストフィールドの値を自動送信:
 Automatically update Content-Length header when the request is edited	リクエスト編集時にContent-Lengthヘッダを自動的に更新する
 Automatically update Content-Length header when the response is edited	レスポンス編集時にContent-Lengthヘッダを自動的に更新する
+Auto-modified response	自動変更されたレスポンス
 Auto-scroll to match when text changes	テキスト変更時にマッチした箇所に自動スクロール
 Back	戻る
+Base request	元リクエスト
+Base response	元レスポンス
 Base string:	元文字列:
 Base value of payload position	ペイロードポジションのベース値
 Base value:	元値:
@@ -260,7 +270,7 @@ Base64-decode	Base64デコード
 Base64-encode requests and responses	リクエストとレスポンスをBase64エンコード
 Base64-encode	Base64エンコード
 Base64-encoded data in parameter( \\[[0-9]+\\])?	パラメータ内のBase64エンコードされたデータ$1
-Billing	請求
+Billing	課金
 Bind to address:	バインドするアドレス:
 Bind to port:	バインドするポート:
 Binding	バインド
@@ -310,7 +320,9 @@ Burp maintains a cookie jar that stores all of the cookies issued by visited web
 Burp Proxy uses listeners to receive incoming HTTP requests from your browser. You will need to configure your browser to use one of the listeners as its proxy server.	Burp Proxyはリスナーを使用してブラウザからHTTPリクエストを受け取ります。リスナーの一つをプロキシサーバとしてブラウザに設定する必要があります。
 Burp Repeater help	Burp Repeaterヘルプ
 Burp Scanner reporting wizard	Burp Scannerレポートウィザード	
-Burp Spider needs your guidance to submit a login form. Please choose the value of each form field which should be used when submitting the form. You can control how Burp handles forms in the Spider options tab.	Burp Spiderがログインフォームを送信するには、あなたの入力が必要です。各フィールド　送信に使用する各フォームフィールドの値を選択してください。Spiderオプションタブでフォームの処理方法をコントロールできます。
+Burp Spider - Submit Form	Burp Spider - 送信フォーム
+Burp Spider needs your guidance to submit a login form. Please choose the value of each form field which should be used when submitting the form, and whether Burp should iterate submission of multi-value fields. You can control how Burp handles forms in the Spider options tab.	Burp Spiderがログインフォームを送信するには、あなたの入力が必要です。送信に使用する各フォームフィールドの値と、複数の値を取るフィールドを繰り返すかどうか選択してください。Spiderオプションタブでフォームの処理方法をコントロールできます。
+Burp Spider needs your guidance to submit a login form. Please choose the value of each form field which should be used when submitting the form. You can control how Burp handles forms in the Spider options tab.	Burp Spiderがログインフォームを送信するには、あなたの入力が必要です。送信に使用する各フォームフィールドの値を選択してください。Spiderオプションタブでフォームの処理方法をコントロールできます。
 Burp Suite documentation	Burp Suiteドキュメント
 Byte compare of #([0-9]+) and #([0-9]+)  \\(([0-9]+) differences\\)	#$1と#$2のバイト比較  ($3カ所の相違)
 Byte compare	バイト比較
@@ -461,6 +473,7 @@ Copy URLs in this host	このホストをURLをコピー
 Copy URLs?	URLをコピー
 Copy	コピー
 Correlation	相関
+Could not obtain lock on file: (.*)	ファイルのロックを取得できませんでした: $1
 Count	数
 Crawler Settings	クローラ設定
 Create a new rule	新規ルールを作成
@@ -726,7 +739,7 @@ Follow redirections	リダイレクトをたどる
 Follow redirections(:?)	リダイレクトをたどる$1
 Follow the redirection in the current response	現在のレスポンスのリダイレクトをたどる
 Font size:	フォントサイズ:
-Font	フォント
+Font(:?)	フォント$1
 For this directory	このディレクトリ
 For this file extension	このファイル拡張子
 Force use of SSL	SSLを強制利用
@@ -1197,6 +1210,7 @@ Path-relative style sheet import( \\[[0-9]+\\])?	相対パスのスタイルシ�
 Pause active scanning	アクティブスキャンを停止
 Pause before retry \\(milliseconds\\):	リトライ前の一時停止(ミリ秒):
 Pause Scanner	Scannerを停止
+Pause scanner	スキャン一次停止
 Pause Spider and Scanner	SpiderとScannerを中断
 Pause spidering	自動巡回停止
 Pause	一次停止
@@ -1275,6 +1289,7 @@ Private IP addresses disclosed( \\[[0-9]+\\])?	プライベートIPアドレス�
 Private key disclosed( \\[[0-9]+\\])?	秘密鍵漏洩$1
 Private key in DER format	DER形式の秘密鍵
 Process cookies in redirections	リダイレクト中にcookieを処理する
+Project file (.*) already exists, do you want to overwrite it\\?	プロジェクトファイル $1  は既に存在しています、上書きしてよろしいですか？
 Project options	プロジェクトオプション
 Prominently highlight unhidden fields	再表示フィールドを強調表示
 Prompt for credentials on platform authentication failure	プラットフォーム認証失敗時にクレデンシャルのプロンプトを表示する
@@ -1334,18 +1349,23 @@ Remove all items from the list	リストから全てのアイテムを削除
 Remove all JavaScript	全てのJavaScriptを除去
 Remove duplicate comments	重複したコメントを削除
 Remove duplicate items \\(same URL and parameters\\) \\[([,0-9]+) items\\]	重複(URLとパラメータが同じ)アイテムを除外 [$1 アイテム]
+Remove duplicate items \\(same URL and parameters\\)	重複(URLとパラメータが同じ)アイテムを除外
 Remove duplicates	重複を削除
 Remove dupulicate comments	重複したコメントを除去
 Remove from scope	スコープから削除
 Remove input field length limits	入力フィールドの長さ制限を除去
 Remove item	アイテムを削除
 Remove items already scanned \\(same URL and parameters\\) \\[([,0-9]+) items\\]	既にスキャンした(URLとパラメータが同じ)アイテムを除外 [$1 アイテム]
+Remove items already scanned \\(same URL and parameters\\)	既にスキャンした(URLとパラメータが同じ)アイテムを除外
 Remove items with media responses \\[([,0-9]+) items\\]	メディアレスポンスを除外 [$1 アイテム]
+Remove items with media responses	メディアレスポンスを除外
 Remove items with no parameters \\[([,0-9]+) items\\]	パラメータのないアイテムを除外 [$1 アイテム]
 Remove items with no parameters	パラメータのないアイテムを除外
 Remove items with the following extensions \\[([,0-9]+) items\\]	次の拡張子を除外 [$1 アイテム]
+Remove items with the following extensions	次の拡張子を除外
 Remove JavaScript form validation	JavaScriptによるフォームバリデーションを除去
 Remove out-of-scope items \\[([,0-9]+) items\\]	スコープ外のアイテムを除外 [$1 アイテム]
+Remove out-of-scope items	スコープ外のアイテムを除外
 Remove secure flag from cookies	cookieのsecureフラグを除去
 Remove the selected certificate	選択した証明書を削除
 Remove the selected header	選択したヘッダを削除
@@ -1375,6 +1395,7 @@ Report issues?	問題をレポート
 Report selected issues	選択した問題をレポート
 Report size: ([,0-9]+) bytes	レポートサイズ: $1バイト
 Report title	レポートタイトル
+Request ([0-9]+)	リクエスト$1
 Request body	リクエストボディ
 Request count:	リクエスト数
 Request Engine	リクエストエンジン
@@ -1391,6 +1412,7 @@ Requests queued:	キューに入っているリクエスト:
 requests	リクエストごとのみ検証する
 Requests(:?)	リクエスト$1
 Requires Burp Suite Professional	Burp Suiteプロフェッショナルが必要です
+Response ([0-9]+)	レスポンス$1
 Response body	レスポンスボディ
 Response from (.*)	レスポンス $1
 Response headers	レスポンスヘッダ
@@ -1408,6 +1430,7 @@ Restoring site map - please wait...	サイトマップを復元中 - しばら�
 Restoring: ([0-9]+)% complete	リストア中: $1%完了
 Restrict to requests containing these parameters:	これらのパラメータを含むリクエストに制限する:
 Resume active scanning	アクティブスキャンを再開
+Resume scanner	スキャン再開
 Resume spidering	自動巡回再開
 Resume	再開
 Revert to the original list of items	元のアイテムリストに戻す
@@ -1641,6 +1664,7 @@ Social security numbers disclosed( \\[[0-9]+\\])?	社会保障番号漏洩$1
 SOCKS proxy host:	SOCKSプロキシホスト:
 SOCKS proxy port:	SOCKSプロキシポート:
 SOCKS Proxy	SOCKSプロキシ
+Some of these items are outside the current spidering scope. Would you like to modify the scope to include the items\\?	これらのアイテムの一部は、現在の巡回スコープ外です。このアイテムを含むようスコープを修正しますか？
 Source code disclosure( \\[[0-9]+\\])?	ソースコード漏洩$1
 Source	ソース
 Specific address:	指定したアドレス:
@@ -1688,8 +1712,7 @@ Start attack	攻撃開始
 Start Burp	Burpを開始
 Start directory:	開始ディレクトリ:
 Start live capture	ライブキャプチャ開始
-Start time	開始時間
-Start time:	開始時間
+Start time(:?)	開始時間$1
 Start	先頭
 Starting project, please wait ...	プロジェクトを開始しています、しばらくお待ちください ...
 Static Code Analysis	静的コード解析
@@ -1770,7 +1793,7 @@ The rule contains no actions.	このルールにはアクションがありま�
 The rule is not in-scope for any URLs.	このルールは全てのURLでスコープ外です。
 The selected project file appears to be corrupt and cannot be opened.	選択したプロジェクトは破損していて開けません。
 The supplied license key was not recognized. Please try re-entering your license key.	ライセンス キーを認識できませんでした。。ライセン スキーを再入力してください。
-There appears to be a copy of Burp Infiltrator in the selected folder. Do you want to overwrite it\\?	選択したフォルダにBurp Infiltratorのコピーがあります。上書きしてよろしいですか?
+There appears to be a copy of Burp Infiltrator in the selected folder. Do you want to overwrite it\\?	選択したフォルダにBurp Infiltratorのコピーがあります。上書きしてよろしいですか？
 These settings are configured within user options but can be overridden here for this specific project.	これらの設定はユーザオプションで設定できますが、この指定したプロジェクトで上書きできます。
 These settings are used to automatically replace parts of requests and responses passing through the Proxy.	Proxyを経由するリクエストとレスポンスの一部を自動的に置換する設定です。
 These settings are used to perform automatic modification of responses.	これらの設定はレスポンスの自動変換で使用されます。
@@ -1831,13 +1854,13 @@ This action updates the request with the relevant cookies from the session handl
 This applies to most network transfers	ほとんどのネットワーク通信に適用されます
 This applies to responses that do not contain a Content-Length or Transfer-Encoding header	Content-Length または Transfer-Encodingヘッダのないレスポンスに適用されます
 This feature can be used to prevent Burp from issuing any out-of-scope requests, including those made via the proxy.	Proxy経由で発生するもの含め、スコープ外のリクエストによって発生する問題を防ぎます。
-This file already exists. Are you sure\\?	ファイルが既に存在します。よろしいですか?
+This file already exists. Are you sure\\?	ファイルが既に存在します。よろしいですか？
 This function allows you to load Sequencer with a sample of tokens that you have already obtained, and then perform the statistical analysis on the sample.	この機能では、既に取得しているトークンのサンプルをSequencerに読み込ませ、サンプルの統計解析を実行できます。
 This function lets you do a word- or byte-level comparison between different data. You can load, paste, or send data here from other tools and then select the comparison you want to perform.	異なるデータ間の、単語もしくはバイトレベルの比較を行います。データを読み込み、貼り付け、他のツールからここに送信し、実行したい比較を選択してください。
 This function sends common test payloads to random URLs and parameters at irregular intervals, to generate traffic similar to that caused by manual penetration testing. Its only real use is to let you take a break from testing while still looking busy according to the server's logs. Only items which you selected in the site map will be requested.	この機能は、一般的なテストペイロードを不規則な間隔でランダムなURLやパラメータに送信し、手動ペネトレーションテストで発生するようなトラフィックを生成します。この機能の唯一現実的な使用方法は、一生懸命テストをしているようなログをサーバに残しながら休憩を取ることです。サイトマップで選択したアイテムのみリクエストが送信されます。
 This is the timeout after which failed DNS lookups are repeated	失敗したDNS名前解決を繰り返すまでのタイムアウトです
 This is the timeout after which successful DNS lookups expire	成功したDNS名前解決が期限切れになるまでのタイムアウトです
-This item is outside the current spidering scope. Would you like to modify the scope to include the item\\?	このアイテムは、現在の巡回スコープ外です。このアイテムを含むようスコープを修正してよろしいですか?
+This item is outside the current spidering scope. Would you like to modify the scope to include the item\\?	このアイテムは、現在の巡回スコープ外です。このアイテムを含むようスコープを修正しますか？
 This listing contains the definitions of all issues that can be detected by Burp Scanner.	Burp Scannerが検出できる全問題の定義一覧です。
 This panel shows a list of the unique SSL certificates received from web servers. Double-click an item to show the full details of the certificate.	このパネルにはWebサーバから受信した一意なSSL証明書が表示されます。証明書の詳細を見るにはアイテムをダブルクリックしてください。
 This payload type can be used to generate illegal Unicode representations of characters. It is sometimes effective in bypassing filters designed to block certain characters. See the full help for details of each option.	文字の不正なUnicode表現を生成します。特定の文字をブロックするよう設計されたフィルタの回避に効果がある場合があります。各オプションの詳細はヘルプを参照してください。
@@ -1872,6 +1895,7 @@ This test performs a sophisticated analysis of the bit sequence at each position
 This URL is outside the current target scope. Are you sure you want to schedule an active scan\\?	このURLは現在の対象スコープ外です。アクティブスキャンをスケジュールしてよろしいですか？
 This will clear all existing custom iterator settings	既存の全てのカスタムイテレータをクリアします
 This will close all Burp windows - are you sure you want to exit\\?	Burpの全てのウィンドウを閉じます - 終了してよろしいですか？
+This will enable other network users to use the proxy and view the proxy history.	他のネットワークユーザがプロキシを利用し、プロキシの履歴を閲覧できるようになります。
 Throttle \\(milliseconds\\):	ウェイト(ミリ秒):
 Throttle between requests \\(milliseconds\\):	リクエスト間のウェイト(ミリ秒):
 Time requested	リクエスト時刻
@@ -1880,8 +1904,9 @@ Time	時刻
 Time-delay checks	遅延チェック
 Timeouts	タイムアウト
 Title	タイトル
-To enable bit-level analysis, each token was converted into a set of ([0-9]+) bits. 	ビットレベルの解析を有効にするために、各トークンは$1ビットのセットに変換されました。グラフでは、各文字位置が貢献したビット数を示しています。
-To enable bit-level analysis, each token was converted into a set of ([0-9]+) bits. Because some character positions within the sample use character sets whose size is not a round power of two, ([0-9.]+) bits of data were compressed into other bits derived from the same character position. The overall bit counts for effective entropy have been adjusted to reflect this compression. The chart shows the number of bits contributed by each character position.	ビットレベルの解析を有効にするために、各トークンは$1ビットのセットに変換されました。サンプル内の一部の文字位置は2の累乗のサイズではない文字セットを使用するので、データの$2ビットは同じ文字位置から派生した他のビットに圧縮されました。意味のあるエントロピーの全体ビットのカウントは、この圧縮を反映するように調整されています。グラフでは、各文字位置が貢献したビット数を示しています。
+To enable bit-level analysis, each token was converted into a set of ([,0-9]+) bits. 	ビットレベルの解析を有効にするために、各トークンは$1ビットのセットに変換されました。グラフでは、各文字位置が貢献したビット数を示しています。
+To enable bit-level analysis, each token was converted into a set of ([,0-9]+) bits. Because some character positions within the sample use character sets whose size is not a round power of two, ([0-9.]+) bits of data were compressed into other bits derived from the same character position. The overall bit counts for effective entropy have been adjusted to reflect this compression. The chart shows the number of bits contributed by each character position.	ビットレベルの解析を有効にするために、各トークンは$1ビットのセットに変換されました。サンプル内の一部の文字位置は2の累乗のサイズではない文字セットを使用するので、データの$2ビットは同じ文字位置から派生した他のビットに圧縮されました。意味のあるエントロピーの全体ビットのカウントは、この圧縮を反映するように調整されています。グラフでは、各文字位置が貢献したビット数を示しています。
+To enable bit-level analysis, each token was converted into a set of ([,0-9]+) bits. The chart shows the number of bits contributed by each character position.	ビットレベルの解析を有効にするために、各トークンは$1ビットのセットに変換されました。グラフでは、各文字位置が貢献したビット数を示しています。
 To help us improve Burp, please report this bug and include the details below.	Burpを改善するため、次の詳細を含むこのバグを報告してください。
 To load this file, create a new Burp project, and then restore the state file in the normal way, via the Burp menu.	このファイルを読み込むには、新規Burpプロジェクトを作成し、Burpメニューから通常通りステートファイルをリストアしてください。
 To lower case	小文字に変換
@@ -1912,7 +1937,7 @@ too many ones at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample
 Tool	ツール
 Tools	ツール
 Top/bottom split	上下分割
-Total cost:	総コスト:
+Total cost:	総額:
 Total encodings	総エンコード数
 Total number of parameters:	パラメータの総数:
 Transitions	変化
