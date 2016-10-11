@@ -73,7 +73,7 @@ public class Injection {
 				for (Translate t : translates) {
 					command.append(
 							"str=str.replaceAll(\"(?m)^" + t.en.replace("\"", "\\\"")
-									+ "$\",\"" + t.ja.replace("\"", "\\\"") + "\");");
+							+ "$\",\"" + t.ja.replace("\"", "\\\"") + "\");");
 				}
 				command.append("str=str.replace(\"\\[Pro version only\\]\",\"[プロ版のみ]\");");
 				// 翻訳されていない文を標準エラーに出す。
@@ -81,7 +81,7 @@ public class Injection {
 					command.append("if(" + "(str.getBytes().length) == str.length()" // 翻訳されていないもののみ
 							+ " && !str.matches(\"https?://.+\")"                    // URLを無視
 							+ " && !str.matches(\"\\\\$?[0-9,.]+\")"                 // 数値を無視
-							+ " && !str.matches(\"([0-9]+h )?([0-9]+m )?[0-9]+s\")"  // 時間を無視
+							+ " && !str.matches(\"^\\\\w+:?$\")"                     // １単語だけの場合を無視
 							+ " && !str.matches(\"burp\\..*\")"                      // burp.から始まるもの(クラス名？)を無視
 							+ " && !str.matches(\"lbl.*\")"                          // lblから始まるもの(ラベル名？)を無視
 							+ " && str.length()>1"                                   // １文字を無視
