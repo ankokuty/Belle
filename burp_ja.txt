@@ -7,17 +7,37 @@
 (.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?general text, image(, flash)? and general binary content(.*)	$1$2$3$4$5, 一般的なテキスト, 画像$6, 一般的なバイナリコンテンツ非表示$2
 (.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?image and general binary content(.*)	$1$2$3$4$5画像, 一般的なバイナリコンテンツ非表示$2
 (.*)[Hh]iding empty folders(.*)	$1空のフォルダ非表示$2
+(.*)[Hh]iding flash content(.*)	$1flashコンテンツ非表示$2
 (.*)[Hh]iding not found items(.*)	$1存在しないアイテム非表示$2
+(.*)[Hh]iding out of scope and non-parameterized and not found items(.*)	$1スコープ外, パラメターなしアイテム非表示$2
+(.*)[Hh]iding out of scope and not found items(.*)	$1スコープ外, 存在しないアイテム非表示$2
+(.*)[Hh]iding out of scope and unrequested items(.*)	$1スコープ外, リクエストしていないアイテム非表示$2
+(.*)[Hh]iding out of scope, unrequested and not found items(.*)	$1スコープ外, リクエストしていない, 存在しないアイテム非表示$2
+(.*)[Hh]iding out of scope, unrequested, non-parameterized and not found items(.*)	$1スコープ外, リクエストしていない, パラメターなし, 存在しないアイテム非表示$2
+(.*)Because some character positions within the sample use character sets whose size is not a round power of two, ([,0-9.]+) bits of data were compressed into other bits derived from the same character position.(.*)	$1サンプル内の一部の文字位置は2の累乗のサイズではない文字セットを使用するので、データの$2ビットは同じ文字位置から派生した他のビットに圧縮されました。$3
+(.*)However, an overly short longest run of bits also indicates that the sample is not random.(.*)	$1しかし、短すぎるビットの最長連もサンプルがランダムでないことを示します。$2
+(.*)Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long.(.*)	$1このテストのFIPS仕様では、ビットの最長連が長すぎる場合に失敗のみを記録することに注意してください。$2
+(.*)showing only commented　and highlighted items(.*)	$1コメント付き, ハイライトアイテムのみ表示$2
+(.*)showing only commented items(.*)	$1コメント付きアイテムのみ表示$2
+(.*)showing only highlighted items(.*)	$1ハイライトアイテムのみ表示$2
+(.*)The chart shows the number of bits contributed by each character position.	$1グラフでは、各文字位置が貢献したビット数を示しています。
+(.*)The overall bit counts for effective entropy have been adjusted to reflect this compression.(.*)	$1意味のあるエントロピーの全体ビットのカウントは、この圧縮を反映するように調整されています。$2
+(.*)Therefore some bits may record a significance level that is below the FIPS pass level even though they do not strictly fail the FIPS test.	$1したがって一部のビットでは、厳密なFIPSテストに不合格でないにもかかわらず、FIPS合格レベルを下回る有意水準を記録する場合があります。
+(.*: )excellent.	$1非常に良い。
+(.*: )extremely poor.	$1非常に悪い。
+(.*: )poor.	$1悪い。
+(.*: )reasonable.	$1適当。
+(.*: )very good.	$1とても良い。
 ([,0-9]) highlights?	$1件ハイライト
 ([,0-9]+) bytes \\| ([0-9]+) millis	$1バイト | $2ミリ秒
 ([,0-9]+) issues selected	$1問題点を選択
 ([,0-9]+) items selected	$1アイテムを選択
+([,0-9]+) results selected	$1結果を選択
 ([,0-9]+) submissions?	$1件送信
 ([0-9]+) \\(approx\\)	約$1
 ([0-9]+) anomalies were identified in this test:	このテストで$1個の異常が見つかりました: 
-([0-9]+) bits failed the test. The following ([0-9]+) bits passed the test: ([0-9]+)(, [0-9]+)*. 	$1ビットが不合格。次の$2ビットは合格: $3$4
-([0-9]+) bits passed the test. The following ([0-9]+) bits failed the test: ([0-9]+)(, [0-9]+)*. Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long. However, an overly short longest run of bits also indicates that the sample is not random. Therefore some bits may record a significance level that is below the FIPS pass level even though they do not strictly fail the FIPS test.	$1ビットが合格。次の$2ビットは不合格: $3$4。このテストのFIPS仕様では、ビットの最長連が長すぎる場合に失敗のみを記録することに注意してください。しかし、短すぎるビットの最長連もサンプルがランダムでないことを示します。したがって一部のビットでは、厳密なFIPSテストに不合格でないにもかかわらず、FIPS合格レベルを下回る有意水準を記録する場合があります。
-([0-9]+) bits passed the test. The following ([0-9]+) bits failed the test: ([0-9]+)(, [0-9]+)*.	$1ビットが合格。次の$2ビットは不合格: $3$4
+([0-9]+) bits failed the test. The following ([0-9]+) bits passed the test: ([0-9]+)(, [0-9]+)*.(.*) 	$1ビットが不合格。次の$2ビットは合格: $3$4$5
+([0-9]+) bits passed the test. The following ([0-9]+) bits failed the test: ([0-9]+)(, [0-9]+)*.(.*)	$1ビットが合格。次の$2ビットは不合格: $3$4$5
 ([0-9]+) items?　selected	$1個のアイテムを選択
 ([0-9]+) items?	$1個のアイテム
 ([0-9]+) letter words	$1文字単語
@@ -38,9 +58,12 @@
 0 positions	ポジションなし
 1 \\(LSB\\)	1(最下位ビット)
 1. Click the "Copy Clickbandit to clipboard" button below. This will copy the Clickbandit script to your clipboard.	1. 下の"Clickbanditをクリップボードにコピー"ボタンをクリックします。これでClickbanditのスクリプトがクリップボードにコピーされます。
+1. Using your browser, go to the following URL:	1. ブラウザを使用して、次のURLにアクセスします:
+2. Copy the following data into the activation request field in your browser:	2. ブラウザのアクティベーションリクエストフィールドに、次のデータをコピーします:
 2. In your browser, visit the web page that you want to test, in the usual way.	2. ブラウザで、テストしたいWebページに、通常通りアクセスします。
 2xx  \\[success\\]	2xx  [成功]
 3. In your browser, open the web developer console. This might also be called "developer tools" or "JavaScript console".	3. ブラウザで、Web開発コンソールを開きます。これは"開発者ツール"や"JavaScriptコンソール"などと呼ばれていると思います。
+3. Paste below the data from the activation response field in your browser:	3. ブラウザのアクティベーションレスポンスフィールドから、次にデータを貼り付けます。
 3xx  \\[redirection\\]	3xx  [リダイレクト]
 3xx status code with Location header	3xxステータスコードのLocationヘッダ
 4. Paste the Clickbandit script into the web developer console, and press enter.	4. ClickbanditスクリプトをWeb開発者コンソールに貼り付け、enterを押します。
@@ -51,11 +74,13 @@ A macro is a sequence of one or more requests. You can use macros within session
 A new version of Burp is available.	Burpの新しいバージョンが利用可能です。
 About Burp Scanner	Burp Scannerについて
 About	Burp Suiteについて
+Accept cookies	cookie受入
 Action URL and method	送信先URLとメソッド
 Action URL(:?)	送信先URL$1
 Action URL, method and fields	送信先URL, メソッド, フィールド
 Action URL, method, fields and values	送信先URL, メソッド, フィールド, 値
 Action	アクション
+Activate License	ライセンスのアクティベート
 Active and passive scanning	アクティブとパッシブスキャン
 Active Scanning Areas	アクティブスキャン対象
 Active Scanning Engine	アクティブスキャンエンジン
@@ -69,7 +94,9 @@ Actively scan this host	このホストをアクティブスキャン
 Add "skip parameter" rule	"スキップパラメータ"ルールを追加
 Add % prefix before each byte	各バイトの前に % を追加
 Add §	§追加
+Add a new action	新規アクション追加
 Add a new client certificate	新規クライアント証明書を追加
+Add a new custom parameter location	カスタムパラメータ位置を追加
 Add a new extract item	新規抽出アイテムを追加
 Add a new form field completion rule	新規フォームフィールド補完ルールを追加
 Add a new header	新規ヘッダを追加
@@ -77,6 +104,7 @@ Add a new interception rule	新規インターセプションルールを追加
 Add a new item by pasting a URL	URLを貼り付けして新規アイテムを追加
 Add a new item	新規アイテムを追加
 Add a new listener	リスナーを追加
+Add a new macro	新規マクロを追加
 Add a new match/replace rule	新規マッチ/リプレースルールを追加
 Add a new parameter	新規パラメータを追加
 Add a new payload processing rule	新規ペイロード処理ルールを追加
@@ -84,6 +112,7 @@ Add a new proxy listener	プロキシリスナーを追加
 Add a new task	新規タスクを追加
 Add a new upstream proxy rule	新規上位プロキシルールを追加
 Add comment	コメントを追加
+Add cookies received in responses to the session handling cookie jar	レスポンスで受信したcookieをセッションハンドリングcookie jarに追加する
 Add discovered content to suite site map	発見したコンテンツをサイトマップに追加
 Add entries here to override your computer's DNS resolution.	コンピュータのDNS名前解決を上書きするにはここに追加してください。
 Add form field completion rule	フォームフィールド補完ルールを追加
@@ -97,6 +126,7 @@ Add request header	リクエストヘッダ追加
 Add request interception rule	リクエストインターセプトルールを追加
 Add response interception rule	レスポンスインターセプトルールを追加
 Add SSL passthrough target	SSLパススルーする対象を追加
+Add streaming URL	ストリーミングURLを追加
 Add the specified item	指定したアイテムを追加
 Add to scope	スコープに追加
 Add to site map	サイトマップに追加
@@ -116,6 +146,7 @@ All bits failed the test. 	全ビットテスト不合格
 All bits passed the test. 	全ビットテスト合格
 All bits passed the test. Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long. However, an overly short longest run of bits also indicates that the sample is not random. Therefore some bits may record a significance level that is below the FIPS pass level even though they do not strictly fail the FIPS test.	全ビットがテスト合格。このテストのFIPS仕様では、ビットの最長連が長すぎる場合に失敗のみを記録することに注意してください。しかし、短すぎるビットの最長連もサンプルがランダムでないことを示します。したがって一部のビットでは、厳密なFIPSテストに不合格でないにもかかわらず、FIPS合格レベルを下回る有意水準を記録する場合があります。
 All interfaces	全てのインタフェース
+All rows	全ての行
 All tests were successful. 	全てのテストが成功しました。
 All tools:	全ツール:
 Allow renderer to make HTTP requests \\(for images, etc.\\)	レンダラーがHTTPリクエストするのを許可する(画像など)
@@ -141,14 +172,17 @@ Any status code with Location header	任意のステータスコードのLocatio
 APIs	API
 Append to base parameter value	元パラメータ値に追加
 Application Login	アプリケーションログイン
+Are you sure you want to add this item to the site map\\?	このアイテムをサイトマップに追加してもよろしいですか？
 Are you sure you want to cancel the download\\?	ダウンロードをキャンセルしてよろしいですか？
 Are you sure you want to cancel this rule\\?	このルールをキャンセルしてよろしいですか？
 Are you sure you want to cancel\\?	キャンセルしてよろしいですか？
 Are you sure you want to clear all events\\?	全てのイベントをクリアしてよろしいですか？
 Are you sure you want to clear the entire request template\\?	リクエストテンプレート全体をクリアしてよろしいですか？
+Are you sure you want to clear the history\\?	履歴をクリアしてよろしいですか？
 Are you sure you want to clear the list\\?	リストをクリアしてよろしいですか？
 Are you sure you want to close the tracer\\?	トレーサーを閉じてよろしいですか？
 Are you sure you want to close this window\\?	このウィンドウを閉じてよろしいですか？
+Are you sure you want to delete the selected item\\?	選択したアイテムを削除してよろしいですか？
 Are you sure you want to exit the wizard\\?	ウィザードを終了してよろしいですか？
 Are you sure you want to exit this content discovery session\\?	このコンテンツ探索セッションを終了してもよろしいですか？
 Are you sure you want to exit\\?	終了してよろしいですか？
@@ -158,12 +192,14 @@ Are you sure you want to regenerate Burp's CA certificate\\?	BurpのCA証明書�
 Are you sure you want to remove ("[^"]+")\\?	$1を削除してよろしいですか？
 Are you sure you want to remove this action\\?	このアクションを削除してよろしいですか？
 Are you sure you want to remove this certificate\\?	この証明書を削除してよろしいですか？
+Are you sure you want to remove this item\\?	このアイテムを削除してよろしいですか？
 Are you sure you want to remove this listener\\?	このリスナーを削除してよろしいですか？
+Are you sure you want to remove this rule\\?	このルールを削除してよろしいですか？
 Are you sure you want to restore default active scanning areas options\\?	アクティブスキャン対象オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default active scanning engine options\\?	アクティブスキャンエンジンオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default active scanning optimization options\\?	アクティブスキャン最適化オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default application login options\\?	アプリケーションログインオプションをデフォルトに戻してよろしいですか？
-Are you sure you want to restore default attack insertion points　options\\?	攻撃挿入ポイントオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default attack insertion points options\\?	攻撃挿入ポイントオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default attack results options\\?	攻撃結果オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default Burp Collaborator server options\\?	Burp Collaboratorサーバオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default Burp Extender options\\?	Burp Extenderオプションをデフォルトに戻してよろしいですか？
@@ -191,7 +227,6 @@ Are you sure you want to restore default match grep options\\?	マッチgrep　�
 Are you sure you want to restore default miscellaneous proxy　options\\?	その他プロキシオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default miscellaneous proxy settings options\\?	その他プロキシ設定オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default out-of-scope requests options\\?	スコープ外リクエストオプションをデフォルトに戻してよろしいですか？
-Are you sure you want to restore default out-of-scope requests options\\?	スコープ外リクエストオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default passive scanning areas options\\?	パッシブスキャン対象オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default passive spidering options\\?	パッシブスパイダリングオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default payloads grep options\\?	ペイロードgrepオプションをデフォルトに戻してよろしいですか？
@@ -201,7 +236,6 @@ Are you sure you want to restore default proxy listeners options\\?	プロキシ
 Are you sure you want to restore default Python environment options\\?	Python環境オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default redirections options\\?	リダイレクトオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default request engine options\\?	リクエストエンジンオプションをデフォルトに戻してよろしいですか？
-Are you sure you want to restore default request headers options\\?	リクエストヘッダオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default request headers options\\?	リクエストヘッダオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default response modification options\\?	レスポンス操作オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default Ruby environment options\\?	Ruby環境オプションをデフォルトに戻してよろしいですか？
@@ -224,6 +258,8 @@ Are you sure you want to restore default token analysis options\\?	トークン�
 Are you sure you want to restore default token handling options\\?	トークンハンドリングオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default upstream proxy servers options\\?	上位プロキシサーバオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default user interface options\\?	ユーザインタフェースオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore defaults for all project options\\?	全てのプロジェクトオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to retest the macro\\?	マクロを再テストしてよろしいですか？
 Are you sure you want to stop\\?	停止してよろしいですか？
 Are you sure you want to unload ("[^"]+")\\?	$1をアンロードしてよろしいですか？
 Are you sure you wanto to shut down Burp and launch the downloaded file\\?	Burpをシャットダウンし、ダウンロードしたファイルを起動してよろしいですか？
@@ -231,12 +267,14 @@ ASP.NET debugging enabled( \\[[0-9]+\\])?	ASP.NETデバッグが有効$1
 ASP.NET tracing enabled( \\[[0-9]+\\])?	ASP.NETトレースが有効$1
 ASP.NET ViewState without MAC enabled( \\[[0-9]+\\])?	MACが無効のASP.NET ViewState$1
 At a significance level of 1%, the amount of effective entropy is estimated to be: ([0-9]+) bits.	1%の有意水準において、効果のあるエントロピー量の推測は次の通りです: $1 ビット。
+Attack configuration	攻撃設定
 Attack Insertion Points	攻撃挿入ポイント
 Attack Results	攻撃結果
 Attack Target	攻撃対象
 Attack type:	攻撃タイプ:
+Attack	攻撃
 Auth type	認証タイプ
-Authentication Required	認証が必要です
+Authentication [Rr]equired	認証が必要です
 Authentication type:	認証タイプ:
 Author:	作者:
 Auto §	自動§
@@ -316,14 +354,17 @@ Burp Infiltrator is a tool for instrumenting target web applications in order to
 Burp Infiltrator was saved successfully as: burp_infiltrator_java.jar	Burp Infiltratorは正常に保存されました: burp_infiltrator_java.jar
 Burp Intruderが使用する定義済みペイロードリストの場所を設定してください。
 Burp is up to date.	Burpは最新です。
-Burp maintains a cookie jar that stores all of the cookies issued by visited web sites. Session handling rules can use and update these cookies to maintain valid sessions with applications that are being tested. You can use the settings below to control how Burp automatically updates the cookie jar based on traffic from particular tools.	アクセスしたWebサイトが発行した全てのcookieを、Burpはcookie jarに保持します。セッションのルールを処理してテストされているアプリケーションで有効なセッションを維持するためにこれらのクッキーを更新します。テストしているアプリケーションの有効なセッションを保持するために、セッションハンドリングルールがこれらのcookieを使用や更新できます。以下の設定で、特定のツールからのトラフィックに基づいて cookie jar を自動的に更新する方法を制御します。
+Burp license key	Burpライセンスキー
+Burp maintains a cookie jar that stores all of the cookies issued by visited web sites. Session handling rules can use and update these cookies to maintain valid sessions with applications that are being tested. You can use the settings below to control how Burp automatically updates the cookie jar based on traffic from particular tools.	アクセスしたWebサイトが発行した全てのcookieを、Burpはcookie jarに保持します。セッションのルールを処理してテストされているアプリケーションで有効なセッションを維持するためにこれらのクッキーを更新します。テストしているアプリケーションの有効なセッションを保持するために、セッションハンドリングルールがこれらのcookieを使用や更新ができます。以下の設定で、特定のツールからのトラフィックに基づいて cookie jar を自動的に更新する方法を制御します。
 Burp Proxy uses listeners to receive incoming HTTP requests from your browser. You will need to configure your browser to use one of the listeners as its proxy server.	Burp Proxyはリスナーを使用してブラウザからHTTPリクエストを受け取ります。リスナーの一つをプロキシサーバとしてブラウザに設定する必要があります。
 Burp Repeater help	Burp Repeaterヘルプ
 Burp Scanner reporting wizard	Burp Scannerレポートウィザード	
 Burp Spider - Submit Form	Burp Spider - 送信フォーム
 Burp Spider needs your guidance to submit a login form. Please choose the value of each form field which should be used when submitting the form, and whether Burp should iterate submission of multi-value fields. You can control how Burp handles forms in the Spider options tab.	Burp Spiderがログインフォームを送信するには、あなたの入力が必要です。送信に使用する各フォームフィールドの値と、複数の値を取るフィールドを繰り返すかどうか選択してください。Spiderオプションタブでフォームの処理方法をコントロールできます。
 Burp Spider needs your guidance to submit a login form. Please choose the value of each form field which should be used when submitting the form. You can control how Burp handles forms in the Spider options tab.	Burp Spiderがログインフォームを送信するには、あなたの入力が必要です。送信に使用する各フォームフィールドの値を選択してください。Spiderオプションタブでフォームの処理方法をコントロールできます。
-Burp Suite documentation	Burp Suiteドキュメント
+Burp Suite [dD]ocumentation	Burp Suiteドキュメント
+Burp Suite search	Burp Suite検索
+Burp will now attempt to contact the license server and activate your license. This will require Internet access. If you access the Internet via a web proxy server, please enter the details below.	Burpはライセンスサーバに接続し、ライセンス認証を試みます。これにはインターネットアクセスが必要です。プロキシサーバを経由してインターネットにアクセスする場合は、以下に詳細を入力してください。
 Byte compare of #([0-9]+) and #([0-9]+)  \\(([0-9]+) differences\\)	#$1と#$2のバイト比較  ($3カ所の相違)
 Byte compare	バイト比較
 Bytes transferred:	転送バイト数:
@@ -357,15 +398,17 @@ Check for updates	更新チェック
 Check robots.txt	robots.txtをチェックする
 Check session is valid	セッションの有効性をチェックする
 Checking for updates	更新を確認中
-chi-square value is too high at bit 0 \\(chi-square: 3,4.63, probability in a random sample: ([0-9.]+)%\\)	ビット$1のカイ二乗値が高すぎます (カイ二乗: $2, ランダムサンプル中の確率: $3%)
-chi-square value is too high at bit 0 \\(chi-square: 3,4.63, probability in a random sample: less than 0.0001%\\)	ビット$1のカイ二乗値が高すぎます (カイ二乗: $2, ランダムサンプル中の確率: 0.0001%未満)
+chi-square value is too high at bit ([0-9]+) \\(chi-square: ([0-9.]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1のカイ二乗値が高すぎます (カイ二乗: $2, ランダムサンプル中の確率: $3%)
+chi-square value is too high at bit ([0-9]+) \\(chi-square: ([0-9.]+), probability in a random sample: less than 0.0001%\\)	ビット$1のカイ二乗値が高すぎます (カイ二乗: $2, ランダムサンプル中の確率: 0.0001%未満)
 chi-square value is too low at bit ([0-9]+) \\(chi-square: ([0-9.]+), probability in a random sample: ([0-9.]+)%\\)	bit $1 のカイ二乗値が低すぎます (カイ二乗: $2, ランダムサンプルの確率: $3%)
 chi-square value is too low at bit ([0-9]+) \\(chi-square: ([0-9.]+), probability in a random sample: less than 0.0001%\\)	bit $1 のカイ二乗値が低すぎます (カイ二乗: $2, ランダムサンプルの確率: 0.0001%未満)
 Choose a file to export the CA certificate.	CA証明書をエクスポートするファイルを選択してください。
 Choose a file to export the certificate and private key, and a password to use for the keystore. 	証明書と秘密鍵をエクスポートするファイルを選択し、キーストアに設定するパスワードを入力してください。
 Choose a file to export the private key. 	秘密鍵をエクスポートするファイルを選択してください。 
+Choose a file to save the configuration to	設定を保存するファイルを選択してください
 Choose a log file	ログファイルを選択してください
 Choose a PKCS#12 file	PKCS#12ファイルを選択してください
+Choose an empty directory to save responses to	レスポンスを保存する空のディレクトリを選択してください。
 Choose file...	ファイル選択...
 Choose folder ...	フォルダ選択 ...
 Choose the folder where temporary files will be saved	一時ファイルが保存されるフォルダを選択
@@ -388,6 +431,7 @@ Clear all	全てクリア
 Clear histories	履歴クリア
 Clear history	履歴クリア
 Clear queues	キューをクリア
+Clear the contents of the viewer	ビューアのコンテンツをクリア
 Clear	クリア
 Cleartext submission of password( \\[[0-9]+\\])?	パスワードの平文送信$1
 Click to modify	クリックして編集
@@ -404,22 +448,29 @@ Client-side XPath injection \\(reflected DOM-based\\)( \\[[0-9]+\\])?	クライ�
 Client-side XPath injection \\(stored DOM-based\\)( \\[[0-9]+\\])?	クライアントサイドXPathインジェクション (蓄積型DOMベース)$1
 Close	閉じる
 Collapse branch	ブランチを折りたたむ
+Columns	列
 Comment this item	このアイテムにコメント
-Comments search \\| (http?://.*)	コメント検索 | $1
+Comments search \\| (https?://.*)	コメント検索 | $1
 Comments?(:?)	コメント$1
-Compare ...	比較 ...
 Compare ...	比較 ...
 Compare responses	レスポンス比較
 Compare site maps?	サイトマップ比較
 Compression	圧縮
 Computing differences	差分を計算中
+Concatenate to single file	１ファイルに連結
 Condition	条件
 Confidence	信頼度
+Configure how cookies and request parameters are handled for this macro item.	このマクロアイテムでのcookieやリクエストパラメータの処理方法を設定します。
+Configure item	アイテム設定
+Configure Macro Item	マクロアイテム設定
+Configure Macro Item: ([A-Z]+) request to (https?://.*)	マクロアイテム設定: $2 への $1 リクエスト
 Configure predefined payload lists	定義済みペイロードリストを編集
 Configure target details	対象の詳細を設定
+Configure the details of the custom parameter location. You need to specify the name that is used for this parameter in subsequent macro requests, and the location within this response from which the parameter's value should be derived.	カスタムパラメータ位置の詳細を設定します。このパラメータを後続のマクロリクエストで使用する際の名前と、パラメータ値として取り出すレスポンス内の位置を指定する必要があります。
 Configure the details of the target for the attack.	攻撃対象の詳細を設定してください。
 Configure the location of the items that Burp Intruder should use for its predefined payload lists.	Burp Intruderが使用する定義済みペイロードリストの場所を設定してください
 Configure the positions where payloads will be inserted into the base request. The attack type determines the way in which payloads are assigned to payload positions - see help for full details.	ペイロードがベースリクエストに挿入される位置を設定します。攻撃タイプは、ペイロードがペイロードポジションに割り当てされる方法を指定します。- 詳細はヘルプを参照してください。
+Configure the selected item	選択したアイテムを設定
 Configure the settings for the custom token location	トークン位置のカスタム設定
 Configure the sources Burp should use for generating filenames to test.	ファイル名のテストを生成する元を設定します。
 Configure	設定
@@ -430,7 +481,7 @@ Construct string in Microsoft SQL Server	Microsoft SQL Serverの文字列生成
 Construct string in MySQL	MySQLの文字列生成
 Construct string in Oracle	Oracleの文字列生成
 Construct string	文字列生成
-Content discovery: (http?://.*)	コンテンツ探索: $1
+Content discovery: (https?://.*)	コンテンツ探索: $1
 Content type incorrectly stated( \\[[0-9]+\\])?	誤ったコンテントタイプ$1
 Content type is not specified( \\[[0-9]+\\])?	コンテントタイプが指定されていない$1
 Contents	コンテンツ
@@ -438,6 +489,7 @@ Continue indefinitely	無限に繰り返す
 Control	コントロール
 Convert HTTPS links to HTTP	HTTPSリンクをHTTPに変換
 Convert selection	選択箇所を変換
+Cookie handling	cookie処理
 Cookie manipulation \\(DOM-based\\)( \\[[0-9]+\\])?	Cookie操作 (DOMベース)$1
 Cookie manipulation \\(reflected DOM-based\\)( \\[[0-9]+\\])?	Cookie操作 (反射型DOMベース)$1
 Cookie manipulation \\(stored DOM-based\\)( \\[[0-9]+\\])?	Cookie操作 (蓄積型DOMベース)$1
@@ -447,6 +499,7 @@ Cookie to body	cookieからボディ
 Cookie to URL	cookieからURL
 Cookie without HttpOnly flag set( \\[[0-9]+\\])?	HttpOnlyフラグがセットされていないcookie$1
 Cookie:	cookie:
+Cookies received	受信cookie
 Cookies	cookie
 Copy ...	コピー ...
 Copy as curl command	curlコマンドをコピー
@@ -459,10 +512,12 @@ Copy content from suite site map	サイトマップからコンテンツをコ�
 Copy details	詳細をコピー
 Copy from position:	コピー元ポジション:
 Copy links in selected items	選択したアイテムのリンクをコピー
+Copy links in selection	選択したリンクをコピー
 Copy links in this branch	このブランチのリンクをコピー
 Copy links in this host	このホストをリンクをコピー
 Copy links?	リンクをコピー
 Copy project	プロジェクトコピー
+Copy request	リクエストをコピー
 Copy selected URLs	選択したURLをコピー
 Copy to clipboard	クリップボードにコピー
 Copy to file	ファイルにコピー
@@ -489,6 +544,8 @@ Cross-site scripting \\(stored DOM-based\\)( \\[[0-9]+\\])?	クロスサイト�
 Cross-site scripting \\(stored\\)( \\[[0-9]+\\])?	クロスサイトスクリプティング(蓄積型)$1
 Current Action	現在のアクション
 Custom location:	カスタム箇所:
+Custom parameter locations in response	レスポンス内のカスタムパラメータ位置
+Custom:	カスタム:
 Cut	切り取り
 Data	データ
 Database connection string disclosed( \\[[0-9]+\\])?	データベース接続文字列漏洩$1
@@ -496,11 +553,14 @@ Day rate:	日給:
 Debug ID:	デバッグID:
 Default to this option in future	次回以降このオプションをデフォルトにする
 Define behavior dependent on session validity:	セッション有効性に依存する動作の定義:
+Define Custom Parameter	カスタムパラメータ定義
 Define custom token location	トークン位置のカスタム定義
+Define extract grep from response	レスポンスから抽出grepを定義
 Define extract grep item	抽出grepアイテムの定義
 Define start and end	開始と終了を定義
 Define the in-scope targets for your current work. This configuration affects the behavior of tools throughout the suite. All fields take regex strings. The easiest way to configure scope is to browse to your target and use the context menus in the site map to include or exclude URL paths.	現在の作業用に、スコープ内のターゲットを定義します。この設定はツール全体での動作に影響を与えます。すべてのフィールドは正規表現で指定します。ターゲットをブラウザで参照し、サイトマップのコンテキストメニューでURLパスを含めるまたは除外すると、スコープ設定が簡単です。
 Define the location of the item to be extracted. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	抽出するアイテムの場所を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
+Define the location of the parameter value. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	パラメータ値の位置を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
 Define the location of the token within the response. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	レスポンス内のトークンの場所を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
 Define the start directory for the content discovery session, and whether files or directories should be targeted.	コンテンツ探索セッションを開始するディレクトリと、対象となるファイルやディレクトリを定義します。
 Delete branch	ブランチを削除
@@ -513,10 +573,16 @@ Delete item	アイテムを削除
 Delete selected issues	選択した問題を削除
 Delete selected items	選択したアイテムを削除
 Delete	削除
+Deleted directory: (.*)	ディレクトリを削除: $1
+Deleting Burp license key.	ライセンスキーを削除中。
+Deleting saved preferences.	保存した設定を削除中。
+Deleting temporary files.	一時ファイルを削除中。
+Delimiter:	区切り文字:
 Denial of service \\(DOM-based\\)( \\[[0-9]+\\])?	サービス妨害 (DOMベース)$1
 Denial of service \\(reflected DOM-based\\)( \\[[0-9]+\\])?	サービス妨害 (反射型DOMベース)$1
 Denial of service \\(stored DOM-based\\)( \\[[0-9]+\\])?	サービス妨害 (蓄積型DOMベース)$1
 Derivations based on discovered items	検出したアイテムに基づいて派生
+Derived parameters	派生パラメータ
 Description(:?)	詳細$1
 Destination host(:?)	宛先ホスト$1
 Destination host, may include wildcards	宛先ホスト, ワイルドカードが使えます
@@ -577,6 +643,7 @@ Don't submit forms	フォームを送信しない
 Don't submit login forms	ログインフォームを送信しない
 Don't use Burp Collaborator	Burp Collaboratorを使用しない
 Down	下へ
+Download JRuby	JRubyをダウンロード
 Download Jython	Jythonをダウンロード
 Download other installers	他のインストーラをダウンロード
 Downloading( \\([0-9]+%\\))?	ダウンロード中$1
@@ -601,6 +668,7 @@ Edit request header	リクエストヘッダ編集
 Edit request interception rule	リクエストインターセプトルールを編集
 Edit response interception rule	レスポンスインターセプトルールを編集
 Edit target	対象を編集
+Edit the selected custom parameter location	カスタムパラメータ位置を編集
 Edit the selected header	選択したヘッダを編集
 Edit the selected item	選択したアイテムを編集
 Edit the selected listener	選択したリスナーを編集
@@ -631,6 +699,7 @@ Engagement tools \\[Pro version only\\]	関連ツール [プロ版のみ]
 Engagement tools	関連ツール
 Enter a new item	新規アイテムを入力
 Enter license key	ライセンスキーを入力してください
+Enter master password	マスターパスワードを入力してください
 Enter regex or leave blank	正規表現で入力するか、空白のまま
 Enter regex, IP range or leave blank	正規表現かIPレンジを入力するか、空白のまま
 Enter the details of the parameter.	パラメータの詳細を入力してください。
@@ -639,6 +708,7 @@ Enter the details of the upstream proxy rule. You can use wildcards to specify d
 Enter the details of when the task should run. The task can be scheduled to run once at a specific time, or to repeat at a defined interval.	タスクスケジュールを実行する詳細時間を入力してください。タスクは、指定した時間に１度だけ実行するか、指定した間隔で繰り返し実行できます。
 Enter the full string to be submitted as the custom request header.	カスタムリクエストヘッダとして送信する全ての文字列を入力してください。
 Enter the hostname and IP address. Burp will use this setting instead of the DNS resolution provided by your computer.	ホスト名とIPアドレスを入力してください。Burpは、コンピュータによるDNS名前解決の代わりにこの設定を使います。
+Enter the master password that was used to encrypt stored passwords.	パスワードの暗号化に使用したマスターパスワードを入力してください。
 Enter the master password to encrypt stored passwords. A strong password is recommended.	パスワードストアを暗号化するマスターパスワードを入力してください。強固なパスワードを推奨します。
 Enter the platform credentials for the specified destination host.	宛先ホストのプラットフォームクレデンシャルを入力してください。
 Entire body \\(for relevant content types\\)	ボディ全体(関連するコンテントタイプの場合)
@@ -657,6 +727,7 @@ Expand branch	ブランチを展開
 Expand requested items	リクエストしたアイテムを展開
 Export comments	コメントをエクスポート
 Export Options	エクスポートオプション
+Export scripts	スクリプトをエクスポート
 Export	エクスポート
 Expression Language injection( \\[[0-9]+\\])?	式言語インジェクション$1
 Expression	正規表現
@@ -675,7 +746,11 @@ External service interaction \\(DNS\\)( \\[[0-9]+\\])?	外部サービスとの�
 External service interaction \\(HTTP\\)( \\[[0-9]+\\])?	外部サービスとの通信 (HTTP)$1
 Extract from regex group	正規表現グループから抽出
 Extract the following items from responses:	レスポンスから以下のアイテムを抽出する:
+Extracted value is URL-encoded	抽出した値はURLエンコードされている
 Failed domain name resolution:	名前解決失敗時の再試行:
+Failed parameters	失敗パラメータ
+Failed to connect to (.*:[0-9]+)	$1へ接続失敗
+Failed to delete directory: (.*)	ディレクトリの削除に失敗: $1
 Failed to import certificate: (.*)	証明書のインポートに失敗しました: $1
 Failed to load certificate: keystore password was incorrect	証明書を読み込めません: キーストアパスワードが間違っています
 Failed to open file	ファイルを開けません
@@ -758,7 +833,10 @@ Generate CSRF PoC	CSRF PoC生成
 Generate	
 Generating report: ([0-9]+)% complete	レポート生成中: $1%完了
 Getting [sS]tarted	入門
+Getting Started With Burp Suite	Burp Suite入門
 Go back	戻る
+Go forward	進む
+Go Up	上へ
 Go	送信
 Handle as ordinary forms	通常のフォームとして処理
 Hardware token or smart card \\(PKCS#11\\)	ハードウェアトークンやスマートカード(PKCS#11)
@@ -832,10 +910,12 @@ Import	インポート
 IMPORTANT NOTICE: You should read all of the documentation about Burp Infiltrator before using it or inducing anyone else to use it. You should only use Burp Infiltrator in full understanding of its nature and the risks inherent in its utilization.	重要な注意: Burp Infiltratorを使用する前、または他の誰かに使用させる前に、ドキュメントを全て読むべきです。Burp Infiltratorの性質と利用に付随するリスクを完全に理解している場合のみ使用すべきです。
 In current browser session	現在のブラウザのセッションを使う
 In current session	現在のセッション
+In future, just copy the URL and don't show this dialog	今後、自動的にURLをコピーしこのダイアログを表示しない。
 In original session	元のセッションを使う
 In	
 Include all URLs	全てのURLを含める
 Include Burp Collaborator identifier in the state file	Burp Collaborator識別子をステートファイルに含める
+Include columns:	含める列
 Include full requests	完全なリクエストを含める
 Include full responses	完全なレスポンスを含める
 Include in scope	スコープ内
@@ -871,9 +951,12 @@ Intercept WebSockets Messages	WebSocketメッセージのインターセプト
 Intercept	インターセプト
 Interface	インタフェース
 Intruder Attack Configuration	Intruder攻撃設定
+Intruder results help	Intruder結果ヘルプ
 Invalid date	不正な日付
 Invalid from value	不正なFrom値
 Invalid host specification	不正なホストが指定されました
+Invalid hostname:(.*)	不正なホスト名:$1
+Invalid IP address:(.*)	不正なIPアドレス:$1
 Invalid length	不正なLength値
 Invalid port:	不正なポート:
 Invalid regex	不正な正規表現
@@ -883,8 +966,7 @@ Invalid value	不正な値
 Invisible proxy support allows non-proxy-aware clients to connect directly to the listener.	透過プロキシをサポートすると、プロキシ非対応のクライアントが直接リスナーに接続できます。
 Invisible	透過
 Invoke a Burp extension	Burp拡張を呼び出す
-IP address	IPアドレス
-IP address:	IPアドレス:
+IP address(:?)	IPアドレス$1
 Issue [Dd]efinitions	問題定義
 Issue activity	問題
 Issue background	問題のバックグラウンド
@@ -942,7 +1024,7 @@ Load active scanning engine options	アクティブスキャンエンジンオ�
 Load active scanning optimization options	アクティブスキャン最適化オプションを読み込む
 Load application login options	アプリケーションログインオプションを読み込む
 Load attack config	攻撃設定を読み込み
-Load attack insertion points　options	攻撃挿入ポイントオプションを読み込む
+Load attack insertion points options	攻撃挿入ポイントオプションを読み込む
 Load attack results options	攻撃結果オプションを読み込む
 Load Burp Collaborator server options	Burp Collaboratorサーバオプションを読み込む
 Load Burp Extender options	Burp Extenderオプションを読み込む
@@ -976,7 +1058,6 @@ Load miscellaneous proxy　options	その他プロキシオプションを読み
 Load miscellaneous proxy settings options	その他プロキシ設定オプションを読み込む
 Load options	オプション読み込み
 Load out-of-scope requests options	スコープ外リクエストオプションを読み込む
-Load out-of-scope requests options	スコープ外リクエストオプションを読み込む
 Load passive scanning areas options	パッシブスキャン対象オプションを読み込む
 Load passive spidering options	パッシブスパイダリングオプションを読み込む
 Load payloads grep options	ペイロードgrepオプションを読み込む
@@ -987,7 +1068,6 @@ Load proxy listeners options	プロキシリスナーオプションを読み込
 Load Python environment options	Python環境オプションを読み込む
 Load redirections options	リダイレクトオプションを読み込む
 Load request engine options	リクエストエンジンオプションを読み込む
-Load request headers options	リクエストヘッダオプションを読み込む
 Load request headers options	リクエストヘッダオプションを読み込む
 Load response modification options	レスポンス操作オプションを読み込む
 Load Ruby environment options	Ruby環境オプションを読み込む
@@ -1032,12 +1112,19 @@ Look and feel:	ルックアンドフィール:
 Look for expression:	検索表現:
 Loopback only	ループバックのみ
 Mac OS installer	Mac OSインストーラ
+Macro ([0-9]+)	マクロ$1
 Macro description:	マクロ詳細:
+Macro editor help	マクロエディタヘルプ
 Macro Editor	マクロエディタ
+Macro items:	マクロアイテム:
+Macro Recorder - Macro ([0-9]+)	マクロレコーダ - マクロ$1
+Macro Recorder	マクロレコーダ
+Macro Tester	マクロテスター
 Macros	マクロ
 Make a non-parameterized request to each dynamic page	各動的ページにパラメータなしのリクエストを送る
 Make request\\(s\\) to validate session:	セッションを検証するリクエスト:
 Make unmodified baseline request	変更されていないベースリクエストを生成する
+Manual [aA]ctivation	手動アクティベート
 Manual [Ll]oad	手動読み込み
 Manual install ...	手動インストール
 Manual testing simulator	手動テストシミュレータ
@@ -1084,6 +1171,7 @@ Miscellaneous	その他
 Mixed content( \\[[0-9]+\\])?	混合コンテンツ$1
 Modified value:	操作値:
 Monitor the following tools' traffic to update the cookie jar:	次のツールを監視してcookie jarを更新する:
+Move down	下に移動
 Move the selected certificate down	選択した証明書を下に移動
 Move the selected certificate up	選択した証明書を上に移動
 Move the selected header down	選択したヘッダを下に移動
@@ -1098,6 +1186,7 @@ Move the selected rule down	選択したルールを下に移動
 Move the selected rule up	選択したルールを上に移動
 Move to the next match	次の一致箇所に移動
 Move to the previous match	前の一致箇所に移動
+Move up	上に移動
 MSSQL-specific checks	MSSQL固有チェック
 Multiple content types specified( \\[[0-9]+\\])?	複数のコンテントタイプ指定$1
 MySQL-specific checks	MySQL固有チェック
@@ -1125,11 +1214,13 @@ Note that the request currently being processed by this session handling rule wi
 Note: Character-level analysis was not performed because the sample size is too small relative to the size of the character set used in the sampled tokens.	注: サンプルのトークンで使われている文字セットのサイズに比べてサンプルサイズが非常に小さいため、文字レベルの解析は実行されていません。
 Note: Disk-based projects are only supported on Burp Suite Professional.	注: ディスクベースプロジェクトはBurp Suiteプロフェッショナル版でのみサポートされています。
 Note: It is not recommended to restore configuration from a state file that originated from an untrusted source.	注: 信頼できない提供元から受け取ったステートファイルから、設定のリストアは推奨しません。
+NOTE: license activations are monitored. If you perform too many activations, further activations for this license may be prevented.	注: ライセンスのアクティベートは監視されています。あまりにも多くのアクティベートが実行されると、このライセンスのさらなるアクティベートを停止することがあります。
 Note: Some of the selected items do not yet have responses. If you choose to remove items with media responses, some of these items may be removed from the scan when their responses have been analyzed.	注: 選択したアイテムの一部はまだレスポンスがありません。メディアレスポンスのアイテムを除外するよう選択した場合、レスポンスの解析が完了したときこれらのアイテムはスキャンから除外されます。
 Note: Some of these options are not available in the Free Edition of Burp.	注: 一部のオプションはBurp Free版では無効です。
 Note: these settings can be overridden for individual projects within project options.	注: これらの設定はプロジェクトオプション内の個別のプロジェクトで上書きできます。
 Note: This analysis is based on the current contents of the site map, and no new requests have been made. Only parameters within the query string and request body are included in the analysis. URLs identified as "static" are those which do not take any parameters, though their responses may still be dynamically generated.	注: この分析はサイトマップの現在の内容に基づいており、新規リクエストは生成していません。クエリストリングとリクエストボディ内のパラメータのみが解析に含まれます。"静的"と識別されたURLはパラメータを持っていませんが、レスポンスが動的に生成された可能性があります。
 Note: You have selected to remove items with media responses. Some of the above items do not yet have responses and so may be removed from the scan when their responses have been analyzed.	注: メディアレスポンスのアイテムを除去するように選択されました。上記の一部のアイテムはまだレスポンスがなく、レスポンスの解析が完了したときこれらのアイテムはスキャンから除外されます。
+NOTE: You should ensure that all valuable data is saved elsewhere before using this function. Using this function will cause Burp to exit.	注: この機能を使用する前に、重要なデータが別の場所に保存されているか確認してください。この機能を使用するとBurpが終了します。
 Note: you should not delete these files if another instance of Burp is currently running.	注: Burpの他のインスタンスが現在起動している場合はこれらのファイルを消さないでください。
 Note: you should not disclose the private key for your CA certificate to any untrusted party.	注: 信頼できない相手にCA証明書の秘密鍵を開示すべきではありません。 
 Number format	数値フォーマット
@@ -1153,6 +1244,7 @@ Open (the )?cookie jar	cookie jarを開く
 Open (the )sessions tracer	セッショントレーサーを開く
 Open config file	設定ファイルを開く
 Open existing project	既存のプロジェクトを開く
+Open in browser	ブラウザで開く
 Open redirection \\(DOM-based\\)( \\[[0-9]+\\])?	オープンリダイレクト(DOMベース)$1
 Open redirection \\(reflected DOM-based\\)( \\[[0-9]+\\])?	オープンリダイレクト (反射型DOMベース)$1
 Open redirection \\(stored DOM-based\\)( \\[[0-9]+\\])?	オープンリダイレクト (蓄積型DOMベース)$1
@@ -1178,8 +1270,9 @@ Overlong UTF-8 encodings	冗長なUTF-8エンコード
 Override user options	ユーザオプションを上書き
 Pad short tokens at:	短いトークンをパディング:
 Pad with \\(single character or 2-digit ASCII hex code\\):	パディング文字(1文字または2桁のASCII16進数コード)
+Parameter handling	パラメータ処理
 Parameter name must be specified	パラメータ名を指定する必要があります
-Parameter name	パラメータ名
+Parameter name(:?)	パラメータ名$1
 Parameter Scope	パラメータスコープ
 Parameters?(:?)	パラメータ$1
 Params	パラメータ
@@ -1202,6 +1295,7 @@ Passwords	パスワード
 Paste data from the clipboard	クリップボードからデータを貼り付け
 Paste from file	ファイルから貼り付け
 Paste one or more items from the clipboard	一つまたは複数のアイテムをクリップボードから貼り付け
+Paste response	レスポンスを貼り付け
 Paste URL as request	URLをリクエストとして貼り付け
 Paste URL	URL貼り付け
 Paste	貼り付け
@@ -1241,8 +1335,8 @@ Payload Positions	ペイロードポジション
 Payload Processing	ペイロード処理
 Payload Sets	ペイロードセット
 Payload type:	ペイロードタイプ:
-Payloads	ペイロード
 payloads	個ペイロード生成する
+Payloads?	ペイロード
 Perform a byte-level comparison of the two selected items	選択した2アイテムをバイトレベルで比較する
 Perform a word-level comparison of the two selected items	選択した2アイテムを単語レベルで比較する
 Performance Feedback	パフォーマンスフィードバック
@@ -1255,6 +1349,7 @@ Platform Authentication	プラットフォーム認証
 Please enter a config file	設定ファイルを入力してください
 Please enter platform credentials for this request.	このリクエストのプラットフォームクレデンシャルを入力してください。
 Please enter the details of the extension, and how you would like to handle standard output and error.	拡張の詳細と、標準出力とエラーの処理方法を入力してください。
+Please enter the new project name.	新しいプロジェクト名を入力してください。
 Please enter the URL you would like to scan from. Note that this task will perform active scanning on the specified URL and on all items beneath it in its branch of the site map.	スキャンを開始するURLを入力してください。ここで指定したURLの、全てのサイトマップ上のブランチに対してアクティブスキャンが実行されることに注意してください。
 Please enter the URL you would like to spider from.	自動巡回を開始するURLを入力してください。
 Please enter your new license key.	新規ライセンスキーを入力してください。
@@ -1276,15 +1371,18 @@ Please supply a regex	正規表現を指定してください
 Please supply a suffix	サフィックスを指定してください
 Please visit https://portswigger.net/burp/freedownload/ to download the latest version.	https://portswigger.net/burp/freedownload/ にアクセスして、最新バージョンをダウンロードしてください。
 Please wait ...	しばらくお待ちください ...
+Please wait	お待ちください
 Poll over unencrypted HTTP	暗号化されていないHTTPでポーリングする
 Polling location \\(optional\\):	ポーリング場所(オプション):
 Port(:?)	ポート$1
 Position:	位置:
-Positions	ポジション
+Positions?	ポジション
 Predefined Payload Lists	定義済みペイロードリスト
 Prefix:	プレフィックス:
+Preset parameters	プリセットパラメータ
 Preset Payload Lists	定義済みペイロードリスト
 Preset schemes:	定義済み形式:
+Previous	前へ
 Private IP addresses disclosed( \\[[0-9]+\\])?	プライベートIPアドレス漏洩$1
 Private key disclosed( \\[[0-9]+\\])?	秘密鍵漏洩$1
 Private key in DER format	DER形式の秘密鍵
@@ -1311,17 +1409,22 @@ Queued Tasks	キューされたタスク
 Random	ランダム
 Rating(:?)	レーティング$1
 Ready	準備完了
+Re-analyze macro	マクロを再解析
+Re-analyzing the macro may alter the parameter configuration of macro items. Are you sure you want to continue\\?	マクロの再解析をすると、マクロアイテムのパラメータ設定が変更されます。継続してよろしいですか？
 Reattach (.*)	$1を再結合
 Recognize automatically based on message headers	メッセージヘッダーから自動的に認識
 Re-colorize the display based on the current payload markers	現在のペイロードマーカで表示を再色分け
 Record a new macro	新規マクロを記録
+Record macro	マクロを記録
+Record the macro items	マクロアイテムを記録
 Recurse subdirectories	サブディレクトリを再帰的に探索
 Redirect to host:	リダイレクト先ホスト:
 Redirect to port:	リダイレクト先ポート:
 Redirect	リダイレクト
 Redirections	リダイレクト
 Redo analysis	解析をやり直し
-References to (http?://.*)	$1 への参照
+Re-enter license key	ライセンスキーの再入力
+References to (https?://.*)	$1 への参照
 References	参考資料
 Referer-dependent response( \\[[0-9]+\\])?	Refererに依存したレスポンス$1
 Refetch response	レスポンスを再取得
@@ -1347,6 +1450,7 @@ Remove <object> tags	<object>タグを除去
 Remove 100 Continue headers	100 Continueヘッダを削除する
 Remove all items from the list	リストから全てのアイテムを削除
 Remove all JavaScript	全てのJavaScriptを除去
+Remove Burp license key	Burpのライセンスキーを削除
 Remove duplicate comments	重複したコメントを削除
 Remove duplicate items \\(same URL and parameters\\) \\[([,0-9]+) items\\]	重複(URLとパラメータが同じ)アイテムを除外 [$1 アイテム]
 Remove duplicate items \\(same URL and parameters\\)	重複(URLとパラメータが同じ)アイテムを除外
@@ -1366,8 +1470,11 @@ Remove items with the following extensions	次の拡張子を除外
 Remove JavaScript form validation	JavaScriptによるフォームバリデーションを除去
 Remove out-of-scope items \\[([,0-9]+) items\\]	スコープ外のアイテムを除外 [$1 アイテム]
 Remove out-of-scope items	スコープ外のアイテムを除外
+Remove saved preferences	保存した設定を削除
 Remove secure flag from cookies	cookieのsecureフラグを除去
+Remove temporary files	一時ファイルを削除
 Remove the selected certificate	選択した証明書を削除
+Remove the selected custom parameter location	カスタムパラメータ位置を削除
 Remove the selected header	選択したヘッダを削除
 Remove the selected items?	選択したアイテムを除去
 Remove the selected listener	選択したリスナーを削除
@@ -1379,6 +1486,8 @@ Remove	削除
 Rename project	プロジェクト名前変更
 Repairing project, please wait ...	プロジェクトを修復しています、しばらくお待ちください ...
 Repeat every:	指定間隔で繰り返し:
+Repeat request in browser	ブラウザでリクエストを再送
+Repeat the automatic parameter analysis on the current macro items	現在のマクロアイテムで自動パラメータ解析を繰り返す
 Repeat	繰り返し
 Replace base parameter value	元パラメータ値を置換
 Replace current state	現在のステートを置き換える
@@ -1403,20 +1512,26 @@ Request handling	リクエストハンドリング
 Request headers	リクエストヘッダ
 Request Headers	リクエストヘッダ
 Request in browser	ブラウザでリクエスト
+Request items? again	アイテムを再度リクエスト
 Request the root of all directories	全てのディレクトリのルートにリクエストする
 Request to (.*)	リクエスト $1
 Request	リクエスト
+requesting item ([0-9]+)	アイテム$1をリクエスト中
 Requests handled	処理したリクエスト
 Requests made:	生成されたリクエスト:
 Requests queued:	キューに入っているリクエスト:
 requests	リクエストごとのみ検証する
 Requests(:?)	リクエスト$1
 Requires Burp Suite Professional	Burp Suiteプロフェッショナルが必要です
+Re-record macro	マクロを再記録
+Re-recording the macro will delete the current macro items. Are you sure you want to continue\\?	マクロを再記録すると現在のマクロアイテムが削除されます。継続してよろしいですか？
 Response ([0-9]+)	レスポンス$1
 Response body	レスポンスボディ
+Response completed	完了レスポンス数
 Response from (.*)	レスポンス $1
 Response headers	レスポンスヘッダ
 Response Modification	レスポンス操作
+Response received	受信レスポンス数
 Response to this request	このリクエストのレスポンス
 Responses queued for analysis:	解析用にキューされたレスポンス:
 Responses?	レスポンス
@@ -1429,16 +1544,21 @@ Restore state	ステート復元
 Restoring site map - please wait...	サイトマップを復元中 - しばらくお待ちください...
 Restoring: ([0-9]+)% complete	リストア中: $1%完了
 Restrict to requests containing these parameters:	これらのパラメータを含むリクエストに制限する:
+Results Tab	結果タブ
+Results table	結果テーブル
+Results	結果
 Resume active scanning	アクティブスキャンを再開
 Resume scanner	スキャン再開
 Resume spidering	自動巡回再開
 Resume	再開
+Retest macro	マクロを再テスト
 Revert to the original list of items	元のアイテムリストに戻す
 Revert	元に戻す
 Review the items you have selected for scanning. Double-click items to view full details. You can remove individual items which you do not wish to scan, or go back to modify your general filters.	スキャン用に選択したアイテムを確認してください。詳細を表示するにはアイテムをダブルクリックしてください。スキャンしたくない個々のアイテムを除外するか、戻って一般的なフィルタを変更できます。
 Robots.txt file( \\[[0-9]+\\])?	robots.txt ファイル$1
 Ruby code injection( \\[[0-9]+\\])?	Rubyコードインジェクション$1
 Ruby Environment	Ruby環境
+Rule ([0-9]+)	ルール$1
 Rule Actions	ルールアクション
 Rule Description	ルール詳細
 Rule	ルール
@@ -1446,6 +1566,8 @@ Run a macro	マクロを実行する
 Run a post-request macro	リクエスト前マクロを実行する
 Run health check ...	ヘルスチェック実行 ...
 Run macro:	マクロを実行:
+Run the macro again	マクロを再度実行する
+Run the macro to test the handling of parameters	パラメータ処理のテストにマクロを実行する
 Running \\(([,0-9]+) active threads?\\)	実行中 (アクティブなスレッド数 $1)
 Running	起動中
 Sample size: ([0-9]+).	サンプルサイズ: $1 
@@ -1455,7 +1577,7 @@ Save active scanning engine options	アクティブスキャンエンジンオ�
 Save active scanning optimizati onoptions	アクティブスキャン最適化オプションを保存する
 Save application login options	アプリケーションログインオプションを保存する
 Save attack config	攻撃設定を保存
-Save attack insertion points　options	攻撃挿入ポイントオプションを保存する
+Save attack insertion points options	攻撃挿入ポイントオプションを保存する
 Save attack results options	攻撃結果オプションを保存する
 Save Burp Collaborator server options	Burp Collaboratorサーバオプションを保存する
 Save Burp Extender options	Burp Extenderオプションを保存する
@@ -1468,6 +1590,7 @@ Save encrypted using master password(:?)	マスターパスワードで暗号化
 Save entire history	エントリー履歴を保存
 Save extract grep options	抽出grepオプションを保存する
 Save form submission options	フォーム送信オプションを保存する
+Save header row	ヘッダ行を保存
 Save hostname resolution options	ホスト名解決オプションを保存する
 Save hotkey options	ホットキーオプションを保存する
 Save HTML rendering options	HTMLレンダリングオプションを保存する
@@ -1492,7 +1615,6 @@ Save miscellaneous proxy　options	その他プロキシオプションを保存
 Save miscellaneous proxy settings options	その他プロキシ設定オプションを保存する
 Save options	オプション保存
 Save out-of-scope requests options	スコープ外リクエストオプションを保存する
-Save out-of-scope requests options	スコープ外リクエストオプションを保存する
 Save passive scanning areas options	パッシブスキャン対象オプションを保存する
 Save passive spidering options	パッシブスパイダリングオプションを保存する
 Save paySaves grep options	ペイロードgrepオプションを保存する
@@ -1505,8 +1627,8 @@ Save redirections options	リダイレクトオプションを保存する
 Save report	レポート保存
 Save request engine options	リクエストエンジンオプションを保存する
 Save request headers options	リクエストヘッダオプションを保存する
-Save request headers options	リクエストヘッダオプションを保存する
 Save response modification options	レスポンス操作オプションを保存する
+Save results table	結果テーブルの保存
 Save Ruby environment options	Ruby環境オプションを保存する
 Save scheduled tasks　options	スケジュールタスクオプションを保存する
 Save selected items	選択したアイテムを保存
@@ -1535,6 +1657,8 @@ Save tokens	トークンを保存
 Save upstream proxy servers options	上位プロキシサーバオプションを保存する
 Save user interface options	ユーザインタフェースオプションを保存する
 Save user options	ユーザオプション保存
+Save	保存
+Saved preferences	保存した設定
 Saving: ([0-9]+)% complete	保存中: $1%完了
 Scan accuracy:	スキャン精度:
 Scan again	再度スキャン
@@ -1546,6 +1670,8 @@ Scan speed:	スキャン速度:
 Schedule task	タスクをスケジュール
 Scheduled Tasks	スケジュールタスク
 Scope	スコープ
+Search cancelled	検索がキャンセルされました
+Search completed \\[dynamic search active\\]	検索完了 [ダイナミックサーチ有効]
 Search completed	検索終了
 Search options	検索オプション
 Search responses for payload strings	ペイロード文字列のレスポンスを探す
@@ -1568,6 +1694,7 @@ Select generator ...	ジェネレータ選択 ...
 Select how HTTP request messages should appear in the report.	HTTPリクエストメッセージのレポートへの載せ方を選択してください。
 Select how HTTP response messages should appear in the report.	HTTPレスポンスメッセージのレポートへの載せ方を選択してください。
 Select item ([0-9]+):	選択アイテム$1
+Select license file	ライセンスファイルを選択してください
 Select license key file ...	ライセンスキーファイルを選択 ...
 Select Live Capture Request	ライブキャプチャリクエスト選択
 Select macro:	マクロを選択:
@@ -1585,6 +1712,7 @@ Select the file where the report will be saved.	レポートを保存するフ�
 Select the folder where Burp Infiltrator should be saved:	Burp Infiltratorを保存するフォルダを選択してください:
 Select the folder where the download will be saved.	ダウンロードしたファイルを保存するフォルダを選択してください。
 Select the input file from which Burp's state will be loaded.	Burpのステートを読み込むファイルを選択してください。
+Select the items from the proxy history that you wish to include in the macro, and click "OK". Note that to record a macro now using your browser you will need to ensure that proxy interception is turned off.	マクロに含めたいプロキシ履歴のアイテムを選択し、"OK"をクリックしてください。今ブラウザを使用してマクロを記録するには、プロキシのインターセプトがオフになっていることを確認する必要があることに注意してください。
 Select the location in the response where the token appears.	レスポンスのトークンが現れる箇所を選択してください。
 Select the output file to which Burp's state will be saved.	Burpのステートファイルを保存する出力ファイルを選択してください。
 Select the tools that this rule will be applied to.	ルールを適用するツールを選択してください。
@@ -1594,6 +1722,7 @@ Select the types of issues to include in the report.	レポートに含める問
 Select to use regular expression matching. Deselect to make matches literal.	選択すると正規表現として検索。選択解除すると文字列として検索。
 Selected file is a Burp state file	選択されたファイルはBurpのステートファイルです
 Selected generator:	選択されたジェネレータ:
+Selected rows	選択した行
 Send requests here from other tools to configure a live capture. Select the request to use, configure the other options below, then click "Start live capture".	他のツールからライブキャプチャの設定にリクエストを送ります。使用するリクエストを選択し、その他のオプションを設定し、"ライブキャプチャの開始"をクリックしてください。
 Send to Comparer \\(requests?\\)	Comparerに送信(リクエスト)
 Send to Comparer \\(responses?\\)	Comparerに送信(レスポンス)
@@ -1608,6 +1737,7 @@ Separator for position ([0-9]+)	ポジション$1の区切り文字
 Sequential	連番
 Serialized object in HTTP message( \\[[0-9]+\\])?	HTTPメッセージ内のシリアライズされたオブジェクト$1
 Server location:	サーバの場所:
+Server responses	サーバレスポンス
 Server SSL Certificates	サーバSSL証明書
 Server-level issues	サーバレベルの問題
 Server-side code injection	サーバサイドコードインジェクション
@@ -1617,6 +1747,8 @@ Server-side template injection( \\[[0-9]+\\])?	サーバサイドテンプレー
 Session handling action editor - Rule ([0-9]+)	セッションハンドリングアクションエディタ - ルール$1
 Session handling rule editor	セッションハンドリングルールエディタ
 Session Handling Rules	セッションハンドリングルール
+Session handling tracer \\[paused\\]	セッションハンドリングトレーサー [停止]
+Session handling tracer	セッションハンドリングトレーサー
 Session is not running	セッションは実行していません。
 Session is running	セッション実行中
 Session token in URL( \\[[0-9]+\\])?	URL内のセッショントークン$1
@@ -1664,6 +1796,7 @@ Social security numbers disclosed( \\[[0-9]+\\])?	社会保障番号漏洩$1
 SOCKS proxy host:	SOCKSプロキシホスト:
 SOCKS proxy port:	SOCKSプロキシポート:
 SOCKS Proxy	SOCKSプロキシ
+Some items could not be cleaned up.	一部のアイテムを削除できませんでした。
 Some of these items are outside the current spidering scope. Would you like to modify the scope to include the items\\?	これらのアイテムの一部は、現在の巡回スコープ外です。このアイテムを含むようスコープを修正しますか？
 Source code disclosure( \\[[0-9]+\\])?	ソースコード漏洩$1
 Source	ソース
@@ -1691,6 +1824,7 @@ Spider requests queued:	キューされた巡回リクエスト:
 Spider Scope	Spiderスコープ
 Spider selected items	選択したアイテムをSpider実行
 Spider Status	Spiderステータス
+Spider this branch	このブランチをSpider実行
 Spider this host	このホストをSpider実行
 SQL injection \\(second order\\)( \\[[0-9]+\\])?	SQLインジェクション (セカンドオーダー)$1
 SQL injection( \\[[0-9]+\\])?	SQLインジェクション$1
@@ -1746,26 +1880,28 @@ Support Center	サポートセンター
 Support invisible proxying \\(enable only if needed\\)	透過プロキシをサポートする(必要な場合のみ有効にしてください)
 Suppress Burp error messages in browser	ブラウザへのBurpエラーメッセージを抑制する
 Sync views	表示を同期
+Tab	タブ
 Table of contents levels	目次レベル
 Tabs	タブ
 Take full ownership of the project	プロジェクトの完全な所有権を取得する
-Target analyzer \\| (http?://.*)	対象解析 | $1
+Target analyzer \\| (https?://.*)	対象解析 | $1
 Target Scope	ターゲットスコープ
 Target: (http.*)	対象: $1
 Target: Not specified	対象: 指定されていません
 Task	タスク
 Tasks queued:	キューされたタスク:
 Temporary Files Location	一時ファイルの場所
+Temporary files	一時ファイル
 Temporary project	一時プロジェクト
 Test all extensions observed in use on target site, except for:	対象サイトで使用されている全ての拡張子をテスト, 次は除く:
 Test Description	テスト詳細
 Test file stems with no extension	拡張子のないファイル名
+Test macro	マクロをテスト
 Test these extensions:	次の拡張子をテスト:
 Test these variant extensions on discovered files:	発見したファイルにこれらの拡張子をテストする:
+Testing macro:	テスト中のマクロ:
 The actions below will be performed in sequence when this rule is applied to a request.	このルールが順番に実行されリクエストに適用されます。
-The analysis is based on a sample of ([0-9]+) tokens?. Based on the sample size, the reliability of the results is: poor.	解析は$1トークンのサンプルに基づきます。サンプルサイズに基づくと、信頼性は次の通りです: 貧弱。
-The analysis is based on a sample of ([0-9]+) tokens?. Based on the sample size, the reliability of the results is: reasonable.	解析は$1トークンのサンプルに基づきます。サンプルサイズに基づくと、信頼性は次の通りです: 適正。
-The analysis is based on a sample of ([0-9]+) tokens?. Based on the sample size, the reliability of the results is: very poor.	解析は$1トークンのサンプルに基づきます。サンプルサイズに基づくと、信頼性は次の通りです: 非常に貧弱。
+The analysis is based on a sample of ([0-9]+) tokens?. Based on the sample size, the reliability of the results is: (.*)	解析は$1トークンのサンプルに基づきます。サンプルサイズに基づくと、信頼性は次の通りです: $2
 The BApp Store contains Burp extensions that have been written by users of Burp Suite, to extend Burp's capabilities.	BAppストアには、Burp Suiteユーザによって書かれた拡張があり、Burpの機能を拡張できます。
 The capture server hostname ([-_.0-9a-z]*) could not be resolved to an IP address. Ensure that an appropriate DNS entry exists for the server. No connections to the polling server at ([-_.0-9a-z]*) could be opened. The collaborator will not work in this configuration. 	キャプチャサーバのホスト名 $1 をIPアドレスに名前解決できません。サーバの適切なDNSエントリが存在しているか確認してください。ポーリングサーバ $2 への接続ができません。Collaboratorはこの設定では動作しません。
 The certificate and private key were successfully exported.	証明書と秘密鍵を正常にエクスポートしました。
@@ -1775,16 +1911,17 @@ The certificate was successfully exported.	証明書を正常にエクスポー�
 The chart indicates the degree of confidence in the randomness of the sample at each bit position. The significance level at each position is the probability of the observed bit-level results occurring, assuming that the sample is randomly generated.	グラフは、各ビット位置におけるサンプルの乱数性の信頼度を示します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合の、観察されたビットレベルの発生確率です。
 The chart shows the number of bits of effective entropy at each significance level, based on all tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、全てのテストに基づいた、有意水準ごとの効果のあるエントロピーのビット数を表示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。低い有意水準を使用すると、サンプルがランダムであるという仮説を否定するためにより強力な証拠が必要とされることになり、非ランダムなデータがランダムだと処理される可能性が高くなります。
 The chart shows the number of bits of effective entropy at each significance level, based on the bit-level tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、ビットレベルのテストに基づいた、有意水準ごとの効果のあるエントロピーのビット数を表示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。低い有意水準を使用すると、サンプルがランダムであるという仮説を否定するためにより強力な証拠が必要とされることになり、非ランダムなデータがランダムだと処理される可能性が高くなります。
+The directory selected is not empty	選択されたディレクトリは空ではありません
 The extension is loading.	拡張を読み込み中。
 The extension loaded successfully. Any output or error messages generated are shown below.	正常に拡張を読み込みました。生成された出力やエラーは以下に表示されます。
 The file you have selected is a Burp state file, not a project file.	選択したファイルは、プロジェクトファイルではなく、Burpのステートファイルです。
 The final response from the macro	マクロの最後のレスポンス
+The following items will be removed:	次のアイテムを削除します:
 The following rules determine whether Burp sends each outgoing request to a proxy server, or directly to the destination web server. The first rule that matches each destination host will be used. To send all traffic to a single proxy server, create a rule with \\* as the destination host.	以下のルールで、外向きリクエストごとに、プロキシサーバへ送信するか、もしくは宛先Wwebサーバに直接送信するかどうか決定します。宛先ホストが最初にマッチしたルールが使用されます。すべてのリクエストを特定のプロキシサーバに送信するには、宛先ホストが * のルールを作成してください。
+The macro contains no items. Are you sure you want to proceed\\?	マクロにアイテムがありません。続行してよろしいですか？
 The options below control the types of analysis that is performed at the bit level.	ビットレベルで実行される分析タイプを制御します。
 The options below control the types of analysis that is performed at the character level.	文字レベルで実行される分析タイプを制御します。
-The overall quality of randomness within the sample is estimated to be: excellent.	サンプル内の乱数の質の推測は次の通りです: 優秀。
-The overall quality of randomness within the sample is estimated to be: extremely poor.	サンプル内の乱数の質の推測は次の通りです: 非常に貧弱。
-The overall quality of randomness within the sample is estimated to be: poor.	サンプル内の乱数の質の推測は次の通りです: 貧弱。
+The overall quality of randomness within the sample is estimated to be: (.*)	サンプル内の乱数の質の推測は次の通りです: $1
 The private key was successfully exported.	秘密鍵を正常にエクスポートしました。
 The project file was successfully repaired. You can now open the repaired project.	プロジェクトファイルは正常に修復されました。修復したプロジェクトを開けます。
 The request has not yet been issued - click "Fetch response" to issue it	リクエストはまだ発行されていません - "レスポンス取得"をクリックして発行してください
@@ -1893,20 +2030,22 @@ This test divides the bit sequence at each position into runs of consecutive bit
 This test measures the longest run of bits with the same value at each bit position. If the sample is randomly generated, the longest run is likely to be within a range determined by the size of the sample set. At each position, the test computes the probability of the observed longest run arising if the tokens are random. The significance level at each position is the probability of the observed longest run occurring, assuming that the sample is randomly generated.	このテストは各ビット位置で、同じ値を持つビットの最長連を計測します。サンプルがランダムに生成されている場合、最長連は、おおむねサンプルセットのサイズで決定される範囲に入る可能性が高いです。テストは各位置で、トークンがランダムな場合に生じる観測した最長連の確率を計算します。サンプルがランダムと仮定した場合、各位置の有意水準は、観察された最長連が発生する確率です。
 This test performs a sophisticated analysis of the bit sequence at each position, and is capable of identifying evidence of non-randomness in some samples which pass the other statistical tests. The test works through the bit sequence and treats each series of consecutive numbers as coordinates in a multi-dimensional space. It plots a point in this space at each location determined by these co-ordinates. If the sample is randomly generated, the distribution of points within this space is likely to be approximately uniform; the appearance of clusters within the space indicates that the data is likely to be non-random. At each position, the test computes the probability of the observed distribution occurring if the tokens are random. The test is repeated for multiple sizes of number \\(between 1 and 8 bits\\) and for multiple numbers of dimensions \\(between 2 and 6\\). The significance level at each position is the probability of the observed results occurring, assuming that the sample is randomly generated.	このテストは、各位置のビットシーケンスの高度な解析を実行し、他の統計テストに合格した一部のサンプルの、非ランダム性の証拠を発見できます。テストはビット列を通して動作し、各連続した番号の連続を多次元空間の座標として扱います。これらの座標によって決定された場所ごとに、空間内の点をプロットします。サンプルがランダムに生成されていた場合、この空間内の点の分布がはおおよそ均一になる可能性が高いです; 空間内のクラスターの出現は、データがランダムではない可能性が高いことを示しています。テストは各位置で、トークンがランダムな場合に発生する観測分布の確率を計算します。テストは複数サイズの数(1から8ビット)と、複数の次元(2から6)で繰り返されます。サンプルがランダムと仮定した場合、各位置の有意水準は、観察された結果が発生する確率です。
 This URL is outside the current target scope. Are you sure you want to schedule an active scan\\?	このURLは現在の対象スコープ外です。アクティブスキャンをスケジュールしてよろしいですか？
+This version of Burp requires a license key. To continue, please paste your license key below, or load it from file.	このバージョンのBurpは来宣キーが必要です。継続するには、以下にライセンスキーを貼り付けるか、ファイルから読み込んでください。
 This will clear all existing custom iterator settings	既存の全てのカスタムイテレータをクリアします
 This will close all Burp windows - are you sure you want to exit\\?	Burpの全てのウィンドウを閉じます - 終了してよろしいですか？
 This will enable other network users to use the proxy and view the proxy history.	他のネットワークユーザがプロキシを利用し、プロキシの履歴を閲覧できるようになります。
+This will exit the current attack	現在の攻撃を終了します
+This wizard lets you remove certain information which Burp saves on your computer. Choose which items you would like to remove.	このウィザードで、Burpがコンピュータに保存した特定の情報を削除します。削除したいアイテムを選択してください。
 Throttle \\(milliseconds\\):	ウェイト(ミリ秒):
 Throttle between requests \\(milliseconds\\):	リクエスト間のウェイト(ミリ秒):
+Time of day	時刻
 Time requested	リクエスト時刻
 Time running:	起動時間:
 Time	時刻
 Time-delay checks	遅延チェック
-Timeouts	タイムアウト
+Timeouts?	タイムアウト
 Title	タイトル
-To enable bit-level analysis, each token was converted into a set of ([,0-9]+) bits. 	ビットレベルの解析を有効にするために、各トークンは$1ビットのセットに変換されました。グラフでは、各文字位置が貢献したビット数を示しています。
-To enable bit-level analysis, each token was converted into a set of ([,0-9]+) bits. Because some character positions within the sample use character sets whose size is not a round power of two, ([0-9.]+) bits of data were compressed into other bits derived from the same character position. The overall bit counts for effective entropy have been adjusted to reflect this compression. The chart shows the number of bits contributed by each character position.	ビットレベルの解析を有効にするために、各トークンは$1ビットのセットに変換されました。サンプル内の一部の文字位置は2の累乗のサイズではない文字セットを使用するので、データの$2ビットは同じ文字位置から派生した他のビットに圧縮されました。意味のあるエントロピーの全体ビットのカウントは、この圧縮を反映するように調整されています。グラフでは、各文字位置が貢献したビット数を示しています。
-To enable bit-level analysis, each token was converted into a set of ([,0-9]+) bits. The chart shows the number of bits contributed by each character position.	ビットレベルの解析を有効にするために、各トークンは$1ビットのセットに変換されました。グラフでは、各文字位置が貢献したビット数を示しています。
+To enable bit-level analysis, each token was converted into a set of ([,0-9]+) bits.(.*)	ビットレベルの解析を有効にするために、各トークンは$1ビットのセットに変換されました。グラフでは、各文字位置が貢献したビット数を示しています。$2
 To help us improve Burp, please report this bug and include the details below.	Burpを改善するため、次の詳細を含むこのバグを報告してください。
 To load this file, create a new Burp project, and then restore the state file in the normal way, via the Burp menu.	このファイルを読み込むには、新規Burpプロジェクトを作成し、Burpメニューから通常通りステートファイルをリストアしてください。
 To lower case	小文字に変換
@@ -1914,6 +2053,7 @@ To monitor or troubleshoot the behavior of your session handling rules, you can 
 To new tab	新規タブへ
 To Propername	先頭のみ大文字でその他は小文字
 To ProperName	先頭のみ大文字でその他は変更なし
+To repeat this request in your browser, copy the URL below and paste into a browser that is configured to use Burp as its proxy.	このリクエストをブラウザで再送するには、Burpをプロキシとして使用するよう設定されたブラウザに、次のURLをコピーして貼り付けてください。
 To run Python extensions, you must download the Jython standalone JAR, and configure its location in Burp Extender options.	Python拡張を実行するには、JythonスタンドアローンJARファイルをダウンロードし、Burp Extenderオプションで場所を設定する必要があります。
 To run Ruby extensions, you must download the JRuby JAR file, and either configure its location in Burp Extender options, or load it on startup via the Java classpath.	Ruby拡張を実行するには、JRubyのJARファイルをダウンロードし、Burp Extenderオプションで場所を設定するか、Javaクラスパスに経由で起動時に読み込む必要があります。
 To tab ([0-9]+)	タブ$1へ
@@ -1921,8 +2061,7 @@ To take effect, you will need to restart Burp, and then install the new certific
 To this host	このホスト宛
 To this IP address	このIPアドレス宛
 To upper case	大文字に変換
-To use Python extensions, you need to download Jython, and configure its location in Burp Extender options.	Python拡張を使うには、Jythonをダウンロードし、Burp Extenderのオプションで場所を設定してください。
-To use Ruby extensions, you need to download JRuby, and configure its location in Burp Extender options.	Ruby拡張を使うには、JRubyをダウンロードし、Burp Extenderのオプションで場所を設定してください。
+To use (.*) extensions, you need to download (.*), and configure its location in Burp Extender options.	$1拡張を使うには、$2をダウンロードし、Burp Extenderのオプションで場所を設定してください。
 Toggle message interception	メッセージのインターセプトを反転
 Token Analysis	トークン解析
 Token Handling	トークンハンドリング
@@ -1935,6 +2074,7 @@ too few ones at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample:
 too many ones at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1に1が多すぎます (回数: $2, ランダムサンプル中の確率: $3%)
 too many ones at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1に1が多すぎます (回数: $2, ランダムサンプル中の確率: 0.0001%未満)
 Tool	ツール
+Tools Scope	ツールスコープ
 Tools	ツール
 Top/bottom split	上下分割
 Total cost:	総額:
@@ -1966,11 +2106,14 @@ Update current request with cookies from session handling cookie jar	セッシ�
 Update current request with parameters matched from final macro response	マクロの最後のレスポンスのマッチしたパラメータでリクエストを更新する
 Update current	現状を更新
 Update license key	ライセンスキー更新
+Update macro	マクロ更新
 Update now	更新開始
 Update only the following cookies:	このcookieのみ更新する:
 Update only the following parameters:	このパラメータのみ更新する:
 Update the first macro request with parameters matched from the response to the current request	最初のマクロリクエストのマッチしたパラメータを、現在のリクエストのレスポンスで更新する
+Update the original macro configuration with the requests and responses made in this test	元のマクロ設定を、このテストで生成したリクエストとレスポンスに更新する
 Upstream Proxy Servers	上位プロキシサーバ
+URL of redirection target	リダイレクト対象のURL
 URL parameter values	URLのパラメータ値
 URL parameter	URLパラメータ
 URL path filename	URLパスのファイル名
@@ -1992,7 +2135,9 @@ Use a specific character set:	指定した文字セットを使用する:
 Use built-in lists	組み込みリストを使用する
 Use Burp defaults	Burpのデフォルトを使用する
 Use cookies from Burp's cookie jar	Burpのcookie jarのcookieを使用する
+Use cookies from the session handling cookie jar in requests	セッションハンドリングcookie jarのcookieをリクエストに使用する
 Use cookies from the session handling cookie jar	セッションハンドリングcookie jarのcookieを使用する
+Use cookies	cookie使用
 Use custom location:	指定した場所を使用:
 Use custom protocols and ciphers	カスタムプロトコルと暗号を使用
 Use custom scope	カスタムスコープを使用
@@ -2008,10 +2153,12 @@ Use intelligent attack selection	賢い攻撃の選択を使用する
 Use lower case alpha characters	英小文字使用
 Use nested insertion points	ネストした挿入ポイントを使用する
 Use options saved with project	プロジェクトに保存されたオプションを使う
+Use proxy server to connect	接続にプロキシサーバを使用する
 Use Referer header	Refererヘッダを使用する
 Use SOCKS proxy	SOCKSプロキシを使用する
 Use suite scope \\[defined in Target tab\\]	全体のスコープを使用[Targetタブで定義]
 Use the configuration below to control which URLs this rule applies to.	ルールを適用するURLを設定します。
+Use the configuration below to define the items that are included in the macro, and the order they will be issued. You can configure how parameters and cookies are handled for each item. You can also test the macro to confirm it is working correctly.	次の設定を使用して、マクロに含めるアイテムと、発行される順番の定義します。各アイテムでのパラメータやcookieの処理方法が設定できます。マクロをテストし、正しく動作するか確認もできます。
 Use the default Collaborator server	デフォルトのCollaboratorサーバを使用
 Use the default protocols and ciphers of your Java installation	Javaインストールのデフォルトプロトコルと暗号を使用
 Use the platform default \\((.*)\\)	プラットフォームのデフォルト($1)を使用
@@ -2021,6 +2168,7 @@ Use these settings to control which responses are stalled for viewing and editin
 Use these settings to control which WebSockets messages are stalled for viewing and editing in the Intercept tab.	インターセプトタブで表示や編集のために止めるWebSocketメッセージを制御します。
 Use these settings to monitor and control Burp Spider. To begin spidering, browse to the target application, then right-click one or more nodes in the target site map, and choose "Spider this host / branch".	Burp Spiderの監視と制御を行います。巡回を開始するには、対象アプリケーションをブラウズし、対象の一つまたは複数をサイトマップで右クリックし、"このホスト/ブランチをSpider実行"を選択してください。
 Use these settings to monitor and control the discovery session.	探索セッションの監視と制御を行います。
+Use this function to test the macro and determine whether it is working as required.	この機能を使用してマクロをテストし、要求通りに動作しているかどうか確認します。
 User agent-dependent response( \\[[0-9]+\\])?	ユーザエージェントに依存したレスポンス$1
 User Interface	ユーザインタフェース
 User options	ユーザオプション
@@ -2030,11 +2178,13 @@ Using Burp Suite	Burp Suiteの使い方
 Valid session	セッション有効
 Validate session only every	セッションを
 Value \\[(.*)\\]	値 [$1]
+Value derived from	派生した値
 Value(:?)	値$1
 Variable:  start	変動:  初期
 Version:	バージョン:
 View release notes	リリースノートを表示する
 View	表示
+Waiting to pause	一時停止しています
 Waiting	待機中
 Warning	注意
 Warning: This tracer imposes a processing and storage overhead, and should only be used when troubleshooting issues with session handling rules.	警告:　このトレーサーは処理とストレージに負荷をかけるので、セッションハンドリングルールのトラブルシューティングのみに使用すべきです。 
@@ -2046,6 +2196,7 @@ Welcome ...	ようこそ ...
 Welcome to Burp Suite Free Edition. Use the options below to create or open a project.	Burp Suiteフリー版へようこそ。次のオプションでプロジェクトを作成するか開くか選択してください。
 Welcome to Burp Suite Professional. Use the options below to create or open a project.	Burp Suiteプロフェッショナル版へようこそ。次のオプションでプロジェクトを作成するか開くか選択してください。
 When following redirections, understand the following types:	リンクをたどる場合、次のタイプを認識します:
+When you click "next", Burp will remove the specified items and then exit.	"次へ"をクリックすると、Burpは指定したアイテムを削除し終了します。
 Windows installer \\((32|64)-bit\\)	Windowsインストーラ ($1ビット)
 Windows	ウィンドウ
 With payload positions	ペイロードポジションを含む
@@ -2060,6 +2211,7 @@ XML external entity injection( \\[[0-9]+\\])?	XML外部エンティティイン�
 XML injection( \\[[0-9]+\\])?	XMLインジェクション$1
 XPath injection( \\[[0-9]+\\])?	XPathインジェクション$1
 Yes	はい
+You are editing the live config for a running attack. You should proceed with caution and consider pausing the attack while you make changes	攻撃実行中のライブ設定を編集しています。注意深く、変更中の攻撃一時停止の検討を推奨します。
 You can define one or more payload sets. The number of payload sets depends on the attack type defined in the Positions tab. Various payload types are available for each payload set, and each payload type can be customized in different ways.	1つまたは複数のペイロードセットを定義できます。ペイロードセットの数は、"ポジション"タブで定義された攻撃型に依存します。ペイロードセットごとに様々なペイロードタイプが使用可能で、各ペイロードタイプは様々な方法でカスタマイズできます。
 You can define rules to perform various processing tasks on each payload before it is used.	ペイロードが使われる前に各ペイロードのに様々な処理タスクを実行するルールを定義できます。
 You can define session handling rules to make Burp perform specific actions when making HTTP requests. Each rule has a defined scope \\(for particular tools, URLs or parameters\\), and can perform actions such as adding session cookies, logging in to the application, or checking session validity. Before each request is issued, Burp applies in sequence each of the rules that are in-scope for the request.	HTTPリクエストを生成するときに指定したアクションを実行させるセッションハンドリングルールを定義します。各ルールには、スコープ(特定のツール、URL、パラメータ)、セッションcookieを追加するなどアクションの実行、アプリケーションへのログインやセッションの有効性のチェックなどを定義します。各リクエストを発行する前に、スコープ内のリクエストに対して各ルールを順番に適用します。
