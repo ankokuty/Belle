@@ -75,17 +75,18 @@ public class Injection {
 							"str=str.replaceAll(\"(?m)^" + t.en.replace("\"", "\\\"")
 							+ "$\",\"" + t.ja.replace("\"", "\\\"") + "\");");
 				}
-				command.append("str=str.replace(\"\\[Pro version only\\]\",\"[プロ版のみ]\");");
 				// 翻訳されていない文を標準エラーに出す。
 				if (agentArgs != null && agentArgs.equals("debug")) {
-					command.append("if(" + "(str.getBytes().length) == str.length()" // 翻訳されていないもののみ
-							+ " && !str.matches(\"https?://.+\")"                    // URLを無視
-							+ " && !str.matches(\"\\\\$?[0-9,.]+\")"                 // 数値を無視
-							+ " && !str.matches(\"^\\\\w+:?$\")"                     // １単語だけの場合を無視
-							+ " && !str.matches(\"burp\\..*\")"                      // burp.から始まるもの(クラス名？)を無視
-							+ " && !str.matches(\"lbl.*\")"                          // lblから始まるもの(ラベル名？)を無視
-							+ " && str.length()>1"                                   // １文字を無視
-							+ " && !str.matches(\"[A-Z]+s?\")"                       // 大文字のみの単語を無視
+					command.append("if("
+							+ "(str.getBytes().length) == str.length()" // 翻訳されていないもののみ
+							+ " && !str.matches(\"https?://.+\")"       // URLを無視
+							+ " && !str.matches(\"\\\\$?[0-9,.]+\")"    // 数値を無視
+							+ " && !str.matches(\"^\\\\w+:?$\")"        // １単語だけの場合を無視
+							+ " && !str.matches(\"burp\\..*\")"         // burp.から始まるもの(クラス名？)を無視
+							+ " && !str.matches(\"lbl.*\")"             // lblから始まるもの(ラベル名？)を無視
+							+ " && str.length()>1"                      // １文字を無視
+							+ " && !str.matches(\"[A-Z]+s?\")"          // 大文字のみの単語を無視
+							+ " && !str.matches(\"\\\\s+\")"            // 空白のみを無視
 							+ "){System.err.println(str);}");
 				}
 				command.append("}");// if(str!=null && str.length()>0){

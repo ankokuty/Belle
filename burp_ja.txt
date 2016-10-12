@@ -14,6 +14,7 @@
 (.*)[Hh]iding out of scope and unrequested items(.*)	$1スコープ外, リクエストしていないアイテム非表示$2
 (.*)[Hh]iding out of scope, unrequested and not found items(.*)	$1スコープ外, リクエストしていない, 存在しないアイテム非表示$2
 (.*)[Hh]iding out of scope, unrequested, non-parameterized and not found items(.*)	$1スコープ外, リクエストしていない, パラメターなし, 存在しないアイテム非表示$2
+(.*)\\[Pro version only\\](.*)	$1[プロ版のみ]$2
 (.*)Because some character positions within the sample use character sets whose size is not a round power of two, ([,0-9.]+) bits of data were compressed into other bits derived from the same character position.(.*)	$1サンプル内の一部の文字位置は2の累乗のサイズではない文字セットを使用するので、データの$2ビットは同じ文字位置から派生した他のビットに圧縮されました。$3
 (.*)However, an overly short longest run of bits also indicates that the sample is not random.(.*)	$1しかし、短すぎるビットの最長連もサンプルがランダムでないことを示します。$2
 (.*)Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long.(.*)	$1このテストのFIPS仕様では、ビットの最長連が長すぎる場合に失敗のみを記録することに注意してください。$2
