@@ -195,6 +195,7 @@ Are you sure you want to remove this action\\?	このアクションを削除し
 Are you sure you want to remove this certificate\\?	この証明書を削除してよろしいですか？
 Are you sure you want to remove this item\\?	このアイテムを削除してよろしいですか？
 Are you sure you want to remove this listener\\?	このリスナーを削除してよろしいですか？
+Are you sure you want to remove this macro\\?	このマクロを削除してよろしいですか？
 Are you sure you want to remove this rule\\?	このルールを削除してよろしいですか？
 Are you sure you want to restore default active scanning areas options\\?	アクティブスキャン対象オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default active scanning engine options\\?	アクティブスキャンエンジンオプションをデフォルトに戻してよろしいですか？
@@ -260,7 +261,9 @@ Are you sure you want to restore default token handling options\\?	トークン�
 Are you sure you want to restore default upstream proxy servers options\\?	上位プロキシサーバオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default user interface options\\?	ユーザインタフェースオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore defaults for all project options\\?	全てのプロジェクトオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore defaults for user options\\?	ユーザオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to retest the macro\\?	マクロを再テストしてよろしいですか？
+Are you sure you want to shut down Burp and launch the downloaded file\\?	Burpをシャットダウンしダウンロードしたファイルを起動してよろしいですか？
 Are you sure you want to stop\\?	停止してよろしいですか？
 Are you sure you want to unload ("[^"]+")\\?	$1をアンロードしてよろしいですか？
 Are you sure you wanto to shut down Burp and launch the downloaded file\\?	Burpをシャットダウンし、ダウンロードしたファイルを起動してよろしいですか？
@@ -286,7 +289,7 @@ Automatic payload positions	自動ペイロードポジション
 Automatically add entries on client SSL negotiation failure	クライアントがSSL接続に失敗したエントリーを自動的に追加する
 Automatically fix missing or superfluous new lines at end of request	リクエスト最後の不足または余分な改行を自動補正する
 Automatically locate library	ローカルライブラリから自動的に探す
-Automatically reload extensions on startup	起動時に拡張を自動的に再読込する
+Automatically reload extensions on startup	起動時に拡張を自動的に再読み込みする
 Automatically scan the following targets as you browse. Active scan checks send various malicious requests designed to identify common vulnerabilities. Use with caution.	以下の対象をブラウズすると自動的にスキャンを実行します。アクティブスキャンチェックは、一般的な脆弱性を発見するよう設計された様々な悪意のあるリクエストを送信します。注意して使用してください。
 Automatically scan the following targets as you browse. Passive scan checks analyze your existing traffic for evidence of vulnerabilities, and do not send any new requests to the target.	以下の対象をブラウズすると自動的にスキャンを実行します。パッシブスキャンチェックは、既存のトラフィックを脆弱性の証拠として分析し、ターゲットに新しいリクエストは送信しません。
 Automatically select compatible SSL parameters on negotiation failure	ネゴシエーション失敗時に互換性のあるSSLパラメータを自動的に選択する
@@ -789,7 +792,7 @@ Filter:	フィルタ:
 Find comments	コメント検索
 Find references	参照元検索
 Find scripts	スクリプト検索
-Finish	完了
+Finish(ed)?	完了
 FIPS Long Run Test - Significance Levels	FIPS最長連検定 - 有意水準
 FIPS long run	FIPS 最長連検定
 FIPS long runs test	FIPS 最長連検定
@@ -809,10 +812,8 @@ Flash cross-domain policy( \\[[0-9]+\\])?	Flashクロスドメインポリシー
 Folder for loading library JAR files \\(optional\\):	ライブラリのJARファイルを読み込むフォルダ(オプション):
 Folder for loading modules \\(optional\\):	モジュールを読み込むフォルダ(オプション):
 Folders	フォルダ
-Follow redirection	リダイレクトをたどる
 Follow redirections where necessary	必要な箇所でリダイレクトをたどる
-Follow redirections	リダイレクトをたどる
-Follow redirections(:?)	リダイレクトをたどる$1
+Follow redirections?(:?)	リダイレクトをたどる$1
 Follow the redirection in the current response	現在のレスポンスのリダイレクトをたどる
 Font size:	フォントサイズ:
 Font(:?)	フォント$1
@@ -864,9 +865,8 @@ Highlight(\\s*)	色付け
 History logging is disabled	ログ記録は無効です
 Host / IP range	ホスト/IPレンジ
 Host or IP range:	ホストまたはIPレンジ:
-Host	ホスト
+Host(:?)	ホスト$1
 Host, may include wildcards, or leave blank to apply to all hosts	ホスト、ワイルドカードが使えます、または全てのホストの場合は空白のまま
-Host:	ホスト:
 Hostname Resolution	ホスト名解決
 Hostname(:?)	ホスト名$1
 Hotkeys?	ホットキー
@@ -934,8 +934,7 @@ Insensitive	大文字小文字を無視
 Insert a new payload marker	新規ペイロードマーカを挿入
 Insert byte(.*)	バイト挿入$1
 Insert string(.*)	文字列挿入$1
-Insertion point	挿入ポイント
-Insertion points	挿入ポイント
+Insertion points?	挿入ポイント
 Inspect response to determine session validity:	セッションの有効性判断にレスポンスを検証:
 Install	インストール
 Installed	インストール済み
@@ -1019,7 +1018,7 @@ Live Capture Options	ライブキャプチャオプション
 Live capture	ライブキャプチャ
 Live Passive Scanning	ライブパッシブスキャン
 Live scanning	ライブスキャン
-Load ...	読み込み
+Load ...	読み込み ...
 Load active scanning areas options	アクティブスキャン対象オプションを読み込む
 Load active scanning engine options	アクティブスキャンエンジンオプションを読み込む
 Load active scanning optimization options	アクティブスキャン最適化オプションを読み込む
@@ -1120,6 +1119,7 @@ Macro Editor	マクロエディタ
 Macro items:	マクロアイテム:
 Macro Recorder - Macro ([0-9]+)	マクロレコーダ - マクロ$1
 Macro Recorder	マクロレコーダ
+Macro tester help	マクロテスターヘルプ
 Macro Tester	マクロテスター
 Macros	マクロ
 Make a non-parameterized request to each dynamic page	各動的ページにパラメータなしのリクエストを送る
@@ -1204,6 +1204,7 @@ New tab behavior	新規タブの動作
 Next	次へ
 No anomalies were identified in this test.	このテストで異常は見つかっていません。
 No change	変更なし
+No macro selected	マクロが選択されていません
 no protocol: (.*)	プロトコルがありません: $1
 No proxy listeners are currently running - go to the Options tab to enable a listener	プロキシリスナーが起動していません - オプションタブでリスナーを有効化してください。
 No	いいえ
@@ -1302,14 +1303,12 @@ Paste URL	URL貼り付け
 Paste	貼り付け
 Path(:?)	パス$1
 Path-relative style sheet import( \\[[0-9]+\\])?	相対パスのスタイルシート読み込み$1
+Pause [Ss]canner	Scanner一時停止
 Pause active scanning	アクティブスキャンを停止
 Pause before retry \\(milliseconds\\):	リトライ前の一時停止(ミリ秒):
-Pause Scanner	Scannerを停止
-Pause scanner	スキャン一次停止
 Pause Spider and Scanner	SpiderとScannerを中断
 Pause spidering	自動巡回停止
-Pause	一次停止
-Paused	一時停止
+Paused?	一時停止
 Payload [sS]et:	ペイロードセット:
 Payload count:	ペイロード数:
 Payload Encoding	ペイロードのエンコーディング
@@ -1564,7 +1563,7 @@ Rule Actions	ルールアクション
 Rule Description	ルール詳細
 Rule	ルール
 Run a macro	マクロを実行する
-Run a post-request macro	リクエスト前マクロを実行する
+Run a post-request macro	リクエスト後マクロを実行する
 Run health check ...	ヘルスチェック実行 ...
 Run macro:	マクロを実行:
 Run the macro again	マクロを再度実行する
@@ -1665,6 +1664,7 @@ Scan accuracy:	スキャン精度:
 Scan again	再度スキャン
 Scan everything	全てスキャンする
 Scan from a URL	URLからスキャン
+Scan next	次をスキャン
 Scan queue help	スキャンキューヘルプ
 Scan queue	スキャンキュー
 Scan speed:	スキャン速度:
@@ -1749,6 +1749,7 @@ Session handling action editor - Rule ([0-9]+)	セッションハンドリング
 Session handling rule editor	セッションハンドリングルールエディタ
 Session Handling Rules	セッションハンドリングルール
 Session handling tracer \\[paused\\]	セッションハンドリングトレーサー [停止]
+Session handling tracer help	セッションハンドリングトレーサーヘルプ
 Session handling tracer	セッションハンドリングトレーサー
 Session is not running	セッションは実行していません。
 Session is running	セッション実行中
@@ -2057,6 +2058,7 @@ To ProperName	先頭のみ大文字でその他は変更なし
 To repeat this request in your browser, copy the URL below and paste into a browser that is configured to use Burp as its proxy.	このリクエストをブラウザで再送するには、Burpをプロキシとして使用するよう設定されたブラウザに、次のURLをコピーして貼り付けてください。
 To run Python extensions, you must download the Jython standalone JAR, and configure its location in Burp Extender options.	Python拡張を実行するには、JythonスタンドアローンJARファイルをダウンロードし、Burp Extenderオプションで場所を設定する必要があります。
 To run Ruby extensions, you must download the JRuby JAR file, and either configure its location in Burp Extender options, or load it on startup via the Java classpath.	Ruby拡張を実行するには、JRubyのJARファイルをダウンロードし、Burp Extenderオプションで場所を設定するか、Javaクラスパスに経由で起動時に読み込む必要があります。
+To show this response in your browser, copy the URL below and paste into a browser that is configured to use Burp as its proxy.	このレスポンスをブラウザで表示するには、Burpをプロキシとして使用するよう設定されたブラウザに、次のURLをコピーして貼り付けてください。
 To tab ([0-9]+)	タブ$1へ
 To take effect, you will need to restart Burp, and then install the new certificate in your browser.	有効にするには、Burpを再起動し、ブラウザに新しい証明書をインストールする必要があります。
 To this host	このホスト宛
