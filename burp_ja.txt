@@ -35,6 +35,7 @@
 ([,0-9]+) items selected	$1アイテムを選択
 ([,0-9]+) results selected	$1結果を選択
 ([,0-9]+) submissions?	$1件送信
+([0-9]) bytes?	$1バイト
 ([0-9]+) \\(approx\\)	約$1
 ([0-9]+) anomalies were identified in this test:	このテストで$1個の異常が見つかりました: 
 ([0-9]+) bits failed the test. The following ([0-9]+) bits passed the test: ([0-9]+)(, [0-9]+)*.(.*) 	$1ビットが不合格。次の$2ビットは合格: $3$4$5
@@ -143,6 +144,7 @@ Ajax request header manipulation \\(DOM-based\\)( \\[[0-9]+\\])?	Ajaxリクエ�
 Ajax request header manipulation \\(reflected DOM-based\\)( \\[[0-9]+\\])?	Ajaxリクエストヘッダ操作 (反射型DOMベース)$1
 Ajax request header manipulation \\(stored DOM-based\\)( \\[[0-9]+\\])?	Ajaxリクエストヘッダ操作 (蓄積型DOMベース)$1
 Alerts	警告
+Alias	別名
 All bits failed the test. 	全ビットテスト不合格
 All bits passed the test. 	全ビットテスト合格
 All bits passed the test. Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long. However, an overly short longest run of bits also indicates that the sample is not random. Therefore some bits may record a significance level that is below the FIPS pass level even though they do not strictly fail the FIPS test.	全ビットがテスト合格。このテストのFIPS仕様では、ビットの最長連が長すぎる場合に失敗のみを記録することに注意してください。しかし、短すぎるビットの最長連もサンプルがランダムでないことを示します。したがって一部のビットでは、厳密なFIPSテストに不合格でないにもかかわらず、FIPS合格レベルを下回る有意水準を記録する場合があります。
@@ -169,10 +171,13 @@ Analyze target	対象の解析
 Analyzing character set	文字セット解析中
 Analyzing input file: ([0-9]+)% complete	入力ファイルを解析中: $1%完了
 Anomalies	異常
+Any header	任意のヘッダ
+Any parameter	任意のパラメータ
 Any status code with Location header	任意のステータスコードのLocationヘッダ
 APIs	API
 Append to base parameter value	元パラメータ値に追加
 Application Login	アプリケーションログイン
+April	4月
 Are you sure you want to add this item to the site map\\?	このアイテムをサイトマップに追加してもよろしいですか？
 Are you sure you want to cancel the download\\?	ダウンロードをキャンセルしてよろしいですか？
 Are you sure you want to cancel this rule\\?	このルールをキャンセルしてよろしいですか？
@@ -267,6 +272,7 @@ Are you sure you want to shut down Burp and launch the downloaded file\\?	Burp�
 Are you sure you want to stop\\?	停止してよろしいですか？
 Are you sure you want to unload ("[^"]+")\\?	$1をアンロードしてよろしいですか？
 Are you sure you wanto to shut down Burp and launch the downloaded file\\?	Burpをシャットダウンし、ダウンロードしたファイルを起動してよろしいですか？
+ASCII hex	ASCII16進数
 ASP.NET debugging enabled( \\[[0-9]+\\])?	ASP.NETデバッグが有効$1
 ASP.NET tracing enabled( \\[[0-9]+\\])?	ASP.NETトレースが有効$1
 ASP.NET ViewState without MAC enabled( \\[[0-9]+\\])?	MACが無効のASP.NET ViewState$1
@@ -277,6 +283,7 @@ Attack Results	攻撃結果
 Attack Target	攻撃対象
 Attack type:	攻撃タイプ:
 Attack	攻撃
+August	8月
 Auth type	認証タイプ
 Authentication [Rr]equired	認証が必要です
 Authentication type:	認証タイプ:
@@ -312,6 +319,7 @@ Base64-decode	Base64デコード
 Base64-encode requests and responses	リクエストとレスポンスをBase64エンコード
 Base64-encode	Base64エンコード
 Base64-encoded data in parameter( \\[[0-9]+\\])?	パラメータ内のBase64エンコードされたデータ$1
+Battering ram	破城槌(Battering ram)
 Billing	課金
 Bind to address:	バインドするアドレス:
 Bind to port:	バインドするポート:
@@ -329,16 +337,20 @@ Bit Compression Analysis - Compression Ratios	ビット圧縮解析 - 圧縮率
 Bit Compression Analysis - Significance Levels	ビット圧縮解析 - 有意水準
 Bit conversion	ビット変換
 Bit Correlation Analysis - Significance Levels	ビット相関解析 - 有意水準
+Bit flipper	ビットフリッパー
 Bit-level analysis	ビットレベル解析
 Blind	ブラインド
 Block size \\(usually 8 or 16\\):	ブロックサイズ(通常8か16):
 Body encoding:	ボディエンコーディング:
 Body parameter values	ボディのパラメータ値
+Body parameter	ボディパラメータ
 Body to cookie	ボディからcookie
 Body to URL	ボディからURL
+Body	ボディ
 Boolean condition checks	真偽条件チェック
 Boolean operator:	動作条件:
 Browser cross-site scripting filter disabled( \\[[0-9]+\\])?	ブラウザXSSフィルタの無効化$1
+Brute forcer	ブルートフォース
 Building GUI	GUIを構築中
 Builds:	ビルド:
 Built-in long directory list	組み込みの長いディレクトリ名リスト
@@ -376,6 +388,7 @@ CA Certificate	CA証明書
 Cacheable HTTPS response( \\[[0-9]+\\])?	キャッシュ可能なHTTPSレスポンス$1
 Caching	キャッシュ
 Cancel	キャンセル
+Case modification	大文字小文字変換
 Case modifications	変換方法
 Case sensitive match	大文字小文字を区別
 Case sensitive	大文字小文字を区別
@@ -387,15 +400,18 @@ Certificate file:	証明書ファイル:
 Certificate in DER format	DER形式の証明書
 Certificate type:	証明書タイプ:
 Certificate	証明書
+CGI scripts	CGIスクリプト
 Change body encoding	ボディのエンコーディング変更
 Change font ...	フォント変更 ...
 Change parameter locations \\(causes many more scan requests\\):	パラメータ位置の変更(大量のスキャンリクエストが発生します):
 Change request method	リクエストメソッド変更
 Change the font used to display HTTP messages	HTTPメッセージの表示に使用するフォントを変更
 Changes will take effect when Burp is restarted.	変更は再起動後に反映されます。
+Character blocks	文字ブロック
+Character frobber	文字フロバー
 Character set(:?)	文字セット$1
 Character Sets	文字セット
-Character substitutions	文字置換
+Character substitutions?	文字置換
 Character-level analysis	文字レベル解析
 characters	文字
 Check for updates	更新チェック
@@ -412,6 +428,7 @@ Choose a file to export the private key. 	秘密鍵をエクスポートする�
 Choose a file to save the configuration to	設定を保存するファイルを選択してください
 Choose a log file	ログファイルを選択してください
 Choose a PKCS#12 file	PKCS#12ファイルを選択してください
+Choose a preset scheme	定義済み形式を選択
 Choose an empty directory to save responses to	レスポンスを保存する空のディレクトリを選択してください。
 Choose file...	ファイル選択...
 Choose folder ...	フォルダ選択 ...
@@ -451,6 +468,7 @@ Client-side XPath injection \\(DOM-based\\)( \\[[0-9]+\\])?	クライアント�
 Client-side XPath injection \\(reflected DOM-based\\)( \\[[0-9]+\\])?	クライアントサイドXPathインジェクション (反射型DOMベース)$1
 Client-side XPath injection \\(stored DOM-based\\)( \\[[0-9]+\\])?	クライアントサイドXPathインジェクション (蓄積型DOMベース)$1
 Close	閉じる
+Cluster bomb	クラスター爆弾(Cluster bomb)
 Collapse branch	ブランチを折りたたむ
 Columns	列
 Comment this item	このアイテムにコメント
@@ -486,6 +504,7 @@ Construct string in MySQL	MySQLの文字列生成
 Construct string in Oracle	Oracleの文字列生成
 Construct string	文字列生成
 Content discovery: (https?://.*)	コンテンツ探索: $1
+Content type header	コンテントタイプヘッダ
 Content type incorrectly stated( \\[[0-9]+\\])?	誤ったコンテントタイプ$1
 Content type is not specified( \\[[0-9]+\\])?	コンテントタイプが指定されていない$1
 Contents	コンテンツ
@@ -497,10 +516,12 @@ Cookie handling	cookie処理
 Cookie manipulation \\(DOM-based\\)( \\[[0-9]+\\])?	Cookie操作 (DOMベース)$1
 Cookie manipulation \\(reflected DOM-based\\)( \\[[0-9]+\\])?	Cookie操作 (反射型DOMベース)$1
 Cookie manipulation \\(stored DOM-based\\)( \\[[0-9]+\\])?	Cookie操作 (蓄積型DOMベース)$1
+Cookie name	cookie名
 Cookie parameter values	Cookieのパラメータ値
 Cookie scoped to parent domain( \\[[0-9]+\\])?	親ドメインスコープのcookie$1
 Cookie to body	cookieからボディ
 Cookie to URL	cookieからURL
+Cookie value	cookie値
 Cookie without HttpOnly flag set( \\[[0-9]+\\])?	HttpOnlyフラグがセットされていないcookie$1
 Cookie:	cookie:
 Cookies received	受信cookie
@@ -520,6 +541,7 @@ Copy links in selection	選択したリンクをコピー
 Copy links in this branch	このブランチのリンクをコピー
 Copy links in this host	このホストをリンクをコピー
 Copy links?	リンクをコピー
+Copy other payload	他ペイロードコピー
 Copy project	プロジェクトコピー
 Copy request	リクエストをコピー
 Copy selected URLs	選択したURLをコピー
@@ -547,14 +569,19 @@ Cross-site scripting \\(reflected\\)( \\[[0-9]+\\])?	クロスサイトスクリ
 Cross-site scripting \\(stored DOM-based\\)( \\[[0-9]+\\])?	クロスサイトスクリプティング (蓄積型DOMベース)$1
 Cross-site scripting \\(stored\\)( \\[[0-9]+\\])?	クロスサイトスクリプティング(蓄積型)$1
 Current Action	現在のアクション
+Custom iterator	カスタムイテレータ
 Custom location:	カスタム箇所:
 Custom parameter locations in response	レスポンス内のカスタムパラメータ位置
 Custom:	カスタム:
 Cut	切り取り
 Data	データ
 Database connection string disclosed( \\[[0-9]+\\])?	データベース接続文字列漏洩$1
+Dates	日付
 Day rate:	日給:
+Days	日
 Debug ID:	デバッグID:
+December	12月
+Decode as ...	デコード ...
 Default to this option in future	次回以降このオプションをデフォルトにする
 Define behavior dependent on session validity:	セッション有効性に依存する動作の定義:
 Define Custom Parameter	カスタムパラメータ定義
@@ -595,6 +622,9 @@ Details?	詳細
 Detect custom "not found" responses	カスタマイズされた"Not Found"レスポンスを検知する
 Diagnostics	診断
 Direction	方向
+Directories - long	ディレクトリ - 長
+Directories - short	ディレクトリ - 短
+Directories / files . extensions	ディレクトリ/ファイル.拡張子
 Directories only	ディレクトリのみ
 Directory listing( \\[[0-9]+\\])?	ディレクトリリスティング$1
 Disable Java SNI extension \\(requires restart\\)	Java SNI拡張を無効にする(要再起動)
@@ -635,6 +665,7 @@ DOM data manipulation \\(reflected DOM-based\\)( \\[[0-9]+\\])?	DOMデータ操�
 DOM data manipulation \\(stored DOM-based\\)( \\[[0-9]+\\])?	DOMデータ操作 (蓄積型DOMベース)$1
 Domain hostname(:?)	ドメインホスト名$1
 Domain name resolution:	ドメイン名解決:
+Domain name	ドメイン名
 Domain(:?)	ドメイン$1
 Done	完了
 Don't ask again for this server	このサーバは再度確認しない
@@ -662,12 +693,14 @@ Duplicate	複製
 Dynamic update	動的に更新
 Each Burp project has a unique identifier that is used to track any Burp Collaborator interactions that are associated with the project. You need to decide whether to save this identifier in your state file.	プロジェクトに紐付くBurp Collaboratorとの通信を識別するための一意な識別子を、各Burpプロジェクトは持っています。この識別子をステートファイルに保存するか決定する必要があります。
 Each installation of Burp generates its own CA certificate that Proxy listeners can use when negotiating SSL connections. You can import or export this certificate for use in other tools or another installation of Burp.	Burpのインストールごとに、プロキシリスナーがSSL接続を確立する際に使用する独自のCA証明書を生成します。他のツールや他のBurp用に、この証明書のインポートやエクスポートができます。
+ECB block shuffler	ECBブロックシャッフル
 Edit "skip parameter" rule	"スキップパラメータ"ルールを編集
 Edit form field completion rule	フォームフィールド補完ルールを編集
 Edit hostname resolution rule	ホスト名解決ルールを編集
 Edit hotkeys	ホットキー編集
 Edit list	リスト編集
 Edit match/replace rule	検索/置換ルールを編集
+Edit proxy listener	プロキシリスナーを編集
 Edit request header	リクエストヘッダ編集
 Edit request interception rule	リクエストインターセプトルールを編集
 Edit response interception rule	レスポンスインターセプトルールを編集
@@ -693,6 +726,7 @@ Enable algorithms blocked by Java security policy \\(requires restart\\)	Javaセ
 Enable disabled form fields	無効化されたフォームフィールドを有効化
 Enable interception at startup:	起動時にインターセプトを有効:
 Enabled	有効
+Encode as ...	エンコード ...
 Encoded as ASCII hex	ASCII 16進数エンコード
 Encrypted data to shuffle:	シャッフルする暗号データ:
 End at delimiter:	区切りで終了:
@@ -707,7 +741,7 @@ Enter master password	マスターパスワードを入力してください
 Enter regex or leave blank	正規表現で入力するか、空白のまま
 Enter regex, IP range or leave blank	正規表現かIPレンジを入力するか、空白のまま
 Enter the details of the parameter.	パラメータの詳細を入力してください。
-Enter the details of the payload processing rule.	ペイロード処理ルールの詳細を入力してください。]
+Enter the details of the payload processing rule.	ペイロード処理ルールの詳細を入力してください。
 Enter the details of the upstream proxy rule. You can use wildcards to specify destination hosts \\(\\* matches zero or more characters, \\? matches any character except a dot\\). Leave the proxy host blank to connect directly for the specified destination host.	上位プロキシの詳細を入力してください。宛先ホストの指定にワイルドカード(*は０文字以上の文字、?はドット以外の任意の文字にマッチ)を使用できます。指定したホストに直接接続させるには、プロキシホストを空白のままにしてください。
 Enter the details of when the task should run. The task can be scheduled to run once at a specific time, or to repeat at a defined interval.	タスクスケジュールを実行する詳細時間を入力してください。タスクは、指定した時間に１度だけ実行するか、指定した間隔で繰り返し実行できます。
 Enter the full string to be submitted as the custom request header.	カスタムリクエストヘッダとして送信する全ての文字列を入力してください。
@@ -723,6 +757,7 @@ Errors:	エラー:
 Estimated encodings:	予想エンコード数:
 Event detail	イベント詳細
 Events	イベント
+Exact	完全一致
 Examples?(:?)	例$1
 Exclude from scope	スコープから除外
 Exclude HTTP headers	HTTPヘッダを除外
@@ -741,8 +776,12 @@ Extension file \\(\\.(jar|py|rb)\\):	拡張ファイル(.$1):
 Extension file:	拡張ファイル:
 Extension generated issue( \\[[0-9]+\\])?	拡張で作成された問題$1
 Extension loaded	拡張読み込み済み
+Extension payload generator:	拡張ペイロードジェネレータ
 Extension type:	拡張タイプ:
 Extension	拡張子
+Extension-generated	拡張による生成
+Extensions - long	拡張子 - 長
+Extensions - short	拡張子 - 短
 Extensions let you customize Burp's behavior using your own or third-party code.	自分自身または第三者のコードでBurpの機能をカスタマイズできます。
 Extensions	拡張
 External / out-of-band interaction	外部/範囲外の操作
@@ -754,6 +793,7 @@ Extracted value is URL-encoded	抽出した値はURLエンコードされてい�
 Failed domain name resolution:	名前解決失敗時の再試行:
 Failed parameters	失敗パラメータ
 Failed to connect to (.*:[0-9]+)	$1へ接続失敗
+Failed to create Burp project:(.*)	Burpプロジェクトを作成できません:$1
 Failed to delete directory: (.*)	ディレクトリの削除に失敗: $1
 Failed to import certificate: (.*)	証明書のインポートに失敗しました: $1
 Failed to load certificate: keystore password was incorrect	証明書を読み込めません: キーストアパスワードが間違っています
@@ -762,6 +802,8 @@ Failed to open folder	フォルダを開けません
 Failed to retrieve response	レスポンスを取得できませんでした
 Failed to verify BApp file	BAppファイルの検証に失敗しました
 False positive	誤検知
+Fast	早い
+February	2月
 Feedback only contains technical information about Burp's internal functioning, and does not identify you in any way. If you do report a bug via email, you can help us diagnose any problems that your instance of Burp has encountered by including your debug ID.	フィードバックにはBurpの内部機能に関する技術情報のみが含まれ、あなたの識別はできません。バグを電子メールで報告する場合、あなたのデバッグIDを含めると、発生した問題の診断の助けになります。
 Fetch response	レスポンス取得
 Field name cannot be blank	フィールド名は空白にできません
@@ -776,6 +818,8 @@ File size: ([0-9,]+) bytes?	ファイルサイズ: $1 バイト
 File upload functionality( \\[[0-9]+\\])?	ファイルアップロード機能$1
 File was saved successfully.	ファイルを正常に保存しました。
 File(:?)	ファイル$1
+Filenames - long	ファイル名 - 長
+Filenames - short	ファイル名 - 短
 Filenames	ファイル名
 Files and directories	ファイルとディレクトリ
 Files only	ファイルのみ
@@ -820,15 +864,23 @@ Font(:?)	フォント$1
 For this directory	このディレクトリ
 For this file extension	このファイル拡張子
 Force use of SSL	SSLを強制利用
+Form field names	フォームフィールド名
+Form field values	フォームフィールド値
 Form field:	フォームフィールド
 Form Submission	フォーム送信
 Format of original data:	元値のフォーマット:
+Format strings	フォーマットストリング
 Format:	形式:
 Forms queued:	キューに入っているフォーム:
 Forms	フォーム
 Forward	転送
 Frameable response \\(potential Clickjacking\\)( \\[[0-9]+\\])?	フレーム化可能なレスポンス(クリックジャッキングの可能性)$1
 Frameable responses \\("Clickjacking"\\)( \\[[0-9]+\\])?	フレーム化可能なレスポンス("クリックジャッキング")$1
+Fuzzing - full	ファジング - フル
+Fuzzing - path traversal	ファジング - パストラバーサル
+Fuzzing - quick	ファジング - 簡易
+Fuzzing - SQL injection	ファジング - SQLインジェクション
+Fuzzing - XSS	ファジング - XSS
 Generate a CA-signed certificate with a specific hostname:	指定したホスト名でCAが署名した証明書を生成する:
 Generate CA-signed per-host certificates	ホストごとにCAが署名した証明書を生成する
 Generate CSRF PoC	CSRF PoC生成
@@ -842,6 +894,7 @@ Go Up	上へ
 Go	送信
 Handle as ordinary forms	通常のフォームとして処理
 Hardware token or smart card \\(PKCS#11\\)	ハードウェアトークンやスマートカード(PKCS#11)
+Hash ...	ハッシュ ...
 Header cannot be blank	ヘッダは空白にできません
 Header manipulation	ヘッダ操作
 Header:	ヘッダ:
@@ -890,9 +943,11 @@ HTTP header injection	HTTPヘッダインジェクション
 HTTP headers	HTTPヘッダ
 HTTP history	HTTP履歴
 HTTP Message Display	HTTPメッセージ表示
+HTTP method	メソッド
 HTTP PUT method is enabled( \\[[0-9]+\\])?	HTTP PUTメソッドが有効$1
 HTTP response header injection( \\[[0-9]+\\])?	HTTPレスポンスヘッダインジェクション$1
 HTTP TRACE method is enabled( \\[[0-9]+\\])?	TRACEメソッドが有効$1
+HTTP verbs	HTTPメソッド
 I Accept	同意する
 I Decline	拒否する
 If not already present, add as:	存在しない場合、次の値として追加:
@@ -902,7 +957,9 @@ Ignore form	フォーム無視
 Ignore links to non-text content	テキスト以外のコンテンツへのリンクを無視する
 Ignore tokens whose length deviates by	長さの異なるトークンを無視
 Ignore	無視する
+IIS files and directories	IISファイルとディレクトリ
 Illegal hex characters	不正な16進数文字
+Illegal Unicode	不正なUnicode
 Illegal UTF-8 continuation bytes	不正なUTF-8継続バイト
 Images	画像
 Immediately	すぐに
@@ -982,12 +1039,16 @@ Issues	問題
 Item	アイテム
 Items( \\([0-9]+\\))?	アイテム$1
 Iterate all values of submit fields - max submissions per form:	送信フィールドの全ての値を列挙 - フォームごとの最高送信数:
+January	1月
 Java Environment	Java環境
 Java SSL Options	Java SSL オプション
 JavaScript injection \\(DOM-based\\)( \\[[0-9]+\\])?	JavaScriptインジェクション (DOMベース)$1
 JavaScript injection \\(reflected DOM-based\\)( \\[[0-9]+\\])?	JavaScriptインジェクション (反射型DOMベース)$1
 JavaScript injection \\(stored DOM-based\\)	クロスサイトスクリプティング(DOMベース蓄積型)
 JavaScript-driven	JavaScript駆動
+July	7月
+June	6月
+Key	キー
 LDAP injection( \\[[0-9]+\\])?	LDAPインジェクション$1
 Leave	残す
 Left/right split	左右に分割
@@ -1111,6 +1172,7 @@ Longest:	最長
 Look and feel:	ルックアンドフィール:
 Look for expression:	検索表現:
 Loopback only	ループバックのみ
+M[Ii][Mm][Ee] type	MIMEタイプ
 Mac OS installer	Mac OSインストーラ
 Macro ([0-9]+)	マクロ$1
 Macro description:	マクロ詳細:
@@ -1130,6 +1192,7 @@ Manual [Ll]oad	手動読み込み
 Manual install ...	手動インストール
 Manual testing simulator	手動テストシミュレータ
 Manually select library:	ライブラリを選択する:
+March	3月
 Master interception is turned off     	マスターインターセプションがオフになっています     
 Match / replace in list items	リストアイテムの検索と置換
 Match against pre-URL-encoded payloads	URLエンコード前のペイロードとマッチする
@@ -1145,6 +1208,7 @@ Match type	対象
 Match type:	検索対象:
 Match	一致条件
 Match:	検索:
+Matches regex	正規表現に一致
 Max depth:	最大深度:
 Max fraction digits:	最長少数部長:
 Max integer digits:	最長整数部長:
@@ -1157,21 +1221,24 @@ Maximum length:	最大長:
 Maximum link depth:	リンクの最大の深さ:
 Maximum parameterized requests per URL:	URLごとのパラメター付きリクエストの最大数:
 Maximum payloads per item:	アイテムごとのペイロード数:
+May	5月
 Message editor help	メッセージエディタヘルプ
 Message Editor	メッセージエディタ
 Message	メッセージ
 Meta refresh tag	Meta refreshタグ
 Method(:?)	メソッド$1
-MIME type	MIMEタイプ
 Min fraction digits:	最短少数部長:
 Min integer digits:	最短整数部長:
 Min length:	最短:
+Minimize false negatives	検知漏れを最小化
+Minimize false positives	過剰検知を最小化
 minutes	分後
 Misc	その他
 Miscellaneous	その他
 Mixed content( \\[[0-9]+\\])?	混合コンテンツ$1
 Modified value:	操作値:
 Monitor the following tools' traffic to update the cookie jar:	次のツールを監視してcookie jarを更新する:
+Months	月
 Move down	下に移動
 Move the selected certificate down	選択した証明書を下に移動
 Move the selected certificate up	選択した証明書を上に移動
@@ -1204,11 +1271,13 @@ New tab behavior	新規タブの動作
 Next	次へ
 No anomalies were identified in this test.	このテストで異常は見つかっていません。
 No change	変更なし
+No generators defined	ジェネレータが定義されていません。
 No macro selected	マクロが選択されていません
 no protocol: (.*)	プロトコルがありません: $1
 No proxy listeners are currently running - go to the Options tab to enable a listener	プロキシリスナーが起動していません - オプションタブでリスナーを有効化してください。
 No	いいえ
-Normal:	標準:
+None	なし
+Normal(:?)	標準$1
 Not available in demo version	デモバージョンでは無効です
 Not available in free edition	フリー版では無効です
 Note that statistical tests provide only an indicative guide to the randomness of the sampled data. Results obtained may contain false positives and negatives, and may not correspond to the practical predictability of the tokens sampled.	統計的テストは、サンプルデータの乱数性を示す指針のみを提供していることに注意してください。得られた結果には偽陽性と偽陰性が含まれ、サンプリングされたトークンの実用的な予測に対応していない場合があります。
@@ -1225,6 +1294,8 @@ Note: You have selected to remove items with media responses. Some of the above 
 NOTE: You should ensure that all valuable data is saved elsewhere before using this function. Using this function will cause Burp to exit.	注: この機能を使用する前に、重要なデータが別の場所に保存されているか確認してください。この機能を使用するとBurpが終了します。
 Note: you should not delete these files if another instance of Burp is currently running.	注: Burpの他のインスタンスが現在起動している場合はこれらのファイルを消さないでください。
 Note: you should not disclose the private key for your CA certificate to any untrusted party.	注: 信頼できない相手にCA証明書の秘密鍵を開示すべきではありません。 
+November	11月
+Null payloads	ペイロードなし
 Number format	数値フォーマット
 number of ([0-9]+)-bit runs is too large at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$2に$1ビット連の数が大きすぎます (回数: $3, ランダムサンプル中の確率: $4%)
 number of ([0-9]+)-bit runs is too large at bit ([0-9]+) \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$2に$1ビット連の数が大きすぎます (回数: $3, ランダムサンプル中の確率: 0.0001%未満)
@@ -1239,6 +1310,8 @@ Number of threads:	スレッド数:
 Number of unique parameter names:	一意な名前のパラメータ数:
 Number of URLs	URL数
 Number range	数値範囲
+Numbers	数値
+October	10月
 On:	日付
 One bit failed the test \\(bit ([0-9]+)\\). All other bits passed the test. 	1ビットが不合格(bit $1)。その他は合格。
 On-site only	同じサイトのみ
@@ -1272,6 +1345,9 @@ Overlong UTF-8 encodings	冗長なUTF-8エンコード
 Override user options	ユーザオプションを上書き
 Pad short tokens at:	短いトークンをパディング:
 Pad with \\(single character or 2-digit ASCII hex code\\):	パディング文字(1文字または2桁のASCII16進数コード)
+Page title	ページタイトル
+Param name	パラメータ名
+Param value	パラメータ値
 Parameter handling	パラメータ処理
 Parameter name must be specified	パラメータ名を指定する必要があります
 Parameter name(:?)	パラメータ名$1
@@ -1292,6 +1368,7 @@ Password returned in URL query string( \\[[0-9]+\\])?	URLクエリーストリ�
 Password submitted using GET method( \\[[0-9]+\\])?	GETメソッドを使用したパスワード送信$1
 Password value set in cookie( \\[[0-9]+\\])?	cookieにセットされたパスワード値$1
 Password(:?)	パスワード$1
+Passwords \\+ digit	パスワード+数値
 Passwords within configuration options:	設定内のパスワード:
 Passwords	パスワード
 Paste data from the clipboard	クリップボードからデータを貼り付け
@@ -1343,6 +1420,7 @@ Performance Feedback	パフォーマンスフィードバック
 Per-host	ホストごと
 Perl code injection( \\[[0-9]+\\])?	Perlコードインジェクション$1
 PHP code injection( \\[[0-9]+\\])?	PHPコードインジェクション$1
+Pitchfork	ピッチフォーク(Pitchfork)
 Place attacks into the following locations within requests:	リクエスト内の次の場所に攻撃を配置します:
 Plain JAR file	JAR ファイル
 Platform Authentication	プラットフォーム認証
@@ -1418,6 +1496,7 @@ Record a new macro	新規マクロを記録
 Record macro	マクロを記録
 Record the macro items	マクロアイテムを記録
 Recurse subdirectories	サブディレクトリを再帰的に探索
+Recursive grep	再帰検索
 Redirect to host:	リダイレクト先ホスト:
 Redirect to port:	リダイレクト先ポート:
 Redirect	リダイレクト
@@ -1508,11 +1587,14 @@ Request ([0-9]+)	リクエスト$1
 Request body	リクエストボディ
 Request count:	リクエスト数
 Request Engine	リクエストエンジン
+Request first line	リクエスト先頭行
 Request handling	リクエストハンドリング
-Request headers	リクエストヘッダ
-Request Headers	リクエストヘッダ
+Request Header	リクエストヘッダ
+Request headers?	リクエストヘッダ
 Request in browser	ブラウザでリクエスト
 Request items? again	アイテムを再度リクエスト
+Request param name	リクエストパラメータ名
+Request param value	リクエストパラメータ値
 Request the root of all directories	全てのディレクトリのルートにリクエストする
 Request to (.*)	リクエスト $1
 Request	リクエスト
@@ -1529,7 +1611,7 @@ Response ([0-9]+)	レスポンス$1
 Response body	レスポンスボディ
 Response completed	完了レスポンス数
 Response from (.*)	レスポンス $1
-Response headers	レスポンスヘッダ
+Response headers?	レスポンスヘッダ
 Response Modification	レスポンス操作
 Response received	受信レスポンス数
 Response to this request	このリクエストのレスポンス
@@ -1570,6 +1652,7 @@ Run the macro again	マクロを再度実行する
 Run the macro to test the handling of parameters	パラメータ処理のテストにマクロを実行する
 Running \\(([,0-9]+) active threads?\\)	実行中 (アクティブなスレッド数 $1)
 Running	起動中
+Runtime file	実行時ファイル
 Sample size: ([0-9]+).	サンプルサイズ: $1 
 Sample	サンプル
 Save active scanning areas options	アクティブスキャン対象オプションを保存する
@@ -1700,10 +1783,12 @@ Select license key file ...	ライセンスキーファイルを選択 ...
 Select Live Capture Request	ライブキャプチャリクエスト選択
 Select macro:	マクロを選択:
 Select none	選択を解除
+Select payload generator	ペイロードジェネレータを選択
 Select processor:	拡張選択:
 Select the "extract grep" item from which to derive payloads:	ペイロードを取得する"抽出grep"アイテムをを選択してください:
 Select the certificate file	証明書ファイルを選択
 Select the configuration that you would like to load for this project.	このプロジェクトに読み込む設定を選択してください。
+Select the extension-provided payload generator that you want to use. Burp extensions can be loaded using the Extender tool.	ペイロードを生成する拡張から使用したいものを選択してください。Burp拡張は、Extenderで読み込めます。
 Select the file containing the CA certificate to import.	インポートするCA証明書を含むファイルを選択してください。
 Select the file containing the keystore to import, and the password for the keystore.	インポートするキーストアを含むファイルを選択し、キーストアのパスワードを入力してください。
 Select the file containing the private key to import.	インポートする秘密鍵を含むファイルを選択してください。
@@ -1735,6 +1820,7 @@ Send to Sequencer	Sequencerに送信
 Send to Spider	Spiderに送信
 Sensitive	大文字小文字を区別
 Separator for position ([0-9]+)	ポジション$1の区切り文字
+September	9月
 Sequential	連番
 Serialized object in HTTP message( \\[[0-9]+\\])?	HTTPメッセージ内のシリアライズされたオブジェクト$1
 Server location:	サーバの場所:
@@ -1745,6 +1831,7 @@ Server-side code injection	サーバサイドコードインジェクション
 Server-side JavaScript code injection( \\[[0-9]+\\])?	サーバサイドJavaScriptコードインジェクション$1
 Server-side template injection \\(requires reflected XSS\\)	サーバサイドテンプレートインジェクション(反射型XSSが必要)
 Server-side template injection( \\[[0-9]+\\])?	サーバサイドテンプレートインジェクション$1
+Server-side variable names	サーバサイド変数名
 Session handling action editor - Rule ([0-9]+)	セッションハンドリングアクションエディタ - ルール$1
 Session handling rule editor	セッションハンドリングルールエディタ
 Session Handling Rules	セッションハンドリングルール
@@ -1765,6 +1852,7 @@ Set the details by pasting a URL	URLを貼り付けて詳細をセット
 Set unmatched fields to:	一致しないフィールドにセットする値:
 Settings	設定
 Severity	危険度
+Short words	短い単語
 Shortest:	最短
 Show all differences between the two responses	2レスポンスの全ての差分を表示
 Show all	全て表示
@@ -1785,6 +1873,7 @@ Showing selected items	選択したアイテムを表示中
 Shut down Burp and launch downloaded file	Burpをシャットダウンし、ダウンロードしたファイルを起動する
 Significance Levels	有意水準
 Silverlight cross-domain policy( \\[[0-9]+\\])?	Silverlightクロスドメインポリシー$1
+Simple list	単純リスト
 Simple string	単純な文字列
 Simulate manual testing	手動テストをシミュレート
 Simulation running	シミュレーション実行
@@ -1794,6 +1883,7 @@ Size	サイズ
 Skip all tests for these parameters:	これらのパラメータのテストを全てスキップする:
 Skip server-side injection tests for these parameters:	これらのパラメータに対するサーバサイドインジェクションテストをスキップする:
 Smart decode	自動デコード
+Sniper	スナイパー(Sniper)
 Social security numbers disclosed( \\[[0-9]+\\])?	社会保障番号漏洩$1
 SOCKS proxy host:	SOCKSプロキシホスト:
 SOCKS proxy port:	SOCKSプロキシポート:
@@ -1869,6 +1959,7 @@ Streaming Responses	ストリーミングレスポンス
 Strict transport security not enforced( \\[[0-9]+\\])?	Strict transport securityが適用されていない$1
 Strip chunked encoding metadata in streaming responses	ストリーミングレスポンスからチャンクエンコーディングメタデータを除去する
 Strip Proxy-\\* headers in incoming requests	受信リクエストから Proxy-* ヘッダを除去する
+Subject	サブジェクト
 Submit anonymous feedback about Burp's performance	Burpのパフォーマンスを匿名で送信する
 Submit form	フォーム送信
 Submit rating	レーティング送信
@@ -2038,6 +2129,7 @@ This will close all Burp windows - are you sure you want to exit\\?	Burpの全�
 This will enable other network users to use the proxy and view the proxy history.	他のネットワークユーザがプロキシを利用し、プロキシの履歴を閲覧できるようになります。
 This will exit the current attack	現在の攻撃を終了します
 This wizard lets you remove certain information which Burp saves on your computer. Choose which items you would like to remove.	このウィザードで、Burpがコンピュータに保存した特定の情報を削除します。削除したいアイテムを選択してください。
+Thorough	徹底的
 Throttle \\(milliseconds\\):	ウェイト(ミリ秒):
 Throttle between requests \\(milliseconds\\):	リクエスト間のウェイト(ミリ秒):
 Time of day	時刻
@@ -2085,6 +2177,7 @@ Total encodings	総エンコード数
 Total number of parameters:	パラメータの総数:
 Transitions	変化
 Try to decode automatically	自動デコードを試行
+Two-digit hex	2桁16進数
 Type a search term	検索語を入力
 Type index	タイプインデックス
 Type(:?)	タイプ$1
@@ -2120,7 +2213,7 @@ URL of redirection target	リダイレクト対象のURL
 URL parameter values	URLのパラメータ値
 URL parameter	URLパラメータ
 URL path filename	URLパスのファイル名
-URL path folders	URLパスのフォルダ
+URL path folders?	URLパスのフォルダ
 URL Scope	URLスコープ
 URL to body	URLからボディ
 URL to cookie	URLからcookie
@@ -2173,10 +2266,12 @@ Use these settings to monitor and control Burp Spider. To begin spidering, brows
 Use these settings to monitor and control the discovery session.	探索セッションの監視と制御を行います。
 Use this function to test the macro and determine whether it is working as required.	この機能を使用してマクロをテストし、要求通りに動作しているかどうか確認します。
 User agent-dependent response( \\[[0-9]+\\])?	ユーザエージェントに依存したレスポンス$1
+User agents	ユーザエージェント
 User Interface	ユーザインタフェース
 User options	ユーザオプション
 Username generator	ユーザ名ジェネレータ
 Username(:?)	ユーザ名$1
+Usernames	ユーザ名
 Using Burp Suite	Burp Suiteの使い方
 Valid session	セッション有効
 Validate session only every	セッションを
@@ -2195,13 +2290,14 @@ WebSocket hijacking \\(DOM-based\\)( \\[[0-9]+\\])?	WebSocketハイジャック(
 WebSocket hijacking \\(reflected DOM-based\\)( \\[[0-9]+\\])?	WebSocketハイジャック (反射型DOMベース)$1
 WebSocket hijacking \\(stored DOM-based\\)( \\[[0-9]+\\])?	WebSocketハイジャック (蓄積型DOMベース)$1
 WebSockets history	WebSocket履歴
+Weeks	週
 Welcome ...	ようこそ ...
 Welcome to Burp Suite Free Edition. Use the options below to create or open a project.	Burp Suiteフリー版へようこそ。次のオプションでプロジェクトを作成するか開くか選択してください。
 Welcome to Burp Suite Professional. Use the options below to create or open a project.	Burp Suiteプロフェッショナル版へようこそ。次のオプションでプロジェクトを作成するか開くか選択してください。
 When following redirections, understand the following types:	リンクをたどる場合、次のタイプを認識します:
 When you click "next", Burp will remove the specified items and then exit.	"次へ"をクリックすると、Burpは指定したアイテムを削除し終了します。
+Windows Classic	Windowsクラシック
 Windows installer \\((32|64)-bit\\)	Windowsインストーラ ($1ビット)
-Windows	ウィンドウ
 With payload positions	ペイロードポジションを含む
 Without payload positions	ペイロードポジションを含まない
 Word compare of #([0-9]+) and #([0-9]+)  \\(([0-9]+) differences\\)	#$1と#$2の単語比較  ($3カ所の相違)
@@ -2213,6 +2309,7 @@ XML entity expansion( \\[[0-9]+\\])?	XMLエンティティの展開$1
 XML external entity injection( \\[[0-9]+\\])?	XML外部エンティティインジェクション$1
 XML injection( \\[[0-9]+\\])?	XMLインジェクション$1
 XPath injection( \\[[0-9]+\\])?	XPathインジェクション$1
+Years	年
 Yes	はい
 You are editing the live config for a running attack. You should proceed with caution and consider pausing the attack while you make changes	攻撃実行中のライブ設定を編集しています。注意深く、変更中の攻撃一時停止の検討を推奨します。
 You can define one or more payload sets. The number of payload sets depends on the attack type defined in the Positions tab. Various payload types are available for each payload set, and each payload type can be customized in different ways.	1つまたは複数のペイロードセットを定義できます。ペイロードセットの数は、"ポジション"タブで定義された攻撃型に依存します。ペイロードセットごとに様々なペイロードタイプが使用可能で、各ペイロードタイプは様々な方法でカスタマイズできます。
