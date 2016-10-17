@@ -61,7 +61,7 @@ public class Injection {
 						+ ") || javax.swing.DefaultListCellRenderer.class.isAssignableFrom($0.getClass())"
 						+ "  || javax.swing.tree.DefaultTreeCellRenderer.class.isAssignableFrom($0.getClass())"
 						+ "  || $0.getClass().getName().equals(\"javax.swing.plaf.synth.SynthComboBoxUI$SynthComboBoxRenderer\")) {} else {");
-				command.append(String.format("$%d=java.awt.Component.burpTranslate($%d);", n, n));
+				command.append(String.format("if($%d instanceof String){$%d=java.awt.Component.burpTranslate((String)$%d);}", n, n, n));
 				command.append("}}");
 				return command.toString();
 			}
@@ -79,14 +79,14 @@ public class Injection {
 				if (agentArgs != null && agentArgs.equals("debug")) {
 					command.append("if("
 							+ "(str.getBytes().length) == str.length()" // 翻訳されていないもののみ
-							+ " && !str.matches(\"https?://.+\")"       // URLを無視
-							+ " && !str.matches(\"\\\\$?[0-9,.]+\")"    // 数値を無視
-							+ " && !str.matches(\"^\\\\w+:?$\")"        // １単語だけの場合を無視
-							+ " && !str.matches(\"burp\\..*\")"         // burp.から始まるもの(クラス名？)を無視
-							+ " && !str.matches(\"lbl.*\")"             // lblから始まるもの(ラベル名？)を無視
-							+ " && str.length()>1"                      // １文字を無視
-							+ " && !str.matches(\"[A-Z]+s?\")"          // 大文字のみの単語を無視
-							+ " && !str.matches(\"\\\\s+\")"            // 空白のみを無視
+							+ " && !str.matches(\"https?://.+\")" // URLを無視
+							+ " && !str.matches(\"\\\\$?[0-9,.]+\")" // 数値を無視
+							+ " && !str.matches(\"^\\\\w+:?$\")" // １単語だけの場合を無視
+							+ " && !str.matches(\"burp\\..*\")" // burp.から始まるもの(クラス名？)を無視
+							+ " && !str.matches(\"lbl.*\")" // lblから始まるもの(ラベル名？)を無視
+							+ " && str.length()>1" // １文字を無視
+							+ " && !str.matches(\"[A-Z]+s?\")" // 大文字のみの単語を無視
+							+ " && !str.matches(\"\\\\s+\")" // 空白のみを無視
 							+ "){System.err.println(str);}");
 				}
 				command.append("}");// if(str!=null && str.length()>0){
@@ -132,6 +132,11 @@ public class Injection {
 					} else if (className.equals("javax/swing/JComponent")) {
 						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
 						CtMethod ctMethod = ctClass.getDeclaredMethod("setToolTipText");
+						ctMethod.insertBefore(makeCommand(1));
+						return ctClass.toBytecode();
+					} else if (className.equals("javax/swing/JComboBox")) {
+						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
+						CtMethod ctMethod = ctClass.getDeclaredMethod("addItem");
 						ctMethod.insertBefore(makeCommand(1));
 						return ctClass.toBytecode();
 					} else {
