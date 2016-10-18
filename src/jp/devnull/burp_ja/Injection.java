@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import javassist.ClassPool;
 import javassist.CtClass;
+import javassist.CtConstructor;
 import javassist.CtMethod;
 
 public class Injection {
@@ -61,7 +62,7 @@ public class Injection {
 						+ ") || javax.swing.DefaultListCellRenderer.class.isAssignableFrom($0.getClass())"
 						+ "  || javax.swing.tree.DefaultTreeCellRenderer.class.isAssignableFrom($0.getClass())"
 						+ "  || $0.getClass().getName().equals(\"javax.swing.plaf.synth.SynthComboBoxUI$SynthComboBoxRenderer\")) {} else {");
-				command.append(String.format("if($%d instanceof String){$%d=java.awt.Component.burpTranslate((String)$%d);}", n, n, n));
+				command.append(String.format("if($%d instanceof String){$%d=java.awt.Component.burpTranslate((String)$%d);}", n, n,	n));
 				command.append("}}");
 				return command.toString();
 			}
@@ -139,8 +140,18 @@ public class Injection {
 						CtMethod ctMethod = ctClass.getDeclaredMethod("addItem");
 						ctMethod.insertBefore(makeCommand(1));
 						return ctClass.toBytecode();
+					} else if (className.equals("javax/swing/JOptionPane")) {
+						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
+						CtMethod ctMethod = ctClass.getDeclaredMethod("showOptionDialog");
+						ctMethod.insertBefore("{$3=java.awt.Component.burpTranslate($3);}");
+						return ctClass.toBytecode();
+					} else if (className.equals("javax/swing/JDialog")) {
+						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
+						CtConstructor ctMethod = ctClass.getDeclaredConstructor(new CtClass[]{classPool.get("java.awt.Frame"),classPool.get("java.lang.String"),CtClass.booleanType});
+						ctMethod.insertBefore("{$2=java.awt.Component.burpTranslate($2);}");
+						return ctClass.toBytecode();
 					} else {
-						return null;
+						 return null;
 					}
 				} catch (Exception ex) {
 					IllegalClassFormatException e = new IllegalClassFormatException();
