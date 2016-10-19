@@ -2,30 +2,62 @@
  Added 	 追加 
  Deleted 	 削除 
  Modified 	 変更 
-(.*)[Hh]iding ([2-5]xx) responses(.*)	$1 $2レスポンス非表示$3
-(.*)[Hh]iding ([2-5]xx, )?([2-5]xx, )?((, )?[2-5]xx) and ([2-5]xx) responses(.*)	$1 $2$3$4$5, $6レスポンス非表示$7
-(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?general text, image(, flash)? and general binary content(.*)	$1$2$3$4$5, 一般的なテキスト, 画像$6, 一般的なバイナリコンテンツ非表示$2
-(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?image and general binary content(.*)	$1$2$3$4$5画像, 一般的なバイナリコンテンツ非表示$2
+(.*)[Hh]iding ([2-5]xx) responses(.*)	$1$2レスポンス非表示$3
+(.*)[Hh]iding ([2-5]xx, )?([2-5]xx, )?((, )?[2-5]xx) and ([2-5]xx) responses(.*)	$1$2$3$4$5, $6レスポンス非表示$7
+(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?(HTML|script|XML|CSS|flash) content(.*)	$1$2$3$4$5$6を非表示$7
+(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?flash and general binary content(.*)	$1$2$3$4$5flash, バイナリ全般を非表示$6
+(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?general binary content(.*)	$1$2$3$4$5バイナリ全般を非表示$6
+(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?general text and flash content(.*)	$1$2$3$4$5テキスト全般, flashを非表示$6
+(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?general text and image content(.*)	$1$2$3$4$5テキスト全般, 画像を非表示$6
+(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?general text content(.*)	$1$2$3$4$5テキスト全般を非表示$6
+(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?general text(, flash)? and general binary content(.*)	$1$2$3$4$5テキスト全般$6, バイナリ全般を非表示$7
+(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?general text, image and flash content(.*)	$1$2$3$4$5テキスト全般, 画像, flashを非表示$6
+(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?general text, image(, flash)? and general binary content(.*)	$1$2$3$4$5テキスト全般, 画像$6, バイナリ全般を非表示$7
+(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?image and flash content(.*)	$1$2$3$4$5画像, flashを非表示$6
+(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?image　and flash content(.*)	$1$2$3$4$5画像, flashを非表示$6
+(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?image content(.*)	$1$2$3$4$5画像を非表示$6
+(.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?image(, flash)? and general binary content(.*)	$1$2$3$4$5画像$6, バイナリ全般を非表示$7
+(.*)[Hh]iding (HTML|script|XML|CSS)(, script)?(, XML)?(, CSS)? and (script|XML|CSS|flash) content(.*)	$1$2$3$4$5, $6を非表示$7
+(.*)[Hh]iding (HTML|script|XML|CSS)(, script)?(, XML)?(, CSS)? and general binary content(.*)	$1$2$3$4$5, バイナリ全般を非表示$6
+(.*)[Hh]iding (HTML|script|XML|CSS)(, script)?(, XML)?(, CSS)? and general text content(.*)	$1$2$3$4$5, テキスト全般を非表示$6
+(.*)[Hh]iding (HTML|script|XML|CSS)(, script)?(, XML)?(, CSS)? and image content(.*)	$1$2$3$4$5, 画像を非表示$6
 (.*)[Hh]iding empty folders(.*)	$1空のフォルダ非表示$2
-(.*)[Hh]iding flash content(.*)	$1flashコンテンツ非表示$2
-(.*)[Hh]iding non-parameterized items(.*)	$1パラメターなしアイテム非表示$2
-(.*)[Hh]iding not found items(.*)	$1存在しないアイテム非表示$2
-(.*)[Hh]iding out of scope and non-parameterized and not found items(.*)	$1スコープ外, パラメターなしアイテム非表示$2
-(.*)[Hh]iding out of scope and not found items(.*)	$1スコープ外, 存在しないアイテム非表示$2
-(.*)[Hh]iding out of scope and unrequested items(.*)	$1スコープ外, リクエストしていないアイテム非表示$2
-(.*)[Hh]iding out of scope items(.*)	$1スコープ外アイテム非表示$2
-(.*)[Hh]iding out of scope, unrequested and not found items(.*)	$1スコープ外, リクエストしていない, 存在しないアイテム非表示$2
-(.*)[Hh]iding out of scope, unrequested, non-parameterized and not found items(.*)	$1スコープ外, リクエストしていない, パラメターなし, 存在しないアイテム非表示$2
-(.*)[Hh]iding unrequested and not found items(.*)	$1スコープ外, リクエストしていない, 存在しないアイテム非表示$2
-(.*)[Hh]iding unrequested items(.*)	$1リクエストしていないアイテム非表示$2
-(.*)[Hh]iding unrequested, non-parameterized items(.*)	$1 リクエストしていない, パラメターなしアイテム非表示$2
+(.*)[Hh]iding non-parameterized and not found items(.*)	$1パラメータなし, 存在しないアイテムを非表示$2
+(.*)[Hh]iding non-parameterized items(.*)	$1パラメータなしアイテムを非表示$2
+(.*)[Hh]iding not found items(.*)	$1存在しないアイテムを非表示$2
+(.*)[Hh]iding out of scope and incoming items(.*)	$1スコープ外, 受信アイテムを非表示$2
+(.*)[Hh]iding out of scope and non-parameterized items(.*)	$1スコープ外, パラメータなしアイテムを非表示$2
+(.*)[Hh]iding out of scope and not found items(.*)	$1スコープ外, 存在しないアイテムを非表示$2
+(.*)[Hh]iding out of scope and outgoing items(.*)	$1スコープ外, 送信アイテムを非表示$2
+(.*)[Hh]iding out of scope and unrequested items(.*)	$1スコープ外, 未リクエストアイテムを非表示$2
+(.*)[Hh]iding out of scope and unresponded items(.*)	$1スコープ外, レスポンスなしアイテムを非表示$2
+(.*)[Hh]iding out of scope items(.*)	$1スコープ外アイテムを非表示$2
+(.*)[Hh]iding out of scope, non-parameterized and not found items(.*)	$1スコープ外, パラメータなし, 存在しないアイテムを非表示$2
+(.*)[Hh]iding out of scope, outgoing and incoming items(.*)	$1スコープ外, 送信, 受信アイテムを非表示$2
+(.*)[Hh]iding out of scope, unrequested and non-parameterized items(.*)	$1スコープ外, 未リクエスト, パラメータなしアイテムを非表示$2
+(.*)[Hh]iding out of scope, unrequested and not found items(.*)	$1スコープ外, 未リクエスト, 存在しないアイテムを非表示$2
+(.*)[Hh]iding out of scope, unrequested, non-parameterized and not found items(.*)	$1スコープ外, 未リクエスト, パラメータなし, 存在しないアイテムを非表示$2
+(.*)[Hh]iding out of scope, unresponded and non-parameterized items(.*)	$1スコープ外, レスポンスなし, パラメータなしアイテムを非表示$2
+(.*)[Hh]iding specific extensions(.*)	$1指定した拡張子を非表示$2
+(.*)[Hh]iding unrequested and non-parameterized items(.*)	$1未リクエスト, パラメータなしアイテムを非表示$2
+(.*)[Hh]iding unrequested and not found items(.*)	$1未リクエスト, 存在しないアイテムを非表示$2
+(.*)[Hh]iding unrequested items(.*)	$1未リクエストアイテムを非表示$2
+(.*)[Hh]iding unrequested, non-parameterized and not found items(.*)	$1未リクエスト, パラメータなし, 存在しないアイテムを非表示$2
+(.*)[Hh]iding unresponded and non-parameterized items(.*)	$1レスポンスなし, パラメータなしアイテムを非表示$2
+(.*)[Hh]iding unresponded items(.*)	$1レスポンスなしアイテムを非表示$2
+(.*)[mM]atching expression (.*)	$1一致 $2
+(.*)[Mm]atching regex (.*)	$1正規表現に一致 $2
+(.*)[Nn]ot matching expression (.*)	$1一致しない $2
+(.*)[Nn]ot matching regex (.*)	$1正規表現に一致しない $2
+(.*)[Ss]howing only commented and highlighted items(.*)	$1コメント付き, ハイライトアイテムのみ表示$2
+(.*)[Ss]howing only commented items(.*)	$1コメント付きアイテムのみ表示$2
+(.*)[Ss]howing only highlighted items(.*)	$1ハイライトアイテムのみ表示$2
+(.*)[Ss]howing only listener (.*)	$1ポート$2のリスナーのみ表示
+(.*)[Ss]howing specific extensions(.*)	$1指定した拡張子を表示$2
 (.*)\\[Pro version only\\](.*)	$1[プロ版のみ]$2
 (.*)Because some character positions within the sample use character sets whose size is not a round power of two, ([,0-9.]+) bits of data were compressed into other bits derived from the same character position.(.*)	$1サンプル内の一部の文字位置は2の累乗のサイズではない文字セットを使用するので、データの$2ビットは同じ文字位置から派生した他のビットに圧縮されました。$3
 (.*)However, an overly short longest run of bits also indicates that the sample is not random.(.*)	$1しかし、短すぎるビットの最長連もサンプルがランダムでないことを示します。$2
 (.*)Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long.(.*)	$1このテストのFIPS仕様では、ビットの最長連が長すぎる場合に失敗のみを記録することに注意してください。$2
-(.*)showing only commented　and highlighted items(.*)	$1コメント付き, ハイライトアイテムのみ表示$2
-(.*)showing only commented items(.*)	$1コメント付きアイテムのみ表示$2
-(.*)showing only highlighted items(.*)	$1ハイライトアイテムのみ表示$2
 (.*)The chart shows the number of bits contributed by each character position.	$1グラフでは、各文字位置が貢献したビット数を示しています。
 (.*)The overall bit counts for effective entropy have been adjusted to reflect this compression.(.*)	$1意味のあるエントロピーの全体ビットのカウントは、この圧縮を反映するように調整されています。$2
 (.*)Therefore some bits may record a significance level that is below the FIPS pass level even though they do not strictly fail the FIPS test.	$1したがって一部のビットでは、厳密なFIPSテストに不合格でないにもかかわらず、FIPS合格レベルを下回る有意水準を記録する場合があります。
@@ -366,6 +398,7 @@ Built-in short directory list	組み込みの短いディレクトリ名リス�
 Built-in short file list	組み込みの短いファイル名リスト
 Burp Clickbandit is a tool for generating clickjacking attacks. When you have found a web page that may be vulnerable to clickjacking, you can use Burp Clickbandit to create an attack, and confirm that the vulnerability can be successfully exploited.	Burp Clickbanditはクリックジャッキング攻撃を生成するツールです。クリックジャッキングに脆弱なWebページを見つけた場合、Burp Clickbanditを使用して攻撃を作成し、脆弱性の悪用が成功するか確認できます。
 Burp Clickbandit runs in your browser using JavaScript. It works on all modern browsers except for Microsoft IE and Edge. To run Burp Clickbandit, use the following steps:	Burp Clickbanditはブラウザ内でJavaScriptを使用して動作します。Microsoft IEとEdgeを除く全てのモダンなブラウザで動作します。Burp Clickbanditを実行するには、次の手順を使用します:
+Burp Collaborator client	Burp Collaboratorクライアント
 Burp Collaborator Health Check	Burp Collaboratorヘルスチェック
 Burp Collaborator is an external service that Burp can use to help discover many kinds of vulnerabilities. You can use the default Collaborator server provided by PortSwigger, or deploy your own instance. You should read the full documentation for this feature and decide which option is most appropriate for you.	Burp Collaboratorは、Burpが多くの種類の脆弱性を見つけることを補助する、外部サービスです。PortSwiggerが提供するデフォルトのCollaboratorサーバか、自分自身のインスタンスを配備して使用できます。この機能に関する全ドキュメントを読み、最も効果的な選択を行うようにしてください。
 Burp Collaborator Server	Burp Collaboratorサーバ
@@ -909,6 +942,7 @@ Fuzzing - SQL injection	ファジング - SQLインジェクション
 Fuzzing - XSS	ファジング - XSS
 Generate a CA-signed certificate with a specific hostname:	指定したホスト名でCAが署名した証明書を生成する:
 Generate CA-signed per-host certificates	ホストごとにCAが署名した証明書を生成する
+Generate Collaborator payloads	Collaboratorのペイロード生成
 Generate CSRF PoC	CSRF PoC生成
 Generate	
 Generating report: ([0-9]+)% complete	レポート生成中: $1%完了
@@ -1003,6 +1037,7 @@ In
 Include all URLs	全てのURLを含める
 Include auto-submit script	自動サブミットスクリプトを含める
 Include Burp Collaborator identifier in the state file	Burp Collaborator識別子をステートファイルに含める
+Include Collaborator server location	Collaboratorサーバの場所を含める
 Include columns:	含める列
 Include full requests	完全なリクエストを含める
 Include full responses	完全なレスポンスを含める
@@ -1177,6 +1212,7 @@ Load status 100 responses options	ステータス100レスポンスオプショ�
 Load streaming responses options	ストリーミングレスポンスオプションを読み込む
 Load target scope options	ターゲットスコープオプションを読み込む
 Load temporary files location options	一時ファイル場所オプションを読み込む
+Load the display filter options	ディスプレイフィルタオプションを読み込む
 Load timeouts options	タイムアウトオプションを読み込む
 Load token analysis options	トークン解析オプションを読み込む
 Load token handling options	トークンハンドリングオプションを読み込む
@@ -1344,6 +1380,7 @@ Number of threads:	スレッド数:
 Number of unique parameter names:	一意な名前のパラメータ数:
 Number of URLs	URL数
 Number range	数値範囲
+Number to generate:	生成数:
 Numbers	数値
 October	10月
 On:	日付
@@ -1487,6 +1524,9 @@ Please supply a suffix	サフィックスを指定してください
 Please visit https://portswigger.net/burp/freedownload/ to download the latest version.	https://portswigger.net/burp/freedownload/ にアクセスして、最新バージョンをダウンロードしてください。
 Please wait ...	しばらくお待ちください ...
 Please wait	お待ちください
+Poll Collaborator interactions	Collaborator通信のポーリング
+Poll every	ポーリング間隔
+Poll now	今すぐポーリング
 Poll over unencrypted HTTP	暗号化されていないHTTPでポーリングする
 Polling location \\(optional\\):	ポーリング場所(オプション):
 Port(:?)	ポート$1
@@ -1636,7 +1676,7 @@ Request items? again	アイテムを再度リクエスト
 Request param name	リクエストパラメータ名
 Request param value	リクエストパラメータ値
 Request the root of all directories	全てのディレクトリのルートにリクエストする
-Request to (.*)	リクエスト $1
+Request to ([a-z].*)	$1　へのリクエスト
 Request to:	リクエスト先:
 Request	リクエスト
 requesting item ([0-9]+)	アイテム$1をリクエスト中
@@ -1651,7 +1691,7 @@ Re-recording the macro will delete the current macro items. Are you sure you wan
 Response ([0-9]+)	レスポンス$1
 Response body	レスポンスボディ
 Response completed	完了レスポンス数
-Response from (.*)	レスポンス $1
+Response from ([a-z].*)	$1　からのレスポンス
 Response headers?	レスポンスヘッダ
 Response Modification	レスポンス操作
 Response received	受信レスポンス数
@@ -1773,6 +1813,7 @@ Save successful: (.*)	正常に保存しました: $1
 Save target analysis report	対象解析レポートを保存
 Save target scope options	ターゲットスコープオプションを保存する
 Save temporary files location options	一時ファイル場所オプションを保存する
+Save the display filter options	ディスプレイフィルタオプションを保存
 Save timeouts options	タイムアウトオプションを保存する
 Save to file(:?)	ファイルに保存$1
 Save token analysis options	トークン解析オプションを保存する
@@ -1911,7 +1952,7 @@ Show only requested items	リクエストされたアイテムのみ表示
 Show only:	表示:
 Show response in browser	レスポンスをブラウザで表示
 Showing all items	全てのアイテムを表示
-Showing selected items	選択したアイテムを表示中
+Showing selected items ?	選択したアイテムを表示中
 Shut down Burp and launch downloaded file	Burpをシャットダウンし、ダウンロードしたファイルを起動する
 Significance Levels	有意水準
 Silverlight cross-domain policy( \\[[0-9]+\\])?	Silverlightクロスドメインポリシー$1
@@ -2050,6 +2091,7 @@ The chart shows the number of bits of effective entropy at each significance lev
 The directory selected is not empty	選択されたディレクトリは空ではありません
 The extension is loading.	拡張を読み込み中。
 The extension loaded successfully. Any output or error messages generated are shown below.	正常に拡張を読み込みました。生成された出力やエラーは以下に表示されます。
+The file does not contain JSON	そのファイルにJSONがありません
 The file you have selected is a Burp state file, not a project file.	選択したファイルは、プロジェクトファイルではなく、Burpのステートファイルです。
 The final response from the macro	マクロの最後のレスポンス
 The following items will be removed:	次のアイテムを削除します:
