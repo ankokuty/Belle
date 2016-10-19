@@ -8,47 +8,16 @@ import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.IllegalClassFormatException;
 import java.lang.instrument.Instrumentation;
 import java.security.ProtectionDomain;
-import java.util.ArrayList;
 
 import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.CtConstructor;
+import javassist.CtField;
 import javassist.CtMethod;
 
 public class Injection {
 	static ClassPool classPool;
-	static ArrayList<Translate> translates;
-
-	static class Translate {
-		String en;
-		String ja;
-
-		/**
-		 * @param en
-		 * @param ja
-		 */
-		public Translate(String[] s) {
-			super();
-			en = s[0];
-			ja = s[1];
-		}
-	}
-
 	public static void premain(String agentArgs, Instrumentation instrumentation) throws Exception {
-		// ファイルから翻訳辞書を読み込む
-		translates = new ArrayList<Translate>();
-		BufferedReader reader = new BufferedReader(
-				new InputStreamReader(new FileInputStream("burp_ja.txt"), "UTF-8"));
-		String line;
-		while ((line = reader.readLine()) != null) {
-			try {
-				translates.add(new Translate(line.split("\t", 2)));
-			} catch (Exception e) {
-				// 無視する
-			}
-		}
-		reader.close();
-
 		classPool = ClassPool.getDefault();
 
 		instrumentation.addTransformer(new ClassFileTransformer() {
@@ -66,43 +35,73 @@ public class Injection {
 				command.append("}}");
 				return command.toString();
 			}
+			String makeTranslateTableMethod() throws Exception {
+				// 変換用のテーブルを作成する
+				StringBuilder command = new StringBuilder();
+				command.append("public static java.util.Map createMap(){");
+				command.append("java.util.Map map = new java.util.HashMap();");
+				BufferedReader reader = new BufferedReader(
+						new InputStreamReader(new FileInputStream("burp_ja.txt"), "UTF-8"));
+				String line;
+				while ((line = reader.readLine()) != null) {
+					try {
+						String[] inputs = line.split("\t", 2);
+						command.append("map.put(java.util.regex.Pattern.compile(\"(?m)^" + inputs[0].replace("\"", "\\\"")
+							+ "$\"), \"" + inputs[1].replace("\"", "\\\"") + "\");");
+					} catch (Exception e) {
+						// 無視する
+					}
+				}
+				reader.close();
+				command.append("return map;");
+				command.append("}");
+				return command.toString();
+			}
 
 			String makeTranslateMethod() {
+				// 変換を行うメソッドを追加する
 				StringBuilder command = new StringBuilder();
 				command.append("public static String burpTranslate(String str){");
 				command.append("if(str!=null && str.length()>0){");
-				for (Translate t : translates) {
-					command.append(
-							"str=str.replaceAll(\"(?m)^" + t.en.replace("\"", "\\\"")
-							+ "$\",\"" + t.ja.replace("\"", "\\\"") + "\");");
-				}
+				command.append("java.util.Iterator iterator = translateMaps.entrySet().iterator();");
+				command.append("while(iterator.hasNext()){");
+				command.append("java.util.Map.Entry entry = (java.util.Map.Entry)iterator.next();");
+				command.append("str = ((java.util.regex.Pattern)entry.getKey()).matcher(str).replaceAll((String)entry.getValue());");
+				command.append("}");// while
 				// 翻訳されていない文を標準エラーに出す。
 				if (agentArgs != null && agentArgs.equals("debug")) {
 					command.append("if("
 							+ "(str.getBytes().length) == str.length()" // 翻訳されていないもののみ
-							+ " && !str.matches(\"https?://.+\")" // URLを無視
-							+ " && !str.matches(\"\\\\$?[0-9,.]+\")" // 数値を無視
-							+ " && !str.matches(\"^\\\\w+:?$\")" // １単語だけの場合を無視
-							+ " && !str.matches(\"burp\\..*\")" // burp.から始まるもの(クラス名？)を無視
-							+ " && !str.matches(\"lbl.*\")" // lblから始まるもの(ラベル名？)を無視
-							+ " && str.length()>1" // １文字を無視
-							+ " && !str.matches(\"[A-Z]+s?\")" // 大文字のみの単語を無視
-							+ " && !str.matches(\"\\\\s+\")" // 空白のみを無視
+							+ " && !str.matches(\"https?://.+\")"       // URLを無視
+							+ " && !str.matches(\"\\\\$?[0-9,./]+\")"   // 数値を無視
+							+ " && !str.matches(\"^[-.\\\\w]+:?$\")"    // １単語だけの場合を無視
+							+ " && !str.matches(\"burp\\..*\")"         // burp.から始まるもの(クラス名？)を無視
+							+ " && !str.matches(\"lbl.*\")"             // lblから始まるもの(ラベル名？)を無視
+							+ " && str.length()>1"                      // １文字を無視
+							+ " && !str.matches(\"[A-Z]+s?\")"          // 大文字のみの単語を無視
+							+ " && !str.matches(\"\\\\s+\")"            // 空白のみを無視
 							+ "){System.err.println(str);}");
 				}
 				command.append("}");// if(str!=null && str.length()>0){
 				command.append("return str;");
 				command.append("}");
 				return command.toString();
+						
 			}
-
 			public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined,
 					ProtectionDomain protectionDomain, byte[] classfileBuffer)
 					throws IllegalClassFormatException {
 				try {
-					// java.awt.Componentに訳語変換メソッドを追加
+					// java.awt.Componentを汚して訳語変換メソッドを追加
 					if (className.equals("java/awt/Component")) {
 						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
+						// 変換テーブル作成メソッドを追加
+						CtMethod translateTableMethod = CtMethod.make(makeTranslateTableMethod(), ctClass);
+						ctClass.addMethod(translateTableMethod);
+						// 変換テーブルのフィールドを追加
+						CtField f = CtField.make("static java.util.Map translateMaps;", ctClass);
+						ctClass.addField(f, "createMap()");
+						// 変換処理を行うメソッドを追加
 						CtMethod method = CtMethod.make(makeTranslateMethod(), ctClass);
 						ctClass.addMethod(method);
 						return ctClass.toBytecode();
@@ -147,11 +146,11 @@ public class Injection {
 						return ctClass.toBytecode();
 					} else if (className.equals("javax/swing/JDialog")) {
 						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
-						CtConstructor ctMethod = ctClass.getDeclaredConstructor(new CtClass[]{classPool.get("java.awt.Frame"),classPool.get("java.lang.String"),CtClass.booleanType});
+						CtConstructor ctMethod = ctClass.getDeclaredConstructor(new CtClass[]{classPool.get("java.awt.Frame"),classPool.get("String"),CtClass.booleanType});
 						ctMethod.insertBefore("{$2=java.awt.Component.burpTranslate($2);}");
 						return ctClass.toBytecode();
 					} else {
-						 return null;
+						return null;
 					}
 				} catch (Exception ex) {
 					IllegalClassFormatException e = new IllegalClassFormatException();
