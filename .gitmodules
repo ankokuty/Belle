@@ -1,3 +1,0 @@
-[submodule "javassist"]
-	path = javassist
-	url = https://github.com/jboss-javassist/javassist.git

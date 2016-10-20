@@ -5,9 +5,13 @@ Burp Suite 非公式日本語化ツール
 
 ## 使用方法
 
+本ツールは、Javassistを使用しています。次のリンクからライブラリファイルをダウンロードしておいてください。
+
+[javassist.jar](https://github.com/jboss-javassist/javassist/raw/rel_3_21_0_ga/javassist.jar)
+
 ### インストーラーを使ってBurpをインストールした場合
 
-burp_ja.jar と burp_ja.txt　の２つのファイルをダウンロードし、Burp Suiteがインストールされているフォルダにコピーします。
+burp_ja.jar と burp_ja.txt　と javassist.jar の３つのファイルをダウンロードし、Burp Suiteがインストールされているフォルダにコピーします。
 インストール時に変更していなければ、``C:\Program Files\BurpSuiteFree`` や``C:\Program Files\BurpSuitePro``にあると思います。
 
 BurpSuiteFree.vmoptions か BurpSuitePro.vmoptions ファイルをエディタで開き、１行追記します。
@@ -27,7 +31,7 @@ BurpSuiteFree.vmoptions か BurpSuitePro.vmoptions ファイルをエディタ�
 
 ### Burp Suiteのjarファイルを任意の場所にインストールした場合
 
-burp_ja.jar と burp_ja.txt　の２つのファイルをダウンロードし、Burpのjarファイル(`burpsuite_free_v1.7.06.jar`等)と同じフォルダにコピーします。
+burp_ja.jar と burp_ja.txt　と javassist.jar の３つのファイルをダウンロードし、Burpのjarファイル(`burpsuite_free_v1.7.06.jar`等)と同じフォルダにコピーします。
 
 Burpのjarファイルがあるフォルダに移動し、(-jar オプションより前に) -javaagenコマンドラインオプションを指定して起動します。
 
