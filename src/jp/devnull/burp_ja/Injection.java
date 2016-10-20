@@ -21,7 +21,7 @@ public class Injection {
 		classPool = ClassPool.getDefault();
 
 		instrumentation.addTransformer(new ClassFileTransformer() {
-			String makeCommand(int n) {
+			CtMethod insertTranslateCommand(CtMethod ctMethod, int n) throws Exception{
 				StringBuilder command = new StringBuilder();
 				command.append("{");
 				// テーブルの中身など一部は翻訳しない
@@ -29,13 +29,16 @@ public class Injection {
 						+ "(javax.swing.table.DefaultTableCellRenderer.class.isAssignableFrom($0.getClass())"
 						+ "  && !sun.swing.table.DefaultTableCellHeaderRenderer.class.isAssignableFrom($0.getClass())"
 						+ ") || javax.swing.DefaultListCellRenderer.class.isAssignableFrom($0.getClass())"
+						+ "  || javax.swing.text.DefaultStyledDocument.class.isAssignableFrom($0.getClass())"
 						+ "  || javax.swing.tree.DefaultTreeCellRenderer.class.isAssignableFrom($0.getClass())"
 						+ "  || $0.getClass().getName().equals(\"javax.swing.plaf.synth.SynthComboBoxUI$SynthComboBoxRenderer\")) {} else {");
 				command.append(String.format("if($%d instanceof String){$%d=java.awt.Component.burpTranslate((String)$%d);}", n, n,	n));
 				command.append("}}");
-				return command.toString();
+				
+				ctMethod.insertBefore(command.toString());
+				return ctMethod;
 			}
-			String makeTranslateTableMethod() throws Exception {
+			CtClass addTranslateTableMethod(CtClass ctClass) throws Exception {
 				// 変換用のテーブルを作成する
 				StringBuilder command = new StringBuilder();
 				command.append("public static java.util.Map createMap(){");
@@ -55,10 +58,12 @@ public class Injection {
 				reader.close();
 				command.append("return map;");
 				command.append("}");
-				return command.toString();
+				CtMethod translateTableMethod = CtMethod.make(command.toString(), ctClass);
+				ctClass.addMethod(translateTableMethod);
+				return ctClass;
 			}
 
-			String makeTranslateMethod() {
+			CtClass addTranslatorMethod(CtClass ctClass) throws Exception {
 				// 変換を行うメソッドを追加する
 				StringBuilder command = new StringBuilder();
 				command.append("public static String burpTranslate(String str){");
@@ -85,8 +90,9 @@ public class Injection {
 				command.append("}");// if(str!=null && str.length()>0){
 				command.append("return str;");
 				command.append("}");
-				return command.toString();
-						
+				CtMethod translateTableMethod = CtMethod.make(command.toString(), ctClass);
+				ctClass.addMethod(translateTableMethod);
+				return ctClass;
 			}
 			public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined,
 					ProtectionDomain protectionDomain, byte[] classfileBuffer)
@@ -96,48 +102,46 @@ public class Injection {
 					if (className.equals("java/awt/Component")) {
 						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
 						// 変換テーブル作成メソッドを追加
-						CtMethod translateTableMethod = CtMethod.make(makeTranslateTableMethod(), ctClass);
-						ctClass.addMethod(translateTableMethod);
+						addTranslateTableMethod(ctClass);
 						// 変換テーブルのフィールドを追加
 						CtField f = CtField.make("static java.util.Map translateMaps;", ctClass);
 						ctClass.addField(f, "createMap()");
 						// 変換処理を行うメソッドを追加
-						CtMethod method = CtMethod.make(makeTranslateMethod(), ctClass);
-						ctClass.addMethod(method);
+						addTranslatorMethod(ctClass);
 						return ctClass.toBytecode();
 					} else if (className.equals("java/awt/Frame") || className.equals("java/awt/Dialog")) {
 						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
 						CtMethod ctMethod = ctClass.getDeclaredMethod("setTitle");
-						ctMethod.insertBefore(makeCommand(1));
+						insertTranslateCommand(ctMethod, 1);
 						return ctClass.toBytecode();
 					} else if (className.equals("javax/swing/JLabel")
 							|| className.equals("javax/swing/AbstractButton")
 							|| className.equals("javax/swing/text/JTextComponent)")) {
 						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
 						CtMethod ctMethod = ctClass.getDeclaredMethod("setText");
-						ctMethod.insertBefore(makeCommand(1));
+						insertTranslateCommand(ctMethod, 1);
 						return ctClass.toBytecode();
 					} else if (className.equals("javax/swing/JTabbedPane")) {
 						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
 						CtMethod ctMethod = ctClass.getDeclaredMethod("addTab");
-						ctMethod.insertBefore(makeCommand(1));
+						insertTranslateCommand(ctMethod, 1);
 						ctMethod = ctClass.getDeclaredMethod("insertTab");
-						ctMethod.insertBefore(makeCommand(1));
+						insertTranslateCommand(ctMethod, 1);
 						return ctClass.toBytecode();
 					} else if (className.equals("javax/swing/text/AbstractDocument")) {
 						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
 						CtMethod ctMethod = ctClass.getDeclaredMethod("insertString");
-						ctMethod.insertBefore(makeCommand(2));
+						insertTranslateCommand(ctMethod, 2);
 						return ctClass.toBytecode();
 					} else if (className.equals("javax/swing/JComponent")) {
 						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
 						CtMethod ctMethod = ctClass.getDeclaredMethod("setToolTipText");
-						ctMethod.insertBefore(makeCommand(1));
+						insertTranslateCommand(ctMethod, 1);
 						return ctClass.toBytecode();
 					} else if (className.equals("javax/swing/JComboBox")) {
 						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
 						CtMethod ctMethod = ctClass.getDeclaredMethod("addItem");
-						ctMethod.insertBefore(makeCommand(1));
+						insertTranslateCommand(ctMethod, 1);
 						return ctClass.toBytecode();
 					} else if (className.equals("javax/swing/JOptionPane")) {
 						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
