@@ -77,6 +77,7 @@
 ([,0-9]+) submissions?	$1件送信
 ([0-9]) bytes?	$1バイト
 ([0-9]+) \\(approx\\)	約$1
+([0-9]+) \\(max\\)	$1 (最大)
 ([0-9]+) anomalies were identified in this test:	このテストで$1個の異常が見つかりました: 
 ([0-9]+) bits failed the test. The following ([0-9]+) bits passed the test: ([0-9]+)(, [0-9]+)*.(.*) 	$1ビットが不合格。次の$2ビットは合格: $3$4$5
 ([0-9]+) bits passed the test. The following ([0-9]+) bits failed the test: ([0-9]+)(, [0-9]+)*.(.*)	$1ビットが合格。次の$2ビットは不合格: $3$4$5
@@ -169,12 +170,15 @@ Add hostname resolution rule	ホスト名解決ルールを追加
 Add match/replace rule	検索/置換ルールを追加
 Add payload processing rule	ペイロード処理ルールを追加
 Add platform authentication credentials	プラットフォーム認証のクレデンシャルを追加
+Add prefix	プレフィックスを追加
 Add random variations to throttle	ランダムなウェイトを追加する
+Add raw payload	生ペイロード追加
 Add request header	リクエストヘッダ追加
 Add request interception rule	リクエストインターセプトルールを追加
 Add response interception rule	レスポンスインターセプトルールを追加
 Add SSL passthrough target	SSLパススルーする対象を追加
 Add streaming URL	ストリーミングURLを追加
+Add suffix	サフィックスを追加
 Add the specified item	指定したアイテムを追加
 Add to scope	スコープに追加
 Add to site map	サイトマップに追加
@@ -221,6 +225,7 @@ Any header	任意のヘッダ
 Any parameter	任意のパラメータ
 Any status code with Location header	任意のステータスコードのLocationヘッダ
 APIs	API
+Append preprocessed payload	プリプロセッサペイロードを末尾に追加
 Append to base parameter value	元パラメータ値に追加
 Application Login	アプリケーションログイン
 April	4月
@@ -391,6 +396,7 @@ Blind	ブラインド
 Block size \\(usually 8 or 16\\):	ブロックサイズ(通常8か16):
 Body encoding:	ボディエンコーディング:
 Body parameter values	ボディのパラメータ値
+body parameter	ボディパラメータ
 body parameter( .+)	ボディパラメータ$1
 Body to cookie	ボディからcookie
 Body to URL	ボディからURL
@@ -420,7 +426,7 @@ Burp Infiltrator was saved successfully as: burp_infiltrator_java.jar	Burp Infil
 Burp Intruderが使用する定義済みペイロードリストの場所を設定してください。
 Burp is up to date.	Burpは最新です。
 Burp license key	Burpライセンスキー
-Burp maintains a cookie jar that stores all of the cookies issued by visited web sites. Session handling rules can use and update these cookies to maintain valid sessions with applications that are being tested. You can use the settings below to control how Burp automatically updates the cookie jar based on traffic from particular tools.	アクセスしたWebサイトが発行した全てのcookieを、Burpはcookie jarに保持します。セッションのルールを処理してテストされているアプリケーションで有効なセッションを維持するためにこれらのクッキーを更新します。テストしているアプリケーションの有効なセッションを保持するために、セッションハンドリングルールがこれらのcookieを使用や更新ができます。以下の設定で、特定のツールからのトラフィックに基づいて cookie jar を自動的に更新する方法を制御します。
+Burp maintains a cookie jar that stores all of the cookies issued by visited web sites. Session handling rules can use and update these cookies to maintain valid sessions with applications that are being tested. You can use the settings below to control how Burp automatically updates the cookie jar based on traffic from particular tools.	アクセスしたWebサイトが発行した全てのcookieをcookie jarに保持します。セッションのルールを処理してテストされているアプリケーションで有効なセッションを維持するためにこれらのクッキーを更新します。テストしているアプリケーションの有効なセッションを保持するために、セッションハンドリングルールがこれらのcookieを使用や更新ができます。以下の設定で、特定のツールからのトラフィックに基づいて cookie jar を自動的に更新する方法を制御します。
 Burp Proxy uses listeners to receive incoming HTTP requests from your browser. You will need to configure your browser to use one of the listeners as its proxy server.	Burp Proxyはリスナーを使用してブラウザからHTTPリクエストを受け取ります。リスナーの一つをプロキシサーバとしてブラウザに設定する必要があります。
 Burp Repeater help	Burp Repeaterヘルプ
 Burp Scanner reporting wizard	Burp Scannerレポートウィザード	
@@ -430,7 +436,7 @@ Burp Spider needs your guidance to submit a login form. Please choose the value 
 Burp Suite [dD]ocumentation	Burp Suiteドキュメント
 Burp Suite diagnostics	Burp Suite診断
 Burp Suite search	Burp Suite検索
-Burp will now attempt to contact the license server and activate your license. This will require Internet access. If you access the Internet via a web proxy server, please enter the details below.	Burpはライセンスサーバに接続し、ライセンス認証を試みます。これにはインターネットアクセスが必要です。プロキシサーバを経由してインターネットにアクセスする場合は、以下に詳細を入力してください。
+Burp will now attempt to contact the license server and activate your license. This will require Internet access. If you access the Internet via a web proxy server, please enter the details below.	ライセンスサーバに接続しライセンス認証を試みます。これにはインターネットアクセスが必要です。プロキシサーバを経由してインターネットにアクセスする場合は、以下に詳細を入力してください。
 Byte compare of #([0-9]+) and #([0-9]+)  \\(([0-9]+) differences\\)	#$1と#$2のバイト比較  ($3カ所の相違)
 Byte compare	バイト比較
 Bytes transferred:	転送バイト数:
@@ -458,15 +464,18 @@ Change request method	リクエストメソッド変更
 Change the font used to display HTTP messages	HTTPメッセージの表示に使用するフォントを変更
 Changes will take effect when Burp is restarted.	変更は再起動後に反映されます。
 Character blocks	文字ブロック
+Character Count Analysis - Significance Levels	文字数解析 - 有意水準
 Character frobber	文字フロバー
 Character set(:?)	文字セット$1
-Character Sets	文字セット
+Character Sets?	文字セット
 Character substitutions?	文字置換
+Character Transition Analysis - Significance Levels	文字遷移解析 - 有意水準
 Character-level analysis	文字レベル解析
 characters	文字
 Check for updates	更新チェック
 Check robots.txt	robots.txtをチェックする
 Check session is valid	セッションの有効性をチェックする
+Checking for available installers	利用可能なインストーラーをチェック中
 Checking for updates	更新を確認中
 chi-square value is too high at bit ([0-9]+) \\(chi-square: ([0-9.]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1のカイ二乗値が高すぎます (カイ二乗: $2, ランダムサンプル中の確率: $3%)
 chi-square value is too high at bit ([0-9]+) \\(chi-square: ([0-9.]+), probability in a random sample: less than 0.0001%\\)	ビット$1のカイ二乗値が高すぎます (カイ二乗: $2, ランダムサンプル中の確率: 0.0001%未満)
@@ -486,6 +495,7 @@ Choose file...	ファイル選択...
 Choose folder ...	フォルダ選択 ...
 Choose the folder where temporary files will be saved	一時ファイルが保存されるフォルダを選択
 Choose the format for the report.	レポートのフォーマットを選択してください。
+Choose the PKCS#11 library file	PKCS#11ライブラリファイルを選択してください
 Choose this option if you plan to load the state file later and continue testing, or pass it on to someone else who will take over your testing. You should be aware that if any testing is continued using multiple instances of Burp, then some Collaborator-based issues may be missed or incorrectly reported.	後でこのステートファイルを読み込んでテストを継続するか、テストを引き継ぐ他の誰かに渡す場合、このオプションを選択してください。複数のBurpインスタンスでテストを継続する場合、Collaboratorベースの問題を見逃す、または誤って報告されるかもしれません。
 Choose this option if you plan to pass the state file on to someone else, but you do not want them to be able to receive details of any ongoing Burp Collaborator interactions that are associated with your testing. Any new scanning that is performed by the other user will use a different unique identifier, to avoid any interference with other instances of Burp.	ステートファイルを他人に渡す予定があり、しかしテストに関連づけらたCollaboratorとの通信の詳細を継続的に受信させたくない場合に、このオプションを選択してください。他のユーザによって実装される新規スキャンは、Burpの他のインスタンスとの競合を避けるため、異なる一意な識別子を使用します。
 Choose which tools you want to restore the configuration of.	設定をリストアするツールを選択してください。
@@ -508,6 +518,7 @@ Clear the contents of the viewer	ビューアのコンテンツをクリア
 Clear	クリア
 Cleartext submission of password( \\[[0-9]+\\])?	パスワードの平文送信$1
 Click to modify	クリックして編集
+Client SSL certificate \\(PKCS#12\\)	クライアントSSL証明書 (PKCS#12)
 Client SSL Certificates?	クライアントSSL証明書
 Client-side JSON injection \\(DOM-based\\)( \\[[0-9]+\\])?	クライアントサイドJSONインジェクション(DOMベース)$1
 Client-side JSON injection \\(reflected DOM-based\\)( \\[[0-9]+\\])?	クライアントサイドJSONインジェクション (反射型DOMベース)$1
@@ -568,6 +579,10 @@ Continue indefinitely	無限に繰り返す
 Control	コントロール
 Convert HTTPS links to HTTP	HTTPSリンクをHTTPに変換する
 Convert selection	選択箇所を変換
+Convert to JavaScript constructed string	JavaScript構文の文字列に変換
+Convert to Microsoft SQL Server constructed string	Microsoft SQLサーバ構文の文字列に変換
+Convert to MySQL constructed string	MySQL構文の文字列に変換
+Convert to Oracle constructed string	Oracle構文の文字列に変換
 Cookie handling	cookie処理
 Cookie jar viewer	cookie jarビューア
 Cookie manipulation \\(DOM-based\\)( \\[[0-9]+\\])?	Cookie操作 (DOMベース)$1
@@ -644,6 +659,7 @@ Days	日
 Debug ID:	デバッグID:
 December	12月
 Decode as ...	デコード ...
+Decode as ASCII hex	ASCII16進数としてデコード
 Default to this option in future	次回以降このオプションをデフォルトにする
 Define behavior dependent on session validity:	セッション有効性に依存する動作の定義:
 Define Custom Parameter	カスタムパラメータ定義
@@ -696,6 +712,7 @@ Disable logging to history and site map	履歴とサイトマップへのログ�
 Disable web interface at http://burp	http://burp のWebインタフェースを無効にする
 Discover content	コンテンツ探索
 Discover:	探索:
+Discovered PKCS#11 library files are shown below. Select the library file for your device and click "Next".	検出したPKCS#11ライブラリファイルが以下に表示されます。デバイスのライブラリファイルを選択し、"次へ"をクリックしてください。
 Discovery Engine	探索エンジン
 Discovery Session Status	探索セッションのステータス
 Display as raw bytes	生バイトとして表示する
@@ -720,6 +737,8 @@ Does not match	一致しない
 Doing bit compression test	ビット圧縮テスト実行中
 Doing bit correlation test	ビット相関テスト実行中
 Doing bit correlation test: bit ([0-9]+)	ビット相関テスト実行中: ビット$1
+Doing character set tests	文字セットのテスト実行中
+Doing character set tests: position ([0-9]+)	文字セットのテスト実行中:　$1文字目
 Doing FIPS long run test	FIPS 最長連検定実行中
 Doing FIPS monobit test	FIPS 1次元度数検定実行中
 Doing FIPS poker test	FIPS ポーカ検定実行中
@@ -747,6 +766,7 @@ Down	下へ
 Download JRuby	JRubyをダウンロード
 Download Jython	Jythonをダウンロード
 Download other installers	他のインストーラをダウンロード
+Download	ダウンロード
 Downloading( \\([0-9]+%\\))?	ダウンロード中$1
 Drop all out-of-scope requests	スコープ外の全てのリクエストを破棄する
 Drop	破棄
@@ -767,6 +787,7 @@ Edit hostname resolution rule	ホスト名解決ルールを編集
 Edit hotkeys	ホットキー編集
 Edit list	リスト編集
 Edit match/replace rule	検索/置換ルールを編集
+Edit payload processing rule	ペイロード処理ルールを編集
 Edit proxy listener	プロキシリスナーを編集
 Edit request header	リクエストヘッダ編集
 Edit request interception rule	リクエストインターセプトルールを編集
@@ -797,6 +818,8 @@ Enable disabled form fields	無効化されたフォームフィールドを有�
 Enable interception at startup:	起動時にインターセプトを有効:
 Enabled	有効
 Encode as ...	エンコード ...
+Encode as ASCII hex	ASCII16進数としてエンコード
+Encode	エンコード
 Encoded as ASCII hex	ASCII 16進数エンコード
 Encrypted data to shuffle:	シャッフルする暗号データ:
 End at delimiter:	区切りで終了:
@@ -809,16 +832,17 @@ Enter a comment	コメント入力
 Enter a new item	新規アイテムを入力
 Enter license key	ライセンスキーを入力してください
 Enter master password	マスターパスワードを入力してください
-Enter regex or leave blank	正規表現で入力する、または空白のまま
-Enter regex, IP range or leave blank	正規表現かIPレンジを入力する、または空白のまま
+Enter regex or leave blank	正規表現で入力、または空白のまま
+Enter regex, IP range or leave blank	正規表現かIPレンジを入力、または空白のまま
 Enter the details of the parameter.	パラメータの詳細を入力してください。
 Enter the details of the payload processing rule.	ペイロード処理ルールの詳細を入力してください。
 Enter the details of the upstream proxy rule. You can use wildcards to specify destination hosts \\(\\* matches zero or more characters, \\? matches any character except a dot\\). Leave the proxy host blank to connect directly for the specified destination host.	上位プロキシの詳細を入力してください。宛先ホストの指定にワイルドカード(*は０文字以上の文字、?はドット以外の任意の文字にマッチ)を使用できます。指定したホストに直接接続させるには、プロキシホストを空白のままにしてください。
 Enter the details of when the task should run. The task can be scheduled to run once at a specific time, or to repeat at a defined interval.	タスクスケジュールを実行する詳細時間を入力してください。タスクは、指定した時間に１度だけ実行するか、指定した間隔で繰り返し実行できます。
 Enter the full string to be submitted as the custom request header.	カスタムリクエストヘッダとして送信する全ての文字列を入力してください。
-Enter the hostname and IP address. Burp will use this setting instead of the DNS resolution provided by your computer.	ホスト名とIPアドレスを入力してください。Burpは、コンピュータによるDNS名前解決の代わりにこの設定を使います。
+Enter the hostname and IP address. Burp will use this setting instead of the DNS resolution provided by your computer.	ホスト名とIPアドレスを入力してください。コンピュータによるDNS名前解決の代わりにこの設定を使います。
 Enter the master password that was used to encrypt stored passwords.	パスワードの暗号化に使用したマスターパスワードを入力してください。
 Enter the master password to encrypt stored passwords. A strong password is recommended.	パスワードストアを暗号化するマスターパスワードを入力してください。強固なパスワードを推奨します。
+Enter the PIN code for your hardware token or smart card.	ハードウェアトークンやスマートカードのPINコードを入力してください。
 Enter the platform credentials for the specified destination host.	宛先ホストのプラットフォームクレデンシャルを入力してください。
 Entire body \\(for relevant content types\\)	ボディ全体(関連するコンテントタイプの場合)
 Error	エラー
@@ -996,7 +1020,7 @@ History logging is disabled	ログ記録は無効です
 Host / IP range	ホスト/IPレンジ
 Host or IP range:	ホストまたはIPレンジ:
 Host(:?)	ホスト$1
-Host, may include wildcards, or leave blank to apply to all hosts	ホスト、ワイルドカードが使えます、または全てのホストの場合は空白のまま
+Host, may include wildcards, or leave blank to apply to all hosts	ホスト（ワイルドカードが使用可能）、または全てのホストの場合は空白のまま
 Hostname Resolution	ホスト名解決
 Hostname(:?)	ホスト名$1
 Hotkeys?	ホットキー
@@ -1102,7 +1126,7 @@ Invalid URL	不正なURL
 Invalid value	不正な値
 Invisible proxy support allows non-proxy-aware clients to connect directly to the listener.	透過プロキシをサポートすると、プロキシ非対応のクライアントが直接リスナーに接続できます。
 Invisible	透過
-Invoke a Burp extension	Burp拡張を呼び出す
+Invoke (a )?Burp extension	Burp拡張を呼び出す
 IP address(:?)	IPアドレス$1
 Is (HTTPS?)	$1
 Is in range	レンジ内
@@ -1144,6 +1168,7 @@ Left/right split	左右に分割
 Length range: ([,0-9]+-[,0-9]+).	長さ範囲: $1
 Length	長さ
 Length: ([,0-9]+)	長さ: $1
+Library	ライブラリ
 Licence Agreement	使用許諾契約書
 License	ライセンス
 Limit to	制限
@@ -1298,6 +1323,7 @@ Match relationship:	検索状態:
 Match type	対象
 Match type:	検索対象:
 Match	一致条件
+Match/replace	検索/置換
 Match:	検索:
 Matches regex	正規表現に一致
 Matches	一致
@@ -1308,6 +1334,7 @@ Max length:	最長:
 Maximize permutations in multi-byte encodings	マルチバイト文字の組み合わせ最大化
 Maximum analysis time per item \\(seconds\\):	アイテムあたりの最大解析時間(秒):
 Maximum capture length:	抽出する最大長:
+Maximum Entropy Bits	最大エントロピービット
 Maximum insertion points per base request:	ベースリクエストごとの最大挿入ポイント数:
 Maximum length:	最大長:
 Maximum link depth:	リンクの最大の深さ:
@@ -1330,6 +1357,7 @@ Misc	その他
 Miscellaneous	その他
 Mixed content( \\[[0-9]+\\])?	混合コンテンツ$1
 Modified value:	操作値:
+Modify case	大文字小文字変換
 Monitor the following tools' traffic to update the cookie jar:	次のツールを監視してcookie jarを更新する:
 Months	月
 Move down	下に移動
@@ -1365,14 +1393,18 @@ New tab behavior	新規タブの動作
 Next	次へ
 No actions defined	アクションが定義されていません
 No anomalies were identified in this test.	このテストで異常は見つかっていません。
+No certificate is selected	証明書が選択されていません
 No change	変更なし
 No generators defined	ジェネレータが定義されていません。
+No library is selected	ライブラリが選択されていません
 No macro selected	マクロが選択されていません
+No processors defined	処理が定義されていません
 no protocol: (.*)	プロトコルがありません: $1
 No proxy listeners are currently running - go to the Options tab to enable a listener	プロキシリスナーが起動していません - オプションタブでリスナーを有効化してください。
 No	いいえ
 None	なし
 Normal(:?)	標準$1
+Not a valid PKCS#11 library	有効なPKCS#11ライブラリではありません
 Not available in demo version	デモバージョンでは無効です
 Not available in free edition	フリー版では無効です
 Note that statistical tests provide only an indicative guide to the randomness of the sampled data. Results obtained may contain false positives and negatives, and may not correspond to the practical predictability of the tokens sampled.	統計的テストは、サンプルデータの乱数性を示す指針のみを提供していることに注意してください。得られた結果には偽陽性と偽陰性が含まれ、サンプリングされたトークンの実用的な予測に対応していない場合があります。
@@ -1382,8 +1414,8 @@ Note: Disk-based projects are only supported on Burp Suite Professional.	注: �
 Note: It is not recommended to restore configuration from a state file that originated from an untrusted source.	注: 信頼できない提供元から受け取ったステートファイルから、設定のリストアは推奨しません。
 NOTE: license activations are monitored. If you perform too many activations, further activations for this license may be prevented.	注: ライセンスのアクティベートは監視されています。あまりにも多くのアクティベートが実行されると、このライセンスのさらなるアクティベートを停止することがあります。
 Note: Some of the selected items do not yet have responses. If you choose to remove items with media responses, some of these items may be removed from the scan when their responses have been analyzed.	注: 選択したアイテムの一部はまだレスポンスがありません。メディアレスポンスのアイテムを除外するよう選択した場合、レスポンスの解析が完了したときこれらのアイテムはスキャンから除外されます。
-Note: Some of these options are not available in the Free Edition of Burp.	注: 一部のオプションはBurp Free版では無効です。
-Note: these settings can be overridden for individual projects within project options.	注: これらの設定はプロジェクトオプション内の個別のプロジェクトで上書きできます。
+Note: Some of these options are not available in the Free Edition of Burp.	注: 一部のオプションはBurpフリー版では無効です。
+Note: these settings can be overridden for individual projects within project options.	注: これらの設定は個々のプロジェクトのプロジェクトオプションで上書きできます。
 Note: This analysis is based on the current contents of the site map, and no new requests have been made. Only parameters within the query string and request body are included in the analysis. URLs identified as "static" are those which do not take any parameters, though their responses may still be dynamically generated.	注: この分析はサイトマップの現在の内容に基づいており、新規リクエストは生成していません。クエリストリングとリクエストボディ内のパラメータのみが解析に含まれます。"静的"と識別されたURLはパラメータを持っていませんが、レスポンスが動的に生成された可能性があります。
 Note: You have selected to remove items with media responses. Some of the above items do not yet have responses and so may be removed from the scan when their responses have been analyzed.	注: メディアレスポンスのアイテムを除去するように選択されました。上記の一部のアイテムはまだレスポンスがなく、レスポンスの解析が完了したときこれらのアイテムはスキャンから除外されます。
 NOTE: You should ensure that all valuable data is saved elsewhere before using this function. Using this function will cause Burp to exit.	注: この機能を使用する前に、重要なデータが別の場所に保存されているか確認してください。この機能を使用するとBurpが終了します。
@@ -1517,6 +1549,8 @@ Performance Feedback	パフォーマンスフィードバック
 Per-host	ホストごと
 Perl code injection( \\[[0-9]+\\])?	Perlコードインジェクション$1
 PHP code injection( \\[[0-9]+\\])?	PHPコードインジェクション$1
+PIN code is required	PINコードが必要です
+PIN code:	PINコード:
 Pitchfork	ピッチフォーク(Pitchfork)
 Place attacks into the following locations within requests:	リクエスト内の次の場所に攻撃を配置します:
 Plain JAR file	JAR ファイル
@@ -1529,6 +1563,7 @@ Please enter the new project name.	新しいプロジェクト名を入力して
 Please enter the URL you would like to scan from. Note that this task will perform active scanning on the specified URL and on all items beneath it in its branch of the site map.	スキャンを開始するURLを入力してください。ここで指定したURLの、全てのサイトマップ上のブランチに対してアクティブスキャンが実行されることに注意してください。
 Please enter the URL you would like to spider from.	自動巡回を開始するURLを入力してください。
 Please enter your new license key.	新規ライセンスキーを入力してください。
+Please log in to /users/ and download Burp manually.	/users/にログインし、Burpを手動でダウンロードしてください。
 Please read the following licence agreement carefully, and indicate whether you accept its terms.	次の使用許諾契約書を読み、条項に同意するかどうかを指定してください。
 Please select a directory	ディレクトリを選択してください
 Please select a file	ファイルを選択してください
@@ -1536,6 +1571,7 @@ Please select a folder	フォルダを選択してください
 Please select a project file	プロジェクトファイルを選択してください
 Please select a rule type	ルールタイプを選択してください
 Please select an empty directory	空のディレクトリを選択してください
+Please select the build that you want to download.	ダウンロードしたいビルドを選択してください。
 Please select the file for the repaired project		修復するプロジェクトのファイルを選択してください。
 Please select the file you would like to save to.	保存するファイルを選択してください。
 Please select the folder for loading library JAR files	ライブラリのJARファイルを読み込むフォルダを選択してください
@@ -1545,7 +1581,7 @@ Please select the Jython standalone JAR file	JythonのスタンドアロンJAR�
 Please supply a prefix	プレフィックスを指定してください
 Please supply a regex	正規表現を指定してください
 Please supply a suffix	サフィックスを指定してください
-Please visit https://portswigger.net for more details about Burp Suite Professional which contains the full version. 	フルバージョンが入ったBurp Suiteプロフェッショナルの詳細は、https://portswigger.net にアクセスしてください。
+Please visit https://portswigger.net for more details about Burp Suite Professional which contains the full version. 	フルバージョンが入ったBurp Suiteプロフェッショナル版の詳細は、https://portswigger.net にアクセスしてください。
 Please visit https://portswigger.net/burp/freedownload/ to download the latest version.	https://portswigger.net/burp/freedownload/ にアクセスして、最新バージョンをダウンロードしてください。
 Please wait ...	しばらくお待ちください ...
 Please wait	お待ちください
@@ -1559,6 +1595,7 @@ Position:	位置:
 Positions?	ポジション
 Predefined Payload Lists	定義済みペイロードリスト
 Prefix:	プレフィックス:
+Prepend preprocessed payload	プリプロセッサペイロードを先頭に追加
 Preset parameters	プリセットパラメータ
 Preset Payload Lists	定義済みペイロードリスト
 Preset schemes:	定義済み形式:
@@ -1577,12 +1614,12 @@ Protocol(:?)	プロトコル$1
 Proxy \\(use with caution\\)	Proxy(使用注意)
 Proxy history help	Proxy履歴ヘルプ
 Proxy host(:?)	プロキシホスト$1
-Proxy host, leave blank to connect directly	プロキシホスト, 直接接続する場合は空白のま
+Proxy host, leave blank to connect directly	プロキシホスト, 直接接続する場合は空白のまま
 Proxy interception help	Proxyインターセプトヘルプ
 Proxy Interception	プロキシインターセプト
 Proxy Listeners	プロキシリスナー
 Proxy port(:?)	プロキシポート$1
-Purchase Burp Suite Professional	Burp Suiteプロフェッショナルを購入する
+Purchase Burp Suite Professional	Burp Suiteプロフェッショナル版を購入する
 Python code injection( \\[[0-9]+\\])?	Pythonコードインジェクション$1
 Python Environment	Python環境
 Queued Tasks	キューされたタスク
@@ -1710,7 +1747,7 @@ Requests made:	生成されたリクエスト:
 Requests queued:	キューに入っているリクエスト:
 requests	リクエストごとのみ検証する
 Requests(:?)	リクエスト$1
-Requires Burp Suite Professional	Burp Suiteプロフェッショナルが必要です
+Requires Burp Suite Professional	Burp Suiteプロフェッショナル版が必要です
 Re-record macro	マクロを再記録
 Re-recording the macro will delete the current macro items. Are you sure you want to continue\\?	マクロを再記録すると現在のマクロアイテムが削除されます。継続してよろしいですか？
 Response ([0-9]+)	レスポンス$1
@@ -1740,6 +1777,7 @@ Resume scanner	スキャン再開
 Resume spidering	自動巡回再開
 Resume	再開
 Retest macro	マクロを再テスト
+Reverse substring	部分文字列の反転
 Revert to the original list of items	元のアイテムリストに戻す
 Revert	元に戻す
 Review the items you have selected for scanning. Double-click items to view full details. You can remove individual items which you do not wish to scan, or go back to modify your general filters.	スキャン用に選択したアイテムを確認してください。詳細を表示するにはアイテムをダブルクリックしてください。スキャンしたくない個々のアイテムを除外するか、戻って一般的なフィルタを変更できます。
@@ -1893,8 +1931,10 @@ Select macro:	マクロを選択:
 Select none	選択を解除
 Select payload generator	ペイロードジェネレータを選択
 Select processor:	拡張選択:
+Select rule type	ルールタイプを選択してください
 Select the "extract grep" item from which to derive payloads:	ペイロードを取得する"抽出grep"アイテムをを選択してください:
 Select the certificate file	証明書ファイルを選択
+Select the certificate to use. If no certificates are shown, or some details are missing, enter your PIN and click "Refresh". You can double-click on an item to view the full details of the certificate.	使用する証明書を選択してください。証明書が表示されない、または一部の詳細が不足している場合、PINを入力し"リフレッシュ"をクリックしてください。アイテムをダブルクリックすると証明書の詳細が表示できます。
 Select the configuration that you would like to load for this project.	このプロジェクトに読み込む設定を選択してください。
 Select the extension-provided payload generator that you want to use. Burp extensions can be loaded using the Extender tool.	ペイロードを生成する拡張から使用したいものを選択してください。Burp拡張は、Extenderで読み込めます。
 Select the file containing the CA certificate to import.	インポートするCA証明書を含むファイルを選択してください。
@@ -1908,6 +1948,7 @@ Select the folder where the download will be saved.	ダウンロードしたフ�
 Select the input file from which Burp's state will be loaded.	Burpのステートを読み込むファイルを選択してください。
 Select the items from the proxy history that you wish to include in the macro, and click "OK". Note that to record a macro now using your browser you will need to ensure that proxy interception is turned off.	マクロに含めたいプロキシ履歴のアイテムを選択し、"OK"をクリックしてください。今ブラウザを使用してマクロを記録するには、プロキシのインターセプトがオフになっていることを確認する必要があることに注意してください。
 Select the location in the response where the token appears.	レスポンスにトークンが現れる場所を選択してください。
+Select the locations where Burp will search for PKCS#11 library files, then click "Search". Subdirectories are automatically searched.	PKCS#11ライブラリファイルを検索する場所を選択し、"検索"をクリックしてください。サブディレクトリを自動的に検索します。
 Select the output file to which Burp's state will be saved.	Burpのステートファイルを保存する出力ファイルを選択してください。
 Select the tools that this rule will be applied to.	ルールを適用するツールを選択してください。
 Select the type of task you want to run.	実行したいタスクのタイプを選択してください。
@@ -1935,7 +1976,7 @@ Server-side JavaScript code injection( \\[[0-9]+\\])?	サーバサイドJavaScri
 Server-side template injection \\(requires reflected XSS\\)	サーバサイドテンプレートインジェクション(反射型XSSが必要)
 Server-side template injection( \\[[0-9]+\\])?	サーバサイドテンプレートインジェクション$1
 Server-side variable names	サーバサイド変数名
-Session handling action editor - Rule ([0-9]+)	セッションハンドリングアクションエディタ - ルール$1
+Session handling action editor - (.*)	セッションハンドリングアクションエディタ - $1
 Session handling rule editor	セッションハンドリングルールエディタ
 Session Handling Rules	セッションハンドリングルール
 Session handling tracer \\[paused\\]	セッションハンドリングトレーサ [停止]
@@ -1984,7 +2025,9 @@ Site map help	サイトマップヘルプ
 Site map	サイトマップ
 Size	サイズ
 Skip all tests for these parameters:	これらのパラメータのテストを全てスキップする:
+Skip if matches regex	正規表現に一致した場合にスキップ
 Skip server-side injection tests for these parameters:	これらのパラメータに対するサーバサイドインジェクションテストをスキップする:
+Slot	スロット
 Smart decode	自動デコード
 Sniper	スナイパー(Sniper)
 Social security numbers disclosed( \\[[0-9]+\\])?	社会保障番号漏洩$1
@@ -2067,6 +2110,7 @@ Subject	サブジェクト
 Submit anonymous feedback about Burp's performance	Burpのパフォーマンスを匿名で送信する
 Submit form	フォーム送信
 Submit rating	レーティング送信
+Substring	部分文字列
 Success	成功
 Suffix:	サフィックス:
 Suite options	Suiteオプション
@@ -2107,8 +2151,12 @@ The certificate and private key were successfully imported.	証明書と秘密�
 The certificate was loaded successfully.	証明書を正常に読み込みました。
 The certificate was successfully exported.	証明書を正常にエクスポートしました。
 The chart indicates the degree of confidence in the randomness of the sample at each bit position. The significance level at each position is the probability of the observed bit-level results occurring, assuming that the sample is randomly generated.	グラフは、各ビット位置におけるサンプルの乱数性の信頼度を示します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合の、観察されたビットレベルの発生確率です。
+The chart indicates the degree of confidence in the randomness of the sample at each character position. The significance level at each position is the probability of the observed character-level results occurring, assuming that the sample is randomly generated.	グラフは、各文字位置におけるサンプルの乱数性の信頼度を示します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合の、観察された文字レベルの発生確率です。
+The chart shows the maximum bits of entropy available at each position, given the size of the character set used at that position. The total amount of possible entropy is ([0-9]+) bits.	グラフは、その位置で使用される文字セットのサイズによって与えられる、各位置におけるエントロピーの最大ビットを表示しています。有効なエントロピーの総数は、$1ビットです。
 The chart shows the number of bits of effective entropy at each significance level, based on all tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、全てのテストに基づいた、有意水準ごとの効果のあるエントロピーのビット数を表示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。低い有意水準を使用すると、サンプルがランダムであるという仮説を否定するためにより強力な証拠が必要とされることになり、非ランダムなデータがランダムだと処理される可能性が高くなります。
 The chart shows the number of bits of effective entropy at each significance level, based on the bit-level tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、ビットレベルのテストに基づいた、有意水準ごとの効果のあるエントロピーのビット数を表示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。低い有意水準を使用すると、サンプルがランダムであるという仮説を否定するためにより強力な証拠が必要とされることになり、非ランダムなデータがランダムだと処理される可能性が高くなります。
+The chart shows the number of bits of effective entropy at each significance level, based on the character-level tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、ビットレベルのテストに基づいた、有意水準ごとの効果のあるエントロピーの文字数を表示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。低い有意水準を使用すると、サンプルがランダムであるという仮説を否定するためにより強力な証拠が必要とされることになり、非ランダムなデータがランダムだと処理される可能性が高くなります。
+The chart shows the size of the character set used at each position. This number is the count of different characters that appear at each position within the sample data.	グラフは、各位置で使用された文字セットのサイズを表示しています。この数字は、サンプルデータ内の各位置に出現した異なる文字の数です。
 The directory selected is not empty	選択されたディレクトリは空ではありません
 The extension is loading.	拡張を読み込み中。
 The extension loaded successfully. Any output or error messages generated are shown below.	正常に拡張を読み込みました。生成された出力やエラーは以下に表示されます。
@@ -2190,7 +2238,7 @@ This action sets a specific value in a named request parameter or cookie.	この
 This action updates the request with the relevant cookies from the session handling cookie jar.	このアクションは、セッションハンドリングcookie jarの関連するcookieでリクエストを更新します。
 This applies to most network transfers	ほとんどのネットワーク通信に適用されます
 This applies to responses that do not contain a Content-Length or Transfer-Encoding header	Content-Length または Transfer-Encodingヘッダのないレスポンスに適用されます
-This feature can be used to prevent Burp from issuing any out-of-scope requests, including those made via the proxy.	Proxy経由で発生するもの含め、スコープ外のリクエストによって発生する問題を防ぎます。
+This feature can be used to prevent Burp from issuing any out-of-scope requests, including those made via the proxy.	Proxy経由で発生するもの含め、スコープ外へのリクエストによって発生する問題を防ぎます。
 This file already exists. Are you sure\\?	ファイルが既に存在します。よろしいですか？
 This function allows you to load Sequencer with a sample of tokens that you have already obtained, and then perform the statistical analysis on the sample.	既に取得してあるトークンのサンプルをSequencerに読み込ませ、サンプルの統計解析を実行できます。
 This function lets you do a word- or byte-level comparison between different data. You can load, paste, or send data here from other tools and then select the comparison you want to perform.	異なるデータ間の、単語もしくはバイトレベルの比較を行います。データを読み込み、貼り付け、他のツールからここに送信し、実行したい比較を選択してください。
@@ -2198,6 +2246,7 @@ This function sends common test payloads to random URLs and parameters at irregu
 This is the timeout after which failed DNS lookups are repeated	失敗したDNS名前解決を繰り返すまでのタイムアウトです
 This is the timeout after which successful DNS lookups expire	成功したDNS名前解決が期限切れになるまでのタイムアウトです
 This item is outside the current spidering scope. Would you like to modify the scope to include the item\\?	このアイテムは、現在の巡回スコープ外です。このアイテムを含むようスコープを修正しますか？
+This item is outside the current target scope. Are you sure you want to perform an active scan\\?	このアイテムは現在の対象スコープ外です。アクティブスキャンを実行してよろしいですか？
 This listing contains the definitions of all issues that can be detected by Burp Scanner.	Burp Scannerが検出できる全問題の定義一覧です。
 This panel shows a list of the unique SSL certificates received from web servers. Double-click an item to show the full details of the certificate.	このパネルにはWebサーバから受信した一意なSSL証明書が表示されます。証明書の詳細を見るにはアイテムをダブルクリックしてください。
 This payload type can be used to generate illegal Unicode representations of characters. It is sometimes effective in bypassing filters designed to block certain characters. See the full help for details of each option.	文字の不正なUnicode表現を生成します。特定の文字をブロックするよう設計されたフィルタの回避に効果がある場合があります。各オプションの詳細はヘルプを参照してください。
@@ -2222,15 +2271,17 @@ This project file was created by a different installation of Burp. You need to d
 This setting can be used to URL-encode selected characters within the final payload, for safe transmission within HTTP requests.	HTTPリクエストを安全に送信するために、最終的なペイロードの指定した文字をURLエンコードする設定です。
 This setting controls how Burp handles extensions on startup.	Burp起動時の拡張の処理方法を制御します。
 This setting controls the state of proxy interception at startup.	起動時のプロキシインターセプト状態の設定です。
-This test analyzes the distribution of ones and zeroes at each bit position. If the sample is randomly generated, the number of ones and zeroes is likely to be approximately equal. At each position, the test computes the probability of the observed distribution arising if the tokens are random. The significance level at each position is the probability of the observed number of ones and zeroes occurring, assuming that the sample is randomly generated.	テストでは、各ビット位置の0と1の分布を分析します。サンプルがランダムに生成されていれば、0と1の数はほぼ等しくなる可能性が高いです。このテストは各位置で、トークンがランダムであると仮定した場合に、観測された分布の確率を計算します。サンプルがランダムに生成されたと仮定した場合、各位置の有意水準は、0と1の発生が観察された数の確率です。
-This test analyzes the relationships between bits at different positions within the token. If the sample is randomly generated, a value at a given bit position is equally likely to be accompanied by a one or a zero at any other bit position. At each position, the test computes the probability of the relationships observed with bits at other positions arising if the tokens are random. To prevent arbitrary results, when a degree of correlation is observed between two bits, the test adjusts the significance level of the bit whose significance level is lower based on all of the other bit-level tests.	このテストは、トークン内の異なる位置のビット間の関係を分析します。サンプルがランダムに生成されている場合、特定ビットの値は、他のビット位置が0または1になる確率とおおむね等しくなる可能性が高いです。テストは各位置で、トークンがランダムな場合に生じる観測した他の位置のビットの確率を計算します。任意の結果を防ぐために、2ビットの間で相関度が観察された場合、その有意水準より低い他のビット・レベルのテストのすべてに基づいてビットの有意水準を調整します。
+This test analyzes the distribution of characters used at each position within the token. If the sample is randomly generated, the distribution of characters employed is likely to be approximately uniform. At each position, the test computes the probability of the observed distribution arising if the tokens are random. The significance level at each position is the probability of the observed distribution of characters occurring, assuming that the sample is randomly generated.	テストでは、トークン内の各位置で使用される文字の分布を分析します。サンプルがランダムに生成されていれば、文字の分布はほぼ均一になる可能性が高いです。このテストは各位置で、トークンがランダムであると仮定した場合に、観測された分布の確率を計算します。サンプルがランダムに生成されたと仮定した場合、各位置の有意水準は、発生が観察された文字分布の確率です。
+This test analyzes the distribution of ones and zeroes at each bit position. If the sample is randomly generated, the number of ones and zeroes is likely to be approximately equal. At each position, the test computes the probability of the observed distribution arising if the tokens are random. The significance level at each position is the probability of the observed number of ones and zeroes occurring, assuming that the sample is randomly generated.	このテストでは、各ビット位置の0と1の分布を分析します。サンプルがランダムに生成されていれば、0と1の数はほぼ等しくなる可能性が高いです。このテストは各位置で、トークンがランダムであると仮定した場合に、観測された分布の確率を計算します。サンプルがランダムに生成されたと仮定した場合、各位置の有意水準は、0と1の発生が観察された数の確率です。
+This test analyzes the relationships between bits at different positions within the token. If the sample is randomly generated, a value at a given bit position is equally likely to be accompanied by a one or a zero at any other bit position. At each position, the test computes the probability of the relationships observed with bits at other positions arising if the tokens are random. To prevent arbitrary results, when a degree of correlation is observed between two bits, the test adjusts the significance level of the bit whose significance level is lower based on all of the other bit-level tests.	このテストでは、トークン内の異なる位置のビット間の関係を分析します。サンプルがランダムに生成されている場合、特定ビットの値は、他のビット位置が0または1になる確率とおおむね等しくなる可能性が高いです。テストは各位置で、トークンがランダムな場合に生じる観測した他の位置のビットの確率を計算します。任意の結果を防ぐために、2ビットの間で相関度が観察された場合、その有意水準より低い他のビット・レベルのテストのすべてに基づいてビットの有意水準を調整します。
+This test analyzes the transitions between successive tokens in the sample. If the sample is randomly generated, a character appearing at a given position is equally likely to be followed in the next token by any one of the characters that is used at that position. At each position, the test computes the probability of the observed transitions arising if the tokens are random. The significance level at each position is the probability of the observed transitions occurring, assuming that the sample is randomly generated.	このテストでは、サンプル内の連続したトークン間の遷移を分析します。サンプルがランダムに生成されている場合、所定の位置に表示された文字は、続くトークンのその場所で使用される文字はどれも同じような可能性になるはずです。このテストは各位置で、トークンがランダムであると仮定した場合に、観測された遷移の確率を計算します。サンプルがランダムに生成されたと仮定した場合、各位置の有意水準は、発生が観察された遷移の確率です。
 This test attempts to compress the bit sequence at each position using standard ZLIB compression. The results indicate the proportional reduction in the size of the bit sequence when it was compressed. A higher degree of compression indicates that the data is less likely to be randomly generated.	このテストは、標準的な ZLIB 圧縮を使用して各位置でビット列を圧縮しようとします。この結果は、圧縮されたときビット列のサイズが比例減少することを示します。高い圧縮率は、データがランダムに生成されていないこと示しています。
 This test divides the bit sequence at each position into consecutive, non-overlapping groups of four, and derives a four-bit number from each group. It then counts the number of occurrences of each of the 16 possible numbers, and performs a chi-square calculation to evaluate this distribution. If the sample is randomly generated, the distribution of four-bit numbers is likely to be approximately uniform. At each position, the test computes the probability of the observed distribution arising if the tokens are random. The significance level at each position is the probability of the observed distribution occurring, assuming that the sample is randomly generated.	このテストは各位置のビット列を、連続する4つの非重複グループに分割し、各グループから4ビットの値を導出します。可能性のある16の数値の出現回数を数え、カイ二乗計算を行ってこの分布を評価します。サンプルがランダムに生成されていた場合、4ビット数値の分布はおおよそ均一になる可能性が高いです。テストは各位置で、トークンがランダムな場合に生じる観測分布の確率を計算します。サンプルがランダムと仮定した場合、各位置の有意水準は、観察された分布が発生する確率です。
 This test divides the bit sequence at each position into runs of consecutive bits which have the same value. It then counts the number of runs with a length of 1, 2, 3, 4, 5, and 6 and above. If the sample is randomly generated, the number of runs with each of these lengths is likely to be within a range determined by the size of the sample set. At each position, the test computes the probability of the observed runs occurring if the tokens are random. The significance level at each position is the probability of the observed runs occurring, assuming that the sample is randomly generated.	このテストは各位置のビット列を、同じ値を持つ連続したビットの連に分割します。そして長さが1, 2, 3, 4, 5, 6, それ以上の連の数を数えます。サンプルがランダムに生成されている場合、これらの各長さの連の数は、おおむねサンプルセットのサイズで決定される範囲に入る可能性が高いです。テストは各位置で、トークンがランダムな場合に発生する観測した連の確率を計算します。サンプルがランダムと仮定した場合、各位置の有意水準は、観察された連が発生する確率です。
 This test measures the longest run of bits with the same value at each bit position. If the sample is randomly generated, the longest run is likely to be within a range determined by the size of the sample set. At each position, the test computes the probability of the observed longest run arising if the tokens are random. The significance level at each position is the probability of the observed longest run occurring, assuming that the sample is randomly generated.	このテストは各ビット位置で、同じ値を持つビットの最長連を計測します。サンプルがランダムに生成されている場合、最長連は、おおむねサンプルセットのサイズで決定される範囲に入る可能性が高いです。テストは各位置で、トークンがランダムな場合に生じる観測した最長連の確率を計算します。サンプルがランダムと仮定した場合、各位置の有意水準は、観察された最長連が発生する確率です。
 This test performs a sophisticated analysis of the bit sequence at each position, and is capable of identifying evidence of non-randomness in some samples which pass the other statistical tests. The test works through the bit sequence and treats each series of consecutive numbers as coordinates in a multi-dimensional space. It plots a point in this space at each location determined by these co-ordinates. If the sample is randomly generated, the distribution of points within this space is likely to be approximately uniform; the appearance of clusters within the space indicates that the data is likely to be non-random. At each position, the test computes the probability of the observed distribution occurring if the tokens are random. The test is repeated for multiple sizes of number \\(between 1 and 8 bits\\) and for multiple numbers of dimensions \\(between 2 and 6\\). The significance level at each position is the probability of the observed results occurring, assuming that the sample is randomly generated.	このテストは、各位置のビットシーケンスの高度な解析を実行し、他の統計テストに合格した一部のサンプルの、非ランダム性の証拠を発見できます。テストはビット列を通して動作し、各連続した番号の連続を多次元空間の座標として扱います。これらの座標によって決定された場所ごとに、空間内の点をプロットします。サンプルがランダムに生成されていた場合、この空間内の点の分布がはおおよそ均一になる可能性が高いです; 空間内のクラスターの出現は、データがランダムではない可能性が高いことを示しています。テストは各位置で、トークンがランダムな場合に発生する観測分布の確率を計算します。テストは複数サイズの数(1から8ビット)と、複数の次元(2から6)で繰り返されます。サンプルがランダムと仮定した場合、各位置の有意水準は、観察された結果が発生する確率です。
 This URL is outside the current target scope. Are you sure you want to schedule an active scan\\?	このURLは現在の対象スコープ外です。アクティブスキャンをスケジュールしてよろしいですか？
-This version of Burp requires a license key. To continue, please paste your license key below, or load it from file.	このバージョンのBurpは来宣キーが必要です。継続するには、以下にライセンスキーを貼り付けるか、ファイルから読み込んでください。
+This version of Burp requires a license key. To continue, please paste your license key below, or load it from file.	このバージョンのBurpはライセンスキーが必要です。継続するには、以下にライセンスキーを貼り付けるか、ファイルから読み込んでください。
 This will clear all existing custom iterator settings	既存の全てのカスタムイテレータをクリアします
 This will close all Burp windows - are you sure you want to exit\\?	Burpの全てのウィンドウを閉じます - 終了してよろしいですか？
 This will enable other network users to use the proxy and view the proxy history.	他のネットワークユーザがプロキシを利用し、プロキシの履歴を閲覧できるようになります。
@@ -2264,7 +2315,7 @@ To take effect, you will need to restart Burp, and then install the new certific
 To this host	このホスト宛
 To this IP address	このIPアドレス宛
 To upper case	大文字に変換
-To use (.*) extensions, you need to download (.*), and configure its location in Burp Extender options.	$1拡張を使うには、$2をダウンロードし、Burp Extenderのオプションで場所を設定してください。
+To use (.*) extensions, you need to download (.*), and configure its location in Burp Extender options.	$1拡張を使うには、$2をダウンロードし、Burp Extenderのオプションでその場所を設定してください。
 Toggle message interception	メッセージのインターセプトを反転
 Token Analysis	トークン解析
 Token Handling	トークンハンドリング
@@ -2283,13 +2334,16 @@ Top/bottom split	上下分割
 Total cost:	総額:
 Total encodings	総エンコード数
 Total number of parameters:	パラメータの総数:
-Transitions	変化
+transition from (.) to (.) is too common at position ([0-9]+) \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	文字位置$3で $1 から $2への遷移が起こりすぎです (回数: $4, ランダムサンプル中の確率: $5%)
+transition from (.) to (.) is too common at position ([0-9]+) \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	文字位置$3で $1 から $2への遷移が起こりすぎです (回数: $4, ランダムサンプル中の確率: 0.0001%未満)
+Transitions	遷移
 Try to decode automatically	自動デコードを試行
 Two-digit hex	2桁16進数
 Type a search term	検索語を入力
 Type index	タイプインデックス
 Type(:?)	タイプ$1
 Typical severity	一般的な危険度
+Unable to load library - check file is correct and device is installed	ライブラリを読み込めません - ファイルが正しいか、デバイスがインストールされているかチェックしてください
 Unauthorized Response	未認可のレスポンス
 Uncheck all	全て解除
 Understand 100 Continue responses	100 Continueレスポンスを認識する
@@ -2320,7 +2374,7 @@ Updating results	結果更新中
 Upstream Proxy Servers	上位プロキシサーバ
 URL of redirection target	リダイレクト対象のURL
 URL parameter values	URLのパラメータ値
-URL parameter( .+)	URLパラメータ$1
+URL parameter( .+)?	URLパラメータ$1
 URL path filename	URLパスのファイル名
 URL path folders?	URLパスのフォルダ
 URL Scope	URLスコープ
@@ -2410,7 +2464,7 @@ Welcome ...	ようこそ ...
 Welcome to Burp Suite Free Edition. Use the options below to create or open a project.	Burp Suiteフリー版へようこそ。次のオプションでプロジェクトを作成するか開くか選択してください。
 Welcome to Burp Suite Professional. Use the options below to create or open a project.	Burp Suiteプロフェッショナル版へようこそ。次のオプションでプロジェクトを作成するか開くか選択してください。
 When following redirections, understand the following types:	リンクをたどる場合、次のタイプを認識します:
-When you click "next", Burp will remove the specified items and then exit.	"次へ"をクリックすると、Burpは指定したアイテムを削除し終了します。
+When you click "next", Burp will remove the specified items and then exit.	"次へ"をクリックすると、指定したアイテムを削除し終了します。
 Windows Classic	Windowsクラシック
 Windows installer \\((32|64)-bit\\)	Windowsインストーラ ($1ビット)
 With payload positions	ペイロードポジションを含む
@@ -2420,6 +2474,7 @@ Without payload positions	ペイロードポジションを含まない
 Word compare of #([0-9]+) and #([0-9]+)  \\(([0-9]+) differences\\)	#$1と#$2の単語比較  ($3カ所の相違)
 Word compare	単語比較
 Words	単語
+X509 certificate for (.*)	$1のX509証明書
 X-Forwarded-For dependent response( \\[[0-9]+\\])?	X-Forwarded-Forに依存したレスポンス$1
 XML / SOAP injection	XML/SOAPインジェクション
 XML entity expansion( \\[[0-9]+\\])?	XMLエンティティの展開$1
