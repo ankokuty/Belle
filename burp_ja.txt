@@ -239,6 +239,7 @@ Are you sure you want to clear the entire request template\\?	リクエストテ
 Are you sure you want to clear the history\\?	履歴をクリアしてよろしいですか？
 Are you sure you want to clear the list\\?	リストをクリアしてよろしいですか？
 Are you sure you want to close the tracer\\?	トレーサを閉じてよろしいですか？
+Are you sure you want to close this Burp Collaborator client\\? Any further interactions from its payloads will be lost.	Burp Collaboratorクライアントを閉じてよろしいですか？そのペイロードからの以降の通信は失われます。
 Are you sure you want to close this window\\?	このウィンドウを閉じてよろしいですか？
 Are you sure you want to delete the selected items?\\?	選択したアイテムを削除してよろしいですか？
 Are you sure you want to exit the wizard\\?	ウィザードを終了してよろしいですか？
@@ -323,7 +324,6 @@ Are you sure you want to retest the macro\\?	マクロを再テストしてよ�
 Are you sure you want to shut down Burp and launch the downloaded file\\?	Burpをシャットダウンしダウンロードしたファイルを起動してよろしいですか？
 Are you sure you want to stop\\?	停止してよろしいですか？
 Are you sure you want to unload ("[^"]+")\\?	$1をアンロードしてよろしいですか？
-Are you sure you want to shut down Burp and launch the downloaded file\\?	Burpをシャットダウンし、ダウンロードしたファイルを起動してよろしいですか？
 ASCII hex	ASCII16進数
 ASP.NET debugging enabled( \\[[0-9]+\\])?	ASP.NETデバッグが有効$1
 ASP.NET tracing enabled( \\[[0-9]+\\])?	ASP.NETトレースが有効$1
@@ -1119,6 +1119,8 @@ Invalid host specification	不正なホストが指定されました
 Invalid hostname:(.*)	不正なホスト名:$1
 Invalid IP address:(.*)	不正なIPアドレス:$1
 Invalid length	不正なLength値
+Invalid number	不正な数値
+Invalid poll interval	不正なポーリング間隔
 Invalid port:	不正なポート:
 Invalid regex	不正な正規表現
 Invalid session	セッション無効
@@ -1739,6 +1741,7 @@ Request param name	リクエストパラメータ名
 Request param value	リクエストパラメータ値
 Request the root of all directories	全てのディレクトリのルートにリクエストする
 Request to ([a-z].*)	$1　へのリクエスト
+Request to Collaborator	Collaboratorへのリクエスト
 Request to:	リクエスト先:
 Request	リクエスト
 requesting item ([0-9]+)	アイテム$1をリクエスト中
@@ -1754,6 +1757,7 @@ Response ([0-9]+)	レスポンス$1
 Response body	レスポンスボディ
 Response completed	完了レスポンス数
 Response from ([a-z].*)	$1　からのレスポンス
+Response from Collaborator	Collaboratorからのレスポンス
 Response headers?	レスポンスヘッダ
 Response Modification	レスポンス操作
 Response received	受信レスポンス数
@@ -1907,6 +1911,7 @@ Search responses for payload strings	ペイロード文字列のレスポンス�
 Search	検索
 Searching( \.+)?	検索中$1
 Searching:(.*)	検索中:$1
+seconds	秒
 See the documentation for more details on using Burp Clickbandit.	Burp Clickbanditの使用方法に関する詳細はドキュメントを参照してください。
 Select a directory containing custom payload lists	カスタムペイロードリストのあるディレクトリを選択してください
 Select a directory	ディレクトリ選択
