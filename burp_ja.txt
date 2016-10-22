@@ -323,7 +323,7 @@ Are you sure you want to retest the macro\\?	マクロを再テストしてよ�
 Are you sure you want to shut down Burp and launch the downloaded file\\?	Burpをシャットダウンしダウンロードしたファイルを起動してよろしいですか？
 Are you sure you want to stop\\?	停止してよろしいですか？
 Are you sure you want to unload ("[^"]+")\\?	$1をアンロードしてよろしいですか？
-Are you sure you wanto to shut down Burp and launch the downloaded file\\?	Burpをシャットダウンし、ダウンロードしたファイルを起動してよろしいですか？
+Are you sure you want to shut down Burp and launch the downloaded file\\?	Burpをシャットダウンし、ダウンロードしたファイルを起動してよろしいですか？
 ASCII hex	ASCII16進数
 ASP.NET debugging enabled( \\[[0-9]+\\])?	ASP.NETデバッグが有効$1
 ASP.NET tracing enabled( \\[[0-9]+\\])?	ASP.NETトレースが有効$1
