@@ -99,6 +99,7 @@
 (In|Of) response does not match	レスポンスのものに一致しない
 (In|Of) response matches	レスポンスのものに一致
 [Bb]ytes	バイト
+\\$1000	￥30000
 \\(Leave blank to run once only\\)	(一度のみ実行する場合は空白のまま)
 \\[and ([0-9]+) more\\]	[その他$1件]
 \\[NOT SELECTED\\]	[選択されていません]
