@@ -1,4 +1,4 @@
-Burp Suite 非公式日本語化ツール
+Belle (Burp Suite 非公式日本語化ツール)
 ====
 
 このツールは、PortSwigger社の製品であるBurp Suiteのインタフェースを、日本語化するツールです。
@@ -11,7 +11,7 @@ Burp Suite 非公式日本語化ツール
 
 ### インストーラーを使ってBurpをインストールした場合
 
-burp_ja.jar と burp_ja.txt　と javassist.jar の３つのファイルをダウンロードし、Burp Suiteがインストールされているフォルダにコピーします。
+belle.jar と ja.txt　と javassist.jar の３つのファイルをダウンロードし、Burp Suiteがインストールされているフォルダにコピーします。
 インストール時に変更していなければ、``C:\Program Files\BurpSuiteFree`` や``C:\Program Files\BurpSuitePro``にあると思います。
 
 BurpSuiteFree.vmoptions か BurpSuitePro.vmoptions ファイルをエディタで開き、１行追記します。
@@ -24,24 +24,24 @@ BurpSuiteFree.vmoptions か BurpSuitePro.vmoptions ファイルをエディタ�
 # -include-options [path to other .vmoption file]
 -Xmx12151m
 # 以下の行を追記
--javaagent:burp_ja.jar
+-javaagent:belle.jar
 ```
 
 通常通り、スタートメニューのショートカット等から起動します。
 
 ### Burp Suiteのjarファイルを任意の場所にインストールした場合
 
-burp_ja.jar と burp_ja.txt　と javassist.jar の３つのファイルをダウンロードし、Burpのjarファイル(`burpsuite_free_v1.7.06.jar`等)と同じフォルダにコピーします。
+belle.jar と ja.txt　と javassist.jar の３つのファイルをダウンロードし、Burpのjarファイル(`burpsuite_free_v1.7.06.jar`等)と同じフォルダにコピーします。
 
 Burpのjarファイルがあるフォルダに移動し、(-jar オプションより前に) -javaagentコマンドラインオプションを指定して起動します。
 
 ```
-java -javaagent:burp_ja.jar -Xmx1024m -jar burpsuite_free_v1.7.06.jar
+java -javaagent:belle.jar -Xmx1024m -jar burpsuite_free_v1.7.06.jar
 ```
 
 ### その他
 
-本ツールは、カレントディレクトリの burp\_ja.txt を読み込みます。Windowsのショートカットなどから起動する場合は burp\_ja.txtがあるフォルダを作業フォルダーに指定、シェルスクリプトやバッチファイルなどから起動する場合はカレントディレクトリを変更した上でjavaコマンドを実行してください。
+本ツールは、カレントディレクトリの ja.txt を読み込みます。Windowsのショートカットなどから起動する場合は ja.txtがあるフォルダを作業フォルダーに指定、シェルスクリプトやバッチファイルなどから起動する場合はカレントディレクトリを変更した上でjavaコマンドを実行してください。
 
 ## 注意事項
 

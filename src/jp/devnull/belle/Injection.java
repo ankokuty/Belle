@@ -1,4 +1,4 @@
-package jp.devnull.burp_ja;
+package jp.devnull.belle;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -43,8 +43,13 @@ public class Injection {
 				StringBuilder command = new StringBuilder();
 				command.append("public static java.util.Map createMap(){");
 				command.append("java.util.Map map = new java.util.HashMap();");
+				String langfile = "ja.txt";
+				if (agentArgs != null) {
+					langfile = agentArgs;
+				}
+
 				BufferedReader reader = new BufferedReader(
-						new InputStreamReader(new FileInputStream("burp_ja.txt"), "UTF-8"));
+						new InputStreamReader(new FileInputStream(langfile), "UTF-8"));
 				String line;
 				while ((line = reader.readLine()) != null) {
 					try {
@@ -67,7 +72,7 @@ public class Injection {
 				// 変換を行うメソッドを追加する
 				StringBuilder command = new StringBuilder();
 				command.append("public static String burpTranslate(String str){");
-				command.append("if(str!=null && str.length()>0){");
+				command.append("if((str==null) || (str.length()==0)){return str;}");
 				command.append("java.util.Iterator iterator = translateMaps.entrySet().iterator();");
 				command.append("while(iterator.hasNext()){");
 				command.append("java.util.Map.Entry entry = (java.util.Map.Entry)iterator.next();");
@@ -87,7 +92,6 @@ public class Injection {
 							+ " && !str.matches(\"\\\\s+\")"            // 空白のみを無視
 							+ "){System.err.println(str);}");
 				}
-				command.append("}");// if(str!=null && str.length()>0){
 				command.append("return str;");
 				command.append("}");
 				CtMethod translateTableMethod = CtMethod.make(command.toString(), ctClass);
