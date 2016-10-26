@@ -776,9 +776,8 @@ Don't submit forms	フォームを送信しない
 Don't submit login forms	ログインフォームを送信しない
 Don't use Burp Collaborator	Burp Collaboratorを使用しない
 Down	下へ
+Download (JRuby|Jython)	$1をダウンロード
 Download failed.	ダウンロードできませんでした。
-Download JRuby	JRubyをダウンロード
-Download Jython	Jythonをダウンロード
 Download other installers	他のインストーラをダウンロード
 Download	ダウンロード
 Downloading( \\([0-9]+%\\))?	ダウンロード中$1
@@ -1772,7 +1771,7 @@ Request Engine	リクエストエンジン
 Request first line	リクエスト先頭行
 Request handling	リクエストハンドリング
 Request in browser	ブラウザでリクエスト
-Request items? again	アイテムを再度リクエスト
+Request items? again	アイテムを再リクエスト
 Request param name	リクエストパラメータ名
 Request param value	リクエストパラメータ値
 Request the root of all directories	全てのディレクトリのルートにリクエストする
@@ -1832,7 +1831,7 @@ Run a macro	マクロを実行する
 Run a post-request macro	リクエスト後マクロを実行する
 Run health check ...	ヘルスチェック実行 ...
 Run macro:	マクロを実行:
-Run the macro again	マクロを再度実行する
+Run the macro again	マクロを再実行する
 Run the macro to test the handling of parameters	パラメータ処理のテストにマクロを実行する
 Running \\(([,0-9]+) active threads?\\)	実行中 (アクティブなスレッド数 $1)
 Running	起動中
@@ -1930,7 +1929,7 @@ Save	保存
 Saved preferences	保存した設定
 Saving: ([0-9]+)% complete	保存中: $1%完了
 Scan accuracy:	スキャン精度:
-Scan again	再度スキャン
+Scan again	再スキャン
 Scan everything	全てスキャンする
 Scan from a URL	URLからスキャン
 Scan next	次をスキャン
@@ -2547,6 +2546,7 @@ You can use the Burp Extender APIs to create your own extensions to customize Bu
 You have selected ([,0-9]+) items for active scanning. Before continuing, you can use the filters below to remove certain categories of items, to make your scanning more targeted and efficient.	アクティブスキャン用に$1このアイテムが選択されました。続ける前に、次のフィルタを使用して特定のカテゴリのアイテムを除外し、ターゲットを絞ったより効率的なスキャンを作成できます。
 You must load at least 100 tokens	最低100トークンを読み込む必要があります
 You should be aware that if any testing is continued using multiple instances of Burp, then some Collaborator-based issues may be missed or incorrectly reported.	複数インスタンスのBurpが使われ続けている場合、Collaboratorベースの一部の問題を見逃す、または誤って報告されることに留意してください。
+Your current license is due to expire soon. Please visit https://portswigger.net/users/ to extend your license before it expires.	現在のライセンスはまもなく期限切れになります。https://portswigger.net/users/ にアクセスし、期限切れになる前にライセンスを延長してください。
 Your license has expired, and Burp will shut down shortly unless the license is updated. Please save your work now, or update your license.	ライセンスの有効期限が切れており、ライセンスを更新するまでBurpはすぐにシャットダウンします。今すぐ作業を保存するか、ライセンスを更新してください。
 Your license has expired. Please obtain a new license key to continue.	ライセンスの有効期限が切れています。続行するには新しいライセンスキーを入手してください。
 Your license is successfully installed and activated.	ライセンスは正常にインストールとアクティベートされました。
