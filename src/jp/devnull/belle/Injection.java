@@ -2,6 +2,7 @@ package jp.devnull.belle;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.lang.instrument.ClassFileTransformer;
@@ -44,7 +45,7 @@ public class Injection {
 				command.append("public static java.util.Map createMap(){");
 				command.append("java.util.Map map = new java.util.HashMap();");
 				String langfile = "ja.txt";
-				if (agentArgs != null) {
+				if (agentArgs != null && (new File(agentArgs)).isFile()){
 					langfile = agentArgs;
 				}
 
