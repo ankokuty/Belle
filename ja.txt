@@ -69,6 +69,7 @@
 (.*: )poor.	$1悪い。
 (.*: )reasonable.	$1適当。
 (.*: )very good.	$1とても良い。
+(.*: )very poor.	$1とても悪い。
 ([,0-9]) highlights?	$1件ハイライト
 ([,0-9]+) bytes \\| ([0-9]+) millis	$1バイト | $2ミリ秒
 ([,0-9]+) bytes?	$1バイト
@@ -192,15 +193,16 @@ Additional encrypted strings - optional	追加暗号文字列 - オプション
 Advisory	アドバイザリ
 After recovering session:	セッション復元後:
 After running the macro, invoke a Burp extension action handler:	マクロ実行後、Burp拡張のアクションハンドラを実行する:
-Ajax request header manipulation \\(DOM-based\\)( \\[[0-9]+\\])?	Ajaxリクエストヘッダ操作 (DOMベース)$1
-Ajax request header manipulation \\(reflected DOM-based\\)( \\[[0-9]+\\])?	Ajaxリクエストヘッダ操作 (反射型DOMベース)$1
-Ajax request header manipulation \\(stored DOM-based\\)( \\[[0-9]+\\])?	Ajaxリクエストヘッダ操作 (蓄積型DOMベース)$1
+Ajax request header manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	Ajaxリクエストヘッダ操作 (DOMベース)$1
+Ajax request header manipulation \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	Ajaxリクエストヘッダ操作 (反射型DOMベース)$1
+Ajax request header manipulation \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	Ajaxリクエストヘッダ操作 (蓄積型DOMベース)$1
 Alerts	警告
 Alias	別名
 All bits failed the test. 	全ビットテスト不合格
 All bits passed the test. 	全ビットテスト合格
 All bits passed the test. Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long. However, an overly short longest run of bits also indicates that the sample is not random. Therefore some bits may record a significance level that is below the FIPS pass level even though they do not strictly fail the FIPS test.	全ビットがテスト合格。このテストのFIPS仕様では、ビットの最長連が長すぎる場合に失敗のみを記録することに注意してください。しかし、短すぎるビットの最長連もサンプルがランダムでないことを示します。したがって一部のビットでは、厳密なFIPSテストに不合格でないにもかかわらず、FIPS合格レベルを下回る有意水準を記録する場合があります。
 All interfaces	全てのインタフェース
+All issues	全ての問題
 All rows	全ての行
 All tests were successful. 	全てのテストが成功しました。
 All tools:	全ツール:
@@ -330,9 +332,9 @@ Are you sure you want to shut down Burp and launch the downloaded file\\?	Burp�
 Are you sure you want to stop\\?	停止してよろしいですか？
 Are you sure you want to unload ("[^"]+")\\?	$1をアンロードしてよろしいですか？
 ASCII hex	ASCII16進数
-ASP.NET debugging enabled( \\[[0-9]+\\])?	ASP.NETデバッグが有効$1
-ASP.NET tracing enabled( \\[[0-9]+\\])?	ASP.NETトレースが有効$1
-ASP.NET ViewState without MAC enabled( \\[[0-9]+\\])?	MACが無効のASP.NET ViewState$1
+ASP.NET debugging enabled(\\s+\\[[0-9]+\\])?	ASP.NETデバッグが有効$1
+ASP.NET tracing enabled(\\s+\\[[0-9]+\\])?	ASP.NETトレースが有効$1
+ASP.NET ViewState without MAC enabled(\\s+\\[[0-9]+\\])?	MACが無効のASP.NET ViewState$1
 At a significance level of 1%, the amount of effective entropy is estimated to be: ([0-9]+) bits.	1%の有意水準において、効果のあるエントロピー量の推測は次の通りです: $1 ビット。
 At least one kind of analysis must be selected	少なくとも１種類の解析を選択する必要があります。
 Attack configuration	攻撃設定
@@ -379,7 +381,7 @@ Base64-decode before analyzing	解析前にBase64デコード
 Base64-decode	Base64デコード
 Base64-encode requests and responses	リクエストとレスポンスをBase64エンコード
 Base64-encode	Base64エンコード
-Base64-encoded data in parameter( \\[[0-9]+\\])?	パラメータ内のBase64エンコードされたデータ$1
+Base64-encoded data in parameter(\\s+\\[[0-9]+\\])?	パラメータ内のBase64エンコードされたデータ$1
 Battering ram	破城槌(Battering ram)
 Billing	課金
 Bind to address:	バインドするアドレス:
@@ -411,7 +413,7 @@ Body to URL	ボディからURL
 Body	ボディ
 Boolean condition checks	真偽条件チェック
 Boolean operator:	動作条件:
-Browser cross-site scripting filter disabled( \\[[0-9]+\\])?	ブラウザXSSフィルタの無効化$1
+Browser cross-site scripting filter disabled(\\s+\\[[0-9]+\\])?	ブラウザXSSフィルタの無効化$1
 Brute forcer	ブルートフォース
 Building GUI	GUIを構築中
 Builds:	ビルド:
@@ -449,7 +451,7 @@ Byte compare of #([0-9]+) and #([0-9]+)  \\(([0-9]+) differences\\)	#$1と#$2の
 Byte compare	バイト比較
 Bytes transferred:	転送バイト数:
 CA Certificate	CA証明書
-Cacheable HTTPS response( \\[[0-9]+\\])?	キャッシュ可能なHTTPSレスポンス$1
+Cacheable HTTPS response(\\s+\\[[0-9]+\\])?	キャッシュ可能なHTTPSレスポンス$1
 Caching	キャッシュ
 Cancel	キャンセル
 Cannot remove macros?	マクロを削除できません
@@ -472,6 +474,10 @@ Change parameter locations \\(causes many more scan requests\\):	パラメータ
 Change request method	リクエストメソッド変更
 Change the font used to display HTTP messages	HTTPメッセージの表示に使用するフォントを変更
 Changes will take effect when Burp is restarted.	変更は再起動後に反映されます。
+character (.) is too common at position ([0-9]+) \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	文字位置$2で文字$1の数が多すぎます (回数: $3, ランダムサンプル中の確率: $4%)
+character (.) is too common at position ([0-9]+) \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	文字位置$2で文字$1の数が多すぎます (回数: $3, ランダムサンプル中の確率: 0.0001%未満)
+character (.) is too rare at position ([0-9]+) \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	文字位置$2で文字$1の数が少なすぎます (回数: $3, ランダムサンプル中の確率: $4%)
+character (.) is too rare at position ([0-9]+) \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	文字位置$2で文字$1の数が少なすぎます (回数: $3, ランダムサンプル中の確率: 0.0001%未満)
 Character blocks	文字ブロック
 Character Count Analysis - Significance Levels	文字数解析 - 有意水準
 Character frobber	文字フロバー
@@ -486,10 +492,10 @@ Check robots.txt	robots.txtをチェックする
 Check session is valid	セッションの有効性をチェックする
 Checking for available installers	利用可能なインストーラーをチェック中
 Checking for updates	更新を確認中
-chi-square value is too high at bit ([0-9]+) \\(chi-square: ([0-9.]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1のカイ二乗値が高すぎます (カイ二乗: $2, ランダムサンプル中の確率: $3%)
-chi-square value is too high at bit ([0-9]+) \\(chi-square: ([0-9.]+), probability in a random sample: less than 0.0001%\\)	ビット$1のカイ二乗値が高すぎます (カイ二乗: $2, ランダムサンプル中の確率: 0.0001%未満)
-chi-square value is too low at bit ([0-9]+) \\(chi-square: ([0-9.]+), probability in a random sample: ([0-9.]+)%\\)	bit $1 のカイ二乗値が低すぎます (カイ二乗: $2, ランダムサンプルの確率: $3%)
-chi-square value is too low at bit ([0-9]+) \\(chi-square: ([0-9.]+), probability in a random sample: less than 0.0001%\\)	bit $1 のカイ二乗値が低すぎます (カイ二乗: $2, ランダムサンプルの確率: 0.0001%未満)
+chi-square value is too high at bit ([0-9]+) \\(chi-square: ([,0-9.]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1のカイ二乗値が高すぎます (カイ二乗: $2, ランダムサンプル中の確率: $3%)
+chi-square value is too high at bit ([0-9]+) \\(chi-square: ([,0-9.]+), probability in a random sample: less than 0.0001%\\)	ビット$1のカイ二乗値が高すぎます (カイ二乗: $2, ランダムサンプル中の確率: 0.0001%未満)
+chi-square value is too low at bit ([0-9]+) \\(chi-square: ([,0-9.]+), probability in a random sample: ([0-9.]+)%\\)	bit $1 のカイ二乗値が低すぎます (カイ二乗: $2, ランダムサンプルの確率: $3%)
+chi-square value is too low at bit ([0-9]+) \\(chi-square: ([,0-9.]+), probability in a random sample: less than 0.0001%\\)	bit $1 のカイ二乗値が低すぎます (カイ二乗: $2, ランダムサンプルの確率: 0.0001%未満)
 Choose a file to export the CA certificate.	CA証明書をエクスポートするファイルを選択してください。
 Choose a file to export the certificate and private key, and a password to use for the keystore. 	証明書と秘密鍵をエクスポートするファイルを選択し、キーストアに設定するパスワードを入力してください。
 Choose a file to export the private key. 	秘密鍵をエクスポートするファイルを選択してください。 
@@ -526,21 +532,21 @@ Clear history	履歴クリア
 Clear queues	キューをクリア
 Clear the contents of the viewer	ビューアのコンテンツをクリア
 Clear	クリア
-Cleartext submission of password( \\[[0-9]+\\])?	パスワードの平文送信$1
+Cleartext submission of password(\\s+\\[[0-9]+\\])?	パスワードの平文送信$1
 Click the stars to rate the '(.*)' BApp	$1 BAppの評価に星をクリックしてください
 Click to modify	クリックして編集
 Client SSL certificate \\(PKCS#12\\)	クライアントSSL証明書 (PKCS#12)
 Client SSL Certificates?	クライアントSSL証明書
-Client-side JSON injection \\(DOM-based\\)( \\[[0-9]+\\])?	クライアントサイドJSONインジェクション(DOMベース)$1
-Client-side JSON injection \\(reflected DOM-based\\)( \\[[0-9]+\\])?	クライアントサイドJSONインジェクション (反射型DOMベース)$1
-Client-side JSON injection \\(stored DOM-based\\)( \\[[0-9]+\\])?	クライアントサイドJSONインジェクション (蓄積型DOMベース)$1
-Client-side SQL injection \\(DOM-based\\)( \\[[0-9]+\\])?	クライアントサイドSQLインジェクション (DOMベース)$1
-Client-side SQL injection \\(reflected DOM-based\\)( \\[[0-9]+\\])?	クライアントサイドSQLインジェクション (反射型DOMベース)$1
-Client-side SQL injection \\(stored DOM-based\\)( \\[[0-9]+\\])?	クライアンサイドSQLインジェクション (蓄積型DOMベース)$1
-Client-side template injection( \\[[0-9]+\\])?	クライアントサイドテンプレートインジェクション$1
-Client-side XPath injection \\(DOM-based\\)( \\[[0-9]+\\])?	クライアントサイドXPathインジェクション (DOMベース)$1
-Client-side XPath injection \\(reflected DOM-based\\)( \\[[0-9]+\\])?	クライアントサイドXPathインジェクション (反射型DOMベース)$1
-Client-side XPath injection \\(stored DOM-based\\)( \\[[0-9]+\\])?	クライアントサイドXPathインジェクション (蓄積型DOMベース)$1
+Client-side JSON injection \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドJSONインジェクション(DOMベース)$1
+Client-side JSON injection \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドJSONインジェクション (反射型DOMベース)$1
+Client-side JSON injection \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドJSONインジェクション (蓄積型DOMベース)$1
+Client-side SQL injection \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドSQLインジェクション (DOMベース)$1
+Client-side SQL injection \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドSQLインジェクション (反射型DOMベース)$1
+Client-side SQL injection \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアンサイドSQLインジェクション (蓄積型DOMベース)$1
+Client-side template injection(\\s+\\[[0-9]+\\])?	クライアントサイドテンプレートインジェクション$1
+Client-side XPath injection \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドXPathインジェクション (DOMベース)$1
+Client-side XPath injection \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドXPathインジェクション (反射型DOMベース)$1
+Client-side XPath injection \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドXPathインジェクション (蓄積型DOMベース)$1
 Close	閉じる
 Cluster bomb	クラスター爆弾(Cluster bomb)
 Collapse branch	ブランチを折りたたむ
@@ -583,8 +589,8 @@ Construct string	文字列生成
 Contains parameters	パラメータを含む
 Content discovery: (https?://.*)	コンテンツ探索: $1
 Content type header	コンテントタイプヘッダ
-Content type incorrectly stated( \\[[0-9]+\\])?	誤ったコンテントタイプ$1
-Content type is not specified( \\[[0-9]+\\])?	コンテントタイプが指定されていない$1
+Content type incorrectly stated(\\s+\\[[0-9]+\\])?	誤ったコンテントタイプ$1
+Content type is not specified(\\s+\\[[0-9]+\\])?	コンテントタイプが指定されていない$1
 Contents	コンテンツ
 Continue indefinitely	無限に繰り返す
 Control	コントロール
@@ -596,16 +602,16 @@ Convert to MySQL constructed string	MySQL構文の文字列に変換
 Convert to Oracle constructed string	Oracle構文の文字列に変換
 Cookie handling	cookie処理
 Cookie jar viewer	cookie jarビューア
-Cookie manipulation \\(DOM-based\\)( \\[[0-9]+\\])?	Cookie操作 (DOMベース)$1
-Cookie manipulation \\(reflected DOM-based\\)( \\[[0-9]+\\])?	Cookie操作 (反射型DOMベース)$1
-Cookie manipulation \\(stored DOM-based\\)( \\[[0-9]+\\])?	Cookie操作 (蓄積型DOMベース)$1
+Cookie manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	Cookie操作 (DOMベース)$1
+Cookie manipulation \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	Cookie操作 (反射型DOMベース)$1
+Cookie manipulation \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	Cookie操作 (蓄積型DOMベース)$1
 Cookie name	cookie名
 Cookie parameter values	Cookieのパラメータ値
-Cookie scoped to parent domain( \\[[0-9]+\\])?	親ドメインスコープのcookie$1
+Cookie scoped to parent domain(\\s+\\[[0-9]+\\])?	親ドメインスコープのcookie$1
 Cookie to body	cookieからボディ
 Cookie to URL	cookieからURL
 Cookie value	cookie値
-Cookie without HttpOnly flag set( \\[[0-9]+\\])?	HttpOnlyフラグがセットされていないcookie$1
+Cookie without HttpOnly flag set(\\s+\\[[0-9]+\\])?	HttpOnlyフラグがセットされていないcookie$1
 Cookie:	cookie:
 Cookies received	受信cookie
 Cookies	cookie
@@ -643,17 +649,17 @@ Could not obtain lock on file: (.*)	ファイルのロックを取得できま�
 Count	数
 Crawler Settings	クローラ設定
 Create a new rule	新規ルールを作成
-Credit card numbers disclosed( \\[[0-9]+\\])?	クレジットカード番号漏洩$1
-Cross-domain POST( \\[[0-9]+\\])?	クロスドメインのPOST$1
-Cross-domain Referer leakage( \\[[0-9]+\\])?	クロスドメインのReferer漏洩$1
-Cross-domain script include( \\[[0-9]+\\])?	クロスドメインのスクリプト読み込み$1
+Credit card numbers disclosed(\\s+\\[[0-9]+\\])?	クレジットカード番号漏洩$1
+Cross-domain POST(\\s+\\[[0-9]+\\])?	クロスドメインのPOST$1
+Cross-domain Referer leakage(\\s+\\[[0-9]+\\])?	クロスドメインのReferer漏洩$1
+Cross-domain script include(\\s+\\[[0-9]+\\])?	クロスドメインのスクリプト読み込み$1
 Cross-domain XHR (modern browsers only)	クロスドメインXHR(モダンなブラウザのみ)
-Cross-site request forgery( \\[[0-9]+\\])?	クロスサイトリクエストフォージェリ$1
-Cross-site scripting \\(DOM-based\\)( \\[[0-9]+\\])?	クロスサイトスクリプティング(DOMベース)$1
-Cross-site scripting \\(reflected DOM-based\\)( \\[[0-9]+\\])?	クロスサイトスクリプティング(DOMベース反射型)$1
-Cross-site scripting \\(reflected\\)( \\[[0-9]+\\])?	クロスサイトスクリプティング(反射型)$1
-Cross-site scripting \\(stored DOM-based\\)( \\[[0-9]+\\])?	クロスサイトスクリプティング (蓄積型DOMベース)$1
-Cross-site scripting \\(stored\\)( \\[[0-9]+\\])?	クロスサイトスクリプティング(蓄積型)$1
+Cross-site request forgery(\\s+\\[[0-9]+\\])?	クロスサイトリクエストフォージェリ$1
+Cross-site scripting \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	クロスサイトスクリプティング(DOMベース)$1
+Cross-site scripting \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	クロスサイトスクリプティング(DOMベース反射型)$1
+Cross-site scripting \\(reflected\\)(\\s+\\[[0-9]+\\])?	クロスサイトスクリプティング(反射型)$1
+Cross-site scripting \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	クロスサイトスクリプティング (蓄積型DOMベース)$1
+Cross-site scripting \\(stored\\)(\\s+\\[[0-9]+\\])?	クロスサイトスクリプティング(蓄積型)$1
 CSRF PoC generator	CSRF PoCジェネレータ
 CSRF technique:	CSRFテクニック:
 Current Action	現在のアクション
@@ -663,7 +669,7 @@ Custom parameter locations in response	レスポンス内のカスタムパラ�
 Custom:	カスタム:
 Cut	切り取り
 Data	データ
-Database connection string disclosed( \\[[0-9]+\\])?	データベース接続文字列漏洩$1
+Database connection string disclosed(\\s+\\[[0-9]+\\])?	データベース接続文字列漏洩$1
 Dates	日付
 Day rate:	日給:
 Days	日
@@ -702,9 +708,9 @@ Deleting Burp license key.	ライセンスキーを削除中。
 Deleting saved preferences.	保存した設定を削除中。
 Deleting temporary files.	一時ファイルを削除中。
 Delimiter:	区切り文字:
-Denial of service \\(DOM-based\\)( \\[[0-9]+\\])?	サービス妨害 (DOMベース)$1
-Denial of service \\(reflected DOM-based\\)( \\[[0-9]+\\])?	サービス妨害 (反射型DOMベース)$1
-Denial of service \\(stored DOM-based\\)( \\[[0-9]+\\])?	サービス妨害 (蓄積型DOMベース)$1
+Denial of service \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	サービス妨害 (DOMベース)$1
+Denial of service \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	サービス妨害 (反射型DOMベース)$1
+Denial of service \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	サービス妨害 (蓄積型DOMベース)$1
 Derivations based on discovered items	検出したアイテムに基づいて派生
 Derived parameters	派生パラメータ
 Description(:?)	詳細$1
@@ -720,7 +726,7 @@ Directories - long	ディレクトリ - 長
 Directories - short	ディレクトリ - 短
 Directories / files . extensions	ディレクトリ/ファイル.拡張子
 Directories only	ディレクトリのみ
-Directory listing( \\[[0-9]+\\])?	ディレクトリリスティング$1
+Directory listing(\\s+\\[[0-9]+\\])?	ディレクトリリスティング$1
 Disable Java SNI extension \\(requires restart\\)	Java SNI拡張を無効にする(要再起動)
 Disable logging to history and site map	履歴とサイトマップへのログを無効にする
 Disable web interface at http://burp	http://burp のWebインタフェースを無効にする
@@ -743,9 +749,9 @@ Do not include responses	レスポンスを含めない
 Do not save	保存しない
 Do not take full ownership of the project	プロジェクトの完全な所有権を取得しない
 Do platform authentication	プラットフォーム認証を行う
-Document domain manipulation \\(DOM-based\\)( \\[[0-9]+\\])?	ドキュメントドメイン操作 (DOMベース)$1
-Document domain manipulation \\(reflected DOM-based\\)( \\[[0-9]+\\])?	ドキュメントドメイン操作 (反射型DOMベース)$1
-Document domain manipulation \\(stored DOM-based\\)( \\[[0-9]+\\])?	ドキュメントドメイン操作 (蓄積型DOMベース)$1
+Document domain manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	ドキュメントドメイン操作 (DOMベース)$1
+Document domain manipulation \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	ドキュメントドメイン操作 (反射型DOMベース)$1
+Document domain manipulation \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	ドキュメントドメイン操作 (蓄積型DOMベース)$1
 Does not contain parameters	パラメータを含まない
 Does not match	一致しない
 Doing bit compression test	ビット圧縮テスト実行中
@@ -759,9 +765,9 @@ Doing FIPS poker test	FIPS ポーカ検定実行中
 Doing FIPS runs test	FIPS 連検定実行中
 Doing spectral tests	スペクトルテスト実行中
 Doing spectral tests: bit ([0-9]+)	スペクトルテスト実行中: ビット$1
-DOM data manipulation \\(DOM-based\\)( \\[[0-9]+\\])?	DOMデータ操作 (DOMベース)$1
-DOM data manipulation \\(reflected DOM-based\\)( \\[[0-9]+\\])?	DOMデータ操作 (反射型DOMベース)$1
-DOM data manipulation \\(stored DOM-based\\)( \\[[0-9]+\\])?	DOMデータ操作 (蓄積型DOMベース)$1
+DOM data manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	DOMデータ操作 (DOMベース)$1
+DOM data manipulation \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	DOMデータ操作 (反射型DOMベース)$1
+DOM data manipulation \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	DOMデータ操作 (蓄積型DOMベース)$1
 Domain hostname(:?)	ドメインホスト名$1
 Domain name resolution:	ドメイン名解決:
 Domain name	ドメイン名
@@ -784,7 +790,7 @@ Download	ダウンロード
 Downloading( \\([0-9]+%\\))?	ダウンロード中$1
 Drop all out-of-scope requests	スコープ外の全てのリクエストを破棄する
 Drop	破棄
-Duplicate cookies set( \\[[0-9]+\\])?	重複cookie$1
+Duplicate cookies set(\\s+\\[[0-9]+\\])?	重複cookie$1
 Duplicate hotkeys are configured	ホットキー設定が重複しています
 Duplicate the selected item	選択したアイテムを複製
 Duplicate the selected macro	選択したマクロを複製
@@ -827,7 +833,7 @@ Edited request	編集後リクエスト
 Edited response	編集後レスポンス
 Edited	編集済
 Effective Entropy	効果のあるエントロピー
-Email addresses disclosed( \\[[0-9]+\\])?	メールアドレス漏洩$1
+Email addresses disclosed(\\s+\\[[0-9]+\\])?	メールアドレス漏洩$1
 Embed images within HTML \\(requires modern browser\\)	HTML内への画像埋め込み (モダンなブラウザが必要)
 Empty cookie jar	cookie jarを空に
 Enable algorithms blocked by Java security policy \\(requires restart\\)	Javaセキュリティポリシーでブロックされたアルゴリズムを有効にする(要再起動)
@@ -883,13 +889,13 @@ Export comments	コメントをエクスポート
 Export Options	エクスポートオプション
 Export scripts	スクリプトをエクスポート
 Export	エクスポート
-Expression Language injection( \\[[0-9]+\\])?	式言語インジェクション$1
+Expression Language injection(\\s+\\[[0-9]+\\])?	式言語インジェクション$1
 Expression	正規表現
 Extension action handler:	アクションハンドラ拡張:
 Extension Details	拡張の詳細
 Extension file \\(\\.(jar|py|rb)\\):	拡張ファイル(.$1):
 Extension file:	拡張ファイル:
-Extension generated issue( \\[[0-9]+\\])?	拡張で作成された問題$1
+Extension generated issue(\\s+\\[[0-9]+\\])?	拡張で作成された問題$1
 Extension loaded	拡張読み込み済み
 Extension payload generator:	拡張ペイロードジェネレータ:
 Extension type:	拡張タイプ:
@@ -900,8 +906,8 @@ Extensions - short	拡張子 - 短
 Extensions let you customize Burp's behavior using your own or third-party code.	自分自身または第三者のコードでBurpの機能をカスタマイズできます。
 Extensions	拡張
 External / out-of-band interaction	外部/範囲外の操作
-External service interaction \\(DNS\\)( \\[[0-9]+\\])?	外部サービスとの通信 (DNS)$1
-External service interaction \\(HTTP\\)( \\[[0-9]+\\])?	外部サービスとの通信 (HTTP)$1
+External service interaction \\(DNS\\)(\\s+\\[[0-9]+\\])?	外部サービスとの通信 (DNS)$1
+External service interaction \\(HTTP\\)(\\s+\\[[0-9]+\\])?	外部サービスとの通信 (HTTP)$1
 Extract from regex group	正規表現グループから抽出
 Extract the following items from responses:	レスポンスから以下のアイテムを抽出する:
 Extracted value is URL-encoded	抽出した値はURLエンコードされている
@@ -933,11 +939,11 @@ Field value(:?)	フィールド値$1
 File [Ee]xtensions?	ファイル拡張子
 File \\(PKCS#12\\)	ファイル(PKCS#12)
 File does not exist	ファイルが存在しません
-File path manipulation( \\[[0-9]+\\])?	ファイルパスマニピュレーション$1
+File path manipulation(\\s+\\[[0-9]+\\])?	ファイルパスマニピュレーション$1
 File path traversal / manipulation	ファイルパストラバーサル/操作
-File path traversal( \\[[0-9]+\\])?	ファイルパストラバーサル$1
+File path traversal(\\s+\\[[0-9]+\\])?	ファイルパストラバーサル$1
 File size: ([0-9,]+) bytes?	ファイルサイズ: $1 バイト
-File upload functionality( \\[[0-9]+\\])?	ファイルアップロード機能$1
+File upload functionality(\\s+\\[[0-9]+\\])?	ファイルアップロード機能$1
 File was saved successfully.	ファイルを正常に保存しました。
 File(:?)	ファイル$1
 Filenames - long	ファイル名 - 長
@@ -974,7 +980,7 @@ FIPS runs test	FIPS 連検定
 FIPS runs	FIPS 連検定
 Fixed	固定
 Flag result items with responses matching these expressions:	これらの正規表現にマッチするレスポンスにフラグをセットする:
-Flash cross-domain policy( \\[[0-9]+\\])?	Flashクロスドメインポリシー$1
+Flash cross-domain policy(\\s+\\[[0-9]+\\])?	Flashクロスドメインポリシー$1
 Folder for loading library JAR files \\(optional\\):	ライブラリのJARファイルを読み込むフォルダ(オプション):
 Folder for loading modules \\(optional\\):	モジュールを読み込むフォルダ(オプション):
 Folders	フォルダ
@@ -996,8 +1002,8 @@ Format:	形式:
 Forms queued:	キューに入っているフォーム:
 Forms	フォーム
 Forward	転送
-Frameable response \\(potential Clickjacking\\)( \\[[0-9]+\\])?	フレーム化可能なレスポンス(クリックジャッキングの可能性)$1
-Frameable responses \\("Clickjacking"\\)( \\[[0-9]+\\])?	フレーム化可能なレスポンス("クリックジャッキング")$1
+Frameable response \\(potential Clickjacking\\)(\\s+\\[[0-9]+\\])?	フレーム化可能なレスポンス(クリックジャッキングの可能性)$1
+Frameable responses \\("Clickjacking"\\)(\\s+\\[[0-9]+\\])?	フレーム化可能なレスポンス("クリックジャッキング")$1
 From this host	このホストから
 From this IP address	このIPアドレスから
 Fuzzing - full	ファジング - フル
@@ -1038,6 +1044,9 @@ Hide not-found items	存在しないアイテムを非表示
 Hide outgoing messages	送信メッセージを非表示
 Hide warning	警告を非表示
 Hide:	非表示:
+High and medium issues	危険度高、中の問題
+High issues	危険度高の問題
+High, medium and low issues	危険度高、中、低の問題
 Highlight request parameters	リクエストパラメータを色付けする
 Highlight response syntax	レスポンスの構文を色付けする
 Highlight	色付け
@@ -1052,16 +1061,16 @@ Hostname(:?)	ホスト名$1
 Hotkeys?	ホットキー
 Hours	時間
 How many:	個数:
-HTML does not specify charset( \\[[0-9]+\\])?	文字コードが指定されていないHTML$1
+HTML does not specify charset(\\s+\\[[0-9]+\\])?	文字コードが指定されていないHTML$1
 HTML Rendering	HTMLレンダリング
-HTML uses unrecognized charset( \\[[0-9]+\\])?	認識されない文字セットを使用したHTML$1
-HTML5 cross-origin resource sharing( \\[[0-9]+\\])?	HTML5 クロスオリジンのリソース共有漏洩$1
-HTML5 storage manipulation \\(DOM-based\\)( \\[[0-9]+\\])?	HTML5ストレージ操作 (DOMベース)$1
-HTML5 storage manipulation \\(reflected DOM-based\\)( \\[[0-9]+\\])?	HTML5ストレージ操作 (反射型DOMベース)$1
-HTML5 storage manipulation \\(stored DOM-based\\)( \\[[0-9]+\\])?	HTML5ストレージ操作 (蓄積型DOMベース)$1
-HTML5 web message manipulation \\(DOM-based\\)( \\[[0-9]+\\])?	HTML5 Webメッセージ操作 (DOMベース)$1
-HTML5 web message manipulation \\(reflected DOM-based\\)( \\[[0-9]+\\])?	HTML5 Webメッセージ操作 (反射型DOMベース)$1
-HTML5 web message manipulation \\(stored DOM-based\\)( \\[[0-9]+\\])?	HTML5 Webメッセージ操作 (蓄積型DOMベース)$1
+HTML uses unrecognized charset(\\s+\\[[0-9]+\\])?	認識されない文字セットを使用したHTML$1
+HTML5 cross-origin resource sharing(\\s+\\[[0-9]+\\])?	HTML5 クロスオリジンのリソース共有漏洩$1
+HTML5 storage manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	HTML5ストレージ操作 (DOMベース)$1
+HTML5 storage manipulation \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	HTML5ストレージ操作 (反射型DOMベース)$1
+HTML5 storage manipulation \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	HTML5ストレージ操作 (蓄積型DOMベース)$1
+HTML5 web message manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	HTML5 Webメッセージ操作 (DOMベース)$1
+HTML5 web message manipulation \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	HTML5 Webメッセージ操作 (反射型DOMベース)$1
+HTML5 web message manipulation \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	HTML5 Webメッセージ操作 (蓄積型DOMベース)$1
 HTML-decode	HTMLデコード
 HTML-encode all characters \\(hex entities\\)	全ての文字をHTMLエンコード(16進数数値文字参照)
 HTML-encode all characters \\(numeric entities\\)	全ての文字をHTMLエンコード(10進数数値文字参照)
@@ -1072,9 +1081,9 @@ HTTP headers	HTTPヘッダ
 HTTP history	HTTP履歴
 HTTP Message Display	HTTPメッセージ表示
 HTTP method	メソッド
-HTTP PUT method is enabled( \\[[0-9]+\\])?	HTTP PUTメソッドが有効$1
-HTTP response header injection( \\[[0-9]+\\])?	HTTPレスポンスヘッダインジェクション$1
-HTTP TRACE method is enabled( \\[[0-9]+\\])?	TRACEメソッドが有効$1
+HTTP PUT method is enabled(\\s+\\[[0-9]+\\])?	HTTP PUTメソッドが有効$1
+HTTP response header injection(\\s+\\[[0-9]+\\])?	HTTPレスポンスヘッダインジェクション$1
+HTTP TRACE method is enabled(\\s+\\[[0-9]+\\])?	TRACEメソッドが有効$1
 HTTP verbs	HTTPメソッド
 I Accept	同意する
 I Decline	拒否する
@@ -1113,8 +1122,8 @@ Individuate forms by:	フォームの同一性判断:
 Information disclosure	情報漏洩
 Informed	情報収集
 Initial payload for first request:	最初のリクエストの初期ペイロード:
-Input returned in response \\(reflected\\)( \\[[0-9]+\\])?	レスポンスに含まれる入力値(反射型)$1
-Input returned in response \\(stored\\)( \\[[0-9]+\\])?	レスポンスに含まれる入力値(蓄積型)$1
+Input returned in response \\(reflected\\)(\\s+\\[[0-9]+\\])?	レスポンスに含まれる入力値(反射型)$1
+Input returned in response \\(stored\\)(\\s+\\[[0-9]+\\])?	レスポンスに含まれる入力値(蓄積型)$1
 In-scope items only	スコープ内のアイテムのみ
 In-scope only	スコープ内のみ
 Insensitive	大文字小文字を無視
@@ -1190,14 +1199,14 @@ Iterate all values of submit fields - max submissions per form:	送信フィー�
 January	1月
 Java Environment	Java環境
 Java SSL Options	Java SSL オプション
-JavaScript injection \\(DOM-based\\)( \\[[0-9]+\\])?	JavaScriptインジェクション (DOMベース)$1
-JavaScript injection \\(reflected DOM-based\\)( \\[[0-9]+\\])?	JavaScriptインジェクション (反射型DOMベース)$1
-JavaScript injection \\(stored DOM-based\\)	クロスサイトスクリプティング(DOMベース蓄積型)
+JavaScript injection \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	JavaScriptインジェクション (DOMベース)$1
+JavaScript injection \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	JavaScriptインジェクション (反射型DOMベース)$1
+JavaScript injection \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	クロスサイトスクリプティング(DOMベース蓄積型)
 JavaScript-driven	JavaScript駆動
 July	7月
 June	6月
 Key	キー
-LDAP injection( \\[[0-9]+\\])?	LDAPインジェクション$1
+LDAP injection(\\s+\\[[0-9]+\\])?	LDAPインジェクション$1
 Leave	残す
 Left/right split	左右に分割
 Length range: ([,0-9]+-[,0-9]+).	長さ範囲: $1
@@ -1208,9 +1217,9 @@ Licence Agreement	使用許諾契約書
 License	ライセンス
 Limit to	制限
 Link depth to associate with Proxy requests:	Proxyリクエストに関連づけるリンクの深さ:
-Link manipulation \\(DOM-based\\)( \\[[0-9]+\\])?	リンク操作 (DOMベース)$1
-Link manipulation \\(reflected DOM-based\\)( \\[[0-9]+\\])?	リンク操作 (反射型DOMベース)$1
-Link manipulation \\(stored DOM-based\\)( \\[[0-9]+\\])?	リンク操作 (蓄積型DOMベース)$1
+Link manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	リンク操作 (DOMベース)$1
+Link manipulation \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	リンク操作 (反射型DOMベース)$1
+Link manipulation \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	リンク操作 (蓄積型DOMベース)$1
 Links	リンク
 Linux installer	Linuxインストーラ
 List items for position ([0-9]+)( \\([0-9]+\\))?	ポジション$1のリストアイテム$2
@@ -1306,15 +1315,15 @@ Load user options	ユーザオプション読み込み
 Load	読み込み
 Loaded	読み込み済み
 Loading tokens	トークン読み込み中
-Local file path manipulation \\(DOM-based\\)( \\[[0-9]+\\])?	ローカルファイルパス操作 (DOMベース)$1
-Local file path manipulation \\(reflected DOM-based\\)( \\[[0-9]+\\])?	ローカルファイルパス操作 (反射型DOMベース)$1
-Local file path manipulation \\(stored DOM-based\\)( \\[[0-9]+\\])?	ローカルファイルパス操作 (蓄積型DOMベース)$1
+Local file path manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	ローカルファイルパス操作 (DOMベース)$1
+Local file path manipulation \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	ローカルファイルパス操作 (反射型DOMベース)$1
+Local file path manipulation \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	ローカルファイルパス操作 (蓄積型DOMベース)$1
 Location of JRuby JAR file:	JRubyのJARファイルの場所:
 Location of Jython standalone JAR file:	JythonのスタンドアロンJARファイルの場所:
 Location\\(s\\):	場所:
 Locations	場所
 Logging	ロギング
-Long redirection response( \\[[0-9]+\\])?	長いリダイレクトレスポンス$1
+Long redirection response(\\s+\\[[0-9]+\\])?	長いリダイレクトレスポンス$1
 longest run is too long at bit ([0-9]+) \\(length: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1の最長連が長すぎます (長さ: $2, ランダムサンプル中の確率: $3%)
 longest run is too long at bit ([0-9]+) \\(length: ([0-9]+), probability in a random sample: less than 0.0001%\\)	ビット$1の最長連が長すぎます (長さ: $2, ランダムサンプル中の確率: 0.0001%未満)
 longest run is too short at bit ([0-9]+) \\(length: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	ビット$1の最長連が短すぎます (長さ: $2, ランダムサンプル中の確率: $3%)
@@ -1390,7 +1399,7 @@ Minutes	分
 minutes	分後
 Misc	その他
 Miscellaneous	その他
-Mixed content( \\[[0-9]+\\])?	混合コンテンツ$1
+Mixed content(\\s+\\[[0-9]+\\])?	混合コンテンツ$1
 Modified value:	操作値:
 Modify case	大文字小文字変換
 Monitor the following tools' traffic to update the cookie jar:	次のツールを監視してcookie jarを更新する:
@@ -1413,7 +1422,7 @@ Move to the previous match	前の一致箇所に移動
 Move up	上に移動
 MSSQL-specific checks	MSSQL固有チェック
 Multipart form	マルチパートフォーム
-Multiple content types specified( \\[[0-9]+\\])?	複数のコンテントタイプ指定$1
+Multiple content types specified(\\s+\\[[0-9]+\\])?	複数のコンテントタイプ指定$1
 MySQL-specific checks	MySQL固有チェック
 Name or value:	名前または値:
 Name(:?)	名前$1
@@ -1436,6 +1445,8 @@ No macro selected	マクロが選択されていません
 No processors defined	処理が定義されていません
 no protocol: (.*)	プロトコルがありません: $1
 No proxy listeners are currently running - go to the Options tab to enable a listener	プロキシリスナーが起動していません - オプションタブでリスナーを有効化してください。
+No summary chart	サマリグラフなし
+No summary table	サマリテーブルなし
 No	いいえ
 None	なし
 Normal(:?)	標準$1
@@ -1485,10 +1496,10 @@ Open config file	設定ファイルを開く
 Open existing project	既存のプロジェクトを開く
 Open in browser	ブラウザで開く
 Open project file	プロジェクトファイルを開く
-Open redirection \\(DOM-based\\)( \\[[0-9]+\\])?	オープンリダイレクト(DOMベース)$1
-Open redirection \\(reflected DOM-based\\)( \\[[0-9]+\\])?	オープンリダイレクト (反射型DOMベース)$1
-Open redirection \\(stored DOM-based\\)( \\[[0-9]+\\])?	オープンリダイレクト (蓄積型DOMベース)$1
-Open redirection( \\[[0-9]+\\])?	オープンリダイレクト$1
+Open redirection \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	オープンリダイレクト(DOMベース)$1
+Open redirection \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	オープンリダイレクト (反射型DOMベース)$1
+Open redirection \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	オープンリダイレクト (蓄積型DOMベース)$1
+Open redirection(\\s+\\[[0-9]+\\])?	オープンリダイレクト$1
 Open saved attack	保存した攻撃を開く
 Open-ended responses:	開始からレスポンスが終了するまで:
 Operate on:	処理対象:
@@ -1498,10 +1509,10 @@ Oracle-specific checks	Oracle固有チェック
 Original message	元メッセージ
 Original request	元リクエスト
 Original response	元レスポンス
-OS command injection( \\[[0-9]+\\])?	OSコマンドインジェクション$1
+OS command injection(\\s+\\[[0-9]+\\])?	OSコマンドインジェクション$1
 Other binary	その他バイナリ
 Other text	その他テキスト
-Out-of-band resource load \\(HTTP\\)( \\[[0-9]+\\])?	帯域外リソース読み込み (HTTP)$1
+Out-of-band resource load \\(HTTP\\)(\\s+\\[[0-9]+\\])?	帯域外リソース読み込み (HTTP)$1
 Out-of-Scope Requests	スコープ外リクエスト
 Output to system console	システムコンソールに出力する
 Output	出力
@@ -1527,12 +1538,12 @@ Passively scan selected items	選択したアイテムをパッシブスキャ�
 Passively scan this branch	このブランチをパッシブスキャン
 Passively scan this host	このホストをパッシブスキャン
 Passively spider as you browse	ブラウザからのアクセスをパッシブスパイダリングする
-Password field with autocomplete enabled( \\[[0-9]+\\])?	オートコンプリートが有効なパスワードフィールド$1
+Password field with autocomplete enabled(\\s+\\[[0-9]+\\])?	オートコンプリートが有効なパスワードフィールド$1
 Password is required	パスワードが必要です
-Password returned in later response( \\[[0-9]+\\])?	後のレスポンスで返されるパスワード$1
-Password returned in URL query string( \\[[0-9]+\\])?	URLクエリーストリング内に返されるパスワード$1
-Password submitted using GET method( \\[[0-9]+\\])?	GETメソッドを使用したパスワード送信$1
-Password value set in cookie( \\[[0-9]+\\])?	cookieにセットされたパスワード値$1
+Password returned in later response(\\s+\\[[0-9]+\\])?	後のレスポンスで返されるパスワード$1
+Password returned in URL query string(\\s+\\[[0-9]+\\])?	URLクエリーストリング内に返されるパスワード$1
+Password submitted using GET method(\\s+\\[[0-9]+\\])?	GETメソッドを使用したパスワード送信$1
+Password value set in cookie(\\s+\\[[0-9]+\\])?	cookieにセットされたパスワード値$1
 Password(:?)	パスワード$1
 Passwords \\+ digit	パスワード+数値
 Passwords within configuration options:	設定内のパスワード:
@@ -1545,7 +1556,7 @@ Paste URL as request	URLをリクエストとして貼り付け
 Paste URL	URL貼り付け
 Paste	貼り付け
 Path(:?)	パス$1
-Path-relative style sheet import( \\[[0-9]+\\])?	相対パスのスタイルシート読み込み$1
+Path-relative style sheet import(\\s+\\[[0-9]+\\])?	相対パスのスタイルシート読み込み$1
 Pause [Ss]canner	Scanner一時停止
 Pause active scanning	アクティブスキャンを停止
 Pause before retry \\(milliseconds\\):	リトライ前の一時停止(ミリ秒):
@@ -1584,8 +1595,8 @@ Perform a byte-level comparison of the two selected items	選択した2アイテ
 Perform a word-level comparison of the two selected items	選択した2アイテムを単語レベルで比較する
 Performance Feedback	パフォーマンスフィードバック
 Per-host	ホストごと
-Perl code injection( \\[[0-9]+\\])?	Perlコードインジェクション$1
-PHP code injection( \\[[0-9]+\\])?	PHPコードインジェクション$1
+Perl code injection(\\s+\\[[0-9]+\\])?	Perlコードインジェクション$1
+PHP code injection(\\s+\\[[0-9]+\\])?	PHPコードインジェクション$1
 PIN code is required	PINコードが必要です
 PIN code:	PINコード:
 Pitchfork	ピッチフォーク(Pitchfork)
@@ -1637,8 +1648,8 @@ Preset parameters	プリセットパラメータ
 Preset Payload Lists	定義済みペイロードリスト
 Preset schemes:	定義済み形式:
 Previous	前へ
-Private IP addresses disclosed( \\[[0-9]+\\])?	プライベートIPアドレス漏洩$1
-Private key disclosed( \\[[0-9]+\\])?	秘密鍵漏洩$1
+Private IP addresses disclosed(\\s+\\[[0-9]+\\])?	プライベートIPアドレス漏洩$1
+Private key disclosed(\\s+\\[[0-9]+\\])?	秘密鍵漏洩$1
 Private key in DER format	DER形式の秘密鍵
 Process cookies in redirections	リダイレクト中にcookieを処理する
 Project file (.*) already exists, do you want to overwrite it\\?	プロジェクトファイル $1  は既に存在しています、上書きしてよろしいですか？
@@ -1657,7 +1668,7 @@ Proxy Interception	プロキシインターセプト
 Proxy Listeners	プロキシリスナー
 Proxy port(:?)	プロキシポート$1
 Purchase Burp Suite Professional	Burp Suiteプロフェッショナル版を購入する
-Python code injection( \\[[0-9]+\\])?	Pythonコードインジェクション$1
+Python code injection(\\s+\\[[0-9]+\\])?	Pythonコードインジェクション$1
 Python Environment	Python環境
 Queued Tasks	キューされたタスク
 Random	ランダム
@@ -1681,7 +1692,7 @@ Redo analysis	解析をやり直し
 Re-enter license key	ライセンスキーの再入力
 References to (https?://.*)	$1 への参照
 References	参考資料
-Referer-dependent response( \\[[0-9]+\\])?	Refererに依存したレスポンス$1
+Referer-dependent response(\\s+\\[[0-9]+\\])?	Refererに依存したレスポンス$1
 Refetch response	レスポンスを再取得
 Reflected DOM issues	反射型DOMの問題
 Reflected XSS	反射型XSS
@@ -1701,7 +1712,7 @@ Release notes	リリースノート
 Release notes(:?)   	リリースノート$1   
 Reliability	信頼性
 Remediation background	対策のバックグラウンド
-Remediation detail [where applicable]	対策方法の詳細 [該当する場合]
+Remediation detail \\[where applicable\\]	対策方法の詳細 [該当する場合]
 Remove <object> tags	<object>タグを除去する
 Remove 100 Continue headers	100 Continueヘッダを削除する
 Remove all items from the cookie jar	cookie jarから全てのアイテムを削除する
@@ -1710,24 +1721,18 @@ Remove all JavaScript	全てのJavaScriptを除去する
 Remove Burp license key	Burpのライセンスキーを削除
 Remove cookie	cookie削除
 Remove duplicate comments	重複したコメントを削除
-Remove duplicate items \\(same URL and parameters\\) \\[([,0-9]+) items\\]	重複(URLとパラメータが同じ)アイテムを除外 [$1 アイテム]
-Remove duplicate items \\(same URL and parameters\\)	重複(URLとパラメータが同じ)アイテムを除外
+Remove duplicate items \\(same URL and parameters\\)( \\[([,0-9]+) items\\])?	重複(URLとパラメータが同じ)アイテムを除外 [$2 アイテム]
 Remove duplicates	重複を削除
 Remove dupulicate comments	重複したコメントを除去
 Remove from scope	スコープから削除
 Remove input field length limits	入力フィールドの長さ制限を除去する
 Remove item	アイテムを削除
-Remove items already scanned \\(same URL and parameters\\) \\[([,0-9]+) items\\]	既にスキャンした(URLとパラメータが同じ)アイテムを除外 [$1 アイテム]
-Remove items already scanned \\(same URL and parameters\\)	既にスキャンした(URLとパラメータが同じ)アイテムを除外
-Remove items with media responses \\[([,0-9]+) items\\]	メディアレスポンスを除外 [$1 アイテム]
-Remove items with media responses	メディアレスポンスを除外
-Remove items with no parameters \\[([,0-9]+) items\\]	パラメータのないアイテムを除外 [$1 アイテム]
-Remove items with no parameters	パラメータのないアイテムを除外
-Remove items with the following extensions \\[([,0-9]+) items\\]	次の拡張子を除外 [$1 アイテム]
-Remove items with the following extensions	次の拡張子を除外
+Remove items already scanned \\(same URL and parameters\\)( \\[([,0-9]+) items\\])?	既にスキャンした(URLとパラメータが同じ)アイテムを除外 [$2 アイテム]
+Remove items with media responses( \\[([,0-9]+) items\\])?	メディアレスポンスを除外 [$2 アイテム]
+Remove items with no parameters( \\[([,0-9]+) items\\])?	パラメータのないアイテムを除外 [$2 アイテム]
+Remove items with the following extensions( \\[([,0-9]+) items\\])?	次の拡張子を除外 [$2 アイテム]
 Remove JavaScript form validation	JavaScriptによるフォームバリデーションを除去する
-Remove out-of-scope items \\[([,0-9]+) items\\]	スコープ外のアイテムを除外 [$1 アイテム]
-Remove out-of-scope items	スコープ外のアイテムを除外
+Remove out-of-scope items( \\[([,0-9]+) items\\])?	スコープ外のアイテムを除外 [$2 アイテム]
 Remove saved preferences	保存した設定を削除
 Remove secure flag from cookies	cookieのsecureフラグを除去する
 Remove temporary files	一時ファイルを削除
@@ -1821,8 +1826,8 @@ Reverse substring	部分文字列の反転
 Revert to the original list of items	元のアイテムリストに戻す
 Revert	元に戻す
 Review the items you have selected for scanning. Double-click items to view full details. You can remove individual items which you do not wish to scan, or go back to modify your general filters.	スキャン用に選択したアイテムを確認してください。詳細を表示するにはアイテムをダブルクリックしてください。スキャンしたくない個々のアイテムを除外するか、戻って一般的なフィルタを変更できます。
-Robots.txt file( \\[[0-9]+\\])?	robots.txt ファイル$1
-Ruby code injection( \\[[0-9]+\\])?	Rubyコードインジェクション$1
+Robots.txt file(\\s+\\[[0-9]+\\])?	robots.txt ファイル$1
+Ruby code injection(\\s+\\[[0-9]+\\])?	Rubyコードインジェクション$1
 Ruby Environment	Ruby環境
 Rule ([0-9]+)	ルール$1
 Rule Actions	ルールアクション
@@ -2008,15 +2013,15 @@ Sensitive	大文字小文字を区別
 Separator for position ([0-9]+)	ポジション$1の区切り文字
 September	9月
 Sequential	連番
-Serialized object in HTTP message( \\[[0-9]+\\])?	HTTPメッセージ内のシリアライズされたオブジェクト$1
+Serialized object in HTTP message(\\s+\\[[0-9]+\\])?	HTTPメッセージ内のシリアライズされたオブジェクト$1
 Server location:	サーバの場所:
 Server responses	サーバレスポンス
 Server SSL Certificates	サーバSSL証明書
 Server-level issues	サーバレベルの問題
 Server-side code injection	サーバサイドコードインジェクション
-Server-side JavaScript code injection( \\[[0-9]+\\])?	サーバサイドJavaScriptコードインジェクション$1
+Server-side JavaScript code injection(\\s+\\[[0-9]+\\])?	サーバサイドJavaScriptコードインジェクション$1
 Server-side template injection \\(requires reflected XSS\\)	サーバサイドテンプレートインジェクション(反射型XSSが必要)
-Server-side template injection( \\[[0-9]+\\])?	サーバサイドテンプレートインジェクション$1
+Server-side template injection(\\s+\\[[0-9]+\\])?	サーバサイドテンプレートインジェクション$1
 Server-side variable names	サーバサイド変数名
 Session handling action editor - (.*)	セッションハンドリングアクションエディタ - $1
 Session handling rule editor	セッションハンドリングルールエディタ
@@ -2026,7 +2031,7 @@ Session handling tracer help	セッションハンドリングトレーサヘル
 Session handling tracer	セッションハンドリングトレーサ
 Session is not running	セッションは実行していません。
 Session is running	セッション実行中
-Session token in URL( \\[[0-9]+\\])?	URL内のセッショントークン$1
+Session token in URL(\\s+\\[[0-9]+\\])?	URL内のセッショントークン$1
 Sessions	セッション
 Set "Connection close" on incoming requests	受信リクエストに"Connection close"をセットする
 Set a specific cookie or parameter value	指定したcookieやパラメータ値をセットする
@@ -2058,7 +2063,7 @@ Showing all items	全てのアイテムを表示
 Showing selected items ?	選択したアイテムを表示中
 Shut down Burp and launch downloaded file	Burpをシャットダウンし、ダウンロードしたファイルを起動する
 Significance Levels	有意水準
-Silverlight cross-domain policy( \\[[0-9]+\\])?	Silverlightクロスドメインポリシー$1
+Silverlight cross-domain policy(\\s+\\[[0-9]+\\])?	Silverlightクロスドメインポリシー$1
 Simple list	単純リスト
 Simple string	単純な文字列
 Simulate manual testing	手動テストをシミュレート
@@ -2072,14 +2077,15 @@ Skip server-side injection tests for these parameters:	これらのパラメー�
 Slot	スロット
 Smart decode	自動デコード
 Sniper	スナイパー(Sniper)
-Social security numbers disclosed( \\[[0-9]+\\])?	社会保障番号漏洩$1
+Social security numbers disclosed(\\s+\\[[0-9]+\\])?	社会保障番号漏洩$1
 SOCKS proxy host:	SOCKSプロキシホスト:
 SOCKS proxy port:	SOCKSプロキシポート:
 SOCKS Proxy	SOCKSプロキシ
 Some items could not be cleaned up.	一部のアイテムを削除できませんでした。
 Some macros are being used by session handling rules and cannot be deleted.	一部のマクロはセッションハンドリングルールで使用されているため削除できません。
 Some of these items are outside the current spidering scope. Would you like to modify the scope to include the items\\?	これらのアイテムの一部は、現在の巡回スコープ外です。このアイテムを含むようスコープを修正しますか？
-Source code disclosure( \\[[0-9]+\\])?	ソースコード漏洩$1
+Some of these items are outside the current target scope. Are you sure you want to perform an active scan\\?	これらのアイテムの一部は現在の対象スコープ外です。アクティブスキャンを実行してよろしいですか？
+Source code disclosure(\\s+\\[[0-9]+\\])?	ソースコード漏洩$1
 Source	ソース
 Specific address:	指定したアドレス:
 Specific string:	指定文字列:
@@ -2107,13 +2113,13 @@ Spider selected items	選択したアイテムをSpider実行
 Spider Status	Spiderステータス
 Spider this branch	このブランチをSpider実行
 Spider this host	このホストをSpider実行
-SQL injection \\(second order\\)( \\[[0-9]+\\])?	SQLインジェクション (セカンドオーダー)$1
-SQL injection( \\[[0-9]+\\])?	SQLインジェクション$1
-SQL statement in request parameter( \\[[0-9]+\\])?	リクエストパラメータ内のSQL文$1
+SQL injection \\(second order\\)(\\s+\\[[0-9]+\\])?	SQLインジェクション (セカンドオーダー)$1
+SQL injection(\\s+\\[[0-9]+\\])?	SQLインジェクション$1
+SQL statement in request parameter(\\s+\\[[0-9]+\\])?	リクエストパラメータ内のSQL文$1
 SSI injection	SSIインジェクション
-SSL certificate( \\[[0-9]+\\])?	SSL証明書$1
+SSL certificate(\\s+\\[[0-9]+\\])?	SSL証明書$1
 SSL Ciphers	SSL暗号
-SSL cookie without secure flag set( \\[[0-9]+\\])?	secureフラグがセットされていないSSL cookie$1
+SSL cookie without secure flag set(\\s+\\[[0-9]+\\])?	secureフラグがセットされていないSSL cookie$1
 SSL Negotiation Workarounds	SSLネゴシエーションの回避策
 SSL Negotiation	SSLネゴシエーション
 SSL Pass Through	SSLパススルー
@@ -2148,7 +2154,7 @@ Stored XSS	蓄積型XSS
 Streaming response \\[double-click to cancel\\]	ストリーミングレスポンス [ダブルクリックでキャンセル]
 Streaming response \\[not stored\\]	ストリーミングレスポンス [保存されていません]
 Streaming Responses	ストリーミングレスポンス
-Strict transport security not enforced( \\[[0-9]+\\])?	Strict transport securityが適用されていない$1
+Strict transport security not enforced(\\s+\\[[0-9]+\\])?	Strict transport securityが適用されていない$1
 Strip chunked encoding metadata in streaming responses	ストリーミングレスポンスからチャンクエンコーディングメタデータを除去する
 Strip Proxy-\\* headers in incoming requests	受信リクエストから Proxy-* ヘッダを除去する
 Subject	サブジェクト
@@ -2161,7 +2167,7 @@ Success	成功
 Suffix:	サフィックス:
 Suite options	Suiteオプション
 Summary bar chart	サマリ棒グラフ
-Summary table	サマリ表
+Summary table	サマリテーブル
 Summary	サマリ
 Support Center	サポートセンター
 Support invisible proxying \\(enable only if needed\\)	透過プロキシをサポートする(必要な場合のみ有効にしてください)
@@ -2198,7 +2204,7 @@ The certificate was loaded successfully.	証明書を正常に読み込みまし
 The certificate was successfully exported.	証明書を正常にエクスポートしました。
 The chart indicates the degree of confidence in the randomness of the sample at each bit position. The significance level at each position is the probability of the observed bit-level results occurring, assuming that the sample is randomly generated.	グラフは、各ビット位置におけるサンプルの乱数性の信頼度を示します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合の、観察されたビットレベルの発生確率です。
 The chart indicates the degree of confidence in the randomness of the sample at each character position. The significance level at each position is the probability of the observed character-level results occurring, assuming that the sample is randomly generated.	グラフは、各文字位置におけるサンプルの乱数性の信頼度を示します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合の、観察された文字レベルの発生確率です。
-The chart shows the maximum bits of entropy available at each position, given the size of the character set used at that position. The total amount of possible entropy is ([0-9]+) bits.	グラフは、その位置で使用される文字セットのサイズによって与えられる、各位置におけるエントロピーの最大ビットを表示しています。有効なエントロピーの総数は、$1ビットです。
+The chart shows the maximum bits of entropy available at each position, given the size of the character set used at that position. The total amount of possible entropy is ([.0-9]+) bits.	グラフは、その位置で使用される文字セットのサイズによって与えられる、各位置におけるエントロピーの最大ビットを表示しています。有効なエントロピーの総数は、$1ビットです。
 The chart shows the number of bits of effective entropy at each significance level, based on all tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、全てのテストに基づいた、有意水準ごとの効果のあるエントロピーのビット数を表示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。低い有意水準を使用すると、サンプルがランダムであるという仮説を否定するためにより強力な証拠が必要とされることになり、非ランダムなデータがランダムだと処理される可能性が高くなります。
 The chart shows the number of bits of effective entropy at each significance level, based on the bit-level tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、ビットレベルのテストに基づいた、有意水準ごとの効果のあるエントロピーのビット数を表示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。低い有意水準を使用すると、サンプルがランダムであるという仮説を否定するためにより強力な証拠が必要とされることになり、非ランダムなデータがランダムだと処理される可能性が高くなります。
 The chart shows the number of bits of effective entropy at each significance level, based on the character-level tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、ビットレベルのテストに基づいた、有意水準ごとの効果のあるエントロピーの文字数を表示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。低い有意水準を使用すると、サンプルがランダムであるという仮説を否定するためにより強力な証拠が必要とされることになり、非ランダムなデータがランダムだと処理される可能性が高くなります。
@@ -2387,6 +2393,8 @@ Total encodings	総エンコード数
 Total number of parameters:	パラメータの総数:
 transition from (.) to (.) is too common at position ([0-9]+) \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	文字位置$3で $1 から $2への遷移が起こりすぎです (回数: $4, ランダムサンプル中の確率: $5%)
 transition from (.) to (.) is too common at position ([0-9]+) \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	文字位置$3で $1 から $2への遷移が起こりすぎです (回数: $4, ランダムサンプル中の確率: 0.0001%未満)
+transition from (.) to (.) is too rare at position ([0-9]+) \\(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\\)	文字位置$3で $1 から $2への遷移が起こらなすぎです (回数: $4, ランダムサンプル中の確率: $5%)
+transition from (.) to (.) is too rare at position ([0-9]+) \\(count: ([0-9]+), probability in a random sample: less than 0.0001%\\)	文字位置$3で $1 から $2への遷移が起こらなすぎです (回数: $4, ランダムサンプル中の確率: 0.0001%未満)
 Transitions	遷移
 Try to decode automatically	自動デコードを試行
 Two-digit hex	2桁16進数
@@ -2400,9 +2408,9 @@ Unable to load library - check file is correct and device is installed	ライブ
 Unauthorized Response	未認可のレスポンス
 Uncheck all	全て解除
 Understand 100 Continue responses	100 Continueレスポンスを認識する
-Unencrypted communications( \\[[0-9]+\\])?	暗号化されていない通信$1
+Unencrypted communications(\\s+\\[[0-9]+\\])?	暗号化されていない通信$1
 Unhide hidden form fields	Hiddenフォームフィールドを強制表示する
-Unidentified code injection( \\[[0-9]+\\])?	不明なコードインジェクション$1
+Unidentified code injection(\\s+\\[[0-9]+\\])?	不明なコードインジェクション$1
 unknown	不明
 Unpack gzip / deflate in requests	リクエストのgzip/deflateを展開する
 Unpack gzip / deflate in responses	レスポンスのgzip/deflateを展開する
@@ -2481,7 +2489,7 @@ Use these settings to control which WebSockets messages are stalled for viewing 
 Use these settings to monitor and control Burp Spider. To begin spidering, browse to the target application, then right-click one or more nodes in the target site map, and choose "Spider this host / branch".	Burp Spiderの監視と制御を行います。巡回を開始するには、対象アプリケーションをブラウズし、サイトマップで対象の一つまたは複数のノードを右クリックし、"このホスト/ブランチをSpider実行"を選択してください。
 Use these settings to monitor and control the discovery session.	探索セッションの監視と制御を行います。
 Use this function to test the macro and determine whether it is working as required.	この機能を使用してマクロをテストし、要求通りに動作しているかどうか確認します。
-User agent-dependent response( \\[[0-9]+\\])?	ユーザエージェントに依存したレスポンス$1
+User agent-dependent response(\\s+\\[[0-9]+\\])?	ユーザエージェントに依存したレスポンス$1
 User agents	ユーザエージェント
 User Interface	ユーザインタフェース
 User options	ユーザオプション
@@ -2508,9 +2516,9 @@ Was modified	変更された
 Was not annotated	注釈なし
 Was not intercepted	インターセプトされなかった
 Was not modified	変更されなかった
-WebSocket hijacking \\(DOM-based\\)( \\[[0-9]+\\])?	WebSocketハイジャック(DOMベース)$1
-WebSocket hijacking \\(reflected DOM-based\\)( \\[[0-9]+\\])?	WebSocketハイジャック (反射型DOMベース)$1
-WebSocket hijacking \\(stored DOM-based\\)( \\[[0-9]+\\])?	WebSocketハイジャック (蓄積型DOMベース)$1
+WebSocket hijacking \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	WebSocketハイジャック(DOMベース)$1
+WebSocket hijacking \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	WebSocketハイジャック (反射型DOMベース)$1
+WebSocket hijacking \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	WebSocketハイジャック (蓄積型DOMベース)$1
 WebSockets history	WebSocket履歴
 Weeks	週
 Welcome ...	ようこそ ...
@@ -2528,12 +2536,12 @@ Word compare of #([0-9]+) and #([0-9]+)  \\(([0-9]+) differences\\)	#$1と#$2の
 Word compare	単語比較
 Words	単語
 X509 certificate for (.*)	$1のX509証明書
-X-Forwarded-For dependent response( \\[[0-9]+\\])?	X-Forwarded-Forに依存したレスポンス$1
+X-Forwarded-For dependent response(\\s+\\[[0-9]+\\])?	X-Forwarded-Forに依存したレスポンス$1
 XML / SOAP injection	XML/SOAPインジェクション
-XML entity expansion( \\[[0-9]+\\])?	XMLエンティティの展開$1
-XML external entity injection( \\[[0-9]+\\])?	XML外部エンティティインジェクション$1
-XML injection( \\[[0-9]+\\])?	XMLインジェクション$1
-XPath injection( \\[[0-9]+\\])?	XPathインジェクション$1
+XML entity expansion(\\s+\\[[0-9]+\\])?	XMLエンティティの展開$1
+XML external entity injection(\\s+\\[[0-9]+\\])?	XML外部エンティティインジェクション$1
+XML injection(\\s+\\[[0-9]+\\])?	XMLインジェクション$1
+XPath injection(\\s+\\[[0-9]+\\])?	XPathインジェクション$1
 Years	年
 Yes	はい
 You are editing the live config for a running attack. You should proceed with caution and consider pausing the attack while you make changes	攻撃実行中のライブ設定を編集しようとしています。注意深く行い、変更中は攻撃を一時停止する検討を推奨します。
