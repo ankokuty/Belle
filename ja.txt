@@ -1619,6 +1619,7 @@ Please select a folder	フォルダを選択してください
 Please select a project file	プロジェクトファイルを選択してください
 Please select a rule type	ルールタイプを選択してください
 Please select an empty directory	空のディレクトリを選択してください
+Please select the application type	アプリケーションタイプを選択してください。
 Please select the build that you want to download.	ダウンロードしたいビルドを選択してください。
 Please select the file for the repaired project		修復するプロジェクトのファイルを選択してください。
 Please select the file you would like to save to.	保存するファイルを選択してください。
@@ -1998,6 +1999,7 @@ Select the location in the response where the token appears.	レスポンスに�
 Select the locations where Burp will search for PKCS#11 library files, then click "Search". Subdirectories are automatically searched.	PKCS#11ライブラリファイルを検索する場所を選択し、"検索"をクリックしてください。サブディレクトリを自動的に検索します。
 Select the output file to which Burp's state will be saved.	Burpのステートファイルを保存する出力ファイルを選択してください。
 Select the tools that this rule will be applied to.	ルールを適用するツールを選択してください。
+Select the type of application that you want to instrument:	道具化するアプリケーションのタイプを選択してください: 
 Select the type of task you want to run.	実行したいタスクのタイプを選択してください。
 Select the types of details to include in the report.	レポートに含める詳細を選択してください。
 Select the types of issues to include in the report.	レポートに含める問題を選択してください。
