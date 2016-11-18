@@ -203,10 +203,11 @@ All bits passed the test. 	全ビットテスト合格
 All bits passed the test. Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long. However, an overly short longest run of bits also indicates that the sample is not random. Therefore some bits may record a significance level that is below the FIPS pass level even though they do not strictly fail the FIPS test.	全ビットがテスト合格。このテストのFIPS仕様では、ビットの最長連が長すぎる場合に失敗のみを記録することに注意してください。しかし、短すぎるビットの最長連もサンプルがランダムでないことを示します。したがって一部のビットでは、厳密なFIPSテストに不合格でないにもかかわらず、FIPS合格レベルを下回る有意水準を記録する場合があります。
 All interfaces	全てのインタフェース
 All issues	全ての問題
+All items were successfully cleaned up.	全てのアイテムを正常に削除しました。
 All rows	全ての行
 All tests were successful. 	全てのテストが成功しました。
 All tools:	全ツール:
-Allow renderer to make HTTP requests \\(for images, etc.\\)	レンダラがHTTPリクエストするのを許可する(画像など)
+Allow renderer to make HTTP requests \\(for images, etc.\\)	レンダラによるHTTPリクエスト(画像など)送信を許可する
 Allow requests to web interface using fully-qualified DNS hostnames	Webインタフェースで完全修飾DNSホスト名を許可する
 Allow unsafe renegotiation \\(required for some client certificates\\)	安全ではないネゴシエーションを許可する(一部のクライアント証明書で必要)
 Always disable	常に無効化
@@ -219,6 +220,7 @@ An error occurred when starting a project with the selected options.	選択し�
 An error occurred while attempting to verify your license key. Please check that you are using the latest Java Runtime Environment from Oracle, or try re-entering your license key.	ライセンスキーの検証中にエラーが発生しました。Oracleから最新の Java実行環境を使用しているか確認するか、ライセンスキーを再入力してください。
 An error occurred while loading the extension. Any output or error messages generated are shown below.	拡張の読み込み中にエラーが発生しました。生成された出力とエラーメッセージが以下に表示されます。
 An update is available. Please select the build that you want to download.	アップデートが利用可能です。ダウンロードするビルドを選択してください。
+An update is available.	更新が利用可能です。
 Analysis [Oo]ptions	解析オプション
 Analyze and display AMF messages \\(use with caution\\)	AMFメッセージの解析と表示をする(使用注意)
 Analyze now	解析実行
@@ -329,6 +331,7 @@ Are you sure you want to restore defaults for Project options\\?	プロジェク
 Are you sure you want to restore defaults for user options\\?	ユーザオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to retest the macro\\?	マクロを再テストしてよろしいですか？
 Are you sure you want to shut down Burp and launch the downloaded file\\?	Burpをシャットダウンしダウンロードしたファイルを起動してよろしいですか？
+Are you sure you want to shut down Burp and run the new version\\?	Burpをシャットダウンし新しいバージョンを起動してよろしいですか？
 Are you sure you want to stop\\?	停止してよろしいですか？
 Are you sure you want to unload ("[^"]+")\\?	$1をアンロードしてよろしいですか？
 ASCII hex	ASCII16進数
@@ -357,7 +360,7 @@ Automatically add entries on client SSL negotiation failure	クライアント�
 Automatically fix missing or superfluous new lines at end of request	リクエスト最後の不足または余分な改行を自動補正する
 Automatically locate library	ローカルライブラリから自動的に探す
 Automatically reload extensions on startup	起動時に拡張を自動的に再読み込みする
-Automatically scan the following targets as you browse. Active scan checks send various malicious requests designed to identify common vulnerabilities. Use with caution.	以下の対象をブラウズすると自動的にスキャンを実行します。アクティブスキャンチェックは、一般的な脆弱性を発見するよう設計された様々な悪意のあるリクエストを送信します。注意して使用してください。
+Automatically scan the following targets as you browse. Active scan checks send various malicious requests designed to identify common vulnerabilities. Use with caution.	以下の対象をブラウズすると自動的にスキャンを実行します。アクティブスキャンチェックは、様々な悪意のあるリクエストを送信し、一般的な脆弱性を発見しようとします。注意して使用してください。
 Automatically scan the following targets as you browse. Passive scan checks analyze your existing traffic for evidence of vulnerabilities, and do not send any new requests to the target.	以下の対象をブラウズすると自動的にスキャンを実行します。パッシブスキャンチェックは、既存のトラフィックを脆弱性の証拠として分析し、ターゲットに新しいリクエストは送信しません。
 Automatically select compatible SSL parameters on negotiation failure	ネゴシエーション失敗時に互換性のあるSSLパラメータを自動的に選択する
 Automatically set a payload at each URL, cookie and body parameter	各URL,cookie,ボディパラメータにペイロードを自動でセット
@@ -437,6 +440,7 @@ Burp Intruderが使用する定義済みペイロードリストの場所を設�
 Burp is up to date.	Burpは最新です。
 Burp license key	Burpライセンスキー
 Burp maintains a cookie jar that stores all of the cookies issued by visited web sites. Session handling rules can use and update these cookies to maintain valid sessions with applications that are being tested. You can use the settings below to control how Burp automatically updates the cookie jar based on traffic from particular tools.	アクセスしたWebサイトが発行した全てのcookieをcookie jarに保持します。セッションのルールを処理してテストされているアプリケーションで有効なセッションを維持するためにこれらのクッキーを更新します。テストしているアプリケーションの有効なセッションを保持するために、セッションハンドリングルールがこれらのcookieを使用や更新ができます。以下の設定で、特定のツールからのトラフィックに基づいて cookie jar を自動的に更新する方法を制御します。
+Burp program executable	Burp実行プログラム
 Burp Proxy uses listeners to receive incoming HTTP requests from your browser. You will need to configure your browser to use one of the listeners as its proxy server.	Burp Proxyはリスナーを使用してブラウザからHTTPリクエストを受け取ります。リスナーの一つをプロキシサーバとしてブラウザに設定する必要があります。
 Burp Repeater help	Burp Repeaterヘルプ
 Burp Scanner reporting wizard	Burp Scannerレポートウィザード	
@@ -549,6 +553,7 @@ Client-side XPath injection \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	クラ�
 Client-side XPath injection \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドXPathインジェクション (蓄積型DOMベース)$1
 Close	閉じる
 Cluster bomb	クラスター爆弾(Cluster bomb)
+Collaborator (.*) interaction	Collaboratorとの$1通信
 Collapse branch	ブランチを折りたたむ
 Columns	列
 Comment this item	このアイテムにコメント
@@ -574,7 +579,7 @@ Configure target details	対象の詳細を設定
 Configure the details of the custom parameter location. You need to specify the name that is used for this parameter in subsequent macro requests, and the location within this response from which the parameter's value should be derived.	カスタムパラメータ位置の詳細を設定します。このパラメータを後続のマクロリクエストで使用する際の名前と、パラメータ値として取り出すレスポンス内の位置を指定する必要があります。
 Configure the details of the target for the attack.	攻撃対象の詳細を設定してください。
 Configure the location of the items that Burp Intruder should use for its predefined payload lists.	Burp Intruderが使用する定義済みペイロードリストの場所を設定してください
-Configure the positions where payloads will be inserted into the base request. The attack type determines the way in which payloads are assigned to payload positions - see help for full details.	ペイロードがベースリクエストに挿入される位置を設定します。攻撃タイプは、ペイロードがペイロードポジションに割り当てされる方法を指定します。- 詳細はヘルプを参照してください。
+Configure the positions where payloads will be inserted into the base request. The attack type determines the way in which payloads are assigned to payload positions - see help for full details.	ペイロードがベースリクエストに挿入される位置を設定します。攻撃タイプは、ペイロードがペイロードポジションに割り当てられる方法を指定します。 - 詳細はヘルプを参照してください。
 Configure the selected item	選択したアイテムを設定
 Configure the settings for the custom token location	トークン位置のカスタム設定
 Configure the sources Burp should use for generating filenames to test.	ファイル名のテストを生成する元を設定します。
@@ -586,6 +591,7 @@ Construct string in Microsoft SQL Server	Microsoft SQL Serverの文字列生成
 Construct string in MySQL	MySQLの文字列生成
 Construct string in Oracle	Oracleの文字列生成
 Construct string	文字列生成
+Contacting License Server	ライセンスサーバに接続中
 Contains parameters	パラメータを含む
 Content discovery: (https?://.*)	コンテンツ探索: $1
 Content type header	コンテントタイプヘッダ
@@ -684,7 +690,7 @@ Define custom token location	トークン位置のカスタム定義
 Define extract grep from response	レスポンスから抽出grepを定義
 Define extract grep item	抽出grepアイテムの定義
 Define start and end	開始と終了を定義
-Define the in-scope targets for your current work. This configuration affects the behavior of tools throughout the suite. All fields take regex strings. The easiest way to configure scope is to browse to your target and use the context menus in the site map to include or exclude URL paths.	現在の作業用に、スコープ内のターゲットを定義します。この設定はツール全体での動作に影響を与えます。すべてのフィールドは正規表現で指定します。ターゲットをブラウザで参照し、サイトマップのコンテキストメニューでURLパスを含めるまたは除外すると、スコープ設定が簡単です。
+Define the in-scope targets for your current work. This configuration affects the behavior of tools throughout the suite. All fields take regex strings. The easiest way to configure scope is to browse to your target and use the context menus in the site map to include or exclude URL paths.	現在の作業でスコープ内とするターゲットを定義します。この設定はツール全体の動作に影響を与えます。すべてのフィールドは正規表現で指定します。ターゲットをブラウザで参照し、サイトマップのコンテキストメニューでURLパスを含めるまたは除外すると、スコープ設定が簡単です。
 Define the location of the item to be extracted. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	抽出するアイテムの場所を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
 Define the location of the parameter value. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	パラメータ値の位置を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
 Define the location of the token within the response. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	レスポンス内のトークンの場所を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
@@ -704,6 +710,7 @@ Delete selected issues	選択した問題を削除
 Delete selected items	選択したアイテムを削除
 Delete	削除
 Deleted directory: (.*)	ディレクトリを削除: $1
+Deleting Burp executable.	Burp実行プログラムを削除中。
 Deleting Burp license key.	ライセンスキーを削除中。
 Deleting saved preferences.	保存した設定を削除中。
 Deleting temporary files.	一時ファイルを削除中。
@@ -787,6 +794,7 @@ Download (JRuby|Jython)	$1をダウンロード
 Download failed.	ダウンロードできませんでした。
 Download other installers	他のインストーラをダウンロード
 Download	ダウンロード
+Downloading update	更新をダウンロード中
 Downloading( \\([0-9]+%\\))?	ダウンロード中$1
 Drop all out-of-scope requests	スコープ外の全てのリクエストを破棄する
 Drop	破棄
@@ -798,7 +806,7 @@ Duplicate the selected rule	選択したルールを複製
 Duplicate	複製
 Dynamic update	動的に更新
 Each Burp project has a unique identifier that is used to track any Burp Collaborator interactions that are associated with the project. You need to decide whether to save this identifier in your state file.	プロジェクトに紐付くBurp Collaboratorとの通信を識別するための一意な識別子を、各Burpプロジェクトは持っています。この識別子をステートファイルに保存するか決定する必要があります。
-Each installation of Burp generates its own CA certificate that Proxy listeners can use when negotiating SSL connections. You can import or export this certificate for use in other tools or another installation of Burp.	プロキシリスナーがSSL接続を確立する際に使用する独自のCA証明書を、Burpのインストールごとに生成します。他のツールや他のBurp用に、この証明書のインポートやエクスポートができます。
+Each installation of Burp generates its own CA certificate that Proxy listeners can use when negotiating SSL connections. You can import or export this certificate for use in other tools or another installation of Burp.	Burpをインストールするごとに独自のCA証明書を生成し、プロキシリスナーがSSL接続を確立する際に使用します。この証明書はインポートやエクスポートができ、他のツールや他のマシンにインストールしたBurpで使用できます。
 ECB block shuffler	ECBブロックシャッフル
 Edit "skip parameter" rule	"スキップパラメータ"ルールを編集
 Edit cookie	cookie編集
@@ -837,7 +845,7 @@ Email addresses disclosed(\\s+\\[[0-9]+\\])?	メールアドレス漏洩$1
 Embed images within HTML \\(requires modern browser\\)	HTML内への画像埋め込み (モダンなブラウザが必要)
 Empty cookie jar	cookie jarを空に
 Enable algorithms blocked by Java security policy \\(requires restart\\)	Javaセキュリティポリシーでブロックされたアルゴリズムを有効にする(要再起動)
-Enable disabled form fields	無効化されたフォームフィールドを有効化する
+Enable disabled form fields	無効化(disabled)されたフォームフィールドを有効化する
 Enable interception at startup:	起動時にインターセプトを有効:
 Enabled	有効
 Encode as ...	エンコード ...
@@ -845,7 +853,7 @@ Encode as ASCII hex	ASCII16進数としてエンコード
 Encode	エンコード
 Encoded as ASCII hex	ASCII 16進数エンコード
 Encrypted data to shuffle:	シャッフルする暗号データ:
-End at delimiter:	区切りで終了:
+End at delimiter:	この区切りで終了:
 End at fixed length:	固定長で終了:
 End time	終了時間
 End	末尾
@@ -917,6 +925,7 @@ Failed to check for updates. Please log in to your account at https://portswigge
 Failed to connect to (.*:[0-9]+)	$1へ接続できません
 Failed to create Burp project:(.*)	Burpプロジェクトを作成できません:$1
 Failed to decrypt stored passwords. Enter the master password that was used to encrypt stored passwords.	保存したパスワードの復号ができません。保存したパスワードの暗号化に使用したマスターパスワードを入力してください。
+Failed to delete Burp executable.		Burp実行プログラムを削除できませんでした。
 Failed to delete directory: (.*)	ディレクトリの削除ができません: $1
 Failed to download BApp file	BAppファイルをダウンロードできません
 Failed to import certificate: (.*)	証明書のインポートができません: $1
@@ -979,7 +988,7 @@ FIPS Runs Test - Significance Levels	FIPS 連検定 - 有意水準
 FIPS runs test	FIPS 連検定
 FIPS runs	FIPS 連検定
 Fixed	固定
-Flag result items with responses matching these expressions:	これらの正規表現にマッチするレスポンスにフラグをセットする:
+Flag result items with responses matching these expressions:	これらの文字列にマッチするレスポンスにフラグをセットする:
 Flash cross-domain policy(\\s+\\[[0-9]+\\])?	Flashクロスドメインポリシー$1
 Folder for loading library JAR files \\(optional\\):	ライブラリのJARファイルを読み込むフォルダ(オプション):
 Folder for loading modules \\(optional\\):	モジュールを読み込むフォルダ(オプション):
@@ -1429,7 +1438,7 @@ Name(:?)	名前$1
 Names observed in use on target site	対象サイトで使用されている名前
 Negative match	一致しないものを検索
 Negative search	一致しないものを検索
-Nested insertion points are used when an insertion point's base value contains data in a recognized format \\(for example, XML data within a URL parameter\\):	挿入ポイントの元値が認識可能な形式(例えば、URLパラメータ内のXMLデータなど)の場合、ネストした挿入ポイントが使用されます。:
+Nested insertion points are used when an insertion point's base value contains data in a recognized format \\(for example, XML data within a URL parameter\\):	挿入ポイントの元値が認識可能な形式(例えば、URLパラメータ内のXMLデータなど)の場合、ネストした挿入ポイントが使用されます:
 Never	行わない
 New project file	新規プロジェクトファイル
 New project on disk	新規ディスクプロジェクト
@@ -1720,6 +1729,7 @@ Remove all items from the cookie jar	cookie jarから全てのアイテムを削
 Remove all items from the list	リストから全てのアイテムを削除
 Remove all JavaScript	全てのJavaScriptを除去する
 Remove Burp license key	Burpのライセンスキーを削除
+Remove Burp program executable	Burp実行プログラムを削除
 Remove cookie	cookie削除
 Remove duplicate comments	重複したコメントを削除
 Remove duplicate items \\(same URL and parameters\\)( \\[([,0-9]+) items\\])?	重複(URLとパラメータが同じ)アイテムを除外 [$2 アイテム]
@@ -1993,6 +2003,7 @@ Select the file from which to read payloads at runtime	実行時にペイロー�
 Select the file where the report will be saved.	レポートを保存するファイルを選択してください。
 Select the folder where Burp Infiltrator should be saved:	Burp Infiltratorを保存するフォルダを選択してください:
 Select the folder where the download will be saved.	ダウンロードしたファイルを保存するフォルダを選択してください。
+Select the folder where the new version of Burp will be saved.	新しいバージョンのBurpを保存するフォルダを選択してください。
 Select the input file from which Burp's state will be loaded.	Burpのステートを読み込むファイルを選択してください。
 Select the items from the proxy history that you wish to include in the macro, and click "OK". Note that to record a macro now using your browser you will need to ensure that proxy interception is turned off.	マクロに含めたいプロキシ履歴のアイテムを選択し、"OK"をクリックしてください。今ブラウザを使用してマクロを記録するには、プロキシのインターセプトがオフになっていることを確認する必要があることに注意してください。
 Select the location in the response where the token appears.	レスポンスにトークンが現れる場所を選択してください。
@@ -2064,6 +2075,7 @@ Show response in browser	レスポンスをブラウザで表示
 Showing all items	全てのアイテムを表示
 Showing selected items ?	選択したアイテムを表示中
 Shut down Burp and launch downloaded file	Burpをシャットダウンし、ダウンロードしたファイルを起動する
+Shut down Burp and run new version	Burpをシャットダウンし、新しいバージョンを起動する
 Significance Levels	有意水準
 Silverlight cross-domain policy(\\s+\\[[0-9]+\\])?	Silverlightクロスドメインポリシー$1
 Simple list	単純リスト
@@ -2078,6 +2090,7 @@ Skip if matches regex	正規表現に一致した場合にスキップ
 Skip server-side injection tests for these parameters:	これらのパラメータに対するサーバサイドインジェクションテストをスキップする:
 Slot	スロット
 Smart decode	自動デコード
+SMTP header injection(\\s+\\[[0-9]+\\])?	SMTPヘッダインジェクション$1
 Sniper	スナイパー(Sniper)
 Social security numbers disclosed(\\s+\\[[0-9]+\\])?	社会保障番号漏洩$1
 SOCKS proxy host:	SOCKSプロキシホスト:
@@ -2128,7 +2141,7 @@ SSL Pass Through	SSLパススルー
 SSL Protocols?	SSLプロトコル
 Standard Error	標準エラー
 Standard Output	標準出力
-Start after expression:	後ろから開始:
+Start after expression:	この後ろから開始:
 Start at offset:	開始オフセット:
 Start at:	開始時間:
 Start attack	攻撃開始
@@ -2219,7 +2232,7 @@ The file does not contain JSON	そのファイルにはJSONがありません
 The file you have selected is a Burp state file, not a project file.	選択したファイルは、プロジェクトファイルではなく、Burpのステートファイルです。
 The final response from the macro	マクロの最後のレスポンス
 The following items will be removed:	次のアイテムを削除します:
-The following rules determine whether Burp sends each outgoing request to a proxy server, or directly to the destination web server. The first rule that matches each destination host will be used. To send all traffic to a single proxy server, create a rule with \\* as the destination host.	以下のルールで、外向きリクエストごとに、プロキシサーバへ送信するか、もしくは宛先Wwebサーバに直接送信するかどうか決定します。宛先ホストが最初にマッチしたルールが使用されます。すべてのリクエストを特定のプロキシサーバに送信するには、宛先ホストが * のルールを作成してください。
+The following rules determine whether Burp sends each outgoing request to a proxy server, or directly to the destination web server. The first rule that matches each destination host will be used. To send all traffic to a single proxy server, create a rule with \\* as the destination host.	各外向きリクエストをプロキシサーバへ送信するか、もしくは宛先Wwebサーバに直接送信するか、以下のルールで決定します。宛先ホストが最初にマッチしたルールが使用されます。すべてのリクエストを特定のプロキシサーバに送信するには、宛先ホストを * にしたルールを作成してください。
 The free edition of Burp contains a demo version of Burp Intruder. Some functionality is disabled, and attacks are time throttled.	フリー版のBurpにはBurp Intruderのデモ版が入っています。一部の機能が無効化され、攻撃は時間調整されます。
 The macro contains no items. Are you sure you want to proceed\\?	マクロにアイテムがありません。続行してよろしいですか？
 The options below control the types of analysis that is performed at the bit level.	ビットレベルで実行される分析タイプを制御します。
@@ -2237,7 +2250,7 @@ The supplied license key was not recognized. Please try re-entering your license
 There appears to be a copy of Burp Infiltrator in the selected folder. Do you want to overwrite it\\?	選択したフォルダにBurp Infiltratorのコピーがあります。上書きしてよろしいですか？
 These settings are configured within user options but can be overridden here for this specific project.	これらの設定はユーザオプションで設定できますが、この指定したプロジェクトで上書きできます。
 These settings are used to automatically replace parts of requests and responses passing through the Proxy.	Proxyを経由するリクエストとレスポンスの一部を自動的に置換する設定です。
-These settings are used to perform automatic modification of responses.	これらの設定はレスポンスの自動変換で使用されます。
+These settings are used to perform automatic modification of responses.	レスポンスを自動変換する設定です。
 These settings are used to specify destination web servers for which Burp will directly pass through SSL connections. No details about requests or responses made via these connections will be available in the Proxy intercept view or history.	SSL接続を直接通過させる宛先Webサーバを指定します。これらの接続で発生するリクエストやレスポンスの詳細は、Proxyインターセプトや履歴への表示ができなくなります。
 These settings are used to specify URLs returning responses that stream indefinitely. The Proxy will pass these responses straight through to the client. Repeater will update the response panel as the response is received. Other tools will ignore streaming responses. In order to view the contents of streaming responses within Burp, you need to check the "store streaming responses" option.	無限にストリーミングレスポンスを返すURLを指定します。Proxyはこれらのレスポンスをクライアントに直接通過させます。Repeaterはレスポンスを受信したとしてパネルを更新します。その他のツールはストリーミングレスポンスを無視します。ストリーミングレスポンスのコンテンツをBurpで見るには、"ストリーミングレスポンスを保存"オプションをチェックする必要があります。
 These settings can be used to enable certain SSL features that might be needed to successfully connect to some servers.	一部のサーバへ正常に接続するために必要となる、様々なSSL機能を有効にする設定です。
@@ -2264,18 +2277,18 @@ These settings control the SSL protocols and ciphers that Burp will use when per
 These settings control the types of checks performed during active scanning.	アクティブスキャン中にチェックするタイプを設定します。
 These settings control the types of checks performed during passive scanning.	パッシブスキャン中にチェックするタイプを設定します。
 These settings control the types of redirections that Burp will understand in situations where it is configured to follow redirections.	リダイレクトをたどる状況として、Burpが認識するリダイレクトタイプを設定します。
-These settings control the types of scanning that will include static analysis of executable code. Note that static analysis can consume large amounts of memory and processing, and so it may be desirable to restrict static analysis to key targets of interest.	実行可能なコードの静的解析を含むスキャンタイプの設定です。静的解析は大量のメモリとプロセッサを使用するので、興味の対象に限定した実行が望ましいことに注意してください。
+These settings control the types of scanning that will include static analysis of executable code. Note that static analysis can consume large amounts of memory and processing, and so it may be desirable to restrict static analysis to key targets of interest.	実行可能なコードの静的解析を行うスキャンタイプの設定です。静的解析は大量のメモリとプロセッサを使用するので、興味ある対象に限定した実行が望ましいことに注意してください。
 These settings control the way Burp handles HTTP responses with status 100.	100ステータスのHTTPレスポンスの処理方法を制御します。
-These settings control the way the Spider crawls for basic web content.	Spiderの基本的なWebコンテンツの巡回方法を制御します。
+These settings control the way the Spider crawls for basic web content.	Webコンテンツの基本的な巡回方法を制御します。
 These settings control what information is captured in attack results.	攻撃結果でキャプチャする情報を設定します。
 These settings control whether and how the Spider submits HTML forms.	SpiderがHTMLフォームを送信するかどうか、およびその方法を制御します。
 These settings control whether Burp redirects requests received by this listener.	リスナーが受信したリクエストのリダイレクト方法を制御します。
 These settings control whether Intruder updates the configured request headers during attacks.	攻撃中にIntruderがリクエストヘッダを更新するかどうかの設定です。
-These settings determine whether Burp sends each outgoing request to a proxy server, or directly to the destination web server. The first rule that matches each destination host will be used. To send all traffic to a single proxy server, create a rule with \\* as the destination host.	外向きリクエストをプロキシサーバ経由で送信するか、直接Webサーバに送信するか設定します。各送信先ホストに一致する最初のルールが使用されます。すべてのトラフィックを特定のプロキシサーバーに送信するには、宛先ホストを * にしたルールを作成してください。
+These settings determine whether Burp sends each outgoing request to a proxy server, or directly to the destination web server. The first rule that matches each destination host will be used. To send all traffic to a single proxy server, create a rule with \\* as the destination host.	外向きリクエストをプロキシサーバ経由で送信するか、直接Webサーバに送信するか設定します。各送信先ホストに一致する最初のルールが使用されます。すべてのトラフィックを特定のプロキシサーバに送信するには、宛先ホストを * にしたルールを作成してください。
 These settings let you configure Burp to automatically carry out platform authentication to destination web servers.	宛先WebサーバにBurpが自動的にプラットフォーム認証を行う設定をします。
 These settings let you configure Burp to use a SOCKS proxy. This setting is applied at the TCP level, and all outbound requests will be sent via this proxy. If you have configured rules for upstream HTTP proxy servers, then requests to upstream proxies will be sent via the SOCKS proxy configured here.	SOCKSプロキシを使用する設定をします。この設定はTCPレベルで適用され、すべての外向きリクエストがこのプロキシ経由で送信されます。上位HTTPプロキシサーバの設定をしている場合、上位プロキシへのリクエストもここで設定したSOCKSプロキシ経由で送信されます。
 These settings let you configure hotkeys for common actions. These include item-specific actions such as "Send to Repeater", global actions such as "Switch to Proxy", and in-editor actions such as "Cut" and "Undo".	一般的なアクションのためのホットキーを設定できます。"Repeaterへ送信"のようなアイテム固有アクション、"Proxyに切り替え"のようなグローバルアクション、"切り取り"や"アンドゥ"のようなエディタ内アクションのホットキーが設定できます。
-These settings let you configure the client SSL certificates that Burp will use when a destination host requests one. Burp will use the first certificate in the list whose host configuration matches the name of the host being contacted. You can double-click on an item to view the full details of the certificate.	宛先ホストが要求した場合に使用するクライアントSSL証明書を設定します。接続しようとしているホストのホスト名に一致した、リスト内の最初の証明書を使用します。アイテムをダブルクリックすると証明書の詳細を表示できます。
+These settings let you configure the client SSL certificates that Burp will use when a destination host requests one. Burp will use the first certificate in the list whose host configuration matches the name of the host being contacted. You can double-click on an item to view the full details of the certificate.	宛先ホストに要求された場合に使用するクライアントSSL証明書を設定します。接続しようとしているホストのホスト名に一致した、リスト内の最初の証明書を使用します。アイテムをダブルクリックすると証明書の詳細を表示できます。
 These settings let you configure the environment for executing extensions that are written in Java. If your extensions use any libraries, you can specify a folder from which libraries will be loaded.	Javaで書かれた拡張を実行する環境を設定します。拡張が任意のライブラリを使用する場合は、ライブラリがロードされるフォルダを指定できます。
 These settings let you configure the environment for executing extensions that are written in Python. To use Python extensions, you will need to download Jython, which is a Python interpreter implemented in Java.	Pythonで書かれた拡張を実行する環境を設定しますPythonの拡張を使用するには、Javaで実装されたPythonインタプリタのJythonをダウンロードする必要があります。
 These settings let you configure the environment for executing extensions that are written in Ruby. To use Ruby extensions, you will need to download JRuby, which is a Ruby interpreter implemented in Java. Note that you can either configure the location of the JRuby JAR file here, or you can load the JAR file on startup via the Java classpath.	Rubyで書かれた拡張を実行する環境を設定します。Rubyの拡張を使用するには、Javaで実装されたRubyインタプリタのJRubyをダウンロードする必要があります。ここでJRubyのJARファイルの場所を設定するか、起動時のJavaクラスパスを経由してJARファイルをロードできることを覚えておいてください。
@@ -2289,7 +2302,7 @@ This action checks whether the session is valid, by either issuing the current r
 This action invokes a Burp Extension to process the current request.	このアクションは、Burp拡張を起動して現在のリクエストを処理します。
 This action issues the current request and then runs a further macro \\(sequence of requests\\). No further rules or actions will be applied after this action.	このアクションは、現在のリクエストを発行し、その後さらにマクロ(リクエストのシーケンス)を実行します。このアクション後に、さらにルールやアクションは適用されません。
 This action prompts you to recover a valid session using your browser \\(configured to connect via Burp Proxy\\). The cookies set by the application will be added to the session handling cookie jar, and can also be set in the current request.	このアクションは、(Burp Proxy経由で接続するよう設定された)ブラウザを使用して有効なセッションを復元するプロンプトを開きます。アプリケーションがセットしたcookieや、現在のリクエストにセットされたcookieも、セッションハンドリングcookie jarに追加され、
-This action runs a predefined macro \\(sequence of requests\\) and optionally updates parameters and cookies in the current request based on the result of the macro.	このアクションは定義済みマクロ(リクエストのシーケンス)を実行し、マクロの結果に基づいて現在のリクエストのパラメーターとcookieを必要に応じて更新します。
+This action runs a predefined macro \\(sequence of requests\\) and optionally updates parameters and cookies in the current request based on the result of the macro.	このアクションは定義済みマクロ(リクエストのシーケンス)を実行し、マクロの結果に基づいて現在のリクエストのパラメータとcookieを必要に応じて更新します。
 This action sets a specific value in a named request parameter or cookie.	このアクションは、指定した名前のリクエストパラメータやcookieに、指定した値をセットします。
 This action updates the request with the relevant cookies from the session handling cookie jar.	このアクションは、セッションハンドリングcookie jarの関連するcookieでリクエストを更新します。
 This applies to most network transfers	ほとんどのネットワーク通信に適用されます
@@ -2433,6 +2446,7 @@ Update only the following cookies:	このcookieのみ更新する:
 Update only the following parameters:	このパラメータのみ更新する:
 Update the first macro request with parameters matched from the response to the current request	最初のマクロリクエストのマッチしたパラメータを、現在のリクエストのレスポンスで更新する
 Update the original macro configuration with the requests and responses made in this test	元のマクロ設定を、このテストで生成したリクエストとレスポンスに更新する
+Update was saved successfully.	更新を正常に保存しました。
 Updating results	結果更新中
 Upstream Proxy Servers	上位プロキシサーバ
 URL of redirection target	リダイレクト対象のURL
@@ -2485,9 +2499,9 @@ Use the default Collaborator server	デフォルトのCollaboratorサーバを�
 Use the default protocols and ciphers of your Java installation	Javaインストールのデフォルトプロトコルと暗号を使用する
 Use the platform default \\((.*)\\)	プラットフォームのデフォルト($1)を使用する
 Use the platform default	プラットフォームのデフォルトを使用する
-Use these settings to control which requests are stalled for viewing and editing in the Intercept tab.	表示や編集のためにインターセプトタブで止めるリクエストを制御します。
-Use these settings to control which responses are stalled for viewing and editing in the Intercept tab.	表示や編集のためにインターセプトタブで止めるレスポンスを制御します。
-Use these settings to control which WebSockets messages are stalled for viewing and editing in the Intercept tab.	表示や編集のためにインターセプトタブで止めるWebSocketメッセージを制御します。
+Use these settings to control which requests are stalled for viewing and editing in the Intercept tab.	インターセプトタブで止めて、表示や編集をするリクエストを制御します。
+Use these settings to control which responses are stalled for viewing and editing in the Intercept tab.	インターセプトタブで止めて、表示や編集をするレスポンスを制御します。
+Use these settings to control which WebSockets messages are stalled for viewing and editing in the Intercept tab.	インターセプトタブで止めて、表示や編集をするWebSocketメッセージを制御します。
 Use these settings to monitor and control Burp Spider. To begin spidering, browse to the target application, then right-click one or more nodes in the target site map, and choose "Spider this host / branch".	Burp Spiderの監視と制御を行います。巡回を開始するには、対象アプリケーションをブラウズし、サイトマップで対象の一つまたは複数のノードを右クリックし、"このホスト/ブランチをSpider実行"を選択してください。
 Use these settings to monitor and control the discovery session.	探索セッションの監視と制御を行います。
 Use this function to test the macro and determine whether it is working as required.	この機能を使用してマクロをテストし、要求通りに動作しているかどうか確認します。
