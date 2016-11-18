@@ -3,13 +3,16 @@ Belle (Burp Suite 非公式日本語化ツール)
 
 このツールは、PortSwigger社の製品であるBurp Suiteのインタフェースを、日本語化するツールです。
 
+![mainwindow](screenshots/mainwindow.png)  
+![manualsimulator](screenshots/manualsimulator.png)  
+
 ## 使用方法
 
 本ツールは、Javassistを使用しています。次のリンクからライブラリファイルをダウンロードしておいてください。
 
 [javassist.jar](https://github.com/jboss-javassist/javassist/raw/rel_3_21_0_ga/javassist.jar)
 
-### インストーラーを使ってBurpをインストールした場合
+### インストーラーを使ってBurp Suiteをインストールした場合
 
 belle.jar と ja.txt　と javassist.jar の３つのファイルをダウンロードし、Burp Suiteがインストールされているフォルダにコピーします。
 インストール時に変更していなければ、``C:\Program Files\BurpSuiteFree`` や``C:\Program Files\BurpSuitePro``にあると思います。
