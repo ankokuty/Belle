@@ -669,6 +669,8 @@ Cross-site scripting \\(stored\\)(\\s+\\[[0-9]+\\])?	クロスサイトスクリ
 CSRF PoC generator	CSRF PoCジェネレータ
 CSRF technique:	CSRFテクニック:
 Current Action	現在のアクション
+Custom directory list:	カスタムディレクトリリスト:
+Custom file list:	カスタムファイルリスト:
 Custom iterator	カスタムイテレータ
 Custom location:	カスタム位置:
 Custom parameter locations in response	レスポンス内のカスタムパラメータ位置
@@ -2042,7 +2044,7 @@ Session Handling Rules	セッションハンドリングルール
 Session handling tracer \\[paused\\]	セッションハンドリングトレーサ [停止]
 Session handling tracer help	セッションハンドリングトレーサヘルプ
 Session handling tracer	セッションハンドリングトレーサ
-Session is not running	セッションは実行していません。
+Session is not running	セッション停止中
 Session is running	セッション実行中
 Session token in URL(\\s+\\[[0-9]+\\])?	URL内のセッショントークン$1
 Sessions	セッション
