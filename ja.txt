@@ -2172,8 +2172,10 @@ Streaming response \\[double-click to cancel\\]	ストリーミングレスポ�
 Streaming response \\[not stored\\]	ストリーミングレスポンス [保存されていません]
 Streaming Responses	ストリーミングレスポンス
 Strict transport security not enforced(\\s+\\[[0-9]+\\])?	Strict transport securityが適用されていない$1
+Strip Accept-Encoding headers in incoming requests	受信リクエストから Accept-Encoding ヘッダを除去する
 Strip chunked encoding metadata in streaming responses	ストリーミングレスポンスからチャンクエンコーディングメタデータを除去する
 Strip Proxy-\\* headers in incoming requests	受信リクエストから Proxy-* ヘッダを除去する
+Strip Sec-WebSocket-Extensions headers in incoming requests	受信リクエストから Sec-WebSocket-Extensions ヘッダを除去する
 Subject	サブジェクト
 Submit anonymous feedback about Burp's performance	Burpのパフォーマンスを匿名で送信する
 Submit BApp rating	BAppレーティング送信
