@@ -1836,6 +1836,7 @@ Resume spidering	自動巡回再開
 Resume	再開
 Retest macro	マクロを再テスト
 Reverse substring	部分文字列の反転
+Revert changes	変更を元に戻す
 Revert to the original list of items	元のアイテムリストに戻す
 Revert	元に戻す
 Review the items you have selected for scanning. Double-click items to view full details. You can remove individual items which you do not wish to scan, or go back to modify your general filters.	スキャン用に選択したアイテムを確認してください。詳細を表示するにはアイテムをダブルクリックしてください。スキャンしたくない個々のアイテムを除外するか、戻って一般的なフィルタを変更できます。
@@ -2191,6 +2192,9 @@ Summary	サマリ
 Support Center	サポートセンター
 Support invisible proxying \\(enable only if needed\\)	透過プロキシをサポートする(必要な場合のみ有効にしてください)
 Suppress Burp error messages in browser	ブラウザへのBurpエラーメッセージを抑制する
+Suspicious input transformation \\(reflected\\)(\\s+\\[[0-9]+\\])?	入力値の疑わしい変換 (反射型)$1
+Suspicious input transformation \\(stored\\)(\\s+\\[[0-9]+\\])?	入力値の疑わしい変換 (蓄積型)$1
+Suspicious input transformation	入力値の疑わしい変換
 Sync views	表示を同期
 Tab	タブ
 Table of contents levels	目次レベル
