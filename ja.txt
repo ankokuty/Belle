@@ -212,6 +212,7 @@ Allow requests to web interface using fully-qualified DNS hostnames	Webインタ
 Allow unsafe renegotiation \\(required for some client certificates\\)	安全ではないネゴシエーションを許可する(一部のクライアント証明書で必要)
 Always disable	常に無効化
 Always enable	常に有効化
+Always take the same action in future	次回以降同じ動作にする
 Always	常に実行する
 AMF string parameters \\(use with caution\\)	AMF文字列パラメータ(使用注意)
 AMF version 	AMF バージョン 
@@ -228,6 +229,7 @@ Analyze target	対象の解析
 Analyzing character set	文字セット解析中
 Analyzing input file: ([0-9]+)% complete	入力ファイルを解析中: $1%完了
 Anomalies	異常
+Answering "yes" will avoid accumulating project data for out-of-scope items.	"はい"を選択すると、スコープ外アイテムがプロジェクトデータに蓄積されなくなります。
 Any header	任意のヘッダ
 Any parameter	任意のパラメータ
 Any status code with Location header	任意のステータスコードのLocationヘッダ
@@ -737,7 +739,6 @@ Directories / files . extensions	ディレクトリ/ファイル.拡張子
 Directories only	ディレクトリのみ
 Directory listing(\\s+\\[[0-9]+\\])?	ディレクトリリスティング$1
 Disable Java SNI extension \\(requires restart\\)	Java SNI拡張を無効にする(要再起動)
-Disable logging to history and site map	履歴とサイトマップへのログを無効にする
 Disable web interface at http://burp	http://burp のWebインタフェースを無効にする
 Discover content	コンテンツ探索
 Discover:	探索:
@@ -757,6 +758,7 @@ Do not include requests	リクエストを含めない
 Do not include responses	レスポンスを含めない
 Do not save	保存しない
 Do not take full ownership of the project	プロジェクトの完全な所有権を取得しない
+Do nothing	何もしない
 Do platform authentication	プラットフォーム認証を行う
 Document domain manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	ドキュメントドメイン操作 (DOMベース)$1
 Document domain manipulation \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	ドキュメントドメイン操作 (反射型DOMベース)$1
@@ -788,6 +790,8 @@ Don't intercept responses	レスポンスをインターセプトしない
 Don't perform static code analysis	静的コード解析を実行しない
 Don't restore	リストアしない
 Don't scan	スキャンしない
+Don't send items to Proxy history or other Burp tools	Proxy履歴や他のBurpツールにアイテムを送信しない
+Don't send items to Proxy history or other Burp tools, if out of scope		スコープ外の場合、Proxy履歴や他のBurpツールにアイテムを送信しない
 Don't submit forms	フォームを送信しない
 Don't submit login forms	ログインフォームを送信しない
 Don't use Burp Collaborator	Burp Collaboratorを使用しない
@@ -1063,6 +1067,7 @@ Highlight response syntax	レスポンスの構文を色付けする
 Highlight	色付け
 Highlight(\\s*)	色付け
 History logging is disabled	ログ記録は無効です
+History logging of out-of-scope items is disabled	スコープ外アイテムのログが無効化されています
 Host / IP range	ホスト/IPレンジ
 Host or IP range:	ホストまたはIPレンジ:
 Host(:?)	ホスト$1
@@ -1667,12 +1672,15 @@ Process cookies in redirections	リダイレクト中にcookieを処理する
 Project file (.*) already exists, do you want to overwrite it\\?	プロジェクトファイル $1  は既に存在しています、上書きしてよろしいですか？
 Project options	プロジェクトオプション
 Prominently highlight unhidden fields	強制表示フィールドを強調表示する
+Prompt for action	操作ごとに選択する
 Prompt for credentials on platform authentication failure	プラットフォーム認証失敗時にクレデンシャルのプロンプトを表示する
 Prompt for guidance	ガイダンスを表示する
 Prompt for in-browser session recovery	ブラウザ内セッション復元のプロンプトを出す
 Protocol(:?)	プロトコル$1
 Proxy \\(use with caution\\)	Proxy(使用注意)
 Proxy history help	Proxy履歴ヘルプ
+Proxy history logging	Proxy履歴ロギング
+Proxy History Logging	Proxy履歴ログ
 Proxy host(:?)	プロキシホスト$1
 Proxy host, leave blank to connect directly	プロキシホスト, 直接接続する場合は空白のまま
 Proxy interception help	Proxyインターセプトヘルプ
@@ -2162,6 +2170,7 @@ step	増分
 Step:	増分:
 Stop at maximum:	停止する最大数:
 Stop if duplicate payload found	重複ペイロード検出時に停止
+Stop sending out-of-scope items to Proxy history and other Burp tools	Proxy履歴や他のBurpツールへのスコープ外アイテムの送信を停止する
 Stop	停止
 Store full payloads	全ペイロードを保存する
 Store requests	リクエストを保存する
@@ -2349,6 +2358,7 @@ This project file was created by a different installation of Burp. You need to d
 This setting can be used to URL-encode selected characters within the final payload, for safe transmission within HTTP requests.	HTTPリクエストを安全に送信するために、最終的なペイロードの指定した文字をURLエンコードする設定です。
 This setting controls how Burp handles extensions on startup.	Burp起動時の拡張の処理方法を制御します。
 This setting controls the state of proxy interception at startup.	起動時のプロキシインターセプト状態の設定です。
+This setting controls whether adding items to Target scope will automatically set the Proxy option to stop sending out-of-scope items to the history or other Burp tools.	ターゲットスコープへアイテムを追加したときに、履歴や他のBurpツールにスコープ外アイテムを送信しないようProxyオプションを自動的に追加するかどうか設定します。
 This test analyzes the distribution of characters used at each position within the token. If the sample is randomly generated, the distribution of characters employed is likely to be approximately uniform. At each position, the test computes the probability of the observed distribution arising if the tokens are random. The significance level at each position is the probability of the observed distribution of characters occurring, assuming that the sample is randomly generated.	テストでは、トークン内の各位置で使用される文字の分布を分析します。サンプルがランダムに生成されていれば、文字の分布はほぼ均一になる可能性が高いです。このテストは各位置で、トークンがランダムであると仮定した場合に、観測された分布の確率を計算します。サンプルがランダムに生成されたと仮定した場合、各位置の有意水準は、発生が観察された文字分布の確率です。
 This test analyzes the distribution of ones and zeroes at each bit position. If the sample is randomly generated, the number of ones and zeroes is likely to be approximately equal. At each position, the test computes the probability of the observed distribution arising if the tokens are random. The significance level at each position is the probability of the observed number of ones and zeroes occurring, assuming that the sample is randomly generated.	このテストでは、各ビット位置の0と1の分布を分析します。サンプルがランダムに生成されていれば、0と1の数はほぼ等しくなる可能性が高いです。このテストは各位置で、トークンがランダムであると仮定した場合に、観測された分布の確率を計算します。サンプルがランダムに生成されたと仮定した場合、各位置の有意水準は、0と1の発生が観察された数の確率です。
 This test analyzes the relationships between bits at different positions within the token. If the sample is randomly generated, a value at a given bit position is equally likely to be accompanied by a one or a zero at any other bit position. At each position, the test computes the probability of the relationships observed with bits at other positions arising if the tokens are random. To prevent arbitrary results, when a degree of correlation is observed between two bits, the test adjusts the significance level of the bit whose significance level is lower based on all of the other bit-level tests.	このテストでは、トークン内の異なる位置のビット間の関係を分析します。サンプルがランダムに生成されている場合、特定ビットの値は、他のビット位置が0または1になる確率とおおむね等しくなる可能性が高いです。テストは各位置で、トークンがランダムな場合に生じる観測した他の位置のビットの確率を計算します。任意の結果を防ぐために、2ビットの間で相関度が観察された場合、その有意水準より低い他のビット・レベルのテストのすべてに基づいてビットの有意水準を調整します。
@@ -2549,6 +2559,7 @@ Welcome ...	ようこそ ...
 Welcome to Burp Suite Free Edition. Use the options below to create or open a project.	Burp Suiteフリー版へようこそ。次のオプションでプロジェクトを作成するか開くか選択してください。
 Welcome to Burp Suite Professional. Use the options below to create or open a project.	Burp Suiteプロフェッショナル版へようこそ。次のオプションでプロジェクトを作成するか開くか選択してください。
 When following redirections, understand the following types:	リンクをたどる場合、次のタイプを認識します:
+When items are added to Target scope:	アイテムがターゲットスコープに追加されたとき:
 When you click "next", Burp will remove the specified items and then exit.	"次へ"をクリックすると、指定したアイテムを削除し終了します。
 Windows Classic	Windowsクラシック
 Windows installer \\((32|64)-bit\\)	Windowsインストーラ ($1ビット)
@@ -2576,6 +2587,7 @@ You can export your certificate and key for use in other tools, or in another in
 You can help improve Burp by submitting anonymous feedback about Burp's performance.	Burpのパフォーマンスに関してする匿名のフィードバックの送信によって、Burpを向上できます。
 You can restrict the rule to requests containing specific parameters if required.	必要であれば、指定したパラメータを含むリクエストにルールを制限できます。
 You can use the Burp Extender APIs to create your own extensions to customize Burp's behavior.	Burp ExtenderのAPIを使用して、Burpの機能をカスタマイズする自分自身の拡張を作れます。
+You have added an item to Target scope. Do you want Burp Proxy to stop sending out-of-scope items to the history or other Burp tools\\?	アイテムがターゲットスコープに追加されました。履歴や他のBurpツールへのスコープ外アイテムの送信を停止しますか？
 You have selected ([,0-9]+) items for active scanning. Before continuing, you can use the filters below to remove certain categories of items, to make your scanning more targeted and efficient.	アクティブスキャン用に$1このアイテムが選択されました。続ける前に、次のフィルタを使用して特定のカテゴリのアイテムを除外し、ターゲットを絞ったより効率的なスキャンを作成できます。
 You must load at least 100 tokens	最低100トークンを読み込む必要があります
 You should be aware that if any testing is continued using multiple instances of Burp, then some Collaborator-based issues may be missed or incorrectly reported.	複数インスタンスのBurpが使われ続けている場合、Collaboratorベースの一部の問題を見逃す、または誤って報告されることに留意してください。
