@@ -294,7 +294,7 @@ Are you sure you want to restore default logging options\\?	ロギングオプ�
 Are you sure you want to restore default macros options\\?	マクロオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default match and replace options\\?	検索と置換オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default match grep options\\?	マッチgrep　オプションをデフォルトに戻してよろしいですか？
-Are you sure you want to restore default miscellaneous proxy　options\\?	その他プロキシオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default miscellaneous proxy options\\?	その他プロキシオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default miscellaneous proxy settings options\\?	その他プロキシ設定オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default out-of-scope requests options\\?	スコープ外リクエストオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default passive scanning areas options\\?	パッシブスキャン対象オプションをデフォルトに戻してよろしいですか？
@@ -302,6 +302,8 @@ Are you sure you want to restore default passive spidering options\\?	パッシ�
 Are you sure you want to restore default payloads grep options\\?	ペイロードgrepオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default performance feedback options\\?	パフォーマンスフィードバックオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default platform authentication options\\?	プラットフォーム認証オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default proxy history logging options\\?	プロキシ履歴ログオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default proxy interception options\\?	プロキシインターセプトオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default proxy listeners options\\?	プロキシリスナーオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default Python environment options\\?	Python環境オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default redirections options\\?	リダイレクトオプションをデフォルトに戻してよろしいですか？
@@ -1290,7 +1292,7 @@ Load logging options	ロギングオプションを読み込む
 Load macros options	マクロオプションを読み込む
 Load match and replace options	検索と置換オプションを読み込む
 Load match grep options	マッチgrep　オプションを読み込む
-Load miscellaneous proxy　options	その他プロキシオプションを読み込む
+Load miscellaneous proxy options	その他プロキシオプションを読み込む
 Load miscellaneous proxy settings options	その他プロキシ設定オプションを読み込む
 Load options	オプション読み込み
 Load out-of-scope requests options	スコープ外リクエストオプションを読み込む
@@ -1300,6 +1302,8 @@ Load payloads grep options	ペイロードgrepオプションを読み込む
 Load performance feedback options	パフォーマンスフィードバックオプションを読み込む
 Load platform authentication options	プラットフォーム認証オプションを読み込む
 Load project options	プロジェクトオプション読み込み
+Load proxy history logging options	プロキシ履歴ログオプションを読み込む
+Load proxy interception options	プロキシインターセプトオプションを読み込む
 Load proxy listeners options	プロキシリスナーオプションを読み込む
 Load Python environment options	Python環境オプションを読み込む
 Load redirections options	リダイレクトオプションを読み込む
@@ -1906,7 +1910,7 @@ Save logging options	ロギングオプションを保存する
 Save macros options	マクロオプションを保存する
 Save match and replace options	検索と置換オプションを保存する
 Save match grep options	マッチgrep　オプションを保存する
-Save miscellaneous proxy　options	その他プロキシオプションを保存する
+Save miscellaneous proxy options	その他プロキシオプションを保存する
 Save miscellaneous proxy settings options	その他プロキシ設定オプションを保存する
 Save options	オプション保存
 Save out-of-scope requests options	スコープ外リクエストオプションを保存する
@@ -1916,6 +1920,8 @@ Save paySaves grep options	ペイロードgrepオプションを保存する
 Save performance feedback options	パフォーマンスフィードバックオプションを保存する
 Save platform authentication options	プラットフォーム認証オプションを保存する
 Save project options	プロジェクトオプション保存
+Save proxy history logging options	プロキシ履歴ログオプションを保存する
+Save proxy interception options	プロキシインターセプトオプションを保存する
 Save proxy listeners options	プロキシリスナーオプションを保存する
 Save Python environment options	Python環境オプションを保存する
 Save redirections options	リダイレクトオプションを保存する
