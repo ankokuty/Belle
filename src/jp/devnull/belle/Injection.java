@@ -18,7 +18,7 @@ import javassist.CtMethod;
 
 public class Injection {
 	static ClassPool classPool;
-	public static void premain(String agentArgs, Instrumentation instrumentation) throws Exception {
+	public static void premain(final String agentArgs, Instrumentation instrumentation) throws Exception {
 		classPool = ClassPool.getDefault();
 
 		instrumentation.addTransformer(new ClassFileTransformer() {
