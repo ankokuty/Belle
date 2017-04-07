@@ -2553,6 +2553,7 @@ Variable:  start	変動:  初期
 Version:	バージョン:
 View release notes	リリースノートを表示する
 View	表示
+Vulnerability classifications \\[where applicable\\]	脆弱性の分類 [該当する場合]
 Waiting to pause	一時停止しています
 Waiting	待機中
 Warning	注意
