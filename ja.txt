@@ -819,6 +819,7 @@ Duplicate the selected macro	選択したマクロを複製
 Duplicate the selected rule	選択したルールを複製
 Duplicate	複製
 Dynamic update	動的に更新
+Dynamic URLs	動的URL
 Each Burp project has a unique identifier that is used to track any Burp Collaborator interactions that are associated with the project. You need to decide whether to save this identifier in your state file.	プロジェクトに紐付くBurp Collaboratorとの通信を識別するための一意な識別子を、各Burpプロジェクトは持っています。この識別子をステートファイルに保存するか決定する必要があります。
 Each installation of Burp generates its own CA certificate that Proxy listeners can use when negotiating SSL connections. You can import or export this certificate for use in other tools or another installation of Burp.	Burpをインストールするごとに独自のCA証明書を生成し、プロキシリスナーがSSL接続を確立する際に使用します。この証明書はインポートやエクスポートができ、他のツールや他のマシンにインストールしたBurpで使用できます。
 ECB block shuffler	ECBブロックシャッフル
@@ -1244,6 +1245,7 @@ Link depth to associate with Proxy requests:	Proxyリクエストに関連づけ
 Link manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	リンク操作 (DOMベース)$1
 Link manipulation \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	リンク操作 (反射型DOMベース)$1
 Link manipulation \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	リンク操作 (蓄積型DOMベース)$1
+Link manipulation(\\s+\\[[0-9]+\\])?	リンク操作$1
 Links	リンク
 Linux installer	Linuxインストーラ
 List items for position ([0-9]+)( \\([0-9]+\\))?	ポジション$1のリストアイテム$2
@@ -2176,6 +2178,7 @@ Start time(:?)	開始時間$1
 Start	先頭
 Starting project, please wait ...	プロジェクトを開始しています、しばらくお待ちください ...
 Static Code Analysis	静的コード解析
+Static URLs	静的URL
 Status 100 Responses	ステータス100レスポンス
 Status code	ステータスコード
 Status	ステータス
