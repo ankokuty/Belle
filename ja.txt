@@ -99,8 +99,9 @@
 (In|Of) request matches	リクエストのものに一致
 (In|Of) response does not match	レスポンスのものに一致しない
 (In|Of) response matches	レスポンスのものに一致
+[Bb]ody parameter	ボディパラメータ
 [Bb]ytes	バイト
-\\$1000	￥30000
+\\$1000	¥30000
 \\(Leave blank to run once only\\)	(一度のみ実行する場合は空白のまま)
 \\[and ([0-9]+) more\\]	[その他$1件]
 \\[NOT SELECTED\\]	[選択されていません]
@@ -417,7 +418,6 @@ Blind	ブラインド
 Block size \\(usually 8 or 16\\):	ブロックサイズ(通常8か16):
 Body encoding:	ボディエンコーディング:
 Body parameter values	ボディのパラメータ値
-body parameter	ボディパラメータ
 body parameter( .+)	ボディパラメータ$1
 Body to cookie	ボディからcookie
 Body to URL	ボディからURL
@@ -524,8 +524,11 @@ Choose folder ...	フォルダ選択 ...
 Choose the folder where temporary files will be saved	一時ファイルが保存されるフォルダを選択
 Choose the format for the report.	レポートのフォーマットを選択してください。
 Choose the PKCS#11 library file	PKCS#11ライブラリファイルを選択してください
+Choose the tools whose data you want to be included in the new project file and whether you only want to save in-scope items.	新規プロジェクトファイルに含めるツールのデータと、スコープ内のアイテムのみ保存するかどうかを選択してください。
 Choose this option if you plan to load the state file later and continue testing, or pass it on to someone else who will take over your testing. You should be aware that if any testing is continued using multiple instances of Burp, then some Collaborator-based issues may be missed or incorrectly reported.	後でこのステートファイルを読み込んでテストを継続するか、テストを引き継ぐ他の誰かに渡す場合、このオプションを選択してください。複数のBurpインスタンスでテストを継続する場合、Collaboratorベースの問題を見逃す、または誤って報告されるかもしれません。
+Choose this option if you plan to pass the project file on to someone else, but you do not want them to be able to receive details of any ongoing Burp Collaborator interactions that are associated with your testing. Any new scanning that is performed by the other user will use a different unique identifier, to avoid any interference with other instances of Burp.	プロジェクトファイルを他人に渡す予定があり、しかしテストに関連づけらたCollaboratorとの通信の詳細を継続的に受信させたくない場合に、このオプションを選択してください。他のユーザによって実装される新規スキャンは、Burpの他のインスタンスとの競合を避けるため、異なる一意な識別子を使用します。
 Choose this option if you plan to pass the state file on to someone else, but you do not want them to be able to receive details of any ongoing Burp Collaborator interactions that are associated with your testing. Any new scanning that is performed by the other user will use a different unique identifier, to avoid any interference with other instances of Burp.	ステートファイルを他人に渡す予定があり、しかしテストに関連づけらたCollaboratorとの通信の詳細を継続的に受信させたくない場合に、このオプションを選択してください。他のユーザによって実装される新規スキャンは、Burpの他のインスタンスとの競合を避けるため、異なる一意な識別子を使用します。
+Choose this option if you plan to use the project file later and continue testing, or pass it on to someone else who will take over your testing. You should be aware that if any testing is continued using multiple instances of Burp, then some Collaborator-based issues may be missed or incorrectly reported.	後でこのプロジェクトファイルを読み込んでテストを継続するか、テストを引き継ぐ他の誰かに渡す場合、このオプションを選択してください。複数のBurpインスタンスでテストを継続する場合、Collaboratorベースの問題を見逃す、または誤って報告されるかもしれません。
 Choose which tools you want to restore the configuration of.	設定をリストアするツールを選択してください。
 Choose which tools you want to restore the state of.	ステートをリストアするツールを選択してください。
 Choose which tools you want to save the configuration of.	設定を保存するツールを選択してください。
@@ -549,6 +552,8 @@ Click the stars to rate the '(.*)' BApp	$1 BAppの評価に星をクリックし
 Click to modify	クリックして編集
 Client SSL certificate \\(PKCS#12\\)	クライアントSSL証明書 (PKCS#12)
 Client SSL Certificates?	クライアントSSL証明書
+Client-side HTTP parameter pollution \\(reflected\\)(\\s+\\[[0-9]+\\])?	クライアントサイドHTTPパラメータ汚染(反射型)$1
+Client-side HTTP parameter pollution \\(stored\\)(\\s+\\[[0-9]+\\])?	クライアントサイドHTTPパラメータ汚染(蓄積型)$1
 Client-side JSON injection \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドJSONインジェクション(DOMベース)$1
 Client-side JSON injection \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドJSONインジェクション (反射型DOMベース)$1
 Client-side JSON injection \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドJSONインジェクション (蓄積型DOMベース)$1
@@ -559,6 +564,7 @@ Client-side template injection(\\s+\\[[0-9]+\\])?	クライアントサイドテ
 Client-side XPath injection \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドXPathインジェクション (DOMベース)$1
 Client-side XPath injection \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドXPathインジェクション (反射型DOMベース)$1
 Client-side XPath injection \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドXPathインジェクション (蓄積型DOMベース)$1
+Close wizard	ウィザードを閉じる
 Close	閉じる
 Cluster bomb	クラスター爆弾(Cluster bomb)
 Collaborator (.*) interaction	Collaboratorとの$1通信
@@ -669,6 +675,10 @@ Cross-domain POST(\\s+\\[[0-9]+\\])?	クロスドメインのPOST$1
 Cross-domain Referer leakage(\\s+\\[[0-9]+\\])?	クロスドメインのReferer漏洩$1
 Cross-domain script include(\\s+\\[[0-9]+\\])?	クロスドメインのスクリプト読み込み$1
 Cross-domain XHR (modern browsers only)	クロスドメインXHR(モダンなブラウザのみ)
+Cross-origin resource sharing(\\s+\\[[0-9]+\\])?	クロスオリジンのリソース共有$1
+Cross-origin resource sharing: all subdomains trusted(\\s+\\[[0-9]+\\])?	クロスオリジンのリソース共有: 全てのサブドメインを信頼$1
+Cross-origin resource sharing: arbitrary origin trusted(\\s+\\[[0-9]+\\])?	クロスオリジンのリソース共有: 任意のオリジンを信頼$1
+Cross-origin resource sharing: unencrypted origin trusted(\\s+\\[[0-9]+\\])?	クロスオリジンのリソース共有: 暗号化されていないオリジンを信頼$1
 Cross-site request forgery(\\s+\\[[0-9]+\\])?	クロスサイトリクエストフォージェリ$1
 Cross-site scripting \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	クロスサイトスクリプティング(DOMベース)$1
 Cross-site scripting \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	クロスサイトスクリプティング(DOMベース反射型)$1
@@ -677,6 +687,8 @@ Cross-site scripting \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	クロスサイ�
 Cross-site scripting \\(stored\\)(\\s+\\[[0-9]+\\])?	クロスサイトスクリプティング(蓄積型)$1
 CSRF PoC generator	CSRF PoCジェネレータ
 CSRF technique:	CSRFテクニック:
+CSS injection \\(reflected\\)(\\s+\\[[0-9]+\\])?	CSSインジェクション(反射型)$1
+CSS injection \\(stored\\)(\\s+\\[[0-9]+\\])?	CSSインジェクション(蓄積型)$1
 Current Action	現在のアクション
 Custom directory list:	カスタムディレクトリリスト:
 Custom file list:	カスタムファイルリスト:
@@ -761,6 +773,7 @@ Do DNS lookups over SOCKS proxy	SOCKSプロキシ上でDNS検索をする
 Do illegal hex	不正な16進数表記
 Do illegal UTF-8	不正なUTF-8
 Do intercept	インターセプト有効
+Do not include Burp Collaborator identifier in the project file	Burp Collaboratorの識別子をプロジェクトファイルに含めない
 Do not include Burp Collaborator identifier in the state file	Burp Collaboratorの識別子をステートファイルに含めない
 Do not include requests	リクエストを含めない
 Do not include responses	レスポンスを含めない
@@ -820,7 +833,8 @@ Duplicate the selected rule	選択したルールを複製
 Duplicate	複製
 Dynamic update	動的に更新
 Dynamic URLs	動的URL
-Each Burp project has a unique identifier that is used to track any Burp Collaborator interactions that are associated with the project. You need to decide whether to save this identifier in your state file.	プロジェクトに紐付くBurp Collaboratorとの通信を識別するための一意な識別子を、各Burpプロジェクトは持っています。この識別子をステートファイルに保存するか決定する必要があります。
+Each Burp project has a unique identifier that is used to track any Burp Collaborator interactions that are associated with the project. You need to decide whether to include this identifier in your new project file.	各Burpプロジェクトには、プロジェクトに紐付くBurp Collaboratorとの通信を識別するための一意な識別子があります。この識別子を新規プロジェクトファイルに保存するか決定する必要があります。
+Each Burp project has a unique identifier that is used to track any Burp Collaborator interactions that are associated with the project. You need to decide whether to save this identifier in your state file.	各Burpプロジェクトには、プロジェクトに紐付くBurp Collaboratorとの通信を識別するための一意な識別子があります。この識別子をステートファイルに保存するか決定する必要があります。
 Each installation of Burp generates its own CA certificate that Proxy listeners can use when negotiating SSL connections. You can import or export this certificate for use in other tools or another installation of Burp.	Burpをインストールするごとに独自のCA証明書を生成し、プロキシリスナーがSSL接続を確立する際に使用します。この証明書はインポートやエクスポートができ、他のツールや他のマシンにインストールしたBurpで使用できます。
 ECB block shuffler	ECBブロックシャッフル
 Edit "skip parameter" rule	"スキップパラメータ"ルールを編集
@@ -848,6 +862,7 @@ Edit the selected macro	選択したマクロを編集
 Edit the selected parameter	選択したパラメータを編集
 Edit the selected rule	選択したルールを編集
 Edit the selected task	選択したタスクを編集
+Edit upstream proxy rule	上位プロキシのルールを編集
 Edit URL to exclude from scope	スコープから除外するURLを編集
 Edit URL to include in scope	スコープに含めるURLを編集
 Edit	編集
@@ -904,6 +919,7 @@ Exact	完全一致
 Examples?(:?)	例$1
 Exclude from scope	スコープから除外
 Exclude HTTP headers	HTTPヘッダを除外する
+Exit Burp	Burpを終了する
 Exit	終了
 Expand branch	ブランチを展開
 Expand requested items	リクエストしたアイテムを展開
@@ -931,11 +947,13 @@ Extensions	拡張
 External / out-of-band interaction	外部/範囲外の操作
 External service interaction \\(DNS\\)(\\s+\\[[0-9]+\\])?	外部サービスとの通信 (DNS)$1
 External service interaction \\(HTTP\\)(\\s+\\[[0-9]+\\])?	外部サービスとの通信 (HTTP)$1
+External service interaction \\(SMTP\\)(\\s+\\[[0-9]+\\])?	外部サービスとの通信 (SMTP)$1
 Extract from regex group	正規表現グループから抽出
 Extract the following items from responses:	レスポンスから以下のアイテムを抽出する:
 Extracted value is URL-encoded	抽出した値はURLエンコードされている
 Failed domain name resolution:	名前解決失敗時の再試行:
 Failed parameters	失敗パラメータ
+Failed to access file	ファイルにアクセスできません
 Failed to check for updates. Please log in to your account at https://portswigger.net to check for updates.	アップデートをチェックできません。あなたのアカウントで https://portswigger.net にログインしアップデートをチェックしてください。
 Failed to connect to (.*:[0-9]+)	$1へ接続できません
 Failed to create Burp project:(.*)	Burpプロジェクトを作成できません:$1
@@ -950,6 +968,7 @@ Failed to open file	ファイルを開けません
 Failed to open folder	フォルダを開けません
 Failed to retrieve response	レスポンスを取得できません
 Failed to save file. Please try another location.	ファイルの保存ができません。他の場所を試してください。
+Failed to save project.	プロジェクトの保存ができません。
 Failed to update BApp list	BAppリストを更新できません
 Failed to verify BApp file	BAppファイルの検証ができません
 False positive	誤検知
@@ -1016,6 +1035,8 @@ Font(:?)	フォント$1
 For this directory	このディレクトリ
 For this file extension	このファイル拡張子
 Force use of SSL	SSLを強制利用
+Form action hijacking \\(reflected\\)(\\s+\\[[0-9]+\\])?	フォームアクションハイジャック(反射型)$1
+Form action hijacking \\(stored\\)(\\s+\\[[0-9]+\\])?	フォームアクションハイジャック(蓄積型)$1
 Form field names	フォームフィールド名
 Form field values	フォームフィールド値
 Form field:	フォームフィールド:
@@ -1089,7 +1110,7 @@ How many:	個数:
 HTML does not specify charset(\\s+\\[[0-9]+\\])?	文字コードが指定されていないHTML$1
 HTML Rendering	HTMLレンダリング
 HTML uses unrecognized charset(\\s+\\[[0-9]+\\])?	認識されない文字セットを使用したHTML$1
-HTML5 cross-origin resource sharing(\\s+\\[[0-9]+\\])?	HTML5 クロスオリジンのリソース共有漏洩$1
+HTML5 cross-origin resource sharing(\\s+\\[[0-9]+\\])?	HTML5 クロスオリジンのリソース共有$1
 HTML5 storage manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	HTML5ストレージ操作 (DOMベース)$1
 HTML5 storage manipulation \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	HTML5ストレージ操作 (反射型DOMベース)$1
 HTML5 storage manipulation \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	HTML5ストレージ操作 (蓄積型DOMベース)$1
@@ -1115,6 +1136,7 @@ I Decline	拒否する
 If not already present, add as:	存在しない場合、次の値として追加:
 If session is invalid, perform the action below:	セッションが無効な場合、以下のアクションを実行する:
 If session is valid, don't process any further rules or actions for this request	セッションが有効な場合、このリクエストにさらにルールやアクションを処理しない
+If you wish to switch to the new project file, please exit Burp and re-start.	新規プロジェクトファイルに切り替えるには、Burpを終了し再起動してください。
 Ignore form	フォーム無視
 Ignore links to non-text content	テキスト以外のコンテンツへのリンクを無視する
 Ignore tokens whose length deviates by	長さの異なるトークンを無視する
@@ -1135,6 +1157,7 @@ In original session	元のセッションを使う
 In	
 Include all URLs	すべてのURLを含める
 Include auto-submit script	自動サブミットスクリプトを含める
+Include Burp Collaborator identifier in the project file	BurpCollaboratorの識別子をプロジェクトファイルに含める
 Include Burp Collaborator identifier in the state file	Burp Collaborator識別子をステートファイルに含める
 Include Collaborator server location	Collaboratorサーバの場所を含める
 Include columns:	含める列:
@@ -1179,15 +1202,18 @@ Intruder results help	Intruder結果ヘルプ
 Invalid [Pp]ort:	不正なポート:
 Invalid custom location configuration	カスタム位置の設定が不正です
 Invalid date	不正な日付
+Invalid destination host specification	宛先ホストが不正です
 Invalid from value	不正なFrom値
 Invalid host specification	不正なホストが指定されました
-Invalid host:	不正なホスト:
+Invalid host:(.*)	不正なホスト:$1
 Invalid hostname:(.*)	不正なホスト名:$1
 Invalid IP address:(.*)	不正なIPアドレス:$1
+Invalid IP range:(.*)	不正なIPレンジ:$1
 Invalid JSON configuration found at:(.*)	不正なJSON設定が見つかりました:$1
 Invalid length	不正なLength値
 Invalid number	不正な数値
 Invalid poll interval	不正なポーリング間隔
+Invalid proxy port	プロキシポート番号が不正です
 Invalid regex	不正な正規表現
 Invalid regex:(.*)	不正な正規表現:$1
 Invalid session	セッション無効
@@ -1244,8 +1270,10 @@ Limit to	制限
 Link depth to associate with Proxy requests:	Proxyリクエストに関連づけるリンクの深さ:
 Link manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	リンク操作 (DOMベース)$1
 Link manipulation \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	リンク操作 (反射型DOMベース)$1
+Link manipulation \\(reflected\\)(\\s+\\[[0-9]+\\])?	リンク操作(反射型)$1
 Link manipulation \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	リンク操作 (蓄積型DOMベース)$1
-Link manipulation(\\s+\\[[0-9]+\\])?	リンク操作$1
+Link manipulation \\(stored\\)(\\s+\\[[0-9]+\\])?	リンク操作(蓄積型)$1
+Link manipulation	リンク操作
 Links	リンク
 Linux installer	Linuxインストーラ
 List items for position ([0-9]+)( \\([0-9]+\\))?	ポジション$1のリストアイテム$2
@@ -1460,6 +1488,7 @@ Negative search	一致しないものを検索
 Nested insertion points are used when an insertion point's base value contains data in a recognized format \\(for example, XML data within a URL parameter\\):	挿入ポイントの元値が認識可能な形式(例えば、URLパラメータ内のXMLデータなど)の場合、ネストした挿入ポイントが使用されます:
 Never	行わない
 New project file	新規プロジェクトファイル
+New project name:	新規プロジェクト名:
 New project on disk	新規ディスクプロジェクト
 New tab behavior	新規タブの動作
 Next	次へ
@@ -1527,7 +1556,9 @@ Open in browser	ブラウザで開く
 Open project file	プロジェクトファイルを開く
 Open redirection \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	オープンリダイレクト(DOMベース)$1
 Open redirection \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	オープンリダイレクト (反射型DOMベース)$1
+Open redirection \\(reflected\\)(\\s+\\[[0-9]+\\])?	オープンリダイレクト(反射型)$1
 Open redirection \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	オープンリダイレクト (蓄積型DOMベース)$1
+Open redirection \\(stored\\)(\\s+\\[[0-9]+\\])?	オープンリダイレクト(蓄積型)$1
 Open redirection(\\s+\\[[0-9]+\\])?	オープンリダイレクト$1
 Open saved attack	保存した攻撃を開く
 Open-ended responses:	開始からレスポンスが終了するまで:
@@ -1684,6 +1715,7 @@ Private key in DER format	DER形式の秘密鍵
 Process cookies in redirections	リダイレクト中にcookieを処理する
 Project file (.*) already exists, do you want to overwrite it\\?	プロジェクトファイル $1  は既に存在しています、上書きしてよろしいですか？
 Project options	プロジェクトオプション
+Project saved successfully.	プロジェクトを正常に保存しました。
 Prominently highlight unhidden fields	強制表示フィールドを強調表示する
 Prompt for action	操作ごとに選択する
 Prompt for credentials on platform authentication failure	プラットフォーム認証失敗時にクレデンシャルのプロンプトを表示する
@@ -1893,6 +1925,7 @@ Save character set options	文字セットオプションを保存する
 Save client SSL certificates options	クライアントSSL証明書オプションを保存する
 Save completed	保存完了
 Save cookie jar options	cookie jar オプションを保存する
+Save copy of project	プロジェクトのコピーを保存
 Save crawler options	クローラオプションを保存する
 Save encrypted using master password(:?)	マスターパスワードで暗号化して保存$1
 Save entire history	エントリー履歴を保存
@@ -2034,6 +2067,7 @@ Select the input file from which Burp's state will be loaded.	Burpのステー�
 Select the items from the proxy history that you wish to include in the macro, and click "OK". Note that to record a macro now using your browser you will need to ensure that proxy interception is turned off.	マクロに含めたいプロキシ履歴のアイテムを選択し、"OK"をクリックしてください。今ブラウザを使用してマクロを記録するには、プロキシのインターセプトがオフになっていることを確認する必要があることに注意してください。
 Select the location in the response where the token appears.	レスポンスにトークンが現れる場所を選択してください。
 Select the locations where Burp will search for PKCS#11 library files, then click "Search". Subdirectories are automatically searched.	PKCS#11ライブラリファイルを検索する場所を選択し、"検索"をクリックしてください。サブディレクトリを自動的に検索します。
+Select the name of the new project file.	新規プロジェクトファイル名を選択してください。
 Select the output file to which Burp's state will be saved.	Burpのステートファイルを保存する出力ファイルを選択してください。
 Select the tools that this rule will be applied to.	ルールを適用するツールを選択してください。
 Select the type of application that you want to instrument:	道具化するアプリケーションのタイプを選択してください: 
@@ -2154,6 +2188,7 @@ Spider selected items	選択したアイテムをSpider実行
 Spider Status	Spiderステータス
 Spider this branch	このブランチをSpider実行
 Spider this host	このホストをSpider実行
+Spoofable client IP address(\\s+\\[[0-9]+\\])?	偽装可能なクライアントIPアドレス$1
 SQL injection \\(second order\\)(\\s+\\[[0-9]+\\])?	SQLインジェクション (セカンドオーダー)$1
 SQL injection(\\s+\\[[0-9]+\\])?	SQLインジェクション$1
 SQL statement in request parameter(\\s+\\[[0-9]+\\])?	リクエストパラメータ内のSQL文$1
@@ -2410,8 +2445,8 @@ To load this file, create a new Burp project, and then restore the state file in
 To lower case	小文字に変換
 To monitor or troubleshoot the behavior of your session handling rules, you can use the sessions tracer to view in detail the results of processing each rule.	セッションハンドリングルールの動作の監視やトラブルシュートを行うには、セッショントレーサを使用して各ルールの処理結果の詳細が表示できます。
 To new tab	新規タブへ
-To Propername	先頭のみ大文字でその他は小文字
 To ProperName	先頭のみ大文字でその他は変更なし
+To Propername	先頭のみ大文字でその他は小文字
 To repeat this request in your browser, copy the URL below and paste into a browser that is configured to use Burp as its proxy.	このリクエストをブラウザで再送するには、Burpをプロキシとして使用するよう設定されたブラウザに、次のURLをコピーして貼り付けてください。
 To run Python extensions, you must download the Jython standalone JAR, and configure its location in Burp Extender options.	Python拡張を実行するには、JythonスタンドアローンJARファイルをダウンロードし、Burp Extenderオプションで場所を設定する必要があります。
 To run Ruby extensions, you must download the JRuby JAR file, and either configure its location in Burp Extender options, or load it on startup via the Java classpath.	Ruby拡張を実行するには、JRubyのJARファイルをダウンロードし、Burp Extenderオプションで場所を設定するか、起動時のJavaクラスパス経由で読み込む必要があります。
