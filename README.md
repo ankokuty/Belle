@@ -42,6 +42,10 @@ Burpのjarファイルがあるフォルダに移動し、(-jar オプション�
 java -javaagent:belle.jar -Xmx1024m -jar burpsuite_free_v1.7.06.jar
 ```
 
+### アップデート方法
+
+インストール時にコピーした、belle.jar と ja.txt　と javassist.jar の３つのファイルを上書きコピーし、Burp Suiteを再起動してください。
+
 ### その他
 
 本ツールは、カレントディレクトリの ja.txt を読み込みます。Windowsのショートカットなどから起動する場合は ja.txtがあるフォルダを作業フォルダーに指定、シェルスクリプトやバッチファイルなどから起動する場合はカレントディレクトリを変更した上でjavaコマンドを実行してください。
