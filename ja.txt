@@ -58,6 +58,7 @@
 (.*)[Ss]howing only listener (.*)	$1ポート$2のリスナーのみ表示
 (.*)[Ss]howing specific extensions(.*)	$1指定した拡張子を表示$2
 (.*)\\[Pro version only\\](.*)	$1[プロ版のみ]$2
+(.*)\\[Pro version with 64-bit Java only\\](.*)	$1[64ビットJavaのプロ版のみ]$2
 (.*)Because some character positions within the sample use character sets whose size is not a round power of two, ([,0-9.]+) bits of data were compressed into other bits derived from the same character position.(.*)	$1サンプル内の一部の文字位置は2の累乗のサイズではない文字セットを使用するので、データの$2ビットは同じ文字位置から派生した他のビットに圧縮されました。$3
 (.*)However, an overly short longest run of bits also indicates that the sample is not random.(.*)	$1しかし、短すぎるビットの最長連もサンプルがランダムでないことを示します。$2
 (.*)Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long.(.*)	$1このテストのFIPS仕様では、ビットの最長連が長すぎる場合に失敗のみを記録することに注意してください。$2
@@ -175,6 +176,8 @@ Add hostname resolution rule	ホスト名解決ルールを追加
 Add match/replace rule	検索/置換ルールを追加
 Add payload processing rule	ペイロード処理ルールを追加
 Add platform authentication credentials	プラットフォーム認証のクレデンシャルを追加
+Add prefix for in-scope URLs	スコープ内URLのプレフィクスを追加
+Add prefix for out-of-scope URLs	スコープ外URLのプレフィクスを追加
 Add prefix	プレフィックスを追加
 Add random variations to throttle	ランダムなウェイトを追加する
 Add raw payload	生ペイロード追加
@@ -182,6 +185,7 @@ Add request header	リクエストヘッダ追加
 Add request interception rule	リクエストインターセプトルールを追加
 Add response interception rule	レスポンスインターセプトルールを追加
 Add SSL passthrough target	SSLパススルーする対象を追加
+Add streaming URL prefix	ストリーミングURLのプレフィックスを追加
 Add streaming URL	ストリーミングURLを追加
 Add suffix	サフィックスを追加
 Add the specified item	指定したアイテムを追加
@@ -337,6 +341,12 @@ Are you sure you want to restore default upstream proxy servers options\\?	上�
 Are you sure you want to restore default user interface options\\?	ユーザインタフェースオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore defaults for all project options\\?	すべてのプロジェクトオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore defaults for Project options\\?	プロジェクトオプションのデフォルトに戻してよろしいですか？
+Are you sure you want to restore defaults for Proxy\\?	Proxyのオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore defaults for Repeater\\?	Repeaterのオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore defaults for Scanner\\?	Scannerのオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore defaults for Sequencer\\?	Sequencerのオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore defaults for Spider\\?	Spiderのオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore defaults for Target\\?	Targetのオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore defaults for user options\\?	ユーザオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to retest the macro\\?	マクロを再テストしてよろしいですか？
 Are you sure you want to shut down Burp and launch the downloaded file\\?	Burpをシャットダウンしダウンロードしたファイルを起動してよろしいですか？
@@ -444,7 +454,6 @@ Burp Infiltrator \\[Pro version only\\]	Burp Infiltrator [プロ版のみ]
 Burp Infiltrator currently supports applications written in Java or other JVM-based languages such as Groovy. Java versions from 4 and upwards are supported.	Burp Infiltrator は現在Javaか、Groovyのようなその他のJVMベースの言語で書かれたアプリケーションをサポートします。Javaバージョン4かそれ以上をサポートします。
 Burp Infiltrator is a tool for instrumenting target web applications in order to facilitate testing using Burp Scanner. Burp Infiltrator modifies the target application so that Burp can detect cases where its input is passed to potentially unsafe APIs on the server side.	Burp Infiltratorは、Burp Scannerを使用したテストを容易にするために、対象Webアプリケーションを道具化するツールです。Burp Infiltratorは、入力値がサーバサイドで潜在的に危険なAPIに渡されていることをBurpが検出できるように、対象のWebアプリケーションを変更します。
 Burp Infiltrator was saved successfully as: burp_infiltrator_java.jar	Burp Infiltratorは正常に保存されました: burp_infiltrator_java.jar
-Burp Intruderが使用する定義済みペイロードリストの場所を設定してください。
 Burp is up to date.	Burpは最新です。
 Burp license key	Burpライセンスキー
 Burp maintains a cookie jar that stores all of the cookies issued by visited web sites. Session handling rules can use and update these cookies to maintain valid sessions with applications that are being tested. You can use the settings below to control how Burp automatically updates the cookie jar based on traffic from particular tools.	アクセスしたWebサイトが発行したすべてのcookieをcookie jarに保持します。セッションのルールを処理してテストされているアプリケーションで有効なセッションを維持するためにこれらのクッキーを更新します。テストしているアプリケーションの有効なセッションを保持するために、セッションハンドリングルールがこれらのcookieを使用や更新ができます。以下の設定で、特定のツールからのトラフィックに基づいて cookie jar を自動的に更新する方法を制御します。
@@ -715,7 +724,7 @@ Define custom token location	トークン位置のカスタム定義
 Define extract grep from response	レスポンスから抽出grepを定義
 Define extract grep item	抽出grepアイテムの定義
 Define start and end	開始と終了を定義
-Define the in-scope targets for your current work. This configuration affects the behavior of tools throughout the suite. All fields take regex strings. The easiest way to configure scope is to browse to your target and use the context menus in the site map to include or exclude URL paths.	現在の作業でスコープ内とするターゲットを定義します。この設定はツール全体の動作に影響を与えます。すべてのフィールドは正規表現で指定します。ターゲットをブラウザで参照し、サイトマップのコンテキストメニューでURLパスを含めるまたは除外すると、スコープ設定が簡単です。
+Define the in-scope targets for your current work. This configuration affects the behavior of tools throughout the suite. The easiest way to configure scope is to browse to your target and use the context menus in the site map to include or exclude URL paths.	現在の作業でスコープ内とするターゲットを定義します。この設定はツール全体の動作に影響を与えます。ターゲットをブラウザで参照し、サイトマップのコンテキストメニューでURLパスを含めるまたは除外すると、スコープ設定が簡単です。
 Define the location of the item to be extracted. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	抽出するアイテムの場所を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
 Define the location of the parameter value. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	パラメータ値の位置を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
 Define the location of the token within the response. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	レスポンス内のトークンの場所を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
@@ -849,11 +858,14 @@ Edit list	リスト編集
 Edit match/replace rule	検索/置換ルールを編集
 Edit payload processing rule	ペイロード処理ルールを編集
 Edit platform authentication credentials	プラットフォーム認証のクレデンシャルを編集
+Edit prefix for in-scope URLs	スコープ内URLのプレフィクスを編集
+Edit prefix for out-of-scope URLs	スコープ外URLのプレフィクスを編集
 Edit proxy listener	プロキシリスナーを編集
 Edit request header	リクエストヘッダ編集
 Edit request interception rule	リクエストインターセプトルールを編集
 Edit response interception rule	レスポンスインターセプトルールを編集
 Edit SSL passthrough target	SSLパススルーする対象を編集
+Edit streaming URL prefix	ストリーミングURLのプレフィックスを編集
 Edit streaming URL	ストリーミングURLを編集
 Edit target	対象を編集
 Edit the selected cookie	選択したcookieを編集する
@@ -1220,6 +1232,7 @@ Invalid proxy port	プロキシポート番号が不正です
 Invalid regex	不正な正規表現
 Invalid regex:(.*)	不正な正規表現:$1
 Invalid session	セッション無効
+Invalid URL prefix	不正なURLプレフィックス	
 Invalid URL(:?)	不正なURL$1
 Invalid value	不正な値
 Invisible proxy support allows non-proxy-aware clients to connect directly to the listener.	透過プロキシをサポートすると、プロキシ非対応のクライアントが直接リスナーに接続できます。
@@ -1260,6 +1273,7 @@ JavaScript-driven	JavaScript駆動
 July	7月
 June	6月
 Key	キー
+Last updated	最終更新
 LDAP injection(\\s+\\[[0-9]+\\])?	LDAPインジェクション$1
 Leave	残す
 Left/right split	左右に分割
@@ -1703,11 +1717,12 @@ Poll every	ポーリング間隔
 Poll now	今すぐポーリング
 Poll over unencrypted HTTP	暗号化されていないHTTPでポーリングする
 Polling location \\(optional\\):	ポーリング場所(オプション):
+Popularity	人気
 Port(:?)	ポート$1
 Position:	位置:
 Positions?	ポジション
 Predefined Payload Lists	定義済みペイロードリスト
-Prefix:	プレフィックス:
+Prefix(:?)	プレフィックス$1
 Prepend preprocessed payload	プリプロセッサペイロードを先頭に追加
 Preset parameters	プリセットパラメータ
 Preset Payload Lists	定義済みペイロードリスト
@@ -2008,6 +2023,7 @@ Save user interface options	ユーザインタフェースオプションを保�
 Save user options	ユーザオプション保存
 Save	保存
 Saved preferences	保存した設定
+Saving project...	プロジェクト保存中...
 Saving: ([0-9]+)% complete	保存中: $1%完了
 Scan accuracy:	スキャン精度:
 Scan again	再スキャン
@@ -2169,6 +2185,7 @@ Source code disclosure(\\s+\\[[0-9]+\\])?	ソースコード漏洩$1
 Source	ソース
 Specific address:	指定したアドレス:
 Specific string:	指定文字列:
+Specify a prefix for URLs you want to match.	一致させたいURLのプレフィックスを指定してください。
 Specify a regular expression to match each URL component, or leave blank to match any item. An IP range can be specified instead of a hostname.	各URLにマッチさせる正規表現を指定する、または任意のアイテムに一致させるには空白のままにしてください。ホスト名の代わりにIPレンジを指定できます。
 Specify the details of the form field completion rule.	フォームフィールド補完ルールの詳細を指定してください。
 Specify the details of the interception rule.	インターセプトルールの詳細を指定してください。
@@ -2521,6 +2538,7 @@ Update only the following parameters:	このパラメータのみ更新する:
 Update the first macro request with parameters matched from the response to the current request	最初のマクロリクエストのマッチしたパラメータを、現在のリクエストのレスポンスで更新する
 Update the original macro configuration with the requests and responses made in this test	元のマクロ設定を、このテストで生成したリクエストとレスポンスに更新する
 Update was saved successfully.	更新を正常に保存しました。
+Updated:	更新:
 Updating results	結果更新中
 Upstream Proxy Servers	上位プロキシサーバ
 URL of redirection target	リダイレクト対象のURL
@@ -2542,6 +2560,7 @@ Use a custom certificate \\(PKCS#12\\):	カスタム証明書を使用する(PKC
 Use a private Collaborator server:	プライベートCollaboratorサーバを使用する:
 Use a self-signed certificate	自己署名の証明書を使用する
 Use a specific character set:	指定した文字セットを使用する:
+Use advanced scope control	高度なスコープ設定を使用する
 Use built-in lists	組み込みリストを使用する
 Use Burp defaults	Burpのデフォルトを使用する
 Use cookies from Burp's cookie jar	Burpのcookie jarのcookieを使用する
