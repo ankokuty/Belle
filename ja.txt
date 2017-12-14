@@ -136,6 +136,7 @@ Action	アクション
 Activate License	ライセンスのアクティベート
 Activation Failed	アクティベーション失敗
 Active and passive scanning	アクティブとパッシブスキャン
+Active checks	アクティブチェック
 Active Scanning Areas	アクティブスキャン対象
 Active Scanning Engine	アクティブスキャンエンジン
 Active scanning only	アクティブスキャンのみ
@@ -433,6 +434,7 @@ Body to cookie	ボディからcookie
 Body to URL	ボディからURL
 Body	ボディ
 Boolean condition checks	真偽条件チェック
+Boolean conditions	真偽条件
 Boolean operator:	動作条件:
 Browser cross-site scripting filter disabled(\\s+\\[[0-9]+\\])?	ブラウザXSSフィルタの無効化$1
 Brute forcer	ブルートフォース
@@ -574,6 +576,7 @@ Client-side template injection(\\s+\\[[0-9]+\\])?	クライアントサイドテ
 Client-side XPath injection \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドXPathインジェクション (DOMベース)$1
 Client-side XPath injection \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドXPathインジェクション (反射型DOMベース)$1
 Client-side XPath injection \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	クライアントサイドXPathインジェクション (蓄積型DOMベース)$1
+Client-side	クライアントサイド
 Close wizard	ウィザードを閉じる
 Close	閉じる
 Cluster bomb	クラスター爆弾(Cluster bomb)
@@ -762,6 +765,8 @@ Destination host, may include wildcards	宛先ホスト, ワイルドカード�
 Detach (.*)	$1を切り離し
 Details?	詳細
 Detect custom "not found" responses	カスタマイズされた"Not Found"レスポンスを検知する
+Detection methods	検出手法
+Detection methods: (.*)	検出手法: $1
 Diagnostics	診断
 Direction	方向
 Directories - long	ディレクトリ - 長
@@ -771,6 +776,7 @@ Directories only	ディレクトリのみ
 Directory listing(\\s+\\[[0-9]+\\])?	ディレクトリリスティング$1
 Disable extensions	拡張を無効にする
 Disable Java SNI extension \\(requires restart\\)	Java SNI拡張を無効にする(要再起動)
+Disable SSL session resume	SSLセッションの再開を無効にする
 Disable web interface at http://burp	http://burp のWebインタフェースを無効にする
 Discover content	コンテンツ探索
 Discover:	探索:
@@ -851,6 +857,7 @@ Each installation of Burp generates its own CA certificate that Proxy listeners 
 ECB block shuffler	ECBブロックシャッフル
 Edit "skip parameter" rule	"スキップパラメータ"ルールを編集
 Edit cookie	cookie編集
+Edit detection methods	検出手法を編集
 Edit form field completion rule	フォームフィールド補完ルールを編集
 Edit hostname resolution rule	ホスト名解決ルールを編集
 Edit hotkeys	ホットキー編集
@@ -923,6 +930,7 @@ Enter the master password to encrypt stored passwords. A strong password is reco
 Enter the PIN code for your hardware token or smart card.	ハードウェアトークンやスマートカードのPINコードを入力してください。
 Enter the platform credentials for the specified destination host.	宛先ホストのプラットフォームクレデンシャルを入力してください。
 Entire body \\(for relevant content types\\)	ボディ全体(関連するコンテントタイプの場合)
+Error messages	エラーメッセージ
 Error	エラー
 Error-based	エラーベース
 Errors(:?)	エラー$1
@@ -1000,6 +1008,7 @@ File does not exist	ファイルが存在しません
 File path manipulation(\\s+\\[[0-9]+\\])?	ファイルパスマニピュレーション$1
 File path traversal / manipulation	ファイルパストラバーサル/操作
 File path traversal(\\s+\\[[0-9]+\\])?	ファイルパストラバーサル$1
+File retrieval	ファイル取得
 File size: ([0-9,]+) bytes?	ファイルサイズ: $1 バイト
 File upload functionality(\\s+\\[[0-9]+\\])?	ファイルアップロード機能$1
 File was saved successfully.	ファイルを正常に保存しました。
@@ -1018,7 +1027,7 @@ Filter by request type	リクエストタイプでフィルタ
 Filter by search term \\[Pro only\\]	検索語でフィルタ [プロ版のみ]
 Filter by search term	検索語でフィルタ
 Filter by status code	ステータスコードでフィルタ
-Filter:	フィルタ:
+Filter:\\s*	フィルタ:
 Find comments	コメント検索
 Find references	参照元検索
 Find scripts	スクリプト検索
@@ -1170,6 +1179,7 @@ In current session	現在のセッション
 In future, just copy the URL and don't show this dialog	今後、自動的にURLをコピーしこのダイアログを表示しない。
 In original session	元のセッションを使う
 In	
+In-band	内部完結
 Include all URLs	すべてのURLを含める
 Include auto-submit script	自動サブミットスクリプトを含める
 Include Burp Collaborator identifier in the project file	BurpCollaboratorの識別子をプロジェクトファイルに含める
@@ -1214,6 +1224,8 @@ Intercept	インターセプト
 Interface	インタフェース
 Intruder Attack Configuration	Intruder攻撃設定
 Intruder results help	Intruder結果ヘルプ
+Intrusive active	アクティブスキャン（侵入）
+Intrusive	侵入
 Invalid [Pp]ort:	不正なポート:
 Invalid custom location configuration	カスタム位置の設定が不正です
 Invalid date	不正な日付
@@ -1283,6 +1295,8 @@ Length: ([,0-9]+)	長さ: $1
 Library	ライブラリ
 Licence Agreement	使用許諾契約書
 License	ライセンス
+Light active	アクティブスキャン（軽度）
+Light	軽度
 Limit to	制限
 Link depth to associate with Proxy requests:	Proxyリクエストに関連づけるリンクの深さ:
 Link manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	リンク操作 (DOMベース)$1
@@ -1458,6 +1472,8 @@ Maximum link depth:	リンクの最大の深さ:
 Maximum parameterized requests per URL:	URLごとのパラメター付きリクエストの最大数:
 Maximum payloads per item:	アイテムごとのペイロード数:
 May	5月
+Medium active	アクティブスキャン（中程度）
+Medium	中程度
 Message editor help	メッセージエディタヘルプ
 Message Editor	メッセージエディタ
 Message	メッセージ
@@ -1496,6 +1512,7 @@ Move up	上に移動
 MSSQL-specific checks	MSSQL固有チェック
 Multipart form	マルチパートフォーム
 Multiple content types specified(\\s+\\[[0-9]+\\])?	複数のコンテントタイプ指定$1
+MySQL specific	MySQL固有
 MySQL-specific checks	MySQL固有チェック
 Name or value:	名前または値:
 Name(:?)	名前$1
@@ -1583,6 +1600,7 @@ Open-ended responses:	開始からレスポンスが終了するまで:
 Operate on:	処理対象:
 Operator	動作
 Options	オプション
+Oracle specific	Oracle固有
 Oracle-specific checks	Oracle固有チェック
 Original message	元メッセージ
 Original request	元リクエスト
@@ -1609,9 +1627,11 @@ Parameter Scope	パラメータスコープ
 Parameters?(:?)	パラメータ$1
 Params	パラメータ
 Pass back to the invoking tool:	起動しているツールに渡す:
+Passive checks	パッシブチェック
 Passive Scanning Areas	パッシブスキャン対象
 Passive spidering monitors traffic through Burp Proxy to update the site map without making any new requests.	パッシブスパイダリングはBurp Proxyを経由するトラフィックを監視し、新たなリクエストを生成せずサイトマップを更新します。
 Passive Spidering	パッシブスパイダリング
+Passive	パッシブ
 Passively scan selected items	選択したアイテムをパッシブスキャン
 Passively scan this branch	このブランチをパッシブスキャン
 Passively scan this host	このホストをパッシブスキャン
@@ -1883,6 +1903,7 @@ Re-recording the macro will delete the current macro items. Are you sure you wan
 Response ([0-9]+)	レスポンス$1
 Response body	レスポンスボディ
 Response completed	完了レスポンス数
+Response diffing	レスポンス差分
 Response from ([a-z].*)	$1　からのレスポンス
 Response from Collaborator	Collaboratorからのレスポンス
 Response headers?	レスポンスヘッダ
@@ -2029,6 +2050,7 @@ Scan accuracy:	スキャン精度:
 Scan again	再スキャン
 Scan everything	すべてスキャンする
 Scan from a URL	URLからスキャン
+Scan Issues	スキャン項目
 Scan next	次をスキャン
 Scan queue help	スキャンキューヘルプ
 Scan queue	スキャンキュー
@@ -2041,8 +2063,7 @@ Search completed \\[dynamic search active\\]	検索完了 [ダイナミックサ
 Search completed	検索終了
 Search options	検索オプション
 Search responses for payload strings	ペイロード文字列のレスポンスを探す
-Search	検索
-Searching( \.+)?	検索中$1
+Search(\.+)?	検索$1
 Searching:(.*)	検索中:$1
 seconds	秒
 See the documentation for more details on using Burp Clickbandit.	Burp Clickbanditの使用方法に関する詳細はドキュメントを参照してください。
@@ -2052,6 +2073,7 @@ Select a file	ファイルを選択
 Select all	すべて選択
 Select BApp File	BAppファイルを選択してください
 Select bits to flip:	反転するビットを選択:
+Select by scan type:	スキャンタイプで選択:
 Select directory ...	ディレクトリ選択 ...
 Select file ...	ファイル選択 ...
 Select folder ...	フォルダ選択 ...
@@ -2061,6 +2083,7 @@ Select font	フォントを選択してください
 Select generator ...	ジェネレータ選択 ...
 Select how HTTP request messages should appear in the report.	HTTPリクエストメッセージのレポートへの載せ方を選択してください。
 Select how HTTP response messages should appear in the report.	HTTPレスポンスメッセージのレポートへの載せ方を選択してください。
+Select individual issues:	個別に問題を選択:
 Select item ([0-9]+):	選択アイテム$1:
 Select license file	ライセンスファイルを選択してください
 Select license key file ...	ライセンスキーファイルを選択 ...
@@ -2074,6 +2097,7 @@ Select the "extract grep" item from which to derive payloads:	ペイロードを
 Select the certificate file	証明書ファイルを選択
 Select the certificate to use. If no certificates are shown, or some details are missing, enter your PIN and click "Refresh". You can double-click on an item to view the full details of the certificate.	使用する証明書を選択してください。証明書が表示されない、または一部の詳細が不足している場合、PINを入力し"リフレッシュ"をクリックしてください。アイテムをダブルクリックすると証明書の詳細が表示できます。
 Select the configuration that you would like to load for this project.	このプロジェクトに読み込む設定を選択してください。
+Select the detection methods that will be used when checking for (.*)\.	$1のチェックで使用する検出手法を選択してください。
 Select the extension-provided payload generator that you want to use. Burp extensions can be loaded using the Extender tool.	ペイロードを生成する拡張から使用したいものを選択してください。Burp拡張は、Extenderで読み込めます。
 Select the file containing the CA certificate to import.	インポートするCA証明書を含むファイルを選択してください。
 Select the file containing the keystore to import, and the password for the keystore.	インポートするキーストアを含むファイルを選択し、キーストアのパスワードを入力してください。
@@ -2114,6 +2138,7 @@ Server SSL Certificates	サーバSSL証明書
 Server-level issues	サーバレベルの問題
 Server-side code injection	サーバサイドコードインジェクション
 Server-side JavaScript code injection(\\s+\\[[0-9]+\\])?	サーバサイドJavaScriptコードインジェクション$1
+Server-side template breakout	サーバサイドテンプレート操作
 Server-side template injection \\(requires reflected XSS\\)	サーバサイドテンプレートインジェクション(反射型XSSが必要)
 Server-side template injection(\\s+\\[[0-9]+\\])?	サーバサイドテンプレートインジェクション$1
 Server-side variable names	サーバサイド変数名
@@ -2144,6 +2169,7 @@ Show all	すべて表示
 Show details	詳細を表示
 Show full help	すべてのヘルプを表示
 Show in UI	UI内に表示する
+Show issue definition	問題定義を表示
 Show new history window	新規履歴ウィンドウを表示
 Show new site map window	新たなウィンドウでサイトマップを表示
 Show only commented items	コメントしたアイテムのみ表示
@@ -2183,6 +2209,7 @@ Some of these items are outside the current spidering scope. Would you like to m
 Some of these items are outside the current target scope. Are you sure you want to perform an active scan\\?	これらのアイテムの一部は現在の対象スコープ外です。アクティブスキャンを実行してよろしいですか？
 Source code disclosure(\\s+\\[[0-9]+\\])?	ソースコード漏洩$1
 Source	ソース
+Source:	ソースコード:
 Specific address:	指定したアドレス:
 Specific string:	指定文字列:
 Specify a prefix for URLs you want to match.	一致させたいURLのプレフィックスを指定してください。
@@ -2213,6 +2240,7 @@ Spider this host	このホストをSpider実行
 Spoofable client IP address(\\s+\\[[0-9]+\\])?	偽装可能なクライアントIPアドレス$1
 SQL injection \\(second order\\)(\\s+\\[[0-9]+\\])?	SQLインジェクション (セカンドオーダー)$1
 SQL injection(\\s+\\[[0-9]+\\])?	SQLインジェクション$1
+SQL Server specific	SQL Server固有
 SQL statement in request parameter(\\s+\\[[0-9]+\\])?	リクエストパラメータ内のSQL文$1
 SSI injection	SSIインジェクション
 SSL certificate(\\s+\\[[0-9]+\\])?	SSL証明書$1
@@ -2234,8 +2262,9 @@ Start live capture	ライブキャプチャ開始
 Start time(:?)	開始時間$1
 Start	先頭
 Starting project, please wait ...	プロジェクトを開始しています、しばらくお待ちください ...
-Static Code Analysis	静的コード解析
+Static [Cc]ode [Aa]nalysis	静的コード解析
 Static URLs	静的URL
+Static	静的
 Status 100 Responses	ステータス100レスポンス
 Status code	ステータスコード
 Status	ステータス
@@ -2255,6 +2284,7 @@ Streaming response \\[double-click to cancel\\]	ストリーミングレスポ�
 Streaming response \\[not stored\\]	ストリーミングレスポンス [保存されていません]
 Streaming Responses	ストリーミングレスポンス
 Strict transport security not enforced(\\s+\\[[0-9]+\\])?	Strict transport securityが適用されていない$1
+String echo	文字列表示
 Strip Accept-Encoding headers in incoming requests	受信リクエストから Accept-Encoding ヘッダを除去する
 Strip chunked encoding metadata in streaming responses	ストリーミングレスポンスからチャンクエンコーディングメタデータを除去する
 Strip Proxy-\\* headers in incoming requests	受信リクエストから Proxy-* ヘッダを除去する
@@ -2374,6 +2404,7 @@ These settings control what information is captured in attack results.	攻撃結
 These settings control whether and how the Spider submits HTML forms.	SpiderがHTMLフォームを送信するかどうか、およびその方法を制御します。
 These settings control whether Burp redirects requests received by this listener.	リスナーが受信したリクエストのリダイレクト方法を制御します。
 These settings control whether Intruder updates the configured request headers during attacks.	攻撃中にIntruderがリクエストヘッダを更新するかどうかの設定です。
+These settings control which issues Burp will check for. You can select issues by scan type or individually. If you select individual issues, you can also select the detection methods that are used for some types of issues.	Burpがチェックする問題を設定します。スキャンタイプごとや個別に問題を選択できます。個々の問題を選択した場合は、一部の問題タイプで使用される検出手法も選択できます。
 These settings determine whether Burp sends each outgoing request to a proxy server, or directly to the destination web server. The first rule that matches each destination host will be used. To send all traffic to a single proxy server, create a rule with \\* as the destination host.	外向きリクエストをプロキシサーバ経由で送信するか、直接Webサーバに送信するか設定します。各送信先ホストに一致する最初のルールが使用されます。すべてのトラフィックを特定のプロキシサーバに送信するには、宛先ホストを * にしたルールを作成してください。
 These settings let you configure Burp to automatically carry out platform authentication to destination web servers.	宛先WebサーバにBurpが自動的にプラットフォーム認証を行う設定をします。
 These settings let you configure Burp to use a SOCKS proxy. This setting is applied at the TCP level, and all outbound requests will be sent via this proxy. If you have configured rules for upstream HTTP proxy servers, then requests to upstream proxies will be sent via the SOCKS proxy configured here.	SOCKSプロキシを使用する設定をします。この設定はTCPレベルで適用され、すべての外向きリクエストがこのプロキシ経由で送信されます。上位HTTPプロキシサーバの設定をしている場合、上位プロキシへのリクエストもここで設定したSOCKSプロキシ経由で送信されます。
@@ -2453,6 +2484,7 @@ This wizard lets you remove certain information which Burp saves on your compute
 Thorough	徹底的
 Throttle \\(milliseconds\\):	ウェイト(ミリ秒):
 Throttle between requests \\(milliseconds\\):	リクエスト間のウェイト(ミリ秒):
+Time delays	遅延
 Time of day	時刻
 Time requested	リクエスト時刻
 Time running:	起動時間:
