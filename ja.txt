@@ -468,6 +468,7 @@ Burp Spider - Submit Form	Burp Spider - 送信フォーム
 Burp Spider needs your guidance to submit a login form. Please choose the value of each form field which should be used when submitting the form, and whether Burp should iterate submission of multi-value fields. You can control how Burp handles forms in the Spider options tab.	Burp Spiderがログインフォームを送信するには、あなたの入力が必要です。送信に使用する各フォームフィールドの値と、複数の値を取るフィールドを繰り返すかどうか選択してください。Spiderオプションタブでフォームの処理方法をコントロールできます。
 Burp Spider needs your guidance to submit a login form. Please choose the value of each form field which should be used when submitting the form. You can control how Burp handles forms in the Spider options tab.	Burp Spiderがログインフォームを送信するには、あなたの入力が必要です。送信に使用する各フォームフィールドの値を選択してください。Spiderオプションタブでフォームの処理方法をコントロールできます。
 Burp Suite [dD]ocumentation	Burp Suiteドキュメント
+Burp Suite Community Edition	Burp Suite コミュニティ版
 Burp Suite diagnostics	Burp Suite診断
 Burp Suite search	Burp Suite検索
 Burp will now attempt to contact the license server and activate your license. This will require Internet access. If you access the Internet via a web proxy server, please enter the details below.	ライセンスサーバに接続しライセンス認証を試みます。これにはインターネットアクセスが必要です。プロキシサーバを経由してインターネットにアクセスする場合は、以下に詳細を入力してください。
@@ -1551,6 +1552,7 @@ None	なし
 Normal(:?)	標準$1
 Not a valid Burp project file: (.*)	有効なBurpプロジェクトファイルではありません: $1
 Not a valid PKCS#11 library	有効なPKCS#11ライブラリではありません
+Not available in Community Edition	コミュニティ版では無効です
 Not available in demo version	デモバージョンでは無効です
 Not available in free edition	フリー版では無効です
 Note that statistical tests provide only an indicative guide to the randomness of the sampled data. Results obtained may contain false positives and negatives, and may not correspond to the practical predictability of the tokens sampled.	統計的テストは、サンプルデータの乱数性を示す指針のみを提供していることに注意してください。得られた結果には偽陽性と偽陰性が含まれ、サンプリングされたトークンの実用的な予測に対応していない場合があります。
@@ -1562,6 +1564,7 @@ Note: Exercise caution when running Burp Clickbandit on untrusted websites. Mali
 Note: It is not recommended to restore configuration from a state file that originated from an untrusted source.	注: 信頼できない提供元から受け取ったステートファイルから、設定のリストアは推奨しません。
 NOTE: license activations are monitored. If you perform too many activations, further activations for this license may be prevented.	注: ライセンスのアクティベートは監視されています。あまりにも多くのアクティベートが実行されると、このライセンスのさらなるアクティベートを停止することがあります。
 Note: Some of the selected items do not yet have responses. If you choose to remove items with media responses, some of these items may be removed from the scan when their responses have been analyzed.	注: 選択したアイテムの一部はまだレスポンスがありません。メディアレスポンスのアイテムを除外するよう選択した場合、レスポンスの解析が完了したときこれらのアイテムはスキャンから除外されます。
+Note: Some of these options are not available in the Community Edition of Burp.	注: 一部のオプションはBurpコミュニティ版では無効です。
 Note: Some of these options are not available in the Free Edition of Burp.	注: 一部のオプションはBurpフリー版では無効です。
 Note: these settings can be overridden for individual projects within project options.	注: これらの設定は個々のプロジェクトのプロジェクトオプションで上書きできます。
 Note: This analysis is based on the current contents of the site map, and no new requests have been made. Only parameters within the query string and request body are included in the analysis. URLs identified as "static" are those which do not take any parameters, though their responses may still be dynamically generated.	注: この分析はサイトマップの現在の内容に基づいており、新規リクエストは生成していません。クエリストリングとリクエストボディ内のパラメータのみが解析に含まれます。"静的"と識別されたURLはパラメータを持っていませんが、レスポンスが動的に生成された可能性があります。
@@ -2357,6 +2360,7 @@ The chart shows the number of bits of effective entropy at each significance lev
 The chart shows the number of bits of effective entropy at each significance level, based on the bit-level tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、ビットレベルのテストに基づいた、有意水準ごとの効果のあるエントロピーのビット数を表示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。低い有意水準を使用すると、サンプルがランダムであるという仮説を否定するためにより強力な証拠が必要とされることになり、非ランダムなデータがランダムだと処理される可能性が高くなります。
 The chart shows the number of bits of effective entropy at each significance level, based on the character-level tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、ビットレベルのテストに基づいた、有意水準ごとの効果のあるエントロピーの文字数を表示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。低い有意水準を使用すると、サンプルがランダムであるという仮説を否定するためにより強力な証拠が必要とされることになり、非ランダムなデータがランダムだと処理される可能性が高くなります。
 The chart shows the size of the character set used at each position. This number is the count of different characters that appear at each position within the sample data.	グラフは、各位置で使用された文字セットのサイズを表示しています。この数字は、サンプルデータ内の各位置に出現した異なる文字の数です。
+The Community Edition of Burp Suite contains a demo version of Burp Intruder. Some functionality is disabled, and attacks are time throttled.	コミュニティ版のBurp SuiteにはBurp Intruderのデモ版が入っています。一部の機能が無効化され、攻撃は時間調整されます。
 The directory selected is not empty	選択されたディレクトリは空ではありません
 The extension could not be loaded because it requires a later version of Java. To use this extension you will need to start Burp with the required or later Java version.	拡張がより新しいバージョンのJavaを要求するため読み込めませんでした。この拡張を使用するには要求されたバージョン、またはより新しいバージョンのJavaでBurpを起動してください。
 The extension is loading.	拡張を読み込み中。
@@ -2679,6 +2683,7 @@ WebSocket hijacking \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	WebSocketハイジ
 WebSockets history	WebSocket履歴
 Weeks	週
 Welcome ...	ようこそ ...
+Welcome to Burp Suite Community Edition. Use the options below to create or open a project.	Burp Suiteコミュニティ版へようこそ。次のオプションでプロジェクトを作成するか開くか選択してください。
 Welcome to Burp Suite Free Edition. Use the options below to create or open a project.	Burp Suiteフリー版へようこそ。次のオプションでプロジェクトを作成するか開くか選択してください。
 Welcome to Burp Suite Professional. Use the options below to create or open a project.	Burp Suiteプロフェッショナル版へようこそ。次のオプションでプロジェクトを作成するか開くか選択してください。
 When following redirections, understand the following types:	リンクをたどる場合、次のタイプを認識します:
