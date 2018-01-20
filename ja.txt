@@ -250,6 +250,7 @@ Application Login	アプリケーションログイン
 April	4月
 Are you sure you want to add this item to the site map\\?	このアイテムをサイトマップに追加してもよろしいですか？
 Are you sure you want to cancel the download\\?	ダウンロードをキャンセルしてよろしいですか？
+Are you sure you want to cancel the import\\?	インポートをキャンセルしてよろしいですか？
 Are you sure you want to cancel this rule\\?	このルールをキャンセルしてよろしいですか？
 Are you sure you want to cancel this streaming response\\?	ストリーミングレスポンスをキャンセルしてよろしいですか？
 Are you sure you want to cancel\\?	キャンセルしてよろしいですか？
@@ -536,6 +537,7 @@ Choose the folder where temporary files will be saved	一時ファイルが保�
 Choose the format for the report.	レポートのフォーマットを選択してください。
 Choose the PKCS#11 library file	PKCS#11ライブラリファイルを選択してください
 Choose the tools whose data you want to be included in the new project file and whether you only want to save in-scope items.	新規プロジェクトファイルに含めるツールのデータと、スコープ内のアイテムのみ保存するかどうかを選択してください。
+Choose the tools whose data you want to import from the project file.	プロジェクトファイルからデータをインポートするツールを選択してください。
 Choose this option if you plan to load the state file later and continue testing, or pass it on to someone else who will take over your testing. You should be aware that if any testing is continued using multiple instances of Burp, then some Collaborator-based issues may be missed or incorrectly reported.	後でこのステートファイルを読み込んでテストを継続するか、テストを引き継ぐ他の誰かに渡す場合、このオプションを選択してください。複数のBurpインスタンスでテストを継続する場合、Collaboratorベースの問題を見逃す、または誤って報告されるかもしれません。
 Choose this option if you plan to pass the project file on to someone else, but you do not want them to be able to receive details of any ongoing Burp Collaborator interactions that are associated with your testing. Any new scanning that is performed by the other user will use a different unique identifier, to avoid any interference with other instances of Burp.	プロジェクトファイルを他人に渡す予定があり、しかしテストに関連づけらたCollaboratorとの通信の詳細を継続的に受信させたくない場合に、このオプションを選択してください。他のユーザによって実装される新規スキャンは、Burpの他のインスタンスとの競合を避けるため、異なる一意な識別子を使用します。
 Choose this option if you plan to pass the state file on to someone else, but you do not want them to be able to receive details of any ongoing Burp Collaborator interactions that are associated with your testing. Any new scanning that is performed by the other user will use a different unique identifier, to avoid any interference with other instances of Burp.	ステートファイルを他人に渡す予定があり、しかしテストに関連づけらたCollaboratorとの通信の詳細を継続的に受信させたくない場合に、このオプションを選択してください。他のユーザによって実装される新規スキャンは、Burpの他のインスタンスとの競合を避けるため、異なる一意な識別子を使用します。
@@ -592,6 +594,7 @@ Compare site maps?	サイトマップ比較
 Compression	圧縮
 Computing differences	差分を計算中
 Concatenate to single file	１ファイルに連結
+Concurrent request limit:	同時リクエスト制限:
 Condition	条件
 Confidence	信頼度
 Config	設定
@@ -1172,8 +1175,12 @@ Illegal UTF-8 continuation bytes	不正なUTF-8継続バイト
 Images	画像
 Immediately	すぐに
 Import / export CA certificate	CA証明書のインポート/エクスポート
+Import completed	インポート完了
+Import project \\[disk projects only\\]	プロジェクトのインポート[ディスクプロジェクトのみ]
+Import project	プロジェクトのインポート
 Import	インポート
 IMPORTANT NOTICE: You should read all of the documentation about Burp Infiltrator before using it or inducing anyone else to use it. You should only use Burp Infiltrator in full understanding of its nature and the risks inherent in its utilization.	重要な注意: Burp Infiltratorを使用する前、または他の誰かに使用させる前に、ドキュメントをすべて読むべきです。Burp Infiltratorの性質と利用に付随するリスクを完全に理解している場合のみ使用すべきです。
+Importing (.*) data: ([0-9]+)% complete	$1データのインポート中: $2% 完了
 In current browser session	現在のブラウザのセッションを使う
 In current session	現在のセッション
 In future, just copy the URL and don't show this dialog	今後、自動的にURLをコピーしこのダイアログを表示しない。
@@ -1401,6 +1408,7 @@ Load user interface options	ユーザインタフェースオプションを読�
 Load user options	ユーザオプション読み込み
 Load	読み込み
 Loaded	読み込み済み
+Loading project...	プロジェクト読み込み中...
 Loading tokens	トークン読み込み中
 Local file path manipulation \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	ローカルファイルパス操作 (DOMベース)$1
 Local file path manipulation \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	ローカルファイルパス操作 (反射型DOMベース)$1
@@ -1541,6 +1549,7 @@ No summary table	サマリテーブルなし
 No	いいえ
 None	なし
 Normal(:?)	標準$1
+Not a valid Burp project file: (.*)	有効なBurpプロジェクトファイルではありません: $1
 Not a valid PKCS#11 library	有効なPKCS#11ライブラリではありません
 Not available in demo version	デモバージョンでは無効です
 Not available in free edition	フリー版では無効です
@@ -1914,6 +1923,7 @@ Responses queued for analysis:	解析用にキューされたレスポンス:
 Responses?	レスポンス
 Restore completed	リストア完了
 Restore defaults	デフォルトに戻す
+Restore legacy state file	古いステートファイル復元
 Restore original value	オリジナルに戻す
 Restore setting from when Burp was last closed	前回終了時の状態を復元
 Restore state wizard	ステート復元ウィザード
@@ -1986,6 +1996,7 @@ Save interface files	インタフェースファイルを保存
 Save items?	アイテムを保存
 Save Java environment options	Java環境オプションを保存する
 Save Javadoc files	Javadocファイルを保存
+Save legacy state file	古いステートファイル保存
 Save live active scanning　options	ライブアクティブスキャンオプションを保存する
 Save live capture options	ライブキャプチャオプションを保存する
 Save live passive scanning　options	ライブパッシブスキャンオプションを保存する
@@ -2092,6 +2103,7 @@ Select macro:	マクロを選択:
 Select none	選択を解除
 Select payload generator	ペイロードジェネレータを選択
 Select processor:	拡張選択:
+Select project file to import	インポートするプロジェクトファイル選択
 Select rule type	ルールタイプを選択してください
 Select the "extract grep" item from which to derive payloads:	ペイロードを取得する"抽出grep"アイテムをを選択してください:
 Select the certificate file	証明書ファイルを選択
@@ -2114,6 +2126,7 @@ Select the location in the response where the token appears.	レスポンスに�
 Select the locations where Burp will search for PKCS#11 library files, then click "Search". Subdirectories are automatically searched.	PKCS#11ライブラリファイルを検索する場所を選択し、"検索"をクリックしてください。サブディレクトリを自動的に検索します。
 Select the name of the new project file.	新規プロジェクトファイル名を選択してください。
 Select the output file to which Burp's state will be saved.	Burpのステートファイルを保存する出力ファイルを選択してください。
+Select the project file to import.	インポートするプロジェクトファイルを選択してください。
 Select the tools that this rule will be applied to.	ルールを適用するツールを選択してください。
 Select the type of application that you want to instrument:	道具化するアプリケーションのタイプを選択してください: 
 Select the type of task you want to run.	実行したいタスクのタイプを選択してください。
@@ -2359,11 +2372,13 @@ The options below control the types of analysis that is performed at the bit lev
 The options below control the types of analysis that is performed at the character level.	文字レベルで実行される分析タイプを制御します。
 The overall quality of randomness within the sample is estimated to be: (.*)	サンプル内の乱数の質の推測は次の通りです: $1
 The private key was successfully exported.	秘密鍵を正常にエクスポートしました。
+The project file contains no importable data.	プロジェクトファイルにはインポートできるデータがありません。
 The project file was successfully repaired. You can now open the repaired project.	プロジェクトファイルは正常に修復されました。修復したプロジェクトを開けます。
 The request has not yet been issued - click "Fetch response" to issue it	リクエストはまだ発行されていません - "レスポンス取得"をクリックして発行してください
 The response from the current request, issued prior to the macro	マクロの前に発行された、現在のリクエストのレスポンス
 The rule contains no actions.	このルールにはアクションがありません。
 The rule is not in-scope for any URLs.	このルールはすべてのURLでスコープ外です。
+The selected file is the current project file	選択したファイルは現在のプロジェクトです
 The selected item is not a directory	選択したアイテムはディレクトリではありません
 The selected project file appears to be corrupt and cannot be opened.	選択したプロジェクトは破損していて開けません。
 The supplied license key was not recognized. Please try re-entering your license key.	ライセンス キーを認識できませんでした。。ライセン スキーを再入力してください。
