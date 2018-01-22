@@ -1835,7 +1835,7 @@ Redirect to port:	リダイレクト先ポート:
 Redirect	リダイレクト
 Redirections	リダイレクト
 Redo analysis	解析をやり直し
-Re-enable	最有効化
+Re-enable	再有効化
 Re-enter license key	ライセンスキーの再入力
 References to (https?://.*)	$1 への参照
 References	参考資料
@@ -1881,6 +1881,7 @@ Remove items with no parameters( \\[([,0-9]+) items\\])?	パラメータのな�
 Remove items with the following extensions( \\[([,0-9]+) items\\])?	次の拡張子を除外 [$2 アイテム]
 Remove JavaScript form validation	JavaScriptによるフォームバリデーションを除去する
 Remove out-of-scope items( \\[([,0-9]+) items\\])?	スコープ外のアイテムを除外 [$2 アイテム]
+Remove saved configuration files	保存した設定ファイルを削除
 Remove saved preferences	保存した設定を削除
 Remove secure flag from cookies	cookieのsecureフラグを除去する
 Remove temporary files	一時ファイルを削除
