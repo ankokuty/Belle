@@ -286,6 +286,7 @@ Are you sure you want to restore default active scanning optimization options\\?
 Are you sure you want to restore default application login options\\?	アプリケーションログインオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default attack insertion points options\\?	攻撃挿入ポイントオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default attack results options\\?	攻撃結果オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default automatic project backup options\\?	自動プロジェクトバックアップオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default Burp Collaborator server options\\?	Burp Collaboratorサーバオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default Burp Extender options\\?	Burp Extenderオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default character set options\\?	文字セットオプションをデフォルトに戻してよろしいですか？
@@ -380,8 +381,14 @@ Auto §	自動§
 Auto analyze \\(next: ([0-9]+)\\)	自動解析 (次: $1)
 Auto analyze	自動解析
 Auto-detect	自動検出
+Automatic [Pp]roject [Bb]ackup	自動プロジェクトバックアップ
+Automatic backup ([0-9]+)% complete	自動バックアップ$1%完了
+Automatic BApp updates	自動BAppアップデート
 Automatic payload positions	自動ペイロードポジション
+Automatic Project Backup \\[disk projects only\\]	自動プロジェクトバックアップ[ディスクプロジェクトのみ]
+Automatic project backup saves a copy of the Burp project file periodically in the background.	自動プロジェクトバックアップは、バックグラウンドで定期的にプロジェクトファイルのコピーを保存します。
 Automatically add entries on client SSL negotiation failure	クライアントがSSL接続に失敗したエントリーを自動的に追加する
+Automatically back up the project every	自動的なプロジェクトのバックアップ間隔
 Automatically fix missing or superfluous new lines at end of request	リクエスト最後の不足または余分な改行を自動補正する
 Automatically locate library	ローカルライブラリから自動的に探す
 Automatically reload extensions on startup	起動時に拡張を自動的に再読み込みする
@@ -393,12 +400,14 @@ Automatically submit these credentials:	このクレデンシャルを自動送�
 Automatically submit using the following rules to assign text field values:	次のルールに従ってテキストフィールドの値を自動送信する:
 Automatically update Content-Length header when the request is edited	リクエスト編集時にContent-Lengthヘッダを自動的に更新する
 Automatically update Content-Length header when the response is edited	レスポンス編集時にContent-Lengthヘッダを自動的に更新する
+Automatically update installed BApps on startup	インストールされたBAppsを起動時に自動アップデートする
 Auto-modified message	自動変更メッセージ
 Auto-modified request	自動変更リクエスト
 Auto-modified response	自動変更されたレスポンス
 Auto-scroll to match when text changes	テキスト変更時にマッチした箇所に自動スクロール
 Auto-select based on request features	リクエストの特徴から自動選択
 Back	戻る
+Backup Interval	バックアップ間隔
 Base request	元リクエスト
 Base response	元レスポンス
 Base string:	元文字列:
@@ -744,6 +753,7 @@ Define the location of the item to be extracted. Selecting the item in the respo
 Define the location of the parameter value. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	パラメータ値の位置を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
 Define the location of the token within the response. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	レスポンス内のトークンの場所を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
 Define the start directory for the content discovery session, and whether files or directories should be targeted.	コンテンツ探索セッションを開始するディレクトリと、対象となるファイルやディレクトリを定義します。
+Delete backup file on clean shutdown of Burp	Burpの正常終了時にバックアップファイルを削除する
 Delete branch	ブランチを削除
 Delete byte	バイト削除
 Delete bytes ...	複数バイト削除 ...
@@ -911,6 +921,7 @@ Email addresses disclosed(\\s+\\[[0-9]+\\])?	メールアドレス漏洩$1
 Embed images within HTML \\(requires modern browser\\)	HTML内への画像埋め込み (モダンなブラウザが必要)
 Empty cookie jar	cookie jarを空に
 Enable algorithms blocked by Java security policy \\(requires restart\\)	Javaセキュリティポリシーでブロックされたアルゴリズムを有効にする(要再起動)
+Enable automatic project backup	自動プロジェクトバックアップを有効化する
 Enable disabled form fields	無効化(disabled)されたフォームフィールドを有効化する
 Enable interception at startup:	起動時にインターセプトを有効:
 Enabled	有効
@@ -1129,7 +1140,7 @@ Hide items without responses	レスポンスのないアイテムを非表示
 Hide not-found items	存在しないアイテムを非表示
 Hide outgoing messages	送信メッセージを非表示
 Hide warning	警告を非表示
-Hide:	非表示:
+Hide(:?)	非表示$1
 High and medium issues	危険度高、中の問題
 High issues	危険度高の問題
 High, medium and low issues	危険度高、中、低の問題
@@ -1358,6 +1369,7 @@ Load application login options	アプリケーションログインオプショ�
 Load attack config	攻撃設定を読み込み
 Load attack insertion points options	攻撃挿入ポイントオプションを読み込む
 Load attack results options	攻撃結果オプションを読み込む
+Load automatic project backup options	自動プロジェクトバックアップオプションを読み込む
 Load Burp Collaborator server options	Burp Collaboratorサーバオプションを読み込む
 Load Burp Extender options	Burp Extenderオプションを読み込む
 Load Burp Extension	Burp拡張を読み込む
@@ -1521,8 +1533,9 @@ Min integer digits:	最短整数部長:
 Min length:	最短:
 Minimize false negatives	検知漏れを最小化
 Minimize false positives	過剰検知を最小化
+Minutes between backups:	バックアップ間隔(分):
 Minutes	分
-minutes	分後
+minutes?	分後
 Misc	その他
 Miscellaneous	その他
 Mixed content(\\s+\\[[0-9]+\\])?	混合コンテンツ$1
@@ -2007,6 +2020,7 @@ Save application login options	アプリケーションログインオプショ�
 Save attack config	攻撃設定を保存
 Save attack insertion points options	攻撃挿入ポイントオプションを保存する
 Save attack results options	攻撃結果オプションを保存する
+Save automatic project backup options	自動プロジェクトバックアップオプションを保存する
 Save Burp Collaborator server options	Burp Collaboratorサーバオプションを保存する
 Save Burp Extender options	Burp Extenderオプションを保存する
 Save cancelled	保存をキャンセルしました
@@ -2112,7 +2126,7 @@ Search completed \\[dynamic search active\\]	検索完了 [ダイナミックサ
 Search completed	検索終了
 Search options	検索オプション
 Search responses for payload strings	ペイロード文字列のレスポンスを探す
-Search(\.+)?	検索$1
+Search	検索
 Searching:(.*)	検索中:$1
 seconds	秒
 See the documentation for more details on using Burp Clickbandit.	Burp Clickbanditの使用方法に関する詳細はドキュメントを参照してください。
@@ -2233,7 +2247,9 @@ Show only in-scope items	スコープ内のアイテムのみ表示
 Show only parameterized requests	パラメータ付きリクエストのみ表示
 Show only requested items	リクエストされたアイテムのみ表示
 Show only:	表示:
+Show progress dialog during backups	バックアップ中に進捗ダイアログを表示
 Show response in browser	レスポンスをブラウザで表示
+Show this dialog during backups	バックアップ中にこのダイアログを表示する
 Showing all items	すべてのアイテムを表示
 Showing selected items ?	選択したアイテムを表示中
 Shut down Burp and launch downloaded file	Burpをシャットダウンし、ダウンロードしたファイルを起動する
@@ -2442,6 +2458,7 @@ These settings can be used to flag result items containing reflections of the su
 These settings can be used to flag result items containing specified expressions.	指定した正規表現を含む結果にフラグをセットする設定です。
 These settings control how Burp binds the proxy listener.	プロキシリスナーのバインド方法を制御します。
 These settings control how Burp handles different character sets when displaying raw HTTP messages. Note that some glyphs are not supported by all fonts. If you need to use an extended or unusual character set, you should first try a system font such as Courier New or Dialog.	生HTTPメッセージを表示する際に異なる文字セットの扱い方を設定します。一部の字形はすべてのフォントでサポートされていないことに注意してください。拡張または異常な文字セットを使用する場合は、Courier NewやDialogなどのシステムフォントをまず試してみてください。
+These settings control how Burp handles extensions on startup.	起動時の拡張の処理方法を設定します。
 These settings control how Burp handles in-tool rendering of HTML content.	ツール内でのHTMLコンテンツのレンダリングの設定です。
 These settings control how Burp handles redirections when performing attacks.	攻撃中のリダイレクトの処理を設定します。
 These settings control how the discovery session adds file extensions to file stems that are being tested.	探索セッションが、テストされているファイル名に拡張子を追加する方法を設定します。
