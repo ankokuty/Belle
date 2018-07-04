@@ -250,6 +250,7 @@ April	4月
 Are you sure you want to add this item to the site map\\?	このアイテムをサイトマップに追加してもよろしいですか？
 Are you sure you want to cancel the download\\?	ダウンロードをキャンセルしてよろしいですか？
 Are you sure you want to cancel the import\\?	インポートをキャンセルしてよろしいですか？
+Are you sure you want to cancel this macro\\?	このマクロをキャンセルしてよろしいですか？
 Are you sure you want to cancel this rule\\?	このルールをキャンセルしてよろしいですか？
 Are you sure you want to cancel this streaming response\\?	ストリーミングレスポンスをキャンセルしてよろしいですか？
 Are you sure you want to cancel\\?	キャンセルしてよろしいですか？
@@ -384,6 +385,7 @@ Automatic BApp updates	自動BAppアップデート
 Automatic Project Backup \\[disk projects only\\]	自動プロジェクトバックアップ[ディスクプロジェクトのみ]
 Automatic [Pp]roject [Bb]ackup	自動プロジェクトバックアップ
 Automatic backup ([0-9]+)% complete	自動バックアップ$1%完了
+Automatic backup failed	自動バックアップ失敗
 Automatic payload positions	自動ペイロードポジション
 Automatic project backup saves a copy of the Burp project file periodically in the background.	自動プロジェクトバックアップは、バックグラウンドで定期的にプロジェクトファイルのコピーを保存します。
 Automatically add entries on client SSL negotiation failure	クライアントがSSL接続に失敗したエントリーを自動的に追加する
@@ -402,6 +404,7 @@ Automatically update Content-Length header when the response is edited	レスポ
 Automatically update installed BApps on startup	インストールされたBAppsを起動時に自動アップデートする
 Back	戻る
 Backup Interval	バックアップ間隔
+Backup file: 	バックアップファイル: 
 Base request	元リクエスト
 Base response	元レスポンス
 Base string:	元文字列:
@@ -523,7 +526,7 @@ Choose a file to save the configuration to	設定を保存するファイルを�
 Choose a file to save to	保存するファイルを選択してください
 Choose a log file	ログファイルを選択してください
 Choose a preset scheme	定義済み形式を選択
-Choose an attack to open	オープンする攻撃を選択してください
+Choose an attack to open	開く攻撃を選択してください
 Choose an empty directory to save responses to	レスポンスを保存する空のディレクトリを選択してください。
 Choose file...	ファイル選択...
 Choose folder ...	フォルダ選択 ...
@@ -685,7 +688,7 @@ Create a new rule	新規ルールを作成
 Credit card numbers disclosed(\\s+\\[[0-9]+\\])?	クレジットカード番号漏洩$1
 Cross-domain POST(\\s+\\[[0-9]+\\])?	クロスドメインのPOST$1
 Cross-domain Referer leakage(\\s+\\[[0-9]+\\])?	クロスドメインのReferer漏洩$1
-Cross-domain XHR (modern browsers only)	クロスドメインXHR(モダンなブラウザのみ)
+Cross-domain XHR \\(modern browsers only\\)	クロスドメインXHR(最新ブラウザのみ)
 Cross-domain script include(\\s+\\[[0-9]+\\])?	クロスドメインのスクリプト読み込み$1
 Cross-origin resource sharing(\\s+\\[[0-9]+\\])?	クロスオリジンのリソース共有$1
 Cross-origin resource sharing: all subdomains trusted(\\s+\\[[0-9]+\\])?	クロスオリジンのリソース共有: 全てのサブドメインを信頼$1
@@ -917,6 +920,7 @@ Enter license key	ライセンスキーを入力してください
 Enter master password	マスターパスワードを入力してください
 Enter number of cells to delete	削除するセル数を入力してください
 Enter number of cells to insert	挿入するセル数を入力してください
+Enter password	パスワード入力
 Enter regex or leave blank	正規表現で入力、または空白のまま
 Enter regex, IP range or leave blank	正規表現かIPレンジを入力、または空白のまま
 Enter the PIN code for your hardware token or smart card.	ハードウェアトークンやスマートカードのPINコードを入力してください。
@@ -1011,7 +1015,7 @@ Failed to save project.	プロジェクトの保存ができません。
 Failed to update BApp list	BAppリストを更新できません
 Failed to verify BApp file	BAppファイルの検証ができません
 False positive	誤検知
-Fast	早い
+Fast	高速
 February	2月
 Feedback only contains technical information about Burp's internal functioning, and does not identify you in any way. If you do report a bug via email, you can help us diagnose any problems that your instance of Burp has encountered by including your debug ID.	フィードバックにはBurpの内部機能に関する技術情報のみが含まれ、あなたの識別はできません。バグを電子メールで報告する場合、あなたのデバッグIDを含めると、発生した問題の診断の助けになります。
 Fetch response	レスポンス取得
@@ -1020,6 +1024,7 @@ Field name(:?)	フィールド名$1
 Field value(:?)	フィールド値$1
 File [Ee]xtensions?	ファイル拡張子
 File \\(PKCS#12\\)	ファイル(PKCS#12)
+File details:	ファイル詳細:
 File does not exist	ファイルが存在しません
 File for recovered project	復元後のプロジェクトファイル
 File path manipulation(\\s+\\[[0-9]+\\])?	ファイルパスマニピュレーション$1
@@ -1462,11 +1467,13 @@ Manually select library:	ライブラリを選択する:
 Map ([0-9])	マップ$1
 March	3月
 Master interception is turned off     	マスターインターセプションがオフになっています     
+Master password:	マスターパスワード:
 Match	一致条件
 Match / replace in list items	リストアイテムの検索と置換
 Match against pre-URL-encoded payloads	URLエンコード前のペイロードとマッチする
 Match and Replace	検索と置換
 Match character:	検索文字:
+Match condition cannot be blank	検索文字列は空白にできません
 Match condition:	検索条件:
 Match expression:	検索正規表現:
 Match indicates:	一致時の判断:
@@ -1510,6 +1517,7 @@ Minutes	分
 Minutes between backups:	バックアップ間隔(分):
 Misc	その他
 Miscellaneous	その他
+Missing help	不足したヘルプ
 Mixed content(\\s+\\[[0-9]+\\])?	混合コンテンツ$1
 Modified value:	操作値:
 Modify case	大文字小文字変換
@@ -1776,6 +1784,7 @@ Private key disclosed(\\s+\\[[0-9]+\\])?	秘密鍵漏洩$1
 Private key in DER format	DER形式の秘密鍵
 Process cookies in redirections	リダイレクト中にcookieを処理する
 Project file (.*) already exists, do you want to overwrite it\\?	プロジェクトファイル $1  は既に存在しています、上書きしてよろしいですか？
+Project file: 	プロジェクトファイル: 
 Project options	プロジェクトオプション
 Project saved successfully.	プロジェクトを正常に保存しました。
 Prominently highlight unhidden fields	強制表示フィールドを強調表示する
@@ -1795,6 +1804,7 @@ Proxy host, leave blank to connect directly	プロキシホスト, 直接接続�
 Proxy interception help	Proxyインターセプトヘルプ
 Proxy port(:?)	プロキシポート$1
 Purchase Burp Suite Professional	Burp Suiteプロフェッショナル版を購入する
+Purpose:	目的:
 Python Environment	Python環境
 Python code injection(\\s+\\[[0-9]+\\])?	Pythonコードインジェクション$1
 Queued Tasks	キューされたタスク
@@ -1813,6 +1823,7 @@ Recognize automatically based on message headers	メッセージヘッダから�
 Record a new macro	新規マクロを記録
 Record macro	マクロを記録
 Record the macro items	マクロアイテムを記録
+Recovering project data	プロジェクトデータ復元中
 Recovering project data ([0-9]+)% complete	プロジェクトデータの復元$1%完了
 Recurse subdirectories	サブディレクトリを再帰的に探索
 Recursive grep	再帰検索
@@ -2092,7 +2103,7 @@ Save user interface options	ユーザインタフェースオプションを保�
 Save user options	ユーザオプション保存
 Saved preferences	保存した設定
 Saving project ([0-9]+)% complete	プロジェクト保存中: $1%完了
-Saving project...	プロジェクト保存中...
+Saving project(\.\.\.)?	プロジェクト保存中$1
 Saving: ([0-9]+)% complete	保存中: $1%完了
 Scan Issues	スキャン項目
 Scan accuracy:	スキャン精度:
@@ -2259,6 +2270,7 @@ Some items could not be cleaned up.	一部のアイテムを削除できませ�
 Some macros are being used by session handling rules and cannot be deleted.	一部のマクロはセッションハンドリングルールで使用されているため削除できません。
 Some of these items are outside the current spidering scope. Would you like to modify the scope to include the items\\?	これらのアイテムの一部は、現在の巡回スコープ外です。このアイテムを含むようスコープを修正しますか？
 Some of these items are outside the current target scope. Are you sure you want to perform an active scan\\?	これらのアイテムの一部は現在の対象スコープ外です。アクティブスキャンを実行してよろしいですか？
+Some passwords were encrypted using a different master password. Please enter the master password for the following configuration.	一部のパスワードは別のマスターパスワードで暗号化されています。以下の設定のマスターパスワードを入力してください。
 Source	ソース
 Source code disclosure(\\s+\\[[0-9]+\\])?	ソースコード漏洩$1
 Source:	ソースコード:
@@ -2529,6 +2541,7 @@ This will close all Burp projects and shutdown - are you sure you want to exit\\
 This will close all Burp windows - are you sure you want to exit\\?	Burpのすべてのウィンドウを閉じます - 終了してよろしいですか？
 This will enable other network users to use the proxy and view the proxy history.	他のネットワークユーザがプロキシを利用し、プロキシの履歴を閲覧できるようになります。
 This will exit the current attack	現在の攻撃を終了します
+This will update the requests and responses in the macro definition with those made in this test. Are you sure you want to proceed\\?	このテストで生成されたリクエストとレスポンスがマクロ定義で更新されます。継続してよろしいですか？
 This wizard lets you remove certain information which Burp saves on your computer. Choose which items you would like to remove.	このウィザードで、Burpがコンピュータに保存した特定の情報を削除します。削除したいアイテムを選択してください。
 Thorough	徹底的
 Throttle \\(milliseconds\\):	ウェイト(ミリ秒):
@@ -2599,6 +2612,7 @@ URL-encode as you type	入力をURLエンコード
 URL-encode key characters	特殊文字をURLエンコード
 URL-encode these characters:	これらの文字をURLエンコードする:
 URL-encoded form	URLエンコードフォーム
+Unable to load help - please email support@portswigger.net with details, including the location of this help button.	ヘルプを読み込めません - このヘルプボタンの場所など詳細をsupport@portswigger.netまでメールしてください。
 Unable to load library - check file is correct and device is installed	ライブラリを読み込めません - ファイルが正しいか、デバイスがインストールされているかチェックしてください
 Unauthorized Response	未認可のレスポンス
 Uncheck all	すべて解除
@@ -2674,6 +2688,7 @@ Use these settings to control which requests are stalled for viewing and editing
 Use these settings to control which responses are stalled for viewing and editing in the Intercept tab.	インターセプトタブで止めて、表示や編集をするレスポンスを制御します。
 Use these settings to monitor and control Burp Spider. To begin spidering, browse to the target application, then right-click one or more nodes in the target site map, and choose "Spider this host / branch".	Burp Spiderの監視と制御を行います。巡回を開始するには、対象アプリケーションをブラウズし、サイトマップで対象の一つまたは複数のノードを右クリックし、"このホスト/ブランチをSpider実行"を選択してください。
 Use these settings to monitor and control the discovery session.	探索セッションの監視と制御を行います。
+Use this for other configurations	他の設定でも利用する
 Use this function to test the macro and determine whether it is working as required.	この機能を使用してマクロをテストし、要求通りに動作しているかどうか確認します。
 User Interface	ユーザインタフェース
 User agent-dependent response(\\s+\\[[0-9]+\\])?	ユーザエージェントに依存したレスポンス$1
@@ -2696,6 +2711,7 @@ Vulnerability classifications \\[where applicable\\]	脆弱性の分類 [該当�
 Waiting	待機中
 Waiting to pause	一時停止しています
 Warning	注意
+Warning: The XmlHttpRequest technique only works on modern browsers, and the browser will not display the response to the CSRF request. The request contains some non-standard headers which, if included in a cross-domain XHR, may cause the request to be pre-flighted, and so the attack may fail. These headers have been omitted in the PoC attack, to avoid pre-flighting. If the omitted headers are essential for the efficacy of the CSRF attack, you can manually add these to the PoC HTML.	注: XmlHttpRequest手法は最新のブラウザでのみ動作し、ブラウザはCSRFリクエストのレスポンスを表示しません。クロスドメインのXHRでリクエストに非標準ヘッダがが含まれている場合、プリフライトリクエストが発生し、攻撃は失敗する可能性があります。プリフライトを避けるためにこれらのヘッダは省略されています。有効なCSRF攻撃に省略されたヘッダが不可欠な場合は、PoC HTMLに手動で追加できます。
 Warning: This tracer imposes a processing and storage overhead, and should only be used when troubleshooting issues with session handling rules.	警告:　このトレーサは処理とストレージに負荷をかけるので、セッションハンドリングルールのトラブルシューティングのみに使用すべきです。 
 Was annotated	注釈付き
 Was intercepted	インターセプトされた
