@@ -14,8 +14,8 @@ Belle (Burp Suite 非公式日本語化ツール)
 
 ### インストーラーを使ってBurp Suiteをインストールした場合
 
-belle.jar と ja.txt　と javassist.jar の３つのファイルをダウンロードし、Burp Suiteがインストールされているフォルダにコピーします。
-インストール時に変更していなければ、``C:\Program Files\BurpSuiteFree`` や``C:\Program Files\BurpSuitePro``にあると思います。
+[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のBelle.zipをダウンロードし、展開した結果得られるbelle.jar と ja.txt、及び上記[javassist.jar](https://github.com/jboss-javassist/javassist/raw/rel_3_21_0_ga/javassist.jar)を、Burp Suiteがインストールされているフォルダにコピーします。
+インストール時に変更していなければ、``C:\Program Files\BurpSuiteCommunity`` や``C:\Program Files\BurpSuitePro``にあると思います。
 
 BurpSuiteFree.vmoptions か BurpSuitePro.vmoptions ファイルをエディタで開き、１行追記します。
 
@@ -30,11 +30,13 @@ BurpSuiteFree.vmoptions か BurpSuitePro.vmoptions ファイルをエディタ�
 -javaagent:belle.jar
 ```
 
-通常通り、スタートメニューのショートカット等から起動します。
+なお秀丸32bit版などではVirtualStoreにより、ファイルの編集がうまく反映されない場合があるようです。管理者権限でメモ帳を起動し、ファイルを編集してみてください。
+BurpSuiteCommunity
+編集後、通常通りスタートメニューのショートカット等から起動します。
 
 ### Burp Suiteのjarファイルを任意の場所にインストールした場合
 
-belle.jar と ja.txt　と javassist.jar の３つのファイルをダウンロードし、Burpのjarファイル(`burpsuite_free_v1.7.06.jar`等)と同じフォルダにコピーします。
+[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のBelle.zipをダウンロードし、展開した結果得られるbelle.jar と ja.txt、及び上記[javassist.jar](https://github.com/jboss-javassist/javassist/raw/rel_3_21_0_ga/javassist.jar)を、Burpのjarファイル(`burpsuite_free_v1.7.06.jar`等)と同じフォルダにコピーします。
 
 Burpのjarファイルがあるフォルダに移動し、(-jar オプションより前に) -javaagentコマンドラインオプションを指定して起動します。
 
@@ -44,7 +46,7 @@ java -javaagent:belle.jar -Xmx1024m -jar burpsuite_free_v1.7.06.jar
 
 ### アップデート方法
 
-インストール時にコピーした、belle.jar と ja.txt　と javassist.jar の３つのファイルを上書きコピーし、Burp Suiteを再起動してください。
+[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のBelle.zipをダウンロードし、belle.jarとja.txtを上書きコピーし、Burp Suiteを再起動してください。
 
 ### その他
 
