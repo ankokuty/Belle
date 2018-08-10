@@ -2939,3 +2939,5 @@ transition from (.) to (.) is too common at position ([0-9]+) \(count: ([0-9]+),
 transition from (.) to (.) is too rare at position ([0-9]+) \(count: ([0-9]+), probability in a random sample: ([0-9.]+)%\)	文字位置$3で $1 から $2への遷移が起こらなすぎです (回数: $4, ランダムサンプル中の確率: $5%)
 transition from (.) to (.) is too rare at position ([0-9]+) \(count: ([0-9]+), probability in a random sample: less than 0.0001%\)	文字位置$3で $1 から $2への遷移が起こらなすぎです (回数: $4, ランダムサンプル中の確率: 0.0001%未満)
 unknown	不明
+Request URL override(\s+\[[0-9]+\])?	リクエストURLの上書き$1
+Web cache posoning(\s+\[[0-9]+\])?	Webキャッシュ汚染$1
