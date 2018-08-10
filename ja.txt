@@ -1919,6 +1919,7 @@ Request	リクエスト
 Request ([0-9]+)	リクエスト$1
 Request Engine	リクエストエンジン
 Request Matching	リクエストマッチ
+Request URL override(\s+\[[0-9]+\])?	リクエストURLの上書き$1
 Request [Hh]eaders?	リクエストヘッダ
 Request body	リクエストボディ
 Request count:	リクエスト数:
@@ -2719,6 +2720,7 @@ Was modified	変更された
 Was not annotated	注釈なし
 Was not intercepted	インターセプトされなかった
 Was not modified	変更されなかった
+Web cache posoning(\s+\[[0-9]+\])?	Webキャッシュ汚染$1
 WebSocket hijacking \\(DOM-based\\)(\\s+\\[[0-9]+\\])?	WebSocketハイジャック(DOMベース)$1
 WebSocket hijacking \\(reflected DOM-based\\)(\\s+\\[[0-9]+\\])?	WebSocketハイジャック (反射型DOMベース)$1
 WebSocket hijacking \\(stored DOM-based\\)(\\s+\\[[0-9]+\\])?	WebSocketハイジャック (蓄積型DOMベース)$1
