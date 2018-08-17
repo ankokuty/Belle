@@ -3,21 +3,21 @@
  Modified 	 変更 
  \.\.\. and ([,0-9]+) more.	 ... その他$1件
 $1000	¥30000
-(.*)A backup of the project has been found, please indicate whether you would like to attempt a repair of the project or open the backup\.(.*)	$1プロジェクトのバックアップが見つかりました。プロジェクトの修復を試みるか、バックアップファイルを開くか指定してください。$2
-(.*)Because some character positions within the sample use character sets whose size is not a round power of two, ([,0-9.]+) bits of data were compressed into other bits derived from the same character position.(.*)	$1サンプル内の一部の文字位置は2の累乗のサイズではない文字セットを使用するので、データの$2ビットは同じ文字位置から派生した他のビットに圧縮されました。$3
-(.*)Burp will attempt to repair the project file\.(.*)	$1Burpはプロジェクトファイルの修復を試みます。$2
-(.*)However, an overly short longest run of bits also indicates that the sample is not random\.(.*)	$1しかしながら、短すぎるビットの最長連も、サンプルがランダムでないことを示します。$2
-(.*)Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long.(.*)	$1このテストのFIPS仕様では、ビットの最長連が長すぎる場合にのみ、失敗となることに注意してください。$2
-(.*)Please select the file for the recovered project\.(.*)	$1復元後のプロジェクトファイルの保存先を選択してください。$2
-(.*)Please select the file for the repaired project\.(.*)	$1修復後のプロジェクトファイルの保存先を選択してください。$2
-(.*)The chart shows the number of bits contributed by each character position.	$1グラフでは、各文字位置が貢献したビット数を示しています。
-(.*)The overall bit counts for effective entropy have been adjusted to reflect this compression.(.*)	$1有効なエントロピーの全体ビットのカウントは、この圧縮を反映するように調整されています。$2
-(.*)The selected file does not appear to be a Burp project file and cannot be opened\.(.*)	$1選択したファイルはBurpプロジェクトファイルではないと思われるため開けません。$2
-(.*)The selected project file appears to be corrupt and cannot be opened\.(.*)	$1選択したプロジェクトは破損していて開けません。$2
-(.*)Therefore some bits may record a significance level that is below the FIPS pass level even though they do not strictly fail the FIPS test.	$1したがって一部のビットでは、厳密なFIPSテストに不合格でないにもかかわらず、FIPS合格レベルを下回る有意水準になる場合があります。
-(.*)This will create a new project file that can be opened safely, and will preserve as much data as possible from the original file\.(.*)	$1これにより、安全に開ける新しいプロジェクトファイルが作成され、元のファイルからできるだけ多くのデータを保存します。$2
-(.*)This will create a new project file that can be opened safely, and will recover as much data as possible from the original file\.(.*)	$1これにより、安全に開ける新しいプロジェクトファイルが作成され、元のファイルからできるだけ多くのデータを復元します。$2
-(.*)You can attempt to recover project data from the file if you believe it is actually a Burp project file.(.*)	$1実際はBurpプロジェクトファイルの場合、プロジェクトデータの復元を試行できます。$2
+A backup of the project has been found, please indicate whether you would like to attempt a repair of the project or open the backup.	プロジェクトのバックアップが見つかりました。プロジェクトの修復を試みるか、バックアップファイルを開くか指定してください。
+Because some character positions within the sample use character sets whose size is not a round power of two, ([,0-9.]+) bits of data were compressed into other bits derived from the same character position.	サンプル内の一部の文字位置は2の累乗のサイズではない文字セットを使用するので、データの$1ビットは同じ文字位置から派生した他のビットに圧縮されました。
+Burp will attempt to repair the project file.	Burpはプロジェクトファイルの修復を試みます。
+However, an overly short longest run of bits also indicates that the sample is not random.	しかしながら、短すぎるビットの最長連も、サンプルがランダムでないことを示します。
+Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long.	このテストのFIPS仕様では、ビットの最長連が長すぎる場合にのみ、失敗となることに注意してください。
+Please select the file for the recovered project.	復元後のプロジェクトファイルの保存先を選択してください。
+Please select the file for the repaired project.	修復後のプロジェクトファイルの保存先を選択してください。
+The chart shows the number of bits contributed by each character position.	グラフでは、各文字位置が貢献したビット数を示しています。
+The overall bit counts for effective entropy have been adjusted to reflect this compression.	有効なエントロピーの全体ビットのカウントは、この圧縮を反映するように調整されています。
+The selected file does not appear to be a Burp project file and cannot be opened.	選択したファイルはBurpプロジェクトファイルではないと思われるため開けません。
+The selected project file appears to be corrupt and cannot be opened.	選択したプロジェクトは破損していて開けません。
+Therefore some bits may record a significance level that is below the FIPS pass level even though they do not strictly fail the FIPS test.	したがって一部のビットでは、厳密なFIPSテストに不合格でないにもかかわらず、FIPS合格レベルを下回る有意水準になる場合があります。
+This will create a new project file that can be opened safely, and will preserve as much data as possible from the original file.	これにより、安全に開ける新しいプロジェクトファイルが作成され、元のファイルからできるだけ多くのデータを保存します。
+This will create a new project file that can be opened safely, and will recover as much data as possible from the original file.	これにより、安全に開ける新しいプロジェクトファイルが作成され、元のファイルからできるだけ多くのデータを復元します。
+You can attempt to recover project data from the file if you believe it is actually a Burp project file.	実際はBurpプロジェクトファイルの場合、プロジェクトデータの復元を試行できます。
 (.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?(HTML|script|XML|CSS|flash) content(.*)	$1$2$3$4$5$6を非表示$7
 (.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?flash and general binary content(.*)	$1$2$3$4$5flash, バイナリ全般を非表示$6
 (.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?general binary content(.*)	$1$2$3$4$5バイナリ全般を非表示$6
@@ -464,8 +464,8 @@ Built-in long directory list	組み込みの長いディレクトリ名リスト
 Built-in long file list	組み込みの長いファイル名リスト
 Built-in short directory list	組み込みの短いディレクトリ名リスト
 Built-in short file list	組み込みの短いファイル名リスト
-Burp Clickbandit is a tool for generating clickjacking attacks. When you have found a web page that may be vulnerable to clickjacking, you can use Burp Clickbandit to create an attack, and confirm that the vulnerability can be successfully exploited.	Burp Clickbanditはクリックジャッキング攻撃を生成するツールです。クリックジャッキングに脆弱なWebページを見つけた場合、Burp Clickbanditを使用して攻撃を作成し、脆弱性の悪用が成功するか確認できます。
-Burp Clickbandit runs in your browser using JavaScript. It works on all modern browsers except for Microsoft IE and Edge. To run Burp Clickbandit, use the following steps:	Burp Clickbanditはブラウザ内でJavaScriptを使用して動作します。Microsoft IEとEdgeを除くすべてのモダンなブラウザで動作します。Burp Clickbanditを実行するには、次の手順を使用します:
+(.*)Burp Clickbandit is a tool for generating clickjacking attacks\. When you have found a web page that may be vulnerable to clickjacking, you can use Burp Clickbandit to create an attack, and confirm that the vulnerability can be successfully exploited\.(.*)	$1Burp Clickbanditはクリックジャッキング攻撃を生成するツールです。クリックジャッキングに脆弱なWebページを見つけた場合、Burp Clickbanditを使用して攻撃を作成し、脆弱性の悪用が成功するか確認できます。$2
+(.*)Burp Clickbandit runs in your browser using JavaScript\. It works on all modern browsers except for Microsoft IE and Edge\. To run Burp Clickbandit, use the following steps:(.*)	$1Burp Clickbanditはブラウザ内でJavaScriptを使用して動作します。Microsoft IEとEdgeを除くすべての最新ブラウザで動作します。Burp Clickbanditを実行するには、次の手順を使用します:$2
 Burp Collaborator Health Check	Burp Collaboratorヘルスチェック
 Burp Collaborator Server	Burp Collaboratorサーバ
 Burp Collaborator client	Burp Collaboratorクライアント
@@ -936,7 +936,7 @@ Edited request	編集後リクエスト
 Edited response	編集後レスポンス
 Effective Entropy	有効なエントロピー
 Email addresses disclosed(\s+\[[0-9]+\])?	メールアドレス漏洩$1
-Embed images within HTML (requires modern browser)	HTML内への画像埋め込み (モダンなブラウザが必要)
+Embed images within HTML (requires modern browser)	HTML内への画像埋め込み (最新のブラウザが必要)
 Empty cookie jar	cookie jarを空に
 Enable algorithms blocked by Java security policy (requires restart)	Javaセキュリティポリシーでブロックされたアルゴリズムを有効にする(要再起動)
 Enable automatic project backup	自動プロジェクトバックアップを有効化する
@@ -2236,7 +2236,7 @@ Search completed [dynamic search active]	検索完了 [ダイナミックサー�
 Search options	検索オプション
 Search responses for payload strings	ペイロード文字列のレスポンスを探す
 Searching:(.*)	検索中:$1
-See the documentation for more details on using Burp Clickbandit.	Burp Clickbanditの使用方法に関する詳細はドキュメントを参照してください。
+(.*)See the documentation for more details on using Burp Clickbandit\.(.*)	$1Burp Clickbanditの使用方法に関する詳細はドキュメントを参照してください。$2
 Select BApp File	BAppファイルを選択してください
 Select Live Capture Request	ライブキャプチャリクエスト選択
 Select a directory	ディレクトリ選択
@@ -2941,3 +2941,8 @@ transition from (.) to (.) is too rare at position ([0-9]+) \(count: ([0-9]+), p
 unknown	不明
 Request URL override(\s+\[[0-9]+\])?	リクエストURLの上書き$1
 Web cache posoning(\s+\[[0-9]+\])?	Webキャッシュ汚染$1
+Save scan issue options	スキャン項目オプションを保存する
+Load scan issues options	スキャン項目オプションを読み込む
+Save active scanning optimization options	アクティブスキャン最適化オプションを保存する
+Are you sure you want to restore default scan issues options?	スキャン項目オプションをデフォルトに戻してよろしいですか？
+File was downloaded successfully.	ファイルを正常にダウンロードしました。

@@ -28,7 +28,16 @@ public class Translator {
 		if ((str == null) || (str.length() == 0)) {
 			return str;
 		}
-		return translator.translate(str);
+
+		StringBuilder ret = new StringBuilder();
+		for(String s : str.split("\n")) {
+			if(ret.length()>0) {
+				ret.append("\n");
+			}
+			ret.append(translator.translate(s));
+		}
+		
+		return ret.toString();
 	}
 
 	Translator(String langfile) throws Exception {
