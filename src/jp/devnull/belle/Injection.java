@@ -30,8 +30,7 @@ public class Injection {
 				// テーブルの中身など一部は翻訳しない
 				outer.append("if ("
 						+ "(javax.swing.table.DefaultTableCellRenderer.class.isAssignableFrom($0.getClass())"
-						+ "  && !sun.swing.table.DefaultTableCellHeaderRenderer.class.isAssignableFrom($0.getClass())"
-						+ ") || javax.swing.DefaultListCellRenderer.class.isAssignableFrom($0.getClass())"
+						+ "  && !sun.swing.table.DefaultTableCellHeaderRenderer.class.isAssignableFrom($0.getClass()))"
 						+ "  || javax.swing.text.DefaultStyledDocument.class.isAssignableFrom($0.getClass())"
 						+ "  || javax.swing.tree.DefaultTreeCellRenderer.class.isAssignableFrom($0.getClass())"
 						+ "  || $0.getClass().getName().equals(\"javax.swing.plaf.synth.SynthComboBoxUI$SynthComboBoxRenderer\")) {} else");
