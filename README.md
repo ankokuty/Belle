@@ -31,7 +31,6 @@ BurpSuiteFree.vmoptions か BurpSuitePro.vmoptions ファイルをエディタ�
 ```
 
 なお秀丸32bit版などではVirtualStoreにより、ファイルの編集がうまく反映されない場合があるようです。管理者権限でメモ帳を起動し、ファイルを編集してみてください。
-BurpSuiteCommunity
 編集後、通常通りスタートメニューのショートカット等から起動します。
 
 ### Burp Suiteのjarファイルを任意の場所にインストールした場合
