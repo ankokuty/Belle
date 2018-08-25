@@ -88,7 +88,7 @@ $1000	¥30000
 ([0-9]+) tokens were padded with (.*) at the end.	$1トークンは末尾を$2でパディングされました。
 ([0-9]+) tokens were padded with (.*) at the start.	$1トークンは先頭を$2でパディングされました。
 ([0-9]+)% complete	$1%完了
-([0-9]+)\. Crawl and audit of (.*)	$1. $2の巡回と診断
+([0-9]+)\. Crawl and audit of (.*)	$1. $2のクロールと診断
 ([0-9]+)\. Live audit from Proxy \(all traffic\)	$1. Proxyからライブ診断 (全トラフィック)
 ([0-9]+)\. Live passive crawl from Proxy \(all traffic\)	$1. Proxyからライブパッシブクロール (全トラフィック)
 ([0-9]+)h ([0-9]+)m ([0-9]+)s	$1時間 $2分 $3秒
@@ -378,6 +378,7 @@ Are you sure you want to shut down Burp and run the new version?	Burpをシャ�
 Are you sure you want to stop?	停止してよろしいですか？
 Are you sure you want to unload ("[^"]+")\?	$1をアンロードしてよろしいですか？
 At a significance level of 1%, the amount of effective entropy is estimated to be: ([0-9]+) bits.	1%の有意水準において、有効なエントロピー量の推測は次の通りです: $1 ビット。
+At least one URL to scan must be specified.	スキャンするURLを少なくとも1つは指定してください。
 At least one kind of analysis must be selected	少なくとも１種類の解析を選択する必要があります。
 Attack	攻撃
 Attack Insertion Points	攻撃挿入ポイント
@@ -399,7 +400,7 @@ Auditing. ([0-9]+)s remaining	診断中. 残り$1秒
 Auditing. Estimating time remaining...	診断中. 残り時間見積中...
 August	8月
 Auth type	認証タイプ
-Authenticated crawl (random). Estimating time remaining...	認証状態の巡回 (ランダム). 残り時間見積中...
+Authenticated crawl (random). Estimating time remaining...	認証状態のクロール (ランダム). 残り時間見積中...
 Authentication Required	認証が必要です
 Authentication required	認証が必要です
 Authentication type:	認証タイプ:
@@ -425,7 +426,7 @@ Automatically add entries on client SSL negotiation failure	クライアント�
 Automatically back up the project every	自動的なプロジェクトのバックアップ間隔
 Automatically fix missing or superfluous new lines at end of request	リクエスト最後の不足または余分な改行を自動補正する
 Automatically locate library	ローカルライブラリから自動的に探す
-Automatically maintain session (only applies to crawl-driven audits)	セッションを自動的に維持する (巡回駆動の診断にのみ適用)
+Automatically maintain session (only applies to crawl-driven audits)	セッションを自動的に維持する (クロール駆動の診断にのみ適用)
 Automatically reload extensions on startup	起動時に拡張を自動的に再読み込みする
 Automatically scan the following targets as you browse. Active scan checks send various malicious requests designed to identify common vulnerabilities. Use with caution.	以下の対象をブラウズすると自動的にスキャンを実行します。アクティブスキャンチェックは、様々な悪意のあるリクエストを送信し、一般的な脆弱性を発見しようとします。注意して使用してください。
 Automatically scan the following targets as you browse. Passive scan checks analyze your existing traffic for evidence of vulnerabilities, and do not send any new requests to the target.	以下の対象をブラウズすると自動的にスキャンを実行します。パッシブスキャンチェックは、既存のトラフィックを脆弱性の証拠として分析し、ターゲットに新しいリクエストは送信しません。
@@ -757,15 +758,15 @@ Could not load configuration from (.*)	設定を $1 から読み込めません
 Could not obtain lock on file: (.*)	ファイルのロックを取得できませんでした: $1
 Count	数
 Crawl	クロール
-Crawl Limits	巡回制限
-Crawl Optimization	巡回の最適化
+Crawl Limits	クロール制限
+Crawl Optimization	クロールの最適化
 Crawl and audit	クロールと診断
-Crawl finished	巡回完了
-Crawl strategy tuning	巡回戦略のチューニング
-Crawl strategy:	巡回戦略:
+Crawl finished	クロール完了
+Crawl strategy tuning	クロール戦略のチューニング
+Crawl strategy:	クロール戦略:
 Crawler Settings	クローラー設定
-Crawling	巡回
-Crawling modern applications is sometimes an open-ended exercise, due to the amount of stateful functionality, volatile content, and unbounded navigation. Burp's crawler uses various techniques to maximise discovery of unique content early in the crawl. These settings let you impose a limit on the extent of the crawl, as it reaches the point of diminishing returns. You can leave any crawl limit setting blank to disable it.	最新アプリケーションの巡回は、ステートフルな機能、不安定なコンテンツ、および無制限のナビゲーションのおかげで、終わりがない場合があります。Burpのクローラは様々な手法を使用して、ユニークなコンテンツを巡回の初期段階で最大限発見しようとします。これらの設定では、巡回範囲に制限がかけられます。巡回制限を空白にしておくと、無効にできます。
+Crawling	クロール
+Crawling modern applications is sometimes an open-ended exercise, due to the amount of stateful functionality, volatile content, and unbounded navigation. Burp's crawler uses various techniques to maximise discovery of unique content early in the crawl. These settings let you impose a limit on the extent of the crawl, as it reaches the point of diminishing returns. You can leave any crawl limit setting blank to disable it.	最新アプリケーションのクロールは、ステートフルな機能、不安定なコンテンツ、および無制限のナビゲーションのおかげで、終わりがない場合があります。Burpのクローラは様々な手法を使用して、ユニークなコンテンツをクロールの初期段階で最大限発見しようとします。これらの設定では、クロール範囲に制限がかけられます。クロール制限を空白にしておくと、無効にできます。
 Create a new rule	新規ルールを作成
 Create new resource pool	新しいリソースプールを作成する
 Create new task	新規タスクを作成
@@ -789,7 +790,7 @@ Cross-site scripting \(stored DOM-based\)(\s+\[[0-9]+\])?	クロスサイトス�
 Cross-site scripting \(stored\)(\s+\[[0-9]+\])?	クロスサイトスクリプティング(蓄積型)$1
 Current Action	現在のアクション
 Current auditing configuration	現在の診断設定
-Current live passive crawling configuration	現在のライブパッシブ巡回設定
+Current live passive crawling configuration	現在のライブパッシブクロール設定
 Current project file selected	現在のプロジェクトファイルが選択されました
 Custom	カスタム
 Custom directory list:	カスタムディレクトリリスト:
@@ -800,7 +801,7 @@ Custom parameter locations in response	レスポンス内のカスタムパラ�
 Custom scope	カスタムスコープ
 Custom scope: Pasted value is not a valid URL	カスタムスコープ: 貼り付けた値は有効なURLではありません
 Custom:	カスタム:
-Customize crawl strategy (use with caution)	巡回戦略をカスタマイズする(使用注意)
+Customize crawl strategy (use with caution)	クロール戦略をカスタマイズする(使用注意)
 Cut	切り取り
 DOM data manipulation \(DOM-based\)(\s+\[[0-9]+\])?	DOMデータ操作 (DOMベース)$1
 DOM data manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	DOMデータ操作 (反射型DOMベース)$1
@@ -825,7 +826,7 @@ Define custom token location	トークン位置のカスタム定義
 Define extract grep from response	レスポンスから抽出grepを定義
 Define extract grep item	抽出grepアイテムの定義
 Define start and end	開始と終了を定義
-Define the URLs to scan. Burp will begin crawling from these URLs, and by default will include everything beneath the specified URLs' folders.	スキャンするURLを定義BurpはこれらのURLから巡回を開始し、デフォルトでは指定されたURLフォルダ以下の全てが含まれます。
+Define the URLs to scan. Burp will begin crawling from these URLs, and by default will include everything beneath the specified URLs' folders.	スキャンするURLを定義BurpはこれらのURLからクロールを開始し、デフォルトでは指定されたURLフォルダ以下の全てが含まれます。
 Define the in-scope targets for your current work. This configuration affects the behavior of tools throughout the suite. The easiest way to configure scope is to browse to your target and use the context menus in the site map to include or exclude URL paths.	現在の作業でスコープ内とするターゲットを定義します。この設定は、ツール全体の動作に影響します。ターゲットをブラウザで参照し、サイトマップのコンテキストメニューでURLパスを含めるまたは除外すると、スコープ設定が簡単です。
 Define the location of the item to be extracted. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	抽出するアイテムの場所を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
 Define the location of the parameter value. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	パラメータ値の位置を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
@@ -974,13 +975,13 @@ Edit SSL passthrough target	SSLパススルーする対象を編集
 Edit URL to exclude from scope	スコープから除外するURLを編集
 Edit URL to include in scope	スコープに含めるURLを編集
 Edit cookie	cookie編集
-Edit crawl and audit scan	巡回と診断スキャンの編集
+Edit crawl and audit scan	クロールと診断スキャンの編集
 Edit detection methods	検出手法を編集
 Edit form field completion rule	フォームフィールド補完ルールを編集
 Edit hostname resolution rule	ホスト名解決ルールを編集
 Edit hotkeys	ホットキー編集
 Edit list	リスト編集
-Edit live passive crawl task	ライブパッシブ巡回タスクの編集
+Edit live passive crawl task	ライブパッシブクロールタスクの編集
 Edit match/replace rule	検索/置換ルールを編集
 Edit payload processing rule	ペイロード処理ルールを編集
 Edit platform authentication credentials	プラットフォーム認証のクレデンシャルを編集
@@ -1144,8 +1145,6 @@ Failed to update BApp list	BAppリストを更新できません
 Failed to verify BApp file	BAppファイルの検証ができません
 False positive	誤検知
 Fast	高速
-Faster	高速
-Fastest	最速
 February	2月
 Feedback only contains technical information about Burp's internal functioning, and does not identify you in any way. If you do report a bug via email, you can help us diagnose any problems that your instance of Burp has encountered by including your debug ID.	フィードバックにはBurpの内部機能に関する技術情報だけが含まれ、あなたを特定する方法はありません。バグを電子メールで報告する場合、あなたのデバッグIDを含めると、発生した問題の診断の助けになります。
 Fetch response	レスポンス取得
@@ -1281,7 +1280,7 @@ HTTP response header injection(\s+\[[0-9]+\])?	HTTPレスポンスヘッダイ�
 HTTP verbs	HTTPメソッド
 Handle as ordinary forms	通常のフォームとして処理する
 Handling Application Errors During Audit	診断中のアプリケーションエラーの処理
-Handling Application Errors During Crawl	巡回中のアプリケーションエラーの処理
+Handling Application Errors During Crawl	クロール中のアプリケーションエラーの処理
 Hardware token or smart card (PKCS#11)	ハードウェアトークンやスマートカード(PKCS#11)
 Hash ...	ハッシュ ...
 Header cannot be blank	ヘッダは空白にできません
@@ -1548,7 +1547,7 @@ Live capture (stopped)	ライブキャプチャ (停止中)
 Live capture \(([0-9]+) tokens\)	ライブキャプチャ ($1トークン)
 Live config editing	ライブ設定編集
 Live passive crawl	ライブパッシブクロール
-Live passive crawling	ライブパッシ巡回
+Live passive crawling	ライブパッシクロール
 Live scanning	ライブスキャン
 Load	読み込み
 Load ...	読み込み ...
@@ -1718,7 +1717,7 @@ Maximum Entropy Bits	最大エントロピービット
 Maximum analysis time per item (seconds):	アイテムあたりの最大解析時間(秒):
 Maximum capture length:	抽出する最大長:
 Maximum concurrent requests:	最大同時リクエスト数:
-Maximum crawl time:	最大巡回時間:
+Maximum crawl time:	最大クロール時間:
 Maximum insertion points per base request:	ベースリクエストごとの最大挿入ポイント数:
 Maximum length:	最大長:
 Maximum link depth:	リンクの最大の深さ:
@@ -1757,8 +1756,6 @@ Modify case	大文字小文字変換
 Modifying Parameter Locations	パラメータの場所の操作
 Monitor the following tools' traffic to update the cookie jar:	次のツールを監視してcookie jarを更新する:
 Months	月
-More complete	比較的網羅
-Most complete	完全網羅
 Move down	下に移動
 Move the selected certificate down	選択した証明書を下に移動
 Move the selected certificate up	選択した証明書を上に移動
@@ -1794,8 +1791,8 @@ New	新規
 New ...	新規 ...
 New API key	新規APIキー
 New Login Credentials	新規ログイン資格情報
-New crawling configuration	新規巡回設定
-New live passive crawling configuration	新規パッシブ巡回設定
+New crawling configuration	新規クロール設定
+New live passive crawling configuration	新規パッシブクロール設定
 New live task	新規ライブタスク
 New live task 	新規ライブタスク 
 New project file	新規プロジェクトファイル
@@ -1825,7 +1822,7 @@ No proxy listeners are currently running - go to the Options tab to enable a lis
 No summary chart	サマリグラフなし
 No summary table	サマリテーブルなし
 None	なし
-Normal	標準
+Normal	Normal
 Normal:	標準
 Not a valid Burp project file: (.*)	有効なBurpプロジェクトファイルではありません: $1
 Not a valid PKCS#11 library	有効なPKCS#11ライブラリではありません
@@ -2804,7 +2801,7 @@ The supplied license key was not recognized. Please try re-entering your license
 There appears to be a copy of Burp Infiltrator in the selected folder. Do you want to overwrite it?	選択したフォルダにBurp Infiltratorのコピーがあります。上書きしてよろしいですか？
 Therefore some bits may record a significance level that is below the FIPS pass level even though they do not strictly fail the FIPS test.	したがって一部のビットでは、厳密なFIPSテストに不合格でないにもかかわらず、FIPS合格レベルを下回る有意水準になる場合があります。
 These settings are configured within user options but can be overridden here for this specific project.	これらの設定はユーザオプションで設定できますが、この指定したプロジェクトで上書きできます。
-These settings are undocumented and are not intended for general use. Any changes may have unpredictable results and break the crawler. We recommend that you only modify these settings based on advice from PortSwigger support.	これらの設定はドキュメント化されておらず、一般的な用途のものではありません。変更すると予期しない結果になり、巡回機能を壊す結果になる可能性があります。これらの設定は、PortSwiggerサポートのアドバイスに基づいてのみ変更を推奨します。
+These settings are undocumented and are not intended for general use. Any changes may have unpredictable results and break the crawler. We recommend that you only modify these settings based on advice from PortSwigger support.	これらの設定はドキュメント化されておらず、一般的な用途のものではありません。変更すると予期しない結果になり、クローラーを壊す結果になる可能性があります。これらの設定は、PortSwiggerサポートのアドバイスに基づいてのみ変更を推奨します。
 These settings are used to automatically replace parts of requests and responses passing through the Proxy.	Proxyを通過するリクエストやレスポンスの一部を自動的に置換する設定です。
 These settings are used to perform automatic modification of responses.	レスポンスの自動変更を設定します。
 These settings are used to specify URLs returning responses that stream indefinitely. The Proxy will pass these responses straight through to the client. Repeater will update the response panel as the response is received. Other tools will ignore streaming responses. In order to view the contents of streaming responses within Burp, you need to check the "store streaming responses" option.	無限にストリーミングレスポンスを返すURLを指定します。Proxyはこれらのレスポンスをクライアントに直接通過させます。Repeaterはレスポンスを受信したとしてパネルを更新します。その他のツールはストリーミングレスポンスを無視します。ストリーミングレスポンスのコンテンツをBurpで見るには、"ストリーミングレスポンスを保存"オプションをチェックする必要があります。
@@ -2816,13 +2813,13 @@ These settings can be used to flag result items containing specified expressions
 These settings control how Burp binds the REST API.	REST APIのバインド方法を制御します。
 These settings control how Burp binds the proxy listener.	プロキシリスナーのバインド方法を制御します。
 These settings control how Burp handles application errors (connection failures and transmission timeouts) that arise during the audit phase of the scan.	スキャンの診断フェーズで発生するアプリケーションエラー(接続エラーや送信タイムアウトなど)の処理方法を制御します。
-These settings control how Burp handles application errors (connection failures and transmission timeouts) that arise during the crawl phase of the scan.	スキャンの巡回フェーズで発生するアプリケーションエラー(接続エラーや送信タイムアウトなど)の処理方法を制御します。
+These settings control how Burp handles application errors (connection failures and transmission timeouts) that arise during the crawl phase of the scan.	スキャンのクロールフェーズで発生するアプリケーションエラー(接続エラーや送信タイムアウトなど)の処理方法を制御します。
 These settings control how Burp handles different character sets when displaying raw HTTP messages. Note that some glyphs are not supported by all fonts. If you need to use an extended or unusual character set, you should first try a system font such as Courier New or Dialog.	HTTPメッセージを生で表示する際に、Burpが様々な文字セットを処理する方法を制御します。一部の字形はすべてのフォントでサポートされていないことに注意してください。拡張または異常な文字セットを使用する場合は、まずCourier NewやDialogなどのシステムフォントを試してみてください。
 These settings control how Burp handles extensions on startup.	起動時の拡張の処理方法を設定します。
 These settings control how Burp handles in-tool rendering of HTML content.	ツール内でのHTMLコンテンツのレンダリングの設定です。
 These settings control how Burp handles redirections when performing attacks.	攻撃を実行するときの、リダイレクトを処理する方法を制御します。
 These settings control how the Spider submits login forms.	Spiderによるログインフォームの送信方法を設定します。
-These settings control how the crawler will interact with any login functionality, aside from any application logins that are explicitly configured for the crawl.	巡回用に明示的に設定されたアプリケーションログインとは別に、ログイン機能でどのような処理を行うか制御できます。
+These settings control how the crawler will interact with any login functionality, aside from any application logins that are explicitly configured for the crawl.	クロール用に明示的に設定されたアプリケーションログインとは別に、ログイン機能でどのような処理を行うか制御できます。
 These settings control how the discovery session adds file extensions to file stems that are being tested.	探索セッションで、ファイル名本体にファイル拡張子をどのように追加してテストするか制御します。
 These settings control how tokens are handled during analysis.	解析中のトークンの処理方法を設定します。
 These settings control logging of HTTP requests and responses.	HTTPリクエストとレスポンスのロギングを制御します。
@@ -2841,7 +2838,7 @@ These settings control the types of checks performed during passive scanning.	�
 These settings control the types of redirections that Burp will understand in situations where it is configured to follow redirections.	リダイレクトをたどるべき状況として、Burpが認識するリダイレクトタイプを設定します。
 These settings control the types of scanning that will include static analysis of executable code. Note that static analysis can consume large amounts of memory and processing, and so it may be desirable to restrict static analysis to key targets of interest.	実行可能なコードの静的解析を行うスキャンタイプの設定です。静的解析は大量のメモリとプロセッサを使用するので、興味ある対象に限定した実行が望ましいことに注意してください。
 These settings control the way Burp handles HTTP responses with status 100.	ステータスが100のHTTPレスポンスをBurpが処理する方法を制御します。
-These settings control the way the Spider crawls for basic web content.	Webコンテンツの基本的な巡回方法を制御します。
+These settings control the way the Spider crawls for basic web content.	Webコンテンツの基本的なクロール方法を制御します。
 These settings control what information is captured in attack results.	攻撃結果でキャプチャする情報を設定します。
 These settings control whether Burp redirects requests received by this listener.	リスナーが受信したリクエストのリダイレクト方法を制御します。
 These settings control whether Intruder updates the configured request headers during attacks.	Intruderが攻撃中に、設定されているリクエストヘッダーを更新するかどうかを制御します。
@@ -2861,7 +2858,7 @@ These settings let you control how HTTP messages are displayed within the raw HT
 These settings let you control the appearance of Burp's user interface.	Burpユーザーインタフェースの外観を制御します。
 These settings let you control the behavior of the active scanning logic to reflect the objectives of the scan and the nature of the target application. See the detailed help for more information about each option.	スキャンの目的と対象アプリケーションの性質に応じて、アクティブスキャンロジックの動作を制御できます。各オプションの詳細はヘルプを参照してください。
 These settings let you control the behavior of the audit logic to reflect the objectives of the audit and the nature of the target application. See the detailed help for more information about each option.	診断の目的や対象アプリケーションの性質に応じて、診断ロジックの挙動を制御できます。各オプションの詳細はヘルプを参照してください。
-These settings let you control the behavior of the crawl logic to reflect the objectives of the crawl and the nature of the application. See the detailed documentation for more information about each option.	診断の目的やアプリケーションの性質に応じて、巡回ロジックの挙動を制御できます。各オプションの詳細については、詳細なドキュメントを参照してください。
+These settings let you control the behavior of the crawl logic to reflect the objectives of the crawl and the nature of the application. See the detailed documentation for more information about each option.	診断の目的やアプリケーションの性質に応じて、クロールロジックの挙動を制御できます。各オプションの詳細については、詳細なドキュメントを参照してください。
 These settings let you specify tasks that Burp will perform automatically at defined times or intervals.	定義した時間または間隔で、Burpが自動的に実行するタスクを設定します。
 These settings specify the timeouts to be used for various network tasks. Values are in seconds. Set an option to zero or leave it blank to never timeout that task.	様々なネットワークタスクに使用するタイムアウトを指定します。値は、秒単位です。タスクをタイムアウトさせない場合は０または空白にしてください。
 This URL is outside the current target scope. Are you sure you want to discover content?	このURLは現在の対象スコープ外です。コンテンツ探索をしてよろしいですか？
@@ -2910,7 +2907,10 @@ This setting can be used to URL-encode selected characters within the final payl
 This setting controls how Burp handles extensions on startup.	Burp起動時の拡張の処理方法を制御します。
 This setting controls the state of proxy interception at startup.	起動時のプロキシインターセプト状態の設定です。
 This setting controls whether adding items to Target scope will automatically set the Proxy option to stop sending out-of-scope items to the history or other Burp tools.	ターゲットスコープへアイテムを追加したときに、履歴や他のBurpツールにスコープ外アイテムを送信しないようProxyオプションを自動的に追加するかどうか設定します。
-This strategy optimizes as far as possible for the speed of the crawl, at the expense of lower coverage in many applications. Is is appropriate for applications with stable and unique URLs, and no stateful functionality.	この戦略は、巡回速度を可能な限り最適化しますが、多くのアプリケーションでは網羅性が低下します。URLがユニークで安定してて、ステートフルな機能を持たないアプリケーションに適しています。
+This strategy applies some optimizations to the coverage of the crawl, with some loss of speed in some applications. It is appropriate for applications with volatile or overloaded URLs, or more complex stateful functionality than normal.	この戦略は、クロールの網羅性に一部の最適化を適用しますが、一部のアプリケーションでは速度が失われます。揮発性もしくは高負荷のURLのアプリケーションや、通常よりも複雑なステートフル機能を持つアプリケーションに適しています。
+This strategy applies some optimizations to the speed of the crawl, with some loss of coverage in some applications. It is appropriate for applications that use mostly stable and unique URLs, and only limited or simple stateful functionality.	この戦略は、クロールの速度に一部の最適化を適用しますが、一部のアプリケーションでは網羅性が失われます。大部分がユニークで安定していて、かつ限られたもしくはシンプルなステートフル機能しかない場合に適しています。
+This strategy optimizes as far as possible for the coverage of the crawl, at the expense of speed in most applications. Is is appropriate to achieve strong coverage of applications with highly volatile or overloaded URLs or heavily complex stateful functionality.	この戦略は、クロールの網羅性を可能な限り最適化しますが、ほとんどのアプリケーションで速度が低下します。揮発性の高いURLや高負荷のURLや、非常に複雑なステートフル機能を強力にカバーする場合に適しています。
+This strategy optimizes as far as possible for the speed of the crawl, at the expense of lower coverage in many applications. Is is appropriate for applications with stable and unique URLs, and no stateful functionality.	この戦略は、クロール速度を可能な限り最適化しますが、多くのアプリケーションでは網羅性が低下します。URLがユニークで安定してて、ステートフルな機能を持たないアプリケーションに適しています。
 This strategy represents a trade-off between coverage and speed that is appropriate for typical applications.	この戦略は、一般的なアプリケーションで網羅性と速度のバランスが取れています。
 This test analyzes the distribution of characters used at each position within the token. If the sample is randomly generated, the distribution of characters employed is likely to be approximately uniform. At each position, the test computes the probability of the observed distribution arising if the tokens are random. The significance level at each position is the probability of the observed distribution of characters occurring, assuming that the sample is randomly generated.	トークン内の各位置で使用される文字の分布を分析します。もしサンプルがランダムに生成されているならば、使用される文字の分布はほぼ均一になるはずです。このテストでは、各位置について、トークンがランダムである場合に観測されるはずの、分布の確率を計算します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合、発生が観察された文字分布の確率です。
 This test analyzes the distribution of ones and zeroes at each bit position. If the sample is randomly generated, the number of ones and zeroes is likely to be approximately equal. At each position, the test computes the probability of the observed distribution arising if the tokens are random. The significance level at each position is the probability of the observed number of ones and zeroes occurring, assuming that the sample is randomly generated.	各ビット位置での1と0の分布を分析します。もしサンプルがランダムに生成されているならば、1と0の分布はほぼ均一になるはずです。このテストでは、各位置について、トークンがランダムである場合に観測されるはずの、分布の確率を計算します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合、0と1の発生が観察された数の確率です。
@@ -3012,7 +3012,7 @@ URLs to Scan	スキャンするURL
 URLs to add:	追加するURL:
 Unable to load help - please email support@portswigger.net with details, including the location of this help button.	ヘルプを読み込めません - このヘルプボタンの場所など詳細をsupport@portswigger.netまでメールしてください。
 Unable to load library - check file is correct and device is installed	ライブラリを読み込めません - ファイルが正しいか、デバイスがインストールされているかチェックしてください
-Unauthenticated crawl. Estimating time remaining...	未認証状態の巡回. 残り時間見積中...
+Unauthenticated crawl. Estimating time remaining...	未認証状態のクロール. 残り時間見積中...
 Unauthorized Response	未認可のレスポンス
 Uncheck all	すべて解除
 Understand 100 Continue responses	100 Continueレスポンスを認識する
@@ -3160,7 +3160,7 @@ Years	年
 Yes	はい
 You are editing the live config for a running attack. You should proceed with caution and consider pausing the attack while you make changes	攻撃実行中のライブ設定を編集しようとしています。注意深く行い、変更中は攻撃を一時停止する検討を推奨します。
 You can attempt to recover project data from the file if you believe it is actually a Burp project file. This will create a new project file that can be opened safely, and will recover as much data as possible from the original file.	実際はBurpプロジェクトファイルの場合、プロジェクトデータの復元を試行できます。これにより、安全に開ける新しいプロジェクトファイルが作成され、元のファイルからできるだけ多くのデータを保存します。
-You can configure a more detailed scope configuration using either URL prefixes or advanced matching rules. Note that the URLs to scan must fall within the defined scope, and will still be used as the starting point for the crawl.	URLプレフィックスか詳細なマッチルールを使用して、詳細なスコープを設定できます。スキャンするURLは定義されたスコープ内である必要があり、引き続き巡回の開始点として使用されることに注意してください。
+You can configure a more detailed scope configuration using either URL prefixes or advanced matching rules. Note that the URLs to scan must fall within the defined scope, and will still be used as the starting point for the crawl.	URLプレフィックスか詳細なマッチルールを使用して、詳細なスコープを設定できます。スキャンするURLは定義されたスコープ内である必要があり、引き続きクロールの開始点として使用されることに注意してください。
 You can configure whether to automatically start new tasks as they are created.	タスク作成時に自動的に開始するかどうか設定できます。
 You can define one or more payload sets. The number of payload sets depends on the attack type defined in the Positions tab. Various payload types are available for each payload set, and each payload type can be customized in different ways.	1つまたは複数のペイロードセットを定義できます。ペイロードセットの数は、"ポジション"タブで定義された攻撃タイプに依存します。ペイロードセットごとに様々なペイロードタイプが使用可能で、各ペイロードタイプは様々な方法でカスタマイズできます。
 You can define rules to perform various processing tasks on each payload before it is used.	ペイロードが使われる前に各ペイロードに様々な処理タスクを実行する、ルールを定義できます。
