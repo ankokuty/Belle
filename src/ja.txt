@@ -284,6 +284,7 @@ Are you sure you want to delete task ([0-9]+)\?	タスク$1を削除してよろ
 Are you sure you want to delete the configuration "(.*)"\?	設定"$1"を削除してよろしいですか？
 Are you sure you want to delete the selected item?	選択したアイテムを削除してよろしいですか？
 Are you sure you want to delete the selected items?	選択したアイテムを削除してよろしいですか？
+Are you sure you want to empty the cookie jar?	cookie jarを空にしてよろしいですか？
 Are you sure you want to exit the wizard?	ウィザードを終了してよろしいですか？
 Are you sure you want to exit this content discovery session?	このコンテンツ探索セッションを終了してもよろしいですか？
 Are you sure you want to exit?	終了してよろしいですか？
@@ -518,6 +519,7 @@ Burp Suite Professional	Burp Suiteプロフェッショナル
 Burp Suite diagnostics	Burp Suite診断
 Burp Suite documentation	Burp Suiteドキュメント
 Burp Suite search	Burp Suite検索
+Burp has not been fully tested on this platform and you may experience problems.	Burpはこのプラットフォームで十分テストされて折らず、問題が発生する可能性があります。
 Burp is up to date.	Burpは最新です。
 Burp license key	Burpライセンスキー
 Burp maintains a cookie jar that stores all of the cookies issued by visited web sites. Session handling rules can use and update these cookies to maintain valid sessions with applications that are being tested. You can use the settings below to control how Burp automatically updates the cookie jar based on traffic from particular tools.	アクセスしたWebサイトが発行したすべてのcookieをcookie jarに保持します。テストしているアプリケーションの有効なセッションを保持するために、セッションハンドリングルールがこれらのcookieを使用や更新ができます。以下の設定で、特定のツールからのトラフィックに基づいて cookie jar を自動的に更新する方法を制御します。
@@ -950,8 +952,8 @@ Don't intercept responses	レスポンスをインターセプトしない
 Don't perform static code analysis	静的コード解析を実行しない
 Don't restore	リストアしない
 Don't scan	スキャンしない
-Don't send items to Proxy history or other Burp tools	Proxy履歴や他のBurpツールにアイテムを送信しない
-Don't send items to Proxy history or other Burp tools, if out of scope	スコープ外の場合、Proxy履歴や他のBurpツールにアイテムを送信しない
+Don't send items to Proxy history or live tasks	Proxyの履歴やライブタスクにアイテムを送信しない
+Don't send items to Proxy history or live tasks, if out of scope	スコープ外の場合、Proxyの履歴やライブタスクにアイテムを送信しない
 Don't submit forms	フォームを送信しない
 Don't submit login forms	ログインフォームを送信しない
 Don't use Burp Collaborator	Burp Collaboratorを使用しない
@@ -973,6 +975,7 @@ Duplicate the selected item	選択したアイテムを複製
 Duplicate the selected macro	選択したマクロを複製
 Duplicate the selected rule	選択したルールを複製
 Dynamic URLs	動的URL
+Dynamic analysis	動的解析
 Dynamic update	動的に更新
 ECB block shuffler	ECBブロックシャッフル
 Each Burp project has a unique identifier that is used to track any Burp Collaborator interactions that are associated with the project. You need to decide whether to include this identifier in your new project file.	各Burpプロジェクトには、プロジェクトに紐付くBurp Collaboratorとの通信を識別するための一意な識別子があります。この識別子を新規プロジェクトファイルに保存するか決定する必要があります。
@@ -1155,6 +1158,7 @@ Failed to save file. Please try another location.	ファイルの保存ができ
 Failed to save project.	プロジェクトの保存ができません。
 Failed to update BApp list	BAppリストを更新できません
 Failed to verify BApp file	BAppファイルの検証ができません
+Failed to verify integrity of download.	ダウンロードの整合性が確認できませんでした。
 False positive	誤検知
 Fast	高速
 February	2月
@@ -1821,6 +1825,7 @@ New scan 	新規スキャン
 New scanning configuration	新規スキャン設定
 New tab behavior	新規タブの動作
 New...	新規...
+Newer project file detected	新しいプロジェクトファイルの検出
 Next	次へ
 No	いいえ
 No actions defined	アクションが定義されていません
@@ -2041,6 +2046,7 @@ Please enter the details of the extension, and how you would like to handle stan
 Please enter the new project name.	新しいプロジェクト名を入力してください。
 Please enter your new license key.	新規ライセンスキーを入力してください。
 Please log in to /users/ and download Burp manually.	/users/にログインし、Burpを手動でダウンロードしてください。
+Please log in to https://portswigger.net/users and download Burp manually.	https://portswigger.net/users にログインし、手動でBurpをダウンロードしてください。
 Please note that state files are deprecated. State files no longer save or restore configuration, only data. You are recommended to use project files instead of state files.	ステートファイルは廃止予定です。ステートファイルはデータのみ保存や読み込みができ、設定は保存できません。ステートファイルではなくプロジェクトファイルの使用を推奨します。
 Please provide a name for this configuration	この設定の名前を入力してください
 Please read the following licence agreement carefully, and indicate whether you accept its terms.	次の使用許諾契約書を読み、条項に同意するかどうかを指定してください。
@@ -2562,7 +2568,7 @@ Select the type of task you want to run.	実行したいタスクのタイプを
 Select the types of details to include in the report.	レポートに含める詳細を選択してください。
 Select the types of issues to include in the report.	レポートに含める問題を選択してください。
 Select to use regular expression matching. Deselect to make matches literal.	選択すると正規表現として検索。選択解除すると文字列として検索。
-Select whether items to be processed are deduplicated based on their URL and parameter names. Use this option to avoid scanning the same item more than once.	URLとパラメータ名に基づいて、処理されるアイテムを重複廃除するかどうか選択してください。このオプションを使用すると、同じアイテムを複数回スキャンしなくなります。
+Select whether items to be processed are deduplicated based on their URL and parameter names. Use this option to avoid scanning the same item more than once.	URLとパラメータ名に基づいて、処理されるアイテムを重複排除するかどうか選択してください。このオプションを使用すると、同じアイテムを複数回スキャンしなくなります。
 Selected	選択済み
 Selected file is a Burp state file	選択されたファイルはBurpのステートファイルです
 Selected generator:	選択されたジェネレータ:
@@ -2710,6 +2716,7 @@ Starting project, please wait ...	プロジェクトを開始しています、�
 Static	静的
 Static Code Analysis	静的コード解析
 Static URLs	静的URL
+Static analysis	静的解析
 Static code analysis	静的コード解析
 Status	ステータス
 Status 100 Responses	ステータス100レスポンス
@@ -2940,6 +2947,7 @@ This payload type lets you configure multiple lists of items, and generate paylo
 This payload type lets you extract each payload from the response to the previous request in the attack. It is useful in some situations where you need to work recursively to extract useful data or deliver an exploit. Extract grep items can be defined in the Options tab.	このペイロードタイプは、前の攻撃リクエストのレスポンスからペイロードを抽出します。有用なデータの抽出やエクスプロイトの引き渡しを再帰的に行う必要があるような状況で便利です。抽出grepアイテムは、"オプション"タブで定義できます。
 This payload type operates on a string input and modifies the value of each character position in turn. It is useful to quickly test which parts of a long string have an effect on the application's processing.	このペイロードタイプは入力文字列に対して、各位置の文字を順番に変更していきます。長い文字列のどの部分がアプリケーションの処理に影響を与えるをすばやくテストするために便利です。
 This payload type operates on an input and modifies the value of each bit position in turn. It can sometimes be used to meaningfully modify the decrypted values of CBC-encrypted data, and potentially interfere with application logic.	このペイロードタイプは入力値に対して、各ビット位置の値を順番に変更していきます。CBC暗号化されたデータに意味のある変更を行う場合や、アプリケーションロジックの潜在的な妨害に使用できる場合があります。
+This project file has been accessed by a more recent version of Burp. Some data may not be not be displayed or may be incomplete.	このプロジェクトファイルは、より新しいバージョンのBurpにアクセスされています。一部のデータが表示されない、または不完全な場合があります。
 This project file was created by a different installation of Burp. You need to decide whether to take full ownership of the project.	このプロジェクトファイルは他のBurpで作成されました。プロジェクトの完全な所有権を選択するか決定する必要があります。
 This setting can be used to URL-encode selected characters within the final payload, for safe transmission within HTTP requests.	HTTPリクエストを安全に送信するために、最終的なペイロードの指定した文字をURLエンコードする設定です。
 This setting controls how Burp handles extensions on startup.	Burp起動時の拡張の処理方法を制御します。
@@ -2965,6 +2973,7 @@ This will clear all existing custom iterator settings	既存のすべてのカ�
 This will close all Burp projects and shutdown - are you sure you want to exit?	すべてのBurpプロジェクトを閉じシャットダウンします - 終了してよろしいですか？
 This will close all Burp windows - are you sure you want to exit?	Burpのすべてのウィンドウを閉じます - 終了してよろしいですか？
 This will enable other network users to use the proxy and view the proxy history.	他のネットワークユーザがプロキシを利用し、プロキシの履歴を閲覧できるようになります。
+This will enable other network users to use the service.	他のネットワークユーザがこのサービスを使用できるようになります。
 This will exit the current attack	現在の攻撃を終了します
 This will update the requests and responses in the macro definition with those made in this test. Are you sure you want to proceed?	このテストで生成されたリクエストとレスポンスがマクロ定義で更新されます。続行してよろしいですか？
 This wizard lets you remove certain information which Burp saves on your computer. Choose which items you would like to remove.	このウィザードで、Burpがコンピュータに保存した特定の情報を削除します。削除したいアイテムを選択してください。
@@ -2982,7 +2991,6 @@ Timeouts	タイムアウト
 Title	タイトル
 To ProperName	先頭のみ大文字でその他は変更なし
 To Propername	先頭のみ大文字でその他は小文字
-To change an action's hotkey, select it in the table and type the hotkey for that action. To clear an existing hotkey, press delete or escape. All hotkeys must use the Control key, and may also use Shift or other available modifiers.	アクションのホットキーを変更するには、テーブルから選択してそのアクションのホットキーを入力します。既存のホットキーをクリアするには、DeleteキーかEscキーを押します。すべてのホットキーはコントロールキーを使用する必要があり、シフトやその他の修飾キーも使用できます。
 To change an action's hotkey, select it in the table and type the hotkey for that action. To clear an existing hotkey, press delete or escape. All hotkeys must use the Control key, and may also use Shift or other available modifiers. Note that on some Windows installations the Control+Alt combination is treated by the OS as equivalent to AltGr, and so may result in typed characters appearing when pressed in text fields.	アクションのホットキーを変更するには、テーブルから選択してそのアクションのホットキーを入力します。既存のホットキーをクリアするには、DeleteキーかEscキーを押します。すべてのホットキーはコントロールキーを使用する必要があり、シフトやその他の修飾キーも使用できます。一部のWindowsインストールでは、Ctrl+Altの組み合わせはAltGrと同等として扱われるので、テキストフィールドに入力した文字が現れる可能性がある点に注意してください。
 To enable bit-level analysis, each token was converted into a set of ([,0-9]+) bits.(.*)	ビットレベルの解析を有効にするために、各トークンは$1ビットのセットに変換されました。$2
 To help us improve Burp, please report this bug and include the details below.	Burpを改善するため、次の詳細を含むこのバグを報告してください。
@@ -3150,12 +3158,15 @@ Value:	値:
 Variable:  start	変動:  初期
 Version:	バージョン:
 View	表示
+View details	詳細表示
 View release notes	リリースノートを表示する
 Vulnerability classifications [where applicable]	脆弱性の分類 [該当する場合]
 Waiting	待機中
 Waiting to pause	一時停止しています
 Warning	注意
-Warning: The XmlHttpRequest technique only works on modern browsers, and the browser will not display the response to the CSRF request. The request contains some non-standard headers which, if included in a cross-domain XHR, may cause the request to be pre-flighted, and so the attack may fail. These headers have been omitted in the PoC attack, to avoid pre-flighting. If the omitted headers are essential for the efficacy of the CSRF attack, you can manually add these to the PoC HTML.	警告: XmlHttpRequest手法は最新のブラウザでのみ動作し、ブラウザはCSRFリクエストのレスポンスを表示しません。クロスドメインのXHRでリクエストに非標準ヘッダがが含まれている場合、プリフライトリクエストが発生し、攻撃は失敗する可能性があります。プリフライトを避けるためにこれらのヘッダは省略されています。有効なCSRF攻撃に省略されたヘッダが不可欠な場合は、PoC HTMLに手動で追加できます。
+Warning: The CSRF form uses a different encoding type than the original request, and so the application may not process the request in the way required.	警告: CSRFフォームに元のリクエストとは異なるエンコーディングが使用されているため、指定された方法でアプリケーションがリクエストを処理できない可能性があります。
+Warning: The XmlHttpRequest technique only works on modern browsers, and the browser will not display the response to the CSRF request. The request contains some non-standard headers which, if included in a cross-domain XHR, may cause the request to be pre-flighted, and so the attack may fail. These headers have been omitted in the PoC attack, to avoid pre-flighting. If the omitted headers are essential for the efficacy of the CSRF attack, you can manually add these to the PoC HTML.	警告: XmlHttpRequest手法は最新のブラウザでのみ動作し、ブラウザはCSRFリクエストのレスポンスを表示しません。クロスドメインのXHRでリクエストに非標準ヘッダが含まれている場合、プリフライトリクエストが発生し、攻撃は失敗する可能性があります。プリフライトを避けるためにこれらのヘッダは省略されています。有効なCSRF攻撃に省略されたヘッダが不可欠な場合は、PoC HTMLに手動で追加できます。
+Warning: The XmlHttpRequest technique only works on modern browsers, and the browser will not display the response to the CSRF request. The request contains some non-standard headers which, if included in a cross-domain XHR, may cause the request to be pre-flighted, and so the attack may fail. These headers have been omitted in the PoC attack, to avoid pre-flighting. If the omitted headers are essential for the efficacy of the CSRF attack, you can manually add these to the PoC HTML. The request includes a Content-Type header with a non-standard value, which may cause the request to be pre-flighted, and so the attack may fail. If the non-standard header is not essential for the efficacy of the CSRF attack, you can try using a standard value in the Content-Type header instead.	警告: XmlHttpRequest手法は最新のブラウザでのみ動作し、ブラウザはCSRFリクエストのレスポンスを表示しません。クロスドメインのXHRでリクエストに非標準ヘッダが含まれている場合、プリフライトリクエストが発生し、攻撃は失敗する可能性があります。プリフライトを避けるためにこれらのヘッダは省略されています。有効なCSRF攻撃に省略されたヘッダが不可欠な場合は、PoC HTMLに手動で追加できます。リクエストに非標準な値のContent-Typeヘッダがあるため、プリフライトリクエストが発生し、攻撃は失敗する可能性があります。非標準ヘッダーがCSRF攻撃に必要不可欠ではない場合は、代わりに標準的なContent-Typeヘッダを使用してみてください。
 Warning: This tracer imposes a processing and storage overhead, and should only be used when troubleshooting issues with session handling rules.	警告:　このトレーサは処理とストレージに負荷をかけるので、セッションハンドリングルールのトラブルシューティングのみに使用すべきです。 
 Was annotated	注釈付き
 Was intercepted	インターセプトされた
@@ -3200,6 +3211,7 @@ Years	年
 Yes	はい
 You are editing the live config for a running attack. You should proceed with caution and consider pausing the attack while you make changes	攻撃実行中のライブ設定を編集しようとしています。注意深く行い、変更中は攻撃を一時停止する検討を推奨します。
 You can attempt to recover project data from the file if you believe it is actually a Burp project file. This will create a new project file that can be opened safely, and will recover as much data as possible from the original file.	実際はBurpプロジェクトファイルの場合、プロジェクトデータの復元を試行できます。これにより、安全に開ける新しいプロジェクトファイルが作成され、元のファイルからできるだけ多くのデータを保存します。
+You can choose to continue to load this project but should consider creating a backup copy of your project file before doing so.	このプロジェクトの読み込みを継続できますが、その前にプロジェクトファイルのバックアップコピーの作成を検討してください。
 You can configure a more detailed scope configuration using either URL prefixes or advanced matching rules. Note that the URLs to scan must fall within the defined scope, and will still be used as the starting point for the crawl.	URLプレフィックスか詳細なマッチルールを使用して、詳細なスコープを設定できます。スキャンするURLは定義されたスコープ内である必要があり、引き続きクロールの開始点として使用されることに注意してください。
 You can configure whether to automatically start new tasks as they are created.	タスク作成時に自動的に開始するかどうか設定できます。
 You can define one or more payload sets. The number of payload sets depends on the attack type defined in the Positions tab. Various payload types are available for each payload set, and each payload type can be customized in different ways.	1つまたは複数のペイロードセットを定義できます。ペイロードセットの数は、"ポジション"タブで定義された攻撃タイプに依存します。ペイロードセットごとに様々なペイロードタイプが使用可能で、各ペイロードタイプは様々な方法でカスタマイズできます。
@@ -3214,6 +3226,7 @@ You have selected ([,0-9]+) items for active scanning. Before continuing, you ca
 You have selected ([0-9]+) items? to scan. Before continuing, you can use the filters below to remove certain categories of items, to make your scanning more targeted and efficient.	スキャン用に$1個のアイテムが選択されました。続ける前に、次のフィルタを使用して特定のカテゴリのアイテムを除外し、ターゲットを絞ったより効率的なスキャンを作成できます。
 You must load at least 100 tokens	最低100トークンを読み込む必要があります
 You should be aware that if any testing is continued using multiple instances of Burp, then some Collaborator-based issues may be missed or incorrectly reported.	複数のBurpインスタンスでテストを継続する場合、Collaboratorベースの問題を見逃す、または誤って報告されるかもしれません。
+Your JRE appears to be version ([0-9.]+) from Oracle Corporation	JREがOracle社製のバージョン$1のようです。
 Your current license is due to expire soon. Please visit https://portswigger.net/users/ to extend your license before it expires.	現在のライセンスはまもなく期限切れになります。https://portswigger.net/users/ にアクセスし、期限切れになる前にライセンスを延長してください。
 Your license has expired, and Burp will shut down shortly unless the license is updated. Please save your work now, or update your license.	ライセンスの有効期限が切れており、ライセンスを更新するまでBurpはすぐにシャットダウンします。今すぐ作業を保存するか、ライセンスを更新してください。
 Your license has expired. Please obtain a new license key to continue.	ライセンスの有効期限が切れています。続行するには新しいライセンスキーを入手してください。
