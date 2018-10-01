@@ -88,9 +88,27 @@ $1000	¥30000
 ([0-9]+) tokens were padded with (.*) at the end.	$1トークンは末尾を$2でパディングされました。
 ([0-9]+) tokens were padded with (.*) at the start.	$1トークンは先頭を$2でパディングされました。
 ([0-9]+)% complete	$1%完了
+([0-9]+)\. Audit of (.*)	$1. $2の診断
 ([0-9]+)\. Crawl and audit of (.*)	$1. $2のクロールと診断
-([0-9]+)\. Live audit from Proxy \(all traffic\)	$1. Proxyからライブ診断 (全トラフィック)
-([0-9]+)\. Live passive crawl from Proxy \(all traffic\)	$1. Proxyからライブパッシブクロール (全トラフィック)
+([0-9]+)\. Crawl of (.*)	$1. $2のクロール
+([0-9]+)\. Live audit from (Proxy|Repeater) and (Repeater|Intruder) \(all traffic\)	$1. $2,$3からライブ診断 (全トラフィック)
+([0-9]+)\. Live audit from (Proxy|Repeater) and (Repeater|Intruder) \(custom scope\)	$1. $2,$3からライブ診断 (カスタムスコープ)
+([0-9]+)\. Live audit from (Proxy|Repeater) and (Repeater|Intruder) \(suite scope\)	$1. $2,$3からライブ診断 (suiteスコープ)
+([0-9]+)\. Live audit from (Proxy|Repeater|Intruder) \(all traffic\)	$1. $2からライブ診断 (全トラフィック)
+([0-9]+)\. Live audit from (Proxy|Repeater|Intruder) \(custom scope\)	$1. $2からライブ診断 (カスタムスコープ)
+([0-9]+)\. Live audit from (Proxy|Repeater|Intruder) \(suite scope\)	$1. $2からライブ診断 (suiteスコープ)
+([0-9]+)\. Live audit from Proxy, Repeater and Intruder \(all traffic\)	$1. Proxy,Repeater,Intruderからライブ診断 (全トラフィック)
+([0-9]+)\. Live audit from Proxy, Repeater and Intruder \(custom scope\)	$1. Proxy,Repeater,Intruderからライブ診断 (カスタムスコープ)
+([0-9]+)\. Live audit from Proxy, Repeater and Intruder \(suite scope\)	$1. Proxy,Repeater,Intruderからライブ診断 (suiteスコープ)
+([0-9]+)\. Live passive crawl from (Proxy|Repeater) and (Repeater|Intruder) \(all traffic\)	$1. $2,$3からライブパッシブクロール (全トラフィック)
+([0-9]+)\. Live passive crawl from (Proxy|Repeater) and (Repeater|Intruder) \(custom scope\)	$1. $2,$3からライブパッシブクロール (カスタムスコープ)
+([0-9]+)\. Live passive crawl from (Proxy|Repeater) and (Repeater|Intruder) \(suite scope\)	$1. $2,$3からライブパッシブクロール (suiteスコープ)
+([0-9]+)\. Live passive crawl from (Proxy|Repeater|Intruder) \(all traffic\)	$1. $2からライブパッシブクロール (全トラフィック)
+([0-9]+)\. Live passive crawl from (Proxy|Repeater|Intruder) \(custom scope\)	$1. $2からライブパッシブクロール (カスタムスコープ)
+([0-9]+)\. Live passive crawl from (Proxy|Repeater|Intruder) \(suite scope\)	$1. $2からライブパッシブクロール (suiteスコープ)
+([0-9]+)\. Live passive crawl from Proxy, Repeater and Intruder \(all traffic\)	$1. Proxy,Repeater,Intruderからライブパッシブクロール (全トラフィック)
+([0-9]+)\. Live passive crawl from Proxy, Repeater and Intruder \(custom scope\)	$1. Proxy,Repeater,Intruderからライブパッシブクロール (カスタムスコープ)
+([0-9]+)\. Live passive crawl from Proxy, Repeater and Intruder \(suite scope\)	$1. $Proxy,Repeater,Intruderからライブパッシブクロール (suiteスコープ)
 ([0-9]+)h ([0-9]+)m ([0-9]+)s	$1時間 $2分 $3秒
 ([0-9]+)m ([0-9]+)s	$1分 $2秒
 ([0-9]+)s	$1秒
@@ -205,6 +223,7 @@ Add the specified item	指定したアイテムを追加
 Add to scope	スコープに追加
 Add to site map	サイトマップに追加
 Add to task	タスクに追加
+Add to task: (.*)	タスクに追加: $1
 Add upstream proxy rule	上位プロキシのルールを追加
 Add §	§追加
 Additional encrypted strings - optional	追加暗号文字列 - オプション
@@ -410,6 +429,7 @@ Auditing\. ([0-9]+)s remaining	診断中, 残り$1秒
 August	8月
 Auth type	認証タイプ
 Authenticated crawl (random). Estimating time remaining...	認証状態のクロール (ランダム). 残り時間見積中...
+Authenticated crawl \((.*)\). Estimating time remaining...	認証状態のクロール ($1). 残り時間見積中...
 Authentication Required	認証が必要です
 Authentication required	認証が必要です
 Authentication type:	認証タイプ:
@@ -447,6 +467,7 @@ Automatically submit using the following rules to assign text field values:	次�
 Automatically update Content-Length header when the request is edited	リクエスト編集時にContent-Lengthヘッダを自動的に更新する
 Automatically update Content-Length header when the response is edited	レスポンス編集時にContent-Lengthヘッダを自動的に更新する
 Automatically update installed BApps on startup	インストールされたBAppを起動時に自動アップデートする
+BApp verification failed - the BApp may be unsigned or may have been tampered with.	BAppの検証失敗 - BAppは署名されていないか、改竄されている可能性があります。
 Back	戻る
 Backup Interval	バックアップ間隔
 Backup file: 	バックアップファイル: 
@@ -774,6 +795,7 @@ Crawl Limits	クロール制限
 Crawl Optimization	クロールの最適化
 Crawl and audit	クロールと診断
 Crawl finished	クロール完了
+Crawl finished.	クロール完了.
 Crawl strategy tuning	クロール戦略のチューニング
 Crawl strategy:	クロール戦略:
 Crawler Settings	クローラ設定
@@ -923,6 +945,7 @@ Do not save	保存しない
 Do not take full ownership of the project	プロジェクトの完全な所有権を取得しない
 Do nothing	何もしない
 Do platform authentication	プラットフォーム認証を行う
+Do you wish to continue?	継続しますか？
 Document domain manipulation \(DOM-based\)(\s+\[[0-9]+\])?	ドキュメントドメイン操作 (DOMベース)$1
 Document domain manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	ドキュメントドメイン操作 (反射型DOMベース)$1
 Document domain manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	ドキュメントドメイン操作 (蓄積型DOMベース)$1
@@ -988,8 +1011,11 @@ Edit Login Credentials	ログイン資格情報編集
 Edit SSL passthrough target	SSLパススルーする対象を編集
 Edit URL to exclude from scope	スコープから除外するURLを編集
 Edit URL to include in scope	スコープに含めるURLを編集
+Edit audit scan	診断スキャンの編集
+Edit auditing configuration	診断設定の編集
 Edit cookie	cookie編集
 Edit crawl and audit scan	クロールと診断スキャンの編集
+Edit crawling configuration	クロール設定の編集
 Edit detection methods	検出手法を編集
 Edit form field completion rule	フォームフィールド補完ルールを編集
 Edit hostname resolution rule	ホスト名解決ルールを編集
@@ -997,6 +1023,7 @@ Edit hotkeys	ホットキー編集
 Edit list	リスト編集
 Edit live audit task	ライブ診断タスクの編集
 Edit live passive crawl task	ライブパッシブクロールタスクの編集
+Edit live passive crawling configuration	パッシブクロール設定の編集
 Edit match/replace rule	検索/置換ルールを編集
 Edit payload processing rule	ペイロード処理ルールを編集
 Edit platform authentication credentials	プラットフォーム認証のクレデンシャルを編集
@@ -1663,6 +1690,7 @@ Local file path manipulation \(DOM-based\)(\s+\[[0-9]+\])?	ローカルファイ
 Local file path manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	ローカルファイルパス操作 (反射型DOMベース)$1
 Local file path manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	ローカルファイルパス操作 (蓄積型DOMベース)$1
 Locating authenticated functionality (random). Estimating time remaining...	認証された機能の特定 (ランダム). 残り時間見積中...
+Locating authenticated functionality \((.*)\). Estimating time remaining...	認証された機能の特定 ($1). 残り時間見積中...
 Location of JRuby JAR file:	JRubyのJARファイルの場所:
 Location of Jython standalone JAR file:	JythonのスタンドアロンJARファイルの場所:
 Location(s):	場所:
@@ -1812,6 +1840,7 @@ New	新規
 New ...	新規 ...
 New API key	新規APIキー
 New Login Credentials	新規ログイン資格情報
+New auditing configuration	新規診断設定
 New crawling configuration	新規クロール設定
 New live passive crawling configuration	新規パッシブクロール設定
 New live task	新規ライブタスク
@@ -1910,6 +1939,7 @@ Open redirection \(stored DOM-based\)(\s+\[[0-9]+\])?	オープンリダイレ�
 Open redirection \(stored\)(\s+\[[0-9]+\])?	オープンリダイレクト(蓄積型)$1
 Open redirection(\s+\[[0-9]+\])?	オープンリダイレクト$1
 Open saved attack	保存した攻撃を開く
+Open scan launcher	スキャンランチャーを開く
 Open sessions tracer	セッショントレーサを開く
 Open the cookie jar	cookie jarを開く
 Open the sessions tracer	セッショントレーサを開く
@@ -2323,6 +2353,7 @@ Resume spidering	自動巡回再開
 Resume task execution engine	タスク実行エンジンを再開する
 Resume task processing	タスク処理の再開
 Retest macro	マクロを再テスト
+Retrying failed requests. Estimating time remaining...	失敗したリクエストの再試行. 残り時間見積中...
 Reverse substring	部分文字列の反転
 Revert	元に戻す
 Revert changes	変更を元に戻す
@@ -2662,6 +2693,7 @@ Sniper	スナイパー(Sniper)
 Social security numbers disclosed(\s+\[[0-9]+\])?	社会保障番号漏洩$1
 Some items could not be cleaned up.	一部のアイテムを削除できませんでした。
 Some macros are being used by session handling rules and cannot be deleted.	一部のマクロはセッションハンドリングルールで使用されているため削除できません。
+Some of the specified URLs to scan are out of scope.	スキャンに指定したURLの一部がスコープ外です。
 Some of these items are outside the current spidering scope. Would you like to modify the scope to include the items?	これらのアイテムの一部は、現在の巡回スコープ外です。このアイテムを含むようスコープを修正しますか？
 Some of these items are outside the current target scope. Are you sure you want to perform an active scan?	これらのアイテムの一部は現在の対象スコープ外です。アクティブスキャンを実行してよろしいですか？
 Some passwords were encrypted using a different master password. Please enter the master password for the following configuration.	一部のパスワードは別のマスターパスワードで暗号化されています。以下の設定のマスターパスワードを入力してください。
@@ -3226,6 +3258,7 @@ You have selected ([,0-9]+) items for active scanning. Before continuing, you ca
 You have selected ([0-9]+) items? to scan. Before continuing, you can use the filters below to remove certain categories of items, to make your scanning more targeted and efficient.	スキャン用に$1個のアイテムが選択されました。続ける前に、次のフィルタを使用して特定のカテゴリのアイテムを除外し、ターゲットを絞ったより効率的なスキャンを作成できます。
 You must load at least 100 tokens	最低100トークンを読み込む必要があります
 You should be aware that if any testing is continued using multiple instances of Burp, then some Collaborator-based issues may be missed or incorrectly reported.	複数のBurpインスタンスでテストを継続する場合、Collaboratorベースの問題を見逃す、または誤って報告されるかもしれません。
+You should exercise caution when installing untrusted BApps.	信頼できないBAppをインストールする場合は、注意が必要です。
 Your JRE appears to be version ([0-9.]+) from Oracle Corporation	JREがOracle社製のバージョン$1のようです。
 Your current license is due to expire soon. Please visit https://portswigger.net/users/ to extend your license before it expires.	現在のライセンスはまもなく期限切れになります。https://portswigger.net/users/ にアクセスし、期限切れになる前にライセンスを延長してください。
 Your license has expired, and Burp will shut down shortly unless the license is updated. Please save your work now, or update your license.	ライセンスの有効期限が切れており、ライセンスを更新するまでBurpはすぐにシャットダウンします。今すぐ作業を保存するか、ライセンスを更新してください。
