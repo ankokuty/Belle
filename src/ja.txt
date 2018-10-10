@@ -1055,6 +1055,8 @@ Edited response	編集後レスポンス
 Effective Entropy	有効なエントロピー
 Email addresses disclosed(\s+\[[0-9]+\])?	メールアドレス漏洩$1
 Embed images within HTML (requires modern browser)	HTML内への画像埋め込み (最新のブラウザが必要)
+Embedded Browser Health Check	内蔵ブラウザヘルスチェック
+Embedded browser health check	内蔵ブラウザヘルスチェック
 Empty cookie jar	cookie jarを空に
 Enable algorithms blocked by Java security policy (requires restart)	Javaセキュリティポリシーでブロックされたアルゴリズムを有効にする(要再起動)
 Enable automatic project backup	自動プロジェクトバックアップを有効化する
@@ -1767,6 +1769,7 @@ Maximum analysis time per item (seconds):	アイテムあたりの最大解析�
 Maximum capture length:	抽出する最大長:
 Maximum concurrent requests:	最大同時リクエスト数:
 Maximum crawl time:	最大クロール時間:
+Maximum dynamic analysis time per item (in seconds):	アイテムあたりの最大動的解析時間(秒):
 Maximum insertion points per base request:	ベースリクエストごとの最大挿入ポイント数:
 Maximum length:	最大長:
 Maximum link depth:	最大リンク深度:
