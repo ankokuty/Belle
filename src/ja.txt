@@ -231,9 +231,9 @@ Additional encrypted strings - optional \(([0-9]+)\)	追加の暗号文字列 - 
 Advisory	アドバイザリ
 After recovering session:	セッション復元後:
 After running the macro, invoke a Burp extension action handler:	マクロ実行後、Burp拡張のアクションハンドラを実行する:
-Ajax request header manipulation \(DOM-based\)(\s+\[[0-9]+\])?	Ajaxリクエストヘッダ操作 (DOMベース)$1
-Ajax request header manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	Ajaxリクエストヘッダ操作 (反射型DOMベース)$1
-Ajax request header manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	Ajaxリクエストヘッダ操作 (蓄積型DOMベース)$1
+Ajax request header manipulation \(DOM-based\)(\s+\[[0-9]+\])?	Ajaxリクエストヘッダ操作(DOMベース)$1
+Ajax request header manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	Ajaxリクエストヘッダ操作(反射型DOMベース)$1
+Ajax request header manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	Ajaxリクエストヘッダ操作(蓄積型DOMベース)$1
 Alerts	警告
 Alias	別名
 All	すべて
@@ -655,14 +655,14 @@ Client-side	クライアントサイド
 Client-side HTTP parameter pollution \(reflected\)(\s+\[[0-9]+\])?	クライアントサイドHTTPパラメータ汚染(反射型)$1
 Client-side HTTP parameter pollution \(stored\)(\s+\[[0-9]+\])?	クライアントサイドHTTPパラメータ汚染(蓄積型)$1
 Client-side JSON injection \(DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドJSONインジェクション(DOMベース)$1
-Client-side JSON injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドJSONインジェクション (反射型DOMベース)$1
-Client-side JSON injection \(stored DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドJSONインジェクション (蓄積型DOMベース)$1
-Client-side SQL injection \(DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドSQLインジェクション (DOMベース)$1
-Client-side SQL injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドSQLインジェクション (反射型DOMベース)$1
-Client-side SQL injection \(stored DOM-based\)(\s+\[[0-9]+\])?	クライアンサイドSQLインジェクション (蓄積型DOMベース)$1
-Client-side XPath injection \(DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドXPathインジェクション (DOMベース)$1
-Client-side XPath injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドXPathインジェクション (反射型DOMベース)$1
-Client-side XPath injection \(stored DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドXPathインジェクション (蓄積型DOMベース)$1
+Client-side JSON injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドJSONインジェクション(反射型DOMベース)$1
+Client-side JSON injection \(stored DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドJSONインジェクション(蓄積型DOMベース)$1
+Client-side SQL injection \(DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドSQLインジェクション(DOMベース)$1
+Client-side SQL injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドSQLインジェクション(反射型DOMベース)$1
+Client-side SQL injection \(stored DOM-based\)(\s+\[[0-9]+\])?	クライアンサイドSQLインジェクション(蓄積型DOMベース)$1
+Client-side XPath injection \(DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドXPathインジェクション(DOMベース)$1
+Client-side XPath injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドXPathインジェクション(反射型DOMベース)$1
+Client-side XPath injection \(stored DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドXPathインジェクション(蓄積型DOMベース)$1
 Client-side template injection(\s+\[[0-9]+\])?	クライアントサイドテンプレートインジェクション$1
 Close	閉じる
 Close wizard	ウィザードを閉じる
@@ -742,9 +742,9 @@ Convert to MySQL constructed string	MySQL構文の文字列に変換
 Convert to Oracle constructed string	Oracle構文の文字列に変換
 Cookie handling	cookie処理
 Cookie jar viewer	cookie jarビューア
-Cookie manipulation \(DOM-based\)(\s+\[[0-9]+\])?	Cookie操作 (DOMベース)$1
-Cookie manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	Cookie操作 (反射型DOMベース)$1
-Cookie manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	Cookie操作 (蓄積型DOMベース)$1
+Cookie manipulation \(DOM-based\)(\s+\[[0-9]+\])?	Cookie操作(DOMベース)$1
+Cookie manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	Cookie操作(反射型DOMベース)$1
+Cookie manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	Cookie操作(蓄積型DOMベース)$1
 Cookie name	cookie名
 Cookie parameter values	Cookieのパラメータ値
 Cookie scoped to parent domain(\s+\[[0-9]+\])?	親ドメインスコープのcookie$1
@@ -818,9 +818,9 @@ Cross-origin resource sharing: arbitrary origin trusted(\s+\[[0-9]+\])?	クロ�
 Cross-origin resource sharing: unencrypted origin trusted(\s+\[[0-9]+\])?	クロスオリジンのリソース共有: 暗号化されていないオリジンを信頼$1
 Cross-site request forgery(\s+\[[0-9]+\])?	クロスサイトリクエストフォージェリ$1
 Cross-site scripting \(DOM-based\)(\s+\[[0-9]+\])?	クロスサイトスクリプティング(DOMベース)$1
-Cross-site scripting \(reflected DOM-based\)(\s+\[[0-9]+\])?	クロスサイトスクリプティング(DOMベース反射型)$1
+Cross-site scripting \(reflected DOM-based\)(\s+\[[0-9]+\])?	クロスサイトスクリプティング(反射型DOMベース)$1
 Cross-site scripting \(reflected\)(\s+\[[0-9]+\])?	クロスサイトスクリプティング(反射型)$1
-Cross-site scripting \(stored DOM-based\)(\s+\[[0-9]+\])?	クロスサイトスクリプティング (蓄積型DOMベース)$1
+Cross-site scripting \(stored DOM-based\)(\s+\[[0-9]+\])?	クロスサイトスクリプティング(蓄積型DOMベース)$1
 Cross-site scripting \(stored\)(\s+\[[0-9]+\])?	クロスサイトスクリプティング(蓄積型)$1
 Current Action	現在のアクション
 Current auditing configuration	現在の診断設定
@@ -837,9 +837,9 @@ Custom scope: Pasted value is not a valid URL	カスタムスコープ: 貼り�
 Custom:	カスタム:
 Customize crawl strategy (use with caution)	クロール戦略をカスタマイズする(使用注意)
 Cut	切り取り
-DOM data manipulation \(DOM-based\)(\s+\[[0-9]+\])?	DOMデータ操作 (DOMベース)$1
-DOM data manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	DOMデータ操作 (反射型DOMベース)$1
-DOM data manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	DOMデータ操作 (蓄積型DOMベース)$1
+DOM data manipulation \(DOM-based\)(\s+\[[0-9]+\])?	DOMデータ操作(DOMベース)$1
+DOM data manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	DOMデータ操作(反射型DOMベース)$1
+DOM data manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	DOMデータ操作(蓄積型DOMベース)$1
 Dashboard	ダッシュボード
 Data	データ
 Database connection string disclosed(\s+\[[0-9]+\])?	データベース接続文字列漏洩$1
@@ -893,9 +893,9 @@ Deleting license key.	ライセンスキーを削除中。
 Deleting saved preferences.	保存した設定を削除中。
 Deleting temporary files.	一時ファイルを削除中。
 Delimiter:	区切り文字:
-Denial of service \(DOM-based\)(\s+\[[0-9]+\])?	サービス妨害 (DOMベース)$1
-Denial of service \(reflected DOM-based\)(\s+\[[0-9]+\])?	サービス妨害 (反射型DOMベース)$1
-Denial of service \(stored DOM-based\)(\s+\[[0-9]+\])?	サービス妨害 (蓄積型DOMベース)$1
+Denial of service \(DOM-based\)(\s+\[[0-9]+\])?	サービス妨害(DOMベース)$1
+Denial of service \(reflected DOM-based\)(\s+\[[0-9]+\])?	サービス妨害(反射型DOMベース)$1
+Denial of service \(stored DOM-based\)(\s+\[[0-9]+\])?	サービス妨害(蓄積型DOMベース)$1
 Derivations based on discovered items	検出したアイテムに基づいて派生
 Derived parameters	派生パラメータ
 Description	詳細
@@ -946,9 +946,9 @@ Do not take full ownership of the project	プロジェクトの完全な所有�
 Do nothing	何もしない
 Do platform authentication	プラットフォーム認証を行う
 Do you wish to continue?	継続しますか？
-Document domain manipulation \(DOM-based\)(\s+\[[0-9]+\])?	ドキュメントドメイン操作 (DOMベース)$1
-Document domain manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	ドキュメントドメイン操作 (反射型DOMベース)$1
-Document domain manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	ドキュメントドメイン操作 (蓄積型DOMベース)$1
+Document domain manipulation \(DOM-based\)(\s+\[[0-9]+\])?	ドキュメントドメイン操作(DOMベース)$1
+Document domain manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	ドキュメントドメイン操作(反射型DOMベース)$1
+Document domain manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	ドキュメントドメイン操作(蓄積型DOMベース)$1
 Does not contain parameters	パラメータを含まない
 Does not match	一致しない
 Doing FIPS long run test	FIPS 最長連検定実行中
@@ -1146,9 +1146,9 @@ Extensions - long	拡張子 - 長
 Extensions - short	拡張子 - 短
 Extensions let you customize Burp's behavior using your own or third-party code.	自分自身または第三者のコードでBurpの機能をカスタマイズできます。
 External / out-of-band interaction	外部/範囲外の操作
-External service interaction \(DNS\)(\s+\[[0-9]+\])?	外部サービスとの通信 (DNS)$1
-External service interaction \(HTTP\)(\s+\[[0-9]+\])?	外部サービスとの通信 (HTTP)$1
-External service interaction \(SMTP\)(\s+\[[0-9]+\])?	外部サービスとの通信 (SMTP)$1
+External service interaction \(DNS\)(\s+\[[0-9]+\])?	外部サービスとの通信(DNS)$1
+External service interaction \(HTTP\)(\s+\[[0-9]+\])?	外部サービスとの通信(HTTP)$1
+External service interaction \(SMTP\)(\s+\[[0-9]+\])?	外部サービスとの通信(SMTP)$1
 Extract from regex group	正規表現グループから抽出
 Extract the following items from responses:	レスポンスから以下のアイテムを抽出する:
 Extracted value is URL-encoded	抽出した値はURLエンコードされている
@@ -1307,12 +1307,12 @@ HTML-encode all characters (hex entities)	すべての文字をHTMLエンコー�
 HTML-encode all characters (numeric entities)	すべての文字をHTMLエンコード(10進数数値文字参照)
 HTML-encode key characters	特殊文字をHTMLエンコード
 HTML5 cross-origin resource sharing(\s+\[[0-9]+\])?	HTML5 クロスオリジンのリソース共有$1
-HTML5 storage manipulation \(DOM-based\)(\s+\[[0-9]+\])?	HTML5ストレージ操作 (DOMベース)$1
-HTML5 storage manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	HTML5ストレージ操作 (反射型DOMベース)$1
-HTML5 storage manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	HTML5ストレージ操作 (蓄積型DOMベース)$1
-HTML5 web message manipulation \(DOM-based\)(\s+\[[0-9]+\])?	HTML5 Webメッセージ操作 (DOMベース)$1
-HTML5 web message manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	HTML5 Webメッセージ操作 (反射型DOMベース)$1
-HTML5 web message manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	HTML5 Webメッセージ操作 (蓄積型DOMベース)$1
+HTML5 storage manipulation \(DOM-based\)(\s+\[[0-9]+\])?	HTML5ストレージ操作(DOMベース)$1
+HTML5 storage manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	HTML5ストレージ操作(反射型DOMベース)$1
+HTML5 storage manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	HTML5ストレージ操作(蓄積型DOMベース)$1
+HTML5 web message manipulation \(DOM-based\)(\s+\[[0-9]+\])?	HTML5 Webメッセージ操作(DOMベース)$1
+HTML5 web message manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	HTML5 Webメッセージ操作(反射型DOMベース)$1
+HTML5 web message manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	HTML5 Webメッセージ操作(蓄積型DOMベース)$1
 HTTP Message Display	HTTPメッセージ表示
 HTTP PUT method is enabled(\s+\[[0-9]+\])?	HTTP PUTメソッドが有効$1
 HTTP TRACE method is enabled(\s+\[[0-9]+\])?	TRACEメソッドが有効$1
@@ -1542,9 +1542,9 @@ Java SSL Options	Java SSLオプション
 JavaScript	JavaScript
 JavaScript Analysis	JavaScript解析
 JavaScript analysis	JavaScript解析
-JavaScript injection \(DOM-based\)(\s+\[[0-9]+\])?	JavaScriptインジェクション (DOMベース)$1
-JavaScript injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	JavaScriptインジェクション (反射型DOMベース)$1
-JavaScript injection \(stored DOM-based\)(\s+\[[0-9]+\])?	クロスサイトスクリプティング(DOMベース蓄積型)$1
+JavaScript injection \(DOM-based\)(\s+\[[0-9]+\])?	JavaScriptインジェクション(DOMベース)$1
+JavaScript injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	JavaScriptインジェクション(反射型DOMベース)$1
+JavaScript injection \(stored DOM-based\)(\s+\[[0-9]+\])?	JavaScriptインジェクション(蓄積型DOMベース)$1
 JavaScript phases	JavaScriptフェーズ
 JavaScript-driven	JavaScript駆動
 Javascript dynamic analysis	Javascript動的解析
@@ -1571,10 +1571,10 @@ Limit to	制限
 Link depth to associate with Proxy requests:	Proxyリクエストに関連づけるリンクの深さ:
 Link fingerprint trigger:	リンクフィンガープリントトリガー:
 Link manipulation	リンク操作
-Link manipulation \(DOM-based\)(\s+\[[0-9]+\])?	リンク操作 (DOMベース)$1
-Link manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	リンク操作 (反射型DOMベース)$1
+Link manipulation \(DOM-based\)(\s+\[[0-9]+\])?	リンク操作(DOMベース)$1
+Link manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	リンク操作(反射型DOMベース)$1
 Link manipulation \(reflected\)(\s+\[[0-9]+\])?	リンク操作(反射型)$1
-Link manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	リンク操作 (蓄積型DOMベース)$1
+Link manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	リンク操作(蓄積型DOMベース)$1
 Link manipulation \(stored\)(\s+\[[0-9]+\])?	リンク操作(蓄積型)$1
 Links	リンク
 Linux installer	Linuxインストーラ
@@ -1686,9 +1686,9 @@ Loading project file ...	プロジェクトファイルを読み込み中 ...
 Loading project...	プロジェクト読み込み中...
 Loading state file: ([0-9]+)% complete	ステートファイルの読み込み中: $1% 完了
 Loading tokens	トークン読み込み中
-Local file path manipulation \(DOM-based\)(\s+\[[0-9]+\])?	ローカルファイルパス操作 (DOMベース)$1
-Local file path manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	ローカルファイルパス操作 (反射型DOMベース)$1
-Local file path manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	ローカルファイルパス操作 (蓄積型DOMベース)$1
+Local file path manipulation \(DOM-based\)(\s+\[[0-9]+\])?	ローカルファイルパス操作(DOMベース)$1
+Local file path manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	ローカルファイルパス操作(反射型DOMベース)$1
+Local file path manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	ローカルファイルパス操作(蓄積型DOMベース)$1
 Locating authenticated functionality (random). Estimating time remaining...	認証された機能の特定 (ランダム). 残り時間見積中...
 Locating authenticated functionality \((.*)\). Estimating time remaining...	認証された機能の特定 ($1). 残り時間見積中...
 Location of JRuby JAR file:	JRubyのJARファイルの場所:
@@ -1933,9 +1933,9 @@ Open in browser	ブラウザで開く
 Open project file	プロジェクトファイルを開く
 Open recovered project	復元したプロジェクトを開く
 Open redirection \(DOM-based\)(\s+\[[0-9]+\])?	オープンリダイレクト(DOMベース)$1
-Open redirection \(reflected DOM-based\)(\s+\[[0-9]+\])?	オープンリダイレクト (反射型DOMベース)$1
+Open redirection \(reflected DOM-based\)(\s+\[[0-9]+\])?	オープンリダイレクト(反射型DOMベース)$1
 Open redirection \(reflected\)(\s+\[[0-9]+\])?	オープンリダイレクト(反射型)$1
-Open redirection \(stored DOM-based\)(\s+\[[0-9]+\])?	オープンリダイレクト (蓄積型DOMベース)$1
+Open redirection \(stored DOM-based\)(\s+\[[0-9]+\])?	オープンリダイレクト(蓄積型DOMベース)$1
 Open redirection \(stored\)(\s+\[[0-9]+\])?	オープンリダイレクト(蓄積型)$1
 Open redirection(\s+\[[0-9]+\])?	オープンリダイレクト$1
 Open saved attack	保存した攻撃を開く
@@ -1955,7 +1955,7 @@ Original response	元レスポンス
 Other binary	その他バイナリ
 Other text	その他テキスト
 Out-of-Scope Requests	スコープ外リクエスト
-Out-of-band resource load \(HTTP\)(\s+\[[0-9]+\])?	帯域外リソース読み込み (HTTP)$1
+Out-of-band resource load \(HTTP\)(\s+\[[0-9]+\])?	帯域外リソース読み込み(HTTP)$1
 Output	出力
 Output to system console	システムコンソールに出力する
 Overall result	全体の結果
@@ -2382,7 +2382,7 @@ SOCKS Proxy	SOCKSプロキシ
 SOCKS proxy host:	SOCKSプロキシホスト:
 SOCKS proxy port:	SOCKSプロキシポート:
 SQL Server specific	SQL Server固有
-SQL injection \(second order\)(\s+\[[0-9]+\])?	SQLインジェクション (セカンドオーダー)$1
+SQL injection \(second order\)(\s+\[[0-9]+\])?	SQLインジェクション(セカンドオーダー)$1
 SQL injection(\s+\[[0-9]+\])?	SQLインジェクション$1
 SQL statement in request parameter(\s+\[[0-9]+\])?	リクエストパラメータ内のSQL文$1
 SSI injection	SSIインジェクション
@@ -2790,8 +2790,8 @@ Support Center	サポートセンター
 Support invisible proxying (enable only if needed)	透過プロキシをサポートする(必要な場合のみ有効にしてください)
 Suppress Burp error messages in browser	ブラウザへのBurpエラーメッセージを抑制する
 Suspicious input transformation	入力値の疑わしい変換
-Suspicious input transformation \(reflected\)(\s+\[[0-9]+\])?	入力値の疑わしい変換 (反射型)$1
-Suspicious input transformation \(stored\)(\s+\[[0-9]+\])?	入力値の疑わしい変換 (蓄積型)$1
+Suspicious input transformation \(reflected\)(\s+\[[0-9]+\])?	入力値の疑わしい変換(反射型)$1
+Suspicious input transformation \(stored\)(\s+\[[0-9]+\])?	入力値の疑わしい変換(蓄積型)$1
 Sync selection	選択を同期
 Sync views	表示を同期
 Tab	タブ
@@ -3208,8 +3208,8 @@ Was not intercepted	インターセプトされなかった
 Was not modified	変更されなかった
 Web cache posoning(\s+\[[0-9]+\])?	Webキャッシュ汚染$1
 WebSocket hijacking \(DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック(DOMベース)$1
-WebSocket hijacking \(reflected DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック (反射型DOMベース)$1
-WebSocket hijacking \(stored DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック (蓄積型DOMベース)$1
+WebSocket hijacking \(reflected DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック(反射型DOMベース)$1
+WebSocket hijacking \(stored DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック(蓄積型DOMベース)$1
 WebSockets history	WebSocket履歴
 Weeks	週
 Welcome ...	ようこそ ...
