@@ -88,7 +88,7 @@ public class Injection {
 					} else if (className.equals("javax/swing/JDialog")) {
 						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
 						CtBehavior ctMethod = ctClass.getDeclaredConstructor(new CtClass[] {
-								classPool.get("java.awt.Frame"), classPool.get("String"), CtClass.booleanType });
+								classPool.get("java.awt.Frame"), classPool.get("java.lang.String"), CtClass.booleanType });
 						insertTranslateCommand(ctMethod, 2);
 						return ctClass.toBytecode();
 					} else {
