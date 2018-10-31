@@ -81,9 +81,14 @@ $1000	¥30000
 ([0-9]+) anomalies were identified in this test:	このテストで$1個の異常が見つかりました: 
 ([0-9]+) bits failed the test. The following ([0-9]+) bits passed the test: ([0-9]+)(, [0-9]+)*.(.*)	$1ビットが不合格。次の$2ビットは合格: $3$4$5
 ([0-9]+) bits passed the test. The following ([0-9]+) bits failed the test: ([0-9]+)(, [0-9]+)*.(.*)	$1ビットが合格。次の$2ビットは不合格: $3$4$5
+([0-9]+) items added to site map	サイトマップに$1件追加
 ([0-9]+) items?	$1個のアイテム
 ([0-9]+) letter words	$1文字単語
+([0-9]+) locations crawled	$1箇所クロール
 ([0-9]+) payload positions?	$1個のペイロードポジション
+([0-9]+) requests \(([0-9]+) errors\)	$1リクエスト($2件エラー)
+([0-9]+) responses processed	$1レスポンス処理
+([0-9]+) responses queued	キューに$1レスポンス追加
 ([0-9]+) results?	$1件の結果
 ([0-9]+) tokens were padded with (.*) at the end.	$1トークンは末尾を$2でパディングされました。
 ([0-9]+) tokens were padded with (.*) at the start.	$1トークンは先頭を$2でパディングされました。
@@ -280,6 +285,7 @@ Append preprocessed payload	プリプロセッサペイロードを末尾に追�
 Append to base parameter value	元パラメータ値に追加
 Application	アプリケーション
 Application Login	アプリケーションログイン
+Application login	アプリケーションログイン
 April	4月
 Are you sure you want to add this item to the site map?	このアイテムをサイトマップに追加してもよろしいですか？
 Are you sure you want to cancel the download?	ダウンロードをキャンセルしてよろしいですか？
@@ -424,7 +430,9 @@ Auditing	診断
 Auditing. Estimating time remaining...	診断中. 残り時間見積中...
 Auditing\. ([0-9]+)d remaining	診断中, 残り$1日
 Auditing\. ([0-9]+)h ([0-9]+)m ([0-9]+)s remaining	診断中, 残り$1時間$2分$3秒
+Auditing\. ([0-9]+)h remaining	診断中, 残り$1時間
 Auditing\. ([0-9]+)m ([0-9]+)s remaining	診断中, 残り$1分$2秒
+Auditing\. ([0-9]+)m remaining	診断中, 残り$1分
 Auditing\. ([0-9]+)s remaining	診断中, 残り$1秒
 August	8月
 Auth type	認証タイプ
@@ -919,6 +927,7 @@ Directories - short	ディレクトリ - 短
 Directories / files . extensions	ディレクトリ/ファイル.拡張子
 Directories only	ディレクトリのみ
 Directory listing(\s+\[[0-9]+\])?	ディレクトリリスティング$1
+Directory:	ディレクトリ:
 Disable Java SNI extension (requires restart)	Java SNI拡張を無効にする(要再起動)
 Disable SSL session resume	SSLセッションの再開を無効にする
 Disable extensions	拡張を無効にする
@@ -1061,7 +1070,9 @@ Empty cookie jar	cookie jarを空に
 Enable algorithms blocked by Java security policy (requires restart)	Javaセキュリティポリシーでブロックされたアルゴリズムを有効にする(要再起動)
 Enable automatic project backup	自動プロジェクトバックアップを有効化する
 Enable disabled form fields	無効化されたフォームフィールドを有効化する
+Enable embedded browser sandbox (Windows only)	内蔵ブラウザのサンドボックスを有効化(Windowsのみ)
 Enable interception at startup:	起動時にインターセプトを有効:
+Enable logging	ログ有効化
 Enabled	有効
 Encode	エンコード
 Encode as ...	エンコード ...
@@ -1843,6 +1854,7 @@ New	新規
 New ...	新規 ...
 New API key	新規APIキー
 New Login Credentials	新規ログイン資格情報
+New application login configuration	新規アプリケーションログイン設定
 New auditing configuration	新規診断設定
 New crawling configuration	新規クロール設定
 New live passive crawling configuration	新規パッシブクロール設定
@@ -2548,6 +2560,7 @@ Select bits to flip:	反転するビットを選択:
 Select by scan type:	スキャンタイプで選択:
 Select configurations to control how the scan is carried out. You can select multiple configurations, and these will be applied in turn to determine the final configuration that is used for the scan. If no configurations are selected, then Burp Scanner's default settings will be used.	スキャンの実行方法を制御する設定を選択してください。複数の設定を選択でき、これらの設定は順番に適用され最終的にスキャンに使用される設定が決定されます。設定が選択されていない場合、Burp Scannerのデフォルト設定が使用されます。
 Select directory ...	ディレクトリ選択 ...
+Select directory for log file	ログファイルのディレクトリを選択
 Select file ...	ファイル選択 ...
 Select folder	フォルダを選択してください
 Select folder ...	フォルダ選択 ...
