@@ -1016,6 +1016,7 @@ Each installation of Burp generates its own CA certificate that Proxy listeners 
 Edit	編集
 Edit "skip parameter" rule	"スキップパラメータ"ルールを編集
 Edit API key	APIキー編集
+Edit application login configuration	アプリケーションログイン設定の編集
 Edit Login Credentials	ログイン資格情報編集
 Edit SSL passthrough target	SSLパススルーする対象を編集
 Edit URL to exclude from scope	スコープから除外するURLを編集
