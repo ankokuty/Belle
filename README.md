@@ -8,13 +8,13 @@ Belle (Burp Suite 非公式日本語化ツール)
 
 ## 使用方法
 
-本ツールは、Javassistを使用しています。次のリンクからライブラリファイルをダウンロードしておいてください。
+本ツールは、Javassistを使用しています。次のリンクから最新のライブラリファイル(javassist.jar)をダウンロードしておいてください。
 
-[javassist.jar](https://github.com/jboss-javassist/javassist/raw/rel_3_21_0_ga/javassist.jar)
+[Releases · jboss-javassist/javassist](https://github.com/jboss-javassist/javassist/releases)
 
 ### インストーラーを使ってBurp Suiteをインストールした場合
 
-[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のBelle.zipをダウンロードし、展開した結果得られるbelle.jar と ja.txt、及び上記[javassist.jar](https://github.com/jboss-javassist/javassist/raw/rel_3_21_0_ga/javassist.jar)を、Burp Suiteがインストールされているフォルダにコピーします。
+[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のBelle.zipをダウンロードし、展開した結果得られるbelle.jar と ja.txt、及び上記 javassist.jarを、Burp Suiteがインストールされているフォルダにコピーします。
 インストール時に変更していなければ、``C:\Program Files\BurpSuiteCommunity`` や``C:\Program Files\BurpSuitePro``にあると思います。
 
 BurpSuiteFree.vmoptions か BurpSuitePro.vmoptions ファイルをエディタで開き、１行追記します。
@@ -35,7 +35,7 @@ BurpSuiteFree.vmoptions か BurpSuitePro.vmoptions ファイルをエディタ�
 
 ### Burp Suiteのjarファイルを任意の場所にインストールした場合
 
-[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のBelle.zipをダウンロードし、展開した結果得られるbelle.jar と ja.txt、及び上記[javassist.jar](https://github.com/jboss-javassist/javassist/raw/rel_3_21_0_ga/javassist.jar)を、Burpのjarファイル(`burpsuite_free_v1.7.06.jar`等)と同じフォルダにコピーします。
+[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のBelle.zipをダウンロードし、展開した結果得られるbelle.jar と ja.txt、及び上記 javassist.jarを、Burpのjarファイル(`burpsuite_free_v1.7.06.jar`等)と同じフォルダにコピーします。
 
 Burpのjarファイルがあるフォルダに移動し、(-jar オプションより前に) -javaagentコマンドラインオプションを指定して起動します。
 
