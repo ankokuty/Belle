@@ -5,6 +5,7 @@
 $1000	¥30000
 % of audit items fail	%の診断アイテムが失敗した場合
 % of requests time out	%のリクエストがタイムアウトした場合
+(.*)Note that on some Windows installations the Control\+Alt combination is treated by the OS as equivalent to AltGr, and so may result in typed characters appearing when pressed in text fields\.	$1一部のWindowsインストールでは、Ctrl+Altの組み合わせはAltGrと同等として扱われるので、テキストフィールドに入力した文字が現れる可能性がある点に注意してください。
 (.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?(HTML|script|XML|CSS|flash) content(.*)	$1$2$3$4$5$6を非表示$7
 (.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?flash and general binary content(.*)	$1$2$3$4$5flash, バイナリ全般を非表示$6
 (.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?general binary content(.*)	$1$2$3$4$5バイナリ全般を非表示$6
@@ -986,6 +987,8 @@ Don't restore	リストアしない
 Don't scan	スキャンしない
 Don't send items to Proxy history or live tasks	Proxyの履歴やライブタスクにアイテムを送信しない
 Don't send items to Proxy history or live tasks, if out of scope	スコープ外の場合、Proxyの履歴やライブタスクにアイテムを送信しない
+Don't send items to Proxy history or other Burp tools	Proxy履歴や他のBurpツールにアイテムを送信しない
+Don't send items to Proxy history or other Burp tools, if out of scope	スコープ外の場合、Proxy履歴や他のBurpツールにアイテムを送信しない
 Don't submit forms	フォームを送信しない
 Don't submit login forms	ログインフォームを送信しない
 Don't use Burp Collaborator	Burp Collaboratorを使用しない
@@ -1500,6 +1503,7 @@ Invalid date	不正な日付
 Invalid delay between requests	リクエスト間のウェイトが不正です
 Invalid destination host specification	宛先ホストが不正です
 Invalid from value	不正なFrom値
+Invalid hex code	不正な16進コード
 Invalid host specification	不正なホストが指定されました
 Invalid host:(.*)	不正なホスト:$1
 Invalid hostname:(.*)	不正なホスト名:$1
@@ -1513,6 +1517,7 @@ Invalid regex	不正な正規表現
 Invalid regex:(.*)	不正な正規表現:$1
 Invalid session	セッション無効
 Invalid value	不正な値
+Invalid value - limit 15	不正な値 - 15まで
 Invisible	透過
 Invisible proxy support allows non-proxy-aware clients to connect directly to the listener.	透過プロキシをサポートすると、プロキシ非対応のクライアントが直接リスナーに接続できます。
 Invoke Burp extension	Burp拡張を呼び出す
@@ -1609,6 +1614,7 @@ Live capture (stopped)	ライブキャプチャ (停止中)
 Live capture \(([0-9]+) tokens\)	ライブキャプチャ ($1トークン)
 Live config editing	ライブ設定編集
 Live passive crawl	ライブパッシブクロール
+Live passive crawl task is paused - Site map will not be populated	ライブパッシブクロール停止中 - サイトマップは作成されません
 Live passive crawling	ライブパッシクロール
 Live scanning	ライブスキャン
 Load	読み込み
@@ -2239,6 +2245,7 @@ Remove duplicate comments	重複したコメントを削除
 Remove duplicate items (same URL and parameters) [calculating...]	重複したアイテムを削除 (同じURLとパラメータ) [計算中...]
 Remove duplicate items \(same URL and parameters\) \[all ([0-9]+) items?\]	重複(URLとパラメータが同じ)アイテムを除外 [全$1アイテム]
 Remove duplicate items \(same URL and parameters\)( \[([,0-9]+) items\])?	重複(URLとパラメータが同じ)アイテムを除外 [$2 アイテム]
+Remove duplicate scripts	重複したスクリプトを削除
 Remove duplicates	重複を削除
 Remove dupulicate comments	重複したコメントを除去
 Remove from scope	スコープから削除
@@ -2390,7 +2397,8 @@ Run the macro again	マクロを再実行する
 Run the macro to test the handling of parameters	パラメータ処理のテストにマクロを実行する
 Running	起動中
 Running \(([,0-9]+) active threads?\)	実行中 (アクティブなスレッド数 $1)
-Running \(([0-9]+) active threads?, ([0-9]+) queued requests?\)	実行中 \(アクティブスレッド$1個、キューされたリクエスト$2個\)
+Running \(([0-9]+) active threads?, ([0-9]+) queued requests?\)	実行中 (アクティブスレッド$1個、キューされたリクエスト$2個)
+Running \(([0-9]+) requests? in progress, ([0-9]+) requests? queued\)	実行中 (進行中のリクエスト$1個、キューされたリクエスト$2個)
 Running tasks	実行中のタスク
 Runtime file	実行時ファイル
 SMTP header injection(\s+\[[0-9]+\])?	SMTPヘッダインジェクション$1
@@ -2438,8 +2446,10 @@ Save cancelled	保存をキャンセルしました
 Save character set options	文字セットオプションを保存する
 Save client SSL certificates options	クライアントSSL証明書オプションを保存する
 Save completed	保存完了
+Save configuration to library	設定をライブラリに保存
 Save cookie jar options	cookie jar オプションを保存する
 Save copy	コピーを保存
+Save copy [not available on 32-bit systems]	コピーを保存 [32ビットシステムでは利用不可]
 Save copy of project	プロジェクトのコピーを保存
 Save crawler options	クローラオプションを保存する
 Save encrypted using master password	マスターパスワードで暗号化して保存
@@ -2824,6 +2834,7 @@ Task Type	タスクタイプ
 Task auto-start	タスク自動開始
 Task details	タスク詳細
 Task execution is paused	タスクの実行は一時停止中です
+Task execution is paused - Site map will not be populated	タスクの実行は停止中 - サイトマップは作成されません
 Task execution settings	タスク実行設定
 Tasks	タスク
 Tasks queued:	キューされたタスク:
@@ -2977,6 +2988,7 @@ This item is outside the current spidering scope. Would you like to modify the s
 This item is outside the current target scope. Are you sure you want to perform an active scan?	このアイテムは現在の対象スコープ外です。アクティブスキャンを実行してよろしいですか？
 This listing contains the definitions of all issues that can be detected by Burp Scanner.	Burp Scannerが検出できる全問題の定義一覧です。
 This macro is being used by a session handling rule and cannot be deleted.	このマクロはセッションハンドリングルールで使用されているため削除できません。
+This might take an excessive time to perform a complete crawl	完全にクロールするには膨大な時間がかかります
 This panel shows a list of the unique SSL certificates received from web servers. Double-click an item to show the full details of the certificate.	このパネルにはWebサーバから受信した一意なSSL証明書が表示されます。証明書の詳細を見るにはアイテムをダブルクリックしてください。
 This payload type can be used to generate illegal Unicode representations of characters. It is sometimes effective in bypassing filters designed to block certain characters. See the full help for details of each option.	不正なUnicode表記の文字列を生成します。特定の文字をブロックするよう設計されたフィルタの回避に効果がある場合があります。各オプションの詳細はヘルプを参照してください。
 This payload type can be used to shuffle blocks of ciphertext in ECB-encrypted data, so as to meaningfully modify the decrypted cleartext and potentially interfere with application logic. You can optionally supply a list of encrypted strings that use the same cipher and key, to provide additional blocks for shuffling into the original data.	ECBで暗号化されたデータの暗号文ブロックを並び替えると、復号した際に意味のある平文になり、アプリケーションロジックが不安定になる可能性があります。必要に応じて、同じ暗号およびキーを使用して暗号化された文字列のリストを指定し、元データにシャッフルの追加ブロックとして使用できます。
@@ -3040,6 +3052,7 @@ Timeouts	タイムアウト
 Title	タイトル
 To ProperName	先頭のみ大文字でその他は変更なし
 To Propername	先頭のみ大文字でその他は小文字
+To change an action's hotkey, select it in the table and type the hotkey for that action. To clear an existing hotkey, press delete or escape. All hotkeys must use the Control key, and may also use Shift or other available modifiers.	アクションのホットキーを変更するには、テーブルから選択してそのアクションのホットキーを入力します。既存のホットキーをクリアするには、DeleteキーかEscキーを押します。すべてのホットキーはコントロールキーを使用する必要があり、シフトやその他の修飾キーも使用できます。
 To change an action's hotkey, select it in the table and type the hotkey for that action. To clear an existing hotkey, press delete or escape. All hotkeys must use the Control key, and may also use Shift or other available modifiers. Note that on some Windows installations the Control+Alt combination is treated by the OS as equivalent to AltGr, and so may result in typed characters appearing when pressed in text fields.	アクションのホットキーを変更するには、テーブルから選択してそのアクションのホットキーを入力します。既存のホットキーをクリアするには、DeleteキーかEscキーを押します。すべてのホットキーはコントロールキーを使用する必要があり、シフトやその他の修飾キーも使用できます。一部のWindowsインストールでは、Ctrl+Altの組み合わせはAltGrと同等として扱われるので、テキストフィールドに入力した文字が現れる可能性がある点に注意してください。
 To enable bit-level analysis, each token was converted into a set of ([,0-9]+) bits.(.*)	ビットレベルの解析を有効にするために、各トークンは$1ビットのセットに変換されました。$2
 To help us improve Burp, please report this bug and include the details below.	Burpを改善するため、次の詳細を含むこのバグを報告してください。
@@ -3116,6 +3129,8 @@ Undock	切り離し
 Unencrypted communications(\s+\[[0-9]+\])?	暗号化されていない通信$1
 Unhide hidden form fields	Hiddenフォームフィールドを強制表示する
 Unidentified code injection(\s+\[[0-9]+\])?	不明なコードインジェクション$1
+Unique Locations:	一意な位置:
+Unique locations:	一意な位置:
 Unpack gzip / deflate	gzip/deflateを展開する
 Unpack gzip / deflate in requests	リクエストのgzip/deflateを展開する
 Unpack gzip / deflate in responses	レスポンスのgzip/deflateを展開する
@@ -3217,6 +3232,7 @@ Warning: The CSRF form uses a different encoding type than the original request,
 Warning: The XmlHttpRequest technique only works on modern browsers, and the browser will not display the response to the CSRF request. The request contains some non-standard headers which, if included in a cross-domain XHR, may cause the request to be pre-flighted, and so the attack may fail. These headers have been omitted in the PoC attack, to avoid pre-flighting. If the omitted headers are essential for the efficacy of the CSRF attack, you can manually add these to the PoC HTML.	警告: XmlHttpRequest手法は最新のブラウザでのみ動作し、ブラウザはCSRFリクエストのレスポンスを表示しません。クロスドメインのXHRでリクエストに非標準ヘッダが含まれている場合、プリフライトリクエストが発生し、攻撃は失敗する可能性があります。プリフライトを避けるためにこれらのヘッダは省略されています。有効なCSRF攻撃に省略されたヘッダが不可欠な場合は、PoC HTMLに手動で追加できます。
 Warning: The XmlHttpRequest technique only works on modern browsers, and the browser will not display the response to the CSRF request. The request contains some non-standard headers which, if included in a cross-domain XHR, may cause the request to be pre-flighted, and so the attack may fail. These headers have been omitted in the PoC attack, to avoid pre-flighting. If the omitted headers are essential for the efficacy of the CSRF attack, you can manually add these to the PoC HTML. The request includes a Content-Type header with a non-standard value, which may cause the request to be pre-flighted, and so the attack may fail. If the non-standard header is not essential for the efficacy of the CSRF attack, you can try using a standard value in the Content-Type header instead.	警告: XmlHttpRequest手法は最新のブラウザでのみ動作し、ブラウザはCSRFリクエストのレスポンスを表示しません。クロスドメインのXHRでリクエストに非標準ヘッダが含まれている場合、プリフライトリクエストが発生し、攻撃は失敗する可能性があります。プリフライトを避けるためにこれらのヘッダは省略されています。有効なCSRF攻撃に省略されたヘッダが不可欠な場合は、PoC HTMLに手動で追加できます。リクエストに非標準な値のContent-Typeヘッダがあるため、プリフライトリクエストが発生し、攻撃は失敗する可能性があります。非標準ヘッダーがCSRF攻撃に必要不可欠ではない場合は、代わりに標準的なContent-Typeヘッダを使用してみてください。
 Warning: This tracer imposes a processing and storage overhead, and should only be used when troubleshooting issues with session handling rules.	警告:　このトレーサは処理とストレージに負荷をかけるので、セッションハンドリングルールのトラブルシューティングのみに使用すべきです。 
+Warning: changes will not be applied	注意: 変更は適用されません
 Was annotated	注釈付き
 Was intercepted	インターセプトされた
 Was modified	変更された
