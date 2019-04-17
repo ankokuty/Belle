@@ -5,6 +5,8 @@ import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.IllegalClassFormatException;
 import java.lang.instrument.Instrumentation;
 import java.security.ProtectionDomain;
+import java.util.HashMap;
+import java.util.Map;
 
 import javassist.ClassPool;
 import javassist.CtBehavior;
@@ -12,10 +14,26 @@ import javassist.CtClass;
 
 public class Injection {
 	static ClassPool classPool;
+	static Map<String, InjectionMethod> injectionMethods;
 
-	public static void premain(final String agentArgs, Instrumentation instrumentation) throws Exception {
+	public static void premain(String agentArgs, Instrumentation instrumentation) throws Exception {
+		if (agentArgs == null) {
+			agentArgs = "ja";
+		}
+		final String lang = agentArgs;
 		classPool = ClassPool.getDefault();
 
+		injectionMethods = new HashMap<>();
+		injectionMethods.put("java/awt/Frame",                    new InjectionMethod("setTitle",         1));
+		injectionMethods.put("java/awt/Dialog",                   new InjectionMethod("setTitle",         1));
+		injectionMethods.put("javax/swing/JLabel",                new InjectionMethod("setText",          1));
+		injectionMethods.put("javax/swing/AbstractButton",        new InjectionMethod("setText",          1));
+		injectionMethods.put("javax/swing/text/JTextComponent",   new InjectionMethod("setText",          1));
+		injectionMethods.put("javax/swing/text/AbstractDocument", new InjectionMethod("insertString",     2));
+		injectionMethods.put("javax/swing/JComponent",            new InjectionMethod("setToolTipText",   1));
+		injectionMethods.put("javax/swing/JComboBox",             new InjectionMethod("addItem",          1));
+		injectionMethods.put("javax/swing/JOptionPane",           new InjectionMethod("showOptionDialog", 3));
+		
 		instrumentation.addTransformer(new ClassFileTransformer() {
 			CtBehavior insertTranslateCommand(CtBehavior ctMethod, int n) throws Exception {
 				StringBuilder inner = new StringBuilder();
@@ -23,7 +41,7 @@ public class Injection {
 				inner.append("ClassLoader classLoader = ClassLoader.getSystemClassLoader();");
 				inner.append("Class translator = classLoader.loadClass(\"jp.devnull.belle.Translator\");");
 				inner.append("java.lang.reflect.Method method = translator.getDeclaredMethod(\"translate\", new Class[]{String.class, String.class});");
-				inner.append(String.format("if($%d instanceof String){$%d = (String)method.invoke(null, new Object[]{\"" + agentArgs + "\", $%d});}", n, n, n));
+				inner.append(String.format("if($%d instanceof String){$%d = (String)method.invoke(null, new Object[]{\"" + lang + "\", $%d});}", n, n, n));
 				inner.append("}");
 
 				StringBuilder outer = new StringBuilder();
@@ -47,49 +65,25 @@ public class Injection {
 			public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined,
 					ProtectionDomain protectionDomain, byte[] classfileBuffer) throws IllegalClassFormatException {
 				try {
-					if (className.equals("java/awt/Frame") || className.equals("java/awt/Dialog")) {
-						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
-						CtBehavior ctMethod = ctClass.getDeclaredMethod("setTitle");
-						insertTranslateCommand(ctMethod, 1);
-						return ctClass.toBytecode();
-					} else if (className.equals("javax/swing/JLabel") || className.equals("javax/swing/AbstractButton")
-							|| className.equals("javax/swing/text/JTextComponent)")) {
-						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
-						CtBehavior ctMethod = ctClass.getDeclaredMethod("setText");
-						insertTranslateCommand(ctMethod, 1);
+					CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
+					InjectionMethod method = injectionMethods.get(className);
+					if(method!=null) {
+						CtBehavior ctMethod = ctClass.getDeclaredMethod(method.methodName);
+						insertTranslateCommand(ctMethod, method.place);
 						return ctClass.toBytecode();
 					} else if (className.equals("javax/swing/JTabbedPane")) {
-						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
 						CtBehavior ctMethod = ctClass.getDeclaredMethod("addTab");
 						insertTranslateCommand(ctMethod, 1);
 						ctMethod = ctClass.getDeclaredMethod("insertTab");
 						insertTranslateCommand(ctMethod, 1);
 						return ctClass.toBytecode();
-					} else if (className.equals("javax/swing/text/AbstractDocument")) {
-						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
-						CtBehavior ctMethod = ctClass.getDeclaredMethod("insertString");
-						insertTranslateCommand(ctMethod, 2);
-						return ctClass.toBytecode();
-					} else if (className.equals("javax/swing/JComponent")) {
-						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
-						CtBehavior ctMethod = ctClass.getDeclaredMethod("setToolTipText");
-						insertTranslateCommand(ctMethod, 1);
-						return ctClass.toBytecode();
-					} else if (className.equals("javax/swing/JComboBox")) {
-						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
-						CtBehavior ctMethod = ctClass.getDeclaredMethod("addItem");
-						insertTranslateCommand(ctMethod, 1);
-						return ctClass.toBytecode();
-					} else if (className.equals("javax/swing/JOptionPane")) {
-						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
-						CtBehavior ctMethod = ctClass.getDeclaredMethod("showOptionDialog");
-						insertTranslateCommand(ctMethod, 3);
-						return ctClass.toBytecode();
 					} else if (className.equals("javax/swing/JDialog")) {
-						CtClass ctClass = classPool.makeClass(new ByteArrayInputStream(classfileBuffer));
 						CtBehavior ctMethod = ctClass.getDeclaredConstructor(new CtClass[] {
 								classPool.get("java.awt.Frame"), classPool.get("java.lang.String"), CtClass.booleanType });
 						insertTranslateCommand(ctMethod, 2);
+						return ctClass.toBytecode();
+					} else if(className.matches("java/lang/Class")) {
+						ctClass.instrument(new ResourceTransformer(lang));
 						return ctClass.toBytecode();
 					} else {
 						return null;
@@ -100,6 +94,12 @@ public class Injection {
 					throw e;
 				}
 			}
-		});
+		}, true);
+
+		for (Class<?> clazz : instrumentation.getAllLoadedClasses()) {
+			if (clazz.getName().equals("java.lang.Class")) {
+				instrumentation.retransformClasses(new Class[] { clazz });
+			}
+		}
 	}
 }

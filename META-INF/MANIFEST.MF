@@ -1,3 +1,4 @@
 Manifest-Version: 1.0
 Premain-Class: jp.devnull.belle.Injection
 Boot-Class-Path: javassist.jar
+Can-Retransform-Classes: true

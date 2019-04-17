@@ -14,7 +14,7 @@ Belle (Burp Suite 非公式日本語化ツール)
 
 ### インストーラーを使ってBurp Suiteをインストールした場合
 
-[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のBelle.zipをダウンロードし、展開した結果得られるbelle.jar と ja.txt、及び上記 javassist.jarを、Burp Suiteがインストールされているフォルダにコピーします。
+[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新の belle.jar 、及び上記 javassist.jar をダウンロードし、Burp Suiteがインストールされているフォルダにコピーします。
 インストール時に変更していなければ、``C:\Program Files\BurpSuiteCommunity`` や``C:\Program Files\BurpSuitePro``にあると思います。
 
 BurpSuiteFree.vmoptions か BurpSuitePro.vmoptions ファイルをエディタで開き、１行追記します。
@@ -35,7 +35,7 @@ BurpSuiteFree.vmoptions か BurpSuitePro.vmoptions ファイルをエディタ�
 
 ### Burp Suiteのjarファイルを任意の場所にインストールした場合
 
-[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のBelle.zipをダウンロードし、展開した結果得られるbelle.jar と ja.txt、及び上記 javassist.jarを、Burpのjarファイル(`burpsuite_free_v1.7.06.jar`等)と同じフォルダにコピーします。
+[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のbelle.jar、及び上記javassist.jarをダウンロードし、Burpのjarファイル(`burpsuite_free_v1.7.06.jar`等)と同じフォルダにコピーします。
 
 Burpのjarファイルがあるフォルダに移動し、(-jar オプションより前に) -javaagentコマンドラインオプションを指定して起動します。
 
@@ -45,17 +45,17 @@ java -javaagent:belle.jar -Xmx1024m -jar burpsuite_free_v1.7.06.jar
 
 ### アップデート方法
 
-[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のBelle.zipをダウンロードし、belle.jarとja.txtを上書きコピーし、Burp Suiteを再起動してください。
+[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のbelle.jarをダウンロードし上書きコピーし、Burp Suiteを再起動してください。
 
 ### その他
 
-本ツールは、カレントディレクトリの ja.txt を読み込みます。Windowsのショートカットなどから起動する場合は ja.txtがあるフォルダを作業フォルダーに指定、シェルスクリプトやバッチファイルなどから起動する場合はカレントディレクトリを変更した上でjavaコマンドを実行してください。
+以前のバージョンでは、カレントディレクトリの ja.txt を読み込んでいましたが現在は内部に取り込んでいるため、このファイルは不要です。
 
 ## 注意事項
 
 このツールは、私個人が勝手に開発したもので、PortSwigger社は一切関係ありません。日本語訳の間違いはもちろんのこと、本ツールを使用したことによる不具合等についてPortSwiggerに問い合わせないようお願いします。
 
-このツールは内部でJava実行環境のバイトコードを変更します。Oracle社のJava実行環境で使用した場合、[バイナリ・コードライセンス](http://www.oracle.com/technetwork/java/javase/terms/license/index.html)に違反する可能性があります。ライセンスを確認の上、[OpenJDK](http://openjdk.java.net/)等その他のJava実行環境での実行を推奨します。
+このツールは内部でJava実行環境のバイトコードを変更します。Oracle社のJava実行環境で使用した場合、[バイナリ・コードライセンス](http://www.oracle.com/technetwork/java/javase/terms/license/index.html)に違反する可能性があります。ライセンスを確認の上、[OpenJDK](http://openjdk.java.net/)等その他のJava実行環境での実行を推奨します。Professional版 2.0.15beta以降のインストーラーには、OpenJDKのJava実行環境(JRE)が内包されています。
 
 このツールは単純に、辞書ファイルで指定した文字列にマッチする文字列を見つけると、対応する日本語訳に変換しています。
 影響範囲をGUI表示部分に限定しているつもりですが、送受信したHTTPメッセージも意図せず変換してしまっている可能性があります。
@@ -67,8 +67,8 @@ PortSwigger社から英語メッセージ一覧をもらったわけではなく
 ## References
 
 - [Burp Suite](https://portswigger.net/burp/)
+- [Burp Suite Japanユーザグループ](https://groups.google.com/d/forum/burp-suite-japan)
 - [Burp Suite Japan](https://twitter.com/burpsuitejapan)
-- [Burp Suite Japanユーザグループ　サイボウズLive](https://cybozulive.com/join/request/applyNotLogin?key=R602BpyfCD)
 
 ## Author
 
