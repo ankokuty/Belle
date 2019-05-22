@@ -524,7 +524,7 @@ Built-in long directory list	組み込みの長いディレクトリ名一覧
 Built-in long file list	組み込みの長いファイル名一覧
 Built-in short directory list	組み込みの短いディレクトリ名一覧
 Built-in short file list	組み込みの短いファイル名一覧
-Burp Clickbandit is a tool for generating clickjacking attacks. When you have found a web page that may be vulnerable to clickjacking, you can use Burp Clickbandit to create an attack, and confirm that the vulnerability can be successfully exploited.	Burp Clickbanditは、クリックジャッキング攻撃を生成するためのツールです。クリックジャッキングの脆弱性があるWebページを発見した場合、Burp Clickbanditを使用して攻撃を作成し、脆弱性が悪用できるか確認できます。
+Burp Clickbandit is a tool for generating clickjacking attacks. When you have found a web page that may be vulnerable to clickjacking, you can use Burp Clickbandit to create an attack, and confirm that the vulnerability can be successfully exploited.	Burp Clickbanditは、クリックジャッキング攻撃を生成するためのツールです。クリックジャッキングに脆弱なWebページを発見した場合、Burp Clickbanditを使用して攻撃を作成し、脆弱性が悪用できるか確認できます。
 Burp Clickbandit runs in your browser using JavaScript. It works on all modern browsers except for Microsoft IE and Edge. To run Burp Clickbandit, use the following steps:	Burp Clickbanditは、JavaScriptを使用してブラウザで実行されます。Microsoft IEとEdge以外の、すべての最新のブラウザで動作します。Burp Clickbanditを実行するには、次の手順を使用します:
 Burp Collaborator Health Check	Burp Collaboratorヘルスチェック
 Burp Collaborator Server	Burp Collaboratorサーバ
@@ -657,6 +657,7 @@ Cleartext submission of password(\s+\[[0-9]+\])?	パスワードの平文送信$
 Click "Copy to clipboard" to generate Burp Collaborator payloads that you can use in your own testing. Any interactions that result from using the payloads will appear below.	"クリップボードにコピー"をクリックすると、独自のテストで使用できるBurp Collaboratorのペイロードを生成できます。そのペイロードを使用した結果の通信は、下に表示されます。
 Click the stars to rate the '(.*)' BApp	$1 BAppの評価に星をクリックしてください
 Click to modify	クリックして編集
+Click to render page	クリックしてページをレンダリング
 Client SSL Certificate	クライアントSSL証明書
 Client SSL Certificates	クライアントSSL証明書
 Client SSL certificate (PKCS#12)	クライアントSSL証明書 (PKCS#12)
@@ -844,6 +845,7 @@ Custom parameter locations in response	レスポンス内のカスタムパラ�
 Custom scope	カスタムスコープ
 Custom scope: Pasted value is not a valid URL	カスタムスコープ: 貼り付けた値は有効なURLではありません
 Custom:	カスタム:
+Customize User-Agent	User-Agentをカスタマイズ
 Customize crawl strategy (use with caution)	クロール戦略をカスタマイズする(使用注意)
 Cut	切り取り
 DOM data manipulation \(DOM-based\)(\s+\[[0-9]+\])?	DOMデータ操作(DOMベース)$1
@@ -1456,6 +1458,7 @@ Information disclosure	情報漏洩
 Informational	情報
 Informed	情報収集
 Initial payload for first request:	最初のリクエストの初期ペイロード:
+Initializing data ... 	データ初期化中 ... 
 Input returned in response \(reflected\)(\s+\[[0-9]+\])?	レスポンスに含まれる入力値(反射型)$1
 Input returned in response \(stored\)(\s+\[[0-9]+\])?	レスポンスに含まれる入力値(蓄積型)$1
 Insensitive	大文字小文字を無視
@@ -1614,7 +1617,7 @@ Live capture (stopped)	ライブキャプチャ (停止中)
 Live capture \(([0-9]+) tokens\)	ライブキャプチャ ($1トークン)
 Live config editing	ライブ設定編集
 Live passive crawl	ライブパッシブクロール
-Live passive crawl task is paused - Site map will not be populated	ライブパッシブクロール停止中 - サイトマップは作成されません
+Live passive crawl task is paused - Site map will not be populated	ライブパッシブクロールは停止中 - サイトマップは作成されません
 Live passive crawling	ライブパッシクロール
 Live scanning	ライブスキャン
 Load	読み込み
@@ -1789,6 +1792,7 @@ Maximum concurrent requests:	最大同時リクエスト数:
 Maximum crawl time:	最大クロール時間:
 Maximum dynamic analysis time per item (in seconds):	アイテムあたりの最大動的解析時間(秒):
 Maximum insertion points per base request:	ベースリクエストごとの最大挿入ポイント数:
+Maximum items to request from site map:	サイトマップからリクエストする最大アイテム数:
 Maximum length:	最大長:
 Maximum link depth:	最大リンク深度:
 Maximum parameterized requests per URL:	URLごとのパラメター付きリクエストの最大数:
@@ -1874,6 +1878,7 @@ New resource pool	新規リソースプール
 New scan	新規スキャン
 New scan 	新規スキャン 
 New scanning configuration	新規スキャン設定
+New scope configuration	新規スコープ設定
 New tab behavior	新規タブの動作
 New...	新規...
 Newer project file detected	新しいプロジェクトファイルの検出
@@ -2126,6 +2131,7 @@ Please visit https://portswigger.net for more details about Burp Suite Professio
 Please visit https://portswigger.net/burp/freedownload/ to download the latest version.	https://portswigger.net/burp/freedownload/ にアクセスして、最新バージョンをダウンロードしてください。
 Please wait	お待ちください
 Please wait ...	しばらくお待ちください ...
+Please wait...	お待ちください...
 Poll Collaborator interactions	Collaborator通信のポーリング
 Poll every	ポーリング間隔
 Poll now	今すぐポーリング
@@ -2325,6 +2331,8 @@ Request items again	アイテムを再リクエスト
 Request map 1 again in a different session context (configured in Options / Sessions)	マップ１を異なるセッションコンテキスト(オプション/セッションで設定)で再度リクエストする
 Request param name	リクエストパラメータ名
 Request param value	リクエストパラメータ値
+Request robots.txt	robots.txtをリクエスト
+Request site map	サイトマップをリクエスト
 Request the root of all directories	すべてのディレクトリのルートにリクエストする
 Request to ([a-z].*)	$1 へのリクエスト
 Request to Collaborator	Collaboratorへのリクエスト
@@ -2804,6 +2812,7 @@ Subject	サブジェクト
 Submit BApp rating	BAppレーティング送信
 Submit anonymous feedback about Burp's performance	Burpのパフォーマンスを匿名で送信する
 Submit form	フォーム送信
+Submit forms	フォーム送信
 Submit rating	レーティング送信
 Substring	部分文字列
 Success	成功
@@ -2964,6 +2973,7 @@ These settings let you control the appearance of Burp's user interface.	Burpユ�
 These settings let you control the behavior of the active scanning logic to reflect the objectives of the scan and the nature of the target application. See the detailed help for more information about each option.	スキャンの目的と対象アプリケーションの性質に応じて、アクティブスキャンロジックの動作を制御できます。各オプションの詳細はヘルプを参照してください。
 These settings let you control the behavior of the audit logic to reflect the objectives of the audit and the nature of the target application. See the detailed help for more information about each option.	診断の目的や対象アプリケーションの性質に応じて、診断ロジックの挙動を制御できます。各オプションの詳細はヘルプを参照してください。
 These settings let you control the behavior of the crawl logic to reflect the objectives of the crawl and the nature of the application. See the detailed documentation for more information about each option.	診断の目的やアプリケーションの性質に応じて、クロールロジックの挙動を制御できます。各オプションの詳細については、詳細なドキュメントを参照してください。
+These settings let you customize some details of the crawl.	クロールの詳細をカスタマイズできます。
 These settings let you specify tasks that Burp will perform automatically at defined times or intervals.	定義した時間または間隔で、Burpが自動的に実行するタスクを設定します。
 These settings specify the timeouts to be used for various network tasks. Values are in seconds. Set an option to zero or leave it blank to never timeout that task.	様々なネットワークタスクに使用するタイムアウトを指定します。値は、秒単位です。タスクをタイムアウトさせない場合は０または空白にしてください。
 This URL is outside the current target scope. Are you sure you want to discover content?	このURLは現在の対象スコープ外です。コンテンツ探索をしてよろしいですか？
