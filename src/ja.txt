@@ -479,6 +479,7 @@ Automatically update installed BApps on startup	インストールされたBApp�
 BApp verification failed - the BApp may be unsigned or may have been tampered with.	BAppの検証失敗 - BAppは署名されていないか、改竄されている可能性があります。
 Back	戻る
 Backup Interval	バックアップ間隔
+Backup file	バックアップファイル
 Backup file: 	バックアップファイル: 
 Base request	元リクエスト
 Base response	元レスポンス
@@ -848,6 +849,7 @@ Custom:	カスタム:
 Customize User-Agent	User-Agentをカスタマイズ
 Customize crawl strategy (use with caution)	クロール戦略をカスタマイズする(使用注意)
 Cut	切り取り
+DNS query	DNSクエリ
 DOM data manipulation \(DOM-based\)(\s+\[[0-9]+\])?	DOMデータ操作(DOMベース)$1
 DOM data manipulation \(reflected DOM-based\)(\s+\[[0-9]+\])?	DOMデータ操作(反射型DOMベース)$1
 DOM data manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	DOMデータ操作(蓄積型DOMベース)$1
@@ -879,6 +881,7 @@ Define the location of the parameter value. Selecting the item in the response p
 Define the location of the token within the response. Selecting the item in the response panel will create a suitable configuration automatically. You can also modify the configuration manually to ensure it works effectively.	レスポンス内のトークンの場所を定義します。レスポンスパネルでアイテムを選択すると、適切な設定が自動的に作成されます。効果的に動作するよう手動で設定を変更もできます。
 Define the start directory for the content discovery session, and whether files or directories should be targeted.	コンテンツ探索セッションを開始するディレクトリと、対象となるファイルやディレクトリを定義します。
 Define which items are processed by the live scan, based on their URL.	URLに基づいて、ライブスキャンで処理されるアイテムを定義してください。
+Define which items are processed by the live task, based on their URL.	URLに基づいて、ライブタスクで処理されるアイテムを定義してください。
 Delay between requests	リクエスト間のウェイト
 Delay between requests:	リクエスト間のウェイト:
 Delete	削除
@@ -1030,6 +1033,7 @@ Edit audit scan	診断スキャンの編集
 Edit auditing configuration	診断設定の編集
 Edit cookie	cookie編集
 Edit crawl and audit scan	クロールと診断スキャンの編集
+Edit crawl scan	クロールスキャンの編集
 Edit crawling configuration	クロール設定の編集
 Edit detection methods	検出手法を編集
 Edit form field completion rule	フォームフィールド補完ルールを編集
@@ -1076,6 +1080,7 @@ Empty cookie jar	cookie jarを空に
 Enable algorithms blocked by Java security policy (requires restart)	Javaセキュリティポリシーでブロックされたアルゴリズムを有効にする(要再起動)
 Enable automatic project backup	自動プロジェクトバックアップを有効化する
 Enable disabled form fields	無効化されたフォームフィールドを有効化する
+Enable embedded browser sandbox	内蔵ブラウザのサンドボックスを有効化
 Enable embedded browser sandbox (Windows only)	内蔵ブラウザのサンドボックスを有効化(Windowsのみ)
 Enable interception at startup:	起動時にインターセプトを有効:
 Enable logging	ログ有効化
@@ -1537,6 +1542,7 @@ Is not text	テキスト以外
 Is text	テキスト
 Issue Definitions	問題定義
 Issue activity	問題アクティビティ
+Issue activity [Pro version only]	問題アクティビティ [プロ版のみ]
 Issue background	問題のバックグラウンド
 Issue current request	現在のリクエストを発行
 Issue definitions	問題定義
@@ -1611,6 +1617,7 @@ Live Active Scanning	ライブアクティブスキャン
 Live Capture Options	ライブキャプチャーオプション
 Live Passive Scanning	ライブパッシブスキャン
 Live audit	ライブ診断
+Live audit (Pro version only)	ライブ診断 (プロ版のみ)
 Live capture	ライブキャプチャ
 Live capture (paused)	ライブキャプチャ (中断中)
 Live capture (stopped)	ライブキャプチャ (停止中)
@@ -1952,6 +1959,7 @@ Once configured, you can browse the API documentation and interact with the API 
 Once configured, you can browse the API documentation and interact with the API at: [Service URL]/[API key].	設定を行うと、APIドキュメントのブラウズができ、[サービスURL]/[APIキー]でAPIとのやりとりができます。
 One bit failed the test \(bit ([0-9]+)\)\. All other bits passed the test\. 	1ビットが不合格(bit $1)。その他は合格。 
 Online activation	オンラインアクティベーション
+Only available in Burp Suite Pro	Burp Suiteプロ版のみ利用可能
 Open backup	バックアップを開く
 Open config file	設定ファイルを開く
 Open cookie jar	cookie jarを開く
@@ -2409,6 +2417,7 @@ Running \(([0-9]+) active threads?, ([0-9]+) queued requests?\)	実行中 (ア�
 Running \(([0-9]+) requests? in progress, ([0-9]+) requests? queued\)	実行中 (進行中のリクエスト$1個、キューされたリクエスト$2個)
 Running tasks	実行中のタスク
 Runtime file	実行時ファイル
+SMTP Conversation	SMTP通信
 SMTP header injection(\s+\[[0-9]+\])?	SMTPヘッダインジェクション$1
 SOCKS Proxy	SOCKSプロキシ
 SOCKS proxy host:	SOCKSプロキシホスト:
@@ -2629,11 +2638,13 @@ Select the source to use for this site map.	このサイトマップとして使
 Select the state file from which to load this site map.	このサイトマップに読み込むステートファイルを選択してください。
 Select the tools that this rule will be applied to.	ルールを適用するツールを選択してください。
 Select the tools whose traffic will be inspected to select items that are processed by the live scan.	トラフィックを検査して、ライブスキャンで処理されるアイテムを選択するツールを選択してください。
+Select the tools whose traffic will be inspected to select items that are processed by the live task.	トラフィックを検査して、ライブタスクで処理されるアイテムを選択するツールを選択してください。
 Select the type of application that you want to instrument:	道具化するアプリケーションのタイプを選択してください: 
 Select the type of task you want to run.	実行したいタスクのタイプを選択してください。
 Select the types of details to include in the report.	レポートに含める詳細を選択してください。
 Select the types of issues to include in the report.	レポートに含める問題を選択してください。
 Select to use regular expression matching. Deselect to make matches literal.	選択すると正規表現として検索。選択解除すると文字列として検索。
+Select whether items to be processed are deduplicated based on their URL and parameter names. Use this option to avoid processing the same item more than once.	URLとパラメータ名に基づいて、処理されるアイテムを重複排除するかどうか選択してください。このオプションを使用すると、同じアイテムを複数回処理しなくなります。
 Select whether items to be processed are deduplicated based on their URL and parameter names. Use this option to avoid scanning the same item more than once.	URLとパラメータ名に基づいて、処理されるアイテムを重複排除するかどうか選択してください。このオプションを使用すると、同じアイテムを複数回スキャンしなくなります。
 Selected	選択済み
 Selected file is a Burp state file	選択されたファイルはBurpのステートファイルです
@@ -3249,7 +3260,7 @@ Was modified	変更された
 Was not annotated	注釈なし
 Was not intercepted	インターセプトされなかった
 Was not modified	変更されなかった
-Web cache posoning(\s+\[[0-9]+\])?	Webキャッシュ汚染$1
+Web cache poisoning(\s+\[[0-9]+\])?	Webキャッシュ汚染$1
 WebSocket hijacking \(DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック(DOMベース)$1
 WebSocket hijacking \(reflected DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック(反射型DOMベース)$1
 WebSocket hijacking \(stored DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック(蓄積型DOMベース)$1
