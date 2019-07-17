@@ -66,6 +66,7 @@ PortSwigger社から英語メッセージ一覧をもらったわけではなく
 
 ## References
 
+- [挙動の解説(MBSD Blog)](https://www.mbsd.jp/blog/20190701.html)
 - [Burp Suite](https://portswigger.net/burp/)
 - [Burp Suite Japanユーザグループ](https://groups.google.com/d/forum/burp-suite-japan)
 - [Burp Suite Japan](https://twitter.com/burpsuitejapan)
