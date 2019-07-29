@@ -6,7 +6,10 @@
 $1000	¥30000
 % of audit items fail	%の診断アイテムが失敗した場合
 % of requests time out	%のリクエストがタイムアウトした場合
+(.*)Because some character positions within the sample use character sets whose size is not a round power of two, ([,0-9.]+) bits of data were compressed into other bits derived from the same character position.(.*)	$1サンプル内の一部の文字位置は2の累乗のサイズではない文字セットを使用するので、データの$2ビットは同じ文字位置から派生した他のビットに圧縮されました。$3
 (.*)Note that on some Windows installations the Control\+Alt combination is treated by the OS as equivalent to AltGr, and so may result in typed characters appearing when pressed in text fields\.	$1一部のWindowsインストールでは、Ctrl+Altの組み合わせはAltGrと同等として扱われるので、テキストフィールドに入力した文字が現れる可能性がある点に注意してください。
+(.*)The chart shows the number of bits contributed by each character position.	$1グラフは、各文字位置が貢献したビット数を示しています。
+(.*)The overall bit counts for effective entropy have been adjusted to reflect this compression.(.*)	$1意味のあるエントロピーの全体ビットのカウントは、この圧縮を反映するように調整されています。$2
 (.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?(HTML|script|XML|CSS|flash) content(.*)	$1$2$3$4$5$6を非表示$7
 (.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?flash and general binary content(.*)	$1$2$3$4$5flash, バイナリ全般を非表示$6
 (.*)[Hh]iding (HTML, )?(script, )?(XML, )?(CSS, )?general binary content(.*)	$1$2$3$4$5バイナリ全般を非表示$6
@@ -64,8 +67,10 @@ $1000	¥30000
 (.*)\[Pro version only\](.*)	$1[プロ版のみ]$2
 (.*)\[Pro version with 64-bit Java only\](.*)	$1[64ビットJavaのプロ版のみ]$2
 (.*)\[disk projects only\](.*)	$1[ディスクプロジェクトのみ]$2
+(.*: )FIPS-compliant.	$1FIPS準拠。
 (.*: )excellent.	$1非常に良い。
 (.*: )extremely poor.	$1非常に悪い。
+(.*: )good.	$1良い。
 (.*: )poor.	$1悪い。
 (.*: )reasonable.	$1適当。
 (.*: )very good.	$1とても良い。
@@ -81,8 +86,8 @@ $1000	¥30000
 ([0-9]+) \(approx\)	約$1
 ([0-9]+) \(max\)	$1 (最大)
 ([0-9]+) anomalies were identified in this test:	このテストで$1個の異常が見つかりました: 
-([0-9]+) bits failed the test. The following ([0-9]+) bits passed the test: ([0-9]+)(, [0-9]+)*.(.*)	$1ビットが不合格。次の$2ビットは合格: $3$4$5
-([0-9]+) bits passed the test. The following ([0-9]+) bits failed the test: ([0-9]+)(, [0-9]+)*.(.*)	$1ビットが合格。次の$2ビットは不合格: $3$4$5
+([0-9]+) bits failed the test. The following ([0-9]+) bits passed the test: ([0-9]+)((, [0-9]+)*).(.*)	$1ビットが不合格。次の$2ビットは合格: $3$4$6
+([0-9]+) bits passed the test. The following ([0-9]+) bits failed the test: ([0-9]+)((, [0-9]+)*).(.*)	$1ビットが合格。次の$2ビットは不合格: $3$4$6
 ([0-9]+) items added to site map	サイトマップに$1件追加
 ([0-9]+) items?	$1個のアイテム
 ([0-9]+) letter words	$1文字単語
@@ -244,9 +249,9 @@ Ajax request header manipulation \(stored DOM-based\)(\s+\[[0-9]+\])?	Ajaxリク
 Alerts	警告
 Alias	別名
 All	すべて
-All bits failed the test. 	全ビットテスト不合格 
-All bits passed the test. 	全ビットテスト合格 
-All bits passed the test. Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long. However, an overly short longest run of bits also indicates that the sample is not random. Therefore some bits may record a significance level that is below the FIPS pass level even though they do not strictly fail the FIPS test.	全ビットテスト合格このテストのFIPS仕様では、ビットの最長連が長すぎる場合にのみ、失敗となることに注意してください。しかしながら、短すぎるビットの最長連も、サンプルがランダムでないことを示します。したがって一部のビットでは、厳密なFIPSテストに不合格でないにもかかわらず、FIPS合格レベルを下回る有意水準になる場合があります。
+All bits failed the test. 	全ビットテスト不合格。 
+All bits passed the test. 	全ビットテスト合格。 
+All bits passed the test. Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long. However, an overly short longest run of bits also indicates that the sample is not random. Therefore some bits may record a significance level that is below the FIPS pass level even though they do not strictly fail the FIPS test.	全ビットテスト合格。このテストのFIPS仕様では、ビットの最長連が長すぎる場合にのみ、失敗となることに注意してください。しかしながら、短すぎるビットの最長連も、サンプルがランダムでないことを示します。したがって一部のビットでは、厳密なFIPSテストに不合格でないにもかかわらず、FIPS合格レベルを下回る有意水準になる場合があります。
 All interfaces	すべてのインタフェース
 All issues	すべての問題
 All items were successfully cleaned up.	すべてのアイテムを正常に削除しました。
@@ -411,6 +416,7 @@ At a significance level of 1%, the amount of effective entropy is estimated to b
 At least one URL to scan must be specified.	スキャンするURLを少なくとも1つは指定してください。
 At least one item to scan must be specified.	スキャンするアイテムを少なくとも1つは指定してください。
 At least one kind of analysis must be selected	少なくとも１種類の解析を選択する必要があります。
+Attach	結合
 Attack	攻撃
 Attack Insertion Points	攻撃挿入ポイント
 Attack Results	攻撃結果
@@ -494,7 +500,6 @@ Base64-encode requests and responses	リクエストとレスポンスをBase64�
 Base64-encoded data in parameter(\s+\[[0-9]+\])?	パラメータ内のBase64エンコードされたデータ$1
 Base:	ベース:
 Battering ram	破城槌(Battering ram)
-Because some character positions within the sample use character sets whose size is not a round power of two, ([,0-9.]+) bits of data were compressed into other bits derived from the same character position.	サンプル内の一部の文字位置は2の累乗のサイズではない文字セットを使用するので、データの$1ビットは同じ文字位置から派生した他のビットに圧縮されました。
 Billing	課金
 Bind to address:	バインドするアドレス:
 Bind to port:	バインドするポート:
@@ -676,7 +681,10 @@ Client-side XPath injection \(DOM-based\)(\s+\[[0-9]+\])?	クライアントサ�
 Client-side XPath injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドXPathインジェクション(反射型DOMベース)$1
 Client-side XPath injection \(stored DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドXPathインジェクション(蓄積型DOMベース)$1
 Client-side template injection(\s+\[[0-9]+\])?	クライアントサイドテンプレートインジェクション$1
+Clone	複製
 Close	閉じる
+Close other tabs	他のタブを閉じる
+Close tab	タブを閉じる
 Close wizard	ウィザードを閉じる
 Cluster bomb	クラスター爆弾(Cluster bomb)
 Collaborator (.*) interaction	Collaboratorとの$1通信
@@ -728,6 +736,8 @@ Configure the settings for the custom token location	トークン位置のカス
 Configure the sources Burp should use for generating filenames to test.	ファイル名のテストを生成する元を設定します。
 Confirm	確認
 Connect	接続
+Connected	接続済み
+Connecting...	接続中...
 Connection failed	接続失敗
 Connections	接続
 Consolidate frequently occurring passive issues	頻繁に発生するパッシブ問題を統合する
@@ -1535,6 +1545,7 @@ Invalid proxy port	プロキシポート番号が不正です
 Invalid regex	不正な正規表現
 Invalid regex:(.*)	不正な正規表現:$1
 Invalid session	セッション無効
+Invalid upgrade request	不正なUpgradeリクエスト
 Invalid value	不正な値
 Invalid value - limit 15	不正な値 - 15まで
 Invisible	透過
@@ -1885,6 +1896,7 @@ New	新規
 New ...	新規 ...
 New API key	新規APIキー
 New Login Credentials	新規ログイン資格情報
+New WebSocket	新規WebSocket
 New WebSocket Connection	新規WebSocket接続
 New application login configuration	新規アプリケーションログイン設定
 New auditing configuration	新規診断設定
@@ -1920,6 +1932,7 @@ No processors defined	処理が定義されていません
 No proxy listeners are currently running - go to the Options tab to enable a listener	プロキシリスナーが起動していません - オプションタブでリスナーを有効化してください。
 No summary chart	サマリグラフなし
 No summary table	サマリテーブルなし
+Non WebSocket response returned	非WebSocketレスポンス
 Non web socket response returned	非WebSocketレスポンス応答
 None	なし
 Normal	Normal
@@ -2597,6 +2610,8 @@ Searching:(.*)	検索中:$1
 See the documentation for more details on using Burp Clickbandit.	Burp Clickbanditの使用方法に関する詳細はドキュメントを参照してください。
 Select BApp File	BAppファイルを選択してください
 Select Live Capture Request	ライブキャプチャリクエスト選択
+Select WebSocket	WebSocket選択
+Select a WebSocket to attach to or create a new one.	結合するWebSocketを選択するか、新規作成してください。
 Select a directory	ディレクトリ選択
 Select a directory containing custom payload lists	カスタムペイロードリストのあるディレクトリを選択してください
 Select a file	ファイルを選択
@@ -2606,6 +2621,7 @@ Select by scan type:	スキャンタイプで選択:
 Select configurations to control how the scan is carried out. You can select multiple configurations, and these will be applied in turn to determine the final configuration that is used for the scan. If no configurations are selected, then Burp Scanner's default settings will be used.	スキャンの実行方法を制御する設定を選択してください。複数の設定を選択でき、これらの設定は順番に適用され最終的にスキャンに使用される設定が決定されます。設定が選択されていない場合、Burp Scannerのデフォルト設定が使用されます。
 Select directory ...	ディレクトリ選択 ...
 Select directory for log file	ログファイルのディレクトリを選択
+Select existing connection	既存の接続を選択
 Select file ...	ファイル選択 ...
 Select folder	フォルダを選択してください
 Select folder ...	フォルダ選択 ...
@@ -2621,7 +2637,7 @@ Select item ([0-9]+):	選択アイテム$1:
 Select license file	ライセンスファイルを選択してください
 Select license key file ...	ライセンスキーファイルを選択 ...
 Select macro:	マクロを選択:
-Select next message received	次に受信したメッセージを選択
+Select next message received	次に受信するメッセージを自動選択
 Select none	選択を解除
 Select payload generator	ペイロードジェネレータを選択
 Select processor:	拡張選択:
@@ -2905,7 +2921,6 @@ The certificate was successfully exported.	証明書を正常にエクスポー�
 The chart indicates the degree of confidence in the randomness of the sample at each bit position. The significance level at each position is the probability of the observed bit-level results occurring, assuming that the sample is randomly generated.	グラフは、各ビット位置におけるサンプルの乱数性の信頼度を示します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合の、観察されたビットレベルの発生確率です。
 The chart indicates the degree of confidence in the randomness of the sample at each character position. The significance level at each position is the probability of the observed character-level results occurring, assuming that the sample is randomly generated.	グラフは、各文字位置におけるサンプルの乱数性の信頼度を示します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合の、観察された文字レベルの発生確率です。
 The chart shows the maximum bits of entropy available at each position, given the size of the character set used at that position. The total amount of possible entropy is ([.0-9]+) bits.	グラフは、その位置で使用される文字セットのサイズによって与えられる、各位置におけるエントロピーの最大ビットを表示しています。有効なエントロピーの総数は、$1ビットです。
-The chart shows the number of bits contributed by each character position.	グラフでは、各文字位置が貢献したビット数を示しています。
 The chart shows the number of bits of effective entropy at each significance level, based on all tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、すべてのテストに基づいた、各有意水準との有効エントロピービット数を表示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。有意水準を低くすると、トークンがランダムに生成されたという仮説を否定するためにはより強力な証拠が必要となり、ランダムではないデータがランダムとして扱われる可能性が高まります。
 The chart shows the number of bits of effective entropy at each significance level, based on the bit-level tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、ビットレベルのテストに基づいた、有意水準ごとの有効エントロピービット数を示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。有意水準を低くすると、トークンがランダムに生成されたという仮説を否定するためにはより強力な証拠が必要となり、ランダムではないデータがランダムとして扱われる可能性が高まります。
 The chart shows the number of bits of effective entropy at each significance level, based on the character-level tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、文字レベルのテストに基づいた、有意水準ごとの有効エントロピービット数を示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。有意水準を低くすると、トークンがランダムに生成されたという仮説を否定するためにはより強力な証拠が必要となり、ランダムではないデータがランダムとして扱われる可能性が高まります。
@@ -2929,7 +2944,6 @@ The macro contains no items. Are you sure you want to proceed?	マクロにア�
 The name is already used	その名前は既に使用されています
 The options below control the types of analysis that is performed at the bit level.	ビットレベルで実行される分析タイプを制御します。
 The options below control the types of analysis that is performed at the character level.	文字レベルで実行される分析タイプを制御します。
-The overall bit counts for effective entropy have been adjusted to reflect this compression.	意味のあるエントロピーの全体ビットのカウントは、この圧縮を反映するように調整されています。
 The overall quality of randomness within the sample is estimated to be: (.*)	サンプル内の乱数の質の推測は次の通りです: $1
 The private key was successfully exported.	秘密鍵を正常にエクスポートしました。
 The project file contains no importable data.	プロジェクトファイルにはインポートできるデータがありません。
@@ -3175,6 +3189,7 @@ Unhide hidden form fields	Hiddenフォームフィールドを強制表示する
 Unidentified code injection(\s+\[[0-9]+\])?	不明なコードインジェクション$1
 Unique Locations:	一意な位置:
 Unique locations:	一意な位置:
+Unknown host	不明なホスト
 Unpack gzip / deflate	gzip/deflateを展開する
 Unpack gzip / deflate in requests	リクエストのgzip/deflateを展開する
 Unpack gzip / deflate in responses	レスポンスのgzip/deflateを展開する
