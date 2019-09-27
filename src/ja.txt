@@ -1425,6 +1425,7 @@ Ignore	無視する
 Ignore duplicate items based on URL and parameter names	URLとパラメータ名に基づいて重複したアイテムを無視する
 Ignore form	フォーム無視
 Ignore links to non-text content	テキスト以外のコンテンツへのリンクを無視する
+Ignore protocols in URLs to scan	URLのプロトコルを無視してスキャン
 Ignore these headers:	これらのヘッダを無視する:
 Ignore these parameters:	これらのパラメータを無視する:
 Ignore tokens whose length deviates by	長さの異なるトークンを無視する
@@ -2326,6 +2327,7 @@ Remove unsupported encodings from Accept-Encoding headers in incoming requests	�
 Rename	名前変更
 Rename Project	プロジェクト名変更
 Rename project	プロジェクト名変更
+Reopen closed tab	閉じたタブを開く
 Repair project	プロジェクト修復
 Repairing project, please wait ...	プロジェクトを修復しています、しばらくお待ちください ...
 Reparse	再解析
