@@ -240,6 +240,7 @@ Add upstream proxy rule	上位プロキシのルールを追加
 Add §	§追加
 Additional encrypted strings - optional	追加暗号文字列 - オプション
 Additional encrypted strings - optional \(([0-9]+)\)	追加の暗号文字列 - オプション ($1)
+Advanced settings	高度な設定
 Advisory	アドバイザリ
 After recovering session:	セッション復元後:
 After running the macro, invoke a Burp extension action handler:	マクロ実行後、Burp拡張のアクションハンドラを実行する:
@@ -259,6 +260,7 @@ All rows	すべての行
 All tests were successful. 	すべてのテストが成功しました。 
 All tools:	全ツール:
 Allow access without API key (using this option is not secure)	APIキー無しのアクセスを許可する (このオプションは安全ではありません)
+Allow loading of page resources that are out-of-scope	スコープ外のページリソースの読み込みを許可する
 Allow renderer to make HTTP requests (for images, etc.)	レンダラによるHTTPリクエスト(画像など)送信を許可する
 Allow requests to web interface using fully-qualified DNS hostnames	Webインタフェースで完全修飾DNSホスト名を許可する
 Allow unsafe renegotiation (required for some client certificates)	安全ではないリネゴシエーションを許可する(一部のクライアント証明書で必要)
@@ -555,6 +557,7 @@ Burp Suite Documentation	Burp Suiteドキュメント
 Burp Suite Professional	Burp Suiteプロフェッショナル
 Burp Suite diagnostics	Burp Suite診断
 Burp Suite documentation	Burp Suiteドキュメント
+Burp Suite is out of date	Burp Suiteが古くなっています
 Burp Suite search	Burp Suite検索
 Burp has not been fully tested on this platform and you may experience problems.	Burpはこのプラットフォームで十分テストされて折らず、問題が発生する可能性があります。
 Burp is up to date.	Burpは最新です。
@@ -1008,6 +1011,7 @@ Don't send items to Proxy history or live tasks	Proxyの履歴やライブタス
 Don't send items to Proxy history or live tasks, if out of scope	スコープ外の場合、Proxyの履歴やライブタスクにアイテムを送信しない
 Don't send items to Proxy history or other Burp tools	Proxy履歴や他のBurpツールにアイテムを送信しない
 Don't send items to Proxy history or other Burp tools, if out of scope	スコープ外の場合、Proxy履歴や他のBurpツールにアイテムを送信しない
+Don't show again for this version	このバージョンは再表示しない
 Don't submit forms	フォームを送信しない
 Don't submit login forms	ログインフォームを送信しない
 Don't use Burp Collaborator	Burp Collaboratorを使用しない
@@ -3087,6 +3091,7 @@ This test divides the bit sequence at each position into runs of consecutive bit
 This test measures the longest run of bits with the same value at each bit position. If the sample is randomly generated, the longest run is likely to be within a range determined by the size of the sample set. At each position, the test computes the probability of the observed longest run arising if the tokens are random. The significance level at each position is the probability of the observed longest run occurring, assuming that the sample is randomly generated.	各ビット位置で、同じ値を持つビットの最長連を計測します。もしサンプルがランダムに生成されているならば、最長連は、サンプルセットのサイズで決定される範囲にほぼ入るはずです。このテストでは、各位置について、トークンがランダムである場合に観測されるはずの、最長連の確率を計算します。サンプルがランダムと仮定した場合、各位置の有意水準は、観察された最長連が発生する確率です。
 This test performs a sophisticated analysis of the bit sequence at each position, and is capable of identifying evidence of non-randomness in some samples which pass the other statistical tests. The test works through the bit sequence and treats each series of consecutive numbers as coordinates in a multi-dimensional space. It plots a point in this space at each location determined by these co-ordinates. If the sample is randomly generated, the distribution of points within this space is likely to be approximately uniform; the appearance of clusters within the space indicates that the data is likely to be non-random. At each position, the test computes the probability of the observed distribution occurring if the tokens are random. The test is repeated for multiple sizes of number (between 1 and 8 bits) and for multiple numbers of dimensions (between 2 and 6). The significance level at each position is the probability of the observed results occurring, assuming that the sample is randomly generated.	このテストは、各位置のビットシーケンスの高度な解析を実行し、他の統計テストに合格した一部のサンプルの、非ランダム性の証拠を発見できます。このテストではビット列を処理し、一連の連続する数値を多次元空間の座標として扱います。これらの座標によって決定された場所ごとに、空間内の点をプロットします。もしサンプルがランダムに生成されているならば、この空間内の点の分布はほぼ均一になるはずです; 空間内に偏りができた場合は、データがランダムではない可能性が高いです。このテストでは、各位置について、トークンがランダムな場合に観測されるはずの、分布の発生確率を計算します。このテストは、複数サイズの数(1から8ビット)と、複数の次元(2から6)で繰り返されます。サンプルがランダムと仮定した場合、各位置の有意水準は、観察された結果が発生する確率です。
 This type of live task analyses HTTP messages and adds entries to the Target site map. Choose which items to add to the site map based on their type and URL.	このタイプのライブタスクは、HTTPメッセージを分析し、Targetのサイトマップにエントリを追加します。タイプとURLに基づいて、サイトマップに追加するアイテムを選択してください。
+This version of Burp Suite was released over three months ago. Please consider updating to benefit from enhancements and security fixes.	Burp Suiteのこのバージョンは3か月以上前にリリースされました。機能強化とセキュリティ修正のため、更新を検討してください。
 This version of Burp requires a license key. To continue, please paste your license key below, or load it from file.	このバージョンのBurpはライセンスキーが必要です。継続するには、以下にライセンスキーを貼り付けるか、ファイルから読み込んでください。
 This will clear all existing custom iterator settings	既存のすべてのカスタムイテレータをクリアします
 This will close all Burp projects and shutdown - are you sure you want to exit?	すべてのBurpプロジェクトを閉じシャットダウンします - 終了してよろしいですか？
@@ -3242,6 +3247,7 @@ Use default attack configuration	デフォルトの攻撃設定を使用する
 Use default system temp directory	システムのデフォルト一時ディレクトリを使用する
 Use denial-of-service mode (no results)	サービス拒否モードを使用する(結果なし)
 Use dynamic analysis techniques	動的解析手法を使用する
+Use embedded browser for navigation (EXPERIMENTAL)	ナビゲーションに内蔵ブラウザを使用（実験的）
 Use existing resource pool	既存のリソースプールを使用する
 Use font smoothing	フォントスムージングを使用する
 Use intelligent attack selection	賢い攻撃の選択を使用する
