@@ -1012,6 +1012,7 @@ Don't send items to Proxy history or live tasks, if out of scope	スコープ外
 Don't send items to Proxy history or other Burp tools	Proxy履歴や他のBurpツールにアイテムを送信しない
 Don't send items to Proxy history or other Burp tools, if out of scope	スコープ外の場合、Proxy履歴や他のBurpツールにアイテムを送信しない
 Don't show again for this version	このバージョンは再表示しない
+Don't show again for:	再表示しない:
 Don't submit forms	フォームを送信しない
 Don't submit login forms	ログインフォームを送信しない
 Don't use Burp Collaborator	Burp Collaboratorを使用しない
@@ -1991,6 +1992,7 @@ On:	日付:
 Once configured, you can browse the API documentation and interact with the API at: Service URL/API key.	設定を行うと、APIドキュメントのブラウズができ、サービスURL/APIキー でAPIとのやりとりができます。
 Once configured, you can browse the API documentation and interact with the API at: [Service URL]/[API key].	設定を行うと、APIドキュメントのブラウズができ、[サービスURL]/[APIキー]でAPIとのやりとりができます。
 One bit failed the test \(bit ([0-9]+)\)\. All other bits passed the test\. 	1ビットが不合格(bit $1)。その他は合格。 
+One week	1週間
 Online activation	オンラインアクティベーション
 Only available in Burp Suite Pro	Burp Suiteプロ版のみ利用可能
 Open backup	バックアップを開く
@@ -2145,6 +2147,7 @@ Please enter the new project name.	新しいプロジェクト名を入力して
 Please enter your new license key.	新規ライセンスキーを入力してください。
 Please log in to /users/ and download Burp manually.	/users/にログインし、Burpを手動でダウンロードしてください。
 Please log in to https://portswigger.net/users and download Burp manually.	https://portswigger.net/users にログインし、手動でBurpをダウンロードしてください。
+Please note that any configured passwords will be saved in plaintext.	設定されたパスワードは平文で保存されることに注意してください。
 Please note that state files are deprecated. State files no longer save or restore configuration, only data. You are recommended to use project files instead of state files.	ステートファイルは廃止予定です。ステートファイルはデータのみ保存や読み込みができ、設定は保存できません。ステートファイルではなくプロジェクトファイルの使用を推奨します。
 Please provide a name for this configuration	この設定の名前を入力してください
 Please read the following licence agreement carefully, and indicate whether you accept its terms.	次の使用許諾契約書を読み、条項に同意するかどうかを指定してください。
@@ -3091,6 +3094,7 @@ This test divides the bit sequence at each position into runs of consecutive bit
 This test measures the longest run of bits with the same value at each bit position. If the sample is randomly generated, the longest run is likely to be within a range determined by the size of the sample set. At each position, the test computes the probability of the observed longest run arising if the tokens are random. The significance level at each position is the probability of the observed longest run occurring, assuming that the sample is randomly generated.	各ビット位置で、同じ値を持つビットの最長連を計測します。もしサンプルがランダムに生成されているならば、最長連は、サンプルセットのサイズで決定される範囲にほぼ入るはずです。このテストでは、各位置について、トークンがランダムである場合に観測されるはずの、最長連の確率を計算します。サンプルがランダムと仮定した場合、各位置の有意水準は、観察された最長連が発生する確率です。
 This test performs a sophisticated analysis of the bit sequence at each position, and is capable of identifying evidence of non-randomness in some samples which pass the other statistical tests. The test works through the bit sequence and treats each series of consecutive numbers as coordinates in a multi-dimensional space. It plots a point in this space at each location determined by these co-ordinates. If the sample is randomly generated, the distribution of points within this space is likely to be approximately uniform; the appearance of clusters within the space indicates that the data is likely to be non-random. At each position, the test computes the probability of the observed distribution occurring if the tokens are random. The test is repeated for multiple sizes of number (between 1 and 8 bits) and for multiple numbers of dimensions (between 2 and 6). The significance level at each position is the probability of the observed results occurring, assuming that the sample is randomly generated.	このテストは、各位置のビットシーケンスの高度な解析を実行し、他の統計テストに合格した一部のサンプルの、非ランダム性の証拠を発見できます。このテストではビット列を処理し、一連の連続する数値を多次元空間の座標として扱います。これらの座標によって決定された場所ごとに、空間内の点をプロットします。もしサンプルがランダムに生成されているならば、この空間内の点の分布はほぼ均一になるはずです; 空間内に偏りができた場合は、データがランダムではない可能性が高いです。このテストでは、各位置について、トークンがランダムな場合に観測されるはずの、分布の発生確率を計算します。このテストは、複数サイズの数(1から8ビット)と、複数の次元(2から6)で繰り返されます。サンプルがランダムと仮定した場合、各位置の有意水準は、観察された結果が発生する確率です。
 This type of live task analyses HTTP messages and adds entries to the Target site map. Choose which items to add to the site map based on their type and URL.	このタイプのライブタスクは、HTTPメッセージを分析し、Targetのサイトマップにエントリを追加します。タイプとURLに基づいて、サイトマップに追加するアイテムを選択してください。
+This version	このバージョン
 This version of Burp Suite was released over three months ago. Please consider updating to benefit from enhancements and security fixes.	Burp Suiteのこのバージョンは3か月以上前にリリースされました。機能強化とセキュリティ修正のため、更新を検討してください。
 This version of Burp requires a license key. To continue, please paste your license key below, or load it from file.	このバージョンのBurpはライセンスキーが必要です。継続するには、以下にライセンスキーを貼り付けるか、ファイルから読み込んでください。
 This will clear all existing custom iterator settings	既存のすべてのカスタムイテレータをクリアします
