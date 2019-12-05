@@ -424,6 +424,7 @@ Attack Insertion Points	攻撃挿入ポイント
 Attack Results	攻撃結果
 Attack Target	攻撃対象
 Attack configuration	攻撃設定
+Attack saved	攻撃保存完了
 Attack type:	攻撃タイプ:
 Attempt data recovery	データ復元を開始
 Attempt to self-register a user	自分自身でユーザ登録を試みるか
@@ -719,6 +720,7 @@ Configuration exported successfully.	設定を正常にエクスポートしま�
 Configuration imported successfully.	設定を正常にインポートしました。
 Configuration library	設定ライブラリ
 Configuration name:	設定名:
+Configuration saved successfully.	設定を正常に保存しました。
 Configuration:	設定:
 Configure	設定
 Configure Macro Item	マクロアイテム設定
@@ -2580,6 +2582,7 @@ Save upstream proxy servers options	上位プロキシサーバオプション�
 Save user interface options	ユーザインタフェースオプションを保存する
 Save user options	ユーザオプション保存
 Saved preferences	保存した設定
+Saving Server Responses	サーバレスポンスを保存中
 Saving project	プロジェクト保存中
 Saving project ([0-9]+)% complete	プロジェクト保存中: $1%完了
 Saving project...	プロジェクト保存中...
@@ -3337,6 +3340,7 @@ Word compare	単語比較
 Word compare of #([0-9]+) and #([0-9]+)  \(([0-9]+) differences\)	#$1と#$2の単語比較  ($3カ所の相違)
 Word compare of responses from (.*)	$1 のレスポンス単語比較
 Words	単語
+Wrap data safely for Microsoft Excel	Microsoft Excel用にデータを整形する
 X-Forwarded-For dependent response(\s+\[[0-9]+\])?	X-Forwarded-Forに依存したレスポンス$1
 X509 certificate for (.*)	$1のX509証明書
 XML / SOAP injection	XML/SOAPインジェクション
