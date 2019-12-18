@@ -186,6 +186,7 @@ Add	追加
 Add "skip parameter" rule	"スキップパラメータ"ルールを追加
 Add % prefix before each byte	各バイトの前に % を追加
 Add SSL passthrough target	SSLパススルーする対象を追加
+Add TLS passthrough target	TLSパススルーする対象を追加
 Add URL to exclude from scope	スコープから除外するURLを追加
 Add URL to include in scope	スコープに含めるURLを追加
 Add a new action	新規アクション追加
@@ -343,6 +344,9 @@ Are you sure you want to restore default SOCKS proxy options?	SOCKSプロキシ�
 Are you sure you want to restore default SSL negotiation options?	SSLネゴシエーションオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default SSL negotiation workarounds options?	SSL ネゴシエーション回避策オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default SSL passthrough options?	SSLパススルーオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default TLS negotiation options?	TLSネゴシエーションオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default TLS negotiation workarounds options?	TLSネゴシエーション回避策オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default TLS passthrough options?	TLSパススルーオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default active scanning areas options?	アクティブスキャン対象オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default active scanning engine options?	アクティブスキャンエンジンオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default active scanning optimization options?	アクティブスキャン最適化オプションをデフォルトに戻してよろしいですか？
@@ -352,6 +356,7 @@ Are you sure you want to restore default attack results options?	攻撃結果オ
 Are you sure you want to restore default automatic project backup options?	自動プロジェクトバックアップオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default character set options?	文字セットオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default client SSL certificates options?	クライアントSSL証明書オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default client TLS certificates options?	クライアントTLS証明書オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default cookie jar options?	cookie jar オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default crawler options?	クローラオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default extract grep options?	抽出grepオプションをデフォルトに戻してよろしいですか？
@@ -387,6 +392,7 @@ Are you sure you want to restore default rest api options?	REST APIオプショ�
 Are you sure you want to restore default scan issues options?	スキャン項目オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default scheduled tasks options?	スケジュールタスクオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default server SSL certificates options?	サーバSSL証明書オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default server TLS certificates options?	クライアントTLS証明書オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default session handling rules options?	セッションハンドリングルールオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default spider engine options?	Spiderエンジンオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default spider scope options?	Spiderスコープオプションをデフォルトに戻してよろしいですか？
@@ -471,6 +477,7 @@ Automatic payload positions	自動ペイロードポジション
 Automatic project backup	自動プロジェクトバックアップ
 Automatic project backup saves a copy of the Burp project file periodically in the background.	プロジェクト自動バックアップは、バックグラウンドで定期的にBurpプロジェクトファイルのコピーを保存します。
 Automatically add entries on client SSL negotiation failure	クライアントがSSL接続に失敗したエントリを自動的に追加する
+Automatically add entries on client TLS negotiation failure	クライアントがTLS接続に失敗したエントリを自動的に追加する
 Automatically back up the project every	自動的なプロジェクトのバックアップ間隔
 Automatically fix missing or superfluous new lines at end of request	リクエスト最後の不足または余分な改行を自動補正する
 Automatically locate library	ローカルライブラリから自動的に探す
@@ -672,6 +679,9 @@ Click to render page	クリックしてページをレンダリング
 Client SSL Certificate	クライアントSSL証明書
 Client SSL Certificates	クライアントSSL証明書
 Client SSL certificate (PKCS#12)	クライアントSSL証明書 (PKCS#12)
+Client TLS Certificate	クライアントTLS証明書
+Client TLS Certificates	クライアントTLS証明書
+Client TLS certificate (PKCS#12)	クライアントTLS証明書 (PKCS#12)
 Client-side	クライアントサイド
 Client-side HTTP parameter pollution \(reflected\)(\s+\[[0-9]+\])?	クライアントサイドHTTPパラメータ汚染(反射型)$1
 Client-side HTTP parameter pollution \(stored\)(\s+\[[0-9]+\])?	クライアントサイドHTTPパラメータ汚染(蓄積型)$1
@@ -954,6 +964,7 @@ Directory listing(\s+\[[0-9]+\])?	ディレクトリリスティング$1
 Directory:	ディレクトリ:
 Disable Java SNI extension (requires restart)	Java SNI拡張を無効にする(要再起動)
 Disable SSL session resume	SSLセッションの再開を無効にする
+Disable TLS session resume	TLSセッションの再開を無効にする
 Disable extensions	拡張を無効にする
 Disable web interface at http://burp	http://burp のWebインタフェースを無効にする
 Disconnect	切断
@@ -1042,11 +1053,13 @@ ECB block shuffler	ECBブロックシャッフル
 Each Burp project has a unique identifier that is used to track any Burp Collaborator interactions that are associated with the project. You need to decide whether to include this identifier in your new project file.	各Burpプロジェクトには、プロジェクトに紐付くBurp Collaboratorとの通信を識別するための一意な識別子があります。この識別子を新規プロジェクトファイルに保存するか決定する必要があります。
 Each Burp project has a unique identifier that is used to track any Burp Collaborator interactions that are associated with the project. You need to decide whether to save this identifier in your state file.	各Burpプロジェクトには、プロジェクトに紐付くBurp Collaboratorとの通信を識別するための一意な識別子があります。この識別子をステートファイルに保存するか決定する必要があります。
 Each installation of Burp generates its own CA certificate that Proxy listeners can use when negotiating SSL connections. You can import or export this certificate for use in other tools or another installation of Burp.	Burpをインストールするごとに独自のCA証明書を生成し、プロキシリスナーがSSL接続を確立する際に使用します。この証明書はインポートやエクスポートができ、他のツールや他のマシンにインストールしたBurpで使用できます。
+Each installation of Burp generates its own CA certificate that Proxy listeners can use when negotiating TLS connections. You can import or export this certificate for use in other tools or another installation of Burp.	Burpをインストールするごとに独自のCA証明書を生成し、プロキシリスナーがTLS接続を確立する際に使用します。この証明書はインポートやエクスポートができ、他のツールや他のマシンにインストールしたBurpで使用できます。
 Edit	編集
 Edit "skip parameter" rule	"スキップパラメータ"ルールを編集
 Edit API key	APIキー編集
 Edit Login Credentials	ログイン資格情報編集
 Edit SSL passthrough target	SSLパススルーする対象を編集
+Edit TLS passthrough target	TLSパススルーする対象を編集
 Edit URL to exclude from scope	スコープから除外するURLを編集
 Edit URL to include in scope	スコープに含めるURLを編集
 Edit and resend	編集して再送信
@@ -1305,6 +1318,7 @@ Font:	フォント:
 For this directory	このディレクトリ
 For this file extension	このファイル拡張子
 Force use of SSL	SSLを強制利用
+Force use of TLS	TLSを強制利用
 Form Submission	フォーム送信
 Form action hijacking \(reflected\)(\s+\[[0-9]+\])?	フォームアクションハイジャック(反射型)$1
 Form action hijacking \(stored\)(\s+\[[0-9]+\])?	フォームアクションハイジャック(蓄積型)$1
@@ -1367,6 +1381,7 @@ HTTP header injection	HTTPヘッダインジェクション
 HTTP headers	HTTPヘッダ
 HTTP history	HTTP履歴
 HTTP method	メソッド
+HTTP request smuggling	HTTPリクエストスマグリング
 HTTP response header injection(\s+\[[0-9]+\])?	HTTPレスポンスヘッダインジェクション$1
 HTTP verbs	HTTPメソッド
 Handle as ordinary forms	通常のフォームとして処理する
@@ -1597,6 +1612,7 @@ Iterate all values of submit fields - max submissions per form:	送信フィー�
 January	1月
 Java Environment	Java環境
 Java SSL Options	Java SSLオプション
+Java TLS Options	Java TLSオプション
 JavaScript	JavaScript
 JavaScript Analysis	JavaScript解析
 JavaScript analysis	JavaScript解析
@@ -1671,6 +1687,9 @@ Load SOCKS proxy options	SOCKSプロキシオプションを読み込む
 Load SSL negotiation options	SSLネゴシエーションオプションを読み込む
 Load SSL negotiation workarounds options	SSL ネゴシエーション回避策オプションを読み込む
 Load SSL passthrough options	SSLパススルーオプションを読み込む
+Load TLS negotiation options	TLSネゴシエーションオプションを読み込む
+Load TLS negotiation workarounds options	TLSネゴシエーション回避策オプションを読み込む
+Load TLS passthrough options	TLSパススルーオプションを読み込む
 Load active scanning areas options	アクティブスキャン対象オプションを読み込む
 Load active scanning engine options	アクティブスキャンエンジンオプションを読み込む
 Load active scanning optimization options	アクティブスキャン最適化オプションを読み込む
@@ -1681,6 +1700,7 @@ Load attack results options	攻撃結果オプションを読み込む
 Load automatic project backup options	自動プロジェクトバックアップオプションを読み込む
 Load character set options	文字セットオプションを読み込む
 Load client SSL certificates options	クライアントSSL証明書オプションを読み込む
+Load client TLS certificates options	クライアントTLS証明書オプションを読み込む
 Load cookie jar options	cookie jar オプションを読み込む
 Load crawler options	クローラオプションを読み込む
 Load custom lists from directory:	ディレクトリからカスタムリストを読み込む:
@@ -2491,6 +2511,9 @@ Save SOCKS proxy options	SOCKSプロキシオプションを保存する
 Save SSL negotiation options	SSLネゴシエーションオプションを保存する
 Save SSL negotiation workarounds options	SSL ネゴシエーション回避策オプションを保存する
 Save SSL passthrough options	SSLパススルーオプションを保存する
+Save TLS negotiation options	TLSネゴシエーションオプションを保存する
+Save TLS negotiation workarounds options	TLSネゴシエーション回避策オプションを保存する
+Save TLS passthrough options	TLSパススルーオプションを保存する
 Save active scanning areas options	アクティブスキャン対象オプションを保存する
 Save active scanning engine options	アクティブスキャンエンジンオプションを保存する
 Save active scanning optimizati onoptions	アクティブスキャン最適化オプションを保存する
@@ -2503,6 +2526,7 @@ Save automatic project backup options	自動プロジェクトバックアップ
 Save cancelled	保存をキャンセルしました
 Save character set options	文字セットオプションを保存する
 Save client SSL certificates options	クライアントSSL証明書オプションを保存する
+Save client TLS certificates options	クライアントTLS証明書オプションを保存する
 Save completed	保存完了
 Save configuration to library	設定をライブラリに保存
 Save cookie jar options	cookie jar オプションを保存する
@@ -2710,6 +2734,7 @@ September	9月
 Sequential	連番
 Serialized object in HTTP message(\s+\[[0-9]+\])?	HTTPメッセージ内のシリアライズされたオブジェクト$1
 Server SSL Certificates	サーバSSL証明書
+Server TLS Certificates	サーバTLS証明書
 Server location:	サーバの場所:
 Server responses	サーバレスポンス
 Server-level issues	サーバレベルの問題
@@ -2890,6 +2915,15 @@ Suspicious input transformation \(reflected\)(\s+\[[0-9]+\])?	入力値の疑わ
 Suspicious input transformation \(stored\)(\s+\[[0-9]+\])?	入力値の疑わしい変換(蓄積型)$1
 Sync selection	選択を同期
 Sync views	表示を同期
+TLS Ciphers	TLS暗号
+TLS Negotiation	TLSネゴシエーション
+TLS Negotiation Workarounds	TLSネゴシエーションの回避策
+TLS Pass Through	TLSパススルー
+TLS Protocol	TLSプロトコル
+TLS Protocols	TLSプロトコル
+TLS certificate	TLS証明書
+TLS certificate(\s+\[[0-9]+\])?	TLS証明書$1
+TLS cookie without secure flag set(\s+\[[0-9]+\])?	secureフラグがセットされていないTLS cookie$1
 Tab	タブ
 Table of contents levels	目次レベル
 Tabs	タブ
@@ -2978,7 +3012,9 @@ These settings are used to automatically replace parts of requests and responses
 These settings are used to perform automatic modification of responses.	レスポンスの自動変更を設定します。
 These settings are used to specify URLs returning responses that stream indefinitely. The Proxy will pass these responses straight through to the client. Repeater will update the response panel as the response is received. Other tools will ignore streaming responses. In order to view the contents of streaming responses within Burp, you need to check the "store streaming responses" option.	無限にストリーミングレスポンスを返すURLを指定します。Proxyはこれらのレスポンスをクライアントに直接通過させます。Repeaterはレスポンスを受信したとしてパネルを更新します。その他のツールはストリーミングレスポンスを無視します。ストリーミングレスポンスのコンテンツをBurpで見るには、"ストリーミングレスポンスを保存"オプションをチェックする必要があります。
 These settings are used to specify destination web servers for which Burp will directly pass through SSL connections. No details about requests or responses made via these connections will be available in the Proxy intercept view or history.	SSL接続を直接通過させる宛先Webサーバを指定します。これらの接続で発生するリクエストやレスポンスの詳細は、Proxyインターセプトや履歴への表示ができなくなります。
+These settings are used to specify destination web servers for which Burp will directly pass through TLS connections. No details about requests or responses made via these connections will be available in the Proxy intercept view or history.	TLS接続を直接通過させる宛先Webサーバを指定します。これらの接続で発生するリクエストやレスポンスの詳細は、Proxyインターセプトや履歴への表示ができなくなります。
 These settings can be used to enable certain SSL features that might be needed to successfully connect to some servers.	一部のサーバへ正常に接続するために必要となる、様々なSSL機能を有効にする設定です。
+These settings can be used to enable certain TLS features that might be needed to successfully connect to some servers.	一部のサーバへ正常に接続するために必要となる、様々なTLS機能を有効にする設定です。
 These settings can be used to extract useful information from responses into the attack results table.	レスポンスから有用な情報を抽出し、攻撃結果一覧に表示します。
 These settings can be used to flag result items containing reflections of the submitted payload.	送信したペイロードが反射される結果アイテムに、フラグを設定できます。
 These settings can be used to flag result items containing specified expressions.	指定した正規表現を含む結果にフラグをセットする設定です。
@@ -2997,6 +3033,7 @@ These settings control how tokens are handled during analysis.	解析中のト�
 These settings control logging of HTTP requests and responses.	HTTPリクエストとレスポンスのロギングを制御します。
 These settings control some specific details of Burp Proxy's behavior. You can change the default settings here to deal with particular problems or situations.	Burp Proxyの詳細な動作を制御する設定です。特定の問題や状況に対処するためにデフォルトの設定を変更できます。
 These settings control the SSL protocols and ciphers that Burp will use when performing SSL negotiation with upstream servers. If you are experiencing problems with SSL negotiation, you can use these settings to request use of specific protocols or ciphers. Use these options with caution as misconfiguration may break all your outgoing SSL connections.	Burpが上位のサーバとSSLネゴシエーションを実行するとき使う、SSLプロトコルと暗号を制御します。SSLネゴシエーションに問題が発生した場合は、特定のプロトコルや暗号の使用させるよう設定できます。設定をミスするとすべての外向きSSL接続が破られる可能性があるので、注意して使用してください。
+These settings control the TLS protocols and ciphers that Burp will use when performing TLS negotiation with upstream servers. If you are experiencing problems with TLS negotiation, you can use these settings to request use of specific protocols or ciphers. Use these options with caution as misconfiguration may break all your outgoing TLS connections.	Burpが上位のサーバとTLSネゴシエーションを実行するときに使う、TLSプロトコルと暗号を制御します。TLSネゴシエーションに問題が発生した場合は、特定のプロトコルや暗号の使用させるよう設定できます。設定をミスするとすべての外向きTLS接続が破られる可能性があるので、注意して使用してください。
 These settings control the behavior of Burp Scanner's JavaScript analysis.	Burp ScannerのJavaScript解析の動作を制御します。
 These settings control the engine used for making HTTP requests and harvesting tokens when performing the live capture.	ライブキャプチャーを実行してトークンを収集する際にHTTPリクエストを生成する、エンジンの挙動を設定します。
 These settings control the engine used for making HTTP requests when discovering content.	コンテンツ探索時のHTTPリクエストの作成に使用されるエンジンを設定します。
@@ -3005,6 +3042,7 @@ These settings control the engine used for making HTTP requests when performing 
 These settings control the engine used for making HTTP requests when spidering.	巡回中にHTTPリクエストを生成するエンジンの挙動を設定します。
 These settings control the request headers used in HTTP requests made by the Spider.	Spiderが生成するHTTPリクエストのヘッダを制御します。
 These settings control the server SSL certificate that is presented to SSL clients.	SSLクライアントに提示されるSSLサーバ証明書を制御します。
+These settings control the server TLS certificate that is presented to TLS clients.	TLSクライアントに提示されるTLSサーバ証明書を制御します。
 These settings control the types of checks performed during active scanning.	アクティブスキャン中にチェックするタイプを設定します。
 These settings control the types of checks performed during passive scanning.	パッシブスキャン中にチェックするタイプを設定します。
 These settings control the types of redirections that Burp will understand in situations where it is configured to follow redirections.	リダイレクトをたどるべき状況として、Burpが認識するリダイレクトタイプを設定します。
@@ -3022,6 +3060,7 @@ These settings let you configure Burp to automatically carry out platform authen
 These settings let you configure Burp to use a SOCKS proxy. This setting is applied at the TCP level, and all outbound requests will be sent via this proxy. If you have configured rules for upstream HTTP proxy servers, then requests to upstream proxies will be sent via the SOCKS proxy configured here.	SOCKSプロキシを使用する設定をします。この設定はTCPレベルで適用され、全送信リクエストがこのプロキシ経由で送信されます。上位HTTPプロキシサーバを設定していた場合、上位プロキシへのリクエストはここで設定したSOCKSプロキシ経由で送信されます。
 These settings let you configure hotkeys for common actions. These include item-specific actions such as "Send to Repeater", global actions such as "Switch to Proxy", and in-editor actions such as "Cut" and "Undo".	一般的なアクションのためのホットキーを設定できます。"Repeaterへ送信"のようなアイテム固有アクション、"Proxyに切り替え"のようなグローバルアクション、"切り取り"や"アンドゥ"のようなエディタ内アクションのホットキーが設定できます。
 These settings let you configure the client SSL certificates that Burp will use when a destination host requests one. Burp will use the first certificate in the list whose host configuration matches the name of the host being contacted. You can double-click on an item to view the full details of the certificate.	宛先ホストがクライアントSSL証明書を要求してきたときに使う証明書を設定します。接続しようとしているホストのホスト名に一致した、リスト内の最初の証明書を使用します。アイテムをダブルクリックすると証明書の詳細が表示できます。
+These settings let you configure the client TLS certificates that Burp will use when a destination host requests one. Burp will use the first certificate in the list whose host configuration matches the name of the host being contacted. You can double-click on an item to view the full details of the certificate.	宛先ホストがクライアントTLS証明書を要求してきたときに使う証明書を設定します。接続しようとしているホストのホスト名に一致した、リスト内の最初の証明書を使用します。アイテムをダブルクリックすると証明書の詳細が表示できます。
 These settings let you configure the environment for executing extensions that are written in Java. If your extensions use any libraries, you can specify a folder from which libraries will be loaded.	Javaで記述された拡張を実行する環境の設定ができます。拡張が任意のライブラリを使用している場合、ライブラリが読み込まれるフォルダを指定できます。
 These settings let you configure the environment for executing extensions that are written in Python. To use Python extensions, you will need to download Jython, which is a Python interpreter implemented in Java.	Pythonで書かれた拡張を実行する環境の設定ができます。Pythonの拡張を使用するには、Javaで実装されたPythonインタープリターである、Jythonをダウンロードする必要があります。
 These settings let you configure the environment for executing extensions that are written in Ruby. To use Ruby extensions, you will need to download JRuby, which is a Ruby interpreter implemented in Java. Note that you can either configure the location of the JRuby JAR file here, or you can load the JAR file on startup via the Java classpath.	Rubyで書かれた拡張を実行する環境の設定ができます。Rubyの拡張を使用するには、Javaで実装されたRubyインタープリターである、JRuby をダウンロードする必要があります。ここでJRubyのJARファイルの場所を設定するか、起動時にJavaクラスパスからJAR ファイルを読み込めます。
@@ -3058,6 +3097,7 @@ This listing contains the definitions of all issues that can be detected by Burp
 This macro is being used by a session handling rule and cannot be deleted.	このマクロはセッションハンドリングルールで使用されているため削除できません。
 This might take an excessive time to perform a complete crawl	完全にクロールするには膨大な時間がかかります
 This panel shows a list of the unique SSL certificates received from web servers. Double-click an item to show the full details of the certificate.	このパネルにはWebサーバから受信した一意なSSL証明書が表示されます。証明書の詳細を見るにはアイテムをダブルクリックしてください。
+This panel shows a list of the unique TLS certificates received from web servers. Double-click an item to show the full details of the certificate.	このパネルにはWebサーバから受信した一意なTLS証明書が表示されます。証明書の詳細を見るにはアイテムをダブルクリックしてください。
 This payload type can be used to generate illegal Unicode representations of characters. It is sometimes effective in bypassing filters designed to block certain characters. See the full help for details of each option.	不正なUnicode表記の文字列を生成します。特定の文字をブロックするよう設計されたフィルタの回避に効果がある場合があります。各オプションの詳細はヘルプを参照してください。
 This payload type can be used to shuffle blocks of ciphertext in ECB-encrypted data, so as to meaningfully modify the decrypted cleartext and potentially interfere with application logic. You can optionally supply a list of encrypted strings that use the same cipher and key, to provide additional blocks for shuffling into the original data.	ECBで暗号化されたデータの暗号文ブロックを並び替えると、復号した際に意味のある平文になり、アプリケーションロジックが不安定になる可能性があります。必要に応じて、同じ暗号およびキーを使用して暗号化された文字列のリストを指定し、元データにシャッフルの追加ブロックとして使用できます。
 This payload type copies the value of the current payload at another payload position. It can be used with attack types that have multiple payload sets.	このペイロードタイプは、別ペイロードの値を、現在のペイロード値にコピーします。複数のペイロードセットを使用する攻撃タイプで使用できます。
@@ -3241,6 +3281,7 @@ Use a self-signed certificate	自己署名の証明書を使用する
 Use a specific character set:	指定した文字セットを使用する:
 Use advanced scope control	高度なスコープ設定を使用する
 Use all items with responses	全てのレスポンスアイテムを使用する
+Use all supported protocols and ciphers of your Java installation	Javaインストールがサポートするすべてのプロトコルと暗号を使用する
 Use built-in lists	組み込みリストを使用する
 Use cookies	cookie使用
 Use cookies from Burp's cookie jar	Burpのcookie jarのcookieを使用する
@@ -3315,6 +3356,9 @@ Was not intercepted	インターセプトされなかった
 Was not modified	変更されなかった
 Web cache poisoning(\s+\[[0-9]+\])?	Webキャッシュ汚染$1
 WebSocket ID	WebSocket ID
+WebSocket URL poisoning (DOM-based)	WebSocket URL汚染(DOMベース)
+WebSocket URL poisoning (reflected DOM-based)	WebSocket URL汚染(反射型DOMベース)
+WebSocket URL poisoning (stored DOM-based)	WebSocket URL汚染(蓄積型DOMベース)
 WebSocket hijacking \(DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック(DOMベース)$1
 WebSocket hijacking \(reflected DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック(反射型DOMベース)$1
 WebSocket hijacking \(stored DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック(蓄積型DOMベース)$1
