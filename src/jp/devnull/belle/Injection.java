@@ -51,6 +51,8 @@ public class Injection {
 						+ "  && !sun.swing.table.DefaultTableCellHeaderRenderer.class.isAssignableFrom($0.getClass()))"
 						+ "  || javax.swing.text.DefaultStyledDocument.class.isAssignableFrom($0.getClass())"
 						+ "  || javax.swing.tree.DefaultTreeCellRenderer.class.isAssignableFrom($0.getClass())"
+						+ "  || javax.swing.JTextArea.class.isAssignableFrom($0.getClass())"
+						+ "  || java.lang.Iterable.class.isAssignableFrom($0.getClass())"
 						+ "  || $0.getClass().getName().equals(\"javax.swing.plaf.synth.SynthComboBoxUI$SynthComboBoxRenderer\")) {} else");
 				outer.append(inner.toString());
 				try {
