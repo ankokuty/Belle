@@ -14,11 +14,33 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
+import javax.swing.JTextArea;
+import javax.swing.plaf.synth.SynthComboBoxUI;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.text.DefaultStyledDocument;
+import javax.swing.text.JTextComponent;
+import javax.swing.text.PlainDocument;
+import javax.swing.tree.DefaultTreeCellRenderer;
+
 public class Translator {
 	private static Map<String, Translator> map = new HashMap<String, Translator>();
 	boolean debug;
 	Map<String, String> literal;
 	Map<Pattern, String> regexp;
+
+	public static String translate(Object src, String lang, String str) throws Exception {
+		// テーブルの中身など一部は翻訳しない
+		// FIXME Inspectorで選択テキストが翻訳されてしまうので、なんとかしたい
+		if ((src instanceof PlainDocument && !src.getClass().equals(PlainDocument.class))
+				|| (src instanceof JTextComponent && ((JTextComponent) src).isEditable())
+				|| src instanceof JTextArea
+				|| src instanceof DefaultStyledDocument || src instanceof DefaultTreeCellRenderer
+				|| src instanceof DefaultTableCellRenderer || src.getClass().equals(SynthComboBoxUI.class)
+		) {
+			return str;
+		}
+		return translate(lang, str);
+	}
 
 	public static String translate(String lang, String str) throws Exception {
 		Translator translator = map.get(lang);
@@ -64,7 +86,7 @@ public class Translator {
 
 		// ファイルを読み込む
 		try (BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"))) {
-			Pattern pattern = Pattern.compile(".*\\$[0-9].*");
+			Pattern pattern = Pattern.compile(".*\\$[0-9]+.*");
 			String line;
 			while ((line = reader.readLine()) != null) {
 				String[] inputs = line.split("\t", 2);
@@ -85,6 +107,7 @@ public class Translator {
 		if ((src == null) || (src.length() == 0)) {
 			return src;
 		}
+		src = src.replace("“", "\"").replace("”", "\"").replace("‘", "'").replace("’", "'");
 
 		String dst = literal.get(src);
 		if (dst == null) {

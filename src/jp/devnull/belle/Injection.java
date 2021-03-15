@@ -11,6 +11,7 @@ import java.util.Map;
 import javassist.ClassPool;
 import javassist.CtBehavior;
 import javassist.CtClass;
+import javassist.Modifier;
 
 public class Injection {
 	static ClassPool classPool;
@@ -32,35 +33,24 @@ public class Injection {
 		injectionMethods.put("javax/swing/text/AbstractDocument", new InjectionMethod("insertString",     2));
 		injectionMethods.put("javax/swing/JComponent",            new InjectionMethod("setToolTipText",   1));
 		injectionMethods.put("javax/swing/JComboBox",             new InjectionMethod("addItem",          1));
-		injectionMethods.put("javax/swing/JOptionPane",           new InjectionMethod("showOptionDialog", 3));
+		injectionMethods.put("javax/swing/JOptionPane",           new InjectionMethod("showOptionDialog", 2));
 		
 		instrumentation.addTransformer(new ClassFileTransformer() {
 			CtBehavior insertTranslateCommand(CtBehavior ctMethod, int n) throws Exception {
-				StringBuilder inner = new StringBuilder();
-				inner.append("{");
-				inner.append("ClassLoader classLoader = ClassLoader.getSystemClassLoader();");
-				inner.append("Class translator = classLoader.loadClass(\"jp.devnull.belle.Translator\");");
-				inner.append("java.lang.reflect.Method method = translator.getDeclaredMethod(\"translate\", new Class[]{String.class, String.class});");
-				inner.append(String.format("if($%d instanceof String){$%d = (String)method.invoke(null, new Object[]{\"" + lang + "\", $%d});}", n, n, n));
-				inner.append("}");
+				StringBuilder src = new StringBuilder();
+				src.append("{");
+				src.append("ClassLoader classLoader = ClassLoader.getSystemClassLoader();");
+				src.append("Class translator = classLoader.loadClass(\"jp.devnull.belle.Translator\");");
 
-				StringBuilder outer = new StringBuilder();
-				// テーブルの中身など一部は翻訳しない
-				outer.append("if ("
-						+ "(javax.swing.table.DefaultTableCellRenderer.class.isAssignableFrom($0.getClass())"
-						+ "  && !sun.swing.table.DefaultTableCellHeaderRenderer.class.isAssignableFrom($0.getClass()))"
-						+ "  || javax.swing.text.DefaultStyledDocument.class.isAssignableFrom($0.getClass())"
-						+ "  || javax.swing.tree.DefaultTreeCellRenderer.class.isAssignableFrom($0.getClass())"
-						+ "  || javax.swing.JTextArea.class.isAssignableFrom($0.getClass())"
-						+ "  || java.lang.Iterable.class.isAssignableFrom($0.getClass())"
-						+ "  || $0.getClass().getName().equals(\"javax.swing.plaf.synth.SynthComboBoxUI$SynthComboBoxRenderer\")) {} else");
-				outer.append(inner.toString());
-				try {
-					ctMethod.insertBefore(outer.toString());
-				} catch (Exception e) {
-					// 静的メソッドの場合$0でコンパイルエラーが出る
-					ctMethod.insertBefore(inner.toString());
+				if((ctMethod.getModifiers() & Modifier.STATIC) != 0) {
+					src.append("java.lang.reflect.Method method = translator.getDeclaredMethod(\"translate\", new Class[]{String.class, String.class});");
+					src.append(String.format("if($%d instanceof String){$%d = (String)method.invoke(null, new Object[]{\"" + lang + "\", $%d});}", n, n, n));
+				} else {
+					src.append("java.lang.reflect.Method method = translator.getDeclaredMethod(\"translate\", new Class[]{Object.class, String.class, String.class});");
+					src.append(String.format("if($%d instanceof String){$%d = (String)method.invoke(null, new Object[]{$0, \"" + lang + "\", $%d});}", n, n, n));
 				}
+				src.append("}");
+				ctMethod.insertBefore(src.toString());
 				return ctMethod;
 			}
 
