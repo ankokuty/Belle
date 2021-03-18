@@ -706,19 +706,19 @@ Client SSL certificate (PKCS#12)	クライアントSSL証明書 (PKCS#12)
 Client TLS Certificate	クライアントTLS証明書
 Client TLS Certificates	クライアントTLS証明書
 Client TLS certificate (PKCS#12)	クライアントTLS証明書 (PKCS#12)
-Client-side	クライアントサイド
-Client-side HTTP parameter pollution \(reflected\)(\s+\[[0-9]+\])?	クライアントサイドHTTPパラメータ汚染(反射型)$1
-Client-side HTTP parameter pollution \(stored\)(\s+\[[0-9]+\])?	クライアントサイドHTTPパラメータ汚染(蓄積型)$1
-Client-side JSON injection \(DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドJSONインジェクション(DOMベース)$1
-Client-side JSON injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドJSONインジェクション(反射型DOMベース)$1
-Client-side JSON injection \(stored DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドJSONインジェクション(蓄積型DOMベース)$1
-Client-side SQL injection \(DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドSQLインジェクション(DOMベース)$1
-Client-side SQL injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドSQLインジェクション(反射型DOMベース)$1
+Client-side	クライアント側
+Client-side HTTP parameter pollution \(reflected\)(\s+\[[0-9]+\])?	クライアント側HTTPパラメータ汚染(反射型)$1
+Client-side HTTP parameter pollution \(stored\)(\s+\[[0-9]+\])?	クライアント側HTTPパラメータ汚染(蓄積型)$1
+Client-side JSON injection \(DOM-based\)(\s+\[[0-9]+\])?	クライアント側JSONインジェクション(DOMベース)$1
+Client-side JSON injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	クライアント側JSONインジェクション(反射型DOMベース)$1
+Client-side JSON injection \(stored DOM-based\)(\s+\[[0-9]+\])?	クライアント側JSONインジェクション(蓄積型DOMベース)$1
+Client-side SQL injection \(DOM-based\)(\s+\[[0-9]+\])?	クライアント側SQLインジェクション(DOMベース)$1
+Client-side SQL injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	クライアント側SQLインジェクション(反射型DOMベース)$1
 Client-side SQL injection \(stored DOM-based\)(\s+\[[0-9]+\])?	クライアンサイドSQLインジェクション(蓄積型DOMベース)$1
-Client-side XPath injection \(DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドXPathインジェクション(DOMベース)$1
-Client-side XPath injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドXPathインジェクション(反射型DOMベース)$1
-Client-side XPath injection \(stored DOM-based\)(\s+\[[0-9]+\])?	クライアントサイドXPathインジェクション(蓄積型DOMベース)$1
-Client-side template injection(\s+\[[0-9]+\])?	クライアントサイドテンプレートインジェクション$1
+Client-side XPath injection \(DOM-based\)(\s+\[[0-9]+\])?	クライアント側XPathインジェクション(DOMベース)$1
+Client-side XPath injection \(reflected DOM-based\)(\s+\[[0-9]+\])?	クライアント側XPathインジェクション(反射型DOMベース)$1
+Client-side XPath injection \(stored DOM-based\)(\s+\[[0-9]+\])?	クライアント側XPathインジェクション(蓄積型DOMベース)$1
+Client-side template injection(\s+\[[0-9]+\])?	クライアント側テンプレートインジェクション$1
 Clone	複製
 Close	閉じる
 Close other tabs	他のタブを閉じる
@@ -1148,6 +1148,7 @@ Embedded Browser Health Check	内蔵ブラウザヘルスチェック
 Embedded Browser Options	内蔵ブラウザオプション
 Embedded browser health check	内蔵ブラウザのヘルスチェック
 Empty cookie jar	cookie jarを空に
+Enable HTTP/2	HTTP/2を有効にする
 Enable HTTP/2 (Experimental)	HTTP/2を有効にする(実験的)
 Enable algorithms blocked by Java security policy (requires restart)	Javaセキュリティポリシーでブロックされたアルゴリズムを有効にする(要再起動)
 Enable auto-updates (requires restart)	自動更新を有効にする(要再起動)
@@ -1955,6 +1956,7 @@ Modify case	大文字小文字変換
 Modifying Parameter Locations	パラメータ場所の操作
 Monitor the following tools' traffic to update the cookie jar:	次のツールを監視してcookie jarを更新する:
 Months	月
+More info	詳細
 Move down	下に移動
 Move the selected certificate down	選択した証明書を下に移動
 Move the selected certificate up	選択した証明書を上に移動
@@ -2531,6 +2533,7 @@ Responses	レスポンス
 Responses processed:	処理されたレスポンス:
 Responses queued for analysis:	解析用にキューされたレスポンス:
 Responses queued:	キューに入っているレスポンス:
+Restart	再起動
 Restore completed	リストア完了
 Restore defaults	デフォルトに戻す
 Restore legacy state file	古いステートファイル復元
@@ -2846,12 +2849,12 @@ Server TLS Certificates	サーバTLS証明書
 Server location:	サーバの場所:
 Server responses	サーバレスポンス
 Server-level issues	サーバレベルの問題
-Server-side JavaScript code injection(\s+\[[0-9]+\])?	サーバサイドJavaScriptコードインジェクション$1
-Server-side code injection	サーバサイドコードインジェクション
-Server-side template breakout	サーバサイドテンプレート操作
-Server-side template injection (requires reflected XSS)	サーバサイドテンプレートインジェクション(反射型XSSが必要)
-Server-side template injection(\s+\[[0-9]+\])?	サーバサイドテンプレートインジェクション$1
-Server-side variable names	サーバサイド変数名
+Server-side JavaScript code injection(\s+\[[0-9]+\])?	サーバ側JavaScriptコードインジェクション$1
+Server-side code injection	サーバ側コードインジェクション
+Server-side template breakout	サーバ側テンプレート操作
+Server-side template injection (requires reflected XSS)	サーバ側テンプレートインジェクション(反射型XSSが必要)
+Server-side template injection(\s+\[[0-9]+\])?	サーバ側テンプレートインジェクション$1
+Server-side variable names	サーバ側変数名
 Service URL:	サービスURL:
 Service running	サービス起動中
 Session Handling Rules	セッションハンドリングルール
@@ -2915,7 +2918,7 @@ Size	サイズ
 Skip all tests for these parameters:	これらのパラメータのテストをすべてスキップする:
 Skip checks unlikely to be effective due to insertion point's base value	影響がなさそうな挿入ポイントの元値のチェックをスキップする
 Skip if matches regex	正規表現に一致した場合にスキップ
-Skip server-side injection tests for these parameters:	これらのパラメータに対するサーバサイドインジェクションテストをスキップする:
+Skip server-side injection tests for these parameters:	これらのパラメータに対するサーバ側インジェクションテストをスキップする:
 Slot	スロット
 Smart decode	スマートデコード
 Sniper	スナイパー(Sniper)
@@ -3382,6 +3385,7 @@ Update config based on selection below	以下の選択を元に設定を更新
 Update current	現状を更新
 Update current request with cookies from session handling cookie jar	セッションハンドリングcookie jarのcookieでリクエストを更新する
 Update current request with parameters matched from final macro response	マクロの最後のレスポンスのマッチしたパラメータでリクエストを更新する
+Update is ready to install	アップデートをインストールする準備ができました
 Update license key	ライセンスキー更新
 Update macro	マクロ更新
 Update now	更新開始
