@@ -660,6 +660,7 @@ Capture by tool	ツールによるキャプチャ
 Capture filter: 	キャプチャフィルタ: 
 Capture limit	キャプチャ制限
 Capture only in-scope items	スコープ内のアイテムのみキャプチャ
+Capture only in-scope items (Suite scope)	スコープ内のアイテムのみキャプチャ(全体スコープ)
 Capture only parameterized requests	パラメータ付きリクエストのみキャプチャ
 Capture requests up to:	最大リクエストサイズ:
 Capture responses up to:	最大レスポンスサイズ:
@@ -2973,6 +2974,7 @@ Show non-printable chars	印字不可能文字を表示
 Show only commented items	コメントしたアイテムのみ表示
 Show only highlighted items	色付けしたアイテムのみ表示
 Show only in-scope items	スコープ内のアイテムのみ表示
+Show only in-scope items (Suite scope)	スコープ内のアイテムのみ表示(全体スコープ)
 Show only parameterized requests	パラメータ付きリクエストのみ表示
 Show only requested items	リクエストされたアイテムのみ表示
 Show only:	表示:
