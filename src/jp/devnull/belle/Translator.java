@@ -117,7 +117,10 @@ public class Translator {
 				Entry<Pattern, String> entry = iterator.next();
 				Pattern pattern = entry.getKey();
 				Matcher matcher = pattern.matcher(dst);
-				dst = matcher.replaceAll((String) entry.getValue());
+				while(matcher.matches()) {
+					dst = matcher.replaceAll(entry.getValue());
+					matcher = pattern.matcher(dst);
+				}
 			}
 		}
 		// 翻訳されていない文を標準エラーに出す。
