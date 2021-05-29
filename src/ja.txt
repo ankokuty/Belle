@@ -1,5 +1,5 @@
     Send    	    送信    
- Added 	 追加 
+ Added 	  追加  
  Deleted 	 削除 
  Modified 	 変更 
  \.\.\. and ([,0-9]+) more\.	 ... その他$1件
@@ -308,6 +308,7 @@ Add §	§追加
 Add...	追加...
 Additional encrypted strings - optional	追加暗号文字列 - オプション
 Additional encrypted strings - optional \(([0-9]+)\)	追加の暗号文字列 - オプション ($1)
+Address already in use: NET_Bind	アドレスは既に使用されています: NET_Bind
 Advanced settings	高度な設定
 Advisory	アドバイザリ
 After recovering session:	セッション復元後:
@@ -361,7 +362,10 @@ Answering "yes" will avoid accumulating project data for out-of-scope items.	"�
 Any header	任意のヘッダ
 Any parameter	任意のパラメータ
 Any status code with Location header	Locationヘッダ付きの任意のステータスコード
+Append byte ...	1バイト追加 ...
+Append bytes ...	複数バイト追加 ...
 Append preprocessed payload	プリプロセッサペイロードを末尾に追加
+Append string ...	文字列追加 ...
 Append to base parameter value	元パラメータ値に追加
 Application	アプリケーション
 Application Login	アプリケーションログイン
@@ -685,6 +689,7 @@ Capture by search term	検索語でキャプチャ
 Capture by status code	ステータスコードによるキャプチャ
 Capture by tool	ツールによるキャプチャ
 Capture filter: 	キャプチャフィルタ: 
+Capture filter: Please wait ...  	キャプチャフィルタ: お待ちください ...  
 Capture limit	キャプチャ制限
 Capture only in-scope items	スコープ内のアイテムのみキャプチャ
 Capture only in-scope items (Suite scope)	スコープ内のアイテムのみキャプチャ(全体スコープ)
@@ -1038,8 +1043,11 @@ Delete issues for selected branches	選択したブランチの問題を削除
 Delete issues for this branch	このブランチの問題を削除
 Delete issues for this host	このホストの問題を削除
 Delete item	アイテムを削除
+Delete last byte	最終バイト削除
 Delete my attack	攻撃を削除する
 Delete old temporary files?	古い一時ファイルを削除してよろしいですか？
+Delete selected byte	選択したバイトを削除
+Delete selected bytes	選択したバイトを削除
 Delete selected issues	選択した問題を削除
 Delete selected items	選択したアイテムを削除
 Deleted directory: (.*)	ディレクトリを削除: $1
@@ -1266,6 +1274,7 @@ Enter a comment	コメント入力
 Enter a new item	新規アイテムを入力
 Enter license key	ライセンスキーを入力してください
 Enter master password	マスターパスワードを入力してください
+Enter number of bytes to insert	挿入するバイト数を入力してください
 Enter number of cells to delete	削除するセル数を入力してください
 Enter number of cells to insert	挿入するセル数を入力してください
 Enter password	パスワード入力
@@ -1429,6 +1438,7 @@ Filter by status code	ステータスコードでフィルタ
 Filter by tool	ツールでフィルタ
 Filter:	フィルタ:
 Filter: 	フィルタ: 
+Filter: Please wait ...  	フィルタ: お待ちください ...  
 Find comments	コメント検索
 Find out more	詳細はこちら
 Find references	参照元検索
@@ -1542,6 +1552,8 @@ Headers	ヘッダ
 Help	ヘルプ
 Help improve Burp by submitting anonymous feedback about its performance	Burp改善のためパフォーマンスに関するフィードバックを匿名で送信する
 Hex formatting	16進数フォーマット
+Hex view	Hexビュー
+Hex view not available for this content	このコンテンツではHexビューを利用できません
 Hide	非表示
 Hide all	すべて非表示
 Hide details	詳細を隠す
@@ -1664,6 +1676,8 @@ Input returned in response \(stored\)(\s+\[[0-9]+\])?	レスポンスに含ま�
 Insensitive	大文字小文字を無視
 Insert a new payload marker	新規ペイロードマーカを挿入
 Insert byte	バイト挿入
+Insert byte ...	1バイト挿入 ...
+Insert bytes	複数バイト挿入
 Insert bytes ...	複数バイト挿入 ...
 Insert cells	セルの挿入
 Insert string	文字列の挿入
@@ -1690,6 +1704,7 @@ Intercept server-to-client messages	サーバからクライアントへのメ�
 Interesting files and directories	興味深いファイルとディレクトリ
 Interface	インタフェース
 Intruder Attack Configuration	Intruder攻撃設定
+Intruder attack	Intruder攻撃
 Intruder results help	Intruder結果ヘルプ
 Intrusive	侵入
 Intrusive active	アクティブスキャン(侵入)
@@ -1834,6 +1849,7 @@ Live passive crawl	ライブパッシブクロール
 Live passive crawl task is paused - Site map will not be populated	ライブパッシブクロールは停止中 - サイトマップは作成されません
 Live passive crawling	ライブパッシクロール
 Live scanning	ライブスキャン
+Live task	ライブタスク
 Load	読み込み
 Load ...	読み込み ...
 Load Burp Collaborator server options	Burp Collaboratorサーバオプションを読み込む
@@ -2042,6 +2058,7 @@ Medium severity	優先度中
 Memory: (.*)	メモリ: $1
 Message	メッセージ
 Message Editor	メッセージエディタ
+Message actions	メッセージアクション
 Message editor documentation	メッセージエディタのドキュメント
 Message editor help	メッセージエディタヘルプ
 Meta refresh tag	Meta refreshタグ
@@ -2136,6 +2153,8 @@ No maximum concurrent requests value specified	最大同時リクエスト数が
 No name provided	名前が指定されていません
 No name specified	名前が指定されていません
 No processors defined	処理が定義されていません
+No proxy listeners are currently running	プロキシリスナーが起動していません
+No proxy listeners are currently running - Site map will not be populated	プロキシリスナーが起動していません - サイトマップは作成されません
 No proxy listeners are currently running - go to the Options tab to enable a listener	プロキシリスナーが起動していません - オプションタブでリスナーを有効化してください。
 No recorded login sequence specified	記録されたログイン手順が指定されていません
 No summary chart	サマリグラフなし
@@ -3640,6 +3659,7 @@ View Filter Settings	表示フィルタ設定
 View details	詳細表示
 View documentation	ドキュメントを見る
 View filter: 	表示フィルタ: 
+View filter: Please wait ...  	表示フィルタ: お待ちください ...  
 View release notes	リリースノートを表示する
 Vulnerability classifications [where applicable]	脆弱性の分類 [該当する場合]
 Waiting	待機中
