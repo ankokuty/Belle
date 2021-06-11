@@ -936,6 +936,10 @@ Copy other payload	他ペイロードコピー
 Copy project	プロジェクトコピー
 Copy request	リクエストをコピー
 Copy selected URLs	選択したURLをコピー
+Copy selected character	選択した文字をコピー
+Copy selected hex code	選択した16進コードをコピー
+Copy selected hex codes	選択した16進コードをコピー
+Copy selected text	選択したテキストをコピー
 Copy to clipboard	クリップボードにコピー
 Copy to file	ファイルにコピー
 Copy tokens	トークンをコピー
@@ -1962,6 +1966,7 @@ Location of Jython standalone JAR file:	JythonのスタンドアロンJARファ�
 Location(s):	場所:
 Locations	場所
 Log exceptions to a local directory: 	例外をローカルディレクトリに記録する: 
+Logger documentation	Loggerドキュメント
 Logger memory limit set to ([0-9,]+)MB \| (.*)	メモリ制限($1)MB | $2
 Logger memory limit set to unlimited \| (.*)	メモリ制限なし \| $1
 Logging	ロギング
