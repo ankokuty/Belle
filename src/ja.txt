@@ -650,13 +650,17 @@ Burp Scanner reporting wizard	Burp Scannerレポートウィザード
 Burp Spider - Submit Form	Burp Spider - 送信フォーム
 Burp Spider needs your guidance to submit a login form. Please choose the value of each form field which should be used when submitting the form, and whether Burp should iterate submission of multi-value fields. You can control how Burp handles forms in the Spider options tab.	Burp Spiderがログインフォームを送信するには、あなたの入力が必要です。送信に使用する各フォームフィールドの値と、複数の値を取るフィールドを繰り返すかどうか選択してください。Spiderオプションタブでフォームの処理方法をコントロールできます。
 Burp Spider needs your guidance to submit a login form. Please choose the value of each form field which should be used when submitting the form. You can control how Burp handles forms in the Spider options tab.	Burp Spiderがログインフォームを送信するには、あなたの入力が必要です。送信に使用する各フォームフィールドの値を選択してください。Spiderオプションタブでフォームの処理方法をコントロールできます。
+Burp Suite - a guided video tour	Burp Suite - ガイド付きビデオツアー
 Burp Suite Community Edition	Burp Suite コミュニティ版
 Burp Suite Documentation	Burp Suiteドキュメント
 Burp Suite Professional	Burp Suiteプロフェッショナル
+Burp Suite Support Center	Burp Suiteサポートセンター
 Burp Suite diagnostics	Burp Suite診断
 Burp Suite documentation	Burp Suiteドキュメント
 Burp Suite is out of date	Burp Suiteが古くなっています
+Burp Suite on Twitter	Burp SuiteのTwitter
 Burp Suite search	Burp Suite検索
+Burp Suite video tutorials	Burp Suiteビデオチュートリアル
 Burp did not start properly last time.	前回Burpが正常に起動しませんでした。
 Burp has not been fully tested on this platform and you may experience problems.	Burpはこのプラットフォームで十分テストされて折らず、問題が発生する可能性があります。
 Burp is up to date.	Burpは最新です。
@@ -834,7 +838,7 @@ Computing differences	差分を計算中
 Concatenate to single file	１ファイルに連結
 Concurrent request limit:	同時リクエスト制限:
 Condition	条件
-Confidence	信頼度
+Confidence	確度
 Config	設定
 Configuration "(.*)" has the same name as a built-in configuration.	設定"$1"は組み込み設定と同じ名前です。
 Configuration "(.*)" is already present in the library.	設定"$1"は既にライブラリ内に存在します。
@@ -894,6 +898,7 @@ Convert to JavaScript constructed string	JavaScript構文の文字列に変換
 Convert to Microsoft SQL Server constructed string	Microsoft SQLサーバ構文の文字列に変換
 Convert to MySQL constructed string	MySQL構文の文字列に変換
 Convert to Oracle constructed string	Oracle構文の文字列に変換
+Converted text	変換されたテキスト
 Cookie handling	cookie処理
 Cookie jar viewer	cookie jarビューア
 Cookie manipulation \(DOM-based\)(\s+\[[0-9]+\])?	Cookie操作(DOMベース)$1
@@ -1440,13 +1445,16 @@ Filter by search term	検索語でフィルタ
 Filter by search term [Pro only]	検索語でフィルタ [プロ版のみ]
 Filter by status code	ステータスコードでフィルタ
 Filter by tool	ツールでフィルタ
+Filter settings	フィルタ設定
 Filter:	フィルタ:
 Filter: 	フィルタ: 
 Filter: Please wait ...  	フィルタ: お待ちください ...  
+Find answers	回答を探す
 Find comments	コメント検索
 Find out more	詳細はこちら
 Find references	参照元検索
 Find scripts	スクリプト検索
+Find the answers to your Burp Suite questions here.	Burp Suiteの質問に対する回答を見つけてください。
 Finish	完了
 Finished	完了
 Finished.	完了.
@@ -1464,6 +1472,7 @@ Follow redirections	リダイレクトをたどる
 Follow redirections where necessary	必要な箇所でリダイレクトをたどる
 Follow redirections:	リダイレクトをたどる:
 Follow the redirection in the current response	現在のレスポンスのリダイレクトをたどる
+Follow us	フォローする
 Font	フォント
 Font size:	フォントサイズ:
 Font:	フォント:
@@ -1508,9 +1517,11 @@ Generate CSRF PoC	CSRF PoC生成
 Generate Collaborator payloads	Collaboratorのペイロード生成
 Generate a CA-signed certificate with a specific hostname:	CAが署名した指定したホスト名の証明書を生成する:
 Generating report: ([0-9]+)% complete	レポート生成中: $1%完了
+Get going right away - with our quick start tutorial.	クイックスタートチュートリアルで、すぐに始めましょう。
 Getting Started	入門
 Getting Started With Burp Suite	Burp Suite入門
 Getting started	入門
+Getting started with Burp Suite	Burp Suite入門
 Go	送信
 Go Up	上へ
 Go back	戻る
@@ -1553,6 +1564,7 @@ Header cannot be blank	ヘッダは空白にできません
 Header manipulation	ヘッダ操作
 Header:	ヘッダ:
 Headers	ヘッダ
+Headers - This request has been kettled and cannot be represented in the editor. Please use the Inspector to view and edit the headers.	Headers - このリクエストは厄介でエディタで表現できません。インスペクタでヘッダの表示や編集をしてください。
 Help	ヘルプ
 Help improve Burp by submitting anonymous feedback about its performance	Burp改善のためパフォーマンスに関するフィードバックを匿名で送信する
 Hex formatting	16進数フォーマット
@@ -1568,12 +1580,14 @@ Hide items without responses	レスポンスのないアイテムを非表示
 Hide non-printable chars	印字不可能文字を非表示
 Hide not-found items	存在しないアイテムを非表示
 Hide outgoing messages	送信メッセージを非表示
+Hide the Learn tab for future use?	以後、学習タブを非表示にしますか?
+Hide this tab	このタブを非表示
 Hide warning	警告を非表示
 Hide:	非表示:
 High	高
 High and medium issues	危険度高、中の問題
 High issues	危険度高の問題
-High severity	優先度高
+High severity	危険度高
 High, medium and low issues	危険度高、中、低の問題
 Highlight	色付け
 Highlight request parameters	リクエストパラメータを色付けする
@@ -1800,6 +1814,7 @@ JavaScript phases	JavaScriptフェーズ
 JavaScript-driven	JavaScript駆動
 Javascript dynamic analysis	Javascript動的解析
 Javascript static analysis	Javascript静的解析
+Join Burp Suite's huge community, and stay in the know.	Burp Suiteの巨大なコミュニティに参加して、最新情報を入手してください。
 July	7月
 June	6月
 Keep in memory	メモリに保持
@@ -1809,6 +1824,11 @@ Label	ラベル
 Label:	ラベル:
 Last updated	最終更新
 Last used	最終使用
+Learn	学習
+Learn Tab	学習タブ
+Learn how to find more vulnerabilities using Burp Suite.	Burp Suiteでより多くの脆弱性を見つける方法を学びます。
+Learn tab	学習タブ
+Learn, explore and discover	学習・探求・発見
 Leave	残す
 Left/right split	左右に分割
 Length	長さ
@@ -1980,7 +2000,7 @@ Look and feel:	ルックアンドフィール:
 Look for expression:	検索表現:
 Loopback only	ループバックのみ
 Low	低
-Low severity	優先度低
+Low severity	危険度低
 MIME type	MIMEタイプ
 MSSQL-specific checks	MSSQL固有チェック
 Mac OS installer	Mac OSインストーラ
@@ -2059,7 +2079,7 @@ Maximum unique locations discovered:	発見したユニークな位置の最大�
 May	5月
 Medium	中
 Medium active	アクティブスキャン(中程度)
-Medium severity	優先度中
+Medium severity	危険度中
 Memory: (.*)	メモリ: $1
 Message	メッセージ
 Message Editor	メッセージエディタ
@@ -2905,6 +2925,7 @@ Search options	検索オプション
 Search responses for payload strings	ペイロード文字列のレスポンスを探す
 Search...	検索...
 Searching:(.*)	検索中:$1
+See how to use Burp Suite's main features and tools.	Burp Suiteの主な機能とツールの使用方法をご覧ください。
 See more	続きを見る
 See the documentation for more details on using Burp Clickbandit.	Burp Clickbanditの使用方法に関する詳細はドキュメントを参照してください。
 Select BApp File	BAppファイルを選択してください
@@ -2990,6 +3011,7 @@ Selected file is a Burp state file	選択されたファイルはBurpのステ�
 Selected generator:	選択されたジェネレータ:
 Selected rows	選択した行
 Selection	選択
+Selection \(([0-9]+)\)	選択 ($1)
 Send	送信
 Send WebSocket Message	WebSocketメッセージ送信
 Send requests here from other tools to configure a live capture. Select the request to use, configure the other options below, then click "Start live capture".	他のツールからライブキャプチャの設定にリクエストを送ります。使用するリクエストを選択し、その他のオプションを設定し、"ライブキャプチャ開始"をクリックしてください。
@@ -3030,7 +3052,7 @@ Sessions	セッション
 Set "Connection close" on incoming requests	受信リクエストに"Connection close"をセットする
 Set Connection: close	Connection: を close にセットする
 Set a specific cookie or parameter value	指定したcookieやパラメータ値をセットする
-Set confidence	信頼度を設定
+Set confidence	確度を設定
 Set response header "Connection: close"	レスポンスヘッダに"Connection: close"をセットする
 Set severity	危険度を設定
 Set the details by pasting a URL	URLを貼り付けて詳細をセット
@@ -3056,8 +3078,10 @@ Show only in-scope items (Suite scope)	スコープ内のアイテムのみ表�
 Show only parameterized requests	パラメータ付きリクエストのみ表示
 Show only requested items	リクエストされたアイテムのみ表示
 Show only:	表示:
+Show or hide the Learn tab	学習タブを表示または非表示にします。
 Show progress dialog during backups	バックアップ中に進捗ダイアログを表示
 Show response in browser	レスポンスをブラウザで表示
+Show the Learn tab	学習タブを表示する
 Show the crawl in a headed browser	ブラウザ画面を表示してクロールする
 Show this dialog during backups	バックアップ中にこのダイアログを表示する
 Showing all items	すべてのアイテムを表示
@@ -3137,6 +3161,8 @@ Start at offset:	開始オフセット:
 Start at:	開始時間:
 Start attack	攻撃開始
 Start directory:	開始ディレクトリ:
+Start here	ここから始める
+Start learning	学習を開始
 Start live capture	ライブキャプチャ開始
 Start response timer	レスポンス開始時間
 Start time	開始時間
@@ -3155,6 +3181,7 @@ Stop	停止
 Stop at maximum:	停止する最大数:
 Stop if duplicate payload found	重複ペイロード検出時に停止
 Stop sending out-of-scope items to Proxy history and other Burp tools	Proxy履歴や他のBurpツールへのスコープ外アイテムの送信を停止する
+Stop the embedded browser using the GPU.	内蔵ブラウザがGPUをしないようにする
 Store full payloads	全ペイロードを保存する
 Store requests	リクエストを保存する
 Store responses	レスポンスを保存する
@@ -3204,6 +3231,7 @@ TLS cookie without secure flag set(\s+\[[0-9]+\])?	secureフラグがセット�
 Tab	タブ
 Table of contents levels	目次レベル
 Tabs	タブ
+Take a run-through of all the major Burp Suite features.	Burp Suiteのすべての主要機能を紹介します。
 Take full ownership of the project	プロジェクトの完全な所有権を取得する
 Target Scope	ターゲットスコープ
 Target analyzer \| (https?://.*)	対象解析 | $1
@@ -3234,6 +3262,7 @@ Testing macro:	テスト中のマクロ:
 The BApp Store contains Burp extensions that have been written by users of Burp Suite, to extend Burp's capabilities.	BAppストアには、Burp Suiteのユーザによって書かれた、Burpの能力を拡張する拡張があります。
 The Community Edition of Burp Suite contains a demo version of Burp Intruder. Some functionality is disabled, and attacks are time throttled.	コミュニティ版のBurp SuiteにはBurp Intruderのデモ版が入っています。一部の機能が無効化され、攻撃は時間調整されます。
 The REST API can be used by other tools to integrate with Burp Suite. This function exposes sensitive functionality and data, and you should read the full documentation before enabling the service.	REST APIを使用して、他のツールとBurp Suiteを統合できます。この機能は機密性の高い機能とデータを公開するため、サービスを有効にする前にすべてのマニュアルを読む必要があります。
+The Web Security Academy	Webセキュリティアカデミー
 The actions below will be performed in sequence when this rule is applied to a request.	このルールが順番に実行されリクエストに適用されます。
 The analysis is based on a sample of ([0-9]+) tokens?. Based on the sample size, the reliability of the results is: (.*)	解析は$1トークンのサンプルに基づきます。サンプルサイズに基づくと、信頼性は次の通りです: $2
 The capture server hostname ([-_.0-9a-z]*) could not be resolved to an IP address. Ensure that an appropriate DNS entry exists for the server. No connections to the polling server at ([-_.0-9a-z]*) could be opened. The collaborator will not work in this configuration. 	キャプチャサーバのホスト名 $1 をIPアドレスに名前解決できません。サーバの適切なDNSエントリが存在しているか確認してください。ポーリングサーバ $2 への接続ができません。Collaboratorはこの設定では動作しません。 
@@ -3242,8 +3271,8 @@ The certificate and private key were successfully exported.	証明書と秘密�
 The certificate and private key were successfully imported.	証明書と秘密鍵を正常にインポートしました。
 The certificate was loaded successfully.	証明書を正常に読み込みました。
 The certificate was successfully exported.	証明書を正常にエクスポートしました。
-The chart indicates the degree of confidence in the randomness of the sample at each bit position. The significance level at each position is the probability of the observed bit-level results occurring, assuming that the sample is randomly generated.	グラフは、各ビット位置におけるサンプルの乱数性の信頼度を示します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合の、観察されたビットレベルの発生確率です。
-The chart indicates the degree of confidence in the randomness of the sample at each character position. The significance level at each position is the probability of the observed character-level results occurring, assuming that the sample is randomly generated.	グラフは、各文字位置におけるサンプルの乱数性の信頼度を示します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合の、観察された文字レベルの発生確率です。
+The chart indicates the degree of confidence in the randomness of the sample at each bit position. The significance level at each position is the probability of the observed bit-level results occurring, assuming that the sample is randomly generated.	グラフは、各ビット位置におけるサンプルの乱数性の確度を示します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合の、観察されたビットレベルの発生確率です。
+The chart indicates the degree of confidence in the randomness of the sample at each character position. The significance level at each position is the probability of the observed character-level results occurring, assuming that the sample is randomly generated.	グラフは、各文字位置におけるサンプルの乱数性の確度を示します。各位置の有意水準は、サンプルがランダムに生成されたと仮定した場合の、観察された文字レベルの発生確率です。
 The chart shows the maximum bits of entropy available at each position, given the size of the character set used at that position. The total amount of possible entropy is ([.0-9]+) bits.	グラフは、その位置で使用される文字セットのサイズによって与えられる、各位置におけるエントロピーの最大ビットを表示しています。有効なエントロピーの総数は、$1ビットです。
 The chart shows the number of bits of effective entropy at each significance level, based on all tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、すべてのテストに基づいた、各有意水準との有効エントロピービット数を表示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。有意水準を低くすると、トークンがランダムに生成されたという仮説を否定するためにはより強力な証拠が必要となり、ランダムではないデータがランダムとして扱われる可能性が高まります。
 The chart shows the number of bits of effective entropy at each significance level, based on the bit-level tests. Each significance level defines a minimum probability of the observed results occurring if the sample is randomly generated. When the probability of the observed results occurring falls below this level, the hypothesis that the sample is randomly generated is rejected. Using a lower significance level means that stronger evidence is required to reject the hypothesis that the sample is random, and so increases the chance that non-random data will be treated as random.	グラフは、ビットレベルのテストに基づいた、有意水準ごとの有効エントロピービット数を示しています。各有意水準は、サンプルがランダムに生成された場合に発生する観測結果の最小の確率を定義します。観察結果の確率がこのレベルを下回ると、サンプルがランダムに生成されたという仮説は否定されます。有意水準を低くすると、トークンがランダムに生成されたという仮説を否定するためにはより強力な証拠が必要となり、ランダムではないデータがランダムとして扱われる可能性が高まります。
@@ -3681,6 +3710,7 @@ Was modified	変更された
 Was not annotated	注釈なし
 Was not intercepted	インターセプトされなかった
 Was not modified	変更されなかった
+Watch the tour	ツアーを見る
 Web cache poisoning(\s+\[[0-9]+\])?	Webキャッシュ汚染$1
 WebSocket ID	WebSocket ID
 WebSocket URL poisoning (DOM-based)	WebSocket URL汚染(DOMベース)
@@ -3738,6 +3768,7 @@ You can export your certificate and key for use in other tools, or in another in
 You can help improve Burp by submitting anonymous feedback about Burp's performance.	Burpのパフォーマンスに関する匿名のフィードバックを送信すると、Burpの向上に貢献できます。
 You can monitor its progress and access the results	ダッシュボードで進行状況を監視し、
 You can restrict the rule to requests containing specific parameters if required.	必要であれば、指定したパラメータを含むリクエストにルールを制限できます。
+You can turn this tab on again from User Options > Misc	ユーザオプション > その他から、再度このタブを再度オンにできます。
 You can use the Burp Extender APIs to create your own extensions to customize Burp's behavior.	Burp ExtenderのAPIを使用して、Burpの機能をカスタマイズする自分自身の拡張を作れます。
 You have added an item to Target scope. Do you want Burp Proxy to stop sending out-of-scope items to the history or other Burp tools?	アイテムがターゲットスコープに追加されました。履歴や他のBurpツールへのスコープ外アイテムの送信を停止しますか？
 You have selected ([,0-9]+) items for active scanning. Before continuing, you can use the filters below to remove certain categories of items, to make your scanning more targeted and efficient.	アクティブスキャン用に$1このアイテムが選択されました。続ける前に、次のフィルタを使用して特定のカテゴリのアイテムを除外し、ターゲットを絞ったより効率的なスキャンを作成できます。
