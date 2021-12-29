@@ -131,7 +131,7 @@ public class Translator {
 				&& !src.matches("burp\\..*") // burp.から始まるもの(クラス名？)を無視
 				&& !src.matches("lbl.*") // lblから始まるもの(ラベル名？)を無視
 				&& src.length() > 1 // １文字を無視
-				&& !src.matches("[- A-Z]+s?") // 大文字のみの単語を無視
+				&& !src.matches("[-/ A-Z0-9]+s?") // 大文字と数値のみの単語を無視
 				&& !src.matches("\\s+") // 空白のみを無視
 		)) {
 			System.err.println("[" + src + "]");
