@@ -1432,6 +1432,8 @@ Failed to verify BApp file	BAppファイルの検証ができません
 Failed to verify integrity of download.	ダウンロードの整合性が確認できませんでした。
 False positive	誤検知
 Fast	高速
+Faster	高速
+Fastest	最速
 February	2月
 Feedback only contains technical information about Burp's internal functioning, and does not identify you in any way. If you do report a bug via email, you can help us diagnose any problems that your instance of Burp has encountered by including your debug ID.	フィードバックにはBurpの内部機能に関する技術情報だけが含まれ、あなたを特定する方法はありません。バグを電子メールで報告する場合、あなたのデバッグIDを含めると、発生した問題の診断の助けになります。
 Fetch response	レスポンス取得
@@ -1499,6 +1501,7 @@ Flag result items with responses matching these expressions:	これらの文字�
 Flash cross-domain policy(\s+\[[0-9]+\])?	Flashクロスドメインポリシー$1
 Folder for loading library JAR files (optional):	ライブラリのJARファイルを読み込むフォルダ(オプション):
 Folder for loading modules (optional):	モジュールを読み込むフォルダ(オプション):
+Folder name:	フォルダ名:
 Folders	フォルダ
 Follow hidden links in comments and JavaScript	コメントやJavaScriptに隠れたリンクをたどる
 Follow redirection	リダイレクトをたどる
@@ -2153,7 +2156,9 @@ Modify case	大文字小文字変換
 Modifying Parameter Locations	パラメータ場所の操作
 Monitor the following tools' traffic to update the cookie jar:	次のツールを監視してcookie jarを更新する:
 Months	月
+More complete	比較的網羅
 More info	詳細
+Most complete	完全網羅
 Move down	下に移動
 Move the selected certificate down	選択した証明書を下に移動
 Move the selected certificate up	選択した証明書を上に移動
@@ -2234,7 +2239,7 @@ No summary table	サマリテーブルなし
 Non WebSocket response returned	非WebSocketレスポンス
 Non web socket response returned	非WebSocketレスポンス応答
 None	なし
-Normal	Normal
+Normal	普通
 Normal:	標準
 Normalize HTTP/1 line endings	HTTP/1 行末を正規化する
 Normalize line endings	行末を正規化する
