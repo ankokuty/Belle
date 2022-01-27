@@ -311,6 +311,7 @@ Add...	追加...
 Additional encrypted strings - optional	追加暗号文字列 - オプション
 Additional encrypted strings - optional \(([0-9]+)\)	追加の暗号文字列 - オプション ($1)
 Address already in use: NET_Bind	アドレスは既に使用されています: NET_Bind
+Adjust how widgets are displayed within the Inspector. You can also change the order and hide widgets you're not interested in.	Inspector内でのウィジットの表示方法を調整します。順番の変更や、興味のないウィジェットを非表示にもできます。
 Advanced settings	高度な設定
 Advisory	アドバイザリ
 After recovering session:	セッション復元後:
@@ -340,6 +341,7 @@ Allow the embedded browser to run without a sandbox.	内蔵ブラウザをサン
 Allow the proxy embedded browser to store settings and history	内蔵ブラウザに設定と履歴の保存を許可する
 Allow unsafe renegotiation (required for some client certificates)	安全ではないリネゴシエーションを許可する(一部のクライアント証明書で必要)
 Always	常に実行する
+Always collapsed	常に折りたたむ
 Always disable	常に無効化
 Always enable	常に有効化
 Always take the same action in future	次回以降同じ動作にする
@@ -455,7 +457,7 @@ Are you sure you want to restore default intercept server responses options?	サ
 Are you sure you want to restore default live active scanning options?	ライブアクティブスキャンオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default live capture options?	ライブキャプチャオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default live passive scanning options?	ライブパッシブスキャンオプションをデフォルトに戻してよろしいですか？
-Are you sure you want to restore default logging options?	ロギングオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default logging options?	ログ出力オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default macros options?	マクロオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default match and replace options?	検索と置換オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default match grep options?	マッチgrep　オプションをデフォルトに戻してよろしいですか？
@@ -467,7 +469,8 @@ Are you sure you want to restore default passive spidering options?	パッシブ
 Are you sure you want to restore default payloads grep options?	ペイロードgrepオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default performance feedback options?	パフォーマンスフィードバックオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default platform authentication options?	プラットフォーム認証オプションをデフォルトに戻してよろしいですか？
-Are you sure you want to restore default proxy history logging options?	Proxy履歴ログオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default position & display options?	位置と表示オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default proxy history logging options?	Proxy履歴ログ出力オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default proxy interception options?	プロキシインターセプトオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default proxy listeners options?	Proxyリスナーオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default redirections options?	リダイレクトオプションをデフォルトに戻してよろしいですか？
@@ -493,6 +496,7 @@ Are you sure you want to restore default token analysis options?	トークン分
 Are you sure you want to restore default token handling options?	トークンハンドリングオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default upstream proxy servers options?	上位プロキシサーバオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default user interface options?	ユーザインタフェースオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default widget options?	ウィジットオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore defaults for Project options?	プロジェクトオプションのデフォルトに戻してよろしいですか？
 Are you sure you want to restore defaults for Proxy?	Proxyのオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore defaults for Repeater?	Repeaterのオプションをデフォルトに戻してよろしいですか？
@@ -555,6 +559,7 @@ Auto analyze	自動分析
 Auto analyze \(next: ([0-9]+)\)	自動分析 (次: $1)
 Auto §	自動§
 Auto-detect	自動検出
+Auto-expanded when there is enough space	十分なスペースがあれば自動で展開する
 Auto-modified message	自動変更メッセージ
 Auto-modified request	自動変更リクエスト
 Auto-modified response	自動変更されたレスポンス
@@ -776,6 +781,7 @@ Choose this option if you plan to load the state file later and continue testing
 Choose this option if you plan to pass the project file on to someone else, but you do not want them to be able to receive details of any ongoing Burp Collaborator interactions that are associated with your testing. Any new scanning that is performed by the other user will use a different unique identifier, to avoid any interference with other instances of Burp.	プロジェクトファイルを他人に渡す予定があり、しかしテストに関連づけらたCollaboratorとの通信の詳細を継続的に受信させたくない場合に、このオプションを選択してください。実行する新たなスキャンでは異なる一意な識別子を使用し、他のBurpインスタンスとの干渉を避けます。
 Choose this option if you plan to pass the state file on to someone else, but you do not want them to be able to receive details of any ongoing Burp Collaborator interactions that are associated with your testing. Any new scanning that is performed by the other user will use a different unique identifier, to avoid any interference with other instances of Burp.	ステートファイルを他人に渡す予定があり、しかしテストに関連づけらたCollaboratorとの通信の詳細を継続的に受信させたくない場合に、このオプションを選択してください。実行する新たなスキャンでは異なる一意な識別子を使用し、他のBurpインスタンスとの干渉を避けます。
 Choose this option if you plan to use the project file later and continue testing, or pass it on to someone else who will take over your testing. You should be aware that if any testing is continued using multiple instances of Burp, then some Collaborator-based issues may be missed or incorrectly reported.	後でこのプロジェクトファイルを読み込んでテストを継続するか、テストを引き継ぐ他の誰かに渡す場合、このオプションを選択してください。複数のBurpインスタンスでテストを継続する場合、Collaboratorベースの問題を見逃す、または誤って報告されるかもしれません。
+Choose whether the Inspector panel is docked to the left or right of the message editor and whether it is expanded	Inspectorパネルをメッセージエディタの左または右に配置するか、および展開するかどうかを選択します。
 Choose whether to configure login credentials or recorded login sequences. You can configure multiple logins to scan in different user contexts.	ログイン認証情報を設定するか、記録されたログインシーケンスを設定するか、選択します。複数のログインを設定すると異なるユーザーコンテキストでスキャンできます。
 Choose which tools you want to restore the configuration of.	設定をリストアするツールを選択してください。
 Choose which tools you want to restore the state of.	ステートをリストアするツールを選択してください。
@@ -1138,6 +1144,7 @@ Dismiss warning	警告を解除
 Display	表示
 Display actions	アクションを表示
 Display as raw bytes	生バイトとして表示する
+Display mode	表示モード
 Do DNS lookups over SOCKS proxy	SOCKSプロキシ上でDNS検索をする
 Do a passive scan	パッシブスキャン実行
 Do active scan	アクティブスキャン実行
@@ -1195,6 +1202,7 @@ Don't send items to Proxy history or other Burp tools	Proxy履歴や他のBurp�
 Don't send items to Proxy history or other Burp tools, if out of scope	スコープ外の場合、Proxy履歴や他のBurpツールにアイテムを送信しない
 Don't show again for this version	このバージョンは再表示しない
 Don't show again for:	再表示しない:
+Don't show this again	再表示しない
 Don't show this again in the future	次回以降これを表示しない
 Don't submit forms	フォームを送信しない
 Don't submit login forms	ログインフォームを送信しない
@@ -1296,7 +1304,7 @@ Enable embedded browser sandbox	内蔵ブラウザのサンドボックスを有
 Enable embedded browser sandbox (Windows only)	内蔵ブラウザのサンドボックスを有効化(Windowsのみ)
 Enable interception at startup:	起動時にインターセプトを有効:
 Enable line wrapping	行を折り返す
-Enable logging	ログ有効化
+Enable logging	ログ出力有効化
 Enabled	有効
 Encode	エンコード
 Encode as ...	エンコード ...
@@ -1589,6 +1597,7 @@ HTTP TRACE method is enabled(\s+\[[0-9]+\])?	TRACEメソッドが有効$1
 HTTP header injection	HTTPヘッダインジェクション
 HTTP headers	HTTPヘッダ
 HTTP history	HTTP履歴
+HTTP history is empty	HTTP履歴がありません
 HTTP method	メソッド
 HTTP request smuggling	HTTPリクエストスマグリング
 HTTP response header injection(\s+\[[0-9]+\])?	HTTPレスポンスヘッダインジェクション$1
@@ -1634,8 +1643,8 @@ Highlight request parameters	リクエストパラメータを色付けする
 Highlight request syntax	リクエストの構文を色付けする
 Highlight response syntax	レスポンスの構文を色付けする
 History	履歴
-History logging is disabled	ログ記録は無効です
-History logging of out-of-scope items is disabled	スコープ外アイテムのログが無効化されています
+History logging is disabled	ログ出力は無効です
+History logging of out-of-scope items is disabled	スコープ外アイテムのログ出力が無効化されています
 Horizontal layout	水平レイアウト
 Host	ホスト
 Host / IP range	ホスト/IPレンジ
@@ -1745,6 +1754,7 @@ Insertion Point Types	挿入ポイントタイプ
 Insertion point	挿入ポイント
 Insertion points	挿入ポイント
 Inspect response to determine session validity:	セッションの有効性判断にレスポンスを検証:
+Inspector settings	Inspector設定
 Install	インストール
 Installed	インストール済み
 Installing	インストール中
@@ -1871,9 +1881,11 @@ Later	後で
 Learn	学習
 Learn Tab	学習タブ
 Learn how to find more vulnerabilities using Burp Suite.	Burp Suiteでより多くの脆弱性を見つける方法を学びます。
+Learn more	詳細
 Learn tab	学習タブ
 Learn, explore and discover	学習、探求、発見
 Leave	残す
+Left 	左 
 Left/right split	左右に分割
 Length	長さ
 Length range: ([,0-9]+-[,0-9]+).	長さ範囲: $1
@@ -1973,7 +1985,7 @@ Load items from file	ファイルからアイテムを読み込む
 Load live active scanning options	ライブアクティブスキャンオプションを読み込む
 Load live capture options	ライブキャプチャオプションを読み込む
 Load live passive scanning options	ライブパッシブスキャンオプションを読み込む
-Load logging options	ロギングオプションを読み込む
+Load logging options	ログ出力オプションを読み込む
 Load macros options	マクロオプションを読み込む
 Load match and replace options	検索と置換オプションを読み込む
 Load match grep options	マッチgrep　オプションを読み込む
@@ -1986,9 +1998,10 @@ Load passive spidering options	パッシブスパイダリングオプション�
 Load payloads grep options	ペイロードgrepオプションを読み込む
 Load performance feedback options	パフォーマンスフィードバックオプションを読み込む
 Load platform authentication options	プラットフォーム認証オプションを読み込む
+Load position & display options	位置と表示オプションを読み込む
 Load previously undiscovered resources from out-of-scope hosts	スコープ外のホストから以前に検出されなかったリソースをロードする
 Load project options	プロジェクトオプション読み込み
-Load proxy history logging options	Proxy履歴ログオプションを読み込む
+Load proxy history logging options	Proxy履歴ログ出力オプションを読み込む
 Load proxy interception options	プロキシインターセプトオプションを読み込む
 Load proxy listeners options	Proxyリスナーオプションを読み込む
 Load redirections options	リダイレクトオプションを読み込む
@@ -2016,6 +2029,7 @@ Load upstream proxy servers options	上位プロキシサーバオプション�
 Load user interface options	ユーザインタフェースオプションを読み込む
 Load user options	ユーザオプション読み込み
 Load view filter options	表示フィルタオプションを読み込む
+Load widget options	ウィジットオプションを読み込む
 Loaded	読み込み済み
 Loading map ([0-9]+): ([0-9]+)% complete	マップ$1を読み込み中: $2% 完了
 Loading project file ...	プロジェクトファイルを読み込み中 ...
@@ -2036,10 +2050,11 @@ Location(s):	場所:
 Locations	場所
 Log exceptions to a local directory: 	例外をローカルディレクトリに記録する: 
 Logger documentation	Loggerドキュメント
+Logger is empty	Loggerがありません
 Logger memory limit set to ([0-9,]+)MB \| (.*)	メモリ制限($1)MB | $2
 Logger memory limit set to unlimited \| (.*)	メモリ制限なし \| $1
-Logging	ロギング
-Logging of out-of-scope Proxy traffic is disabled	スコープ外Proxyトラフィックのロギングが無効化されています
+Logging	ログ出力
+Logging of out-of-scope Proxy traffic is disabled	スコープ外Proxyトラフィックのログ出力が無効化されています
 Logging: Off	ログ: Off
 Logging: On	ログ: On
 Login Functions	ログイン機能
@@ -2300,8 +2315,10 @@ One week	1週間
 Online activation	オンラインアクティベーション
 Only available in Burp Suite Pro	Burp Suiteプロ版のみ利用可能
 Open Browser	ブラウザを開く
+Open Inspector settings	Inspector設定を開く
 Open backup	バックアップを開く
 Open browser	ブラウザを開く
+Open by default	デフォルトで開く
 Open config file	設定ファイルを開く
 Open cookie jar	cookie jarを開く
 Open existing project	既存のプロジェクトを開く
@@ -2445,8 +2462,8 @@ Perform a byte-level comparison of the two selected items	選択した2アイテ
 Perform a word-level comparison of the two selected items	選択した2アイテムを単語レベルで比較する
 Performance Feedback	パフォーマンスフィードバック
 Perl code injection(\s+\[[0-9]+\])?	Perlコードインジェクション$1
-Pitchfork	ピッチフォーク(Pitchfork)
-Pitchfork attack, (.*)	ピッチフォーク, $1
+Pitchfork	熊手(Pitchfork)
+Pitchfork attack, (.*)	熊手, $1
 Place attacks into the following locations within requests:	リクエスト内の次の場所に攻撃を配置します:
 Place payloads into the following locations within requests:	リクエスト内の次の場所にペイロードを配置する:
 Plain JAR file	JAR ファイル
@@ -2502,6 +2519,7 @@ Popularity:	人気:
 Port	ポート
 Port:	ポート:
 Position	ポジション
+Position & display options	位置と表示オプション
 Position:	位置:
 Positions	ポジション
 Predefined Payload Lists	定義済みペイロードリスト
@@ -2534,12 +2552,12 @@ Protocol settings	プロトコル設定
 Protocol:	プロトコル:
 Proxy (all traffic)	Proxy (全トラフィック)
 Proxy (use with caution)	Proxy(使用注意)
-Proxy History Logging	Proxy履歴ログ
+Proxy History Logging	Proxy履歴ログ出力
 Proxy Interception	Proxyインターセプト
 Proxy Listeners	Proxyリスナー
 Proxy history documentation	Proxy履歴ドキュメント
 Proxy history help	Proxy履歴ヘルプ
-Proxy history logging	Proxy履歴ロギング
+Proxy history logging	Proxy履歴ログ出力
 Proxy host	プロキシホスト
 Proxy host, leave blank to connect directly	プロキシホスト, 直接接続する場合は空白のまま
 Proxy host:	プロキシホスト:
@@ -2787,6 +2805,7 @@ Revert	元に戻す
 Revert changes	変更を元に戻す
 Revert to the original list of items	元のアイテムリストに戻す
 Review the items you have selected for scanning. Double-click items to view full details. You can remove individual items which you do not wish to scan, or go back to modify your general filters.	スキャン用に選択したアイテムを確認してください。詳細を表示するにはアイテムをダブルクリックしてください。スキャンしたくない個々のアイテムを除外するか、戻って一般的なフィルタを変更できます。
+Right	右
 Robots.txt file(\s+\[[0-9]+\])?	robots.txt ファイル$1
 Ruby Environment	Ruby環境
 Ruby code injection(\s+\[[0-9]+\])?	Rubyコードインジェクション$1
@@ -2895,7 +2914,7 @@ Save legacy state file	古いステートファイル保存
 Save live active scanning options	ライブアクティブスキャンオプションを保存する
 Save live capture options	ライブキャプチャオプションを保存する
 Save live passive scanning options	ライブパッシブスキャンオプションを保存する
-Save logging options	ロギングオプションを保存する
+Save logging options	ログ出力オプションを保存する
 Save macros options	マクロオプションを保存する
 Save match and replace options	検索と置換オプションを保存する
 Save match grep options	マッチgrep　オプションを保存する
@@ -2909,8 +2928,9 @@ Save passive spidering options	パッシブスパイダリングオプション�
 Save paySaves grep options	ペイロードgrepオプションを保存する
 Save performance feedback options	パフォーマンスフィードバックオプションを保存する
 Save platform authentication options	プラットフォーム認証オプションを保存する
+Save position & display options	位置と表示オプションを保存する
 Save project options	プロジェクトオプション保存
-Save proxy history logging options	Proxy履歴ログオプションを保存する
+Save proxy history logging options	Proxy履歴ログ出力オプションを保存する
 Save proxy interception options	プロキシインターセプトオプションを保存する
 Save proxy listeners options	Proxyリスナーオプションを保存する
 Save redirections options	リダイレクトオプションを保存する
@@ -2949,6 +2969,7 @@ Save upstream proxy servers options	上位プロキシサーバオプション�
 Save user interface options	ユーザインタフェースオプションを保存する
 Save user options	ユーザオプション保存
 Save view filter options	表示フィルタオプションを保存する
+Save widget options	ウィジットオプションを保存する
 Saved preferences	保存した設定
 Saving Server Responses	サーバレスポンスを保存中
 Saving an attack in progress	進行中の攻撃を保存する
@@ -3034,7 +3055,7 @@ Select one or more characters	デコードしたい文字を
 Select payload generator	ペイロードジェネレータを選択
 Select processor:	拡張選択:
 Select project file to import	インポートするプロジェクトファイル選択
-Select rule type	ルールタイプを選択してください
+Select rule type	ルールタイプの選択
 Select the "extract grep" item from which to derive payloads:	ペイロードを取得する"抽出grep"アイテムを選択してください:
 Select the certificate file	証明書ファイルを選択
 Select the certificate to use. If no certificates are shown, or some details are missing, enter your PIN and click "Refresh". You can double-click on an item to view the full details of the certificate.	使用する証明書を選択してください。証明書が表示されない、または一部の詳細が不足している場合、PINを入力し"リフレッシュ"をクリックしてください。アイテムをダブルクリックすると証明書の詳細が表示できます。
@@ -3169,6 +3190,7 @@ Site Map ([0-9]+)	サイトマップ$1
 Site map	サイトマップ
 Site map documentation	サイトマップのドキュメント
 Site map help	サイトマップヘルプ
+Site map is empty	サイトマップがありません
 Size	サイズ
 Skip all tests for these parameters:	これらのパラメータのテストをすべてスキップする:
 Skip checks unlikely to be effective due to insertion point's base value	影響がなさそうな挿入ポイントの元値のチェックをスキップする
@@ -3419,7 +3441,7 @@ These settings control how the crawler will interact with any login functionalit
 These settings control how the crawler will interact with any login functionality, aside from any application logins that are explicitly configured for the crawl. Note that these settings will be ignored if you are using recorded login sequences.	クロール用に明示的に設定されたアプリケーションログインとは別に、ログイン機能でどのような処理を行うか制御できます。記録されたログインシーケンスを使用している場合、これらの設定は無視されます。
 These settings control how the discovery session adds file extensions to file stems that are being tested.	探索セッションで、ファイル名本体にファイル拡張子をどのように追加してテストするか制御します。
 These settings control how tokens are handled during analysis.	分析中のトークンの処理方法を設定します。
-These settings control logging of HTTP requests and responses.	HTTPリクエストとレスポンスのロギングを制御します。
+These settings control logging of HTTP requests and responses.	HTTPリクエストとレスポンスのログ出力を制御します。
 These settings control some specific details of Burp Proxy's behavior. You can change the default settings here to deal with particular problems or situations.	Burp Proxyの詳細な動作を制御する設定です。特定の問題や状況に対処するためにデフォルトの設定を変更できます。
 These settings control the SSL protocols and ciphers that Burp will use when performing SSL negotiation with upstream servers. If you are experiencing problems with SSL negotiation, you can use these settings to request use of specific protocols or ciphers. Use these options with caution as misconfiguration may break all your outgoing SSL connections.	Burpが上位のサーバとSSLネゴシエーション実行時に使う、SSLプロトコルと暗号を制御します。SSLネゴシエーションに問題が発生した場合は、特定のプロトコルや暗号の使用させるよう設定できます。設定をミスするとすべての外向きSSL接続が破られる可能性があるので、注意して使用してください。
 These settings control the TLS protocols and ciphers that Burp will use when performing TLS negotiation with upstream servers. If you are experiencing problems with TLS negotiation, you can use these settings to request use of specific protocols or ciphers. Use these options with caution as misconfiguration may break all your outgoing TLS connections.	Burpが上位のサーバとTLSネゴシエーションを実行するときに使う、TLSプロトコルと暗号を制御します。TLSネゴシエーションに問題が発生した場合は、特定のプロトコルや暗号の使用させるよう設定できます。設定をミスするとすべての外向きTLS接続が破られる可能性があるので、注意して使用してください。
@@ -3446,6 +3468,7 @@ These settings control whether and how the Spider submits HTML forms.	これら�
 These settings control whether insertion points are created within nested data structures, and the maximum number of insertion points to create per request that is audited.	ネストされたデータ構造内に挿入ポイントを作成するかどうかや、診断する各リクエストで作成する挿入ポイントの最大数を制御します。
 These settings control which issues Burp will check for. You can select issues by scan type or individually. If you select individual issues, you can also select the detection methods that are used for some types of issues.	Burpがチェックする項目を設定します。スキャンの種類または個別に、スキャン項目を選択できます。個々の項目を選択する場合、使用する検出方法も一部の項目では選択できます。
 These settings determine whether Burp sends each outgoing request to a proxy server, or directly to the destination web server. The first rule that matches each destination host will be used. To send all traffic to a single proxy server, create a rule with * as the destination host.	外向きリクエストをプロキシサーバ経由で送信するか、直接Webサーバに送信するか設定します。宛先ホストが最初にマッチしたルールが使用されます。すべてのトラフィックを単一のプロキシサーバに送信するには、宛先ホストを * にしたルールを作成してください。
+These settings let you adjust the display position for the Inspector panel, and customize which information is shown.	Inspectorパネルの表示位置の調整や、表示する情報のカスタマイズができます。
 These settings let you configure Burp to automatically carry out platform authentication to destination web servers.	宛先Webサーバで自動的にプラットフォーム認証をする設定です。
 These settings let you configure Burp to use a SOCKS proxy. This setting is applied at the TCP level, and all outbound requests will be sent via this proxy. If you have configured rules for upstream HTTP proxy servers, then requests to upstream proxies will be sent via the SOCKS proxy configured here.	SOCKSプロキシを使用する設定をします。この設定はTCPレベルで適用され、全送信リクエストがこのプロキシ経由で送信されます。上位HTTPプロキシサーバを設定していた場合、上位プロキシへのリクエストはここで設定したSOCKSプロキシ経由で送信されます。
 These settings let you configure hotkeys for common actions. These include item-specific actions such as "Send to Repeater", global actions such as "Switch to Proxy", and in-editor actions such as "Cut" and "Undo".	一般的なアクションのためのホットキーを設定できます。"Repeaterへ送信"のようなアイテム固有アクション、"Proxyに切り替え"のようなグローバルアクション、"切り取り"や"アンドゥ"のようなエディタ内アクションのホットキーが設定できます。
@@ -3462,6 +3485,7 @@ These settings let you control the behavior of the audit logic to reflect the ob
 These settings let you control the behavior of the crawl logic to reflect the objectives of the crawl and the nature of the application. See the detailed documentation for more information about each option.	診断の目的やアプリケーションの性質に応じて、クロールロジックの挙動を制御できます。各オプションの詳細は、詳細なドキュメントを参照してください。
 These settings let you control the default search settings within the raw HTTP viewer/editor.	生HTTPビューア/エディタ内でのデフォルトの検索設定を制御します。
 These settings let you customize some details of the crawl.	クロールの詳細をカスタマイズできます。
+These settings let you customize the layout of the Inspector panel.	Inspectorパネルのレイアウトをカスタマイズできます。
 These settings let you specify tasks that Burp will perform automatically at defined times or intervals.	定義した時間または間隔で、Burpが自動的に実行するタスクを設定します。
 These settings specify the timeouts to be used for various network tasks. Values are in seconds. Set an option to zero or leave it blank to never timeout that task.	さまざまなネットワークタスクに使用するタイムアウトを指定します。値は、秒単位です。タスクをタイムアウトさせない場合は0または空白にしてください。
 This URL is outside the current target scope. Are you sure you want to discover content?	このURLは現在のターゲットスコープ外です。コンテンツ探索をしてよろしいですか？
@@ -3807,6 +3831,7 @@ WebSocket hijacking \(DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック(DO
 WebSocket hijacking \(reflected DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック(反射型DOMベース)$1
 WebSocket hijacking \(stored DOM-based\)(\s+\[[0-9]+\])?	WebSocketハイジャック(蓄積型DOMベース)$1
 WebSockets history	WebSocket履歴
+WebSockets history is empty	WebSocket履歴がありません
 Weeks	週
 Welcome ...	ようこそ ...
 Welcome to Burp Suite Community Edition. Use the options below to create or open a project.	Burp Suite Community Editionへようこそ。次のオプションでプロジェクトを作成するか開くか選択してください。
@@ -3833,6 +3858,7 @@ Word compare of #([0-9]+) and #([0-9]+)  \(([0-9]+) differences\)	#$1と#$2の�
 Word compare of responses from (.*)	$1 のレスポンス単語比較
 Words	単語
 Wrap data safely for Microsoft Excel	Microsoft Excel用にデータを整形する
+Wrap text	テキストを折り返す
 X-Forwarded-For dependent response(\s+\[[0-9]+\])?	X-Forwarded-Forに依存したレスポンス$1
 X509 certificate for (.*)	$1のX509証明書
 XML / SOAP injection	XML/SOAPインジェクション
