@@ -63,4 +63,4 @@ PortSwigger社から英語メッセージ一覧をもらったわけではなく
 
 ## Author
 
-[@\_bun\_](https://twitter.com/_bun_)
+[@ankokuty](https://twitter.com/ankokuty)
