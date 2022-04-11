@@ -311,7 +311,9 @@ Add...	追加...
 Additional encrypted strings - optional	追加暗号文字列 - オプション
 Additional encrypted strings - optional \(([0-9]+)\)	追加の暗号文字列 - オプション ($1)
 Address already in use: NET_Bind	アドレスは既に使用されています: NET_Bind
-Adjust how widgets are displayed within the Inspector. You can also change the order and hide widgets you're not interested in.	Inspector内でのウィジットの表示方法を調整します。順番の変更や、興味のないウィジェットを非表示にもできます。
+Adjust how widgets are displayed within the Inspector. You can also change the order and hide widgets you're not interested in.	Inspector内でのウィジェットの表示方法を調整します。順番の変更や、興味のないウィジェットを非表示にもできます。
+Adjust which views are available from the toolbar above each request and in which order they appear.	各リクエストの上のツールバーで利用できるビューと、その表示順を調整します。
+Adjust which views are available from the toolbar above each response and in which order they appear.	各レスポンスの上のツールバーで利用できるビューと、その表示順を調整します。
 Advanced settings	高度な設定
 Advisory	アドバイザリ
 After recovering session:	セッション復元後:
@@ -331,6 +333,8 @@ All items were successfully cleaned up.	すべてのアイテムを正常に削�
 All rows	すべての行
 All tests were successful. 	すべてのテストが成功しました。 
 All tools:	全ツール:
+Allow Burp's browser to run without a sandbox.	Burpブラウザをサンドボックスなしで実行する
+Allow Burp's browser to store settings and history	Burpブラウザに設定と履歴の保存を許可する
 Allow HTTP/2 ALPN override	HTTP/2 ALPNを上書きする
 Allow access without API key (using this option is not secure)	APIキー無しのアクセスを許可する (このオプションは安全ではありません)
 Allow loading of page resources that are out-of-scope	スコープ外のページリソースの読み込みを許可する
@@ -418,6 +422,7 @@ Are you sure you want to remove this macro?	このマクロを削除してよろ
 Are you sure you want to remove this rule?	このルールを削除してよろしいですか？
 Are you sure you want to restore default Burp Collaborator server options?	Burp Collaboratorサーバオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default Burp Extender options?	Burp Extenderオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default Burp's browser options?	Burpブラウザオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default Embedded browser options?	内蔵ブラウザオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default HTML rendering options?	HTMLレンダリングオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default HTTP message display options?	HTTPメッセージ表示オプションをデフォルトに戻してよろしいですか？
@@ -462,6 +467,8 @@ Are you sure you want to restore default logging options?	ログ出力オプシ�
 Are you sure you want to restore default macros options?	マクロオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default match and replace options?	検索と置換オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default match grep options?	マッチgrep　オプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default message editor request views options?	メッセージエディタのリクエストビューオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default message editor response views options?	メッセージエディタのレスポンスビューオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default miscellaneous proxy options?	その他プロキシオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default miscellaneous proxy settings options?	その他プロキシ設定オプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default out-of-scope requests options?	スコープ外リクエストオプションをデフォルトに戻してよろしいですか？
@@ -497,7 +504,7 @@ Are you sure you want to restore default token analysis options?	トークン分
 Are you sure you want to restore default token handling options?	トークンハンドリングオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default upstream proxy servers options?	上位プロキシサーバオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default user interface options?	ユーザインタフェースオプションをデフォルトに戻してよろしいですか？
-Are you sure you want to restore default widget options?	ウィジットオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore default widget options?	ウィジェットオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore defaults for Project options?	プロジェクトオプションのデフォルトに戻してよろしいですか？
 Are you sure you want to restore defaults for Proxy?	Proxyのオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore defaults for Repeater?	Repeaterのオプションをデフォルトに戻してよろしいですか？
@@ -531,6 +538,7 @@ Attack type: 	攻撃タイプ:
 Attack window behavior	攻撃ウィンドウの挙動
 Attempt data recovery	データ復元を開始
 Attempt to self-register a user	自分自身でユーザ登録を試みるか
+Attributes	属性
 Audit Optimization	診断の最適化
 Audit accuracy:	診断精度:
 Audit again	再診断
@@ -626,6 +634,7 @@ Block size (usually 8 or 16):	ブロックサイズ(通常8か16):
 Body	ボディ
 Body Parameters	HTTPボディパラメータ
 Body Parameters \(([0-9]+)\)	ボディパラメータ($1)
+Body Params	ボディパラメータ
 Body encoding:	ボディエンコーディング:
 Body parameter	ボディパラメータ
 Body parameter values	ボディのパラメータ値
@@ -644,7 +653,7 @@ Built-in long directory list	組み込みの長いディレクトリ名一覧
 Built-in long file list	組み込みの長いファイル名一覧
 Built-in short directory list	組み込みの短いディレクトリ名一覧
 Built-in short file list	組み込みの短いファイル名一覧
-Burp Clickbandit is a tool for generating clickjacking attacks. When you have found a web page that may be vulnerable to clickjacking, you can use Burp Clickbandit to create an attack, and confirm that the vulnerability can be successfully exploited.	Burp Clickbanditは、クリックジャッキング攻撃を生成するためのツールです。クリックジャッキングに脆弱なWebページを発見した場合、Burp Clickbanditを使用して攻撃を作成し、脆弱性が悪用できるか確認できます。
+Burp Clickbandit is a tool for generating clickjacking attacks. When you have found a web page that may be vulnerable to clickjacking, you can use Burp Clickbandit to create an attack, and confirm that the vulnerability can be successfully exploited.	Burp Clickbanditは、クリックジャッキング攻撃を生成するツールです。クリックジャッキングに脆弱なWebページを発見した場合、Burp Clickbanditを使用して攻撃を作成し、脆弱性が悪用できるか確認できます。
 Burp Clickbandit runs in your browser using JavaScript. It works on all modern browsers except for Microsoft IE and Edge. To run Burp Clickbandit, use the following steps:	Burp Clickbanditは、JavaScriptを使用してブラウザで実行されます。Microsoft IEとEdge以外の、すべての最新のブラウザで動作します。Burp Clickbanditを実行するには、次の手順を使用します:
 Burp Collaborator Health Check	Burp Collaboratorヘルスチェック
 Burp Collaborator Server	Burp Collaboratorサーバ
@@ -685,6 +694,7 @@ Burp maintains a cookie jar that stores all of the cookies issued by visited web
 Burp program executable	Burp実行プログラム
 Burp will attempt to repair the project file. This will create a new project file that can be opened safely, and will preserve as much data as possible from the original file.	Burpはプロジェクトファイルの修復を試みます。これにより、安全に開ける新しいプロジェクトファイルが作成され、元のファイルからできるだけ多くのデータを保存します。
 Burp will now attempt to contact the license server and activate your license. This will require Internet access. If you access the Internet via a web proxy server, please enter the details below.	ライセンスサーバに接続しライセンス認証を試みます。これにはインターネットアクセスが必要です。プロキシサーバを経由してインターネットにアクセスする場合は、以下に詳細を入力してください。
+Burp's Browser	Burpブラウザ
 Byte compare	バイト比較
 Byte compare of #([0-9]+) and #([0-9]+)  \(([0-9]+) differences\)	#$1と#$2のバイト比較  ($3カ所の相違)
 Bytes	バイト
@@ -709,6 +719,7 @@ Capture by request type	リクエストタイプによるキャプチャ
 Capture by search term	検索語でキャプチャ
 Capture by status code	ステータスコードによるキャプチャ
 Capture by tool	ツールによるキャプチャ
+Capture filter settings	キャプチャフィルタ設定
 Capture filter: 	キャプチャフィルタ: 
 Capture filter: Please wait ...  	キャプチャフィルタ: お待ちください ...  
 Capture limit	キャプチャ制限
@@ -1126,6 +1137,7 @@ Disable Java SNI extension (requires restart)	Java SNI拡張を無効にする(�
 Disable SSL session resume	SSLセッションの再開を無効にする
 Disable TLS session resume	TLSセッションの再開を無効にする
 Disable extensions	拡張を無効にする
+Disable line wrap	折り返しを無効化
 Disable line wrapping	行を折り返さない
 Disable web interface at http://burp	http://burp のWebインタフェースを無効にする
 Disable web interface at http://burpsuite	http://burpsuite のWebインタフェースを無効にする
@@ -1304,6 +1316,7 @@ Enable disabled form fields	無効化されたフォームフィールドを有�
 Enable embedded browser sandbox	内蔵ブラウザのサンドボックスを有効化
 Enable embedded browser sandbox (Windows only)	内蔵ブラウザのサンドボックスを有効化(Windowsのみ)
 Enable interception at startup:	起動時にインターセプトを有効:
+Enable line wrap	折り返しを有効化
 Enable line wrapping	行を折り返す
 Enable logging	ログ出力有効化
 Enabled	有効
@@ -1612,6 +1625,7 @@ Header manipulation	ヘッダ操作
 Header:	ヘッダ:
 Headers	ヘッダ
 Headers - This request has been kettled and cannot be represented in the editor. Please use the Inspector to view and edit the headers.	Headers - これはケトルなリクエストで、エディタでは表現できません。Inspectorでヘッダの表示や編集をしてください。
+Health check for Burp's browser	Burpブラウザのヘルスチェック
 Help	ヘルプ
 Help improve Burp by submitting anonymous feedback about its performance	Burp改善のためパフォーマンスに関するフィードバックを匿名で送信する
 Hex formatting	16進数フォーマット
@@ -1752,6 +1766,7 @@ Insertion Point Types	挿入ポイントタイプ
 Insertion point	挿入ポイント
 Insertion points	挿入ポイント
 Inspect response to determine session validity:	セッションの有効性判断にレスポンスを検証:
+Inspector and Message Editor	Inspectorとメッセージエディタ
 Inspector settings	Inspector設定
 Install	インストール
 Installed	インストール済み
@@ -1774,7 +1789,7 @@ Intruder Attack Configuration	Intruder攻撃設定
 Intruder attack	Intruder攻撃
 Intruder results help	Intruder結果ヘルプ
 Intrusive	侵入
-Intrusive active	アクティブスキャン(侵入)
+Intrusive active	アクティブ(侵入)
 Invalid IP address:(.*)	不正なIPアドレス:$1
 Invalid IP range:(.*)	不正なIPレンジ:$1
 Invalid JSON configuration found at:(.*)	不正なJSON設定が見つかりました:$1
@@ -1892,7 +1907,7 @@ Library	ライブラリ
 Licence Agreement	使用許諾契約書
 License	ライセンス
 Light	軽度
-Light active	アクティブスキャン(軽度)
+Light active	アクティブ(軽度)
 Limit request/response size	リクエスト/レスポンスのサイズ制限
 Limit the memory used by the HTTP logger to:	HTTPロガーが使用するメモリを制限:
 Limit to	制限
@@ -1935,6 +1950,7 @@ Load ...	読み込み ...
 Load Burp Collaborator server options	Burp Collaboratorサーバオプションを読み込む
 Load Burp Extender options	Burp Extenderオプションを読み込む
 Load Burp Extension	Burp拡張を読み込む
+Load Burp's browser options	Burpブラウザオプションを読み込む
 Load Embedded browser options	内蔵ブラウザオプションを読み込む
 Load HTML rendering options	HTMLレンダリングオプションを読み込む
 Load HTTP message display options	HTTPメッセージ表示オプションを読み込む
@@ -1987,6 +2003,8 @@ Load logging options	ログ出力オプションを読み込む
 Load macros options	マクロオプションを読み込む
 Load match and replace options	検索と置換オプションを読み込む
 Load match grep options	マッチgrep　オプションを読み込む
+Load message editor request views options	リクエストビューオプションを読み込む
+Load message editor response views options	レスポンスビューオプションを読み込む
 Load miscellaneous proxy options	その他プロキシオプションを読み込む
 Load miscellaneous proxy settings options	その他プロキシ設定オプションを読み込む
 Load options	オプション読み込み
@@ -2027,7 +2045,7 @@ Load upstream proxy servers options	上位プロキシサーバオプション�
 Load user interface options	ユーザインタフェースオプションを読み込む
 Load user options	ユーザオプション読み込み
 Load view filter options	表示フィルタオプションを読み込む
-Load widget options	ウィジットオプションを読み込む
+Load widget options	ウィジェットオプションを読み込む
 Loaded	読み込み済み
 Loading map ([0-9]+): ([0-9]+)% complete	マップ$1を読み込み中: $2% 完了
 Loading project file ...	プロジェクトファイルを読み込み中 ...
@@ -2140,7 +2158,7 @@ Maximum static analysis time per item (in seconds):	アイテムあたりの最�
 Maximum unique locations discovered:	発見したユニークな位置の最大数:
 May	5月
 Medium	中
-Medium active	アクティブスキャン(中程度)
+Medium active	アクティブ(中程度)
 Medium severity	危険度中
 Memory: (.*)	メモリ: $1
 Message	メッセージ
@@ -2148,6 +2166,7 @@ Message Editor	メッセージエディタ
 Message actions	メッセージアクション
 Message editor documentation	メッセージエディタのドキュメント
 Message editor help	メッセージエディタヘルプ
+Message editor settings	メッセージエディタ設定
 Meta refresh tag	Meta refreshタグ
 Method	メソッド
 Method:	メソッド:
@@ -2309,6 +2328,7 @@ One week	1週間
 Online activation	オンラインアクティベーション
 Only available in Burp Suite Pro	Burp Suiteプロ版のみ利用可能
 Open Browser	ブラウザを開く
+Open Inspector and Message Editor settings	Inspectorとメッセージエディタの設定を開く
 Open Inspector settings	Inspector設定を開く
 Open backup	バックアップを開く
 Open browser	ブラウザを開く
@@ -2565,6 +2585,7 @@ Python Environment	Python環境
 Python code injection(\s+\[[0-9]+\])?	Pythonコードインジェクション$1
 Query Parameters	クエリパラメータ
 Query Parameters \(([0-9]+)\)	クエリパラメータ($1)
+Query Params	クエリパラメータ
 Query parameter	クエリパラメータ
 Queued Tasks	キューされたタスク
 Random	ランダム
@@ -2736,6 +2757,7 @@ Request the root of all directories	すべてのディレクトリのルート�
 Request to ([a-z].*)	$1 へのリクエスト
 Request to Collaborator	Collaboratorへのリクエスト
 Request to:	リクエスト先:
+Request views	リクエストビュー
 Requests	リクエスト
 Requests handled	処理したリクエスト
 Requests made:	生成されたリクエスト:
@@ -2761,6 +2783,7 @@ Response header	レスポンスヘッダ
 Response headers	レスポンスヘッダ
 Response received	受信レスポンス数
 Response to this request	このリクエストのレスポンス
+Response views	レスポンスビュー
 Responses	レスポンス
 Responses processed:	処理されたレスポンス:
 Responses queued for analysis:	分析用にキューされたレスポンス:
@@ -2846,6 +2869,7 @@ Sample size: ([0-9]+).	サンプルサイズ: $1
 Save	保存
 Save Burp Collaborator server options	Burp Collaboratorサーバオプションを保存する
 Save Burp Extender options	Burp Extenderオプションを保存する
+Save Burp's browser options	Burpブラウザオプションを保存する
 Save Embedded browser options	内蔵ブラウザオプションを保存する
 Save HTML rendering options	HTMLレンダリングオプションを保存する
 Save HTTP message display options	HTTPメッセージ表示オプションを保存する
@@ -2912,6 +2936,8 @@ Save logging options	ログ出力オプションを保存する
 Save macros options	マクロオプションを保存する
 Save match and replace options	検索と置換オプションを保存する
 Save match grep options	マッチgrep　オプションを保存する
+Save message editor request views options	リクエストビューオプションを保存する
+Save message editor response views options	レスポンスビューオプションを保存する
 Save miscellaneous proxy options	その他プロキシオプションを保存する
 Save miscellaneous proxy settings options	その他プロキシ設定オプションを保存する
 Save my attack to the project file	プロジェクトファイルに攻撃を保存します
@@ -2963,7 +2989,7 @@ Save upstream proxy servers options	上位プロキシサーバオプション�
 Save user interface options	ユーザインタフェースオプションを保存する
 Save user options	ユーザオプション保存
 Save view filter options	表示フィルタオプションを保存する
-Save widget options	ウィジットオプションを保存する
+Save widget options	ウィジェットオプションを保存する
 Saved preferences	保存した設定
 Saving Server Responses	サーバレスポンスを保存中
 Saving an attack in progress	進行中の攻撃を保存する
@@ -3146,6 +3172,7 @@ Settings	設定
 Severity	危険度
 Short words	短い単語
 Shortest:	最短:
+Show Hidden Tabs	非表示のタブを表示
 Show all	すべて表示
 Show all differences between the two responses	2レスポンスのすべての差分を表示
 Show details	詳細を表示
@@ -3264,6 +3291,7 @@ Status 100 Responses	ステータス100レスポンス
 Status code	ステータスコード
 Step:	増分:
 Stop	停止
+Stop Burp's browser using the GPU.	BurpブラウザがGPUを使用しないようにする
 Stop at maximum:	停止する最大数:
 Stop if duplicate payload found	重複ペイロード検出時に停止
 Stop sending out-of-scope items to Proxy history and other Burp tools	Proxy履歴や他のBurpツールへのスコープ外アイテムの送信を停止する
@@ -3420,6 +3448,7 @@ These settings can be used to enable certain TLS features that might be needed t
 These settings can be used to extract useful information from responses into the attack results table.	レスポンスから有用な情報を抽出し、攻撃結果一覧に表示します。
 These settings can be used to flag result items containing reflections of the submitted payload.	送信したペイロードが反射されるアイテムに、フラグを設定できます。
 These settings can be used to flag result items containing specified expressions.	指定した正規表現を含む結果にフラグをセットする設定です。
+These settings control behaviour of Burp's browser.	Burpブラウザの動作を制御します。
 These settings control behaviour of the embedded browser.	内蔵ブラウザの動作を制御します。
 These settings control how Burp binds the REST API.	REST APIのバインド方法を制御します。
 These settings control how Burp binds the proxy listener.	Proxyリスナーのバインド方法を制御します。
@@ -3479,6 +3508,8 @@ These settings let you control the behavior of the audit logic to reflect the ob
 These settings let you control the behavior of the crawl logic to reflect the objectives of the crawl and the nature of the application. See the detailed documentation for more information about each option.	診断の目的やアプリケーションの性質に応じて、クロールロジックの挙動を制御できます。各オプションの詳細は、詳細なドキュメントを参照してください。
 These settings let you control the default search settings within the raw HTTP viewer/editor.	生HTTPビューア/エディタ内でのデフォルトの検索設定を制御します。
 These settings let you customize some details of the crawl.	クロールの詳細をカスタマイズできます。
+These settings let you customize the Message editor, what widgets are displayed on the Inspector panel, and customise what information is shown.	メッセージエディタでInspectorに表示するウィジェットや情報のカスタマイズができます。
+These settings let you customize the default layout of the message editor.	メッセージエディタのデフォルトレイアウトをカスタマイズできます。
 These settings let you customize the layout of the Inspector panel.	Inspectorパネルのレイアウトをカスタマイズできます。
 These settings let you specify tasks that Burp will perform automatically at defined times or intervals.	定義した時間または間隔で、Burpが自動的に実行するタスクを設定します。
 These settings specify the timeouts to be used for various network tasks. Values are in seconds. Set an option to zero or leave it blank to never timeout that task.	さまざまなネットワークタスクに使用するタイムアウトを指定します。値は、秒単位です。タスクをタイムアウトさせない場合は0または空白にしてください。
@@ -3796,6 +3827,7 @@ View Documentation	ドキュメントを参照
 View Filter Settings	表示フィルタ設定
 View details	詳細表示
 View documentation	ドキュメントを見る
+View filter settings	表示フィルタ設定
 View filter: 	表示フィルタ: 
 View filter: Please wait ...  	表示フィルタ: お待ちください ...  
 View release notes	リリースノートを表示する
