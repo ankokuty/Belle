@@ -300,6 +300,7 @@ Add response interception rule	レスポンスインターセプトルールを�
 Add streaming URL	ストリーミングURLを追加
 Add streaming URL prefix	ストリーミングURLのプレフィックスを追加
 Add suffix	サフィックスを追加
+Add tab	タブを追加
 Add the specified item	指定したアイテムを追加
 Add to scope	スコープに追加
 Add to site map	サイトマップに追加
@@ -397,6 +398,7 @@ Are you sure you want to clear queues?	キューをクリアしてよろしい�
 Are you sure you want to clear the entire request template?	リクエストテンプレート全体をクリアしてよろしいですか？
 Are you sure you want to clear the history?	履歴をクリアしてよろしいですか？
 Are you sure you want to clear the list?	リストをクリアしてよろしいですか？
+Are you sure you want to close ([0-9]+) tabs\?	$1個のタブを閉じてよろしいですか？
 Are you sure you want to close the comparison?	比較を閉じてよろしいですか？
 Are you sure you want to close the tracer?	トレーサを閉じてよろしいですか？
 Are you sure you want to close this Burp Collaborator client? Any further interactions from its payloads will be lost.	Burp Collaboratorクライアントを閉じてよろしいですか？そのペイロードからの以降の通信は失われます。
@@ -540,6 +542,7 @@ Attempt data recovery	データ復元を開始
 Attempt to self-register a user	自分自身でユーザ登録を試みるか
 Attributes	属性
 Audit Optimization	診断の最適化
+Audit Project Option Overrides	プロジェクトの診断オプション上書き
 Audit accuracy:	診断精度:
 Audit again	再診断
 Audit checks - passive	診断 - パッシブ
@@ -845,6 +848,8 @@ Close	閉じる
 Close attack results preferences	攻撃結果のクローズ設定
 Close other tabs	他のタブを閉じる
 Close tab	タブを閉じる
+Close tabs to the left	左側のタブを閉じる
+Close tabs to the right	右側のタブを閉じる
 Close wizard	ウィザードを閉じる
 Cluster bomb	クラスター爆弾(Cluster bomb)
 Cluster bomb attack, (.*)	クラスター爆弾, $1
@@ -901,10 +906,12 @@ Configure the settings for the custom token location	トークン位置のカス
 Configure the sources Burp should use for generating filenames to test.	ファイル名のテストを生成する元を設定します。
 Confirm	確認
 Connect	接続
+Connect:	接続:
 Connected	接続済み
 Connecting...	接続中...
 Connection failed	接続失敗
 Connections	接続
+Consider unloading some extensions	一部の拡張のアンロードを検討してください
 Consolidate frequently occurring passive issues	頻繁に発生するパッシブ問題を統合する
 Consolidate items	アイテムを統合...
 Consolidate items...	アイテムを統合...
@@ -993,15 +1000,18 @@ Count	数
 Crawl	クロール
 Crawl Limits	クロール制限
 Crawl Optimization	クロールの最適化
+Crawl Project Option Overrides	プロジェクトのクロールオプション上書き
 Crawl and audit	クロールと診断
 Crawl and audit of (.*)	$1のクロールと診断
 Crawl finished	クロール完了
 Crawl finished.	クロール完了.
 Crawl strategy tuning	クロール戦略のチューニング
 Crawl strategy:	クロール戦略:
+Crawl using my provided logins only	提供したログイン名でのみクロール
 Crawler Settings	クローラ設定
 Crawling	クロール
 Crawling modern applications is sometimes an open-ended exercise, due to the amount of stateful functionality, volatile content, and unbounded navigation. Burp's crawler uses various techniques to maximise discovery of unique content early in the crawl. These settings let you impose a limit on the extent of the crawl, as it reaches the point of diminishing returns. You can leave any crawl limit setting blank to disable it.	最新アプリケーションのクロールは、ステートフルな機能、不安定なコンテンツ、無制限のナビゲーションのおかげで、終わらない場合があります。Burpのクローラはさまざまな手法を使用して、クロールの初期段階でユニークなコンテンツを最大限発見しようとします。これらの設定では、クロール範囲に制限がかけられます。クロール制限を空白にしておくと、無効にできます。
+Create New Folder	新規フォルダ作成
 Create a new rule	新規ルールを作成
 Create new resource pool	新しいリソースプールを作成する
 Create new task	新規タスクを作成
@@ -1363,6 +1373,8 @@ Error-based	エラーベース
 Errors	エラー
 Errors:	エラー:
 Estimated encodings:	予想エンコード数:
+Estimated system impact	システム影響の概算
+Estimated system impact:	システム影響の概算:
 Event detail	イベント詳細
 Event log	イベントログ
 Events	イベント
@@ -1455,6 +1467,8 @@ Failed to verify integrity of download.	ダウンロードの整合性が確認�
 False positive	誤検知
 February	2月
 Feedback only contains technical information about Burp's internal functioning, and does not identify you in any way. If you do report a bug via email, you can help us diagnose any problems that your instance of Burp has encountered by including your debug ID.	フィードバックにはBurpの内部機能に関する技術情報だけが含まれ、あなたを特定する方法はありません。バグを電子メールで報告する場合、あなたのデバッグIDを含めると、発生した問題の診断の助けになります。
+Fetch previously undiscovered resources and data from out-of-scope hosts	スコープ外のホストから未発見のリソースやデータを取得する
+Fetch required resources and data from out-of-scope hosts	スコープ外のホストから必要なリソースやデータを取得する
 Fetch response	レスポンス取得
 Field name	フィールド名
 Field name cannot be blank	フィールド名は空白にできません
@@ -1817,6 +1831,7 @@ Invalid memory limit. Must be numeric	無効なメモリ制限。数値にして
 Invalid number	不正な数値
 Invalid poll interval	不正なポーリング間隔
 Invalid port	不正なポート
+Invalid port number	不正なポート番号
 Invalid port:	不正なポート:
 Invalid port: 	不正なポート: 
 Invalid proxy port	プロキシポート番号が不正です
@@ -2076,6 +2091,7 @@ Logging: On	ログ: On
 Login Functions	ログイン機能
 Long redirection response(\s+\[[0-9]+\])?	長いリダイレクトレスポンス$1
 Longest:	最長:
+Look In:	検索先:
 Look and feel:	ルックアンドフィール:
 Look for expression:	検索表現:
 Loopback only	ループバックのみ
@@ -2160,6 +2176,7 @@ May	5月
 Medium	中
 Medium active	アクティブ(中程度)
 Medium severity	危険度中
+Memory	メモリ
 Memory: (.*)	メモリ: $1
 Message	メッセージ
 Message Editor	メッセージエディタ
@@ -2221,6 +2238,7 @@ Never	行わない
 New	新規
 New ...	新規 ...
 New API key	新規APIキー
+New Folder	新規フォルダ
 New Login Credentials	新規ログイン認証情報
 New Recorded Login	新規記録されたログイン
 New WebSocket	新規WebSocket
@@ -2268,7 +2286,7 @@ No summary table	サマリテーブルなし
 Non WebSocket response returned	非WebSocketレスポンス
 Non web socket response returned	非WebSocketレスポンス応答
 None	なし
-Normal:	標準
+Normal:	標準:
 Normalize HTTP/1 line endings	HTTP/1 行末を正規化する
 Normalize line endings	行末を正規化する
 Not a valid Burp project file: (.*)	有効なBurpプロジェクトファイルではありません: $1
@@ -2368,6 +2386,7 @@ Out-of-band resource load \(HTTP\)(\s+\[[0-9]+\])?	帯域外リソース読み�
 Output	出力
 Output to system console	システムコンソールに出力する
 Overall result	全体の結果
+Overall:	総合:
 Overlong UTF-8 encodings	冗長なUTF-8エンコード
 Override user options	ユーザオプションを上書きする
 PHP code injection(\s+\[[0-9]+\])?	PHPコードインジェクション$1
@@ -2698,6 +2717,7 @@ Remove unsupported encodings from Accept-Encoding headers in incoming requests	�
 Rename	名前変更
 Rename Project	プロジェクト名変更
 Rename project	プロジェクト名変更
+Rename tab	タブ名変更
 Render view	Renderビュー
 Render view not available for this content	このコンテンツではRenderビューを使用できません
 Reopen closed tab	閉じたタブを開く
@@ -2874,6 +2894,7 @@ Save Embedded browser options	内蔵ブラウザオプションを保存する
 Save HTML rendering options	HTMLレンダリングオプションを保存する
 Save HTTP message display options	HTTPメッセージ表示オプションを保存する
 Save HTTP message search options	HTTPメッセージ検索オプションを保存する
+Save In:	保存先:
 Save Java environment options	Java環境オプションを保存する
 Save Javadoc files	Javadocファイルを保存
 Save Learn tab options	学習タブオプションを保存する
@@ -3461,6 +3482,7 @@ These settings control how Burp handles redirections when performing attacks.	�
 These settings control how Intruder handles network errors during the attack.	攻撃中にネットワークエラーを処理する方法を制御します。
 These settings control how the Spider submits login forms.	Spiderによるログインフォームの送信方法を設定します。
 These settings control how the crawler will interact with any login functionality, aside from any application logins that are explicitly configured for the crawl.	クロール用に明示的に設定されたアプリケーションログインとは別に、ログイン機能でどのような処理を行うか制御できます。
+These settings control how the crawler will interact with any login functionality, aside from any application logins that are explicitly configured for the crawl. Note that these settings will be ignored if you are using recorded login sequences or if you have selected 'Crawl using my provided logins only'.	クロール用に明示的に設定されたアプリケーションログインとは別に、ログイン機能でどのような処理を行うか制御できます。記録されたログインシーケンスを使用している場合や、'提供したログイン名でのみクロール'を選択している場合、これらの設定は無視されます。
 These settings control how the crawler will interact with any login functionality, aside from any application logins that are explicitly configured for the crawl. Note that these settings will be ignored if you are using recorded login sequences.	クロール用に明示的に設定されたアプリケーションログインとは別に、ログイン機能でどのような処理を行うか制御できます。記録されたログインシーケンスを使用している場合、これらの設定は無視されます。
 These settings control how the discovery session adds file extensions to file stems that are being tested.	探索セッションで、ファイル名本体にファイル拡張子をどのように追加してテストするか制御します。
 These settings control how tokens are handled during analysis.	分析中のトークンの処理方法を設定します。
@@ -3498,8 +3520,8 @@ These settings let you configure hotkeys for common actions. These include item-
 These settings let you configure the client SSL certificates that Burp will use when a destination host requests one. Burp will use the first certificate in the list whose host configuration matches the name of the host being contacted. You can double-click on an item to view the full details of the certificate.	宛先ホストがクライアントSSL証明書を要求してきたときに使う証明書を設定します。接続しようとしているホストのホスト名に一致した、リスト内の最初の証明書を使用します。アイテムをダブルクリックすると証明書の詳細が表示できます。
 These settings let you configure the client TLS certificates that Burp will use when a destination host requests one. Burp will use the first certificate in the list whose host configuration matches the name of the host being contacted. You can double-click on an item to view the full details of the certificate.	宛先ホストがクライアントTLS証明書を要求してきたときに使う証明書を設定します。接続しようとしているホストのホスト名に一致した、リスト内の最初の証明書を使用します。アイテムをダブルクリックすると証明書の詳細が表示できます。
 These settings let you configure the environment for executing extensions that are written in Java. If your extensions use any libraries, you can specify a folder from which libraries will be loaded.	Javaで記述された拡張を実行する環境が設定できます。拡張が任意のライブラリを使用している場合、ライブラリが読み込まれるフォルダを指定できます。
-These settings let you configure the environment for executing extensions that are written in Python. To use Python extensions, you will need to download Jython, which is a Python interpreter implemented in Java.	Pythonで書かれた拡張を実行する環境が設定できます。Pythonの拡張を使用するには、Javaで実装されたPythonインタープリターである、Jythonをダウンロードする必要があります。
-These settings let you configure the environment for executing extensions that are written in Ruby. To use Ruby extensions, you will need to download JRuby, which is a Ruby interpreter implemented in Java. Note that you can either configure the location of the JRuby JAR file here, or you can load the JAR file on startup via the Java classpath.	Rubyで書かれた拡張を実行する環境が設定できます。Rubyの拡張を使用するには、Javaで実装されたRubyインタープリターである、JRubyをダウンロードする必要があります。ここでJRubyのJARファイルの場所を設定するか、起動時にJavaクラスパスからJAR ファイルを読み込めます。
+These settings let you configure the environment for executing extensions that are written in Python. To use Python extensions, you will need to download Jython, which is a Python interpreter implemented in Java.	Pythonで書かれた拡張を実行する環境が設定できます。Pythonの拡張を使用するには、Javaで実装されたPythonインタープリタである、Jythonをダウンロードする必要があります。
+These settings let you configure the environment for executing extensions that are written in Ruby. To use Ruby extensions, you will need to download JRuby, which is a Ruby interpreter implemented in Java. Note that you can either configure the location of the JRuby JAR file here, or you can load the JAR file on startup via the Java classpath.	Rubyで書かれた拡張を実行する環境が設定できます。Rubyの拡張を使用するには、Javaで実装されたRubyインタープリタである、JRubyをダウンロードする必要があります。ここでJRubyのJARファイルの場所を設定するか、起動時にJavaクラスパスからJAR ファイルを読み込めます。
 These settings let you configure where Burp stores its temporary files. Changes will take effect the next time Burp starts up.	Burpが一時ファイルを保存する場所を設定します。次回Burp起動時から反映されます。
 These settings let you control how HTTP messages are displayed within the raw HTTP viewer/editor.	生HTTPビューア/エディタでのHTTPメッセージの表示方法を制御します。
 These settings let you control the appearance of Burp's user interface.	Burpユーザインタフェースの外観を制御します。
@@ -3511,8 +3533,11 @@ These settings let you customize some details of the crawl.	クロールの詳�
 These settings let you customize the Message editor, what widgets are displayed on the Inspector panel, and customise what information is shown.	メッセージエディタでInspectorに表示するウィジェットや情報のカスタマイズができます。
 These settings let you customize the default layout of the message editor.	メッセージエディタのデフォルトレイアウトをカスタマイズできます。
 These settings let you customize the layout of the Inspector panel.	Inspectorパネルのレイアウトをカスタマイズできます。
+These settings let you override settings defined in Project Options for this audit task. Any setting that is left blank will be set to the value defined in Project Options.	診断用のプロジェクトオプションを上書きできます。空白の場合、プロジェクトオプションで定義した値が設定されます。
+These settings let you override settings defined in Project Options for this crawl task. Any setting that is left blank will be set to the value defined in Project Options.	クロール用のプロジェクトオプションを上書きできます。空白の場合、プロジェクトオプションで定義した値が設定されます。
 These settings let you specify tasks that Burp will perform automatically at defined times or intervals.	定義した時間または間隔で、Burpが自動的に実行するタスクを設定します。
 These settings specify the timeouts to be used for various network tasks. Values are in seconds. Set an option to zero or leave it blank to never timeout that task.	さまざまなネットワークタスクに使用するタイムアウトを指定します。値は、秒単位です。タスクをタイムアウトさせない場合は0または空白にしてください。
+These settings specify the timeouts to be used for various network tasks. Values are in seconds. Set an option to zero to never timeout that task.	さまざまなネットワークタスクに使用するタイムアウトを指定します。値は、秒単位です。0に設定すると、そのタスクはタイムアウトしません。
 This URL is outside the current target scope. Are you sure you want to discover content?	このURLは現在のターゲットスコープ外です。コンテンツ探索をしてよろしいですか？
 This URL is outside the current target scope. Are you sure you want to schedule an active scan?	このURLは現在のターゲットスコープ外です。アクティブスキャンをスケジュールしてよろしいですか？
 This action checks whether the session is valid, by either issuing the current request or running a predefined macro (sequence of requests), and inspecting the response. If the session is invalid, you can optionally perform a further action to obtain a new valid session.	このアクションは、現在のリクエストか定義したマクロ(リクエストのシーケンス)を実行しレスポンスを調べることで、セッションが有効かどうかチェックします。セッションが無効な場合、必要に応じて、新しい有効なセッションを取得する詳細なアクションを実行できます。
@@ -3605,7 +3630,7 @@ This will update the requests and responses in the macro definition with those m
 This wizard lets you remove certain information which Burp saves on your computer. Choose which items you would like to remove.	このウィザードで、Burpがコンピュータに保存した特定の情報を削除します。削除したいアイテムを選択してください。
 Throttle (milliseconds):	ウェイト(ミリ秒):
 Throttle between requests (milliseconds):	リクエスト間のウェイト(ミリ秒):
-Time	時刻
+Time	時間
 Time delays	遅延
 Time of day	時刻
 Time requested	リクエスト時刻
@@ -3715,6 +3740,7 @@ Unpack gzip / deflate	gzip/deflateを展開する
 Unpack gzip / deflate in requests	リクエストのgzip/deflateを展開する
 Unpack gzip / deflate in responses	レスポンスのgzip/deflateを展開する
 Up	上へ
+Up One Level	1つ上へ
 Update Content-Length	Content-Lengthを更新
 Update Content-Length header	Content-Lengthヘッダを更新
 Update Host header to match target	対象に合わせてHostヘッダを更新
@@ -3742,6 +3768,7 @@ Updating results	結果更新中
 Upstream Proxy Servers	上位プロキシサーバ
 Usable Bits of Entropy	使用可能なエントロピービット
 Use Burp defaults	Burpのデフォルトを使用する
+Use Burp's browser for Crawl and Audit	クロールと診断にBurpブラウザを使用する
 Use Burp's embedded browser	Burpの内蔵ブラウザを使用する
 Use HTTP version 1.1	HTTPバージョン1.1を使用する
 Use HTTP/1.0 in requests to server	サーバへのリクエストにHTTP/1.0を使用する
