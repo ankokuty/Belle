@@ -8,36 +8,31 @@ Belle (Burp Suite 非公式日本語化ツール)
 
 ## 使用方法
 
-本ツールは、Javassistを使用しています。次のリンクから最新のライブラリファイル(javassist.jar)をダウンロードしておいてください。
-
-[Releases · jboss-javassist/javassist](https://github.com/jboss-javassist/javassist/releases)
+[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新の`belle.zip`をダウンロードし、`javassist.jar`、`belle.jar`、`user.vmoptions`の3つのファイルをBurp Suiteのインストールディレクトリに展開してください。
 
 ### インストーラーを使ってBurp Suiteをインストールした場合
 
-[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新の belle.jar、user.vmoptions 及び上記 javassist.jar をダウンロードします。
+インストール時に変更していなければ、`%LOCALAPPDATA%\Programs\BurpSuiteCommunity`や`%LOCALAPPDATA%\Programs\BurpSuitePro`にあると思います。
 
-ダウンロードしたこれら3つのファイルを、Burp Suiteがインストールされているフォルダにコピーします。
-インストール時に変更していなければ、``%LOCALAPPDATA%\Programs\BurpSuiteCommunity`` や``%LOCALAPPDATA%\Programs\BurpSuitePro``にあると思います。
+起動は従来通り、Burp Suiteのショートカットをダブルクリックするなどして起動してください。
 
-### Burp Suiteのjarファイルを任意の場所にインストールした場合
 
- [https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のbelle.jar、及び上記javassist.jarをダウンロードし、Burpのjarファイル(`burpsuite_community.jar`等)と同じフォルダにコピーします。
+### コマンドラインから起動する場合
 
-Burpのjarファイルがあるフォルダに移動し、(-jar オプションより前に) -javaagentコマンドラインオプションを指定して起動します。
+(-jar オプションより前に) -javaagentコマンドラインオプションを指定して起動してください。
 
 ```
 java -javaagent:belle.jar -Xmx1024m -jar burpsuite_community.jar
 ```
 
-### アップデート方法
-
-[https://github.com/ankokuty/Belle/releases](https://github.com/ankokuty/Belle/releases)より最新のbelle.jarをダウンロードし上書きコピーし、Burp Suiteを再起動してください。
-
 ### その他
 
-以前のバージョンでは、カレントディレクトリの ja.txt を読み込んでいましたが、現在は内部に取り込んでいるため、このファイルは不要です。
+以前のバージョンでは、カレントディレクトリの`ja.txt`を読み込んでいましたが、現在は内部に取り込んでいるため、このファイルは不要です。
 
-以前のバージョンでは、BurpSuitePro.vmoptions を編集していましたが、Burp Suite本体がuser.vmoptionsを読み込む仕様になったため、現在では不要です。
+以前のバージョンでは、`BurpSuitePro.vmoptions`を編集していましたが、Burp Suite本体が`user.vmoptions`を読み込む仕様になったため、現在では不要です。
+
+以前は、[Javassist](https://github.com/jboss-javassist/javassist/)を自分でダウンロードしてもらうようにしていましたが、リリースパッケージに内包するようにしました。
+
 
 ## 注意事項
 
