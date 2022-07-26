@@ -759,6 +759,7 @@ Change parameter locations (causes many more scan requests):	パラメータ位�
 Change request method	リクエストメソッド変更
 Change the font used to display HTTP messages	HTTPメッセージの表示に使用するフォントを変更
 Change...	変更...
+Changes type (different status code or content type)	タイプ変更(ステータスコードやコンテントタイプの変更)
 Changes will take effect when Burp is restarted.	変更は再起動後に反映されます。
 Channel:	チャネル:
 Character Count Analysis - Significance Levels	文字数分析 - 有意水準
@@ -918,6 +919,7 @@ Connect	接続
 Connect:	接続:
 Connected	接続済み
 Connecting...	接続中...
+Connection closed during request sequence	一連のリクエスト中に接続が切断されました
 Connection failed	接続失敗
 Connections	接続
 Consider unloading some extensions	一部の拡張のアンロードを検討してください
@@ -1010,6 +1012,7 @@ Crawl	クロール
 Crawl Limits	クロール制限
 Crawl Optimization	クロールの最適化
 Crawl Project Option Overrides	プロジェクトのクロールオプション上書き
+Crawl and Audit - Lightweight	クロールと診断 - 軽量
 Crawl and audit	クロールと診断
 Crawl and audit of (.*)	$1のクロールと診断
 Crawl finished	クロール完了
@@ -1173,6 +1176,8 @@ Discover content	コンテンツ探索
 Discover:	探索:
 Discovered PKCS#11 library files are shown below. Select the library file for your device and click "Next".	検出したPKCS#11ライブラリファイルが以下に表示されます。デバイスのライブラリファイルを選択し、"次へ"をクリックしてください。
 Discovering hidden content. Estimating time remaining...	隠しコンテンツの探索. 残り時間見積中...
+Discovering hidden content. Less than ([0-9]+)m estimated time remaining.	隠しコンテンツの探索. 残り約$1分未満。
+Discovering hidden content. Less than ([0-9]+)m maximum time remaining.	隠しコンテンツの探索. 最大約$1分未満。
 Discovering hidden content\. ([0-9]+)s estimated time remaining	隠しコンテンツの探索. 残り約$1秒
 Discovery Engine	探索エンジン
 Discovery Session Status	探索セッションのステータス
@@ -1619,6 +1624,7 @@ Go forward	進む
 Go to the next item in the history	履歴の次のアイテムに移動
 Go to the previous item in the history	履歴の前のアイテムに移動
 Group name:	グループ名:
+Group send options	グループ送信オプション
 HTML Rendering	HTMLレンダリング
 HTML does not specify charset(\s+\[[0-9]+\])?	文字コードが指定されていないHTML$1
 HTML encoding	HTMLエンコード
@@ -1885,6 +1891,8 @@ Issue definitions	問題定義
 Issue detail [where applicable]	問題の詳細 [該当する場合]
 Issue organization	問題編成
 Issue persistence within the queue items was disabled. If required, it can be enabled within Scanner Options.	キューアイテム内の問題の永続性が無効になりました。必要に応じてScannerオプションで有効にできます。
+Issue requests in sequence (separate connections)	リクエストを順番に発行(個別接続)
+Issue requests in sequence (single connection)	リクエストを順番に発行(単一接続)
 Issue the request	リクエストを送信
 Issue the request to obtain the response	レスポンスを取得するためにリクエストを送信
 Issue type	問題タイプ
@@ -2325,6 +2333,7 @@ Not available in demo version	デモバージョンでは無効です
 Not available in free edition	フリー版では無効です
 Not defined	未定義
 Not now	後で
+Not started	未開始
 Note that statistical tests provide only an indicative guide to the randomness of the sampled data. Results obtained may contain false positives and negatives, and may not correspond to the practical predictability of the tokens sampled.	統計的テストは、サンプルデータの乱数性を示す指針のみを提供していることに注意してください。得られた結果には偽陽性と偽陰性が含まれ、サンプリングされたトークンの実用的な予測に対応していない場合があります。
 Note that the FIPS specification for this test only records a fail if the longest run of bits is overly long.	このテストのFIPS仕様では、ビットの最長連が長すぎる場合にのみ、失敗となることに注意してください。
 Note that the request currently being processed by this session handling rule will still be issued, so the macro should not include this request unless it is necessary to issue it twice.	このセッションハンドリングルールに現在処理されているリクエストは発行されるままなので、2つ発行する必要がなければ、マクロにこのリクエストを含めるべきではありません。
@@ -2812,6 +2821,7 @@ Request to ([a-z].*)	$1 へのリクエスト
 Request to Collaborator	Collaboratorへのリクエスト
 Request to:	リクエスト先:
 Request views	リクエストビュー
+Requesting robots.txt. ([0-9]+)m maximum time remaining.	robots.txtをリクエスト中。残り最大$1分。
 Requesting seed URLs. ([0-9]+)h ([0-9]+)m maximum time remaining.	開始URLにリクエスト中。残り最大$1時間$2分。
 Requesting seed URLs. ([0-9]+)h maximum time remaining.	開始URLにリクエスト中。残り最大$1時間。
 Requesting seed URLs. ([0-9]+)m ([0-9]+)s maximum time remaining.	開始URLにリクエスト中。残り最大$1分$2秒
@@ -2877,6 +2887,8 @@ Retrying failed requests: Authenticated crawl (random). ([0-9]+)m ([0-9]+)s esti
 Retrying failed requests: Authenticated crawl (random). ([0-9]+)m estimated time remaining	失敗したリクエストの再試行: 認証状態のクロール(ランダム)。残り約$1分
 Retrying failed requests: Authenticated crawl (random). ([0-9]+)s estimated time remaining	失敗したリクエストの再試行: 認証状態のクロール(ランダム)。残り約$1秒
 Retrying failed requests: Authenticated crawl (random). Estimating time remaining...	失敗したリクエストの再試行: 認証状態のクロール(ランダム)。残り時間見積中...
+Retrying failed requests: Requesting robots.txt. ([0-9]+)m maximum time remaining.	失敗したリクエストを再試行: robots.txtをリクエスト中。残り最大$1分。
+Retrying failed requests: Requesting seed URLs. ([0-9]+)m maximum time remaining.	失敗したリクエストを再試行: 開始URLにリクエスト中。残り最大$1分。
 Reverse substring	部分文字列の反転
 Revert	元に戻す
 Revert changes	変更を元に戻す
@@ -3187,7 +3199,12 @@ Selected text	選択されたテキスト
 Selection	選択
 Selection \(([0-9]+)\)	選択 ($1)
 Send	送信
+Send (current tab)	送信(現在のタブ)
 Send WebSocket Message	WebSocketメッセージ送信
+Send group (separate connections)	グループ送信(個別接続)
+Send group (single connection)	グループ送信(単一接続)
+Send group in sequence (separate connections)	グループを順番に送信(個別接続)
+Send group in sequence (single connection)	グループを順番に送信(単一接続)
 Send requests here from other tools to configure a live capture. Select the request to use, configure the other options below, then click "Start live capture".	他のツールからライブキャプチャの設定にリクエストを送ります。使用するリクエストを選択し、その他のオプションを設定し、"ライブキャプチャ開始"をクリックしてください。
 Send to (Comparer|Decoder|Intruder|Repeater|Sequencer|Spider)	$1に送信
 Send to Comparer (request)	Comparerに送信(リクエスト)
@@ -3779,6 +3796,7 @@ Unauthenticated crawl. ([0-9]+)h ([0-9]+)m estimated time remaining	未認証状
 Unauthenticated crawl. ([0-9]+)h estimated time remaining	未認証状態のクロール. 残り約$1時間
 Unauthenticated crawl. ([0-9]+)m ([0-9]+)s estimated time remaining	未認証状態のクロール. 残り約$1分$2秒
 Unauthenticated crawl. ([0-9]+)m estimated time remaining	未認証状態のクロール. 残り約$1分
+Unauthenticated crawl. ([0-9]+)m maximum time remaining.	未認証状態のクロール. 残り最大$1分。
 Unauthenticated crawl. ([0-9]+)s estimated time remaining	未認証状態のクロール. 残り約$1秒
 Unauthenticated crawl. Estimating time remaining...	未認証状態のクロール. 残り時間見積中...
 Unauthorized Response	未認可のレスポンス
