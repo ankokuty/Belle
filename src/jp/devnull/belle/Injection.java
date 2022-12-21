@@ -34,6 +34,7 @@ public class Injection {
 		injectionMethods.put("javax/swing/JComponent",            new InjectionMethod("setToolTipText",   1));
 		injectionMethods.put("javax/swing/JComboBox",             new InjectionMethod("addItem",          1));
 		injectionMethods.put("javax/swing/JOptionPane",           new InjectionMethod("showOptionDialog", 2));
+		injectionMethods.put("javax/swing/JEditorPane",            new InjectionMethod("setText",          1));
 		
 		instrumentation.addTransformer(new ClassFileTransformer() {
 			CtBehavior insertTranslateCommand(CtBehavior ctMethod, int n) throws Exception {

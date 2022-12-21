@@ -107,6 +107,9 @@ public class Translator {
 		if ((src == null) || (src.length() == 0)) {
 			return src;
 		}
+		if(src.matches("This request is kettled because:")) {
+			System.err.println(src);
+		}
 		src = src.replace("“", "\"").replace("”", "\"").replace("‘", "'").replace("’", "'");
 
 		String dst = literal.get(src);
@@ -128,11 +131,12 @@ public class Translator {
 				&& !src.matches("https?://.+") // URLを無視
 				&& !src.matches("\\$?[ 0-9,./:]+") // 数値を無視
 				&& !src.matches("^[-.\\w]+:?$") // １単語だけの場合を無視
-				&& !src.matches("burp\\..*") // burp.から始まるもの(クラス名？)を無視
+				&& !src.matches("(burp|javax)\\..*") // burp.やjavax.で始まるもの(クラス名？)を無視
 				&& !src.matches("lbl.*") // lblから始まるもの(ラベル名？)を無視
 				&& src.length() > 1 // １文字を無視
 				&& !src.matches("[-/ A-Z0-9]+s?") // 大文字と数値のみの単語を無視
 				&& !src.matches("\\s+") // 空白のみを無視
+				&& !src.matches("[A-Z]:\\\\.*") // Windowsのファイルパスを無視
 		)) {
 			System.err.println("[" + src + "]");
 		}
