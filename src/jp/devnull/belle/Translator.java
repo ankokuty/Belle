@@ -34,8 +34,10 @@ public class Translator {
 		if ((src instanceof PlainDocument && !src.getClass().equals(PlainDocument.class))
 				|| (src instanceof JTextComponent && ((JTextComponent) src).isEditable())
 				|| src instanceof JTextArea
-				|| src instanceof DefaultStyledDocument || src instanceof DefaultTreeCellRenderer
-				|| src instanceof DefaultTableCellRenderer || src.getClass().equals(SynthComboBoxUI.class)
+				|| src instanceof DefaultStyledDocument
+				|| src instanceof DefaultTreeCellRenderer
+				|| src instanceof DefaultTableCellRenderer
+				|| src.getClass().equals(SynthComboBoxUI.class)
 		) {
 			return str;
 		}
@@ -106,9 +108,6 @@ public class Translator {
 	String translate(String src) {
 		if ((src == null) || (src.length() == 0)) {
 			return src;
-		}
-		if(src.matches("This request is kettled because:")) {
-			System.err.println(src);
 		}
 		src = src.replace("“", "\"").replace("”", "\"").replace("‘", "'").replace("’", "'");
 
