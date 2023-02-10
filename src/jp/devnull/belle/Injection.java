@@ -75,9 +75,9 @@ public class Injection {
 								classPool.get("java.awt.Frame"), classPool.get("java.lang.String"), CtClass.booleanType });
 						insertTranslateCommand(ctMethod, 2);
 						return ctClass.toBytecode();
-					} else if(className.matches("java/lang/Class")) {
-						ctClass.instrument(new ResourceTransformer(lang));
-						return ctClass.toBytecode();
+//					} else if(className.matches("java/lang/Class")) {
+//						ctClass.instrument(new ResourceTransformer(lang));
+//						return ctClass.toBytecode();
 					} else {
 						return null;
 					}
