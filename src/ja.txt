@@ -983,6 +983,7 @@ Close wizard	ウィザードを閉じる
 Cluster bomb	クラスター爆弾(Cluster bomb)
 Cluster bomb attack, (.*)	クラスター爆弾, $1
 Collaborator (.*) interaction	Collaboratorとの$1通信
+Collaborator payloads	Collaboratorペイロード
 Collapse	折りたたみ
 Collapse all	すべて折りたたみ
 Collapse branch	ブランチを折りたたむ
@@ -2799,6 +2800,7 @@ Payload settings [Case modification]	ペイロード設定[大文字小文字変
 Payload settings [Character blocks]	ペイロード設定[文字ブロック]
 Payload settings [Character frobber]	ペイロード設定[文字フロバー]
 Payload settings [Character substitution]	ペイロード設定[文字置換]
+Payload settings [Collaborator payloads]	ペイロード設定[Collaboratorペイロード]
 Payload settings [Copy other payload]	ペイロード設定[他ペイロードコピー]
 Payload settings [Custom iterator]	ペイロード設定[カスタムイテレータ]
 Payload settings [Dates]	ペイロード設定[日付]
@@ -4073,6 +4075,7 @@ This panel shows a list of the unique TLS certificates received from web servers
 This payload type can be used to generate illegal Unicode representations of characters. It is sometimes effective in bypassing filters designed to block certain characters. See the full help for details of each option.	不正なUnicode表記の文字列を生成します。特定の文字をブロックするよう設計されたフィルタの回避に効果がある場合があります。各オプションの詳細はヘルプを参照してください。
 This payload type can be used to shuffle blocks of ciphertext in ECB-encrypted data, so as to meaningfully modify the decrypted cleartext and potentially interfere with application logic. You can optionally supply a list of encrypted strings that use the same cipher and key, to provide additional blocks for shuffling into the original data.	このペイロードは、ECBで暗号化されたデータの暗号文ブロックを並び替えます。その結果、復号した際に意味のある平文になり、アプリケーションロジックが不安定になる可能性があります。必要に応じて、同じ暗号とキーを使用して暗号化された文字列のリストを指定し、元データにシャッフルの追加ブロックとして使用できます。
 This payload type copies the value of the current payload at another payload position. It can be used with attack types that have multiple payload sets.	このペイロードタイプは、別ペイロードの値を、現在のペイロード値にコピーします。複数のペイロードセットを使用する攻撃タイプで使用できます。
+This payload type generates Collaborator payloads. Each Collaborator payload includes a unique identifier that is a subdomain of the Collaborator server's domain.	Collaborator ペイロードを生成します。各Collaboratorペイロードには、Collaboratorサーバドメインのサブドメインの一意な識別子が含まれます。
 This payload type generates date payloads within a given range and in a specified format.	与えられた範囲内で、指定した形式の日付ペイロードを生成します。
 This payload type generates numeric payloads within a given range and in a specified format.	与えられた範囲内で、指定した形式の数値ペイロードを生成します。
 This payload type generates payloads based on blocks of a specified character or string. It can be useful for detecting buffer overflows and exploiting some logic flaws.	指定された文字や文字列のブロックに基づいたペイロードを生成します。バッファオーバフローの検知やロジックフローの攻撃に有用です。
