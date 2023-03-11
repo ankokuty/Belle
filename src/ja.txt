@@ -45,6 +45,7 @@ $1000	¥30000
 (.*)The site map displays information about the contents of your target applications, along with any issues that have been discovered\. This is automatically populated during scans and while you browse using Burp's browser\.(.*)	$1サイトマップは、対象アプリケーションのコンテンツに関する情報や発見された問題を表示します。これは、スキャン中やBurpブラウザでの巡回中に自動的に入力されます。$2
 (.*)This displays the history of all HTTP traffic sent between Burp's browser and your target applications, even while intercept is switched off\.(.*)	$1Burpブラウザと対象アプリケーションの間で送信されたすべてのHTTPトラフィックの履歴を、インターセプトを無効にしていても表示します。$2
 (.*)This displays the history of all WebSocket traffic sent between Burp's browser and your target applications\. WebSockets provide long-lived connections for streaming data and other asynchronous traffic\.(.*)	$1Burpブラウザと対象アプリケーションの間で送信されたすべてのWebSocketトラフィックの履歴を表示します。WebSocketは、データのストリーミングやその他の非同期通信用に永続的な接続を提供します。$2
+(.*)We couldn't find what you're looking for.(.*)	$1お探しのものは見つかりませんでした。(.*)
 (.*)When enabled, requests sent by Burp's browser are held here so that you can analyze and modify them before forwarding them to the target server\.(.*)	$1有効にすると、Burpブラウザが送信したリクエストがここにとどまり、対象サーバに転送する前に分析や変更ができます。$2
 (.*)[Cc]apturing all items(.*)	$1すべてのアイテムをキャプチャ$2
 (.*)[Cc]apturing requests up to (100kB|1MB)(.*)	$1最大リクエスト $2$3
@@ -198,7 +199,7 @@ $1000	¥30000
 ([0-9]+)s	$1秒
 ([1-9][0-9]*) match(es)?	$1件マッチ
 ([A-Z]+) request to (.*)	$2 への $1 リクエスト
-(only available for disk-based projects)	(ディスクベースのプロジェクトでのみ使用可能)
+(only available for disk-based projects)	(ディスクベースプロジェクトでのみ使用可能)
 0 matches	マッチなし
 0 positions	ポジションなし
 1 (LSB)	1(最下位ビット)
@@ -360,7 +361,7 @@ All tools:	全ツール:
 Allow Burp's browser to run without a sandbox.	Burpブラウザをサンドボックスなしで実行する
 Allow Burp's browser to store settings and history	Burpブラウザに設定と履歴の保存を許可する
 Allow HTTP/2 ALPN override	HTTP/2 ALPNを上書きする
-Allow access without API key (using this option is not secure)	APIキー無しのアクセスを許可する (このオプションは安全ではありません)
+Allow access without API key (using this option is not secure)	APIキーなしのアクセスを許可する(このオプションは安全ではありません)
 Allow loading of page resources that are out-of-scope	スコープ外のページリソースの読み込みを許可する
 Allow loading site resources from out of scope hosts	スコープ外のホストからリソースの読み込みを許可する
 Allow renderer to make HTTP requests (for images, etc.)	レンダラによるHTTPリクエスト(画像など)送信を許可する
@@ -1247,8 +1248,8 @@ Delete item	アイテムを削除
 Delete last byte	最終バイト削除
 Delete my attack	攻撃を削除する
 Delete old temporary files?	古い一時ファイルを削除してよろしいですか？
-Delete selected byte	選択したバイトを削除
-Delete selected bytes	選択したバイトを削除
+Delete selected byte	選択バイト削除
+Delete selected bytes	選択バイト列削除
 Delete selected issues	選択した問題を削除
 Delete selected items	選択したアイテムを削除
 Deleted directory: (.*)	ディレクトリを削除: $1
@@ -1307,6 +1308,8 @@ Discovering hidden content. Less than ([0-9]+)m maximum time remaining.	隠し�
 Discovering hidden content\. ([0-9]+)s estimated time remaining	隠しコンテンツの探索. 残り約$1秒
 Discovery Engine	探索エンジン
 Discovery Session Status	探索セッションのステータス
+Discovery engine	探索エンジン
+Discovery session status	探索セッションのステータス
 Disk \(project\): ([0-9.]+)([KMGT])?B	ディスク(プロジェクト): $1$2B
 Disk \(temp\): ([0-9.]+)([KMGT])?B	ディスク(一時): $1$2B
 Disk: (.*)	ディスク: $1
@@ -1624,7 +1627,7 @@ Failed to update BApp list	BAppリストを更新できません
 Failed to validate target's certificate.	対象の証明書を検証できません。
 Failed to verify BApp file	BAppファイルの検証ができません
 Failed to verify integrity of download.	ダウンロードの整合性が確認できませんでした。
-False positive	誤検知
+False positive	過剰検知
 Fast	高速
 February	2月
 Feedback only contains technical information about Burp's internal functioning, and does not identify you in any way. If you do report a bug via email, you can help us diagnose any problems that your instance of Burp has encountered by including your debug ID.	フィードバックにはBurpの内部機能に関する技術情報だけが含まれ、あなたを特定する方法はありません。バグを電子メールで報告する場合、あなたのデバッグIDを含めると、発生した問題の診断の助けになります。
@@ -1916,7 +1919,7 @@ In-scope items only	スコープ内のアイテムのみ
 In-scope only	スコープ内のみ
 Include Burp Collaborator identifier in the project file	BurpCollaboratorの識別子をプロジェクトファイルに含める
 Include Burp Collaborator identifier in the state file	Burp Collaborator識別子をステートファイルに含める
-Include Collaborator identifier	コラボレーターの識別子を含める
+Include Collaborator identifier	Collaboratorの識別子を含める
 Include Collaborator server location	Collaboratorサーバの場所を含める
 Include Dashboard identifier	ダッシュボードの識別子を含める
 Include URLs in export	エクスポートにURLを含む
@@ -2039,7 +2042,7 @@ Is text	テキスト
 Issue Definitions	問題定義
 Issue activity	問題アクティビティ
 Issue activity [Pro version only]	問題アクティビティ [プロ版のみ]
-Issue background	問題のバックグラウンド
+Issue background	問題の背景
 Issue current request	現在のリクエストを発行
 Issue definitions	問題定義
 Issue detail [where applicable]	問題の詳細 [該当する場合]
@@ -2131,7 +2134,7 @@ Literal string to replace - leave blank to remove a matched header	置換文字�
 Literal string to use as field value	リテラル文字列または正規表現のフィールド値
 Literal value	表記通り
 Live Active Scanning	ライブアクティブスキャン
-Live Capture Options	ライブキャプチャーオプション
+Live Capture Options	ライブキャプチャオプション
 Live Passive Scanning	ライブパッシブスキャン
 Live audit	ライブ診断
 Live audit (Pro version only)	ライブ診断 (プロ版のみ)
@@ -2720,7 +2723,7 @@ Password	パスワード
 Password field with autocomplete enabled(\s+\[[0-9]+\])?	オートコンプリートが有効なパスワードフィールド$1
 Password is required	パスワードが必要です
 Password required	パスワードが必要です
-Password returned in URL query string(\s+\[[0-9]+\])?	URLクエリーストリング内に返されるパスワード$1
+Password returned in URL query string(\s+\[[0-9]+\])?	URLクエリストリング内に返されるパスワード$1
 Password returned in later response(\s+\[[0-9]+\])?	後のレスポンスで返されるパスワード$1
 Password submitted using GET method(\s+\[[0-9]+\])?	GETメソッドを使用したパスワード送信$1
 Password value set in cookie(\s+\[[0-9]+\])?	cookieにセットされたパスワード値$1
@@ -2939,8 +2942,9 @@ Query Parameters	クエリパラメータ
 Query Parameters \(([0-9]+)\)	クエリパラメータ($1)
 Query Params	クエリパラメータ
 Query parameter	クエリパラメータ
-Query params	クエリーパラメータ
+Query params	クエリパラメータ
 Queued Tasks	キューされたタスク
+Queued tasks	キューされたタスク
 Random	ランダム
 Rating	レーティング
 Rating:	レーティング:
@@ -2996,7 +3000,7 @@ Release notes	リリースノート
 Release notes   	リリースノート   
 Release notes:   	リリースノート:   
 Reliability	信頼性
-Remediation background	対策のバックグラウンド
+Remediation background	対策の背景
 Remediation detail [where applicable]	対策方法の詳細 [該当する場合]
 Remember my choice for future scans	今後のスキャンで同じ選択をする
 Remember my choice when closing attacks in future	今後攻撃を閉じるとき同じ選択をする
@@ -3484,6 +3488,7 @@ Scan item ([0-9]+) \| ([0-9]+) issues? \| waiting \| (.*)	スキャンアイテ�
 Scan next	次にスキャン
 Scan queue	スキャンキュー
 Scan queue help	スキャンキューヘルプ
+Scan selected insertion point	選択された挿入ポイントをスキャン
 Scan speed:	スキャン速度:
 Scan type:	スキャンタイプ:
 Scan using HTTP & HTTPS	HTTP・HTTPSを使用してスキャン
@@ -3506,6 +3511,7 @@ Search tabs	タブ検索
 Search...	検索...
 Searching:(.*)	検索中:$1
 See how to use Burp Suite's main features and tools.	Burp Suiteの主な機能とツールの使用方法をご覧ください。
+See less	表示を減らす
 See more	続きを見る
 See the documentation for more details on using Burp Clickbandit.	Burp Clickbanditの使用方法に関する詳細はドキュメントを参照してください。
 Select	選択
@@ -3971,7 +3977,7 @@ These settings control how Burp binds the proxy listener.	Proxyリスナーの�
 These settings control how Burp handles application errors (connection failures and transmission timeouts) that arise during the audit phase of the scan.	スキャンの診断フェーズで発生するアプリケーションエラー(接続エラーや送信タイムアウトなど)の処理方法を制御します。
 These settings control how Burp handles application errors (connection failures and transmission timeouts) that arise during the crawl phase of the scan.	スキャンのクロールフェーズで発生するアプリケーションエラー(接続エラーや送信タイムアウトなど)の処理方法を制御します。
 These settings control how Burp handles different character sets when displaying raw HTTP messages. Note that some glyphs are not supported by all fonts. If you need to use an extended or unusual character set, you should first try a system font such as Courier New or Dialog.	HTTPメッセージを生で表示する際に、Burpがさまざまな文字セットを処理する方法を制御します。一部の字形はすべてのフォントでサポートされていないことに注意してください。拡張または特殊な文字セットを使用する場合は、まずCourier NewやDialogなどのシステムフォントを試してみてください。
-These settings control how Burp handles extensions on startup.	起動時の拡張の処理方法を設定します。
+These settings control how Burp handles extensions on startup.	起動時における拡張の処理方法を設定します。
 These settings control how Burp handles in-tool rendering of HTML content.	ツール内でのHTMLコンテンツのレンダリングの設定です。
 These settings control how Burp handles redirections when performing attacks.	攻撃を実行する際の、リダイレクトの処理方法を制御します。
 These settings control how Intruder handles network errors during the attack.	攻撃中にネットワークエラーを処理する方法を制御します。
@@ -3987,7 +3993,7 @@ These settings control the SSL protocols and ciphers that Burp will use when per
 These settings control the TLS protocols and ciphers that Burp will use when performing TLS negotiation with upstream servers. If you are experiencing problems with TLS negotiation, you can use these settings to request use of specific protocols or ciphers. Use these options with caution as misconfiguration may break all your outgoing TLS connections.	Burpが上位のサーバとTLSネゴシエーションを実行するときに使う、TLSプロトコルと暗号を制御します。TLSネゴシエーションに問題が発生した場合は、特定のプロトコルや暗号の使用させるよう設定できます。設定をミスするとすべての外向きTLS接続が破られる可能性があるので、注意して使用してください。
 These settings control the TLS protocols that this proxy listener will use when performing TLS negotiation with the browser. If you are experiencing problems with TLS negotiation, you can use these settings to request use of specific protocols.	このProxyリスナーがブラウザとのTLSネゴシエーションで使用するTLSプロトコルを制御します。TLSネゴシエーションで問題が発生している場合は、特定プロトコルの使用を要求できます。
 These settings control the behavior of Burp Scanner's JavaScript analysis.	Burp ScannerのJavaScript分析の動作を制御します。
-These settings control the engine used for making HTTP requests and harvesting tokens when performing the live capture.	ライブキャプチャーを実行してトークンを収集する際にHTTPリクエストを生成する、エンジンの挙動を設定します。
+These settings control the engine used for making HTTP requests and harvesting tokens when performing the live capture.	ライブキャプチャを実行してトークンを収集する際にHTTPリクエストを生成する、エンジンの挙動を設定します。
 These settings control the engine used for making HTTP requests when discovering content.	コンテンツ探索時のHTTPリクエストの作成に使用されるエンジンを設定します。
 These settings control the engine used for making HTTP requests when doing active scanning.	アクティブスキャン中にHTTPリクエストを生成するエンジンの挙動を設定します。
 These settings control the engine used for making HTTP requests when performing attacks.	攻撃実行中のHTTPリクエスト作成に使われるエンジンを制御します。
@@ -4092,7 +4098,7 @@ This setting controls Burp's update behavior.	Burpの更新動作を制御しま
 This setting controls Burp's use of HTTP/1 keep-alive for outbound connections.	送信時にHTTP/1のキープアライブを使用するかどうか制御します。
 This setting controls Burp's use of the HTTP/2 protocol for both inbound and outbound connections over TLS.	TLSでの送受信にHTTP/2を使用するかどうか制御します。
 This setting controls Burp's use of the HTTP/2 protocol for outbound connections over TLS.	TLSでの送信にHTTP/2を使用するかどうか制御します。
-This setting controls how Burp handles extensions on startup.	Burp起動時の拡張の処理方法を制御します。
+This setting controls how Burp handles extensions on startup.	Burp起動時における拡張の処理方法を制御します。
 This setting controls the default state of the "Pause automated tasks" option on the startup wizard.	開始ウィザードでの、"自動タスクを一時停止する"オプションのデフォルト状態を制御します。
 This setting controls the state of proxy interception at startup.	起動時のPRoxyインターセプト状態の設定です。
 This setting controls whether adding items to Target scope will automatically set the Proxy option to stop sending out-of-scope items to the history or other Burp tools.	ターゲットスコープへアイテムを追加したときに、履歴や他のBurpツールにスコープ外アイテムを送信しないようProxyオプションを自動的に追加するかどうか設定します。
@@ -4206,7 +4212,7 @@ URL path encoding	URLパスエンコード
 URL path filename	URLパスのファイル名
 URL path folder	URLパスのフォルダ
 URL path folders	URLパスのフォルダ
-URL query string	URLクエリーストリング
+URL query string	URLクエリストリング
 URL to body	URLからボディ
 URL to cookie	URLからcookie
 URL-decode	URLデコード
@@ -4359,7 +4365,7 @@ Use these settings to control Intruder's behavior when closing result windows.	�
 Use these settings to control how Burp automatically modifies responses.	Burpがレスポンスを自動的に変更する方法を制御します。
 Use these settings to control how Burp handles HTTP responses with status 100.	ステータスが100のHTTPレスポンスをBurpが処理する方法を設定します。
 Use these settings to control how Burp handles different character sets when displaying raw HTTP messages. Note that the glyphs required for some character sets are not supported by all fonts. If you need to use an extended or unusual character set, you should first try a system font such as Courier New or Dialog.	HTTPメッセージを生で表示する際に、Burpがさまざまな文字セットを処理する方法を制御する設定です。一部の文字セットに必要な字形がすべてのフォントでサポートされていないことに注意してください。拡張または特殊な文字セットを使用する場合は、まずCourier NewやDialogなどのシステムフォントを試してみてください。
-Use these settings to control how Burp handles extensions on startup.	起動時の拡張の処理方法を制御します。
+Use these settings to control how Burp handles extensions on startup.	起動時における拡張の処理方法を制御します。
 Use these settings to control how Burp handles in-tool rendering of HTML content.	ツール内でのHTMLコンテンツのレンダリングの設定です。
 Use these settings to control how HTTP messages are displayed.	HTTPメッセージの表示方法を制御する設定です。
 Use these settings to control how Repeater handles connection reuse, and whether it can send HTTP/2 requests even when the server doesn't advertise HTTP/2 support via ALPN.	Repeaterが接続の再利用を処理する方法と、サーバがHTTP/2をサポートしていることをALPNで表明していない場合でもHTTP/2リクエストを送信するかどうかを制御します。
@@ -4369,7 +4375,7 @@ Use these settings to control logging of HTTP requests and responses to log file
 Use these settings to control the TLS protocols and ciphers that Burp uses when performing TLS negotiation with upstream servers. Use these settings with caution, as misconfiguration may break your outgoing TLS connections.	Burpが上位のサーバとTLSネゴシエーションを実行するときに使う、TLSプロトコルと暗号を制御します。設定をミスすると外向きTLS接続が破られる可能性があるので、注意して使用してください。
 Use these settings to control the appearance of Burp's user interface.	Burpのユーザーインターフェースの外観を制御する設定です。
 Use these settings to control the default configuration for the HTTP editor's search bar.	HTTPエディタの検索バーのデフォルト設定を制御する設定です。
-Use these settings to control the engine used for making HTTP requests and harvesting tokens when performing the live capture.	ライブキャプチャーを実行してトークンを収集する際にHTTPリクエストを生成する、エンジンの挙動を設定します。
+Use these settings to control the engine used for making HTTP requests and harvesting tokens when performing the live capture.	ライブキャプチャを実行してトークンを収集する際にHTTPリクエストを生成する、エンジンの挙動を設定します。
 Use these settings to control the redirection types that Burp uses in situations where it is configured to follow redirections.	リダイレクトをたどるべき状況として、Burpが認識するリダイレクトタイプを制御する設定です。
 Use these settings to control the types of analysis performed by Burp Sequencer.	Burp Sequencerが実行する分析タイプを制御します。
 Use these settings to control whether Burp's browser can run without a sandbox or attempt to use the GPU.	Burpブラウザをサンドボックスなしで実行するか、GPUを使用しようとするかを制御する設定です。
