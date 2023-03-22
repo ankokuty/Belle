@@ -356,6 +356,7 @@ All interfaces	すべてのインタフェース
 All issues	すべての問題
 All items were successfully cleaned up.	すべてのアイテムを正常に削除しました。
 All rows	すべての行
+All tests were successful.	すべてのテストが成功しました。
 All tests were successful. 	すべてのテストが成功しました。 
 All tools:	全ツール:
 Allow Burp's browser to run without a sandbox.	Burpブラウザをサンドボックスなしで実行する
@@ -387,9 +388,10 @@ An update is available.	更新が利用可能です。
 An update is available. Please select the build that you want to download.	更新が利用可能です。ダウンロードしたいビルドを選択してください。
 Analysis Options	分析オプション
 Analysis options	分析オプション
+Analysis settings	分析設定
 Analyze and display AMF messages (use with caution)	AMFメッセージの分析と表示をする(使用注意)
 Analyze now	分析実行
-Analyze target	対象の分析
+Analyze target	対象を分析
 Analyzing character set	文字セット分析中
 Analyzing input file: ([0-9]+)% complete	入力ファイルを分析中: $1%完了
 Anomalies	異常
@@ -601,6 +603,8 @@ Are you sure you want to restore default upstream proxy servers options?	上位�
 Are you sure you want to restore default upstream proxy servers settings?	上位プロキシサーバ設定をデフォルトに戻してよろしいですか？
 Are you sure you want to restore default user interface options?	ユーザインタフェースオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore default widget options?	ウィジェットオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore defaults for Logger?	Loggerのオプションをデフォルトに戻してよろしいですか？
+Are you sure you want to restore defaults for Other project settings?	その他プロジェクト設定をデフォルトに戻してよろしいですか？
 Are you sure you want to restore defaults for Project options?	プロジェクトオプションのデフォルトに戻してよろしいですか？
 Are you sure you want to restore defaults for Proxy?	Proxyのオプションをデフォルトに戻してよろしいですか？
 Are you sure you want to restore defaults for Repeater?	Repeaterのオプションをデフォルトに戻してよろしいですか？
@@ -739,7 +743,9 @@ Binding	バインド
 Bit Compression Analysis - Compression Ratios	ビット圧縮分析 - 圧縮率
 Bit Compression Analysis - Significance Levels	ビット圧縮分析 - 有意水準
 Bit Correlation Analysis - Significance Levels	ビット相関分析 - 有意水準
+Bit compression analysis - Compression ratios	ビット圧縮分析 - 圧縮率
 Bit conversion	ビット変換
+Bit correlation analysis - Significance levels	ビット相関分析 - 有意水準
 Bit flipper	ビットフリッパー
 Bit-level analysis	ビットレベル分析
 Blind	ブラインド
@@ -883,12 +889,14 @@ Character Set	文字セット
 Character Sets	文字セット
 Character Transition Analysis - Significance Levels	文字遷移分析 - 有意水準
 Character blocks	文字ブロック
+Character count analysis - Significance levels	文字数分析 - 有意水準
 Character frobber	文字フロバー
 Character set	文字セット
 Character set:	文字セット:
 Character sets	文字セット
 Character substitution	文字置換
 Character substitutions	文字置換
+Character transition analysis - Significance levels	文字遷移分析 - 有意水準
 Character-level analysis	文字レベル分析
 Check for updates	更新チェック
 Check robots.txt	robots.txtをチェックする
@@ -983,6 +991,7 @@ Close wizard	ウィザードを閉じる
 Cluster bomb	クラスター爆弾(Cluster bomb)
 Cluster bomb attack, (.*)	クラスター爆弾, $1
 Collaborator (.*) interaction	Collaboratorとの$1通信
+Collaborator (.*) interaction ([0-9]+)	Collaborator $1通信$2
 Collaborator payloads	Collaboratorペイロード
 Collapse	折りたたみ
 Collapse all	すべて折りたたみ
@@ -1100,7 +1109,7 @@ Copy as curl command	curlコマンドをコピー
 Copy attack config	攻撃設定をコピー
 Copy configuration from first tab	最初のタブから設定をコピー
 Copy configuration from last tab	最後のタブから設定をコピー
-Copy content from suite site map	サイトマップからコンテンツをコピー
+Copy content from suite site map	全体サイトマップからコンテンツをコピー
 Copy details	詳細をコピー
 Copy from position:	コピー元ポジション:
 Copy item	アイテムをコピー
@@ -1465,6 +1474,7 @@ Edited message	編集後メッセージ
 Edited request	編集後リクエスト
 Edited response	編集後レスポンス
 Effective Entropy	有効なエントロピー
+Effective entropy	有効なエントロピー
 Email addresses disclosed(\s+\[[0-9]+\])?	メールアドレス漏洩$1
 Embed images within HTML (requires modern browser)	HTML内への画像埋め込み (最新のブラウザが必要)
 Embedded Browser	内蔵ブラウザ
@@ -1598,13 +1608,18 @@ FIPS Poker Test - Significance Levels	FIPS ポーカ検定 - 有意水準
 FIPS Result	FIPS結果
 FIPS Runs Test - Significance Levels	FIPS 連検定 - 有意水準
 FIPS long run	FIPS 最長連検定
+FIPS long run test - Significance levels	FIPS最長連検定 - 有意水準
 FIPS long runs test	FIPS 最長連検定
 FIPS monobit	FIPS 1次元度数検定
 FIPS monobit test	FIPS 1次元度数検定
+FIPS monobit test - Significance levels	FIPS 1次元度数検定 - 有意水準
 FIPS poker	FIPS ポーカ検定
 FIPS poker test	FIPS ポーカ検定
+FIPS poker test - Significance levels	FIPS ポーカ検定 - 有意水準
+FIPS result	FIPS結果
 FIPS runs	FIPS 連検定
 FIPS runs test	FIPS 連検定
+FIPS runs test - Significance levels	FIPS 連検定 - 有意水準
 Failed domain name resolution:	名前解決失敗時の再試行:
 Failed parameters	失敗パラメータ
 Failed to access file	ファイルにアクセスできません
@@ -1922,6 +1937,7 @@ Include Burp Collaborator identifier in the project file	BurpCollaboratorの識�
 Include Burp Collaborator identifier in the state file	Burp Collaborator識別子をステートファイルに含める
 Include Collaborator identifier	Collaboratorの識別子を含める
 Include Collaborator server location	Collaboratorサーバの場所を含める
+Include Collaborator server location:	Collaboratorサーバの場所を含める:
 Include Dashboard identifier	ダッシュボードの識別子を含める
 Include URLs in export	エクスポートにURLを含む
 Include all URLs	すべてのURLを含める
@@ -2215,6 +2231,7 @@ Load automatic project backup settings	プロジェクト自動バックアッ�
 Load browser data settings	ブラウザデータ設定を読み込む
 Load browser running settings	ブラウザ起動設定を読み込む
 Load capture filter options	キャプチャフィルタオプションを読み込む
+Load capture filter settings	キャプチャフィルタ設定を読み込む
 Load character set options	文字セットオプションを読み込む
 Load character set settings	文字セット設定を読み込む
 Load client SSL certificates options	クライアントSSL証明書オプションを読み込む
@@ -2438,6 +2455,7 @@ Maximum capture length:	抽出する最大長:
 Maximum concurrent requests:	最大同時リクエスト数:
 Maximum crawl time:	最大クロール時間:
 Maximum dynamic analysis time per item (in seconds):	アイテムあたりの最大動的分析時間(秒):
+Maximum entropy bits	最大エントロピービット
 Maximum hidden links to follow:	たどる隠れたリンクの最大数:
 Maximum insertion points per base request:	ベースリクエストごとの最大挿入ポイント数:
 Maximum items to request from site map:	サイトマップからリクエストする最大アイテム数:
@@ -2826,6 +2844,8 @@ Pitchfork	ピッチフォーク(Pitchfork)
 Pitchfork attack, (.*)	ピッチフォーク, $1
 Place attacks into the following locations within requests:	リクエスト内の次の場所に攻撃を配置します:
 Place payloads into the following locations within requests:	リクエスト内の次の場所にペイロードを配置する:
+Placeholder regex to replace:	置換するプレースホルダの正規表現:
+Placeholder to replace:	置換するプレースホルダ:
 Plain JAR file	JAR ファイル
 Plain text form	プレーンテキストフォーム
 Platform Authentication	プラットフォーム認証
@@ -3078,6 +3098,8 @@ Repeater settings for this tab	このタブのRepeater設定
 Replace	変更値
 Replace base parameter value	元パラメータ値を置換
 Replace current state	現在のステートを置き換える
+Replace placeholder with base value	プレースホルダを元値に置換
+Replace placeholder with collaborator payload	プレースホルダをCollaboratorペイロードに置換
 Replace with encodings of:	エンコードして置換する文字:
 Replace with:	置換:
 Replace:	置換:
@@ -3324,6 +3346,7 @@ Save browser data settings	ブラウザデータ設定を保存する
 Save browser running settings	ブラウザ起動設定を保存する
 Save cancelled	保存をキャンセルしました
 Save capture filter options	キャプチャフィルタオプションを保存する
+Save capture filter settings	キャプチャフィルタ設定を保存する
 Save character set options	文字セットオプションを保存する
 Save character set settings	文字セット設定を保存する
 Save client SSL certificates options	クライアントSSL証明書オプションを保存する
@@ -3492,6 +3515,7 @@ Scan queue	スキャンキュー
 Scan queue help	スキャンキューヘルプ
 Scan selected insertion point	選択された挿入ポイントをスキャン
 Scan speed:	スキャン速度:
+Scan type	スキャンタイプ
 Scan type:	スキャンタイプ:
 Scan using HTTP & HTTPS	HTTP・HTTPSを使用してスキャン
 Scan using my specified protocols	指定したプロトコルを使用してスキャン
@@ -3502,6 +3526,7 @@ Scheduled tasks	スケジュールタスク
 Scope	スコープ
 Scope settings	スコープ設定
 Scope:	スコープ:
+Scripts search	スクリプト検索
 Scrolling view	スクロール表示
 Search	検索
 Search cancelled	検索がキャンセルされました
@@ -3697,6 +3722,7 @@ Showing selected items 	選択したアイテムを表示中
 Shut down Burp and launch downloaded file	Burpをシャットダウンし、ダウンロードしたファイルを起動する
 Shut down Burp and run new version	Burpをシャットダウンし、新しいバージョンを起動する
 Significance Levels	有意水準
+Significance levels	有意水準
 Silverlight cross-domain policy(\s+\[[0-9]+\])?	Silverlightクロスドメインポリシー$1
 Simple list	単純リスト
 Simple string	単純な文字列
@@ -3747,6 +3773,7 @@ Specify the settings for re-requesting the site map. Make sure that you configur
 Specify the title and structure to use in the report.	レポートで使用するタイトルと構成を指定してください。
 Spectral	スペクトル
 Spectral Analysis - Significance Levels	スペクトル分析 - 有意水準
+Spectral analysis - Significance levels	スペクトル分析 - 有意水準
 Spectral tests	スペクトルテスト
 Spider Engine	Spiderエンジン
 Spider Scope	Spiderスコープ
@@ -3878,6 +3905,7 @@ Task details	タスク詳細
 Task execution is paused	タスクの実行は一時停止中です
 Task execution is paused - Site map will not be populated	タスクの実行は停止中 - サイトマップは作成されません
 Task execution settings	タスク実行設定
+Task type	タスクタイプ
 Tasks	タスク
 Tasks queued:	キューされたタスク:
 Temporary Files Location	一時ファイルの場所
@@ -3888,6 +3916,7 @@ Tentative	暫定
 Terms and Conditions	規約と条件
 Test Description	テスト詳細
 Test all extensions observed in use on target site, except for:	対象サイトで使用されているすべての拡張子をテスト, 次は除く:
+Test description	テスト詳細
 Test file stems with no extension	拡張子のないファイル名
 Test in browser	ブラウザでテスト
 Test macro	マクロをテスト
@@ -4185,6 +4214,7 @@ Tolerate URL mismatch when matching parameters (use for URL-agnostic CRSF tokens
 Tool	ツール
 Tools	ツール
 Tools Scope	ツールスコープ
+Tools scope	ツールスコープ
 Top/bottom split	上下分割
 Total cost:	総額:
 Total encodings	総エンコード数
@@ -4216,6 +4246,7 @@ URL path filename	URLパスのファイル名
 URL path folder	URLパスのフォルダ
 URL path folders	URLパスのフォルダ
 URL query string	URLクエリストリング
+URL scope	URLスコープ
 URL to body	URLからボディ
 URL to cookie	URLからcookie
 URL-decode	URLデコード
@@ -4228,6 +4259,7 @@ URL-encoded form	URLエンコードフォーム
 URLs in scope	スコープ内URL
 URLs to Scan	スキャンするURL
 URLs to add:	追加するURL:
+URLs to scan	スキャンするURL
 Unable to load help - please email support@portswigger.net with details, including the location of this help button.	ヘルプを読み込めません - このヘルプボタンの場所など詳細をsupport@portswigger.netまでメールしてください。
 Unable to load library - check file is correct and device is installed	ライブラリを読み込めません - ファイルが正しいか、デバイスがインストールされているかチェックしてください
 Unauthenticated crawl. ([0-9]+)h ([0-9]+)m estimated time remaining	未認証状態のクロール。残り約$1時間$2分
@@ -4287,6 +4319,7 @@ Updating results	結果更新中
 Upstream Proxy Servers	上位プロキシサーバ
 Upstream proxy servers	上位プロキシサーバ
 Usable Bits of Entropy	使用可能なエントロピービット
+Usable bits of entropy	使用可能なエントロピービット
 Use Burp defaults	Burpのデフォルトを使用する
 Use Burp's browser for Crawl and Audit	クロールと診断にBurpブラウザを使用する
 Use Burp's embedded browser	Burpの内蔵ブラウザを使用する
